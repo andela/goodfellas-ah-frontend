@@ -1,0 +1,19 @@
+{
+  "name": "goodfellas-ah-frontend",
+  "version": "1.0.0",
+  "description": "A Social platform for the creative at heart",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andela/goodfellas-ah-frontend.git"
+  },
+  "author": "Andela Simulations Programme",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andela/goodfellas-ah-frontend/issues"
+  },
+  "homepage": "https://github.com/andela/goodfellas-ah-frontend#readme"
+}
