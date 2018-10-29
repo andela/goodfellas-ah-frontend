@@ -1,17 +1,14 @@
 import React from 'react';
-import { Provider } from 'react-redux';
 import { Link, Route } from 'react-router-dom';
-import store from '../store';
+import { Provider } from 'react-redux';
 import HomePage from '../components/HomePage';
-import Login from '../components/Login';
 import '../styles/styles.scss';
-import Hero from '../components/layout/hero';
-
+import store from '../store';
+import Sample from '../components/Sample';
 
 const App = () => (
   <Provider store={store}>
     <div className="App">
-      <Hero />
       <nav>
         <ul>
           <li>
@@ -23,8 +20,9 @@ const App = () => (
         </ul>
       </nav>
       <Route exact path="/" component={HomePage} />
-      <Route path="/Login" component={Login} />
+      <Route path="/Login" component={Sample} />
     </div>
   </Provider>
 );
+
 export default App;
