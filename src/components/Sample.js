@@ -4,16 +4,20 @@ import { registerUser } from '../actions/authActions';
 
 class Sample extends Component {
   onSubmit = (e) => {
+    const { registerUser: register } = this.props;
     e.preventDefault();
     const newUser = {
       email: e.target.email.value,
       firstname: e.target.firstname.value,
       lastname: e.target.lastname.value,
     };
-    this.props.registerUser(newUser);
+
+    register(newUser);
   };
 
   render() {
+    // console.log(this.props.auth.user);
+    const { auth } = this.props;
     return (
       <div>
         <form onSubmit={this.onSubmit}>
@@ -22,12 +26,20 @@ class Sample extends Component {
           <input type="text" placeholder="lastname" name="lastname" />
           <input type="submit" value="submit" />
         </form>
+        <div>
+          <p>{auth.user.email}</p>
+          <p>{auth.user.firstname}</p>
+          <p>{auth.user.lastname}</p>
+        </div>
       </div>
     );
   }
 }
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
 
 export default connect(
-  null,
+  mapStateToProps,
   { registerUser },
 )(Sample);
