@@ -1,8 +1,13 @@
 // this is an example action file
 
-import { TEST_DISPATCH } from './types';
+import * as types from './actionTypes';
 
-exports.registeruser = (userData) => ({
-  type: TEST_DISPATCH,
+export const registerUser = (userData) => ({
+  type: types.TEST_DISPATCH,
+  payload: userData,
+});
+
+export const loginUser = (userData) => ({
+  type: types.TEST_DISPATCH,
   payload: userData,
 });
