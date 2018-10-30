@@ -16,7 +16,6 @@ class Sample extends Component {
   };
 
   render() {
-    // console.log(this.props.auth.user);
     const { auth } = this.props;
     return (
       <div>
