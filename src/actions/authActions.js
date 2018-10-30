@@ -1,3 +1,5 @@
+// this is an example action file
+
 import { TEST_DISPATCH } from './types';
 
 exports.registeruser = (userData) => ({
