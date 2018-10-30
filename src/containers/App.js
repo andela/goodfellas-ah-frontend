@@ -5,7 +5,7 @@ import Login from '../components/Login';
 import '../styles/styles.scss';
 
 export default () => (
-  <div>
+  <div className="app">
     <nav>
       <ul>
         <li>
