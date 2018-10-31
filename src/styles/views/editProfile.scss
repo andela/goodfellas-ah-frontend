@@ -1,0 +1,17 @@
+
+.edit-profile {
+  min-height: 100vh;
+  background-color: #F8F8F8;
+  & > * {
+    margin: auto;
+    text-align: center;
+  }
+  #profile-image-uploader {
+    margin-top: 5rem;
+  }
+  #user-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 2rem auto;
+  }
+}
