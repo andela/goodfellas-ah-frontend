@@ -1,6 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { Link } from 'react-router-dom';
 import App from '../../containers/App';
+import '../../styles/styles.scss';
 
 it('renders without crashing', () => {
   shallow(<App />);
@@ -9,9 +11,16 @@ it('renders without crashing', () => {
 it('contains welcome header', () => {
   const wrapper = shallow(<App />);
   const welcomeHeader = (
-    <header>
-      <p>Welcome to Authors&apos; Haven</p>
-    </header>
+    <nav>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/Login">Login</Link>
+        </li>
+      </ul>
+    </nav>
   );
   expect(wrapper.contains(welcomeHeader)).toEqual(true);
 });
