@@ -5,22 +5,31 @@ import '../../styles/components/hero.scss';
 
 const Hero = () => (
   <div>
-    <section className="Hero-section">
-      <Header />
-      <h2>Write it out beautifully</h2>
-      <p>
-        Or type it, its just as fine. Here, we help get your articles accross to
-        a pool of eager readers. We know there are no limits to your
-        imagination. We can’t wait to meet you.
-      </p>
-      <button className="btn-link" type="submit">
-        Create Account
-      </button>
-      <button type="submit">Read Articles</button>
+    <section className="hero-section">
+      <div className="hero-section-overlay">
+        <Header />
+        <h2>Write it out beautifully</h2>
+        <div className="hero-section-description">
+          <p>
+            Or type it, its just as fine. Here, we help get your articles across{' '}
+          </p>
+          <p>to a pool of eager readers. We know there are no limits to your</p>
+          <p>imagination. We can’t wait to meet you.</p>
+        </div>
+        <div className="hero-section-buttons">
+          <button className="btn hero-section-greenbutton" type="submit">
+            CREATE ARTICLES
+          </button>
+          <button className="btn hero-section-whitebutton" type="submit">
+            READ ARTICLES
+          </button>
+        </div>
+      </div>
     </section>
-    <Card />
-    <section>
-      <div>
+    {/* <Card className="hero-card" /> */}
+    <div className="hero-body-vector" />
+    <section className="hero-body">
+      <div className="hero-body-details">
         <div>
           <h2>THE COMPLETE DIGITAL TOOL FOR AUTHORS WILLING TO SHARE</h2>
           <p>Image here though</p>
