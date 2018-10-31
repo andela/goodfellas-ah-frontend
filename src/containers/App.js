@@ -1,12 +1,11 @@
 import React from 'react';
 import '../styles/styles.scss';
+import Hero from '../components/layout/hero';
 
 
 const App = () => (
-  <div className="App">
-    <header>
-      <p>Welcome to Authors&apos; Haven</p>
-    </header>
+  <div>
+    <Hero />
   </div>
 );
 
