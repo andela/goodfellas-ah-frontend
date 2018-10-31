@@ -1,18 +1,20 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import { BrowserRouter, Route } from 'react-router-dom';
 import store from '../store';
-import Sample from '../components/Sample';
+import Signin from './Signin';
+import Hero from './Hero';
 import '../styles/styles.scss';
 
 
 const App = () => (
   <Provider store={store}>
-    <div className="App">
-      <header>
-        <p>Welcome to Authors&apos; Haven</p>
-      </header>
-      <Sample />
-    </div>
+    <BrowserRouter>
+      <div>
+        <Route exact path="/" component={Hero} />
+        <Route path="/signin" component={Signin} />
+      </div>
+    </BrowserRouter>
   </Provider>
 );
 export default App;
