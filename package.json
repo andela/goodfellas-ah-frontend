@@ -3,9 +3,32 @@
   "version": "1.0.0",
   "description": "A Social platform for the creative at heart",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "private": true,
+  "dependencies": {
+    "node-sass": "^4.9.4",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.0.5",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0"
   },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "node_modules/.bin/eslint --fix ./"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andela/goodfellas-ah-frontend.git"
@@ -15,5 +38,12 @@
   "bugs": {
     "url": "https://github.com/andela/goodfellas-ah-frontend/issues"
   },
-  "homepage": "https://github.com/andela/goodfellas-ah-frontend#readme"
+  "homepage": "https://github.com/andela/goodfellas-ah-frontend#readme",
+  "devDependencies": {
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "react-test-renderer": "^16.6.0"
+  }
 }
