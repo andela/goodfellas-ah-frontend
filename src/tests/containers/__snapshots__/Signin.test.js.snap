@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signin UI container should render as expected 1`] = `
+<Signin>
+  <div>
+    <input
+      type="text"
+    />
+    <input
+      type="text"
+    />
+    <button
+      type="button"
+    >
+      Sign In
+    </button>
+  </div>
+</Signin>
+`;
