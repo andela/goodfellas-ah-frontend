@@ -1,0 +1,12 @@
+
+.body {
+  min-height: 100vh;
+  background-color: #F8F8F8;
+  padding-top: 60px;
+  & > header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
