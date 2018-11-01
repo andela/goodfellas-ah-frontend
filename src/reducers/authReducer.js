@@ -1,17 +1,22 @@
 import * as types from '../actions/actionTypes';
 
 const initialState = {
-  isAuthenticated: false,
-  user: {},
+  authenticated: '',
+  errorMessage: '',
 };
 
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case types.TEST_DISPATCH:
+    case types.AUTH_USER:
       return {
         ...state,
-        user: action.payload,
+        authenticated: action.payload,
+      };
+    case types.AUTH_ERROR:
+      return {
+        ...state,
+        errorMessage: action.payload,
       };
     default:
       return state;
