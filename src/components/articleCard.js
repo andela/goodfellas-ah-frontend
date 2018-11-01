@@ -1,11 +1,11 @@
 import React from 'react';
-import cardImage from '../assets/cardImage2.png';
+import likesIcon from '../assets/icons8-heart-outline-48-grey.png';
 import authorProfileImage from '../assets/john.jpg';
 import '../styles/components/articleCard.scss';
 
 const Card = () => (
   <div className="hero-card row">
-    <div className="hero-card-details col-sm-4">
+    <div className="hero-card-details col-sm-7">
       <h6>Why a willing kid</h6>
       <h6>would win an adult</h6>
       <h6>in a fist fight.</h6>
@@ -16,16 +16,16 @@ const Card = () => (
       </p>
       <div className="row hero-card-author">
         <img
-          className="authorProfile col-sm-3"
+          className="authorProfile"
           src={authorProfileImage}
           alt="Author Profile"
         />
         <p className="col-sm-9">John Adewale</p>
       </div>
     </div>
-    <div className="col-sm-2" />
-    <div className="hero-card-image col-sm-6">
-      <img src={cardImage} alt="CardImage" />
+    <div className="hero-card-image col-sm-5">
+      <img src={likesIcon} alt="" />
+      <p>1300</p>
     </div>
   </div>
 );

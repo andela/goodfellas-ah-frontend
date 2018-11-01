@@ -4,12 +4,25 @@ header{
   margin: 0 auto;
   nav{
     text-decoration-color: none;
-    img{
-      color: white;
-    }
     h3{
       font-family: 'Annie Use Your Telescope', cursive;
       color: white
+    }
+    p{
+      color: white;
+    }
+    .nav-center{
+      .nav-item{
+        margin-right: 40px;
+      }
+    }
+    .link-border{
+      margin-top: 8px;
+    }
+    @media only screen and (max-width: 600px){
+      .link-border{
+      display: none;
+    }
     }
   }
 }
