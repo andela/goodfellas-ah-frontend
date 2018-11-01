@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from '../shared/articleCard';
+import Card from '../articleCard';
 import Header from '../shared/header';
 import '../../styles/components/hero.scss';
 
@@ -25,9 +25,9 @@ const Hero = () => (
           </button>
         </div>
       </div>
+      <div className="hero-body-vector" />
+      <Card />
     </section>
-    {/* <Card className="hero-card" /> */}
-    <div className="hero-body-vector" />
     <section className="hero-body">
       <div className="hero-body-details">
         <div>
@@ -57,7 +57,7 @@ const Hero = () => (
         sit amet consectetur, adipisicing elit. Cupiditatelit. Cupiditate
       </p>
     </section>
-    <section>
+    {/* <section>
       <div>
         <Card />
         <Card />
@@ -69,7 +69,7 @@ const Hero = () => (
         <Card />
       </div>
       <p>More Articles</p>
-    </section>
+    </section> */}
   </div>
 );
 

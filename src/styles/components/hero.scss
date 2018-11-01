@@ -2,14 +2,14 @@ $maingreen: #57B182;
 $faintblue: #F4F9FC;
 
 .hero-section{
-  // background-color: grey;
   background-size: cover;
   background-image: url("../../assets/heroImage2.jpg");
-  height: 700px;
+  height: 100vh;
   color: #E5E5E5;
+  overflow: hidden;
   .hero-section-overlay{
     background-color: rgba(0, 0, 0, 0.41);
-    height: 700px;
+    height: 100vh;
     h2{
       width: 88%;
       font-size: 45px;
@@ -45,15 +45,16 @@ $faintblue: #F4F9FC;
 }
 
 .hero-body-vector{
-  clip-path: polygon(0 31%, 100% 1%, 100% 100%, 0% 100%);
-  margin-top: -130px;
-  height: 400px;
+  clip-path: polygon(0% 100%, 100% 0%, 100% 100%, 0% 100%);
+  margin-top: -40vh;
+  height: 40vh;
   background-color: white;
 }
 
 .hero-body{
   height: 700px;
-  // transform: rotate(-17.87deg);
+  overflow: auto;
+  z-index: -99;
   .hero-body-details{
     margin-top: 300px;
   }
