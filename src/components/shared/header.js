@@ -3,7 +3,7 @@ import '../../styles/components/header.scss';
 
 const Header = () => (
   <header className="navbar">
-    <h3>Authors Haven</h3>
+    <h3>AuthorsHaven</h3>
     <nav>
       <ul className="navbar">
         <li className="nav-item nav-link">Explore</li>
