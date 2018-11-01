@@ -1,19 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Signin UI container should render as expected 1`] = `
-<Signin>
-  <div>
-    <input
-      type="text"
-    />
-    <input
-      type="text"
-    />
-    <button
-      type="button"
-    >
-      Sign In
-    </button>
-  </div>
-</Signin>
+exports[`Signin UI render features container should render as expected 1`] = `
+<_default>
+  <Provider
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+  >
+    <Connect(Signin)>
+      <Signin
+        signin={[Function]}
+      >
+        <div>
+          <form
+            onSubmit={[Function]}
+          >
+            <input
+              onChange={[Function]}
+              placeholder="email"
+              type="text"
+              value=""
+            />
+            <input
+              onChange={[Function]}
+              placeholder="password"
+              type="text"
+              value=""
+            />
+            <div />
+            <button
+              type="submit"
+            >
+              Sign In
+            </button>
+          </form>
+        </div>
+      </Signin>
+    </Connect(Signin)>
+  </Provider>
+</_default>
 `;
