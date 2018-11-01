@@ -103,20 +103,25 @@ class Signup extends Component {
 
           <p>{this.props.message}</p>
           <div>
-            <label htmlFor="firstName">First Name:</label>
-            <input
-              type="text"
-              value={this.state.firstname}
-              onChange={this.handleChange}
-              name="firstname"
-              id="firstName"
-              placeholder="First Name"
-            />
+            <label htmlFor="firstName">
+            First Name:
+              <input
+                type="text"
+                value={this.state.firstname}
+                onChange={this.handleChange}
+                name="firstname"
+                id="firstName"
+                placeholder="First Name"
+              />
+
+            </label>
             <p>{this.state.firstnameError}</p>
           </div>
 
           <div>
-            <label htmlFor="lastName">Last Name:</label>
+            <label htmlFor="lastName">
+            Last Name:
+            </label>
             <input
               type="text"
               value={this.state.lastname}
@@ -129,41 +134,44 @@ class Signup extends Component {
           </div>
 
           <div>
-            <label htmlFor="email">E-Mail:</label>
-            <input
-              type="email"
-              value={this.state.email}
-              onChange={this.handleChange}
-              name="email"
-              id="email"
-              placeholder="E-Mail"
-            />
+            <label htmlFor="email">E-Mail:
+              <input
+                type="email"
+                value={this.state.email}
+                onChange={this.handleChange}
+                name="email"
+                id="email"
+                placeholder="E-Mail"
+              />
+            </label>
             <p>{this.state.emailError}</p>
           </div>
 
           <div>
-            <label htmlFor="password">Password:</label>
-            <input
-              type="password"
-              value={this.state.password}
-              onChange={this.handleChange}
-              name="password"
-              id="password"
-              placeholder="Password"
-            />
+            <label htmlFor="password">Password:
+              <input
+                type="password"
+                value={this.state.password}
+                onChange={this.handleChange}
+                name="password"
+                id="password"
+                placeholder="Password"
+              />
+            </label>
             <p>{this.state.passwordError}</p>
           </div>
 
           <div>
-            <label htmlFor="confirmPassword">Confirm Password:</label>
-            <input
-              type="password"
-              value={this.state.confirmPassword}
-              onChange={this.handleChange}
-              name="confirmPassword"
-              id="confirmPassword"
-              placeholder="Confirm Password"
-            />
+            <label htmlFor="confirmPassword">Confirm Password:
+              <input
+                type="password"
+                value={this.state.confirmPassword}
+                onChange={this.handleChange}
+                name="confirmPassword"
+                id="confirmPassword"
+                placeholder="Confirm Password"
+              />
+            </label>
             <p>{this.state.confirmPasswordError}</p>
           </div>
           <div>

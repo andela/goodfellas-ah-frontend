@@ -5,6 +5,9 @@
   "main": "index.js",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
     "node-sass": "^4.9.4",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
@@ -13,9 +16,7 @@
     "react-scripts": "2.0.5",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.5",
-    "redux-thunk": "^2.3.0",
-    "enzyme": "^3.7.0",
-    "enzyme-adapter-react-16": "^1.6.0"
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
