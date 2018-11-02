@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import { forgotPassword } from '../actions/authActions';
 
 class ForgotPassword extends Component {
@@ -9,14 +8,16 @@ class ForgotPassword extends Component {
     const userEmail = {
       email: e.target.email.value,
     };
-    this.props.forgotPassword(userEmail, this.props.history);
+    this.props.forgotPassword(userEmail);
   };
 
   render() {
+    const { successMessage, errorMessage } = this.props.auth;
     return (
       <form onSubmit={this.handleForgotPassword}>
         <input type="text" name="email" placeholder="input email address" />
         <input type="submit" value="submit" />
+        {successMessage ? <div>{successMessage}</div> : <div>{errorMessage}</div>}
       </form>
     );
   }
@@ -28,4 +29,4 @@ const mapStateToProps = (state) => ({
 export default connect(
   mapStateToProps,
   { forgotPassword },
-)(withRouter(ForgotPassword));
+)(ForgotPassword);

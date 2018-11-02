@@ -14,11 +14,13 @@ class ResetPassword extends Component {
   };
 
   render() {
+    const { successMessage, errorMessage } = this.props.auth;
     return (
       <form onSubmit={this.onSubmit}>
         <input type="text" name="password" placeholder="input new password" />
         <input type="text" name="confirmPassword" placeholder="confirm new password" />
         <input type="submit" value="submit" />
+        {successMessage ? <div>{successMessage}</div> : <div>{errorMessage}</div>}
       </form>
     );
   }
