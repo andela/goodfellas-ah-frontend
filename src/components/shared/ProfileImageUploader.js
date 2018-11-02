@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../styles/components/profileImageUploader.scss';
 import icons from '../../assets/icons.svg';
 
 const ProfileImageUploader = (props) => (

@@ -4,7 +4,6 @@ import ProfileImageUploader from '../components/shared/ProfileImageUploader';
 import InputBox from '../components/shared/InputBox';
 import TextBox from '../components/shared/TextBox';
 import ButtonOutline from '../components/shared/ButtonOutline';
-import '../styles/views/editProfile.scss';
 
 export default () => (
   <Body className="edit-profile">

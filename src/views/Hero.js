@@ -1,7 +1,6 @@
 import React from 'react';
 import Card from '../components/shared/articleCard';
 import Header from '../components/shared/Header';
-import '../styles/views/hero.scss';
 
 const Hero = () => (
   <div>
