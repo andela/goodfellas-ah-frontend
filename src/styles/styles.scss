@@ -1,9 +1,3 @@
-.App {
-  text-align: center;
- nav ul { list-style-type: none; }
-
-  p {
-  	color: red;
-  }
-}
-
+@import './components/auth.scss';
+@import './components/signup.scss';
+@import './components/author-writing.scss';

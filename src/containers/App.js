@@ -1,32 +1,17 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
-import HomePage from '../components/HomePage';
-import Login from '../components/Login';
-import Profile from '../components/Profile';
-import Signup from './Signup';
+import { Route } from 'react-router-dom';
+import Hero from '../views/Hero';
+import SigninForm from '../containers/SigninForm';
+import Profile from '../views/Profile';
+import Auth from '../views/Auth'
+import SignupForm from '../containers/SignupForm';
 import '../styles/styles.scss';
 
 export default () => (
-  <div className="App">
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/Login">Login</Link>
-        </li>
-        <li>
-          <Link to="/Signup">Signup</Link>
-        </li>
-        <li>
-          <Link to="/user/profile">Profile</Link>
-        </li>
-      </ul>
-    </nav>
-    <Route exact path="/" component={HomePage} />
-    <Route path="/Login" component={Login} />
-    <Route path="/Signup" component={Signup} />
+  <div>
+    <Route exact path="/" component={Hero} />
+    <Route path="/Signup" render={(props) => (<Auth {...props } page={<SignupForm/>}/>)} />
+    <Route path="/Signin" render={(props) => (<Auth {...props } page={<SigninForm/>}/>)} />
     <Route path="/user/profile" component={Profile} />
   </div>
 

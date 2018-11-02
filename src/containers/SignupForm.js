@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import processSignUp from '../actions/signupActions';
+import { Link } from 'react-router-dom';
+import { signup } from '../actions/authActions';
+import facebook from '../assets/facebook-image.png';
+import google from '../assets/google-image.png';
+import twitter from '../assets/twitter-image.png';
+
 import '../styles/styles.scss';
 
 
-class Signup extends Component {
+class SignupForm extends Component {
   state = {
     // input fields
     firstname: '',
@@ -66,15 +71,16 @@ class Signup extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const fieldNames = {
-      firstname: 'First Name',
-      lastname: 'Last Name',
-      email: 'Email',
+      firstname: 'Firstname',
+      lastname: 'Lastname',
+      email: 'E-mail',
       password: 'Password',
       confirmPassword: 'Confirm Password',
     };
 
     const fields = Object.keys(fieldNames);
-
+    
+    // run validation rules for each field
     const isValid = fields.map((field) => this.validateField(field, fieldNames));
 
     const {
@@ -82,11 +88,16 @@ class Signup extends Component {
     } = this.state;
 
     const body = {
-      firstname, lastname, email, password,
+      firstname: firstname.trim(),
+      lastname: lastname.trim(),
+      email: email.trim(),
+      password: password.trim(),
     };
 
+    // processes user sign up when validation rules
+    // pass for all fields
     if (isValid.includes(false) === false) {
-      this.props.processSignUp(body, this.props.history);
+      this.props.signup(body, this.props.history);
     }
   }
 
@@ -98,85 +109,103 @@ class Signup extends Component {
 
   render() {
     return (
-      <div>
+      <div className="signupForm">
         <form onSubmit={this.handleSubmit}>
+        <div className="signup-buttons">
+        <Link className="both-links" to='/Signup'>
+        <input type="button" className="buttons" id="sign-up" value="SIGN UP" />
+         </Link>
+         <Link className="both-links" to='/Signin'>
+         <input type="button" className="buttons" id="sign-in" value="SIGN IN"/>
+         </Link>
+        </div>
 
-          <p>{this.props.message}</p>
-          <div>
-            <label htmlFor="firstName">
-            First Name:
+          <p className="errorField">{this.props.message}</p>
+          <div className="signupFieldDiv">
               <input
                 type="text"
+                className="signupField"
                 value={this.state.firstname}
                 onChange={this.handleChange}
                 name="firstname"
                 id="firstName"
-                placeholder="First Name"
+                placeholder="Firstname"
               />
-
-            </label>
-            <p>{this.state.firstnameError}</p>
+            <p className="errorField">{this.state.firstnameError}</p>
           </div>
 
           <div>
-            <label htmlFor="lastName">
-            Last Name:
-            </label>
             <input
               type="text"
+              className="signupField"
               value={this.state.lastname}
               onChange={this.handleChange}
               name="lastname"
               id="lastName"
-              placeholder="Last Name"
+              placeholder="Lastname"
             />
-            <p>{this.state.lastnameError}</p>
+            <p className="errorField">{this.state.lastnameError}</p>
           </div>
 
           <div>
-            <label htmlFor="email">E-Mail:
               <input
                 type="email"
+                className="signupField"
                 value={this.state.email}
                 onChange={this.handleChange}
                 name="email"
                 id="email"
-                placeholder="E-Mail"
+                placeholder="E-mail"
               />
-            </label>
-            <p>{this.state.emailError}</p>
+            <p className="errorField">{this.state.emailError}</p>
           </div>
 
           <div>
-            <label htmlFor="password">Password:
               <input
                 type="password"
+                className="signupField"
                 value={this.state.password}
                 onChange={this.handleChange}
                 name="password"
                 id="password"
                 placeholder="Password"
               />
-            </label>
-            <p>{this.state.passwordError}</p>
+            <p className="errorField">{this.state.passwordError}</p>
           </div>
 
           <div>
-            <label htmlFor="confirmPassword">Confirm Password:
               <input
                 type="password"
+                className="signupField"
                 value={this.state.confirmPassword}
                 onChange={this.handleChange}
                 name="confirmPassword"
                 id="confirmPassword"
                 placeholder="Confirm Password"
               />
-            </label>
-            <p>{this.state.confirmPasswordError}</p>
+            <p className="errorField">{this.state.confirmPasswordError}</p>
           </div>
           <div>
-            <button type="submit">Submit</button>
+            <button className="signupButton" type="submit">SIGN UP</button>
           </div>
+
+          <div className="or">Or</div>
+
+          <div className="social-icons">
+          <Link className="social-link" to='#'>
+          <div className="facebook">
+          <img src={facebook} alt=""/></div>
+          </Link>
+
+          <Link className="social-link" to='#'>
+          <div className="google"><img src={google} alt=""/></div>
+          </Link>
+
+         <Link className="social-link" to='#'> <div className="twitter">
+          <img src={twitter} alt=""/></div>
+          </Link>
+          </div>
+
         </form>
       </div>);
   }
@@ -185,4 +214,4 @@ class Signup extends Component {
 
 const mapStateToProps = (state) => ({ message: state.auth.errorMessage });
 
-export default connect(mapStateToProps, { processSignUp })(Signup);
+export default connect(mapStateToProps, { signup })(SignupForm);
