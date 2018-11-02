@@ -4,19 +4,17 @@ import { withRouter } from 'react-router-dom';
 import { forgotPassword } from '../actions/authActions';
 
 class ForgotPassword extends Component {
-  onSubmit = (e) => {
-    const { forgotPassword: resetPassword } = this.props;
-    const { history } = this.props;
+  handleForgotPassword = (e) => {
     e.preventDefault();
     const userEmail = {
       email: e.target.email.value,
     };
-    resetPassword(userEmail, history);
+    this.props.forgotPassword(userEmail, this.props.history);
   };
 
   render() {
     return (
-      <form onSubmit={this.onSubmit}>
+      <form onSubmit={this.handleForgotPassword}>
         <input type="text" name="email" placeholder="input email address" />
         <input type="submit" value="submit" />
       </form>

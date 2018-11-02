@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { resetPassword } from '../actions/authActions';
 
 class ResetPassword extends Component {
   onSubmit = (e) => {
-    const { resetPassword: newPassword } = this.props;
     e.preventDefault();
     const userData = {
       password: e.target.password.value,
       confirm_password: e.target.confirmPassword.value,
     };
-    newPassword(userData);
+    this.props.resetPassword(userData, this.props.history);
   };
 
   render() {
@@ -27,4 +27,4 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 });
 
-export default connect(mapStateToProps, { resetPassword })(ResetPassword);
+export default connect(mapStateToProps, { resetPassword })(withRouter(ResetPassword));
