@@ -1,9 +1,4 @@
-.App {
-  text-align: center;
- nav ul { list-style-type: none; }
-
-  p {
-  	color: red;
-  }
-}
-
+@import 'components/reset.scss';
+@import 'components/fonts.scss';
+@import '../..//node_modules/bootstrap/scss/bootstrap.scss';
+@import 'components/index.scss';
