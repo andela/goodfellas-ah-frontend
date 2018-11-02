@@ -2,7 +2,7 @@ import React from 'react';
 
 const Profile = () => (
   <div>
-    This is the Profile container
+    This is the Profile view
   </div>
 );
 

@@ -19,25 +19,63 @@ exports[`Signin UI render features container should render as expected 1`] = `
       >
         <div>
           <form
+            className="auth-form"
             onSubmit={[Function]}
           >
-            <input
-              onChange={[Function]}
-              placeholder="email"
-              type="text"
-              value=""
+            <fieldset
+              className="form-group"
+            >
+              <div
+                className="form-group"
+              >
+                <label
+                  className="sr-only"
+                  htmlFor="useremail"
+                >
+                  User email
+                </label>
+                <input
+                  className="form-control"
+                  id="useremail"
+                  onChange={[Function]}
+                  placeholder="email"
+                  type="text"
+                  value=""
+                />
+                <div
+                  className="error"
+                />
+              </div>
+              <div
+                className="form-group"
+              >
+                <label
+                  className="sr-only"
+                  htmlFor="userpassword"
+                >
+                  User password
+                </label>
+                <input
+                  className="form-control"
+                  id="userpassword"
+                  onChange={[Function]}
+                  placeholder="password"
+                  type="text"
+                  value=""
+                />
+                <div
+                  className="error"
+                />
+              </div>
+            </fieldset>
+            <div
+              className="error"
             />
-            <input
-              onChange={[Function]}
-              placeholder="password"
-              type="text"
-              value=""
-            />
-            <div />
             <button
+              className="btn auth-submit-button"
               type="submit"
             >
-              Sign In
+              SIGN IN
             </button>
           </form>
         </div>

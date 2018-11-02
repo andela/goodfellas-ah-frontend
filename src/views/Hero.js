@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = () => (
   <div>
-    This is the Hero container
+    This is the Hero view
   </div>
 );
 

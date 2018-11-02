@@ -1,0 +1,92 @@
+.auth {
+      background-color: #e5e5e5;
+      min-height: 100vh;
+
+      .auth-image-divide {
+        clip-path: polygon(96% 6%, 100% 0, 100% 100%, 0% 100%);
+        width: 5vw;
+        margin-left: -5vw;
+        background-color: #e5e5e5;
+      }
+
+	.auth-image {
+        background-image: url("../assets/authImage.jpg");
+        background-size: cover;
+	}
+
+      .auth-image > div:first-child {
+        font-family: "Annie Use Your Telescope";
+        font-size: 48px;
+        color: #ffffff;
+      }
+
+      .auth-image > div:nth-of-type(2) {
+        font-family: Antic;
+        font-size: 22px;
+        color: #ffffff;
+      }
+
+	.auth-title {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+	}
+
+	.auth-tagline {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+	}
+
+      .auth-form-wrapper {
+        margin: auto;
+
+        button {
+          font-family: "Antic";
+        }
+
+        .auth-button-toggle {
+          width: 275px;
+          height: 60px;
+          box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+          background-color: #ffffff;
+          color: #57b182;
+        }
+
+        .auth-button-active {
+          background-color: #57b182;
+          color: #ffffff;
+        }
+
+        .auth-form {
+          margin-top: 1%;
+
+          input {
+            width: 550px;
+            border: none;
+            border-bottom: solid 2px #000000;
+            background-color: #e5e5e5;
+            border-radius: 0;
+            padding-top: 60px;
+          }
+          
+          input[placeholder="email"], input[placeholder="password"] {
+            padding-bottom: 10px;
+          }
+
+          .auth-submit-button {
+            width: 550px;
+            height: 50px;
+            background-color: #57b182;
+            margin-top: 20px;
+            color: #ffffff;
+          }
+        }
+      }
+
+      .error {
+        color: red;
+      }
+}

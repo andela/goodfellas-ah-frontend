@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import Signin from './Signin';
-import Hero from './Hero';
-import Profile from './Profile';
+import Auth from '../views/Auth';
+import Hero from '../views/Hero';
+import Profile from '../views/Profile';
 import Header from '../components/shared/Header';
 import authenticate from './hoc/authenticate';
 import '../styles/styles.scss';
@@ -11,12 +11,6 @@ const User = () => (
   <div>
     <Header />
     <Route path="/user/profile" component={Profile} />
-  </div>
-);
-
-const Auth = () => (
-  <div>
-    <Route path="/auth/signin" component={Signin} />
   </div>
 );
 

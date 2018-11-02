@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import Signin from '../../containers/Signin';
+import Signin from '../../containers/SigninForm';
 import Root from '../../root';
 
 let wrapped;
