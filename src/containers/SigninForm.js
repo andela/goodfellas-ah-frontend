@@ -39,9 +39,8 @@ class Signin extends Component {
               <label className="sr-only" htmlFor="useremail">User email</label>
               <input
                 type="text"
-                placeholder="email"
+                placeholder="Email"
                 id="useremail"
-                className="form-control"
                 value={email}
                 onChange={(event) => this.setState({ email: event.target.value })}
               />
@@ -50,18 +49,18 @@ class Signin extends Component {
             <div className="form-group">
               <label className="sr-only" htmlFor="userpassword">User password</label>
               <input
-                type="text"
-                placeholder="password"
+                type="password"
+                placeholder="Password"
                 id="userpassword"
-                className="form-control"
                 value={password}
                 onChange={(event) => this.setState({ password: event.target.value })}
               />
               <div className="error">{validationError.password}</div>
             </div>
           </fieldset>
+          <div className="auth-change-password">Forgot Password?</div>
           <div className="error">{errorMessage}</div>
-          <button className="btn auth-submit-button" type="submit">SIGN IN</button>
+          <button className="auth-submit-button" type="submit">SIGN IN</button>
         </form>
       </div>
     );

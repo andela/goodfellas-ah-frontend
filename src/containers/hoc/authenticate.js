@@ -14,7 +14,7 @@ export default (ChildComponent) => {
     checkAuthStatus() {
       const { auth, history } = this.props;
       if (!auth) {
-        history.push('/');
+        history.push('/auth');
       }
     }
 
