@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../../styles/components/header.scss';
 import menuIcon from '../../assets/icons8-menu.svg';
 
 const Header = () => (
