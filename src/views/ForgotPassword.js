@@ -27,4 +27,7 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 });
 
-export default connect(mapStateToProps, { forgotPassword })(withRouter(ForgotPassword));
+export default connect(
+  mapStateToProps,
+  { forgotPassword },
+)(withRouter(ForgotPassword));

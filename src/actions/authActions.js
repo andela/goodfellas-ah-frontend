@@ -11,7 +11,6 @@ export const loginUser = (userData) => ({
 export const forgotPassword = (userData, history) => async (dispatch) => {
   try {
     const response = await axios.post('api/forgotPassword', userData);
-    console.log(response);
     localStorage.setItem('resetPasswordToken', response.data.token);
     history.push('/resetPassword');
   } catch (error) {
@@ -20,8 +19,8 @@ export const forgotPassword = (userData, history) => async (dispatch) => {
 };
 export const resetPassword = (userData) => async (dispatch) => {
   try {
-    const response = await axios.post('api/resetPassword', userData);
-    console.log(response);
+    const token = localStorage.resetPasswordToken;
+    const response = await axios.post(`api/resetPassword?token=${token}`, userData);
   } catch (error) {
     dispatch({ type: types.AUTH_ERROR, payload: error.response.data.message });
   }
