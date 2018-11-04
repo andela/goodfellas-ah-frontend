@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-// import { Link } from 'react-router-dom';
 import App from '../../containers/App';
 import Hero from '../../views/Hero';
 import Header from '../../components/shared/VisitorHeader';
