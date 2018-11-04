@@ -211,7 +211,7 @@ $faintblue: #F4F9FC;
   margin: 0vh auto;
   @media only screen and (max-width: 600px) {
     width: 100vw;
-    height: 315vh;
+    height: 375vh;
     text-align: center;
   }
   .hero-lowerbody-details{
@@ -248,21 +248,6 @@ $faintblue: #F4F9FC;
         margin: 17px;
       }
       }
-    }
-  }
-
-  .hero-moreArticles{
-    margin: auto;
-    justify-content: center;
-    p {
-      font-family: Antic;
-      font-size: 18px;
-      color: #63ce96;
-      text-align: center;
-    }
-    img{
-      height: 20px;
-      margin: 3px 5px;
     }
   }
 }

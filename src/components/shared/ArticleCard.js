@@ -1,16 +1,22 @@
 import React from 'react';
 import likesIcon from '../../assets/icons8-heart-outline-48-grey.png';
 import authorProfileImage from '../../assets/john.jpg';
+import downArrow from '../../assets/icons8-expand-arrow-24.png';
 
 const Card = ({ articles }) => {
-  const CardList = articles.map((eachCard) => {
-    const splicedBody = eachCard.body.slice(0, 150);
+  const displayArticles = () => {
+    const display = articles.splice(0, 6);
+    return display;
+  };
+
+  const CardList = displayArticles().map((eachCard) => {
+    const slicedBody = eachCard.body.slice(0, 150);
     return (
       <div className="row col-lg-3 hero-card" key={eachCard.id}>
         <div className="hero-card-details col-sm-7">
           <h6>{eachCard.title}</h6>
           <p>
-            {splicedBody}
+            {slicedBody}...
           </p>
           <div className="row hero-card-author">
             <img
@@ -29,8 +35,14 @@ const Card = ({ articles }) => {
     );
   });
   return (
-    <div className="row card-wrapper">
-      { CardList }
+    <div>
+      <div className="row card-wrapper">
+        { CardList }
+      </div>
+      <div className="hero-moreArticles row">
+        <p>More Articles</p>
+        <img src={downArrow} alt="" />
+      </div>
     </div>
   );
 };

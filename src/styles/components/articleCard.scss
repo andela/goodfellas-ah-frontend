@@ -15,6 +15,7 @@
   box-shadow: 5px 14px 35px 0 rgba(0, 0, 0, 0.19);
     @media only screen and (max-width: 600px) {
       width: 90vw;
+      margin-bottom: 100px;
     }
   .hero-card-details{
     margin-top: 30px;
@@ -67,3 +68,19 @@
     }
   }
 }
+
+.hero-moreArticles{
+  cursor: pointer;
+  margin: auto;
+  justify-content: center;
+  p {
+    font-family: Antic;
+    font-size: 18px;
+    color: #63ce96;
+    text-align: center;
+  }
+  img{
+    height: 20px;
+    margin: 3px 5px;
+  }
+  }

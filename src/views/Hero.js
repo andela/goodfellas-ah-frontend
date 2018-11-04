@@ -1,36 +1,19 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap';
-import axios from 'axios';
+import { connect } from 'react-redux';
+import getArticles from '../actions/articleActions';
 import Card from '../components/shared/ArticleCard';
 import Header from '../components/shared/VisitorHeader';
 import Footer from '../components/shared/Footer';
+import Loading from '../components/shared/Loading';
 import bookImage from '../assets/icons8-literature-48.png';
 import heartImage from '../assets/icons8-heart-outline-48.png';
 import authorProfileImage from '../assets/john.jpg';
-import downArrow from '../assets/icons8-expand-arrow-24.png';
 
 class Hero extends Component {
-  state = {
-    articles: null,
-  }
-
   componentDidMount() {
-    console.log('Cool, cool cool cool');
-    axios
-      .get('/api/articles/feed/1')
-      .then((res) => {
-        // Check if any articles were returned
-        if (res.data.articles.length < 1) {
-          // If none, return nothing
-          console.log('Jake Peralta is an idiot');
-        } else {
-          // If yes limit to 6 and pass as props
-          this.setState({ articles: res.data.articles });
-          console.log(this.state.articles);
-        }
-      })
-      .catch((error) => console.log(error));
+    this.props.getArticles();
   }
 
   render() {
@@ -129,13 +112,9 @@ class Hero extends Component {
             </p>
           </div>
           <div className="hero-lowerbody-articles">
-            {this.state.articles
-              ? <Card articles={this.state.articles} />
-              : <div>Loading...</div>}
-            <div className="hero-moreArticles row">
-              <p>More Articles</p>
-              <img src={downArrow} alt="" />
-            </div>
+            {this.props.articles
+              ? <Card articles={this.props.articles} error={this.props.error} />
+              : <Loading />}
           </div>
         </section>
         <Footer />
@@ -144,4 +123,8 @@ class Hero extends Component {
   }
 }
 
-export default Hero;
+function mapStatetoProps(state) {
+  return { articles: state.articles.articles.articles, error: state.articles.error.response };
+}
+
+export default connect(mapStatetoProps, { getArticles })(Hero);
