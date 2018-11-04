@@ -4,3 +4,4 @@ export const ERROR_DISPATCH = 'TEST_DISPATCH';
 export const AUTH_USER = 'signin_user';
 export const AUTH_ERROR = 'AUTH_ERROR';
 export const SUCCESS_MSG = 'SUCCESS_MSG ';
+// export const AUTH_ERROR = 'signin_error';
