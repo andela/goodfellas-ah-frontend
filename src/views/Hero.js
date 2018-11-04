@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import 'bootstrap';
 import { connect } from 'react-redux';
 import getArticles from '../actions/articleActions';
-import Card from '../components/shared/ArticleCard';
+import Card from '../containers/ArticleCard';
 import Header from '../components/shared/VisitorHeader';
 import Footer from '../components/shared/Footer';
 import Loading from '../components/shared/Loading';

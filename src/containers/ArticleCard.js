@@ -1,7 +1,7 @@
 import React from 'react';
-import likesIcon from '../../assets/icons8-heart-outline-48-grey.png';
-import authorProfileImage from '../../assets/john.jpg';
-import downArrow from '../../assets/icons8-expand-arrow-24.png';
+import likesIcon from '../assets/icons8-heart-outline-48-grey.png';
+import authorProfileImage from '../assets/john.jpg';
+import downArrow from '../assets/icons8-expand-arrow-24.png';
 
 const Card = ({ articles }) => {
   const displayArticles = () => {
