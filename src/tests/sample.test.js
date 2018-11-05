@@ -4,6 +4,8 @@ import { registerUser } from '../actions/authActions';
 describe('auth reducer', () => {
   test('is correct', () => {
     const finalState = {
+      articles: [],
+      error: [],
       isAuthenticated: false,
       user: { name: 'tony', email: 'tony@gmail.com' },
     };

@@ -12,7 +12,8 @@ class Card extends Component {
   }
 
   displayArticles = (start) => {
-    return this.props.articles.slice(start, start + 6);
+    const displayedArticles = this.props.articles.slice(start, start + 6);
+    return displayedArticles;
   }
 
   getArticle = () => {
