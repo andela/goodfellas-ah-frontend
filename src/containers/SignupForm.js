@@ -3,7 +3,7 @@ import React from 'react';
 const SignupForm = () => (
   <div>
     <form className="auth-form">
-      <fieldset className="form-group">
+      <fieldset>
         <div className="form-group">
           <label className="sr-only" htmlFor="firstname">First name</label>
           <input
@@ -45,7 +45,9 @@ const SignupForm = () => (
           />
         </div>
       </fieldset>
-      <button className="auth-submit-button" type="submit">SIGN UP</button>
+      <div>
+        <button className="auth-submit-button" type="submit">SIGN UP</button>
+      </div>
     </form>
   </div>
 );

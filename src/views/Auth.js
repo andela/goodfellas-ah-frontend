@@ -24,44 +24,48 @@ class Auth extends Component {
     const activeSignup = (active === 'signup' ? 'auth-button-active' : null);
 
     return (
-      <div className="container-fluid">
-        <div className="row auth">
-          <section className="col auth-image">
-            <div className="auth-title">Authors Haven</div>
-            <div className="auth-tagline">A Community of Like Minded Authors</div>
-          </section>
-          <div className="auth-image-divide" />
+      <div className="auth">
+        <section className="auth-image">
+          <div className="auth-title">Authors Haven</div>
+          <div className="auth-tagline">A Community of Like Minded Authors</div>
+        </section>
+        <div className="auth-image-divide" />
 
-          <section className="col auth-form-wrapper">
-            <button
-              type="button"
-              className={`auth-button-toggle ${activeSignup}`}
-              onClick={() => this.changeForm('signup')}
-            >
-              SIGN UP
-            </button>
-            <button
-              type="button"
-              className={`auth-button-toggle ${activeSignin}`}
-              onClick={() => this.changeForm('signin')}
-            >
-              SIGN IN
-            </button>
+        <section className="auth-form-wrapper">
+          <div>
+            <div className="auth-toggle-wrapper">
+              <button
+                type="button"
+                className={`auth-button-toggle ${activeSignup}`}
+                onClick={() => this.changeForm('signup')}
+              >
+                SIGN UP
+              </button>
+              <button
+                type="button"
+                className={`auth-button-toggle ${activeSignin}`}
+                onClick={() => this.changeForm('signin')}
+              >
+                SIGN IN
+              </button>
+            </div>
             {this.renderAuthForm(active)}
             <div className="auth-form-or">Or</div>
-            <div className="auth-social-icons">
-              <div className="auth-social-button">
-                <img src={facebook} alt="facebook signup" />
-              </div>
-              <div className="auth-social-button">
-                <img src={google} alt="google signup" />
-              </div>
-              <div className="auth-social-button">
-                <img src={twitter} alt="twitter signup" />
+            <div className="auth-icon-wrapper">
+              <div className="auth-social-icons">
+                <div className="auth-social-button">
+                  <img src={facebook} alt="facebook signup" />
+                </div>
+                <div className="auth-social-button">
+                  <img src={google} alt="google signup" />
+                </div>
+                <div className="auth-social-button">
+                  <img src={twitter} alt="twitter signup" />
+                </div>
               </div>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
       </div>
     );
   }

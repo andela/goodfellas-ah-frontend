@@ -17,68 +17,71 @@ exports[`Signin UI render features container should render as expected 1`] = `
       <Signin
         signin={[Function]}
       >
-        <div>
-          <form
-            className="auth-form"
-            onSubmit={[Function]}
-          >
-            <fieldset
+        <form
+          className="auth-form"
+          onSubmit={[Function]}
+        >
+          <fieldset>
+            <div
               className="form-group"
             >
-              <div
-                className="form-group"
+              <label
+                className="sr-only"
+                htmlFor="useremail"
               >
-                <label
-                  className="sr-only"
-                  htmlFor="useremail"
-                >
-                  User email
-                </label>
-                <input
-                  className="form-control"
-                  id="useremail"
-                  onChange={[Function]}
-                  placeholder="email"
-                  type="text"
-                  value=""
-                />
-                <div
-                  className="error"
-                />
-              </div>
+                User email
+              </label>
+              <input
+                id="useremail"
+                onChange={[Function]}
+                placeholder="Email"
+                type="text"
+                value=""
+              />
               <div
-                className="form-group"
-              >
-                <label
-                  className="sr-only"
-                  htmlFor="userpassword"
-                >
-                  User password
-                </label>
-                <input
-                  className="form-control"
-                  id="userpassword"
-                  onChange={[Function]}
-                  placeholder="password"
-                  type="text"
-                  value=""
-                />
-                <div
-                  className="error"
-                />
-              </div>
-            </fieldset>
+                className="error"
+              />
+            </div>
             <div
-              className="error"
-            />
+              className="form-group"
+            >
+              <label
+                className="sr-only"
+                htmlFor="userpassword"
+              >
+                User password
+              </label>
+              <input
+                id="userpassword"
+                onChange={[Function]}
+                placeholder="Password"
+                type="password"
+                value=""
+              />
+              <div
+                className="error"
+              />
+            </div>
+          </fieldset>
+          <div>
+            <div
+              className="auth-change-password"
+            >
+              Forgot Password?
+            </div>
+          </div>
+          <div
+            className="error"
+          />
+          <div>
             <button
-              className="btn auth-submit-button"
+              className="auth-submit-button"
               type="submit"
             >
               SIGN IN
             </button>
-          </form>
-        </div>
+          </div>
+        </form>
       </Signin>
     </Connect(Signin)>
   </Provider>
