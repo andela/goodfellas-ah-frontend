@@ -14,11 +14,28 @@ class ForgotPassword extends Component {
   render() {
     const { successMessage, errorMessage } = this.props.auth;
     return (
-      <form onSubmit={this.handleForgotPassword}>
-        <input type="text" name="email" placeholder="input email address" />
-        <input type="submit" value="submit" />
-        {successMessage ? <div>{successMessage}</div> : <div>{errorMessage}</div>}
-      </form>
+      <div className="pwreset">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6 m-auto">
+              <p className="lead text-center">Reset password</p>
+              <form onSubmit={this.handleForgotPassword}>
+                <div className="form-group">
+                  <input type="email" className="form-control form-control-lg" placeholder="Email Address" name="email" />
+                </div>
+                {successMessage ? (
+                  <div className="successmsg">
+                    <p>{successMessage}</p>
+                  </div>
+                ) : (
+                  <div className="errormsg"><p>{errorMessage}</p></div>
+                )}
+                <input type="submit" className="btn btn-block mt-4 resetbtn" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     );
   }
 }

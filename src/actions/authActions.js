@@ -9,7 +9,7 @@ export const forgotPassword = (userData) => async (dispatch) => {
     const response = await axios.post('api/forgotPassword', userData);
     dispatch({ type: types.SUCCESS_MSG, payload: response.data.message });
   } catch (error) {
-    dispatch({ type: types.AUTH_ERROR, payload: error.response.data.message });
+    dispatch({ type: types.RESET_ERROR, payload: error.response.data.message });
   }
 };
 export const resetPassword = (userData, history) => async (dispatch) => {
@@ -17,9 +17,8 @@ export const resetPassword = (userData, history) => async (dispatch) => {
     const { token } = queryString.parse(history.location.search);
     const response = await axios.post(`api/resetPassword?token=${token.trim()}`, userData);
     dispatch({ type: types.SUCCESS_MSG, payload: response.data.message });
-    history.push('/signin');
   } catch (error) {
-    dispatch({ type: types.AUTH_ERROR, payload: error.response.data.message });
+    dispatch({ type: types.RESET_ERROR, payload: error.response.data.message });
   }
 };
 
