@@ -1,9 +1,5 @@
 import * as types from '../actions/actionTypes';
-
-const initialState = {
-  authenticated: '',
-  errorMessage: '',
-};
+import initialState from './initialState';
 
 export default (state = initialState, action) => {
   switch (action.type) {

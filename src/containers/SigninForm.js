@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { signin } from '../actions/authActions';
 import { validateAuth } from '../lib/validation';
+import AuthInput from '../components/shared/AuthInput';
 
 class Signin extends Component {
   state = {
@@ -34,30 +35,22 @@ class Signin extends Component {
     const { errorMessage } = this.props;
     return (
       <form onSubmit={this.handleSubmit}>
-        <div>
-          <label className="sr-only" htmlFor="useremail">User email</label>
-          <input
-            type="text"
-            className="signupField"
-            placeholder="Email"
-            id="email"
-            value={email}
-            onChange={(event) => this.handleChange(event, 'email')}
-          />
-          <div className="errorField">{validationError.email}</div>
-        </div>
-        <div>
-          <label className="sr-only" htmlFor="userpassword">User password</label>
-          <input
-            type="password"
-            className="signupField"
-            placeholder="Password"
-            id="password"
-            value={password}
-            onChange={(event) => this.handleChange(event, 'password')}
-          />
-          <div className="errorField">{validationError.password}</div>
-        </div>
+        <AuthInput
+          error={validationError}
+          value={email}
+          handleChange={this.handleChange}
+          name="email"
+          type="text"
+          placeholder="Email"
+        />
+        <AuthInput
+          error={validationError}
+          value={password}
+          handleChange={this.handleChange}
+          name="password"
+          type="password"
+          placeholder="Password"
+        />
         <div>
           <div className="change-password">Forgot Password?</div>
         </div>

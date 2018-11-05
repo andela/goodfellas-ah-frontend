@@ -20,44 +20,62 @@ exports[`Signin UI render features container should render as expected 1`] = `
         <form
           onSubmit={[Function]}
         >
-          <div>
-            <label
-              className="sr-only"
-              htmlFor="useremail"
-            >
-              User email
-            </label>
-            <input
-              className="signupField"
-              id="email"
-              onChange={[Function]}
-              placeholder="Email"
-              type="text"
-              value=""
-            />
-            <div
-              className="errorField"
-            />
-          </div>
-          <div>
-            <label
-              className="sr-only"
-              htmlFor="userpassword"
-            >
-              User password
-            </label>
-            <input
-              className="signupField"
-              id="password"
-              onChange={[Function]}
-              placeholder="Password"
-              type="password"
-              value=""
-            />
-            <div
-              className="errorField"
-            />
-          </div>
+          <AuthInput
+            error={Object {}}
+            handleChange={[Function]}
+            name="email"
+            placeholder="Email"
+            type="text"
+            value=""
+          >
+            <div>
+              <label
+                className="sr-only"
+                htmlFor="email"
+              >
+                email
+              </label>
+              <input
+                className="signupField"
+                id="email"
+                onChange={[Function]}
+                placeholder="Email"
+                type="text"
+                value=""
+              />
+              <div
+                className="errorField"
+              />
+            </div>
+          </AuthInput>
+          <AuthInput
+            error={Object {}}
+            handleChange={[Function]}
+            name="password"
+            placeholder="Password"
+            type="password"
+            value=""
+          >
+            <div>
+              <label
+                className="sr-only"
+                htmlFor="password"
+              >
+                password
+              </label>
+              <input
+                className="signupField"
+                id="password"
+                onChange={[Function]}
+                placeholder="Password"
+                type="password"
+                value=""
+              />
+              <div
+                className="errorField"
+              />
+            </div>
+          </AuthInput>
           <div>
             <div
               className="change-password"

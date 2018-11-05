@@ -1,9 +1,9 @@
 import axios from 'axios';
 import * as types from './actionTypes';
 
-export const signin = (formProps, callback) => async (dispatch) => {
+export const signin = (formValues, callback) => async (dispatch) => {
   try {
-    const response = await axios.post('http://localhost:3200/api/auth/signin', formProps);
+    const response = await axios.post('/api/auth/signin', formValues);
 
     dispatch({ type: types.AUTH_USER, payload: response.data.token });
     localStorage.setItem('token', response.data.token);
