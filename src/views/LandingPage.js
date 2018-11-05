@@ -49,7 +49,6 @@ class Hero extends Component {
                 </p>
                 <div className="row hero-card-author">
                   <img
-                    className="authorProfile"
                     src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426069/Authors%20Haven/john.jpg"
                     alt="Author Profile"
                   />

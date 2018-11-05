@@ -1,10 +1,5 @@
 import * as types from '../actions/actionTypes';
-
-const initialState = {
-  isAuthenticated: false,
-  user: {},
-};
-
+import initialState from './initialState/index';
 
 export default (state = initialState, action) => {
   switch (action.type) {
