@@ -19,7 +19,6 @@
     font-size: 16px;
     font-style: bold;
     margin-bottom: 10px;
-    padding-left: 5px;
     outline: none;
 }
 
@@ -66,14 +65,14 @@
     outline: none;
 }
 
-.signupForm .signup-buttons #sign-up {
-    background-color: #25b47e;
-    color: #fff;
-}
-
-.signupForm .signup-buttons #sign-in {
+.signupForm .signup-buttons .sign-in, .signup-buttons .sign-up {
     background-color: #fff;
     color: #25b47e;;
+}
+
+.signupForm .signup-buttons .active {
+    background-color: #25b47e;
+    color: #fff;
 }
 
  .signupForm .errorField{
@@ -81,6 +80,13 @@
     font-size: 15px;
     font-weight: bold;
     margin-top: 0px;
+}
+
+.signupForm .change-password {
+    text-align: right;
+    width: 84%;
+    color: #a6a2a2;
+    font-family: Anaheim;
 }
 
  .signupForm .or{
@@ -141,10 +147,6 @@
     margin-left: 20px;  
 }
 
-
-
-
-
 @media screen and (max-width:800px){  
     .signupForm{
         width: 100%;
@@ -153,7 +155,6 @@
         padding-bottom: 70px;
     }
 }
-
 
 @media screen and (max-width:400px){  
     .signupForm{

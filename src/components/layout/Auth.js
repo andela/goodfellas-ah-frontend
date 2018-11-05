@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import author from '../../assets/author.jpg';
 import facebook from '../../assets/facebook-image.png';
 import google from '../../assets/google-image.png';
 import twitter from '../../assets/twitter-image.png';
+import AuthFormToggle from '../AuthFormToggle';
 
 const Auth = (props) => {
   const { children } = props;
@@ -15,14 +15,7 @@ const Auth = (props) => {
         <p className="authTitle">A community of like minded authors</p>
       </div>
       <div className="signupForm">
-        <div className="signup-buttons">
-          <Link className="both-links" to="/Signup">
-            <input type="button" className="buttons" id="sign-up" value="SIGN UP" />
-          </Link>
-          <Link className="both-links" to="/Signin">
-            <input type="button" className="buttons" id="sign-in" value="SIGN IN" />
-          </Link>
-        </div>
+        <AuthFormToggle {...props} />
         {children}
         <div className="or">Or</div>
         <div className="social-icons">

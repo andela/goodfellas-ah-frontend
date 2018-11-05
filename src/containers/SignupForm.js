@@ -1,55 +1,55 @@
 import React from 'react';
 
 const SignupForm = () => (
-  <div>
-    <form className="auth-form">
-      <fieldset>
-        <div className="form-group">
-          <label className="sr-only" htmlFor="firstname">First name</label>
-          <input
-            type="text"
-            placeholder="Firstname"
-            id="firstname"
-          />
-        </div>
-        <div className="form-group">
-          <label className="sr-only" htmlFor="lastname">Last name</label>
-          <input
-            type="text"
-            placeholder="Lastname"
-            id="lastname"
-          />
-        </div>
-        <div className="form-group">
-          <label className="sr-only" htmlFor="email">Email</label>
-          <input
-            type="text"
-            placeholder="Email"
-            id="email"
-          />
-        </div>
-        <div className="form-group">
-          <label className="sr-only" htmlFor="password">Password</label>
-          <input
-            type="text"
-            placeholder="Password"
-            id="password"
-          />
-        </div>
-        <div className="form-group">
-          <label className="sr-only" htmlFor="passwordConfirm">Password Confirm</label>
-          <input
-            type="text"
-            placeholder="Password Confirm"
-            id="passwordConfirm"
-          />
-        </div>
-      </fieldset>
-      <div>
-        <button className="auth-submit-button" type="submit">SIGN UP</button>
-      </div>
-    </form>
-  </div>
+  <form>
+    <div>
+      <input
+        type="text"
+        className="signupField"
+        id="firstName"
+        placeholder="Firstname"
+      />
+    </div>
+
+    <div>
+      <input
+        type="text"
+        className="signupField"
+        id="lastName"
+        placeholder="Lastname"
+      />
+    </div>
+
+    <div>
+      <input
+        type="email"
+        className="signupField"
+        id="email"
+        placeholder="E-mail"
+      />
+    </div>
+
+    <div>
+      <input
+        type="password"
+        className="signupField"
+        id="password"
+        placeholder="Password"
+      />
+    </div>
+
+    <div>
+      <input
+        type="password"
+        className="signupField"
+        id="confirmPassword"
+        placeholder="Confirm Password"
+      />
+    </div>
+    <div>
+      <button className="signupButton" type="submit">SIGN UP</button>
+    </div>
+  </form>
 );
 
 export default SignupForm;

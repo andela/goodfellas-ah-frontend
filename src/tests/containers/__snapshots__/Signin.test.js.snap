@@ -36,7 +36,7 @@ exports[`Signin UI render features container should render as expected 1`] = `
               value=""
             />
             <div
-              className="error"
+              className="errorField"
             />
           </div>
           <div>
@@ -55,18 +55,18 @@ exports[`Signin UI render features container should render as expected 1`] = `
               value=""
             />
             <div
-              className="error"
+              className="errorField"
             />
           </div>
           <div>
             <div
-              className="auth-change-password"
+              className="change-password"
             >
               Forgot Password?
             </div>
           </div>
           <div
-            className="error"
+            className="errorField"
           />
           <div>
             <button

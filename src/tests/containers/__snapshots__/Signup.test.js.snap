@@ -14,97 +14,56 @@ exports[`Signup UI render features container should render as expected 1`] = `
     }
   >
     <SignupForm>
-      <div>
-        <form
-          className="auth-form"
-        >
-          <fieldset>
-            <div
-              className="form-group"
-            >
-              <label
-                className="sr-only"
-                htmlFor="firstname"
-              >
-                First name
-              </label>
-              <input
-                id="firstname"
-                placeholder="Firstname"
-                type="text"
-              />
-            </div>
-            <div
-              className="form-group"
-            >
-              <label
-                className="sr-only"
-                htmlFor="lastname"
-              >
-                Last name
-              </label>
-              <input
-                id="lastname"
-                placeholder="Lastname"
-                type="text"
-              />
-            </div>
-            <div
-              className="form-group"
-            >
-              <label
-                className="sr-only"
-                htmlFor="email"
-              >
-                Email
-              </label>
-              <input
-                id="email"
-                placeholder="Email"
-                type="text"
-              />
-            </div>
-            <div
-              className="form-group"
-            >
-              <label
-                className="sr-only"
-                htmlFor="password"
-              >
-                Password
-              </label>
-              <input
-                id="password"
-                placeholder="Password"
-                type="text"
-              />
-            </div>
-            <div
-              className="form-group"
-            >
-              <label
-                className="sr-only"
-                htmlFor="passwordConfirm"
-              >
-                Password Confirm
-              </label>
-              <input
-                id="passwordConfirm"
-                placeholder="Password Confirm"
-                type="text"
-              />
-            </div>
-          </fieldset>
-          <div>
-            <button
-              className="auth-submit-button"
-              type="submit"
-            >
-              SIGN UP
-            </button>
-          </div>
-        </form>
-      </div>
+      <form>
+        <div>
+          <input
+            className="signupField"
+            id="firstName"
+            placeholder="Firstname"
+            type="text"
+          />
+        </div>
+        <div>
+          <input
+            className="signupField"
+            id="lastName"
+            placeholder="Lastname"
+            type="text"
+          />
+        </div>
+        <div>
+          <input
+            className="signupField"
+            id="email"
+            placeholder="E-mail"
+            type="email"
+          />
+        </div>
+        <div>
+          <input
+            className="signupField"
+            id="password"
+            placeholder="Password"
+            type="password"
+          />
+        </div>
+        <div>
+          <input
+            className="signupField"
+            id="confirmPassword"
+            placeholder="Confirm Password"
+            type="password"
+          />
+        </div>
+        <div>
+          <button
+            className="signupButton"
+            type="submit"
+          >
+            SIGN UP
+          </button>
+        </div>
+      </form>
     </SignupForm>
   </Provider>
 </_default>

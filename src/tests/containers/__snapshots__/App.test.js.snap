@@ -10,8 +10,7 @@ exports[`App UI render features container should render as expected 1`] = `
     />
     <Route
       component={[Function]}
-      exact={true}
-      path="/auth/signin"
+      path="/auth"
     />
     <Route
       component={[Function]}

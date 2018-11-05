@@ -44,7 +44,7 @@ class Signin extends Component {
             value={email}
             onChange={(event) => this.handleChange(event, 'email')}
           />
-          <div className="error">{validationError.email}</div>
+          <div className="errorField">{validationError.email}</div>
         </div>
         <div>
           <label className="sr-only" htmlFor="userpassword">User password</label>
@@ -56,12 +56,12 @@ class Signin extends Component {
             value={password}
             onChange={(event) => this.handleChange(event, 'password')}
           />
-          <div className="error">{validationError.password}</div>
+          <div className="errorField">{validationError.password}</div>
         </div>
         <div>
-          <div className="auth-change-password">Forgot Password?</div>
+          <div className="change-password">Forgot Password?</div>
         </div>
-        <div className="error">{errorMessage}</div>
+        <div className="errorField">{errorMessage}</div>
         <div>
           <button className="signupButton" type="submit">SIGN IN</button>
         </div>
