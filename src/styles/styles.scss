@@ -1,6 +1,5 @@
-@import 'components/reset.scss';
-@import 'components/fonts.scss';
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
-@import 'components/index.scss';
-@import 'components/auth.scss';
-
+@import './components/fonts.scss';
+@import './components/auth.scss';
+@import './components/signup.scss';
+@import './components/author-writing.scss';

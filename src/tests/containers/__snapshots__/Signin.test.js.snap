@@ -18,51 +18,46 @@ exports[`Signin UI render features container should render as expected 1`] = `
         signin={[Function]}
       >
         <form
-          className="auth-form"
           onSubmit={[Function]}
         >
-          <fieldset>
-            <div
-              className="form-group"
+          <div>
+            <label
+              className="sr-only"
+              htmlFor="useremail"
             >
-              <label
-                className="sr-only"
-                htmlFor="useremail"
-              >
-                User email
-              </label>
-              <input
-                id="useremail"
-                onChange={[Function]}
-                placeholder="Email"
-                type="text"
-                value=""
-              />
-              <div
-                className="error"
-              />
-            </div>
+              User email
+            </label>
+            <input
+              className="signupField"
+              id="email"
+              onChange={[Function]}
+              placeholder="Email"
+              type="text"
+              value=""
+            />
             <div
-              className="form-group"
+              className="error"
+            />
+          </div>
+          <div>
+            <label
+              className="sr-only"
+              htmlFor="userpassword"
             >
-              <label
-                className="sr-only"
-                htmlFor="userpassword"
-              >
-                User password
-              </label>
-              <input
-                id="userpassword"
-                onChange={[Function]}
-                placeholder="Password"
-                type="password"
-                value=""
-              />
-              <div
-                className="error"
-              />
-            </div>
-          </fieldset>
+              User password
+            </label>
+            <input
+              className="signupField"
+              id="password"
+              onChange={[Function]}
+              placeholder="Password"
+              type="password"
+              value=""
+            />
+            <div
+              className="error"
+            />
+          </div>
           <div>
             <div
               className="auth-change-password"
@@ -75,7 +70,7 @@ exports[`Signin UI render features container should render as expected 1`] = `
           />
           <div>
             <button
-              className="auth-submit-button"
+              className="signupButton"
               type="submit"
             >
               SIGN IN
