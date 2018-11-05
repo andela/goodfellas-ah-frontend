@@ -1,22 +1,16 @@
 import React from 'react';
 
 export default (props) => (
-  <div id={props.id} className="profile-toolbar">
-    <div className="toolbar-menu active">
-      <p>Following</p>
-      <b>45</b>
-    </div>
-    <div className="toolbar-menu">
-      <p>Followers</p>
-      <b>45</b>
-    </div>
-    <div className="toolbar-menu">
-      <p>Articles</p>
-      <b>45</b>
-    </div>
-    <div className="toolbar-menu">
-      <p>Favorites</p>
-      <b>45</b>
-    </div>
-  </div>
-);
+  <div id={props.id} className="profile-toolbar">{
+    Object.keys(props.nav)
+      .map((attribute) => (
+        <div
+          key={attribute}
+          onClick={() => props.handleClick(attribute)}
+          className={`toolbar-menu ${props.profile.profileView === attribute ? 'active' : ''}`}
+        >
+          <p>{attribute}</p>
+          <b>{props.nav[attribute]}</b>
+        </div>
+      ))}
+  </div>);
