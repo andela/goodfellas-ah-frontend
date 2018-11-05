@@ -12,9 +12,121 @@
     margin-left: 3%;
 }
 
- .authHeader{
-    font-family: AnnieUseYourTelescope;
+.authorWriting .authHeader{
+    font-family: Antic;
     font-size: 48px;
     color: #fff;
+    padding-top: 180px;
+    margin-left: 30%;
+}
 
+.authorWriting .authTitle{
+    font-family: Antic;
+    color: #fff;
+    font-size: 24px;
+    margin-left: 18%;
+}
+
+
+
+@media screen and (max-width:1024px){
+    .authorWriting .authHeader{
+        font-size: 40px;
+        padding-top: 200px;
+        margin-left: 27%;
+    }
+
+    .authorWriting .authTitle{
+        font-size: 20px;
+        margin-left: 18%;
+        padding-top: 10px;
+    }
+    
+}
+
+
+@media screen and (max-width:800px){    
+    .authorWriting img{
+        margin-top: -30px;
+    }
+
+    .authorWriting .authHeader{
+        font-size: 40px;
+        padding-top: 100px;
+        margin-left: 35%;
+    }
+
+    .authorWriting{
+        width: 100%;
+        height: 800px;
+        -webkit-clip-path: inset(0 0 0 0);
+        clip-path: inset(0 0 0 0);
+    }
+    
+    .authorWriting .authTitle{
+        font-size: 32px;
+        margin-left: 18%;
+        margin-top: -30px;
+    }
+    
+}
+
+
+@media screen and (max-width:600px){  
+    .authorWriting{
+        height: 700px;
+    }
+
+    .authorWriting img{
+        margin-top: -10px;
+    }
+
+    .authorWriting .authHeader{
+        font-size: 35px;
+        padding-top: 70px;
+        margin-left: 28%;
+    }
+    
+    .authorWriting .authTitle{
+        font-size: 25px;
+        margin-left: 18%;
+        margin-top: 10px;
+    }
+    
+}
+
+
+
+@media screen and (max-width:400px){  
+    .authorWriting{
+        height: 450px;
+    }
+
+    .authorWriting img{
+        margin-top: -10px;
+    }
+
+    .authorWriting .authHeader{
+        font-size: 25px;
+        padding-top: 50px;
+    }
+    
+    .authorWriting .authTitle{
+        font-size: 18px;
+        margin-left: 12%;
+    }
+    
+}
+
+
+@media screen and (max-width:320px){  
+    .authorWriting{
+        height: 380px;
+    }
+    
+    .authorWriting .authTitle{
+        font-size: 16px;
+        margin-top: -10px;
+    }
+    
 }

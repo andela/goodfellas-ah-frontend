@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { signup } from '../actions/authActions';
 import facebook from '../assets/facebook-image.png';
 import google from '../assets/google-image.png';
 import twitter from '../assets/twitter-image.png';
-
 import '../styles/styles.scss';
 
 
@@ -79,7 +78,7 @@ class SignupForm extends Component {
     };
 
     const fields = Object.keys(fieldNames);
-    
+
     // run validation rules for each field
     const isValid = fields.map((field) => this.validateField(field, fieldNames));
 
@@ -97,7 +96,7 @@ class SignupForm extends Component {
     // processes user sign up when validation rules
     // pass for all fields
     if (isValid.includes(false) === false) {
-      this.props.signup(body, this.props.history);
+      this.props.signup(body, () => this.props.history.push('/user/profile'));
     }
   }
 
@@ -111,26 +110,26 @@ class SignupForm extends Component {
     return (
       <div className="signupForm">
         <form onSubmit={this.handleSubmit}>
-        <div className="signup-buttons">
-        <Link className="both-links" to='/Signup'>
-        <input type="button" className="buttons" id="sign-up" value="SIGN UP" />
-         </Link>
-         <Link className="both-links" to='/Signin'>
-         <input type="button" className="buttons" id="sign-in" value="SIGN IN"/>
-         </Link>
-        </div>
+          <div className="signup-buttons">
+            <Link className="both-links" to="/Signup">
+              <input type="button" className="buttons" id="sign-up" value="SIGN UP" />
+            </Link>
+            <Link className="both-links" to="/Signin">
+              <input type="button" className="buttons" id="sign-in" value="SIGN IN" />
+            </Link>
+          </div>
 
           <p className="errorField">{this.props.message}</p>
           <div className="signupFieldDiv">
-              <input
-                type="text"
-                className="signupField"
-                value={this.state.firstname}
-                onChange={this.handleChange}
-                name="firstname"
-                id="firstName"
-                placeholder="Firstname"
-              />
+            <input
+              type="text"
+              className="signupField"
+              value={this.state.firstname}
+              onChange={this.handleChange}
+              name="firstname"
+              id="firstName"
+              placeholder="Firstname"
+            />
             <p className="errorField">{this.state.firstnameError}</p>
           </div>
 
@@ -148,41 +147,41 @@ class SignupForm extends Component {
           </div>
 
           <div>
-              <input
-                type="email"
-                className="signupField"
-                value={this.state.email}
-                onChange={this.handleChange}
-                name="email"
-                id="email"
-                placeholder="E-mail"
-              />
+            <input
+              type="email"
+              className="signupField"
+              value={this.state.email}
+              onChange={this.handleChange}
+              name="email"
+              id="email"
+              placeholder="E-mail"
+            />
             <p className="errorField">{this.state.emailError}</p>
           </div>
 
           <div>
-              <input
-                type="password"
-                className="signupField"
-                value={this.state.password}
-                onChange={this.handleChange}
-                name="password"
-                id="password"
-                placeholder="Password"
-              />
+            <input
+              type="password"
+              className="signupField"
+              value={this.state.password}
+              onChange={this.handleChange}
+              name="password"
+              id="password"
+              placeholder="Password"
+            />
             <p className="errorField">{this.state.passwordError}</p>
           </div>
 
           <div>
-              <input
-                type="password"
-                className="signupField"
-                value={this.state.confirmPassword}
-                onChange={this.handleChange}
-                name="confirmPassword"
-                id="confirmPassword"
-                placeholder="Confirm Password"
-              />
+            <input
+              type="password"
+              className="signupField"
+              value={this.state.confirmPassword}
+              onChange={this.handleChange}
+              name="confirmPassword"
+              id="confirmPassword"
+              placeholder="Confirm Password"
+            />
             <p className="errorField">{this.state.confirmPasswordError}</p>
           </div>
           <div>
@@ -192,18 +191,20 @@ class SignupForm extends Component {
           <div className="or">Or</div>
 
           <div className="social-icons">
-          <Link className="social-link" to='#'>
-          <div className="facebook">
-          <img src={facebook} alt=""/></div>
-          </Link>
+            <Link className="social-link" to="#">
+              <div className="facebook">
+                <img src={facebook} alt="" />
+              </div>
+            </Link>
 
-          <Link className="social-link" to='#'>
-          <div className="google"><img src={google} alt=""/></div>
-          </Link>
+            <Link className="social-link" to="#">
+              <div className="google"><img src={google} alt="" /></div>
+            </Link>
 
-         <Link className="social-link" to='#'> <div className="twitter">
-          <img src={twitter} alt=""/></div>
-          </Link>
+            <Link className="social-link" to="#"> <div className="twitter">
+              <img src={twitter} alt="" />
+            </div>
+            </Link>
           </div>
 
         </form>
@@ -214,4 +215,4 @@ class SignupForm extends Component {
 
 const mapStateToProps = (state) => ({ message: state.auth.errorMessage });
 
-export default connect(mapStateToProps, { signup })(SignupForm);
+export default connect(mapStateToProps, { signup })(withRouter(SignupForm));
