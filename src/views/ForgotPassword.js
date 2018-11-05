@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { forgotPassword } from '../actions/authActions';
+import Submitbtn from '../components/shared/Submitbtn';
 
 class ForgotPassword extends Component {
   handleForgotPassword = (e) => {
@@ -30,7 +31,7 @@ class ForgotPassword extends Component {
                 ) : (
                   <div className="errormsg"><p>{errorMessage}</p></div>
                 )}
-                <input type="submit" className="btn btn-block mt-4 resetbtn" />
+                <Submitbtn />
               </form>
             </div>
           </div>
