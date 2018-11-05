@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import menuIcon from '../../assets/icons8-menu.svg';
 
 const Header = () => (
   <header>
@@ -8,9 +7,18 @@ const Header = () => (
       <Link className="navbar-Brand" to="/">
         <h3>Authors Haven</h3>
       </Link>
-      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <button
+        className="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+      >
         <span className="navbar-toggler-icon">
-          <img className="menuIcon" src={menuIcon} alt="" />
+          <img
+            className="menuIcon"
+            src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426069/Authors%20Haven/icons8-menu.svg"
+            alt=""
+          />
         </span>
       </button>
 

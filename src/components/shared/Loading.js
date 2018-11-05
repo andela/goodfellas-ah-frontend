@@ -1,9 +1,8 @@
 import React from 'react';
-import loadingIcon from '../../assets/Spinner-1s.gif';
 
 const Loading = () => (
   <div className="loading-icon">
-    <img src={loadingIcon} alt="" />
+    <img src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426069/Authors%20Haven/Spinner-1s.gif" alt="" />
   </div>
 );
 

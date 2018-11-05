@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import 'bootstrap';
 import { connect } from 'react-redux';
 import getArticles from '../actions/articleActions';
 import Card from '../containers/ArticleCard';
-import Header from '../components/shared/VisitorHeader';
+import Header from '../components/shared/Header';
 import Footer from '../components/shared/Footer';
 import Loading from '../components/shared/Loading';
-import bookImage from '../assets/icons8-literature-48.png';
-import heartImage from '../assets/icons8-heart-outline-48.png';
-import authorProfileImage from '../assets/john.jpg';
 
 class Hero extends Component {
   componentDidMount() {
@@ -54,7 +50,7 @@ class Hero extends Component {
                 <div className="row hero-card-author">
                   <img
                     className="authorProfile"
-                    src={authorProfileImage}
+                    src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426069/Authors%20Haven/john.jpg"
                     alt="Author Profile"
                   />
                   <p className="col-sm-8">John Adewale</p>
@@ -73,7 +69,7 @@ class Hero extends Component {
                   THE COMPLETE DIGITAL TOOL FOR AUTHORS WILLING TO SHARE
                 </h2>
                 <div className="hero-bookImage-wrapper ">
-                  <img src={bookImage} alt="" />
+                  <img src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426068/Authors%20Haven/icons8-literature-48.png" alt="" />
                 </div>
               </div>
               <p>
@@ -99,7 +95,7 @@ class Hero extends Component {
           <div className="hero-lowerbody-details">
             <div className="hero-lowerbody-title">
               <div className="hero-bookImage-wrapper ">
-                <img src={heartImage} alt="" />
+                <img src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426068/Authors%20Haven/icons8-heart-outline-48.png" alt="" />
               </div>
               <h2>HERE’S OUR BEST PICK FOR AUGUST</h2>
             </div>

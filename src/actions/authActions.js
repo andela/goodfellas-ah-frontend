@@ -11,8 +11,3 @@ export const loginUser = (userData) => ({
   type: types.TEST_DISPATCH,
   payload: userData,
 });
-
-export const getArticles = (articles) => ({
-  type: types.ARTICLES_DISPATCH,
-  payload: articles,
-});

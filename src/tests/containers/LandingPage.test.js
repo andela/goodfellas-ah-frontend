@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import App from '../../containers/App';
-import Hero from '../../views/Hero';
-import Header from '../../components/shared/VisitorHeader';
+import LandingPage from '../../views/LandingPage';
+import Header from '../../components/shared/Header';
 import Footer from '../../components/shared/Footer';
 import Card from '../../containers/ArticleCard';
 import '../../styles/styles.scss';
@@ -11,7 +11,7 @@ let wrapped;
 beforeEach(() => {
   wrapped = mount(
     <App>
-      <Hero />
+      <LandingPage />
     </App>,
   );
 });
