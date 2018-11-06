@@ -2,31 +2,81 @@ header {
   font-family: 'Antic', sans-serif;
   width: 90%;
   margin: 0 auto;
-  nav {
+  .navbar {
     text-decoration-color: none;
     display: flex;
     justify-content: space-between;
+    align-content: flex-end;
+    &.-responsive{
+      display: block;
+    }
     h3 {
       font-family: 'Annie Use Your Telescope', cursive;
       color: white;
+      margin-bottom: 0;
     }
     p {
       color: white;
+      margin-bottom: 0;
+      @media only screen and (max-width: 900px) {
+        width: 18vw;
+      }
+    }
+    .navbar-toggler{
+      display: none;
+      @media only screen and (max-width: 900px) {
+        display: block;
+      }
+    }
+    .navbar-wrapper-responsive{
+      @media only screen and (max-width: 900px) {
+        display: block;
+        width: 0;
+      }
+    }
+    .navbar-wrapper{
+      width: 55vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @media only screen and (max-width: 900px) {
+        display: none;
+        width: 0;
+      }
+      .navbar-element{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 0;
+        @media only screen and (max-width: 900px) {
+          display: block;
+        }
+      }
+      .navbar-element:first-child{
+        width: 27vw;
+        display: flex;
+        justify-content: space-between;
+        @media only screen and (max-width: 900px) {
+          display: block;
+        }
+      }
     }
     .nav-center {
       .nav-item {
         margin-right: 40px;
       }
     }
-    .link-border {
-      margin-top: 8px;
-    }
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 900px) {
       .link-border {
         display: none;
       }
     }
   }
+}
+
+.navbar-responsive{
+  display: block;
+  text-decoration-color: none;
 }
 
 .header-user {
@@ -35,9 +85,14 @@ header {
   position: absolute;
   right: 10px;
   justify-content: space-around;
+  @media only screen and (max-width: 900px) {
+    display: flex;
+    justify-content: space-between;
+    width: 32vw;
+  }
   .header-user-search {
     margin-right: 70px;
-    input{
+    .searchbar{
       padding: 15px;
       width: 414px;
       height: 40px;
@@ -47,6 +102,21 @@ header {
       &:focus{
         outline: none;
       }
+      @media only screen and (max-width: 900px) {
+        display: none;
+      }
+    }
+    .searchbar-responsive{
+      width: 84vw;
+      height: 40px;
+      top: 40px;
+      right: 2px;
+      z-index: 99;
+      display: block;
+      position: absolute;
+      border-radius: 36px;
+      border: solid 0.5px rgba(166, 162, 162, 0.3);
+      background-color: #ffffff;
     }
     img{
       position: relative;
@@ -54,22 +124,33 @@ header {
       width: 16px;
       height: 16px;
       font-size: 16px;
+      @media only screen and (max-width: 900px) {
+        position: static;
+        width: 28px;
+        height: 28px;
+      }
+    }
+    @media only screen and (max-width: 900px) {
+      margin-right: 0;
     }
   }
   .header-user-images {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 5vw;
-    img:first-child {
-      height: 27px;
-      width: 25px;
-      cursor: pointer;
+    width: 6vw;
+    @media only screen and (max-width: 900px) {
+      width: 20vw;
     }
     .dropdown{
-      img:nth-child(1) {
-        height: 35px;
-        width: 35px;
+      .notification-image{
+        height: 25px;
+        width: 25px;
+        cursor: pointer;
+      }
+      .author-image {
+        height: 30px;
+        width: 30px;
         border-radius: 50%;
         cursor: pointer;
       }
@@ -104,4 +185,8 @@ header {
   display:block;
   top: 60px;
   left: -80px;
+}
+
+.responsive-header{
+  display: inline;
 }

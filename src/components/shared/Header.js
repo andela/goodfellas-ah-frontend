@@ -3,55 +3,60 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class Header extends Component {
-  dropdown = (e) => {
-    console.log(e.target, this.refs.myDropdown, this.props.auth);
+  dropdown = () => {
     this.refs.myDropdown.classList.toggle('show');
   };
+
+  navbarToggle = () => {
+    console.log(this.refs);
+    this.refs.navbarTitle.classList.toggle('-responsive');
+    if (this.refs.navbarToggler.className === 'navbar-wrapper') {
+      this.refs.navbarToggler.className = 'navbar-wrapper-responsive';
+    } else {
+      this.refs.navbarToggler.className = 'navbar-wrapper';
+    }
+  }
+
+  openSearchbar = () => {
+    console.log(this.refs.searchbar);
+    if (this.refs.searchbar.className === 'searchbar') {
+      this.refs.searchbar.className = 'searchbar-responsive';
+    } else {
+      this.refs.searchbar.className = 'searchbar';
+    }
+  }
 
   render() {
     return (
       <header>
-        <nav className="navbar navbar-expand-lg mb-4">
-          <Link className="navbar-Brand" to="/">
+        <nav className="navbar" ref="navbarTitle">
+          <Link className="navbar-brand" to="/">
             <h3>Authors Haven</h3>
           </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNav"
-          >
-            <span className="navbar-toggler-icon">
-              <img
-                className="menuIcon"
-                src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426069/Authors%20Haven/icons8-menu.svg"
-                alt=""
-              />
-            </span>
-          </button>
 
           {this.props.auth
             ? (
               <div className="header-user">
                 <div className="header-user-search">
-                  <input type="search" />
-                  <img
+                  <input className="searchbar" ref="searchbar" type="search" />
+                  <span onClick={this.openSearchbar}><img
                     src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png"
                     alt=""
                   />
+                  </span>
                 </div>
-                <div className="header-user-images row">
+                <div className="header-user-images">
                   <div className="dropdown">
                     <img
-                      className="dropdown-toggle"
+                      className="dropdown-toggle notification-image"
                       data-toggle="dropdown"
-                      src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541430760/Authors%20Haven/bell_icon.png"
+                      src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541508547/Authors%20Haven/white_bell_icon.png"
                       alt=""
                     />
                   </div>
                   <div onClick={this.dropdown} className="dropdown">
                     <img
-                      className="dropdown-toggle"
+                      className="dropdown-toggle author-image"
                       src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426069/Authors%20Haven/john.jpg"
                       alt=""
                     />
@@ -86,38 +91,55 @@ class Header extends Component {
               </div>
             )
             : (
-              <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav ml-auto nav-center">
-                  <li className="nav-item">
-                    <Link className="nav-link" to="/">
-                      <p>Explore</p>
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" to="/">
-                      <p>About Us</p>
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" to="/">
-                      <p>Contact</p>
-                    </Link>
-                  </li>
-                </ul>
+              <div className="navbar-main-wrapper">
+                <button
+                  onClick={this.navbarToggle}
+                  className="navbar-toggler"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#navbarNav"
+                >
+                  <span className="">
+                    <img
+                      className="menuIcon"
+                      src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426069/Authors%20Haven/icons8-menu.svg"
+                      alt=""
+                    />
+                  </span>
+                </button>
+                <div className="navbar-wrapper" ref="navbarToggler">
+                  <ul className="navbar-element">
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/">
+                        <p>Explore</p>
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/">
+                        <p>About Us</p>
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/">
+                        <p>Contact</p>
+                      </Link>
+                    </li>
+                  </ul>
 
-                <ul className="navbar-nav ml-auto">
-                  <li className="nav-item">
-                    <Link className="nav-link" to="/signin">
-                      <p>Sign In</p>
-                    </Link>
-                  </li>
-                  <p className="link-border">|</p>
-                  <li className="nav-item">
-                    <Link className="nav-link" to="/signup">
-                      <p>Sign Up</p>
-                    </Link>
-                  </li>
-                </ul>
+                  <ul className="navbar-element">
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/signin">
+                        <p>Sign In</p>
+                      </Link>
+                    </li>
+                    <p className="link-border">|</p>
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/signup">
+                        <p>Sign Up</p>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
             )}
         </nav>
