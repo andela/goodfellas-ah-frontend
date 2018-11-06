@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Submitbtn() {
-  return (
-    <div>
-      <input type="submit" className="btn btn-block mt-4 resetbtn" />
-    </div>
-  );
-}
+const Submitbtn = () => (
+  <div>
+    <input type="submit" className="btn btn-block mt-4 resetbtn" />
+  </div>
+);
+
+export default Submitbtn;
