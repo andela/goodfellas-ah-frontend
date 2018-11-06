@@ -20,6 +20,9 @@ const Footer = () => (
         <p>Privacy</p>
       </Link>
     </div>
+    <div className="copyright">
+      <p>&copy;Goodfellas</p>
+    </div>
   </footer>
 );
 

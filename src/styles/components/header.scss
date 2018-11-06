@@ -51,7 +51,7 @@ header {
         li{
           transition: all .55s ease;
           &:hover{
-            transform: translateY(-6px);
+            transform: translateY(-4px);
             box-shadow: 5px 14px 35px 0 rgba(0, 0, 0, 0.08);
           }
         }
@@ -151,13 +151,13 @@ header {
     }
     .dropdown{
       .notification-image{
-        height: 25px;
-        width: 25px;
+        height: 22px;
+        width: 22px;
         cursor: pointer;
       }
       .author-image {
-        height: 30px;
-        width: 30px;
+        height: 34px;
+        width: 34px;
         border-radius: 50%;
         cursor: pointer;
         border: 1px solid white;
@@ -191,10 +191,18 @@ header {
 
 .show {
   display:block;
-  top: 60px;
+  top: 50px;
   left: -80px;
 }
 
 .responsive-header{
   display: inline;
+}
+
+.brand-name-white{
+  color: white !important;
+}
+
+.brand-name-dark{
+  color: black !important;
 }

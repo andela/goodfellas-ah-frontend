@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 class Header extends Component {
   dropdown = () => {
+    console.log(this.props, this.refs);
     this.refs.myDropdown.classList.toggle('show');
   };
 
@@ -27,14 +28,16 @@ class Header extends Component {
   }
 
   render() {
+    const { auth } = this.props;
+    const { parentComponent } = this.props;
     return (
       <header>
-        <nav className="navbar" ref="navbarTitle">
-          <Link className="navbar-brand" to="/">
-            <h3>Authors Haven</h3>
+        <nav className="navbar">
+          <Link className="navbar-title navbar-brand" ref="navbarTitle" to="/">
+            {parentComponent === 'landingpage' ? <h3 className="brand-name-white">Authors Haven</h3> : <h3 className="brand-name-dark">Authors Haven</h3>}
           </Link>
 
-          {this.props.auth
+          {auth
             ? (
               <div className="header-user">
                 <div className="header-user-search">
@@ -47,12 +50,20 @@ class Header extends Component {
                 </div>
                 <div className="header-user-images">
                   <div className="dropdown">
-                    <img
-                      className="dropdown-toggle notification-image"
-                      data-toggle="dropdown"
-                      src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541508547/Authors%20Haven/white_bell_icon.png"
-                      alt=""
-                    />
+                    {parentComponent === 'landingpage' ? (
+                      <img
+                        className="dropdown-toggle notification-image"
+                        data-toggle="dropdown"
+                        src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541508547/Authors%20Haven/white_bell_icon.png"
+                        alt=""
+                      />
+                    ) : (
+                      <img
+                        className="dropdown-toggle notification-image"
+                        data-toggle="dropdown"
+                        src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541430760/Authors%20Haven/black_bell_icon.png"
+                        alt=""
+                      />)}
                   </div>
                   <div onClick={this.dropdown} className="dropdown">
                     <img

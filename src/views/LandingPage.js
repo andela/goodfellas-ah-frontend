@@ -9,7 +9,8 @@ import Loading from '../components/shared/Loading';
 
 class Hero extends Component {
   componentDidMount() {
-    this.props.getArticles();
+    const { getArticles } = this.props;
+    getArticles();
   }
 
   render() {
@@ -17,7 +18,7 @@ class Hero extends Component {
       <div>
         <section className="hero-section">
           <div className="hero-section-overlay">
-            <Header />
+            <Header parentComponent="landingpage" />
             <h2>Write it out beautifully</h2>
             <div className="hero-section-description">
               <p>
