@@ -21,21 +21,22 @@ class Card extends Component {
   }
 
   CardList = this.displayArticles(this.state.currentArticle).map((card) => {
-    const displayedBody = card.body.slice(0, 150);
+    const displayedBody = card.body.slice(0, 120);
+    const displayedTitle = card.title.slice(0, 30);
     return (
-      <div onClick={this.getArticle} className="row col-lg-3 hero-card" key={card.id}>
+      <div onClick={this.getArticle} className="hero-card" key={card.id}>
         <div className="hero-card-details col-sm-7">
-          <h6>{card.title}</h6>
+          <h6>{displayedTitle}</h6>
           <p>
             {displayedBody}
             ...
           </p>
-          <div className="row hero-card-author">
+          <div className="hero-card-author">
             <img
               src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426069/Authors%20Haven/john.jpg"
               alt="Author Profile"
             />
-            <p className="col-lg-9">
+            <p>
               {card.user.firstname} {card.user.lastname}
             </p>
           </div>
@@ -51,7 +52,7 @@ class Card extends Component {
   render() {
     return (
       <div>
-        <div className="row card-wrapper">{this.CardList}</div>
+        <div className="card-wrapper">{this.CardList}</div>
         <div onClick={this.handleClick} className="hero-moreArticles row">
           <p>More Articles</p>
           <img src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426068/Authors%20Haven/icons8-expand-arrow-24.png" alt="" />

@@ -1,14 +1,19 @@
 .card-wrapper{
+  display: flex;
   padding: 10px;
   justify-content: center;
+  flex-wrap: wrap;
+  @media only screen and (max-width: 600px) {
+    margin-top: -100px;
+  }
 }
 
 .hero-card{
-  position: relative;
+  display: flex;
   background-color: white;
   border-radius: 5px;
-  width: 100vw;
-  height: 30vh;
+  flex-basis: 27vw;
+  height: 300px;
   padding: 0px;
   margin: 20px 20px;
   text-align: center;
@@ -16,13 +21,20 @@
   cursor: pointer;
     @media only screen and (max-width: 600px) {
       width: 90vw;
-      margin-bottom: 100px;
+      flex-basis: 100vw;
     }
   .hero-card-details{
     margin-top: 30px;
     h6{
       color: #626D86;
       margin: 1px;
+      height: 60px;
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 1.5;
+      @media only screen and (max-width: 600px) {
+      height: 40px;
+    }
     }
     p{
       margin-top: 20px;
@@ -32,12 +44,10 @@
     }
     .hero-card-author{
       position: absolute;
-      margin: auto;
       bottom: 0;
-      width: 14vw;
+      display: flex;
       img{
         margin-top: 15px;
-        width: 30px;
         height: 30px;
         border-radius: 50%;
       }
@@ -72,7 +82,7 @@
 
 .hero-moreArticles{
   cursor: pointer;
-  margin: auto;
+  margin: 20px auto;
   justify-content: center;
   p {
     font-family: Antic;
