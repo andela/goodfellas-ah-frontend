@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Auth UI render features view should render as expected 1`] = `
+<div
+  className="container-fluid"
+>
+  <div
+    className="row auth"
+  >
+    <section
+      className="col auth-image"
+    >
+      <div
+        className="auth-title"
+      >
+        Authors Haven
+      </div>
+      <div
+        className="auth-tagline"
+      >
+        A Community of Like Minded Authors
+      </div>
+    </section>
+    <div
+      className="auth-image-divide"
+    />
+    <section
+      className="col auth-form-wrapper"
+    >
+      <button
+        className="auth-button-toggle null"
+        onClick={[Function]}
+        type="button"
+      >
+        SIGN UP
+      </button>
+      <button
+        className="auth-button-toggle auth-button-active"
+        onClick={[Function]}
+        type="button"
+      >
+        SIGN IN
+      </button>
+      <Connect(Signin) />
+      <div
+        className="auth-form-or"
+      >
+        Or
+      </div>
+      <div
+        className="auth-social-icons"
+      >
+        <div
+          className="auth-social-button"
+        >
+          <img
+            alt="facebook signup"
+            src="facebook-image.png"
+          />
+        </div>
+        <div
+          className="auth-social-button"
+        >
+          <img
+            alt="google signup"
+            src="google-image.png"
+          />
+        </div>
+        <div
+          className="auth-social-button"
+        >
+          <img
+            alt="twitter signup"
+            src="twitter-image.png"
+          />
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+`;
