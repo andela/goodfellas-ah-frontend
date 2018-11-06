@@ -27,8 +27,8 @@ class Signin extends Component {
     }
   }
 
-  handleChange = (event, field) => {
-    this.setState({ [field]: event.target.value });
+  handleChange = (event) => {
+    this.setState({ [event.target.id]: event.target.value });
   }
 
   render() {
@@ -36,6 +36,7 @@ class Signin extends Component {
     const { errorMessage } = this.props;
     return (
       <form onSubmit={this.handleSubmit}>
+        <div className="error-field">{errorMessage}</div>
         <AuthInput
           error={validationError}
           value={email}
@@ -52,10 +53,9 @@ class Signin extends Component {
           placeholder="Password"
         />
         <div>
-          <div className="change-password">Forgot Password?</div>
+          <div className="forgot-password">Forgot Password?</div>
         </div>
-        <div className="errorField">{errorMessage}</div>
-        <AuthButton />
+        <AuthButton name="SIGN IN" />
       </form>
     );
   }

@@ -31,9 +31,8 @@ describe('Signin UI', () => {
 
   describe('when typing into fields', () => {
     beforeEach(() => {
-      wrapped.find('input').first().simulate('change', { target: { value: 'user@email.com' } });
-      wrapped.find('input').at(1).simulate('change', { target: { value: 'password' } });
-
+      wrapped.find('input').first().simulate('change', { target: { id: 'email', value: 'user@email.com' } });
+      wrapped.find('input').at(1).simulate('change', { target: { id: 'password', value: 'password' } });
       wrapped.update();
     });
 

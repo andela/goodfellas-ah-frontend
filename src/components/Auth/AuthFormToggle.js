@@ -8,7 +8,7 @@ class AuthFormToggle extends Component {
     const activeSignin = (formtype === 'signin' ? 'active' : null);
     const activeSignup = (formtype === 'signup' ? 'active' : null);
     return (
-      <div className="signup-buttons">
+      <div className="auth-buttons">
         <Link className="both-links" to="/auth/signup">
           <input type="button" className={`buttons sign-up ${activeSignup}`} value="SIGN UP" />
         </Link>

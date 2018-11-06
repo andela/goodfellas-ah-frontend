@@ -5,7 +5,7 @@ const SignupForm = () => (
     <div>
       <input
         type="text"
-        className="signupField"
+        className="auth-field"
         id="firstName"
         placeholder="Firstname"
       />
@@ -14,7 +14,7 @@ const SignupForm = () => (
     <div>
       <input
         type="text"
-        className="signupField"
+        className="auth-field"
         id="lastName"
         placeholder="Lastname"
       />
@@ -23,7 +23,7 @@ const SignupForm = () => (
     <div>
       <input
         type="email"
-        className="signupField"
+        className="auth-field"
         id="email"
         placeholder="E-mail"
       />
@@ -32,7 +32,7 @@ const SignupForm = () => (
     <div>
       <input
         type="password"
-        className="signupField"
+        className="auth-field"
         id="password"
         placeholder="Password"
       />
@@ -41,13 +41,13 @@ const SignupForm = () => (
     <div>
       <input
         type="password"
-        className="signupField"
+        className="auth-field"
         id="confirmPassword"
         placeholder="Confirm Password"
       />
     </div>
     <div>
-      <button className="signupButton" type="submit">SIGN UP</button>
+      <button className="auth-button" type="submit">SIGN UP</button>
     </div>
   </form>
 );

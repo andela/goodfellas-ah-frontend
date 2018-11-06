@@ -2,20 +2,20 @@ import React from 'react';
 
 const AuthInput = (props) => {
   const {
-    value, error, name, type, placeholder,
+    value, error, name, type, placeholder, handleChange,
   } = props;
   return (
     <div>
       <label className="sr-only" htmlFor={name}>{name}</label>
       <input
         type={type || 'text'}
-        className="signupField"
+        className="auth-field"
         placeholder={placeholder}
         id={name}
         value={value}
-        onChange={(event) => props.handleChange(event, name)}
+        onChange={handleChange}
       />
-      <div className="errorField">{error[name]}</div>
+      <div className="error-field">{error[name]}</div>
     </div>);
 };
 

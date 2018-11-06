@@ -1,8 +1,8 @@
 import React from 'react';
 
-const AuthButton = () => (
+const AuthButton = ({ name }) => (
   <div>
-    <button className="signupButton" type="submit">SIGN IN</button>
+    <button className="auth-button" type="submit">{name}</button>
   </div>
 );
 

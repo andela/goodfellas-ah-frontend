@@ -20,6 +20,9 @@ exports[`Signin UI render features container should render as expected 1`] = `
         <form
           onSubmit={[Function]}
         >
+          <div
+            className="error-field"
+          />
           <AuthInput
             error={Object {}}
             handleChange={[Function]}
@@ -35,7 +38,7 @@ exports[`Signin UI render features container should render as expected 1`] = `
                 email
               </label>
               <input
-                className="signupField"
+                className="auth-field"
                 id="email"
                 onChange={[Function]}
                 placeholder="Email"
@@ -43,7 +46,7 @@ exports[`Signin UI render features container should render as expected 1`] = `
                 value=""
               />
               <div
-                className="errorField"
+                className="error-field"
               />
             </div>
           </AuthInput>
@@ -63,7 +66,7 @@ exports[`Signin UI render features container should render as expected 1`] = `
                 password
               </label>
               <input
-                className="signupField"
+                className="auth-field"
                 id="password"
                 onChange={[Function]}
                 placeholder="Password"
@@ -71,24 +74,23 @@ exports[`Signin UI render features container should render as expected 1`] = `
                 value=""
               />
               <div
-                className="errorField"
+                className="error-field"
               />
             </div>
           </AuthInput>
           <div>
             <div
-              className="change-password"
+              className="forgot-password"
             >
               Forgot Password?
             </div>
           </div>
-          <div
-            className="errorField"
-          />
-          <AuthButton>
+          <AuthButton
+            name="SIGN IN"
+          >
             <div>
               <button
-                className="signupButton"
+                className="auth-button"
                 type="submit"
               >
                 SIGN IN
