@@ -26,7 +26,7 @@ export const resetPassword = (userData, history) => async (dispatch) => {
     swal({
       title: response.data.message,
       type: 'success',
-      html: '<a href="/login">Login </a>',
+      html: '<a href="/auth/signin">Login </a>',
       showConfirmButton: false,
     });
   } catch (error) {
