@@ -1,0 +1,108 @@
+header {
+  font-family: 'Antic', sans-serif;
+  width: 90%;
+  margin: 0 auto;
+  nav {
+    text-decoration-color: none;
+    display: flex;
+    justify-content: space-between;
+    h3 {
+      font-family: 'Annie Use Your Telescope', cursive;
+      color: white;
+    }
+    p {
+      color: white;
+    }
+    .nav-center {
+      .nav-item {
+        margin-right: 40px;
+      }
+    }
+    .link-border {
+      margin-top: 8px;
+    }
+    @media only screen and (max-width: 600px) {
+      .link-border {
+        display: none;
+      }
+    }
+  }
+}
+
+.header-user {
+  display: flex;
+  align-content: center;
+  position: absolute;
+  right: 10px;
+  justify-content: space-around;
+  .header-user-search {
+    margin-right: 70px;
+    input {
+      padding: 15px;
+      width: 414px;
+      height: 40px;
+      border-radius: 36px;
+      border: solid 0.5px rgba(166, 162, 162, 0.3);
+      background-color: #ffffff;
+      &:focus {
+        outline: none;
+      }
+    }
+    img {
+      position: relative;
+      left: -40px;
+      width: 16px;
+      height: 16px;
+      font-size: 16px;
+    }
+  }
+  .header-user-images {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 5vw;
+    img:first-child {
+      height: 27px;
+      width: 25px;
+      cursor: pointer;
+    }
+    .dropdown {
+      img:nth-child(1) {
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .dropdown-menu {
+        li {
+          padding: 6px 0 6px 5px;
+          a {
+            color: #c4c4c4;
+            font-weight: 100;
+            padding: 10px;
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+        li:nth-child(4),
+        li:nth-child(6) {
+          border-bottom: 1px solid #c4c4c4;
+        }
+        &.show {
+          background-color: #f8f8f8;
+          width: 177px;
+          height: 310px;
+          border: solid 1px #c4c4c4;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}
+
+.show {
+  display: block;
+  top: 60px;
+  left: -80px;
+}
