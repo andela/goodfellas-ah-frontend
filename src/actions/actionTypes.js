@@ -1,3 +1,5 @@
 // this is san example
 export const TEST_DISPATCH = 'TEST_DISPATCH';
 export const ERROR_DISPATCH = 'TEST_DISPATCH';
+export const PUBLISH_ARTICLE_LOADING = 'PUBLISH_ARTICLE';
+export const PUBLISH_ARTICLE_SUCCESS = 'PUBLISH_ARTICLE_SUCCESS';

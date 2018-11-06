@@ -4,8 +4,8 @@ import { Route } from 'react-router-dom';
 import store from '../store';
 import Sample from '../components/Sample';
 import '../styles/styles.scss';
-import Hero from '../components/layout/hero';
-import CreateArticles from '../components/layout/CreateArticles';
+import Hero from '../views/hero';
+import CreateArticles from '../views/CreateArticles';
 
 
 const App = () => (
