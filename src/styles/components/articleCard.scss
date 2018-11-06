@@ -19,6 +19,11 @@
   text-align: center;
   box-shadow: 5px 14px 35px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;
+  transition: all .55s ease;
+  &:hover{
+    transform: translateY(-9px);
+    box-shadow: 5px 14px 35px 0 rgba(0, 0, 0, 0.08);
+  }
     @media only screen and (max-width: 900px) {
       width: 90vw;
       flex-basis: 100vw;

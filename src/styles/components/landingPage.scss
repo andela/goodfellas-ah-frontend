@@ -48,6 +48,11 @@ $faintblue: #F4F9FC;
         font-family: 'Antic', sans-serif;
         padding: 11px;
         width: 175px;
+        transition: all .55s ease;
+        &:hover{
+          transform: translateY(-6px);
+          box-shadow: 5px 14px 35px 0 rgba(0, 0, 0, 0.08);
+        }
           @media only screen and (max-width: 900px) {
           padding: 11px;
           margin-right: 20px;
@@ -58,10 +63,12 @@ $faintblue: #F4F9FC;
     .hero-section-greenbutton{
       color: white;
       background-color: $maingreen;
+      cursor: pointer;
     }
     .hero-section-whitebutton{
       color: $maingreen;
       background-color: white;
+      cursor: pointer;
     }
   }
   .big-hero-card{

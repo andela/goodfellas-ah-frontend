@@ -48,6 +48,13 @@ header {
         justify-content: space-around;
         align-items: center;
         margin-bottom: 0;
+        li{
+          transition: all .55s ease;
+          &:hover{
+            transform: translateY(-6px);
+            box-shadow: 5px 14px 35px 0 rgba(0, 0, 0, 0.08);
+          }
+        }
         @media only screen and (max-width: 900px) {
           display: block;
         }
@@ -153,6 +160,7 @@ header {
         width: 30px;
         border-radius: 50%;
         cursor: pointer;
+        border: 1px solid white;
       }
       .dropdown-menu{
         li{
