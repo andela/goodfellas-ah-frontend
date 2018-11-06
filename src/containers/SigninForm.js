@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { signin } from '../actions/authActions';
 import { validateAuth } from '../lib/validation';
 import AuthInput from '../components/shared/AuthInput';
+import AuthButton from '../components/shared/AuthButton';
 
 class Signin extends Component {
   state = {
@@ -40,7 +41,6 @@ class Signin extends Component {
           value={email}
           handleChange={this.handleChange}
           name="email"
-          type="text"
           placeholder="Email"
         />
         <AuthInput
@@ -55,9 +55,7 @@ class Signin extends Component {
           <div className="change-password">Forgot Password?</div>
         </div>
         <div className="errorField">{errorMessage}</div>
-        <div>
-          <button className="signupButton" type="submit">SIGN IN</button>
-        </div>
+        <AuthButton />
       </form>
     );
   }

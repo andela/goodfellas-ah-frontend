@@ -8,7 +8,7 @@ const AuthInput = (props) => {
     <div>
       <label className="sr-only" htmlFor={name}>{name}</label>
       <input
-        type={type}
+        type={type || 'text'}
         className="signupField"
         placeholder={placeholder}
         id={name}

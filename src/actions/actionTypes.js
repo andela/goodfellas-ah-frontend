@@ -1,2 +1,3 @@
-export const AUTH_USER = 'signin_user';
-export const AUTH_ERROR = 'signin_error';
+export const SIGNIN_USER = 'SIGNIN_USER';
+export const SIGNIN_USER_ERROR = 'SIGNIN_USER_ERROR';
+export const SIGNOUT_USER = 'SIGNIN_USER';

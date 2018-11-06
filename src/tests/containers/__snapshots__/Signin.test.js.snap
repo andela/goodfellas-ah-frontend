@@ -25,7 +25,6 @@ exports[`Signin UI render features container should render as expected 1`] = `
             handleChange={[Function]}
             name="email"
             placeholder="Email"
-            type="text"
             value=""
           >
             <div>
@@ -86,14 +85,16 @@ exports[`Signin UI render features container should render as expected 1`] = `
           <div
             className="errorField"
           />
-          <div>
-            <button
-              className="signupButton"
-              type="submit"
-            >
-              SIGN IN
-            </button>
-          </div>
+          <AuthButton>
+            <div>
+              <button
+                className="signupButton"
+                type="submit"
+              >
+                SIGN IN
+              </button>
+            </div>
+          </AuthButton>
         </form>
       </Signin>
     </Connect(Signin)>
