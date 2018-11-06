@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import ProfileArticle from '../components/shared/ProfileArticle';
+import ProfileArticle from './Profile';
 
 const ProfileArticleList = (props) => {
   const { articles } = props;

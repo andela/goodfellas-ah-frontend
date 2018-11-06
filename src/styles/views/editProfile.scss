@@ -2,17 +2,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  #profile-image-uploader {
+  .profile-image-uploader {
     margin-top: 4rem;
   }
   #user-name {
     margin: 2.5rem auto;
   }
-  #bio-box {
+  .text-box {
     margin: 2.5rem auto;
     resize: none;
   }
   #save-button {
     margin-right: 27px;
+    border-color: #63ce96;
   }
 }

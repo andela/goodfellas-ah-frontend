@@ -13,22 +13,22 @@
     grid-template-areas: "image ."
                          "type about";
   }
-  .profile-image {
+  &_profile-image {
     grid-area: image;
     width: 45px;
     height: 45px;
     border-radius: 50%;
   }
-  .type {
+  &_type {
     grid-area: type;
     p {
       font-size: 12px;
       text-transform: capitalize;
     }
   }
-  .about {
+  &_about {
     grid-area: about;
-    &.no-bio {
+    .no-bio {
       color: var(--gray);
     }
   }

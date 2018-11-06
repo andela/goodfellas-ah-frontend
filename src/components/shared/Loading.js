@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default (props) => (
-  <div id={props.id} className="loading">
+export default () => (
+  <div className="loading">
     Loading.......
   </div>
 );

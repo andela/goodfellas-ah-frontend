@@ -1,5 +1,8 @@
 import React from 'react';
 
-export default (props) => (
-  <textarea type={props.type || 'text'} placeholder={props.placeholder} id={props.id} className="text-box" />
-);
+export default (props) => {
+  const { type, placeholder } = props;
+  return (
+    <textarea type={type || 'text'} placeholder={placeholder} className="text-box" />
+  );
+};

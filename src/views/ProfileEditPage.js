@@ -1,19 +1,18 @@
 import React from 'react';
-import Body from '../components/layout/Body';
-import ProfileImageUploader from '../components/shared/ProfileImageUploader';
+import Body from '../components/layout/DefaultLayout';
+import ProfileImageUploader from '../components/profile/ImageUploader';
 import InputBox from '../components/shared/InputBox';
 import TextBox from '../components/shared/TextBox';
-import ButtonOutline from '../components/shared/ButtonOutline';
 
 export default () => (
   <Body className="edit-profile">
-    <ProfileImageUploader id="profile-image-uploader" />
+    <ProfileImageUploader />
     <h3 id="user-name" className="username">Fatima Akande</h3>
     <InputBox placeholder="Username" />
-    <TextBox id="bio-box" placeholder="Enter a short bio" />
+    <TextBox placeholder="Enter a short bio" />
     <div>
-      <ButtonOutline id="save-button" color="#63ce96">Save</ButtonOutline>
-      <ButtonOutline>Cancel</ButtonOutline>
+      <button type="button" id="save-button" className="button outline">Save</button>
+      <button type="button" className="button outline">Cancel</button>
     </div>
   </Body>
 );

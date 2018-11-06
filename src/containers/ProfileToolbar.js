@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ProfileToolbarUI from '../components/shared/ProfileToolbar';
-import { switchProfileTab } from '../actions/profileActions';
+import ProfileToolbarUI from '../components/profile/Toolbar';
+import { profileNavigation } from '../actions/profileActions';
 
 const ProfileToolbar = (props) => {
-  const { profile, switchProfileTab: switchView } = props;
+  const { profile, profileNavigation: switchView } = props;
   const {
     following, followers, articles, favorites,
   } = profile;
@@ -23,5 +23,5 @@ const mapStateToProps = (state) => ({
 
 export default connect(
   mapStateToProps,
-  { switchProfileTab },
+  { profileNavigation },
 )(ProfileToolbar);
