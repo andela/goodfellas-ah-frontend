@@ -7,16 +7,17 @@ import InputField from '../components/shared/InputField';
 
 class ResetPassword extends Component {
   handleResetPassword = (e) => {
+    const { resetPassword: newPassword, history } = this.props;
     e.preventDefault();
     const userData = {
       password: e.target.password.value,
       confirm_password: e.target.confirmPassword.value,
     };
-    this.props.resetPassword(userData, this.props.history);
+    newPassword(userData, history);
   };
 
   render() {
-    const { errorMessage } = this.props.auth;
+    const { errorMessage } = this.props;
     return (
       <form onSubmit={this.handleResetPassword}>
         <InputField placeholder="New password" type="password" name="password" />
@@ -33,7 +34,7 @@ class ResetPassword extends Component {
   }
 }
 const mapStateToProps = (state) => ({
-  auth: state.auth,
+  errorMesswge: state.auth.errorMesswge,
 });
 
 export default connect(

@@ -7,15 +7,16 @@ import InputField from '../components/shared/InputField';
 
 class ForgotPassword extends Component {
   handleForgotPassword = (e) => {
+    const { forgotPassword: resetPassword } = this.props;
     e.preventDefault();
     const userEmail = {
       email: e.target.email.value,
     };
-    this.props.forgotPassword(userEmail);
+    resetPassword(userEmail);
   };
 
   render() {
-    const { errorMessage } = this.props.auth;
+    const { errorMessage } = this.props;
     return (
       <form onSubmit={this.handleForgotPassword}>
         <InputField placeholder="Email Address" type="email" name="email" />
@@ -28,7 +29,7 @@ class ForgotPassword extends Component {
   }
 }
 const mapStateToProps = (state) => ({
-  auth: state.auth,
+  errorMesswge: state.auth.errorMesswge,
 });
 
 export default connect(

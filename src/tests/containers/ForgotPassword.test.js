@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import ForgotPassword from '../../containers/ForgotPassword';
+import ForgotPassword from '../../containers/Forgotpassword';
 import Root from '../../root';
 
 let wrapped;
@@ -15,7 +15,7 @@ beforeEach(() => {
 });
 
 afterEach(() => wrapped.unmount());
-describe('ForgotPassword UI', () => {
+describe('ForgotPassword', () => {
   describe('render', () => {
     test('container should render as expected', () => {
       const tree = toJson(wrapped);
