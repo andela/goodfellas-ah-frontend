@@ -1,4 +1,4 @@
-.authFlex{
+.auth-flex{
     display: flex;
 }
 
@@ -6,7 +6,7 @@
 
 
 @media screen and (max-width:800px){
-    .authFlex{
+    .auth-flex{
         display: flex;
         flex-direction: column;
     }

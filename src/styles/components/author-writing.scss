@@ -1,26 +1,24 @@
-.authorWriting{
+.author-writing{
     width: 51%;
     background-color: #000;
-    height: 1050px;
-    margin-top: -10px;
+    height: 100vh;
     -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
     clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
 }
 
-.authorWriting img{
-    margin-top: 100px;
+.author-writing img{
     margin-left: 3%;
 }
 
-.authorWriting .authHeader{
+.author-writing .auth-header{
     font-family: Antic;
     font-size: 48px;
     color: #fff;
-    padding-top: 180px;
+    padding-top: 70px;
     margin-left: 30%;
 }
 
-.authorWriting .authTitle{
+.author-writing .auth-title{
     font-family: Antic;
     color: #fff;
     font-size: 24px;
@@ -30,13 +28,12 @@
 
 
 @media screen and (max-width:1024px){
-    .authorWriting .authHeader{
+    .author-writing .auth-header{
         font-size: 40px;
-        padding-top: 200px;
         margin-left: 27%;
     }
 
-    .authorWriting .authTitle{
+    .author-writing .auth-title{
         font-size: 20px;
         margin-left: 18%;
         padding-top: 10px;
@@ -46,24 +43,24 @@
 
 
 @media screen and (max-width:800px){    
-    .authorWriting img{
+    .author-writing img{
         margin-top: -30px;
     }
 
-    .authorWriting .authHeader{
+    .author-writing .auth-header{
         font-size: 40px;
         padding-top: 100px;
         margin-left: 35%;
     }
 
-    .authorWriting{
+    .author-writing{
         width: 100%;
         height: 800px;
         -webkit-clip-path: inset(0 0 0 0);
         clip-path: inset(0 0 0 0);
     }
     
-    .authorWriting .authTitle{
+    .author-writing .auth-title{
         font-size: 32px;
         margin-left: 18%;
         margin-top: -30px;
@@ -73,21 +70,21 @@
 
 
 @media screen and (max-width:600px){  
-    .authorWriting{
+    .author-writing{
         height: 700px;
     }
 
-    .authorWriting img{
+    .author-writing img{
         margin-top: -10px;
     }
 
-    .authorWriting .authHeader{
+    .author-writing .auth-header{
         font-size: 35px;
         padding-top: 70px;
         margin-left: 28%;
     }
     
-    .authorWriting .authTitle{
+    .author-writing .auth-title{
         font-size: 25px;
         margin-left: 18%;
         margin-top: 10px;
@@ -98,20 +95,20 @@
 
 
 @media screen and (max-width:400px){  
-    .authorWriting{
+    .author-writing{
         height: 450px;
     }
 
-    .authorWriting img{
+    .author-writing img{
         margin-top: -10px;
     }
 
-    .authorWriting .authHeader{
+    .author-writing .auth-header{
         font-size: 25px;
         padding-top: 50px;
     }
     
-    .authorWriting .authTitle{
+    .author-writing .auth-title{
         font-size: 18px;
         margin-left: 12%;
     }
@@ -120,11 +117,11 @@
 
 
 @media screen and (max-width:320px){  
-    .authorWriting{
+    .author-writing{
         height: 380px;
     }
     
-    .authorWriting .authTitle{
+    .author-writing .auth-title{
         font-size: 16px;
         margin-top: -10px;
     }
