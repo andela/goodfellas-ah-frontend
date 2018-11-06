@@ -8,7 +8,7 @@ import ButtonOutline from '../components/shared/ButtonOutline';
 export default () => (
   <Body className="edit-profile">
     <ProfileImageUploader id="profile-image-uploader" />
-    <h3 id="user-name">Fatima Akande</h3>
+    <h3 id="user-name" className="username">Fatima Akande</h3>
     <InputBox placeholder="Username" />
     <TextBox id="bio-box" placeholder="Enter a short bio" />
     <div>

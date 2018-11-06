@@ -2,13 +2,17 @@
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   margin: 33px 0;
   display: grid;
-  grid-template-areas: "image ."
+  grid-template-areas: "image about"
                        "type about";
-  grid-template-columns: 10rem 1fr;
+  grid-template-columns: minmax(7rem, 3fr) 7fr;
   grid-gap: .5rem .7rem;
-  font-size: 14px;
-  padding: 25px;
+  font-size: 13px;
+  padding: 5px 25px 25px;
   cursor: pointer;
+  @media screen and (min-width: 500px) {
+    grid-template-areas: "image ."
+                         "type about";
+  }
   .profile-image {
     grid-area: image;
     width: 45px;
@@ -24,5 +28,8 @@
   }
   .about {
     grid-area: about;
+    &.no-bio {
+      color: var(--gray);
+    }
   }
 }

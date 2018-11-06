@@ -1,13 +1,12 @@
 import React from 'react';
-import profileImage from '../../assets/user.jpg';
 
 export default (props) => (
-  <div id={props.id} className="follow-card">
-    <img src={profileImage} alt="profile" className="profile-image" />
+  <div id={props.id} className="follow-card hoverable">
+    <img src={props.user.profile.image || 'https://res.cloudinary.com/drmmqcxkc/image/upload/v1541506955/user-placeholder.png'} alt="profile" className="profile-image" />
     <div className="type">
-      <b>Afeez Awoyemi</b>
+      <b>{`${props.user.firstname} ${props.user.lastname}`}</b>
       <p>{props.type}</p>
     </div>
-    <p className="about">Lorem ipsor populate this text field like magic magic magic. And if you do who is the on thea will do it lorieajj</p>
+    <p className={`about ${props.user.profile.bio ? '' : 'no-bio'}`}>{props.user.profile.bio || `${props.user.firstname} ${props.user.lastname} has no bio.`}</p>
   </div>
 );

@@ -7,12 +7,15 @@
                        "article-img article-img article-img"
                        "description description description"
                        "footer footer footer";
-  grid-template-columns: 10rem 2fr 1fr;
-  grid-gap: .5rem;
+  grid-template-columns: 10rem 2fr auto;
+  grid-gap: .4rem .5rem;
   font-size: 11px;
-  padding: 15px 90px;
+  padding: 20px 15px 5px;
   align-items: center;
   cursor: pointer;
+  @media screen and (min-width: 500px) {
+    padding: 20px 90px 5px;    
+  }
   .username {
     grid-area: username;
   }

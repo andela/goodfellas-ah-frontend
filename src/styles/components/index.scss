@@ -17,11 +17,17 @@ font-family: 'Roboto', sans-serif;
   cursor: pointer;
   border-radius: 5px;
   transition: all .3s ease-in;
+  font-size: 14px;
   &:hover {
     color: white !important;
     border-color: transparent !important;
     background: var(--light-gray);
   }
+}
+h3.username {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: capitalize;
 }
 .outline {
   color: var(--light-gray);
@@ -31,8 +37,21 @@ font-family: 'Roboto', sans-serif;
 a.outline:hover {
   text-decoration: none;
 }
+.hoverable {
+  transition: all .2s ease-in-out;
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+}
 .profile-image {
-  height: 7rem;
-  width: 7rem;
+  height: 5rem;
+  width: 5rem;
   border-radius: 50%;
+  background-image: url(https://res.cloudinary.com/drmmqcxkc/image/upload/v1541506955/user-placeholder.png);
+  background-size: 100%;
+  @media screen and (min-width: 500px) {
+    height: 7rem;
+    width: 7rem;    
+  }
 }

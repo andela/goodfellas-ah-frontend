@@ -1,7 +1,9 @@
 .profile-toolbar {
   display: flex;
   justify-content: space-around;
-  padding: 0 2.5rem;
+  @media screen and (min-width: 500px){
+    padding: 0 2.5rem;
+  }
   .toolbar-menu {
     text-align: center;
     font-size: 18px;
