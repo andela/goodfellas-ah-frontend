@@ -1,6 +1,9 @@
-export default {
-  isAuthenticated: false,
+const initialState = {
+  authenticated: '',
+  errorMessage: '',
   user: {},
   articles: [],
   error: [],
 };
+
+export default initialState;
