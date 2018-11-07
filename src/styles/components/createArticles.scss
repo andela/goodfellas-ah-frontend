@@ -52,7 +52,7 @@ hr {
 form {
     padding-left: 50px; 
 }
-input[type="text"]{
+#title {
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
     width: 100%;
@@ -62,7 +62,6 @@ input[type="text"]{
     z-index: 1;
     position: relative;
     -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border-radius: 5px;
     border: none;
@@ -73,7 +72,7 @@ input[type="text"]{
         background-color: #F8F8F8;
     }
 }
-textarea {
+.editable {
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
     width: 100%;
@@ -98,4 +97,54 @@ textarea {
     font-size: 36px;
     font-weight: 500;
 }
+.box {
+    width: 150px;
+    height: 36px;
+    border-radius: 6px;
+    background-color: #a6a2a2;
+}
+#camera-icon {
+    width: 17px;
+    height: 24px;
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #e5e5e5;
+    margin: 7px;
+}
+#new-section {
+    width: 24px;
+    height: 24px;
+    margin: 7px;
+}
+#bullet-list {
+    width: 24px;
+  height: 26px;
+  font-family: FontAwesome5FreeSolid;
+  font-size: 24px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #e5e5e5;
+  margin: 7px;
+}
+#bold {
+    width: 20px;
+    height: 30px;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #e5e5e5;
+    margin: 7px;
+    text-align: center;
+  }
 }
