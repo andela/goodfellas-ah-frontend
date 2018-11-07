@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { MemoryRouter } from 'react-router-dom';
 import toJson from 'enzyme-to-json';
-import Header from '../../components/shared/Header';
+import ArticleCard from '../../containers/ArticleCard';
 import Root from '../../root';
 
 let wrapped;
@@ -11,15 +11,15 @@ beforeEach(() => {
   wrapped = mount(
     <Root>
       <MemoryRouter initialEntries={[{ key: 'testkey' }]}>
-        <Header />
+        <ArticleCard />
       </MemoryRouter>
     </Root>,
   );
 });
 
-afterEach(() => wrapped.unmount());
+// afterEach(() => wrapped.unmount());
 
-describe('Header UI', () => {
+describe('Article Card UI', () => {
   describe('render features', () => {
     test('component should render as expected', () => {
       const tree = toJson(wrapped);

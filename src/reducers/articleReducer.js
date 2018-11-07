@@ -1,5 +1,5 @@
 import * as types from '../actions/actionTypes';
-import initialState from './initialState/index';
+import initialState from './initialState';
 
 export default (state = initialState, action) => {
   switch (action.type) {

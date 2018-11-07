@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { signout } from '../../actions/authActions';
 
 class Header extends Component {
   dropdown = () => {
@@ -27,6 +28,7 @@ class Header extends Component {
   render() {
     const { auth } = this.props;
     const { parentComponent } = this.props;
+    const { signout: signoutUser } = this.props;
     return (
       <header>
         <nav className="navbar">
@@ -92,7 +94,7 @@ class Header extends Component {
                         <Link to="/profile">Profile</Link>
                       </li>
                       <li>
-                        <Link to="/signout">Sign out</Link>
+                        <Link onClick={signoutUser} to="/">Sign out</Link>
                       </li>
                     </ul>
                   </div>
@@ -158,7 +160,7 @@ class Header extends Component {
 }
 
 function mapStatetoProps(state) {
-  return { auth: state.auth.isAuthenticated };
+  return { auth: state.auth.authenticated };
 }
 
-export default connect(mapStatetoProps)(Header);
+export default connect(mapStatetoProps, { signout })(Header);
