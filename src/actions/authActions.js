@@ -27,3 +27,24 @@ export const resetPassword = (userData, history) => async (dispatch) => {
     dispatch({ type: types.RESET_ERROR, payload: error.response.data.message });
   }
 };
+
+export const signin = (formValues, callback) => async (dispatch) => {
+  try {
+    const response = await axios.post('/api/auth/signin', formValues);
+
+    dispatch({ type: types.SIGNIN_USER, payload: response.data.token });
+    localStorage.setItem('token', response.data.token);
+    callback();
+  } catch (error) {
+    dispatch({
+      type: types.SIGNIN_USER_ERROR,
+      payload: error.response.data.message || error.response.data.error,
+    });
+  }
+};
+
+export const signout = () => {
+  localStorage.removeItem('token');
+
+  return { type: types.SIGNOUT_USER };
+};
