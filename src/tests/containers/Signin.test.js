@@ -1,15 +1,22 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import App from '../../containers/App';
+import SigninForm from '../../containers/SignupForm';
+import Root from '../../root';
 
 let wrapped;
 
 beforeEach(() => {
-  wrapped = shallow(<App />);
+  wrapped = mount(
+    <Root>
+      <SigninForm />
+    </Root>,
+  );
 });
 
-describe('App UI', () => {
+afterEach(() => wrapped.unmount());
+
+describe('Signin UI', () => {
   describe('render features', () => {
     test('container should render as expected', () => {
       const tree = toJson(wrapped);

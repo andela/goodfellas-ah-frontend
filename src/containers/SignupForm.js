@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+// import { withRouter } from 'react-router-dom';
 import { signup } from '../actions/authActions';
 import { validateAuth } from '../lib/validation';
 import AuthInput from '../components/shared/AuthInput';
+import AuthButton from '../components/shared/AuthButton';
 import '../styles/styles.scss';
 
 
@@ -55,15 +56,17 @@ class SignupForm extends Component {
       password: password.trim(),
     };
 
+    const { signup: signupUser, history } = this.props;
+
     // processes user sign up when validation rules
     // pass for all fields
     if (!validationError.status) {
-      this.props.signup(body, () => this.props.history.push('/user/profile'));
+      signupUser(body, () => history.push('/user/profile'));
     }
   }
 
-  handleChange = (event, field) => {
-    this.setState({ [field]: event.target.value });
+  handleChange = (event) => {
+    this.setState({ [event.target.id]: event.target.value });
   }
 
 
@@ -87,7 +90,6 @@ class SignupForm extends Component {
           value={firstname}
           handleChange={this.handleChange}
           name="firstname"
-          type="text"
           placeholder="Firstname"
         />
 
@@ -96,7 +98,6 @@ class SignupForm extends Component {
           value={lastname}
           handleChange={this.handleChange}
           name="lastname"
-          type="text"
           placeholder="Lastname"
         />
 
@@ -126,11 +127,7 @@ class SignupForm extends Component {
           type="password"
           placeholder="Confirm Password"
         />
-
-        <div>
-          <button className="auth-button" type="submit">SIGN UP</button>
-        </div>
-
+        <AuthButton name="SIGN UP" />
       </form>
 
     );
@@ -140,4 +137,4 @@ class SignupForm extends Component {
 
 const mapStateToProps = (state) => ({ message: state.auth.errorMessage });
 
-export default connect(mapStateToProps, { signup })(withRouter(SignupForm));
+export default connect(mapStateToProps, { signup })(SignupForm);
