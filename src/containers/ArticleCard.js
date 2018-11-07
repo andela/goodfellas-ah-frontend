@@ -24,8 +24,7 @@ class Card extends Component {
   };
 
   handleClick = () => {
-    const { articleEnd } = this.state;
-    this.setState({ articleEnd: articleEnd + 6 });
+    this.setState({ articleEnd: 9 });
     this.displayCards(this.displayArticles);
   };
 
