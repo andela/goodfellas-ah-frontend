@@ -9,7 +9,8 @@ beforeEach(() => {
   wrapped = shallow(<SigninPage />);
 });
 
-describe('SigninPage UI', () => {
+
+describe('Signin UI', () => {
   describe('render features', () => {
     test('view should render as expected', () => {
       const tree = toJson(wrapped);

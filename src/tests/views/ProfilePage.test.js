@@ -9,7 +9,7 @@ beforeEach(() => {
   wrapped = shallow(<ProfilePage />);
 });
 
-describe('ProfilePage UI', () => {
+describe('Profile UI', () => {
   describe('render features', () => {
     test('view should render as expected', () => {
       const tree = toJson(wrapped);

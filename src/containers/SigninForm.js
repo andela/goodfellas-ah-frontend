@@ -1,33 +1,68 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { signin } from '../actions/authActions';
+import { validateAuth } from '../lib/validation';
 import AuthInput from '../components/shared/AuthInput';
-import '../styles/styles.scss';
+import AuthButton from '../components/shared/AuthButton';
 
-const SigninForm = () => (
-  <form>
-    <AuthInput
-      error=""
-      value=""
-      handleChange=""
-      name="email"
-      type="email"
-      placeholder="E-mail"
-    />
+class Signin extends Component {
+  state = {
+    email: '',
+    password: '',
+    validationError: {},
+  };
 
-    <AuthInput
-      error=""
-      value=""
-      handleChange=""
-      name="password"
-      type="password"
-      placeholder="Password"
-    />
+  handleSubmit = async (event) => {
+    event.preventDefault();
+    const { signin: signinUser, history } = this.props;
+    const { email, password } = this.state;
 
-    <div>
-      <button className="auth-button" type="submit">SIGN IN</button>
-    </div>
+    const fieldNames = ['email', 'password'];
+    const validationError = validateAuth({ email, password }, fieldNames);
+    this.setState({ validationError });
 
-  </form>
-);
+    if (!validationError.status) {
+      signinUser({ email, password }, () => history.push('/user/profile'));
+      this.setState({ email: '', password: '' });
+    }
+  }
 
+  handleChange = (event) => {
+    this.setState({ [event.target.id]: event.target.value });
+  }
 
-export default SigninForm;
+  render() {
+    const { email, password, validationError } = this.state;
+    const { errorMessage } = this.props;
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <div className="error-field">{errorMessage}</div>
+        <AuthInput
+          error={validationError}
+          value={email}
+          handleChange={this.handleChange}
+          name="email"
+          placeholder="Email"
+        />
+        <AuthInput
+          error={validationError}
+          value={password}
+          handleChange={this.handleChange}
+          name="password"
+          type="password"
+          placeholder="Password"
+        />
+        <div>
+          <div className="forgot-password">Forgot Password?</div>
+        </div>
+        <AuthButton name="SIGN IN" />
+      </form>
+    );
+  }
+}
+
+function mapStateToProps(state) {
+  return { errorMessage: state.auth.errorMessage };
+}
+
+export default connect(mapStateToProps, { signin })(Signin);

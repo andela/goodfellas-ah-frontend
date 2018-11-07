@@ -2,7 +2,7 @@ import React from 'react';
 
 const AuthInput = (props) => {
   const {
-    value, error, name, type, placeholder,
+    value, error, name, type, placeholder, handleChange,
   } = props;
   return (
     <div>
@@ -13,7 +13,7 @@ const AuthInput = (props) => {
         placeholder={placeholder}
         id={name}
         value={value}
-        onChange={(event) => props.handleChange(event, name)}
+        onChange={handleChange}
       />
       <div className="error-field">{error[name]}</div>
     </div>);

@@ -3,5 +3,4 @@ const initialState = {
   errorMessage: '',
 };
 
-
 export default initialState;

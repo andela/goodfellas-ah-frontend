@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { withRouter } from 'react-router-dom';
 import { signup } from '../actions/authActions';
 import { validateAuth } from '../lib/validation';
 import AuthInput from '../components/shared/AuthInput';
