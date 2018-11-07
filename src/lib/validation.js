@@ -28,12 +28,13 @@ export const validateAuth = (fields, fieldNames) => {
   }
 
   // checks if passwords match
+  if(fields['confirmPassword']){
   if (fields.password !== '' && fields.confirmPassword !== '') {
     if (fields.password !== fields.confirmPassword) {
       error.confirmPassword = 'Passwords do not match';
       error.status = true;
     }
   }
-
+}
   return error;
 };

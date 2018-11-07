@@ -6,18 +6,18 @@ import AuthInput from '../components/shared/AuthInput';
 import AuthButton from '../components/shared/AuthButton';
 import '../styles/styles.scss';
 
+const initialState = {
+  // input fields
+  firstname: '',
+  lastname: '',
+  email: '',
+  password: '',
+  confirmPassword: '',
 
+  validationError: {},
+};
 class SignupForm extends Component {
-  state = {
-    // input fields
-    firstname: '',
-    lastname: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-
-    validationError: {},
-  };
+  state = initialState;
 
 
   handleSubmit = (event) => {
@@ -61,6 +61,7 @@ class SignupForm extends Component {
     // pass for all fields
     if (!validationError.status) {
       signupUser(body, () => history.push('/user/profile'));
+      this.setState(initialState);
     }
   }
 

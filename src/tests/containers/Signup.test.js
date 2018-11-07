@@ -58,6 +58,32 @@ describe('Signup UI', () => {
     it('confirmPassword field has been filled', () => {
       expect(wrapped.find('input').at(4).prop('value')).toEqual('password');
     });
+
+    it('empties fields when form is submitted', () => {
+      wrapped.find('form').simulate('submit');
+      wrapped.update();
+
+      expect(wrapped.find('input').first().prop('value')).toEqual('');
+      expect(wrapped.find('input').at(1).prop('value')).toEqual('');
+      expect(wrapped.find('input').at(2).prop('value')).toEqual('');
+      expect(wrapped.find('input').at(3).prop('value')).toEqual('');
+      expect(wrapped.find('input').at(4).prop('value')).toEqual('');
+
+    });
   });
+
+  describe('return empty field when form is submitted', () => {
+    it('empties fields when form is submitted', () => {
+      wrapped.find('form').simulate('submit');
+      wrapped.update();
+
+      expect(wrapped.find('input').first().prop('value')).toEqual('');
+      expect(wrapped.find('input').at(1).prop('value')).toEqual('');
+      expect(wrapped.find('input').at(2).prop('value')).toEqual('');
+      expect(wrapped.find('input').at(3).prop('value')).toEqual('');
+      expect(wrapped.find('input').at(4).prop('value')).toEqual('');
+    });
+  });
+
 });
 
