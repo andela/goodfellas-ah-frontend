@@ -8,6 +8,7 @@ class Header extends Component {
   };
 
   render() {
+    const { auth } = this.props;
     return (
       <header>
         <nav className="navbar navbar-expand-lg mb-4">
@@ -20,7 +21,7 @@ class Header extends Component {
             </span>
           </button>
 
-          {this.props.auth ? (
+          {auth ? (
             <div className="header-user">
               <div className="header-user-search">
                 <input type="search" />
