@@ -61,10 +61,11 @@ class Header extends Component {
                       <img
                         className="dropdown-toggle notification-image"
                         data-toggle="dropdown"
-                        src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541430760/Authors%20Haven/black_bell_icon.png"
+                        src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541606672/Authors%20Haven/black_bell_icon.png"
                         alt=""
                       />)}
                   </div>
+                  <span className="notification-count">4</span>
                   <div onClick={this.dropdown} className="dropdown">
                     <img
                       className="dropdown-toggle author-image"

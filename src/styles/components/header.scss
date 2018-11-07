@@ -97,6 +97,20 @@ header {
     justify-content: space-between;
     width: 32vw;
   }
+  .notification-count{
+    position: relative;
+    height: 17px;
+    width: 17px;
+    border-radius: 5px;
+    background-color: #dd4b39;
+    left: -17px;
+    top: -9px;
+    color: white;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bolder;
+    padding-bottom: 0px;
+  }
   .header-user-search {
     margin-right: 70px;
     .searchbar{

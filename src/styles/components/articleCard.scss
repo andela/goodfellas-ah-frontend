@@ -64,14 +64,11 @@
   }
   }
   .hero-card-image{
-    background-size: auto;
-    width: 100%;
     padding: 0;
-    background-image: url('https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426070/Authors%20Haven/cardImage2.png');
+    background: linear-gradient(rgba(black, 0.32), rgba(black, 0.32)), url(https://res.cloudinary.com/drmmqcxkc/image/upload/v1541513674/Authors%20Haven/article-placeholder.jpg);
+    background-size: 100% 100%;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    justify-content: center;
-    text-align: center;
     img{
       height: 70px;
       margin-top: 70px;
@@ -87,7 +84,7 @@
 
 .hero-moreArticles{
   cursor: pointer;
-  margin: 20px auto;
+  margin: 20px auto 0 auto;
   justify-content: center;
   p {
     font-family: Antic;
@@ -99,4 +96,9 @@
     height: 20px;
     margin: 3px 5px;
   }
-  }
+}
+
+.profile-image-placeholder{
+  border-radius: 50%;
+  text-align: center;
+}

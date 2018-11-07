@@ -217,11 +217,11 @@ $faintblue: #F4F9FC;
 
 .hero-lowerbody{
   background-color: $faintblue;
-  height: 155vh;
+  // min-height: 155vh;
   width: 100vw;
   @media only screen and (max-width: 900px) {
     width: 100vw;
-    height: 375vh;
+    // min-height: 375vh;
     text-align: center;
   }
   .hero-lowerbody-details{

@@ -22,7 +22,7 @@ it('renders without crashing', () => {
   shallow(<App />);
 });
 
-it('contains the visitor header', () => {
+it('contains the header', () => {
   expect(wrapped.contains(Header)).toEqual(true);
 });
 

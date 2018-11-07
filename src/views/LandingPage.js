@@ -9,11 +9,12 @@ import Loading from '../components/shared/Loading';
 
 class Hero extends Component {
   componentDidMount() {
-    const { getArticles } = this.props;
-    getArticles();
+    const { getArticles: getAllArticles } = this.props;
+    getAllArticles();
   }
 
   render() {
+    const { articles, error } = this.props;
     return (
       <div>
         <section className="hero-section">
@@ -108,8 +109,8 @@ class Hero extends Component {
             </p>
           </div>
           <div className="hero-lowerbody-articles">
-            {this.props.articles
-              ? <Card articles={this.props.articles} error={this.props.error} />
+            {articles
+              ? <Card articles={articles} error={error} />
               : <Loading />}
           </div>
         </section>
