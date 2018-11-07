@@ -1,23 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import ResetPasswordPage from '../../views/ResetPasswordPage';
-import ResetPassword from '../../containers/ResetPassword';
+import ForgotPasswordPage from '../../views/ForgotPasswordPage';
 
 let wrapped;
 
 beforeEach(() => {
-  wrapped = shallow(<ResetPasswordPage />);
+  wrapped = shallow(<ForgotPasswordPage />);
 });
 
-describe('ResetPasswordPageUI', () => {
+describe('ForgotPasswordPageUI', () => {
   describe('render features', () => {
     test('view should render as expected', () => {
       const tree = toJson(wrapped);
       expect(tree).toMatchSnapshot();
-    });
-    it('contains the header', () => {
-      expect(wrapped.contains(<ResetPassword />)).toEqual(true);
     });
   });
 });
