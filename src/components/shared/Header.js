@@ -4,12 +4,10 @@ import { connect } from 'react-redux';
 
 class Header extends Component {
   dropdown = () => {
-    console.log(this.props, this.refs);
     this.refs.myDropdown.classList.toggle('show');
   };
 
   navbarToggle = () => {
-    console.log(this.refs);
     this.refs.navbarTitle.classList.toggle('-responsive');
     if (this.refs.navbarToggler.className === 'navbar-wrapper') {
       this.refs.navbarToggler.className = 'navbar-wrapper-responsive';
@@ -19,7 +17,6 @@ class Header extends Component {
   }
 
   openSearchbar = () => {
-    console.log(this.refs.searchbar);
     if (this.refs.searchbar.className === 'searchbar') {
       this.refs.searchbar.className = 'searchbar-responsive';
     } else {
@@ -140,13 +137,13 @@ class Header extends Component {
 
                   <ul className="navbar-element">
                     <li className="nav-item">
-                      <Link className="nav-link" to="/signin">
+                      <Link className="nav-link" to="/auth/signin">
                         <p>Sign In</p>
                       </Link>
                     </li>
                     <p className="link-border">|</p>
                     <li className="nav-item">
-                      <Link className="nav-link" to="/signup">
+                      <Link className="nav-link" to="/auth/signup">
                         <p>Sign Up</p>
                       </Link>
                     </li>
