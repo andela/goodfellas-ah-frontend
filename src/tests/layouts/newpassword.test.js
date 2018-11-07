@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import { MemoryRouter } from 'react-router-dom';
-import ResetPassword from '../../containers/ResetPassword';
+import NewPassword from '../../components/layout/NewPassword';
 import Root from '../../root';
 
 let wrapped;
@@ -12,7 +12,7 @@ beforeEach(() => {
 
     <Root>
       <MemoryRouter initialEntries={[{ pathname: '/', key: 'testKey' }]}>
-        <ResetPassword />
+        <NewPassword />
       </MemoryRouter>
     </Root>,
 
