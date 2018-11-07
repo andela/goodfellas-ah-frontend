@@ -4,17 +4,21 @@
   "description": "A Social platform for the creative at heart",
   "main": "index.js",
   "private": true,
+  "proxy": "http://localhost:3200",
   "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap": "^4.1.3",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
     "node-sass": "^4.9.4",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-redux": "^5.1.0",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.5",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.5",
-    "redux-thunk": "^2.3.0",
-    "enzyme": "^3.7.0",
-    "enzyme-adapter-react-16": "^1.6.0"
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -43,6 +47,7 @@
   },
   "homepage": "https://github.com/andela/goodfellas-ah-frontend#readme",
   "devDependencies": {
+    "enzyme-to-json": "^3.3.4",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",

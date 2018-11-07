@@ -1,3 +1,3 @@
-// this is san example
-export const TEST_DISPATCH = 'TEST_DISPATCH';
-export const ERROR_DISPATCH = 'TEST_DISPATCH';
+export const SIGNIN_USER = 'SIGNIN_USER';
+export const SIGNIN_USER_ERROR = 'SIGNIN_USER_ERROR';
+export const SIGNOUT_USER = 'SIGNOUT_USER';

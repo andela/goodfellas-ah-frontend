@@ -1,13 +1,23 @@
-// this is an example action file
-
+import axios from 'axios';
 import * as types from './actionTypes';
 
-export const registerUser = (userData) => ({
-  type: types.TEST_DISPATCH,
-  payload: userData,
-});
+export const signin = (formValues, callback) => async (dispatch) => {
+  try {
+    const response = await axios.post('/api/auth/signin', formValues);
 
-export const loginUser = (userData) => ({
-  type: types.TEST_DISPATCH,
-  payload: userData,
-});
+    dispatch({ type: types.SIGNIN_USER, payload: response.data.token });
+    localStorage.setItem('token', response.data.token);
+    callback();
+  } catch (error) {
+    dispatch({
+      type: types.SIGNIN_USER_ERROR,
+      payload: error.response.data.message || error.response.data.error,
+    });
+  }
+};
+
+export const signout = () => {
+  localStorage.removeItem('token');
+
+  return { type: types.SIGNOUT_USER };
+};

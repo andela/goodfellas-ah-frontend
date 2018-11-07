@@ -1,8 +1,5 @@
-.App {
-  text-align: center;
-
-  p {
-  	color: red;
-  }
-}
-
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import './components/fonts.scss';
+@import './components/auth.scss';
+@import './components/auth-form.scss';
+@import './components/author-writing.scss';
