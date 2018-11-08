@@ -18,7 +18,7 @@ export const signin = (formValues, callback) => async (dispatch) => {
 
 export const socialSignin = ({ token, userId }, callback) => async (dispatch) => {
   try {
-    await axios.get(`http://localhost:3000/api/user/profile/${userId}`, {
+    await axios.get(`/api/user/profile/${userId}`, {
       headers: { Authorization: token },
     });
     dispatch({ type: types.SIGNIN_USER, payload: token });
