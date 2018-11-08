@@ -48,7 +48,8 @@ header {
         justify-content: space-around;
         align-items: center;
         margin-bottom: 0;
-        li{
+        a{
+          color: white;
           transition: all .55s ease;
           &:hover{
             transform: translateY(-4px);
@@ -177,18 +178,17 @@ header {
         border: 1px solid white;
       }
       .dropdown-menu{
-        li{
-          padding: 6px 0 6px 5px;
-          a{
-            color: #c4c4c4;
-            font-weight: 100;
-            padding: 10px;
-            &:hover{
-              text-decoration: none;
-            }
+        padding: 6px 0 6px 5px;
+        a{
+          display: block;
+          color: #c4c4c4;
+          font-weight: 100;
+          padding: 6px;
+          &:hover{
+            text-decoration: none;
           }
         }
-        li:nth-child(4), li:nth-child(6){
+        a:nth-child(4), a:nth-child(6){
           border-bottom: 1px solid #c4c4c4;
         }
         &.show{
@@ -213,10 +213,10 @@ header {
   display: inline;
 }
 
-.brand-name-white{
+.header-white{
   color: white !important;
 }
 
-.brand-name-dark{
+.header-dark{
   color: black !important;
 }

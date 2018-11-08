@@ -58,261 +58,268 @@ exports[`Landing Page UI render features container should render as expected 1`]
           <div>
             <LandingPageLayout>
               <div>
-                <Hero>
-                  <section
-                    className="hero-section"
+                <Connect(Hero)>
+                  <Hero
+                    auth={null}
+                    dispatch={[Function]}
                   >
-                    <div
-                      className="hero-section-overlay"
+                    <section
+                      className="hero-section"
                     >
-                      <Connect(Header)
-                        parentComponent="landingpage"
+                      <div
+                        className="hero-section-overlay"
                       >
-                        <Header
-                          auth={null}
+                        <Connect(Header)
                           parentComponent="landingpage"
-                          signout={[Function]}
                         >
-                          <header>
-                            <nav
-                              className="navbar"
-                            >
-                              <Link
-                                className="navbar-title navbar-brand"
-                                replace={false}
-                                to="/"
+                          <Header
+                            auth={null}
+                            parentComponent="landingpage"
+                            signout={[Function]}
+                          >
+                            <header>
+                              <nav
+                                className="navbar"
                               >
-                                <a
+                                <Link
                                   className="navbar-title navbar-brand"
-                                  href="/"
-                                  onClick={[Function]}
+                                  replace={false}
+                                  to="/"
                                 >
-                                  <h3
-                                    className="brand-name-white"
+                                  <a
+                                    className="navbar-title navbar-brand"
+                                    href="/"
+                                    onClick={[Function]}
                                   >
-                                    Authors Haven
-                                  </h3>
-                                </a>
-                              </Link>
-                              <div
-                                className="navbar-main-wrapper"
-                              >
-                                <button
-                                  className="navbar-toggler"
-                                  data-target="#navbarNav"
-                                  data-toggle="collapse"
-                                  onClick={[Function]}
-                                  type="button"
-                                >
-                                  <span
-                                    className=""
-                                  >
-                                    <img
-                                      alt=""
-                                      className="menuIcon"
-                                      src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426069/Authors%20Haven/icons8-menu.svg"
-                                    />
-                                  </span>
-                                </button>
+                                    <h3
+                                      className="header-white"
+                                    >
+                                      Authors Haven
+                                    </h3>
+                                  </a>
+                                </Link>
                                 <div
-                                  className="navbar-wrapper"
+                                  className="navbar-main-wrapper"
                                 >
-                                  <ul
-                                    className="navbar-element"
+                                  <button
+                                    className="navbar-toggler"
+                                    data-target="#navbarNav"
+                                    data-toggle="collapse"
+                                    onClick={[Function]}
+                                    type="button"
                                   >
-                                    <li
-                                      className="nav-item"
+                                    <span
+                                      className=""
                                     >
-                                      <Link
-                                        className="nav-link"
-                                        replace={false}
-                                        to="/"
-                                      >
-                                        <a
-                                          className="nav-link"
-                                          href="/"
-                                          onClick={[Function]}
-                                        >
-                                          <p>
-                                            Explore
-                                          </p>
-                                        </a>
-                                      </Link>
-                                    </li>
-                                    <li
-                                      className="nav-item"
-                                    >
-                                      <Link
-                                        className="nav-link"
-                                        replace={false}
-                                        to="/"
-                                      >
-                                        <a
-                                          className="nav-link"
-                                          href="/"
-                                          onClick={[Function]}
-                                        >
-                                          <p>
-                                            About Us
-                                          </p>
-                                        </a>
-                                      </Link>
-                                    </li>
-                                    <li
-                                      className="nav-item"
-                                    >
-                                      <Link
-                                        className="nav-link"
-                                        replace={false}
-                                        to="/"
-                                      >
-                                        <a
-                                          className="nav-link"
-                                          href="/"
-                                          onClick={[Function]}
-                                        >
-                                          <p>
-                                            Contact
-                                          </p>
-                                        </a>
-                                      </Link>
-                                    </li>
-                                  </ul>
-                                  <ul
-                                    className="navbar-element"
+                                      <img
+                                        alt=""
+                                        className="menuIcon"
+                                        src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426069/Authors%20Haven/icons8-menu.svg"
+                                      />
+                                    </span>
+                                  </button>
+                                  <div
+                                    className="navbar-wrapper"
                                   >
-                                    <li
-                                      className="nav-item"
+                                    <ul
+                                      className="navbar-element"
                                     >
                                       <Link
                                         className="nav-link"
+                                        replace={false}
+                                        to="/"
+                                      >
+                                        <a
+                                          className="nav-link"
+                                          href="/"
+                                          onClick={[Function]}
+                                        >
+                                          Explore
+                                        </a>
+                                      </Link>
+                                      <Link
+                                        className="nav-link"
+                                        replace={false}
+                                        to="/"
+                                      >
+                                        <a
+                                          className="nav-link"
+                                          href="/"
+                                          onClick={[Function]}
+                                        >
+                                          About Us
+                                        </a>
+                                      </Link>
+                                      <Link
+                                        className="nav-link"
+                                        replace={false}
+                                        to="/"
+                                      >
+                                        <a
+                                          className="nav-link"
+                                          href="/"
+                                          onClick={[Function]}
+                                        >
+                                          Contact
+                                        </a>
+                                      </Link>
+                                    </ul>
+                                    <ul
+                                      className="navbar-element"
+                                    >
+                                      <Link
+                                        className="nav-item nav-link"
                                         replace={false}
                                         to="/auth/signin"
                                       >
                                         <a
-                                          className="nav-link"
+                                          className="nav-item nav-link"
                                           href="/auth/signin"
                                           onClick={[Function]}
                                         >
-                                          <p>
-                                            Sign In
-                                          </p>
+                                          Sign In
                                         </a>
                                       </Link>
-                                    </li>
-                                    <p
-                                      className="link-border"
-                                    >
-                                      |
-                                    </p>
-                                    <li
-                                      className="nav-item"
-                                    >
+                                      <p
+                                        className="link-border"
+                                      >
+                                        |
+                                      </p>
                                       <Link
-                                        className="nav-link"
+                                        className=" nav-item nav-link"
                                         replace={false}
                                         to="/auth/signup"
                                       >
                                         <a
-                                          className="nav-link"
+                                          className=" nav-item nav-link"
                                           href="/auth/signup"
                                           onClick={[Function]}
                                         >
-                                          <p>
-                                            Sign Up
-                                          </p>
+                                          Sign Up
                                         </a>
                                       </Link>
-                                    </li>
-                                  </ul>
+                                    </ul>
+                                  </div>
                                 </div>
-                              </div>
-                            </nav>
-                          </header>
-                        </Header>
-                      </Connect(Header)>
-                      <h2>
-                        Write it out beautifully
-                      </h2>
-                      <div
-                        className="hero-section-description"
-                      >
-                        <p>
-                          Or type it, its just as fine. Here, we help get your articles across
-                        </p>
-                        <p>
-                          to a pool of eager readers. We know there are no limits to your
-                        </p>
-                        <p>
-                          imagination. We can’t wait to meet you.
-                        </p>
-                      </div>
-                      <div
-                        className="hero-section-buttons"
-                      >
-                        <button
-                          className="btn hero-section-greenbutton"
-                          type="submit"
-                        >
-                          CREATE ARTICLES
-                        </button>
-                        <button
-                          className="btn hero-section-whitebutton"
-                          type="submit"
-                        >
-                          READ ARTICLES
-                        </button>
-                      </div>
-                    </div>
-                    <div
-                      className="hero-body-vector-white"
-                    />
-                    <div>
-                      <div
-                        className="big-hero-card row"
-                      >
+                              </nav>
+                            </header>
+                          </Header>
+                        </Connect(Header)>
+                        <h2>
+                          Write it out beautifully
+                        </h2>
                         <div
-                          className="hero-card-details col-sm-4"
+                          className="hero-section-description"
                         >
-                          <h6>
-                            Why a willing kid
-                          </h6>
-                          <h6>
-                            would win an adult
-                          </h6>
-                          <h6>
-                            in a fist fight.
-                          </h6>
                           <p>
-                            This is my unique story 
-                            <br />
-                             of how a savage kid from
-                            <br />
-                             the west devotedly kicked
-                            <br />
-                             a white glass.....
+                            Or type it, its just as fine. Here, we help get your articles across
                           </p>
-                          <div
-                            className="row hero-card-author"
-                          >
-                            <img
-                              alt="Author Profile"
-                              src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426069/Authors%20Haven/john.jpg"
-                            />
-                            <p
-                              className="col-sm-8"
-                            >
-                              John Adewale
-                            </p>
-                          </div>
+                          <p>
+                            to a pool of eager readers. We know there are no limits to your
+                          </p>
+                          <p>
+                            imagination. We can’t wait to meet you.
+                          </p>
                         </div>
                         <div
-                          className="hero-card-image col-sm-6"
-                        />
+                          className="hero-section-buttons"
+                        >
+                          <Link
+                            replace={false}
+                            to="/auth/signin"
+                          >
+                            <a
+                              href="/auth/signin"
+                              onClick={[Function]}
+                            >
+                              <Button
+                                className="btn hero-section-greenbutton"
+                                title="CREATE ARTICLES"
+                                type="button"
+                              >
+                                <button
+                                  className="btn hero-section-greenbutton"
+                                  type="button"
+                                >
+                                  CREATE ARTICLES
+                                </button>
+                              </Button>
+                            </a>
+                          </Link>
+                          <Link
+                            replace={false}
+                            to="/auth/signin"
+                          >
+                            <a
+                              href="/auth/signin"
+                              onClick={[Function]}
+                            >
+                              <Button
+                                className="btn hero-section-whitebutton"
+                                title="READ ARTICLES"
+                                type="button"
+                              >
+                                <button
+                                  className="btn hero-section-whitebutton"
+                                  type="button"
+                                >
+                                  READ ARTICLES
+                                </button>
+                              </Button>
+                            </a>
+                          </Link>
+                        </div>
                       </div>
-                    </div>
-                  </section>
-                </Hero>
+                      <div
+                        className="hero-body-vector-white"
+                      />
+                      <div>
+                        <div
+                          className="big-hero-card row"
+                        >
+                          <div
+                            className="hero-card-details col-sm-4"
+                          >
+                            <h6>
+                              Why a willing kid
+                            </h6>
+                            <h6>
+                              would win an adult
+                            </h6>
+                            <h6>
+                              in a fist fight.
+                            </h6>
+                            <p>
+                              This is my unique story 
+                              <br />
+                               of how a savage kid from
+                              <br />
+                               the west devotedly kicked
+                              <br />
+                               a white glass.....
+                            </p>
+                            <div
+                              className="row hero-card-author"
+                            >
+                              <img
+                                alt="Author Profile"
+                                src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426069/Authors%20Haven/john.jpg"
+                              />
+                              <p
+                                className="col-sm-8"
+                              >
+                                John Adewale
+                              </p>
+                            </div>
+                          </div>
+                          <div
+                            className="hero-card-image col-sm-6"
+                          />
+                        </div>
+                      </div>
+                    </section>
+                  </Hero>
+                </Connect(Hero)>
                 <LandingPageBody>
                   <section
                     className="hero-body-background"

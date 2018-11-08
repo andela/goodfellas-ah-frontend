@@ -74,7 +74,7 @@ exports[`Header UI render features component should render as expected 1`] = `
                     onClick={[Function]}
                   >
                     <h3
-                      className="brand-name-dark"
+                      className="header-dark"
                     >
                       Authors Haven
                     </h3>
@@ -106,110 +106,80 @@ exports[`Header UI render features component should render as expected 1`] = `
                     <ul
                       className="navbar-element"
                     >
-                      <li
-                        className="nav-item"
+                      <Link
+                        className="nav-link header-dark"
+                        replace={false}
+                        to="/"
                       >
-                        <Link
-                          className="nav-link"
-                          replace={false}
-                          to="/"
+                        <a
+                          className="nav-link header-dark"
+                          href="/"
+                          onClick={[Function]}
                         >
-                          <a
-                            className="nav-link"
-                            href="/"
-                            onClick={[Function]}
-                          >
-                            <p>
-                              Explore
-                            </p>
-                          </a>
-                        </Link>
-                      </li>
-                      <li
-                        className="nav-item"
+                          Explore
+                        </a>
+                      </Link>
+                      <Link
+                        className="nav-link header-dark"
+                        replace={false}
+                        to="/"
                       >
-                        <Link
-                          className="nav-link"
-                          replace={false}
-                          to="/"
+                        <a
+                          className="nav-link header-dark"
+                          href="/"
+                          onClick={[Function]}
                         >
-                          <a
-                            className="nav-link"
-                            href="/"
-                            onClick={[Function]}
-                          >
-                            <p>
-                              About Us
-                            </p>
-                          </a>
-                        </Link>
-                      </li>
-                      <li
-                        className="nav-item"
+                          About Us
+                        </a>
+                      </Link>
+                      <Link
+                        className="nav-link header-dark"
+                        replace={false}
+                        to="/"
                       >
-                        <Link
-                          className="nav-link"
-                          replace={false}
-                          to="/"
+                        <a
+                          className="nav-link header-dark"
+                          href="/"
+                          onClick={[Function]}
                         >
-                          <a
-                            className="nav-link"
-                            href="/"
-                            onClick={[Function]}
-                          >
-                            <p>
-                              Contact
-                            </p>
-                          </a>
-                        </Link>
-                      </li>
+                          Contact
+                        </a>
+                      </Link>
                     </ul>
                     <ul
                       className="navbar-element"
                     >
-                      <li
-                        className="nav-item"
+                      <Link
+                        className="nav-item nav-link header-dark"
+                        replace={false}
+                        to="/auth/signin"
                       >
-                        <Link
-                          className="nav-link"
-                          replace={false}
-                          to="/auth/signin"
+                        <a
+                          className="nav-item nav-link header-dark"
+                          href="/auth/signin"
+                          onClick={[Function]}
                         >
-                          <a
-                            className="nav-link"
-                            href="/auth/signin"
-                            onClick={[Function]}
-                          >
-                            <p>
-                              Sign In
-                            </p>
-                          </a>
-                        </Link>
-                      </li>
+                          Sign In
+                        </a>
+                      </Link>
                       <p
-                        className="link-border"
+                        className="link-border header-dark"
                       >
                         |
                       </p>
-                      <li
-                        className="nav-item"
+                      <Link
+                        className=" nav-item nav-link header-dark"
+                        replace={false}
+                        to="/auth/signup"
                       >
-                        <Link
-                          className="nav-link"
-                          replace={false}
-                          to="/auth/signup"
+                        <a
+                          className=" nav-item nav-link header-dark"
+                          href="/auth/signup"
+                          onClick={[Function]}
                         >
-                          <a
-                            className="nav-link"
-                            href="/auth/signup"
-                            onClick={[Function]}
-                          >
-                            <p>
-                              Sign Up
-                            </p>
-                          </a>
-                        </Link>
-                      </li>
+                          Sign Up
+                        </a>
+                      </Link>
                     </ul>
                   </div>
                 </div>

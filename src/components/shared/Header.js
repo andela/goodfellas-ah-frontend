@@ -32,10 +32,18 @@ class Header extends Component {
     return (
       <header>
         <nav className="navbar">
-          <Link className="navbar-title navbar-brand" ref="navbarTitle" to="/">
-            {parentComponent === 'landingpage' ? <h3 className="brand-name-white">Authors Haven</h3> : <h3 className="brand-name-dark">Authors Haven</h3>}
-          </Link>
-
+          {parentComponent === 'landingpage'
+            ? (
+              <Link className="navbar-title navbar-brand" ref="navbarTitle" to="/">
+                <h3 className="header-white">Authors Haven</h3>
+              </Link>
+            )
+            : (
+              <Link className="navbar-title navbar-brand" ref="navbarTitle" to="/">
+                <h3 className="header-dark">Authors Haven</h3>
+              </Link>
+            )
+          }
           {auth
             ? (
               <div className="header-user">
@@ -72,30 +80,14 @@ class Header extends Component {
                       alt=""
                     />
                     <ul ref="myDropdown" className="dropdown-menu">
-                      <li>
-                        <Link to="/createArticle">New article</Link>
-                      </li>
-                      <li>
-                        <Link to="/drafts">Drafts</Link>
-                      </li>
-                      <li>
-                        <Link to="/myArticles">Your stories</Link>
-                      </li>
-                      <li>
-                        <Link to="/stats">Stats</Link>
-                      </li>
-                      <li>
-                        <Link to="/bookmark">Bookmarks</Link>
-                      </li>
-                      <li>
-                        <Link to="/favourites">Favourites</Link>
-                      </li>
-                      <li>
-                        <Link to="/user/profile">Profile</Link>
-                      </li>
-                      <li>
-                        <Link onClick={signoutUser} to="/">Sign out</Link>
-                      </li>
+                      <Link to="/createArticle">New article</Link>
+                      <Link to="/drafts">Drafts</Link>
+                      <Link to="/myArticles">Your stories</Link>
+                      <Link to="/stats">Stats</Link>
+                      <Link to="/bookmark">Bookmarks</Link>
+                      <Link to="/favourites">Favourites</Link>
+                      <Link to="/user/profile">Profile</Link>
+                      <Link onClick={signoutUser} to="/">Sign out</Link>
                     </ul>
                   </div>
                 </div>
@@ -118,41 +110,41 @@ class Header extends Component {
                     />
                   </span>
                 </button>
-                <div className="navbar-wrapper" ref="navbarToggler">
-                  <ul className="navbar-element">
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/">
-                        <p>Explore</p>
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/">
-                        <p>About Us</p>
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/">
-                        <p>Contact</p>
-                      </Link>
-                    </li>
-                  </ul>
+                {parentComponent === 'landingpage'
+                  ? (
+                    <div className="navbar-wrapper" ref="navbarToggler">
+                      <ul className="navbar-element">
+                        <Link className="nav-link" to="/">Explore</Link>
+                        <Link className="nav-link" to="/">About Us</Link>
+                        <Link className="nav-link" to="/">Contact</Link>
+                      </ul>
 
-                  <ul className="navbar-element">
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/auth/signin">
-                        <p>Sign In</p>
-                      </Link>
-                    </li>
-                    <p className="link-border">|</p>
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/auth/signup">
-                        <p>Sign Up</p>
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
+                      <ul className="navbar-element">
+                        <Link className="nav-item nav-link" to="/auth/signin">Sign In</Link>
+                        <p className="link-border">|</p>
+                        <Link className=" nav-item nav-link" to="/auth/signup">Sign Up</Link>
+                      </ul>
+                    </div>
+                  )
+                  : (
+                    <div className="navbar-wrapper" ref="navbarToggler">
+                      <ul className="navbar-element">
+                        <Link className="nav-link header-dark" to="/">Explore</Link>
+                        <Link className="nav-link header-dark" to="/">About Us</Link>
+                        <Link className="nav-link header-dark" to="/">Contact</Link>
+                      </ul>
+
+                      <ul className="navbar-element">
+                        <Link className="nav-item nav-link header-dark" to="/auth/signin">Sign In</Link>
+                        <p className="link-border header-dark">|</p>
+                        <Link className=" nav-item nav-link header-dark" to="/auth/signup">Sign Up</Link>
+                      </ul>
+                    </div>
+                  )
+                }
               </div>
-            )}
+            )
+          }
         </nav>
       </header>
     );
