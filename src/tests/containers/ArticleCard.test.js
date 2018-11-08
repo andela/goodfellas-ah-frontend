@@ -2,14 +2,10 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import { MemoryRouter } from 'react-router-dom';
 import toJson from 'enzyme-to-json';
-import configureStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
 import ArticleCard, { Card } from '../../containers/ArticleCard';
 import Root from '../../root';
 
-const middlewares = [thunk]; // add your middlewares like `redux-thunk`
-const mockStore = configureStore(middlewares);
-const articles =  {
+const articles = {
   authenticated: '',
   errorMessage: '',
   user: { },
@@ -80,9 +76,6 @@ const articles =  {
   error: [],
 };
 
-const store = mockStore({
-  articles,
-});
 let wrapper;
 let wrapped;
 let mockGetArticles;
@@ -120,7 +113,6 @@ describe('Article Card UI', () => {
 describe('Article Card Functionality', () => {
   it('should sort articles', () => {
     const inst = wrapped.instance();
-
     expect(inst).toBeInstanceOf(Card);
     expect(inst).not.toBeNull();
   });
