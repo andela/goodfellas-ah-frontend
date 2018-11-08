@@ -1,22 +1,31 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import queryString from 'query-string';
-// import { socialLogin } from '../actions/authActions';
+import { socialSignin } from '../actions/authActions';
+import LargeLoader from '../components/shared/LargeLoader';
+
 
 class SocialAuthPage extends Component {
   componentWillMount() {
-    const { history } = this.props;
+    const { socialSignin: socialSigninUser, history } = this.props;
     const { token, userId } = queryString.parse(history.location.search);
-    console.log(token, userId);
-    // socialLoginUser(params.token, () => history.push('/user/profile'));
+
+    socialSigninUser({ token, userId }, (response) => {
+      if (response) {
+        history.push('/user/profile');
+      } else {
+        history.push('/auth/signin');
+      }
+    });
   }
 
   render() {
     return (
-      <div>Authenticating....</div>
+      <div>
+        <LargeLoader />
+      </div>
     );
   }
 }
 
-// export default connect(null, { socialLogin })(SocialAuthPage);
-export default SocialAuthPage;
+export default connect(null, { socialSignin })(SocialAuthPage);
