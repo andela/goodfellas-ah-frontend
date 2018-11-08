@@ -4,7 +4,7 @@
   "description": "A Social platform for the creative at heart",
   "main": "index.js",
   "private": true,
-  "proxy": "http://localhost:3200",
+  "proxy": "http://localhost:8000",
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.1.3",

@@ -1,16 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import SigninPage from '../../views/SigninPage';
+import SocialButton from '../../../components/Auth/SocialButton';
 
 let wrapped;
 
 beforeEach(() => {
-  wrapped = shallow(<SigninPage />);
+  wrapped = shallow(<SocialButton />);
 });
 
-
-describe('Signin UI', () => {
+describe('SocialButton', () => {
   describe('render features', () => {
     test('view should render as expected', () => {
       const tree = toJson(wrapped);
