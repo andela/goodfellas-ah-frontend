@@ -1,19 +1,5 @@
 import * as types from '../actions/actionTypes';
-
-const initialState = {
-  loading: true,
-  profileView: 'Following',
-  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNTQxNDA3NzcxLCJleHAiOjE1NDE0OTQxNzF9.DHaysbXDOqw8iWXw_JKE8-9H-s2AXS_dqAz1NzO-rpg',
-  profileError: '',
-  userId: 1,
-  user: {},
-  profile: {},
-  followers: [],
-  following: [],
-  articles: [],
-  favorites: [],
-};
-
+import { profile as initialState } from './initialState';
 
 export default (state = initialState, action) => {
   switch (action.type) {

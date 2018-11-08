@@ -15,7 +15,7 @@ export const fetchProfile = (id) => async (dispatch) => {
   const followers = API.get(`/user/followers/${id}`);
   const followedUsers = API.get(`/user/followed/${id}`);
   const articles = API.get(`/articles/author/${id}`);
-  const favorites = API.get(`articles/user/${id}/favorite`);
+  const favorites = API.get(`/articles/user/${id}/favorite`);
   try {
     const request = await Promise
       .all([profile, followers, followedUsers, articles, favorites]);

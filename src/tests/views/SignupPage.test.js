@@ -1,19 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import App from '../../containers/App';
+import SignupPage from '../../views/SignupPage';
 
 let wrapped;
 
 beforeEach(() => {
-  wrapped = shallow(<App />);
+  wrapped = shallow(<SignupPage />);
 });
 
-describe('App UI', () => {
+describe('SignupPage UI', () => {
   describe('render features', () => {
-    test('container should render as expected', () => {
+    test('view should render as expected', () => {
       const tree = toJson(wrapped);
-        expect(tree).toMatchSnapshot();
-      });
+      expect(tree).toMatchSnapshot();
     });
+  });
 });
