@@ -3,7 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import LandingPage from '../views/LandingPage';
 import Profile from '../views/ProfilePage';
 import Signin from '../views/SigninPage';
-import Header from '../components/shared/Header';
+import Signup from '../views/SignupPage';
 import ForgotPasswordPage from '../views/ForgotPasswordPage';
 import ResetPasswordPage from '../views/ResetPasswordPage';
 
@@ -12,7 +12,6 @@ import '../styles/styles.scss';
 
 const User = () => (
   <div>
-    <Header />
     <Route path="/user/profile" component={Profile} />
   </div>
 );
@@ -20,6 +19,7 @@ const User = () => (
 const Auth = () => (
   <div>
     <Route path="/auth/signin" render={(props) => <Signin formtype="signin" {...props} />} />
+    <Route path="/auth/signup" render={(props) => <Signup formtype="signup" {...props} />} />
   </div>
 );
 

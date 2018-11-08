@@ -12,16 +12,6 @@ exports[`Auth layout render features container should render as expected 1`] = `
     }
   }
 >
-  <MemoryRouter
-    initialEntries={
-      Array [
-        Object {
-          "key": "testKey",
-        },
-      ]
-    }
-  >
-    <Auth />
-  </MemoryRouter>
+  <Auth />
 </Provider>
 `;

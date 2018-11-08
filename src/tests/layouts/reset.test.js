@@ -1,9 +1,8 @@
-
 import React from 'react';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import { MemoryRouter } from 'react-router-dom';
-import Footer from '../../components/shared/Footer';
+import Reset from '../../components/layout/Reset';
 import Root from '../../root';
 
 let wrapped;
@@ -12,16 +11,18 @@ beforeEach(() => {
   wrapped = mount(
 
     <Root>
-      <MemoryRouter initialEntries={[{ pathname: '/', key: 'testKey' }]}>
-        <Footer />
+      <MemoryRouter initialEntries={[{ key: 'testKey' }]}>
+        <Reset />
       </MemoryRouter>
     </Root>,
+
   );
 });
-
 afterEach(() => wrapped.unmount());
-describe('Loading', () => {
-  describe('render', () => {
+
+
+describe('ResetPassword UI', () => {
+  describe('render features', () => {
     test('container should render as expected', () => {
       const tree = toJson(wrapped);
       expect(tree).toMatchSnapshot();

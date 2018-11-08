@@ -1,29 +1,64 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import ForgotPassword from '../../containers/Forgotpassword';
-import Root from '../../root';
+import configureStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
+import forgotPassword, { ForgotPassword } from '../../containers/Forgotpassword';
+
+const middlewares = [thunk];
+const mockStore = configureStore(middlewares);
 
 let wrapped;
-
+let mockForgotPassword;
 beforeEach(() => {
-  wrapped = mount(
-    <Root>
-      <ForgotPassword />
-    </Root>,
+  mockForgotPassword = jest.fn();
+  wrapped = shallow(
+    <ForgotPassword forgotPassword={mockForgotPassword} errorMessage="Error" successMessage="Succes" />,
   );
 });
-
-afterEach(() => wrapped.unmount());
 describe('ForgotPassword', () => {
   describe('render', () => {
     test('container should render as expected', () => {
       const tree = toJson(wrapped);
       expect(tree).toMatchSnapshot();
     });
-    it('has two input types', () => {
-      expect(wrapped.find('input').length).toEqual(1);
-      expect(wrapped.find('button').length).toEqual(1);
+    test('has two input types', () => {
+      const instance = wrapped.instance();
+      const handleForgotPasswordSpy = jest.spyOn(instance, 'handleForgotPassword');
+      const email = 'dummy@email.com';
+      instance.setState({
+        email,
+      });
+      wrapped.find('form').simulate('submit', {
+        preventDefault() {
+
+        },
+      });
+      expect(handleForgotPasswordSpy).toBeCalled();
+      expect(mockForgotPassword).toBeCalledWith({ email });
+      handleForgotPasswordSpy.mockRestore();
     });
+    test('', () => {
+      const instance = wrapped.instance();
+      const handleChangeSpy = jest.spyOn(instance, 'handleChange');
+      const email = 'dummy@email.com';
+      wrapped.setState({
+        email,
+      });
+      instance.handleChange({
+        target: {
+          id: 'email', value: email,
+        },
+      });
+      expect(wrapped.state('email')).toEqual(email);
+      expect(handleChangeSpy).toBeCalled();
+      handleChangeSpy.mockRestore();
+    });
+  });
+  test('should render ForgetPassword Component with redux store attached', () => {
+    const store = mockStore({});
+    shallow(
+      <forgotPassword store={store} forgotPassword={mockForgotPassword} />,
+    );
   });
 });

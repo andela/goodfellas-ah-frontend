@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { signin } from '../actions/authActions';
 import validateAuth from '../lib/validation';
@@ -53,7 +54,7 @@ class Signin extends Component {
           placeholder="Password"
         />
         <div>
-          <div className="forgot-password">Forgot Password?</div>
+          <Link to="/forgotpassword"><div className="forgot-password">Forgot Password?</div></Link>
         </div>
         <AuthButton name="SIGN IN" />
       </form>

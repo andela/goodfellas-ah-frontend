@@ -4,35 +4,31 @@ import { withRouter } from 'react-router-dom';
 import { resetPassword } from '../actions/authActions';
 import AuthInput from '../components/shared/AuthInput';
 import AuthButton from '../components/shared/AuthButton';
-import Loading from '../components/shared/Loading';
+import validateAuth from '../lib/validation';
+// import Loading from '../components/shared/Loading';
 
-class ResetPassword extends Component {
+export class ResetPassword extends Component {
   state= {
-    loading: false,
     password: '',
     confirmPassword: '',
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps) {
-      this.setState({
-        loading: false,
-      });
-    }
+    validationError: {},
   }
 
   handleResetPassword = (e) => {
     e.preventDefault();
     const { resetPassword: newPassword, history } = this.props;
-    this.setState({
-      loading: true,
-    });
     const { password, confirmPassword } = this.state;
     const userData = {
       password,
       confirm_password: confirmPassword,
     };
-    newPassword(userData, history);
+    const fieldNames = ['password', 'confirmPassword'];
+    const validationError = validateAuth({ password, confirmPassword }, fieldNames);
+    this.setState({ validationError });
+    if (!validationError.status) {
+      newPassword(userData, history);
+      this.setState({ password: '', confirmPassword: '' });
+    }
   };
 
   handleChange = (event) => {
@@ -41,17 +37,18 @@ class ResetPassword extends Component {
 
   render() {
     const { errorMessage } = this.props;
-    const { loading, password, confirmPassword } = this.state;
+    const { validationError, password, confirmPassword } = this.state;
     return (
-      <form onSubmit={this.handleResetPassword}>
-        { loading && <Loading />}
+      <form onSubmit={this.handleResetPassword} className="reset-form">
+        <h3 className="reset-title text-center">Reset Password</h3>
+
         <AuthInput
           name="password"
           placeholder="New password"
           type="password"
           value={password}
           handleChange={this.handleChange}
-          error={{ password: '' }}
+          error={validationError}
         />
         <AuthInput
           name="confirmPassword"
@@ -59,9 +56,10 @@ class ResetPassword extends Component {
           type="password"
           value={confirmPassword}
           handleChange={this.handleChange}
-          error={{ confirmPassword: errorMessage }}
+          error={validationError}
         />
-        <AuthButton name="Submit" />
+        <div className="error-field">{errorMessage}</div>
+        <AuthButton name="SUBMIT" />
 
       </form>
     );

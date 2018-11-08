@@ -1,13 +1,13 @@
 
 import React from 'react';
-import NewPassword from '../components/layout/NewPassword';
+import Reset from '../components/layout/Reset';
 import Resetpassword from '../containers/ResetPassword';
 
 const ResetPasswordPage = (props) => (
   <div>
-    <NewPassword>
+    <Reset>
       <Resetpassword {...props} />
-    </NewPassword>
+    </Reset>
   </div>
 );
 

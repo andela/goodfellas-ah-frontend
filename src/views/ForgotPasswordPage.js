@@ -1,13 +1,14 @@
 
 import React from 'react';
-import NewPassword from '../components/layout/NewPassword';
+// import NewPassword from '../components/layout/NewPassword';
 import Forgotpassword from '../containers/Forgotpassword';
+import Reset from '../components/layout/Reset';
 
 const ForgotPasswordPage = (props) => (
   <div>
-    <NewPassword>
+    <Reset>
       <Forgotpassword {...props} />
-    </NewPassword>
+    </Reset>
   </div>
 );
 

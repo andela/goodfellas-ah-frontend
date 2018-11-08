@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import { MemoryRouter } from 'react-router-dom';
+// import { MemoryRouter } from 'react-router-dom';
 import Auth from '../../components/layout/Auth';
 import Root from '../../root';
 
@@ -11,9 +11,7 @@ beforeEach(() => {
   wrapped = shallow(
 
     <Root>
-      <MemoryRouter initialEntries={[{ key: 'testKey' }]}>
-        <Auth />
-      </MemoryRouter>
+      <Auth />
     </Root>,
 
   );

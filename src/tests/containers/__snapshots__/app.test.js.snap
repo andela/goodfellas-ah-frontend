@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signin UI render features container should render as expected 1`] = `
+<_default>
+  <Provider
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+  >
+    <MemoryRouter
+      initialEntries={
+        Array [
+          Object {
+            "key": "testKey",
+          },
+        ]
+      }
+    >
+      <Router
+        history={
+          Object {
+            "action": "POP",
+            "block": [Function],
+            "canGo": [Function],
+            "createHref": [Function],
+            "entries": Array [
+              Object {
+                "hash": "",
+                "key": "testKey",
+                "pathname": "/",
+                "search": "",
+              },
+            ],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "index": 0,
+            "length": 1,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "key": "testKey",
+              "pathname": "/",
+              "search": "",
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+        }
+      >
+        <App>
+          <BrowserRouter>
+            <Router
+              history={
+                Object {
+                  "action": "POP",
+                  "block": [Function],
+                  "createHref": [Function],
+                  "go": [Function],
+                  "goBack": [Function],
+                  "goForward": [Function],
+                  "length": 1,
+                  "listen": [Function],
+                  "location": Object {
+                    "hash": "",
+                    "pathname": "/",
+                    "search": "",
+                    "state": undefined,
+                  },
+                  "push": [Function],
+                  "replace": [Function],
+                }
+              }
+            >
+              <div>
+                <Route
+                  component={[Function]}
+                  exact={true}
+                  path="/"
+                >
+                  <Hero
+                    history={
+                      Object {
+                        "action": "POP",
+                        "block": [Function],
+                        "createHref": [Function],
+                        "go": [Function],
+                        "goBack": [Function],
+                        "goForward": [Function],
+                        "length": 1,
+                        "listen": [Function],
+                        "location": Object {
+                          "hash": "",
+                          "pathname": "/",
+                          "search": "",
+                          "state": undefined,
+                        },
+                        "push": [Function],
+                        "replace": [Function],
+                      }
+                    }
+                    location={
+                      Object {
+                        "hash": "",
+                        "pathname": "/",
+                        "search": "",
+                        "state": undefined,
+                      }
+                    }
+                    match={
+                      Object {
+                        "isExact": true,
+                        "params": Object {},
+                        "path": "/",
+                        "url": "/",
+                      }
+                    }
+                  >
+                    <div>
+                      This is the Hero view
+                    </div>
+                  </Hero>
+                </Route>
+                <Route
+                  component={[Function]}
+                  path="/auth"
+                />
+                <Route
+                  component={[Function]}
+                  path="/user"
+                />
+                <Route
+                  component={[Function]}
+                  path="/forgotpassword"
+                />
+                <Route
+                  component={[Function]}
+                  path="/resetpassword"
+                />
+              </div>
+            </Router>
+          </BrowserRouter>
+        </App>
+      </Router>
+    </MemoryRouter>
+  </Provider>
+</_default>
+`;
