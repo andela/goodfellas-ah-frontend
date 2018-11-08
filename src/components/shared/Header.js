@@ -91,7 +91,7 @@ class Header extends Component {
                         <Link to="/favourites">Favourites</Link>
                       </li>
                       <li>
-                        <Link to="/profile">Profile</Link>
+                        <Link to="/user/profile">Profile</Link>
                       </li>
                       <li>
                         <Link onClick={signoutUser} to="/">Sign out</Link>

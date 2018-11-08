@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import getArticles from '../actions/articleActions';
 import Loading from '../components/shared/Loading';
 
-class Card extends Component {
+export class Card extends Component {
   componentDidMount() {
     const { getArticles: getAllArticles } = this.props;
     getAllArticles();
