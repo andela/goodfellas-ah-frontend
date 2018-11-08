@@ -18,5 +18,23 @@ export const validateAuth = (fields, fieldNames) => {
     }
   }
 
+  // checks if passwords match
+  const alphaNumberic = /((^[0-9]+[a-z]+)|(^[a-z]+[0-9]+))+[0-9a-z]+$/i;
+  if (fields.password !== '') {
+    if (fields.password.length < 5 && !alphaNumberic.test(fields.password.trim())) {
+      error.password = 'Your password must be an alphanumberic characters greater than 4';
+      error.status = true;
+    }
+  }
+
+  // checks if passwords match
+  if(fields['confirmPassword']){
+  if (fields.password !== '' && fields.confirmPassword !== '') {
+    if (fields.password !== fields.confirmPassword) {
+      error.confirmPassword = 'Passwords do not match';
+      error.status = true;
+    }
+  }
+}
   return error;
 };
