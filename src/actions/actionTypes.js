@@ -1,5 +1,3 @@
-export const TEST_DISPATCH = 'TEST_DISPATCH';
-export const ERROR_DISPATCH = 'TEST_DISPATCH';
 export const GET_ARTICLES = 'GET_ARTICLES';
 export const GET_ARTICLES_ERROR = 'GET_ARTICLES_ERROR';
 export const SIGNIN_USER = 'SIGNIN_USER';

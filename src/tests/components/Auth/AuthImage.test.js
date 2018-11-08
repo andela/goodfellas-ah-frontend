@@ -1,16 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import SigninPage from '../../views/SigninPage';
+import AuthImage from '../../../components/Auth/AuthImage';
 
 let wrapped;
 
 beforeEach(() => {
-  wrapped = shallow(<SigninPage />);
+  wrapped = shallow(<AuthImage />);
 });
 
-
-describe('Signin UI', () => {
+describe('AuthImage', () => {
   describe('render features', () => {
     test('view should render as expected', () => {
       const tree = toJson(wrapped);
