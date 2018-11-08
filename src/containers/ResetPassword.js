@@ -41,7 +41,7 @@ class ResetPassword extends Component {
 
   render() {
     const { errorMessage } = this.props;
-    const { loading } = this.state;
+    const { loading, password, confirmPassword } = this.state;
     return (
       <form onSubmit={this.handleResetPassword}>
         { loading && <Loading />}
@@ -49,6 +49,7 @@ class ResetPassword extends Component {
           name="password"
           placeholder="New password"
           type="password"
+          value={password}
           handleChange={this.handleChange}
           error={{ password: '' }}
         />
@@ -56,6 +57,7 @@ class ResetPassword extends Component {
           name="confirmPassword"
           placeholder="Confirm new password"
           type="password"
+          value={confirmPassword}
           handleChange={this.handleChange}
           error={{ confirmPassword: errorMessage }}
         />

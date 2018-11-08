@@ -28,4 +28,19 @@ describe('ResetPassword UI', () => {
       expect(tree).toMatchSnapshot();
     });
   });
+  describe('when typing into fields', () => {
+    beforeEach(() => {
+      wrapped.find('input').first().simulate('change', { target: { id: 'password', value: 'password' } });
+      wrapped.find('input').at(1).simulate('change', { target: { id: 'confirmPassword', value: 'cpassword' } });
+      wrapped.update();
+    });
+
+    it('shows that text has been entered into then password field', () => {
+      expect(wrapped.find('input').first().prop('value')).toEqual('password');
+    });
+
+    it('shows that text has been entered into then confirm password field', () => {
+      expect(wrapped.find('input').at(1).prop('value')).toEqual('cpassword');
+    });
+  });
 });

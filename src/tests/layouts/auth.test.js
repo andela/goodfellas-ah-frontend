@@ -1,31 +1,31 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import Signup from '../../containers/SignupForm';
+import { MemoryRouter } from 'react-router-dom';
+import Auth from '../../components/layout/Auth';
 import Root from '../../root';
 
 let wrapped;
 
 beforeEach(() => {
-  wrapped = mount(
+  wrapped = shallow(
+
     <Root>
-      <Signup />
+      <MemoryRouter initialEntries={[{ key: 'testKey' }]}>
+        <Auth />
+      </MemoryRouter>
     </Root>,
+
   );
 });
-
 afterEach(() => wrapped.unmount());
 
-describe('Signup UI', () => {
+
+describe('Auth layout', () => {
   describe('render features', () => {
     test('container should render as expected', () => {
       const tree = toJson(wrapped);
       expect(tree).toMatchSnapshot();
-    });
-
-    it('has two input fields and a button', () => {
-      expect(wrapped.find('input').length).toEqual(5);
-      expect(wrapped.find('button').length).toEqual(1);
     });
   });
 });
