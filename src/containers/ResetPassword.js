@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { resetPassword } from '../actions/authActions';
-import Submitbtn from '../components/shared/Submitbtn';
-import InputField from '../components/shared/InputField';
+import AuthInput from '../components/shared/AuthInput';
+import AuthButton from '../components/shared/AuthButton';
 import Loading from '../components/shared/Loading';
 
 class ResetPassword extends Component {
   state= {
     loading: false,
+    password: '',
+    confirmPassword: '',
   }
 
   componentWillReceiveProps(nextProps) {
@@ -20,17 +22,22 @@ class ResetPassword extends Component {
   }
 
   handleResetPassword = (e) => {
+    e.preventDefault();
     const { resetPassword: newPassword, history } = this.props;
     this.setState({
       loading: true,
     });
-    e.preventDefault();
+    const { password, confirmPassword } = this.state;
     const userData = {
-      password: e.target.password.value,
-      confirm_password: e.target.confirmPassword.value,
+      password,
+      confirm_password: confirmPassword,
     };
     newPassword(userData, history);
   };
+
+  handleChange = (event) => {
+    this.setState({ [event.target.id]: event.target.value });
+  }
 
   render() {
     const { errorMessage } = this.props;
@@ -38,14 +45,21 @@ class ResetPassword extends Component {
     return (
       <form onSubmit={this.handleResetPassword}>
         { loading && <Loading />}
-        <InputField placeholder="New password" type="password" name="password" />
-        <InputField placeholder="Confirm new password" type="password" name="confirmPassword" />
-        {errorMessage && (
-          <div className="errormsg">
-            <p>{errorMessage}</p>
-          </div>
-        )}
-        <Submitbtn />
+        <AuthInput
+          name="password"
+          placeholder="New password"
+          type="password"
+          handleChange={this.handleChange}
+          error={{ password: '' }}
+        />
+        <AuthInput
+          name="confirmPassword"
+          placeholder="Confirm new password"
+          type="password"
+          handleChange={this.handleChange}
+          error={{ confirmPassword: errorMessage }}
+        />
+        <AuthButton name="Submit" />
 
       </form>
     );

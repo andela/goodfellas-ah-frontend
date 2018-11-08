@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
+import { MemoryRouter } from 'react-router-dom';
 import Header from '../../components/shared/Header';
 import Root from '../../root';
 
@@ -9,8 +10,11 @@ let wrapped;
 beforeEach(() => {
   wrapped = mount(
     <Root>
-      <Header />
+      <MemoryRouter initialEntries={[{ pathname: '/', key: 'testKey' }]}>
+        <Header />
+      </MemoryRouter>
     </Root>,
+
   );
 });
 

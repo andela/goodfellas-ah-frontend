@@ -22,7 +22,8 @@ describe('ForgotPassword', () => {
       expect(tree).toMatchSnapshot();
     });
     it('has two input types', () => {
-      expect(wrapped.find('input').length).toEqual(2);
+      expect(wrapped.find('input').length).toEqual(1);
+      expect(wrapped.find('button').length).toEqual(1);
     });
   });
 });

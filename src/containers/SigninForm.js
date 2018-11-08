@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { signin } from '../actions/authActions';
-import { validateAuth } from '../lib/validation';
+import validateAuth from '../lib/validation';
 import AuthInput from '../components/shared/AuthInput';
 import AuthButton from '../components/shared/AuthButton';
 

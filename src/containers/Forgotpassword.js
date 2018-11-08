@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { forgotPassword } from '../actions/authActions';
-import Submitbtn from '../components/shared/Submitbtn';
-import InputField from '../components/shared/InputField';
+import AuthInput from '../components/shared/AuthInput';
+import AuthButton from '../components/shared/AuthButton';
 import Loading from '../components/shared/Loading';
 
 
@@ -39,11 +39,13 @@ class ForgotPassword extends Component {
     return (
       <form onSubmit={this.handleForgotPassword}>
         {loading && <Loading />}
-        <InputField placeholder="Email Address" type="email" name="email" />
-        {errorMessage
-          && <div className="errormsg"><p>{errorMessage}</p></div>
-        }
-        <Submitbtn />
+        <AuthInput
+          name="email"
+          placeholder="Input Email Address"
+          type="email"
+          error={{ email: errorMessage }}
+        />
+        <AuthButton name="Submit" />
       </form>
     );
   }
