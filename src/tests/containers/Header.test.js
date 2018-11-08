@@ -1,19 +1,46 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import { MemoryRouter } from 'react-router-dom';
 import toJson from 'enzyme-to-json';
-import Header from '../../components/shared/Header';
+import ArticleHeader, { Header } from '../../components/shared/Header';
 import Root from '../../root';
 
 let wrapped;
+let wrapper;
+let wrapperHeader;
+const auth = {
+  auth: {
+    authenticated: true,
+  },
+};
+
+const authTest = {
+  auth: {
+    authenticated: false,
+  },
+};
 
 beforeEach(() => {
   wrapped = mount(
     <Root>
       <MemoryRouter initialEntries={[{ key: 'testkey' }]}>
-        <Header />
+        <ArticleHeader />
       </MemoryRouter>
     </Root>,
+  );
+
+  wrapper = shallow(
+    <Header
+      parentComponent="landingpage"
+      auth={auth.auth.authenticated}
+    />,
+  );
+
+  wrapperHeader = shallow(
+    <Header
+      parentComponent="notlandingpage"
+      auth={authTest.auth.authenticated}
+    />,
   );
 });
 
@@ -26,4 +53,16 @@ describe('Header UI', () => {
       expect(tree).toMatchSnapshot();
     });
   });
+});
+
+test('Header functionality', () => {
+  const inst = wrapper.instance();
+  expect(inst).toBeInstanceOf(Header);
+  expect(inst).not.toBeNull();
+});
+
+test('Header functionality', () => {
+  const inst = wrapperHeader.instance();
+  expect(inst).toBeInstanceOf(Header);
+  expect(inst).not.toBeNull();
 });

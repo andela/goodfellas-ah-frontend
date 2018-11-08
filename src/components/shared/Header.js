@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { signout } from '../../actions/authActions';
 
-class Header extends Component {
+export class Header extends Component {
   dropdown = () => {
     this.refs.myDropdown.classList.toggle('show');
   };

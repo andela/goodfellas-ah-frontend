@@ -78,6 +78,7 @@ const articles = {
 
 let wrapper;
 let wrapped;
+let wrapperCard;
 let mockGetArticles;
 beforeEach(() => {
   wrapper = mount(
@@ -90,6 +91,14 @@ beforeEach(() => {
 
   mockGetArticles = jest.fn();
   wrapped = shallow(
+    <Card
+      getArticles={mockGetArticles}
+      articles={articles.articles.articles}
+      error={articles.error}
+    />,
+  );
+
+  wrapperCard = mount(
     <Card
       getArticles={mockGetArticles}
       articles={articles.articles.articles}
@@ -118,7 +127,9 @@ describe('Article Card Functionality', () => {
   });
 
   it('should click more articles button', () => {
-    wrapped.find('.hero-moreArticles').simulate('click');
+    wrapperCard.find('.hero-moreArticles').simulate('click');
+    expect(mockGetArticles).toBeCalled();
+    wrapperCard.find('.hero-moreArticles').simulate('click');
     expect(mockGetArticles).toBeCalled();
   });
 });

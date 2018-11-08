@@ -6,7 +6,6 @@ import Button from '../shared/Button';
 
 const Hero = (props) => {
   const { auth } = props;
-  console.log(auth);
   return (
     <section className="hero-section">
       <div className="hero-section-overlay">

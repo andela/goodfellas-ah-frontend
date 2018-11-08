@@ -10,14 +10,14 @@ export class Card extends Component {
   }
 
   state = {
-    articleEnd: 6,
+    articleLimit: 6,
   };
 
-  sortArticles = (articles) => {
+  sortArticlesByLikes = (articles) => {
     const sortedArticles = articles
-      .map((each) => {
-        const filteredArticles = this.filterLikes(each.reactions);
-        return { article: each, track: filteredArticles };
+      .map((eachArticle) => {
+        const filteredArticles = this.filterLikes(eachArticle.reactions);
+        return { article: eachArticle, track: filteredArticles };
       })
       .sort((a, b) => {
         const result = b.track - a.track;
@@ -26,20 +26,28 @@ export class Card extends Component {
     return sortedArticles;
   };
 
-  displayArticles = (articleEnd) => {
+  displayArticles = (articleLimit) => {
     const { articles } = this.props;
-    const newArticles = this.sortArticles(articles);
-    const displayedArticles = newArticles.slice(0, 0 + articleEnd);
+    const newlySortedArticles = this.sortArticlesByLikes(articles);
+    const displayedArticles = newlySortedArticles.slice(0, 0 + articleLimit);
     return displayedArticles;
   };
 
   handleClick = () => {
-    this.setState({ articleEnd: 9 });
-    this.displayCards(this.displayArticles);
+    const { articleLimit } = this.state;
+    if (articleLimit === 6) {
+      this.setState({ articleLimit: 9 });
+      this.displayCards(this.displayArticles);
+      this.refs.moreArticles.innerText = 'Less Articles';
+    } else {
+      this.setState({ articleLimit: 6 });
+      this.displayCards(this.displayArticles);
+      this.refs.moreArticles.innerText = 'More Articles';
+    }
   };
 
   filterLikes = (likes) => {
-    const result = likes.filter((each) => each.reaction === 1);
+    const result = likes.filter((eachLike) => eachLike.reaction === 1);
     return result.length;
   };
 
@@ -52,8 +60,8 @@ export class Card extends Component {
   };
 
   displayCards = (displayArticles) => {
-    const { articleEnd } = this.state;
-    return displayArticles(articleEnd).map((card) => {
+    const { articleLimit } = this.state;
+    return displayArticles(articleLimit).map((card) => {
       const displayedBody = card.article.body.slice(0, 120);
       const displayedTitle = card.article.title.slice(0, 30);
       return (
@@ -122,7 +130,7 @@ export class Card extends Component {
           <Loading />
         )}
         <div onClick={this.handleClick} className="hero-moreArticles row">
-          <p>More Articles</p>
+          <p ref="moreArticles">More Articles</p>
           <img
             src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426068/Authors%20Haven/icons8-expand-arrow-24.png"
             alt=""
