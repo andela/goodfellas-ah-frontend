@@ -29,5 +29,24 @@ export const fetchProfile = (id) => async (dispatch) => {
       type: types.SET_PROFILE_ERROR,
       payload: 'Error fetching profile',
     });
+    dispatch(profileLoading(false));
+  }
+};
+
+export const editProfile = (id, data) => async (dispatch) => {
+  try {
+    const response = await API.put(`/user/profile/${id}`, data);
+    if (response.status === 200) {
+      dispatch({
+        type: types.UPDATE_PROFILE,
+        payload: response.data.profile,
+      });
+      return { success: response.data.message };
+    }
+    return true;
+  } catch (e) {
+    return {
+      error: e.response.data.message || e.response.data.error,
+    };
   }
 };

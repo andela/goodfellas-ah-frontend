@@ -7,6 +7,7 @@ const initialState = {
   profileError: '',
   userId: 1,
   user: {},
+  profile: {},
   followers: [],
   following: [],
   articles: [],
@@ -21,14 +22,22 @@ export default (state = initialState, action) => {
         ...state,
         profileView: action.payload,
       };
-    case types.SET_PROFILE:
+    case types.SET_PROFILE: {
+      const { user, ...profile } = action.payload[0].data.data;
       return {
         ...state,
-        user: action.payload[0].data.data,
+        user,
+        profile,
         followers: action.payload[1].data.data.followers,
         following: action.payload[2].data.data.followedUsers,
         articles: action.payload[3].data.articles,
         favorites: action.payload[4].data.articles,
+      };
+    }
+    case types.UPDATE_PROFILE:
+      return {
+        ...state,
+        profile: action.payload,
       };
     case types.SET_PROFILE_ERROR:
       return {

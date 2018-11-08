@@ -9,6 +9,7 @@ import FollowingList from '../components/profile/FollowingList';
 import ProfileArticleList from '../components/article/ArticlesByAuthor';
 import ProfileFavoriteList from '../components/article/AuthorFavorites';
 import { fetchProfile } from '../actions/profileActions';
+import { userPlaceholderImage } from '../mixin';
 
 class Profile extends Component {
   componentDidMount() {
@@ -17,41 +18,43 @@ class Profile extends Component {
   }
 
   render() {
-    const { profile } = this.props;
-    if (profile.loading) return <Loading />;
-    if (profile.profileError) return <div>{profile.profileError}</div>;
-    const fullName = `${profile.user.user.firstname} ${profile.user.user.lastname}`;
+    const { profileStore } = this.props;
+    if (profileStore.loading) return <Loading />;
+    if (profileStore.profileError) return <div>{profileStore.profileError}</div>;
+    const fullName = `${profileStore.user.firstname} ${profileStore.user.lastname}`;
     return (
       <Body className="profile">
         <div>
           <header>
-            <img alt="profile" className="profile-image" src={profile.user.image || 'https://res.cloudinary.com/drmmqcxkc/image/upload/v1541506955/user-placeholder.png'} />
+            <img alt="profile" className="profile-image" src={profileStore.profile.image || userPlaceholderImage} />
             <h3 id="user-name" className="username">{fullName}</h3>
             <Link className="button outline" to="/profile/edit">Edit Profile</Link>
           </header>
-          <ProfileToolbar profile={profile} />
+          <ProfileToolbar profile={profileStore} />
           {(() => {
-            switch (profile.profileView) {
+            switch (profileStore.profileView) {
               case 'Followers':
-                return <FollowerList followers={profile.followers} />;
+                return <FollowerList userFullName={fullName} followers={profileStore.followers} />;
               case 'Articles':
                 return (
                   <ProfileArticleList
                     author={fullName}
-                    authorImage={profile.user.image}
-                    articles={profile.articles}
+                    authorImage={profileStore.profile.image}
+                    articles={profileStore.articles}
+                    userFullName={fullName}
                   />
                 );
               case 'Favorites':
                 return (
                   <ProfileFavoriteList
                     author={fullName}
-                    authorImage={profile.user.image}
-                    articles={profile.favorites}
+                    authorImage={profileStore.profile.image}
+                    articles={profileStore.favorites}
+                    userFullName={fullName}
                   />);
               case 'Following':
               default:
-                return <FollowingList following={profile.following} />;
+                return <FollowingList userFullName={fullName} following={profileStore.following} />;
             }
           })()
           }
@@ -61,7 +64,7 @@ class Profile extends Component {
   }
 }
 const mapStateToProps = (state) => ({
-  profile: state.profile,
+  profileStore: state.profile,
 });
 
 export default connect(

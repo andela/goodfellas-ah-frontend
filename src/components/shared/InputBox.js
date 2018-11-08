@@ -1,8 +1,10 @@
 import React from 'react';
 
 export default (props) => {
-  const { type, placeholder } = props;
+  const {
+    type, placeholder, handleChange, value, name,
+  } = props;
   return (
-    <input type={type || 'text'} placeholder={placeholder} className="input-box" />
+    <input name={name} value={value || ''} type={type || 'text'} placeholder={placeholder} className="input-box" onChange={handleChange} />
   );
 };
