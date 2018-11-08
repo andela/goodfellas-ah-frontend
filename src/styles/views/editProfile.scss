@@ -1,7 +1,16 @@
 .edit-profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    input, textarea {
+      text-align: center;
+      color: #656262;
+    }
+  }
+  &_spinner {
+    height: 20px;
+  }
   .profile-image-uploader {
     margin-top: 4rem;
   }

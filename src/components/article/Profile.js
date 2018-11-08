@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import icons from '../../assets/icons.svg';
+import { userPlaceholderImage, articlePlaceholderImage } from '../../mixin';
 
 export default (props) => {
   const { article, author, authorImage } = props;
@@ -8,8 +9,8 @@ export default (props) => {
   //   .reduce();
   return (
     <div className="profile-article hoverable">
-      <img src={authorImage || 'https://res.cloudinary.com/drmmqcxkc/image/upload/v1541506955/user-placeholder.png'} alt="user" className="profile-article_user-img" />
-      <img src={article.image || 'https://res.cloudinary.com/drmmqcxkc/image/upload/v1541513674/Authors%20Haven/article-placeholder.jpg'} alt="article-img" className="profile-article_img" />
+      <img src={authorImage || userPlaceholderImage} alt="user" className="profile-article_user-img" />
+      <img src={article.image || articlePlaceholderImage} alt="article-img" className="profile-article_img" />
       <h3>{ article.title }</h3>
       <p className="profile-article_username">{author}</p>
       <p className="profile-article_date">{moment(article.createdAt).format('ll')}</p>
