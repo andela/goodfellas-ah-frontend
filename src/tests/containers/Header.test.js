@@ -8,6 +8,8 @@ import Root from '../../root';
 let wrapped;
 let wrapper;
 let wrapperHeader;
+let mountHeader;
+let authFalseHeader;
 const auth = {
   auth: {
     authenticated: true,
@@ -42,6 +44,24 @@ beforeEach(() => {
       auth={authTest.auth.authenticated}
     />,
   );
+
+  mountHeader = mount(
+    <MemoryRouter>
+      <Header
+        parentComponent="notlandingpage"
+        auth={auth.auth.authenticated}
+      />
+    </MemoryRouter>,
+  );
+
+  authFalseHeader = mount(
+    <MemoryRouter>
+      <Header
+        parentComponent="notlandingpage"
+        auth={authTest.auth.authenticated}
+      />
+    </MemoryRouter>,
+  );
 });
 
 afterEach(() => wrapped.unmount());
@@ -65,4 +85,15 @@ test('Header functionality', () => {
   const inst = wrapperHeader.instance();
   expect(inst).toBeInstanceOf(Header);
   expect(inst).not.toBeNull();
+});
+
+it('should click more articles button', () => {
+  mountHeader.find('.dropdown-click').simulate('click');
+  mountHeader.find('.header-user-search > span').simulate('click');
+  mountHeader.find('.header-user-search > span').simulate('click');
+});
+
+it('should click more articles button', () => {
+  authFalseHeader.find('.navbar-toggler').simulate('click');
+  authFalseHeader.find('.navbar-toggler').simulate('click');
 });

@@ -32,6 +32,21 @@ header {
       @media only screen and (max-width: 900px) {
         display: block;
         width: 0;
+        color: white
+      }
+      .navbar-element{
+        a{
+          color: white;
+          transition: all .55s ease;
+          width: 27vw;
+          &:hover{
+            transform: translateY(-4px);
+            box-shadow: 5px 14px 35px 0 rgba(0, 0, 0, 0.08);
+          }
+        }
+        @media only screen and (max-width: 900px) {
+          display: block;
+        }
       }
     }
     .navbar-wrapper{

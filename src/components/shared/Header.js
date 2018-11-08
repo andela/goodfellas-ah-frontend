@@ -31,15 +31,15 @@ export class Header extends Component {
     const { signout: signoutUser } = this.props;
     return (
       <header>
-        <nav className="navbar">
+        <nav className="navbar" ref="navbarTitle">
           {parentComponent === 'landingpage'
             ? (
-              <Link className="navbar-title navbar-brand" ref="navbarTitle" to="/">
+              <Link className="navbar-title navbar-brand" to="/">
                 <h3 className="header-white">Authors Haven</h3>
               </Link>
             )
             : (
-              <Link className="navbar-title navbar-brand" ref="navbarTitle" to="/">
+              <Link className="navbar-title navbar-brand" to="/">
                 <h3 className="header-dark">Authors Haven</h3>
               </Link>
             )
@@ -73,7 +73,7 @@ export class Header extends Component {
                       />)}
                   </div>
                   <span className="notification-count">4</span>
-                  <div onClick={this.dropdown} className="dropdown">
+                  <div onClick={this.dropdown} className="dropdown dropdown-click">
                     <img
                       className="dropdown-toggle author-image"
                       src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426069/Authors%20Haven/john.jpg"
@@ -87,7 +87,7 @@ export class Header extends Component {
                       <Link to="/bookmark">Bookmarks</Link>
                       <Link to="/favourites">Favourites</Link>
                       <Link to="/user/profile">Profile</Link>
-                      <Link onClick={signoutUser} to="/">Sign out</Link>
+                      <Link className="dropdown-menu-clicked" onClick={signoutUser} to="/">Sign out</Link>
                     </ul>
                   </div>
                 </div>
