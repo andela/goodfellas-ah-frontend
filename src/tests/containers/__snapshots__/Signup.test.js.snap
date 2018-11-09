@@ -30,7 +30,9 @@ exports[`Signup UI render features container should render as expected 1`] = `
             placeholder="Firstname"
             value=""
           >
-            <div>
+            <div
+              className="auth-input-wrapper"
+            >
               <label
                 className="sr-only"
                 htmlFor="firstname"
@@ -57,7 +59,9 @@ exports[`Signup UI render features container should render as expected 1`] = `
             placeholder="Lastname"
             value=""
           >
-            <div>
+            <div
+              className="auth-input-wrapper"
+            >
               <label
                 className="sr-only"
                 htmlFor="lastname"
@@ -85,7 +89,9 @@ exports[`Signup UI render features container should render as expected 1`] = `
             type="email"
             value=""
           >
-            <div>
+            <div
+              className="auth-input-wrapper"
+            >
               <label
                 className="sr-only"
                 htmlFor="email"
@@ -113,7 +119,9 @@ exports[`Signup UI render features container should render as expected 1`] = `
             type="password"
             value=""
           >
-            <div>
+            <div
+              className="auth-input-wrapper"
+            >
               <label
                 className="sr-only"
                 htmlFor="password"
@@ -141,7 +149,9 @@ exports[`Signup UI render features container should render as expected 1`] = `
             type="password"
             value=""
           >
-            <div>
+            <div
+              className="auth-input-wrapper"
+            >
               <label
                 className="sr-only"
                 htmlFor="confirmPassword"
