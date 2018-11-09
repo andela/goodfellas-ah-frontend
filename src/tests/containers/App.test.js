@@ -8,6 +8,7 @@ let wrapped;
 beforeEach(() => {
   wrapped = shallow(<App />);
 });
+afterEach(() => wrapped.unmount());
 
 describe('App UI', () => {
   describe('render features', () => {
