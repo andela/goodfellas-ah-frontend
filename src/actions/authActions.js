@@ -6,7 +6,7 @@ export const signup = (formValues, callback) => async (dispatch) => {
     const res = await API.post('/auth/signup', formValues);
     dispatch({
       type: types.SIGNIN_USER,
-      payload: res.data.token,
+      payload: res.data,
     });
     localStorage.setItem('token', res.data.token);
     callback();
@@ -21,8 +21,9 @@ export const signup = (formValues, callback) => async (dispatch) => {
 export const signin = (formValues, callback) => async (dispatch) => {
   try {
     const response = await API.post('/auth/signin', formValues);
-    dispatch({ type: types.SIGNIN_USER, payload: response.data.token });
+    dispatch({ type: types.SIGNIN_USER, payload: response.data });
     localStorage.setItem('token', response.data.token);
+    localStorage.setItem('userId', response.data.id);
     callback();
   } catch (error) {
     dispatch({

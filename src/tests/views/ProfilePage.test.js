@@ -1,13 +1,20 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import ProfilePage from '../../views/ProfilePage';
+import Root from '../../root';
 
 let wrapped;
 
 beforeEach(() => {
-  wrapped = shallow(<ProfilePage />);
+  wrapped = mount(
+    <Root>
+      <ProfilePage />
+    </Root>,
+  );
 });
+
+afterEach(() => wrapped.unmount());
 
 describe('Profile UI', () => {
   describe('render features', () => {

@@ -20,7 +20,7 @@ describe('Header UI', () => {
   describe('render features', () => {
     test('component should render as expected', () => {
       const tree = toJson(wrapped);
-        expect(tree).toMatchSnapshot();
-      });
+      expect(tree).toMatchSnapshot();
     });
+  });
 });

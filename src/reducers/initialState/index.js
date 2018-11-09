@@ -1,5 +1,6 @@
 const initialState = {
   authenticated: '',
+  userId: null,
   errorMessage: '',
 };
 

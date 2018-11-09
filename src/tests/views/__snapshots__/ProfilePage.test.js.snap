@@ -1,7 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Profile UI render features view should render as expected 1`] = `
-<div>
-  This is the Profile view
-</div>
+<_default>
+  <Provider
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+  >
+    <Connect(Profile)>
+      <Profile
+        fetchProfile={[Function]}
+        profileStore={
+          Object {
+            "articles": Array [],
+            "favorites": Array [],
+            "followers": Array [],
+            "following": Array [],
+            "loading": true,
+            "profile": Object {},
+            "profileError": "",
+            "profileView": "Following",
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNTQxNDA3NzcxLCJleHAiOjE1NDE0OTQxNzF9.DHaysbXDOqw8iWXw_JKE8-9H-s2AXS_dqAz1NzO-rpg",
+            "user": Object {},
+            "userId": 1,
+          }
+        }
+      >
+        <_default>
+          <div
+            className="loading"
+          >
+            Loading.......
+          </div>
+        </_default>
+      </Profile>
+    </Connect(Profile)>
+  </Provider>
+</_default>
 `;
