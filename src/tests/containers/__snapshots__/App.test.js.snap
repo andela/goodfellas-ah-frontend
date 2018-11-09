@@ -20,6 +20,14 @@ exports[`App UI render features container should render as expected 1`] = `
       component={[Function]}
       path="/user"
     />
+    <Route
+      component={[Function]}
+      path="/forgotpassword"
+    />
+    <Route
+      component={[Function]}
+      path="/resetpassword"
+    />
   </div>
 </BrowserRouter>
 `;
