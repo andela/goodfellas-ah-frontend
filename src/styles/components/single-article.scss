@@ -1,12 +1,60 @@
 .single-page .side-button{
-    width: 5%;
-    height: 350px;
+    padding-top: 25px;
+    width: 60px;
     background-color: #fff;
     margin-top: -150px;
     border-radius: 50px;
     margin-left: 2%;
     float: right;
 }
+
+
+.single-page .side-button .star{
+    width: 35px;
+    margin-left: 11px;
+    cursor: pointer;
+} 
+
+.single-page .side-button .bookmark{
+    margin-top: 20px;
+    width: 35px;
+    margin-left: 12px;
+    cursor: pointer;
+} 
+
+.single-page .side-button .share{
+    margin-top: 20px;
+    width: 35px;
+    margin-left: 12px;
+    cursor: pointer;
+} 
+
+.single-page .side-button .dot-dot{
+    margin-top: 15px;
+    width: 35px;
+    margin-left: 12px;
+    cursor: pointer;
+} 
+
+.single-page .side-button .like-count{
+    width: 17px;
+    height: 17px;
+    border-radius: 4px;
+    background-color: red;
+    color: #fff;
+    font-size: 12px;
+    padding-left: 4px;
+    margin-top: 45px;
+    margin-left: 33px;
+    position: relative;
+} 
+
+.single-page .side-button .love{
+    margin-left: -5px;
+    margin-top: -14px;
+    max-width: 70px;
+    cursor: pointer;
+} 
 
 .single-page{
     width: 80%;
@@ -17,6 +65,7 @@
     margin-top: 100px;
     width: 80%;
     margin-left: 10%;
+    margin-bottom: 90px;
 }
 
 .single-page .article-header .author-icon{
@@ -44,11 +93,12 @@
 .single-page .article-container{
     width: 93%;
     margin-left: 21%;
+    margin-bottom: 80px;
 }
 
-.single-page .article-container img{
+.single-page .article-container .article-image{
     width: 80%;
-
+    margin-bottom: 80px;
 }
 
 .single-page .article-header .title-author{
@@ -60,7 +110,6 @@
 .single-page .article-header .title-author .author-name{
     display: flex;
     margin-top: 20px;
-    margin-bottom: 90px;
 }
 
 .single-page .article-header .title-author .name{
@@ -68,6 +117,7 @@
     font-size: 22px;
     color: #a6a2a2;
     margin-right: 5%;
+    text-transform: capitalize;
 }
 
 .single-page .article-header .title-author .author-name button{
@@ -80,6 +130,12 @@
     background-color: #f8f8f8;
     outline: none;
     margin-top: 5px;
+    cursor: pointer;
+}
+
+.single-page .article-header .title-author .author-name button:hover{
+    color: #fff;
+    background-color: #b3c7bd;
 }
 
 .single-page .article-header .article-title{
@@ -98,6 +154,7 @@
     background-color: #000;
     border: 0px;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 .single-page .article-content{
@@ -105,8 +162,6 @@
     font-family: Roboto;
     font-size: 21px;
     color: #a6a2a2;
-    padding-top: 70px;
-    padding-bottom: 50px;
 }
 
 .article-line{
@@ -131,6 +186,7 @@
     height: 35px;
     border-radius: 50%;
     margin-right: 5%;
+    cursor: pointer;
 }
 
 .comments .add-comment input{
@@ -154,6 +210,7 @@
     width: 45px;
     height: 45px;
     border-radius: 50px;
+    cursor: pointer;
 }
 
 .each-reply{
@@ -166,12 +223,14 @@
     width: 45px;
     height: 45px;
     border-radius: 50px;
+    cursor: pointer;
 }
 
 .comment-name, .reply-name{    
     font-family: Roboto;
     font-size: 18px;
     margin-left: 4%;
+    text-transform: capitalize;
 }
 
 .comment-body{
@@ -202,7 +261,7 @@
 }
 
 .time-chat div .comment-number{
-    max-width: 25px;
+    max-width: 30px;
     max-height: 25px;
 }
 
@@ -219,10 +278,252 @@
 }
 
 
-
-
 .single-page .time-chat div .comment-image{
     width: 500px;
     height: 500px;
     border-radius: 50px;
+}
+
+
+
+
+@media screen and (max-width:800px){
+    .single-page{
+        width: 90%;
+    }
+
+    .single-page .article-header{
+        width: 100%;
+        margin-left: 5%;
+    }
+
+    .single-page .article-container .article-image{
+        width: 98%;
+        margin-left: -11%;
+        margin-bottom: 80px;
+    }
+
+    .single-page .side-button{
+        padding-top: 25px;
+        width: 80px;
+        margin-top: -80px;
+        background-color: #fff;
+        border-radius: 50px;
+        margin-right: -30px;
+    }
+
+
+
+    .single-page .side-button .star{
+        width: 52px;
+    } 
+    
+    .single-page .side-button .bookmark{
+        margin-top: 40px;
+        width: 52px;
+    } 
+    
+    .single-page .side-button .share{
+        margin-top: 40px;
+        width: 52px;
+    } 
+    
+    .single-page .side-button .dot-dot{
+        margin-top: 40px;
+        width: 52px;
+        margin-left: 12px;
+    } 
+    
+    .single-page .side-button .like-count{
+        width: 22px;
+        height: 22px;
+        border-radius: 6px;
+        background-color: red;
+        color: #fff;
+        font-size: 14px;
+        padding-left: 6px;
+        margin-left: 38px;
+    } 
+    
+    .single-page .side-button .love{
+        margin-left: -7px;
+        margin-top: -18px;
+        max-width: 92px;
+    } 
+    
+    .single-page{
+        width: 80%;
+    }
+    
+    .single-page .article-content{
+        width: 100%;
+        margin-left: -12%;
+        font-family: Roboto;
+        font-size: 21px;
+        color: #a6a2a2;
+    }
+
+    .comments{
+        width: 90%;
+        margin-left: 8%;
+    }
+
+    .time-chat{
+        width: 20%;
+        margin-left: 25%;
+    }
+    
+    .comment-body{
+        margin-left: 9.5%;
+    }
+    
+    .reply-body{
+        margin-left: 12%;
+    }
+    
+}
+
+
+@media screen and (max-width:600px){
+    .single-page .article-header{
+        width: 96%;
+        margin-left: 5%;
+    }
+
+    .single-page .article-header .article-title{
+        font-size: 25px;
+    }
+
+    .single-page .author-image{
+        margin-top: 8px;
+        margin-left: 10px;
+    }
+
+    .single-page .article-header .number{
+        font-size: 30px;
+        margin-left: 25px;
+    }
+    
+    .single-page .article-header .minutes{
+        font-size: 14px;
+    }
+
+    .single-page .side-button{
+        padding-top: 25px;
+        margin-top: -100px;
+        border-radius: 50px;
+        margin-right: -35px;
+    }
+    
+
+}
+
+
+
+@media screen and (max-width:400px){
+    .single-page .article-header{
+        margin-top: 70px;
+    }
+    
+
+
+    .single-page .article-header{
+        width: 96%;
+        margin-left: 5%;
+        margin-bottom: 30px;
+    }
+
+    .single-page .article-header .article-title{
+        font-size: 16px;
+        width: 120%;
+    }
+
+    .single-page .author-image{
+        margin-top: 7px;
+        width: 35px;
+        height: 35px;
+    }
+
+    .single-page .article-header .number{
+        font-size: 25px;
+        margin-left: 20px;
+    }
+    
+    .single-page .article-header .title-author .name{
+        font-size: 15px;
+        margin-right: 5%;
+    }
+
+    .single-page .article-header .title-author .author-name button{
+        width: 60px;
+        height: 20px;
+        font-size: 12px;
+        margin-top: 3px;
+        margin-left: 5%;
+    }
+
+
+    .single-page .side-button{
+        width: 45px;
+        padding-top: 20px;
+        margin-top: -70px;
+        border-radius: 50px;
+        margin-right: -55px;
+    }
+
+    .single-page .article-container .article-image{
+        width: 150%;
+        margin-bottom: 80px;
+    }
+
+    .single-page .side-button .star{
+        width: 32px;
+        margin-left: 6px;
+    } 
+    
+    .single-page .side-button .bookmark{
+        margin-top: 20px;
+        margin-left: 6px;
+        width: 32px;
+    } 
+    
+    .single-page .side-button .share{
+        margin-top: 20px;
+        margin-left: 6px;
+        width: 32px;
+    } 
+    
+    .single-page .side-button .dot-dot{
+        margin-top: 20px;
+        width: 32px;
+        margin-left: 6px;
+    } 
+
+    .single-page .side-button .like-count{
+        width: 22px;
+        height: 22px;
+        border-radius: 6px;
+        font-size: 14px;
+        padding-left: 6px;
+        margin-left: 38px;
+        margin-top: 10px;
+    } 
+    
+    .single-page .side-button .love{
+        margin-left: -5px;
+        margin-top: 0px;
+        max-width: 55px;
+    } 
+
+
+    .single-page .article-content{
+        width: 120%;
+        margin-left: -12%;
+        font-family: Roboto;
+        font-size: 16px;
+        color: #a6a2a2;
+    }
+    
+    
+
 }
