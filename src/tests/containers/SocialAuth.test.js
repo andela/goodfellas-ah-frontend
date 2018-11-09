@@ -30,5 +30,9 @@ describe('SocialAuth UI', () => {
       const tree = toJson(wrapped);
       expect(tree).toMatchSnapshot();
     });
+
+    test('should conmtain a loader', () => {
+      expect(wrapped.exists('.large-spinner')).toEqual(true);
+    });
   });
 });
