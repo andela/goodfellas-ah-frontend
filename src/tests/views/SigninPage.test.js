@@ -9,6 +9,7 @@ beforeEach(() => {
   wrapped = shallow(<SigninPage />);
 });
 
+
 describe('Signin UI', () => {
   describe('render features', () => {
     test('view should render as expected', () => {

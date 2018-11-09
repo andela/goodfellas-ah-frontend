@@ -13,58 +13,169 @@ exports[`Signup UI render features container should render as expected 1`] = `
       }
     }
   >
-    <SignupForm>
-      <form>
-        <div>
-          <input
-            className="auth-field"
-            id="firstName"
+    <Connect(SignupForm)>
+      <SignupForm
+        signup={[Function]}
+      >
+        <form
+          onSubmit={[Function]}
+        >
+          <p
+            className="error-field"
+          />
+          <AuthInput
+            error={Object {}}
+            handleChange={[Function]}
+            name="firstname"
             placeholder="Firstname"
-            type="text"
-          />
-        </div>
-        <div>
-          <input
-            className="auth-field"
-            id="lastName"
+            value=""
+          >
+            <div>
+              <label
+                className="sr-only"
+                htmlFor="firstname"
+              >
+                firstname
+              </label>
+              <input
+                className="auth-field"
+                id="firstname"
+                onChange={[Function]}
+                placeholder="Firstname"
+                type="text"
+                value=""
+              />
+              <div
+                className="error-field"
+              />
+            </div>
+          </AuthInput>
+          <AuthInput
+            error={Object {}}
+            handleChange={[Function]}
+            name="lastname"
             placeholder="Lastname"
-            type="text"
-          />
-        </div>
-        <div>
-          <input
-            className="auth-field"
-            id="email"
+            value=""
+          >
+            <div>
+              <label
+                className="sr-only"
+                htmlFor="lastname"
+              >
+                lastname
+              </label>
+              <input
+                className="auth-field"
+                id="lastname"
+                onChange={[Function]}
+                placeholder="Lastname"
+                type="text"
+                value=""
+              />
+              <div
+                className="error-field"
+              />
+            </div>
+          </AuthInput>
+          <AuthInput
+            error={Object {}}
+            handleChange={[Function]}
+            name="email"
             placeholder="E-mail"
             type="email"
-          />
-        </div>
-        <div>
-          <input
-            className="auth-field"
-            id="password"
+            value=""
+          >
+            <div>
+              <label
+                className="sr-only"
+                htmlFor="email"
+              >
+                email
+              </label>
+              <input
+                className="auth-field"
+                id="email"
+                onChange={[Function]}
+                placeholder="E-mail"
+                type="email"
+                value=""
+              />
+              <div
+                className="error-field"
+              />
+            </div>
+          </AuthInput>
+          <AuthInput
+            error={Object {}}
+            handleChange={[Function]}
+            name="password"
             placeholder="Password"
             type="password"
-          />
-        </div>
-        <div>
-          <input
-            className="auth-field"
-            id="confirmPassword"
+            value=""
+          >
+            <div>
+              <label
+                className="sr-only"
+                htmlFor="password"
+              >
+                password
+              </label>
+              <input
+                className="auth-field"
+                id="password"
+                onChange={[Function]}
+                placeholder="Password"
+                type="password"
+                value=""
+              />
+              <div
+                className="error-field"
+              />
+            </div>
+          </AuthInput>
+          <AuthInput
+            error={Object {}}
+            handleChange={[Function]}
+            name="confirmPassword"
             placeholder="Confirm Password"
             type="password"
-          />
-        </div>
-        <div>
-          <button
-            className="auth-button"
-            type="submit"
+            value=""
           >
-            SIGN UP
-          </button>
-        </div>
-      </form>
-    </SignupForm>
+            <div>
+              <label
+                className="sr-only"
+                htmlFor="confirmPassword"
+              >
+                confirmPassword
+              </label>
+              <input
+                className="auth-field"
+                id="confirmPassword"
+                onChange={[Function]}
+                placeholder="Confirm Password"
+                type="password"
+                value=""
+              />
+              <div
+                className="error-field"
+              />
+            </div>
+          </AuthInput>
+          <AuthButton
+            name="SIGN UP"
+          >
+            <div>
+              <button
+                className="auth-button"
+                type="submit"
+              >
+                SIGN UP
+              </button>
+            </div>
+          </AuthButton>
+        </form>
+      </SignupForm>
+    </Connect(SignupForm)>
   </Provider>
 </_default>
 `;
