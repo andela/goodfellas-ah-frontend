@@ -31,7 +31,7 @@ describe('SocialAuth UI', () => {
       expect(tree).toMatchSnapshot();
     });
 
-    test('should conmtain a loader', () => {
+    test('should contain a loader', () => {
       expect(wrapped.exists('.large-spinner')).toEqual(true);
     });
   });
