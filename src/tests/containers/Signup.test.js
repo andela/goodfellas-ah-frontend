@@ -68,7 +68,6 @@ describe('Signup UI', () => {
       expect(wrapped.find('input').at(2).prop('value')).toEqual('');
       expect(wrapped.find('input').at(3).prop('value')).toEqual('');
       expect(wrapped.find('input').at(4).prop('value')).toEqual('');
-
     });
   });
 
@@ -84,6 +83,4 @@ describe('Signup UI', () => {
       expect(wrapped.find('input').at(4).prop('value')).toEqual('');
     });
   });
-
 });
-

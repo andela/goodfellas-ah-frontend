@@ -4,6 +4,7 @@ import LandingPage from '../views/LandingPage';
 import Profile from '../views/ProfilePage';
 import Signin from '../views/SigninPage';
 import Signup from '../views/SignupPage';
+import SingleArticle from '../views/SingleArticlePage';
 import Header from '../components/shared/Header';
 import authenticate from './hoc/authenticate';
 import '../styles/styles.scss';
@@ -28,6 +29,8 @@ const App = () => (
       <Route exact path="/" component={LandingPage} />
       <Route path="/auth" component={Auth} />
       <Route path="/user" component={authenticate(User)} />
+      <Route path="/articles/:slug" component={SingleArticle} />
+
     </div>
   </BrowserRouter>
 );

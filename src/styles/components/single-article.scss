@@ -1,0 +1,228 @@
+.single-page .side-button{
+    width: 5%;
+    height: 350px;
+    background-color: #fff;
+    margin-top: -150px;
+    border-radius: 50px;
+    margin-left: 2%;
+    float: right;
+}
+
+.single-page{
+    width: 80%;
+}
+
+.single-page .article-header{
+    display: flex;
+    margin-top: 100px;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.single-page .article-header .author-icon{
+    display: flex;
+    flex-direction: column;
+}
+
+.single-page .article-header .number{
+    font-family: Roboto;
+    font-size: 37px;
+    font-weight: normal;
+    width: 45px;
+    padding-top: 13px;
+    margin-left: 12px;
+}
+
+.single-page .article-header .minutes{
+    margin-top: -7px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;  
+}
+
+.single-page .article-container{
+    width: 93%;
+    margin-left: 21%;
+}
+
+.single-page .article-container img{
+    width: 80%;
+
+}
+
+.single-page .article-header .title-author{
+    display: flex;
+    flex-direction: column;
+    margin-left: 7%;
+}
+
+.single-page .article-header .title-author .author-name{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 90px;
+}
+
+.single-page .article-header .title-author .name{
+    font-family: Roboto;
+    font-size: 22px;
+    color: #a6a2a2;
+    margin-right: 5%;
+}
+
+.single-page .article-header .title-author .author-name button{
+    width: 77px;
+    height: 25px;
+    font-size: 13px;
+    font-family: Roboto;
+    color: #b3c7bd;
+    border: 1px solid #b3c7bd;
+    background-color: #f8f8f8;
+    outline: none;
+    margin-top: 5px;
+}
+
+.single-page .article-header .article-title{
+    text-transform: uppercase;
+    font-family: Roboto;
+    font-size: 31px;
+    font-weight: bold;
+    color: #564e58;
+    padding-top: 0;
+}
+
+.single-page .author-image{
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    background-color: #000;
+    border: 0px;
+    margin-top: 10px;
+}
+
+.single-page .article-content{
+    width: 80%;
+    font-family: Roboto;
+    font-size: 21px;
+    color: #a6a2a2;
+    padding-top: 70px;
+    padding-bottom: 50px;
+}
+
+.article-line{
+    width: 92%;
+    margin-left: 4%;
+}
+
+.comments{
+    width: 70%;
+    margin-left: 17%;
+    margin-top: 60px;
+    padding-bottom: 20px;
+    margin-bottom: 60px;
+}
+
+.add-comment{
+    margin-bottom: 70px;
+}
+
+.comments .add-comment img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 5%;
+}
+
+.comments .add-comment input{
+    width: 75%;
+    height: 40px;
+    border-radius: 50px;
+    border: 1px solid  #a6a2a2;
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 16px;
+    padding-left: 30px;
+    color: #a6a2a2;
+    outline: none;
+}
+
+.comment-heading, .reply-heading{
+    display: flex;
+}
+
+.comments .each-comment .comment-heading img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+}
+
+.each-reply{
+    width: 70%;
+    margin-left: 10%;
+    margin-top: 50px;
+}
+
+.comments .each-reply .reply-heading img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+}
+
+.comment-name, .reply-name{    
+    font-family: Roboto;
+    font-size: 18px;
+    margin-left: 4%;
+}
+
+.comment-body{
+    margin-left: 8.5%;
+    width: 78%;
+    font-family: Roboto;
+    font-size: 16px;
+    color: #a6a2a2;
+}
+
+.reply-body{
+    margin-left: 10%;
+    width: 90%;
+    font-family: Roboto;
+    font-size: 16px;
+    color: #a6a2a2;
+}
+
+.time-chat{
+    display: flex;
+    width: 20%;
+    margin-left: 40%;
+}
+
+.time-chat div{
+    display: flex;
+    margin-left: 27%;
+}
+
+.time-chat div .comment-number{
+    max-width: 25px;
+    max-height: 25px;
+}
+
+.time-chat div .read-time{
+    max-width: 30px;
+    max-height: 25px;
+}
+
+.time-chat div p{
+    font-family: Roboto;
+    font-size: 18px;
+    color: #a6a2a2;
+    margin-left: 15%;
+}
+
+
+
+
+.single-page .time-chat div .comment-image{
+    width: 500px;
+    height: 500px;
+    border-radius: 50px;
+}
