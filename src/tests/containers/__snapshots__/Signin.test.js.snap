@@ -136,18 +136,18 @@ exports[`Signin UI render features container should render as expected 1`] = `
                   </a>
                 </Link>
               </div>
-              <AuthButton
-                name="SIGN IN"
+              <Button
+                className="auth-button"
+                title="SIGN IN"
+                type="submit"
               >
-                <div>
-                  <button
-                    className="auth-button"
-                    type="submit"
-                  >
-                    SIGN IN
-                  </button>
-                </div>
-              </AuthButton>
+                <button
+                  className="auth-button"
+                  type="submit"
+                >
+                  SIGN IN
+                </button>
+              </Button>
             </form>
           </Signin>
         </Connect(Signin)>

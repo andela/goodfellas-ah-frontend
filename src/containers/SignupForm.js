@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { signup } from '../actions/authActions';
 import validateAuth from '../lib/validation';
 import AuthInput from '../components/shared/AuthInput';
-import AuthButton from '../components/shared/AuthButton';
+import Button from '../components/shared/Button';
 import '../styles/styles.scss';
 
 const initialState = {
@@ -127,7 +127,7 @@ class SignupForm extends Component {
           type="password"
           placeholder="Confirm Password"
         />
-        <AuthButton name="SIGN UP" />
+        <Button title="SIGN UP" className="auth-button" type="submit" />
       </form>
 
     );

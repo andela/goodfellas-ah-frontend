@@ -44,6 +44,7 @@ export const forgotPassword = (userData) => async (dispatch) => {
   try {
     const response = await axios.post('api/forgotPassword', userData);
     dispatch({ type: types.SUCCESS_MSG, payload: response.data.message });
+    dispatch({ type: types.RESET_ERROR, payload: '' });
     swal(response.data.message, 'Click the link in the email to reset your password', 'success');
   } catch (error) {
     dispatch({ type: types.RESET_ERROR, payload: error.response.data.message });

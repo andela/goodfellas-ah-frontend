@@ -3,18 +3,19 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { resetPassword } from '../actions/authActions';
 import AuthInput from '../components/shared/AuthInput';
-import AuthButton from '../components/shared/AuthButton';
+import Button from '../components/shared/Button';
 import validateAuth from '../lib/validation';
-// import Loading from '../components/shared/Loading';
+import Loading from '../components/shared/Loading';
 
 export class ResetPassword extends Component {
   state= {
     password: '',
     confirmPassword: '',
     validationError: {},
+    loading: false,
   }
 
-  handleResetPassword = (e) => {
+  handleResetPassword = async (e) => {
     e.preventDefault();
     const { resetPassword: newPassword, history } = this.props;
     const { password, confirmPassword } = this.state;
@@ -26,7 +27,9 @@ export class ResetPassword extends Component {
     const validationError = validateAuth({ password, confirmPassword }, fieldNames);
     this.setState({ validationError });
     if (!validationError.status) {
-      newPassword(userData, history);
+      this.setState({ loading: true });
+      await newPassword(userData, history);
+      this.setState({ loading: false });
       this.setState({ password: '', confirmPassword: '' });
     }
   };
@@ -37,7 +40,9 @@ export class ResetPassword extends Component {
 
   render() {
     const { errorMessage } = this.props;
-    const { validationError, password, confirmPassword } = this.state;
+    const {
+      validationError, password, confirmPassword, loading,
+    } = this.state;
     return (
       <form onSubmit={this.handleResetPassword} className="reset-form">
         <h3 className="reset-title text-center">Reset Password</h3>
@@ -59,7 +64,7 @@ export class ResetPassword extends Component {
           error={validationError}
         />
         <div className="error-field">{errorMessage}</div>
-        <AuthButton name="SUBMIT" />
+        {loading ? <button disabled="disabled" type="submit" className="auth-button loading"><Loading /></button> : <Button title="SUBMIT" className="auth-button" type="submit" />}
 
       </form>
     );

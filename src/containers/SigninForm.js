@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { signin } from '../actions/authActions';
 import validateAuth from '../lib/validation';
 import AuthInput from '../components/shared/AuthInput';
-import AuthButton from '../components/shared/AuthButton';
+import Button from '../components/shared/Button';
 
 class Signin extends Component {
   state = {
@@ -56,7 +56,7 @@ class Signin extends Component {
         <div>
           <Link to="/forgotpassword"><div className="forgot-password">Forgot Password?</div></Link>
         </div>
-        <AuthButton name="SIGN IN" />
+        <Button title="SIGN IN" className="auth-button" type="submit" />
       </form>
     );
   }
