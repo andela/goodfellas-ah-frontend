@@ -1,10 +1,10 @@
 import React from 'react';
+import LandingPageLayout from '../components/layout/LandingPage';
 
-
-const Hero = () => (
+const LandingPage = () => (
   <div>
-    This is the Hero view
+    <LandingPageLayout />
   </div>
 );
 
-export default Hero;
+export default (LandingPage);
