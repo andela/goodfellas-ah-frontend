@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import ProfilePage from '../../views/ProfilePage';
+import ProfileEditPage from '../../views/ProfileEditPage';
 
 let wrapped;
 
 beforeEach(() => {
-  wrapped = shallow(<ProfilePage />);
+  wrapped = shallow(<ProfileEditPage />);
 });
 
 

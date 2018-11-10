@@ -1,7 +1,7 @@
 import * as types from '../actions/actionTypes';
-import { profile as initialState } from './initialState';
+import initialState from './initialState';
 
-export default (state = initialState, action) => {
+export default (state = initialState.profile, action) => {
   switch (action.type) {
     case types.PROFILE_NAVIGATION:
       return {

@@ -7,12 +7,15 @@ import Signin from '../views/SigninPage';
 import Signup from '../views/SignupPage';
 import EditProfile from '../views/ProfileEditPage';
 import Profile from '../views/ProfilePage';
+import CreateArticle from '../views/CreateArticles';
+import Header from '../components/shared/Header';
+import GetAllArticles from '../views/AllArticles';
 
 const User = () => (
   <Switch>
     <Route exact path="/user/profile" component={Profile} />
-    <Route exact path="/user/profile/:userId" component={Profile} />
     <Route exact path="/user/profile/edit" component={EditProfile} />
+    <Route exact path="/user/profile/:userId" component={Profile} />
   </Switch>
 );
 
@@ -23,11 +26,20 @@ const Auth = () => (
   </div>
 );
 
+const Articles = () => (
+  <div>
+    <Header />
+    <Route path="/articles/create" component={CreateArticle} />
+    <Route path="/articles/home" component={GetAllArticles} />
+  </div>
+);
+
 const App = () => (
   <BrowserRouter>
     <div>
       <Route exact path="/" component={LandingPage} />
       <Route path="/auth" component={Auth} />
+      <Route path="/articles" component={Articles} />
       <Route path="/user" component={authenticate(User)} />
     </div>
   </BrowserRouter>

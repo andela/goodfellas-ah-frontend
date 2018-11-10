@@ -13,7 +13,7 @@ const ProfileArticleList = (props) => {
               <svg className="icon">
                 <use xlinkHref={`${icons}#sad`} />
               </svg>&nbsp;&nbsp;
-              <span>{userFullName}{userFullName} has not posted any article</span>
+              <span>{userFullName} has not posted any articles</span>
             </div>
           )
           : articles.map((article) => <ProfileArticle key={article.id} author={props.author} authorImage={props.authorImage} type="article" article={article} />)

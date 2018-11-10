@@ -1,4 +1,3 @@
-import API from '../config/axiosConfig';
 import * as types from './actionTypes';
 
 export const profileNavigation = (view) => ({
@@ -10,12 +9,12 @@ export const profileLoading = (status = true) => ({
   payload: status,
 });
 
-export const fetchProfile = (id) => async (dispatch) => {
-  const profile = API.get(`/user/profile/${id}`);
-  const followers = API.get(`/user/followers/${id}`);
-  const followedUsers = API.get(`/user/followed/${id}`);
-  const articles = API.get(`/articles/author/${id}`);
-  const favorites = API.get(`/articles/user/${id}/favorite`);
+export const fetchProfile = (id) => async (dispatch, getState, { api }) => {
+  const profile = api.get(`/user/profile/${id}`);
+  const followers = api.get(`/user/followers/${id}`);
+  const followedUsers = api.get(`/user/followed/${id}`);
+  const articles = api.get(`/articles/author/${id}`);
+  const favorites = api.get(`/articles/user/${id}/favorite`);
   try {
     const request = await Promise
       .all([profile, followers, followedUsers, articles, favorites]);
@@ -27,15 +26,15 @@ export const fetchProfile = (id) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: types.SET_PROFILE_ERROR,
-      payload: 'Error fetching profile',
+      payload: error.response.data.message || error.response.data,
     });
     dispatch(profileLoading(false));
   }
 };
 
-export const editProfile = (id, data) => async (dispatch) => {
+export const editProfile = (id, data) => async (dispatch, getState, { api }) => {
   try {
-    const response = await API.put(`/user/profile/${id}`, data);
+    const response = await api.put(`/user/profile/${id}`, data);
     if (response.status === 200) {
       dispatch({
         type: types.UPDATE_PROFILE,

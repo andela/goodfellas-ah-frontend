@@ -23,6 +23,9 @@ font-family: 'Roboto', sans-serif;
     border-color: transparent !important;
     background: var(--light-gray);
   }
+  &:focus {
+    outline: none;
+  }
 }
 h3.username {
   font-size: 24px;
@@ -68,10 +71,14 @@ a.outline:hover {
   align-items: center;
 }
 .no-record {
-  height: 300px;
+  min-height: 300px;
   font-size: 25px;
   font-weight: 100;
+  text-align: center;
   color: var(--lighter-gray);
+  .icon {
+    flex: 0 0 25px;
+  }
 }
 .profile-image {
   height: 5rem;
@@ -83,4 +90,5 @@ a.outline:hover {
     height: 7rem;
     width: 7rem;    
   }
+  font-family: 'Roboto', sans-serif;
 }

@@ -1,9 +1,8 @@
 import * as types from './actionTypes';
-import { unprotectedRoute as API } from '../config/axiosConfig';
 
-export const signup = (formValues, callback) => async (dispatch) => {
+export const signup = (formValues, callback) => async (dispatch, getState, { openRoutes }) => {
   try {
-    const res = await API.post('/auth/signup', formValues);
+    const res = await openRoutes.post('/auth/signup', formValues);
     dispatch({
       type: types.SIGNIN_USER,
       payload: res.data,
@@ -18,12 +17,12 @@ export const signup = (formValues, callback) => async (dispatch) => {
   }
 };
 
-export const signin = (formValues, callback) => async (dispatch) => {
+export const signin = (formValues, callback) => async (dispatch, getState, { openRoutes }) => {
   try {
-    const response = await API.post('/auth/signin', formValues);
+    const response = await openRoutes.post('/auth/signin', formValues);
     dispatch({ type: types.SIGNIN_USER, payload: response.data });
     localStorage.setItem('token', response.data.token);
-    localStorage.setItem('userId', response.data.id);
+    localStorage.setItem('userId', response.data.userId);
     callback();
   } catch (error) {
     dispatch({
@@ -35,6 +34,7 @@ export const signin = (formValues, callback) => async (dispatch) => {
 
 export const signout = () => {
   localStorage.removeItem('token');
+  localStorage.removeItem('userId');
 
   return { type: types.SIGNOUT_USER };
 };

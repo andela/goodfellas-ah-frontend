@@ -3,7 +3,6 @@
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 @import 'components/index.scss';
 @import 'components/profileToolbar.scss';
-@import 'components/header.scss';
 @import 'components/followCard.scss';
 @import 'components/inputBox.scss';
 @import 'components/profileImageUploader.scss';
@@ -13,6 +12,11 @@
 @import 'views/hero.scss';
 @import 'views/editProfile.scss';
 @import 'views/profile.scss';
+@import 'components/landingPage.scss';
+@import 'components/header.scss';
+@import 'components/articleCard.scss';
+@import 'components/loading.scss';
+@import 'components/footer.scss';
 @import './components/auth.scss';
 @import './components/auth-form.scss';
 @import './components/author-writing.scss';

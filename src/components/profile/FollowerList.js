@@ -3,7 +3,10 @@ import FollowCard from './RelationshipCard';
 import icons from '../../assets/icons.svg';
 
 const FollowerList = (props) => {
-  const { followers, userFullName } = props;
+  const { followers, userFullName, history } = props;
+  const handleClick = (userId) => {
+    history.push(`/user/profile/${userId}`);
+  };
   return (
     <Fragment>
       {
@@ -13,10 +16,10 @@ const FollowerList = (props) => {
               <svg className="icon">
                 <use xlinkHref={`${icons}#sad`} />
               </svg>&nbsp;&nbsp;
-              <span>No follower for {userFullName}</span>
+              <span>{userFullName} has no followers.</span>
             </div>
           )
-          : followers.map((user) => <FollowCard key={user.id} type="follower" user={user.follower} />)
+          : followers.map((user) => <FollowCard handleClick={handleClick} key={user.id} type="follower" user={user.follower} />)
       }
     </Fragment>
   );
