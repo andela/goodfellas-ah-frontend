@@ -42,7 +42,6 @@ export const editProfile = (id, data) => async (dispatch, getState, { api }) => 
       });
       return { success: response.data.message };
     }
-    return true;
   } catch (e) {
     return {
       error: e.response.data.message || e.response.data.error,
