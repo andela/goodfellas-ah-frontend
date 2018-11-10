@@ -66,6 +66,7 @@ export class EditProfile extends Component {
     });
   }
 
+  // eslint-disable-next-line consistent-return
   updateProfile = async (e) => {
     e.preventDefault();
     if (!e.target.username.value) return swal('Please enter a username', 'Pro Tip: Authors with usernames attract more followers', 'warning');

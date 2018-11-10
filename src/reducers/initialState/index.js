@@ -9,7 +9,6 @@ const initialState = {
     loading: true,
     profileView: 'Following',
     profileError: '',
-    userId: 1,
     user: {},
     profile: {},
     followers: [],

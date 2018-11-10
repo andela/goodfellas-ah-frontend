@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from '../components/shared/articleCard';
+import Card from '../containers/ArticleCard';
 import Header from '../components/shared/Header';
 
 const Hero = () => (
