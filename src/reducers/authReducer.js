@@ -4,7 +4,7 @@ import initialState from './initialState';
 export default (state = initialState, action) => {
   switch (action.type) {
     case types.SIGNIN_USER:
-      return { ...state, authenticated: action.payload };
+      return { ...state, authenticated: action.payload, errorMessage: '' };
     case types.SIGNIN_USER_ERROR:
       return { ...state, errorMessage: action.payload };
     case types.SIGNOUT_USER:
