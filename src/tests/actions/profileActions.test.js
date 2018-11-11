@@ -1,6 +1,5 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import profileReducer from '../../reducers/profileReducer';
 import * as types from '../../actions/actionTypes';
 import initialState from '../../reducers/initialState';
 import * as profileData from '../mock/profileData';
