@@ -26,7 +26,7 @@ export const fetchProfile = (id) => async (dispatch, getState, { api }) => {
   } catch (error) {
     dispatch({
       type: types.SET_PROFILE_ERROR,
-      payload: error.response.data.message || error.response.data,
+      payload: error.response.data.message || error.response.data.error,
     });
     dispatch(profileLoading(false));
   }

@@ -8,7 +8,10 @@ class CustomAPIError extends Error {
     }
     this.response = {
       status: 404,
-      data: message,
+      data: {
+        error: message,
+        message,
+      },
     };
   }
 }
