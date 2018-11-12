@@ -171,18 +171,18 @@ exports[`Signup UI render features container should render as expected 1`] = `
               />
             </div>
           </AuthInput>
-          <AuthButton
-            name="SIGN UP"
+          <Button
+            className="auth-button"
+            title="SIGN UP"
+            type="submit"
           >
-            <div>
-              <button
-                className="auth-button"
-                type="submit"
-              >
-                SIGN UP
-              </button>
-            </div>
-          </AuthButton>
+            <button
+              className="auth-button"
+              type="submit"
+            >
+              SIGN UP
+            </button>
+          </Button>
         </form>
       </SignupForm>
     </Connect(SignupForm)>

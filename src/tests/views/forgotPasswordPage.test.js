@@ -1,18 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import App from '../../containers/App';
+import ForgotPasswordPage from '../../views/ForgotPasswordPage';
 
 let wrapped;
 
 beforeEach(() => {
-  wrapped = shallow(<App />);
+  wrapped = shallow(<ForgotPasswordPage />);
 });
-afterEach(() => wrapped.unmount());
 
-describe('App UI', () => {
+describe('ForgotPasswordPageUI', () => {
   describe('render features', () => {
-    test('container should render as expected', () => {
+    test('view should render as expected', () => {
       const tree = toJson(wrapped);
       expect(tree).toMatchSnapshot();
     });

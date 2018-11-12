@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { MemoryRouter } from 'react-router-dom';
 import toJson from 'enzyme-to-json';
 import Signin from '../../containers/SigninForm';
 import Root from '../../root';
@@ -9,7 +10,9 @@ let wrapped;
 beforeEach(() => {
   wrapped = mount(
     <Root>
-      <Signin />
+      <MemoryRouter initialEntries={[{ key: 'testKey' }]}>
+        <Signin />
+      </MemoryRouter>
     </Root>,
   );
 });

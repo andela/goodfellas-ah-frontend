@@ -6,6 +6,8 @@ import Profile from '../views/ProfilePage';
 import Signin from '../views/SigninPage';
 import Signup from '../views/SignupPage';
 import SocialAuthPage from '../views/SocialAuthPage';
+import ForgotPasswordPage from '../views/ForgotPasswordPage';
+import ResetPasswordPage from '../views/ResetPasswordPage';
 import CreateArticle from '../views/CreateArticles';
 import Header from '../components/shared/Header';
 import authenticate from './hoc/authenticate';
@@ -13,7 +15,6 @@ import GetAllArticles from '../views/AllArticles';
 
 const User = () => (
   <div>
-    <Header />
     <Route path="/user/profile" component={Profile} />
   </div>
 );
@@ -41,6 +42,8 @@ const App = () => (
       <Route path="/auth" component={Auth} />
       <Route path="/articles" component={Articles} />
       <Route path="/user" component={authenticate(User)} />
+      <Route path="/forgotpassword" component={ForgotPasswordPage} />
+      <Route path="/resetpassword" component={ResetPasswordPage} />
     </div>
   </BrowserRouter>
 );
