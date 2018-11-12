@@ -5,7 +5,7 @@ const AuthInput = (props) => {
     value, error, name, type, placeholder, handleChange,
   } = props;
   return (
-    <div>
+    <div className="auth-input-wrapper">
       <label className="sr-only" htmlFor={name}>{name}</label>
       <input
         type={type || 'text'}

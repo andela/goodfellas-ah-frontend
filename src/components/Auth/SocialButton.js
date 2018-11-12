@@ -1,10 +1,14 @@
 import React from 'react';
 
-const SocialButton = ({ image, className }) => (
+const apiUrl = process.env.REACT_APP_API_URL;
+
+const SocialButton = ({ image, className, type }) => (
   <div className="social-link">
-    <div className={className}>
-      <img src={image} alt="" />
-    </div>
+    <a href={`${apiUrl}/api/auth/${type}`}>
+      <div className={className}>
+        <img src={image} alt="" />
+      </div>
+    </a>
   </div>
 );
 

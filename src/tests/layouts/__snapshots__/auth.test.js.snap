@@ -14,22 +14,7 @@ exports[`Auth layout render features container should render as expected 1`] = `
     >
       Or
     </div>
-    <div
-      className="social-icons"
-    >
-      <SocialButton
-        className="facebook"
-        image="facebook-image.png"
-      />
-      <SocialButton
-        className="google"
-        image="google-image.png"
-      />
-      <SocialButton
-        className="twitter"
-        image="twitter-image.png"
-      />
-    </div>
+    <SocialButtonList />
   </div>
 </div>
 `;

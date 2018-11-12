@@ -71,7 +71,9 @@ exports[`Signin UI render features container should render as expected 1`] = `
                 placeholder="Email"
                 value=""
               >
-                <div>
+                <div
+                  className="auth-input-wrapper"
+                >
                   <label
                     className="sr-only"
                     htmlFor="email"
@@ -99,7 +101,9 @@ exports[`Signin UI render features container should render as expected 1`] = `
                 type="password"
                 value=""
               >
-                <div>
+                <div
+                  className="auth-input-wrapper"
+                >
                   <label
                     className="sr-only"
                     htmlFor="password"
