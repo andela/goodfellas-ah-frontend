@@ -6,7 +6,7 @@ import { profileNavigation } from '../actions/profileActions';
 const ProfileToolbar = (props) => {
   const { profile, profileNavigation: switchView } = props;
   const {
-    following, followers, articles, favorites,
+    following, followers, articles, favorites, profileView,
   } = profile;
   const nav = {
     Following: following.length,
@@ -14,7 +14,7 @@ const ProfileToolbar = (props) => {
     Articles: articles.length,
     Favorites: favorites.length,
   };
-  return <ProfileToolbarUI handleClick={switchView} profile={profile} nav={nav} />;
+  return <ProfileToolbarUI handleClick={switchView} profileView={profileView} nav={nav} />;
 };
 
 const mapStateToProps = (state) => ({

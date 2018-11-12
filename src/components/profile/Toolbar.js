@@ -1,18 +1,18 @@
 import React from 'react';
 
 export default (props) => {
-  const { nav } = props;
+  const { nav, profileView, handleClick } = props;
   return (
     <div className="profile-toolbar">{
       Object.keys(nav)
         .map((tab) => (
           <div
             key={tab}
-            onClick={() => props.handleClick(tab)}
-            className={`toolbar-menu ${props.profile.profileView === tab ? 'active' : ''}`}
+            onClick={() => handleClick(tab)}
+            className={`toolbar-menu ${profileView === tab ? 'active' : ''}`}
           >
             <p>{tab}</p>
-            <b>{props.nav[tab]}</b>
+            <b>{nav[tab]}</b>
           </div>
         ))}
     </div>);

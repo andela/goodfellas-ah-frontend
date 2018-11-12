@@ -20,7 +20,27 @@ export const profile = {
 };
 
 export const followers = {
-  data: { data: { followers: [], followersCount: 0 }, message: 'Retrieved followers' },
+  data: {
+    data: {
+      followers: [{
+        id: 1,
+        followerId: 3,
+        createdAt: '2018-11-11T23:42:00.689Z',
+        updatedAt: '2018-11-11T23:42:00.689Z',
+        follower: {
+          firstname: 'Afeez',
+          lastname: 'Awoyemi',
+          email: 'damafeez@gmail.com',
+          role: 'User',
+          profile: {
+            id: 3, username: null, bio: null, image: null, following: false, userId: 3, createdAt: '2018-11-10T14:06:28.897Z', updatedAt: '2018-11-10T14:06:28.897Z',
+          },
+        },
+      }],
+      followersCount: 1,
+    },
+    message: 'Retrieved followers',
+  },
   status: 200,
 };
 
