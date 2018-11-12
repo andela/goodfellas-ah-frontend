@@ -30,12 +30,12 @@ const SingleArticle = () => (
       <div className="article-container">
         <img className="article-image" src={articleImage} alt="" />
         <div className="side-button">
-        <img class="star" src={star} alt=""/>
-        <img class="bookmark" src={bookmark} alt=""/>
-        <img class="share" src={share} alt=""/>
-        <img class="dot-dot" src={dot} alt=""/>
-        <div class="like-count">4</div>
-        <img class="love" src={love} alt=""/>
+          <img className="star" src={star} alt="" />
+          <img className="bookmark" src={bookmark} alt="" />
+          <img className="share" src={share} alt="" />
+          <img className="dot-dot" src={dot} alt="" />
+          <div className="like-count"><p>4</p></div>
+          <img className="love" src={love} alt="" />
         </div>
         <div className="article-content"><p>
     Software is a highly technical field, so a senior engineer obviously can’t be weak in
@@ -47,7 +47,7 @@ const SingleArticle = () => (
     transition to other areas with more than just a broad surface knowledge.
         </p>
 
-    <p>
+          <p>
     To truly be senior, you need to make the hard calls and make them right.
     This deep experience also builds the wisdom to see how choices made early in development pay off later.
     A senior developer needs to know “where the bodies are buried.”
