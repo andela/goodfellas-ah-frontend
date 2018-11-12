@@ -4,7 +4,6 @@ import swal from 'sweetalert';
 import Editor from 'react-medium-editor';
 import 'medium-editor/dist/css/medium-editor.css';
 import 'medium-editor/dist/css/themes/default.css';
-import Header from '../components/shared/header';
 import ImageUploader from '../components/articles/imageUpload';
 import publishArticle from '../actions/publishArticle';
 import '../styles/views/createArticles.scss';
@@ -50,9 +49,7 @@ class CreateArticles extends Component {
     const handleEditorChange = (text, key) => this.setState({ [key]: text });
     const { imageUploadStatus } = this.props;
     return (
-      <div className="article">
-        <Header />
-        <hr />
+      <div className="article-body">
         <div className="articles-card">
           <div className="article-buttons">
             <button className="btn article-whitebutton" type="submit" onClick={this.handleSubmit}>
