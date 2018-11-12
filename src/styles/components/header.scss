@@ -5,8 +5,8 @@ header {
   .navbar {
     text-decoration-color: none;
     display: flex;
-    justify-content: space-between;
-    align-content: flex-end;
+    // justify-content: space-between;
+    align-items: center;
     &.-responsive{
       display: block;
     }
@@ -104,9 +104,6 @@ header {
 
 .header-user {
   display: flex;
-  align-content: center;
-  position: absolute;
-  right: 10px;
   justify-content: space-around;
   @media only screen and (max-width: 900px) {
     display: flex;
@@ -128,9 +125,9 @@ header {
     padding-bottom: 0px;
   }
   .header-user-search {
-    margin-right: 70px;
+    display: flex;
     .searchbar{
-      padding: 15px;
+      padding: 10px;
       width: 414px;
       height: 40px;
       border-radius: 36px;
@@ -155,12 +152,23 @@ header {
       border: solid 0.5px rgba(166, 162, 162, 0.3);
       background-color: #ffffff;
     }
+    .search-dropdown{
+      left: -70px;
+    }
+    span:nth-child(3){
+      position: relative;
+      border-right: 1px solid #626d86;
+      left: -69px;
+      font-size: 34px;
+      padding: 0 4px;
+    }
     img{
       position: relative;
-      left: -40px;
+      left: -60px;
       width: 16px;
       height: 16px;
       font-size: 16px;
+      cursor: pointer;
       @media only screen and (max-width: 900px) {
         position: static;
         width: 31px;

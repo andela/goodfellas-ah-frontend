@@ -48,12 +48,33 @@ export class Header extends Component {
             ? (
               <div className="header-user">
                 <div className="header-user-search">
-                  <input className="searchbar" ref="searchbar" type="search" />
+                  <input placeholder="Search for articles" className="searchbar" ref="searchbar" type="search" />
+                  <span>
+                    <img
+                      className="search-dropdown"
+                      src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541772567/Authors%20Haven/arrow_grey.png"
+                      alt=""
+                    />
+                  </span>
+                  <span />
                   <span onClick={this.openSearchbar}><img
                     src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png"
                     alt=""
                   />
                   </span>
+                  {/* <div>
+                    <form>
+                      Filter by
+                      <select>
+                        <option>Title</option>
+                        <option>Author</option>
+                        <option>Tag</option>
+                        <option>Title & Tag</option>
+                        <option>Title & Author</option>
+                        <option>Title, Tag </option>
+                      </select>
+                    </form>
+                  </div> */}
                 </div>
                 <div className="header-user-images">
                   <div className="dropdown">
