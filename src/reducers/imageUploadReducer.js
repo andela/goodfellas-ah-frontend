@@ -1,44 +1,47 @@
 import {
-  PUBLISH_ARTICLE_LOADING,
-  PUBLISH_ARTICLE_SUCCESS,
-  PUBLISH_ARTICLE_ERROR,
+  IMAGE_UPLOAD_LOADING,
+  IMAGE_UPLOAD_SUCCESS,
+  IMAGE_UPLOAD_ERROR,
 } from '../actions/actionTypes';
 
+
 const initialState = {
-  publishedArticle: {},
+  uploadedImage: {},
   status: {
     error: false,
     success: false,
+    loading: false,
   },
 };
 
-const publishArticleReducer = (state = initialState, action) => {
+const imageUploadReducer = (state = initialState, action) => {
   switch (action.type) {
-    case PUBLISH_ARTICLE_LOADING:
+    case IMAGE_UPLOAD_LOADING:
       return {
         ...state,
         status: {
-          error: false,
-          success: false,
+          loading: true,
         },
       };
 
-    case PUBLISH_ARTICLE_SUCCESS:
+    case IMAGE_UPLOAD_SUCCESS:
       return {
         ...state,
-        publishedArticle: action.payload,
+        uploadedImage: action.payload,
         status: {
           success: true,
           error: false,
+          loading: false,
         },
       };
 
-    case PUBLISH_ARTICLE_ERROR: {
+    case IMAGE_UPLOAD_ERROR: {
       return {
         ...state,
         status: {
           error: true,
           success: false,
+          loading: false,
         },
       };
     }
@@ -49,4 +52,4 @@ const publishArticleReducer = (state = initialState, action) => {
   }
 };
 
-export default publishArticleReducer;
+export default imageUploadReducer;

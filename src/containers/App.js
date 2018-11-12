@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 import store from '../store';
 import Sample from '../components/Sample';
 import '../styles/styles.scss';
-import Hero from '../views/hero';
+import Hero from '../views/Hero';
 import CreateArticles from '../views/CreateArticles';
 
 

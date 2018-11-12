@@ -1,6 +1,10 @@
 // Colours
 $maingreen: #57B182;
 $faintblue: #F4F9FC;
+:root {
+  --light-gray: #a6a2a2;
+  --lighter-gray: rgba(36, 32, 56, 0.17);
+}
 
 body {
 font-family: 'Roboto', sans-serif;
@@ -16,4 +20,21 @@ font-family: 'Roboto', sans-serif;
     align-items: center;
     box-shadow: 2px 5px 15px #0000005e;
     cursor: pointer;
+}
+
+.centralizer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.no-record {
+    min-height: 300px;
+    font-size: 25px;
+    font-weight: 100;
+    text-align: center;
+    color: var(--lighter-gray);
+    .icon {
+      flex: 0 0 25px;
+    }
 }

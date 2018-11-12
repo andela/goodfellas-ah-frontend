@@ -147,4 +147,16 @@ form {
     margin: 7px;
     text-align: center;
   }
+  input
+{
+    display: none;
+}
+.inline-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 830px;
+    height: 508px;
+}
+
 }

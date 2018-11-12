@@ -3,7 +3,7 @@ import axiosInstance from '../config/axiosConfig';
 import {
   PUBLISH_ARTICLE_LOADING,
   PUBLISH_ARTICLE_SUCCESS,
-  ERROR_DISPATCH,
+  PUBLISH_ARTICLE_ERROR,
 } from './actionTypes';
 
 const publishArticleLoading = () => (
@@ -14,7 +14,7 @@ const publishArticleLoading = () => (
 
 const publishArticleError = (error) => (
   {
-    type: ERROR_DISPATCH,
+    type: PUBLISH_ARTICLE_ERROR,
     error,
   }
 );
