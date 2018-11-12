@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import ProfileToolbarUI from '../components/profile/Toolbar';
 import { profileNavigation } from '../actions/profileActions';
 
-const ProfileToolbar = (props) => {
+export const ProfileToolbar = (props) => {
   const { profile, profileNavigation: switchView } = props;
   const {
     following, followers, articles, favorites, profileView,

@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components Loading component should render as expected 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ProfileToolbar
+    profile={
+      Object {
+        "articles": Array [
+          Object {
+            "authorId": 1,
+            "averageRating": null,
+            "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+            "comments": Array [],
+            "createdAt": "2018-11-09T15:08:00.560Z",
+            "description": " this is the fine long body  this is the fine long body ",
+            "favorited": null,
+            "favoritesCount": null,
+            "id": 2,
+            "image": null,
+            "reactions": Array [],
+            "read_time": "1 minute",
+            "slug": "this-is-a-fine-title-which-i-would-really-love-to-have",
+            "tagList": null,
+            "title": "This is a fine title which I would really love to have",
+            "updatedAt": "2018-11-09T15:08:00.560Z",
+          },
+        ],
+        "favorites": Array [],
+        "followers": Array [
+          Object {
+            "createdAt": "2018-11-11T23:42:00.689Z",
+            "follower": Object {
+              "email": "damafeez@gmail.com",
+              "firstname": "Afeez",
+              "lastname": "Awoyemi",
+              "profile": Object {
+                "bio": null,
+                "createdAt": "2018-11-10T14:06:28.897Z",
+                "following": false,
+                "id": 3,
+                "image": null,
+                "updatedAt": "2018-11-10T14:06:28.897Z",
+                "userId": 3,
+                "username": null,
+              },
+              "role": "User",
+            },
+            "followerId": 3,
+            "id": 1,
+            "updatedAt": "2018-11-11T23:42:00.689Z",
+          },
+        ],
+        "following": Array [],
+        "profile": Object {
+          "bio": "here's my bio which I love",
+          "createdAt": "2018-11-09T10:50:57.187Z",
+          "following": false,
+          "id": 1,
+          "image": "https://res.cloudinary.com/drmmqcxkc/image/upload/v1541770998/siue0ec27gazjujncvch.jpg",
+          "updatedAt": "2018-11-09T13:43:58.950Z",
+          "userId": 1,
+          "username": "akangbe",
+        },
+        "user": Object {
+          "email": "damafeez11@gmail.com",
+          "firstname": "Afeez1",
+          "lastname": "Awoyemi",
+          "notificationSettings": Array [
+            "email",
+            "inApp",
+          ],
+          "role": "User",
+        },
+      }
+    }
+    profileNavigation={[MockFunction]}
+    value="Ade"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "handleClick": [MockFunction],
+      "nav": Object {
+        "Articles": 1,
+        "Favorites": 0,
+        "Followers": 1,
+        "Following": 0,
+      },
+      "profileView": undefined,
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "handleClick": [MockFunction],
+        "nav": Object {
+          "Articles": 1,
+          "Favorites": 0,
+          "Followers": 1,
+          "Following": 0,
+        },
+        "profileView": undefined,
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
