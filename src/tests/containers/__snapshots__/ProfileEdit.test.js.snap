@@ -118,13 +118,13 @@ ShallowWrapper {
           handleChange={[Function]}
           name="username"
           placeholder="Username"
-          value=""
+          value="akangbe"
         />
         <_default
           handleChange={[Function]}
           name="bio"
           placeholder="Enter a short bio"
-          value=""
+          value="here's my bio which I love"
         />
         <div>
           <button
@@ -171,13 +171,13 @@ ShallowWrapper {
             handleChange={[Function]}
             name="username"
             placeholder="Username"
-            value=""
+            value="akangbe"
           />,
           <_default
             handleChange={[Function]}
             name="bio"
             placeholder="Enter a short bio"
-            value=""
+            value="here's my bio which I love"
           />,
           <div>
             <button
@@ -239,7 +239,7 @@ ShallowWrapper {
             "handleChange": [Function],
             "name": "username",
             "placeholder": "Username",
-            "value": "",
+            "value": "akangbe",
           },
           "ref": null,
           "rendered": null,
@@ -253,7 +253,7 @@ ShallowWrapper {
             "handleChange": [Function],
             "name": "bio",
             "placeholder": "Enter a short bio",
-            "value": "",
+            "value": "here's my bio which I love",
           },
           "ref": null,
           "rendered": null,
@@ -350,13 +350,13 @@ ShallowWrapper {
             handleChange={[Function]}
             name="username"
             placeholder="Username"
-            value=""
+            value="akangbe"
           />
           <_default
             handleChange={[Function]}
             name="bio"
             placeholder="Enter a short bio"
-            value=""
+            value="here's my bio which I love"
           />
           <div>
             <button
@@ -403,13 +403,13 @@ ShallowWrapper {
               handleChange={[Function]}
               name="username"
               placeholder="Username"
-              value=""
+              value="akangbe"
             />,
             <_default
               handleChange={[Function]}
               name="bio"
               placeholder="Enter a short bio"
-              value=""
+              value="here's my bio which I love"
             />,
             <div>
               <button
@@ -471,7 +471,7 @@ ShallowWrapper {
               "handleChange": [Function],
               "name": "username",
               "placeholder": "Username",
-              "value": "",
+              "value": "akangbe",
             },
             "ref": null,
             "rendered": null,
@@ -485,7 +485,7 @@ ShallowWrapper {
               "handleChange": [Function],
               "name": "bio",
               "placeholder": "Enter a short bio",
-              "value": "",
+              "value": "here's my bio which I love",
             },
             "ref": null,
             "rendered": null,

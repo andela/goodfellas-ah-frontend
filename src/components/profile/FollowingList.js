@@ -3,7 +3,12 @@ import FollowCard from './RelationshipCard';
 import icons from '../../assets/icons.svg';
 
 const FollowingList = (props) => {
-  const { following, userFullName, history } = props;
+  const {
+    following,
+    userFullName,
+    ownProfile,
+    history,
+  } = props;
   const handleClick = (userId) => {
     history.push(`/user/profile/${userId}`);
   };
@@ -17,11 +22,11 @@ const FollowingList = (props) => {
                 <svg className="icon">
                   <use xlinkHref={`${icons}#sad`} />
                 </svg>&nbsp;&nbsp;
-                <span>{userFullName} is not following anyone</span>
+                <span>{ownProfile ? 'You are not following anyone.' : `${userFullName} is not following anyone`}</span>
               </div>
             </div>
           )
-          : following.map((user) => <FollowCard handleClick={handleClick} key={user.id} type="following" user={user.followedUser} />)
+          : following.map((user) => <FollowCard handleClick={handleClick} key={user.id} type="following" userId={user.followedUserId} user={user.followedUser} />)
       }
     </Fragment>
   );

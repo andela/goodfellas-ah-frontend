@@ -145,23 +145,16 @@ describe('Article Reducer', () => {
         payload: '',
       };
       const initialState = {
-        authenticated: '',
-        userId: null,
-        errorMessage: '',
-        user: {},
         articles: [],
+        authenticated: '',
         error: [],
+        errorMessage: '',
+        ownProfile: {},
         profile: {
-          loading: true,
-          profileView: 'Following',
-          profileError: '',
-          user: {},
-          profile: {},
-          followers: [],
-          following: [],
-          articles: [],
-          favorites: [],
+          articles: [], favorites: [], followers: [], following: [], loading: true, profile: {}, profileError: '', profileView: 'Following', user: {},
         },
+        user: {},
+        userId: null,
       };
       expect(articleReducer(undefined, action)).toEqual(initialState);
     });
@@ -171,23 +164,16 @@ describe('Article Reducer', () => {
     test('returns the correct state', () => {
       const action = { type: types.GET_ARTICLES, payload: [{ articles: 'new Articles' }] };
       const expectedState = {
-        authenticated: '',
-        userId: null,
-        errorMessage: '',
-        user: {},
         articles: [{ articles: 'new Articles' }],
+        authenticated: '',
         error: [],
+        errorMessage: '',
+        ownProfile: {},
         profile: {
-          loading: true,
-          profileView: 'Following',
-          profileError: '',
-          user: {},
-          profile: {},
-          followers: [],
-          following: [],
-          articles: [],
-          favorites: [],
+          articles: [], favorites: [], followers: [], following: [], loading: true, profile: {}, profileError: '', profileView: 'Following', user: {},
         },
+        user: {},
+        userId: null,
       };
       expect(articleReducer(undefined, action)).toEqual(expectedState);
     });
@@ -197,23 +183,16 @@ describe('Article Reducer', () => {
     test('returns the correct state', () => {
       const action = { type: types.GET_ARTICLES_ERROR, payload: 'Error getting articles' };
       const expectedState = {
-        authenticated: '',
-        userId: null,
-        errorMessage: '',
-        user: {},
         articles: [],
+        authenticated: '',
         error: 'Error getting articles',
+        errorMessage: '',
+        ownProfile: {},
         profile: {
-          loading: true,
-          profileView: 'Following',
-          profileError: '',
-          user: {},
-          profile: {},
-          followers: [],
-          following: [],
-          articles: [],
-          favorites: [],
+          articles: [], favorites: [], followers: [], following: [], loading: true, profile: {}, profileError: '', profileView: 'Following', user: {},
         },
+        user: {},
+        userId: null,
       };
       expect(articleReducer(undefined, action)).toEqual(expectedState);
     });

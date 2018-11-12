@@ -46,7 +46,7 @@ export class Profile extends Component {
   }
 
   render() {
-    const { profileStore } = this.props;
+    const { profileStore, history } = this.props;
     const { ownProfile } = this.state;
     if (profileStore.loading) return <Loading />;
     if (profileStore.profileError) {
@@ -73,7 +73,13 @@ export class Profile extends Component {
           {(() => {
             switch (profileStore.profileView) {
               case 'Followers':
-                return <FollowerList userFullName={fullName} followers={profileStore.followers} />;
+                return (
+                  <FollowerList
+                    history={history}
+                    userFullName={fullName}
+                    ownProfile={ownProfile}
+                    followers={profileStore.followers}
+                  />);
               case 'Articles':
                 return (
                   <ProfileArticleList
@@ -81,6 +87,7 @@ export class Profile extends Component {
                     authorImage={profileStore.profile.image}
                     articles={profileStore.articles}
                     userFullName={fullName}
+                    ownProfile={ownProfile}
                   />
                 );
               case 'Favorites':
@@ -90,10 +97,17 @@ export class Profile extends Component {
                     authorImage={profileStore.profile.image}
                     articles={profileStore.favorites}
                     userFullName={fullName}
+                    ownProfile={ownProfile}
                   />);
               case 'Following':
               default:
-                return <FollowingList userFullName={fullName} following={profileStore.following} />;
+                return (
+                  <FollowingList
+                    history={history}
+                    userFullName={fullName}
+                    ownProfile={ownProfile}
+                    following={profileStore.following}
+                  />);
             }
           })()
           }

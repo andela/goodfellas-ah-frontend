@@ -9,6 +9,20 @@ export default (state = initialState, action) => {
       return { ...state, errorMessage: action.payload };
     case types.SIGNOUT_USER:
       return { ...state, authenticated: '', userId: null };
+    case types.SET_OWN_PROFILE: {
+      localStorage.setItem('ownProfile', JSON.stringify(action.payload));
+      return {
+        ...state,
+        ownProfile: action.payload,
+      };
+    }
+    case types.SET_USER: {
+      localStorage.setItem('user', JSON.stringify(action.payload));
+      return {
+        ...state,
+        user: action.payload,
+      };
+    }
     default:
       return state;
   }

@@ -18,7 +18,7 @@ describe('fetchProfile actions', () => {
     { type: types.SET_PROFILE_ERROR, payload: 'Invalid request, Route does not exist' },
     { type: types.PROFILE_LOADING, payload: false },
   ];
-  it('creates SET_PROFILE and PROFILE_LOADING after successfuly fetching articles', () => {
+  it('creates SET_PROFILE and PROFILE_LOADING after successfuly fetching profile', () => {
     const store = mockStore({ profile: initialState.profile });
 
     return store.dispatch(profileActions.fetchProfile(1)).then(() => {
@@ -35,11 +35,17 @@ describe('fetchProfile actions', () => {
 });
 
 describe('editProfile actions', () => {
+  const { profile } = profileData.updateProfile.data;
+  const { user, ...profilePayload } = profile;
   const expectedActions = [{
     type: types.UPDATE_PROFILE,
-    payload: profileData.updateProfile.data.profile,
+    payload: profile,
+  },
+  {
+    type: types.SET_OWN_PROFILE,
+    payload: profilePayload,
   }];
-  it('creates SET_PROFILE after successfuly fetching articles', () => {
+  it('creates SET_PROFILE after successfuly fetching profile', () => {
     const store = mockStore({ profile: initialState.profile });
 
     return store.dispatch(profileActions.editProfile(1)).then((response) => {

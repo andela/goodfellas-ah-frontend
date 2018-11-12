@@ -57,26 +57,3 @@ describe('fetchProfile reducer', () => {
     ).toEqual({ loading: false });
   });
 });
-
-
-// describe('editProfile actions', () => {
-//   const expectedActions = [{
-//     type: types.UPDATE_PROFILE,
-//     payload: profileData.updateProfile.data.profile,
-//   }];
-//   it('creates SET_PROFILE after successfuly fetching articles', () => {
-//     const store = mockStore({ profile: initialState.profile });
-
-//     return store.dispatch(profileActions.editProfile(1)).then((response) => {
-//       expect(store.getActions()).toEqual(expectedActions);
-//       expect(response).toEqual({ success: profileData.updateProfile.data.message });
-//     });
-//   });
-//   it('creates SET_PROFILE_ERROR and PROFILE_LOADING after successfuly fetch error', () => {
-//     const store = mockStore({ profile: initialState.profile });
-
-//     return store.dispatch(profileActions.editProfile(5)).then((response) => {
-//       expect(response).toEqual({ error: 'Invalid request, Route does not exist' });
-//     });
-//   });
-// });

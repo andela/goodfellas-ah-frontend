@@ -81,6 +81,7 @@ a.outline:hover {
   }
 }
 .profile-image {
+  border: 1px solid var(--lighter-gray);
   height: 5rem;
   width: 5rem;
   border-radius: 50%;

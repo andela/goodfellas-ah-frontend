@@ -17,12 +17,21 @@ export const signup = (formValues, callback) => async (dispatch, getState, { ope
   }
 };
 
-export const signin = (formValues, callback) => async (dispatch, getState, { openRoutes }) => {
+// eslint-disable-next-line max-len
+export const signin = (formValues, callback) => async (dispatch, getState, API) => {
   try {
+    const { api, openRoutes } = API;
     const response = await openRoutes.post('/auth/signin', formValues);
+    const { userId } = response.data;
+    const userProfile = await api.get(`/user/profile/${userId}`);
+    const { user, ...profile } = userProfile.data.data;
     dispatch({ type: types.SIGNIN_USER, payload: response.data });
+    dispatch({ type: types.SET_OWN_PROFILE, payload: profile });
+    dispatch({ type: types.SET_USER, payload: user });
+    API.updateToken(response.data.token);
     localStorage.setItem('token', response.data.token);
-    localStorage.setItem('userId', response.data.userId);
+    localStorage.setItem('userId', userId);
+
     callback();
   } catch (error) {
     dispatch({
@@ -32,9 +41,8 @@ export const signin = (formValues, callback) => async (dispatch, getState, { ope
   }
 };
 
-export const signout = () => {
-  localStorage.removeItem('token');
-  localStorage.removeItem('userId');
-
-  return { type: types.SIGNOUT_USER };
+export const signout = () => (dispatch, getState, API) => {
+  localStorage.clear();
+  API.updateToken(null);
+  return dispatch({ type: types.SIGNOUT_USER });
 };

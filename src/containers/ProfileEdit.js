@@ -23,7 +23,7 @@ export class EditProfile extends Component {
     const { fetchProfile: profileFetch, auth } = this.props;
     profileFetch(auth.userId);
     const { profileStore } = this.props;
-    if (auth.userId === profileStore.user.userId) {
+    if (auth.userId === profileStore.profile.userId) {
       this.setState({
         bio: profileStore.profile.bio,
         username: profileStore.profile.username,

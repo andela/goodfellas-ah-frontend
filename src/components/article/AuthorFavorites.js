@@ -8,6 +8,7 @@ const ProfileArticleList = (props) => {
     userFullName,
     author,
     authorImage,
+    ownProfile,
   } = props;
   return (
     <Fragment>
@@ -18,7 +19,7 @@ const ProfileArticleList = (props) => {
               <svg className="icon">
                 <use xlinkHref={`${icons}#sad`} />
               </svg>&nbsp;&nbsp;
-              <span>{userFullName} has not favorited any articles</span>
+              <span>{ownProfile ? 'You have not favorited any articles.' : `${userFullName} has not favorited any articles.`}</span>
             </div>
           )
           : articles.map((article) => <ProfileArticle key={article.id} author={author} authorImage={authorImage} type="favoriteArticle" article={article.article} />)

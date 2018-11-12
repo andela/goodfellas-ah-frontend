@@ -198,6 +198,7 @@ ShallowWrapper {
         />
         <FollowingList
           following={Array []}
+          ownProfile={true}
           userFullName="Afeez1 Awoyemi"
         />
       </div>,
@@ -304,6 +305,7 @@ ShallowWrapper {
           />,
           <FollowingList
             following={Array []}
+            ownProfile={true}
             userFullName="Afeez1 Awoyemi"
           />,
         ],
@@ -465,6 +467,8 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "following": Array [],
+            "history": undefined,
+            "ownProfile": true,
             "userFullName": "Afeez1 Awoyemi",
           },
           "ref": null,
@@ -577,6 +581,7 @@ ShallowWrapper {
           />
           <FollowingList
             following={Array []}
+            ownProfile={true}
             userFullName="Afeez1 Awoyemi"
           />
         </div>,
@@ -683,6 +688,7 @@ ShallowWrapper {
             />,
             <FollowingList
               following={Array []}
+              ownProfile={true}
               userFullName="Afeez1 Awoyemi"
             />,
           ],
@@ -844,6 +850,8 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "following": Array [],
+              "history": undefined,
+              "ownProfile": true,
               "userFullName": "Afeez1 Awoyemi",
             },
             "ref": null,

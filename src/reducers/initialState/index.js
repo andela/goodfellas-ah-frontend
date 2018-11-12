@@ -3,6 +3,7 @@ const initialState = {
   userId: null,
   errorMessage: '',
   user: {},
+  ownProfile: {},
   articles: [],
   error: [],
   profile: {
