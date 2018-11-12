@@ -1,16 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import App from '../../containers/App';
+import Auth from '../../components/layout/Auth';
 
 let wrapped;
 
 beforeEach(() => {
-  wrapped = shallow(<App />);
+  wrapped = shallow(<Auth />);
 });
-afterEach(() => wrapped.unmount());
 
-describe('App UI', () => {
+describe('Auth layout', () => {
   describe('render features', () => {
     test('container should render as expected', () => {
       const tree = toJson(wrapped);

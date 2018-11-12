@@ -147,6 +147,7 @@ describe('Article Reducer', () => {
       const initialState = {
         authenticated: '',
         errorMessage: '',
+        successMessage: '',
         user: {},
         articles: [],
         error: [],
@@ -161,6 +162,7 @@ describe('Article Reducer', () => {
       const expectedState = {
         authenticated: '',
         errorMessage: '',
+        successMessage: '',
         user: {},
         articles: [{ articles: 'new Articles' }],
         error: [],
@@ -175,6 +177,7 @@ describe('Article Reducer', () => {
       const expectedState = {
         authenticated: '',
         errorMessage: '',
+        successMessage: '',
         user: {},
         articles: [],
         error: 'Error getting articles',
