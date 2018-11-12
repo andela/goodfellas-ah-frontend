@@ -1,0 +1,193 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components ProfileToolbar component should render as expected 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ProfileArticleList
+    articles={
+      Array [
+        Object {
+          "authorId": 1,
+          "averageRating": null,
+          "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+          "comments": Array [],
+          "createdAt": "2018-11-09T15:08:00.560Z",
+          "description": " this is the fine long body  this is the fine long body ",
+          "favorited": null,
+          "favoritesCount": null,
+          "id": 2,
+          "image": null,
+          "reactions": Array [],
+          "read_time": "1 minute",
+          "slug": "this-is-a-fine-title-which-i-would-really-love-to-have",
+          "tagList": null,
+          "title": "This is a fine title which I would really love to have",
+          "updatedAt": "2018-11-09T15:08:00.560Z",
+        },
+      ]
+    }
+    userFullName="Afeez Awoyemi"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <_default
+          article={
+            Object {
+              "authorId": 1,
+              "averageRating": null,
+              "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+              "comments": Array [],
+              "createdAt": "2018-11-09T15:08:00.560Z",
+              "description": " this is the fine long body  this is the fine long body ",
+              "favorited": null,
+              "favoritesCount": null,
+              "id": 2,
+              "image": null,
+              "reactions": Array [],
+              "read_time": "1 minute",
+              "slug": "this-is-a-fine-title-which-i-would-really-love-to-have",
+              "tagList": null,
+              "title": "This is a fine title which I would really love to have",
+              "updatedAt": "2018-11-09T15:08:00.560Z",
+            }
+          }
+          type="article"
+        />,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "2",
+        "nodeType": "function",
+        "props": Object {
+          "article": Object {
+            "authorId": 1,
+            "averageRating": null,
+            "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+            "comments": Array [],
+            "createdAt": "2018-11-09T15:08:00.560Z",
+            "description": " this is the fine long body  this is the fine long body ",
+            "favorited": null,
+            "favoritesCount": null,
+            "id": 2,
+            "image": null,
+            "reactions": Array [],
+            "read_time": "1 minute",
+            "slug": "this-is-a-fine-title-which-i-would-really-love-to-have",
+            "tagList": null,
+            "title": "This is a fine title which I would really love to have",
+            "updatedAt": "2018-11-09T15:08:00.560Z",
+          },
+          "author": undefined,
+          "authorImage": undefined,
+          "type": "article",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <_default
+            article={
+              Object {
+                "authorId": 1,
+                "averageRating": null,
+                "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+                "comments": Array [],
+                "createdAt": "2018-11-09T15:08:00.560Z",
+                "description": " this is the fine long body  this is the fine long body ",
+                "favorited": null,
+                "favoritesCount": null,
+                "id": 2,
+                "image": null,
+                "reactions": Array [],
+                "read_time": "1 minute",
+                "slug": "this-is-a-fine-title-which-i-would-really-love-to-have",
+                "tagList": null,
+                "title": "This is a fine title which I would really love to have",
+                "updatedAt": "2018-11-09T15:08:00.560Z",
+              }
+            }
+            type="article"
+          />,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "2",
+          "nodeType": "function",
+          "props": Object {
+            "article": Object {
+              "authorId": 1,
+              "averageRating": null,
+              "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+              "comments": Array [],
+              "createdAt": "2018-11-09T15:08:00.560Z",
+              "description": " this is the fine long body  this is the fine long body ",
+              "favorited": null,
+              "favoritesCount": null,
+              "id": 2,
+              "image": null,
+              "reactions": Array [],
+              "read_time": "1 minute",
+              "slug": "this-is-a-fine-title-which-i-would-really-love-to-have",
+              "tagList": null,
+              "title": "This is a fine title which I would really love to have",
+              "updatedAt": "2018-11-09T15:08:00.560Z",
+            },
+            "author": undefined,
+            "authorImage": undefined,
+            "type": "article",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": Symbol(react.fragment),
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
