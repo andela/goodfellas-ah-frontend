@@ -12,10 +12,13 @@
 @import 'views/hero.scss';
 @import 'views/editProfile.scss';
 @import 'views/profile.scss';
+@import 'components/resetform.scss';
+@import 'components/loading.scss';
+
+@import './components/fonts.scss';
 @import 'components/landingPage.scss';
 @import 'components/header.scss';
 @import 'components/articleCard.scss';
-@import 'components/loading.scss';
 @import 'components/footer.scss';
 @import './components/auth.scss';
 @import './components/auth-form.scss';

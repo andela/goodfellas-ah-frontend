@@ -4,10 +4,14 @@ exports[`SocialButton render features view should render as expected 1`] = `
 <div
   className="social-link"
 >
-  <div>
-    <img
-      alt=""
-    />
-  </div>
+  <a
+    href="http://localhost:3000/api/auth/undefined"
+  >
+    <div>
+      <img
+        alt=""
+      />
+    </div>
+  </a>
 </div>
 `;

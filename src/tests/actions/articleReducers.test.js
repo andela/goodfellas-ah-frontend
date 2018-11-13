@@ -153,6 +153,7 @@ describe('Article Reducer', () => {
         profile: {
           articles: [], favorites: [], followers: [], following: [], loading: true, profile: {}, profileError: '', profileView: 'Following', user: {},
         },
+        successMessage: '',
         user: {},
         userId: null,
       };
@@ -172,6 +173,7 @@ describe('Article Reducer', () => {
         profile: {
           articles: [], favorites: [], followers: [], following: [], loading: true, profile: {}, profileError: '', profileView: 'Following', user: {},
         },
+        successMessage: '',
         user: {},
         userId: null,
       };
@@ -191,6 +193,7 @@ describe('Article Reducer', () => {
         profile: {
           articles: [], favorites: [], followers: [], following: [], loading: true, profile: {}, profileError: '', profileView: 'Following', user: {},
         },
+        successMessage: '',
         user: {},
         userId: null,
       };

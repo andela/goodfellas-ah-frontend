@@ -7,6 +7,9 @@ import Signin from '../views/SigninPage';
 import Signup from '../views/SignupPage';
 import EditProfile from '../views/ProfileEditPage';
 import Profile from '../views/ProfilePage';
+import SocialAuthPage from '../views/SocialAuthPage';
+import ForgotPasswordPage from '../views/ForgotPasswordPage';
+import ResetPasswordPage from '../views/ResetPasswordPage';
 import CreateArticle from '../views/CreateArticles';
 import Header from '../components/shared/Header';
 import GetAllArticles from '../views/AllArticles';
@@ -23,6 +26,7 @@ const Auth = () => (
   <div>
     <Route path="/auth/signin" render={(props) => <Signin formtype="signin" {...props} />} />
     <Route path="/auth/signup" render={(props) => <Signup formtype="signup" {...props} />} />
+    <Route path="/auth/social" component={SocialAuthPage} />
   </div>
 );
 
@@ -41,6 +45,8 @@ const App = () => (
       <Route path="/auth" component={Auth} />
       <Route path="/articles" component={Articles} />
       <Route path="/user" component={authenticate(User)} />
+      <Route path="/forgotpassword" component={ForgotPasswordPage} />
+      <Route path="/resetpassword" component={ResetPasswordPage} />
     </div>
   </BrowserRouter>
 );

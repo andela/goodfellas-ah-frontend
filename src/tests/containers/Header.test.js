@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import { MemoryRouter } from 'react-router-dom';
@@ -68,10 +69,9 @@ beforeEach(() => {
 });
 
 afterEach(() => wrapped.unmount());
-
-describe('Header UI', () => {
-  describe('render features', () => {
-    test('component should render as expected', () => {
+describe('Loading', () => {
+  describe('render', () => {
+    test('container should render as expected', () => {
       const tree = toJson(wrapped);
       expect(tree).toMatchSnapshot();
     });

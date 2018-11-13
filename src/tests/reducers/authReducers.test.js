@@ -17,7 +17,7 @@ describe('fetchProfile reducer', () => {
         type: types.SIGNIN_USER,
         payload: mockData,
       }),
-    ).toEqual(mockData);
+    ).toEqual({ authenticated: undefined, errorMessage: '', userId: 1 });
   });
   it('should handle SIGNOUT_USER', () => {
     expect(

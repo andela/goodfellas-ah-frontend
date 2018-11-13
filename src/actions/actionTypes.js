@@ -5,6 +5,9 @@ export const SET_USER = 'SET_USER';
 export const UPDATE_PROFILE = 'UPDATE_PROFILE';
 export const SET_PROFILE_ERROR = 'SET_PROFILE_ERROR';
 export const PROFILE_LOADING = 'PROFILE_LOADING';
+
+export const RESET_ERROR = 'RESET_ERROR';
+export const SUCCESS_MSG = 'SUCCESS_MSG ';
 export const GET_ARTICLES = 'GET_ARTICLES';
 export const GET_ARTICLES_ERROR = 'GET_ARTICLES_ERROR';
 export const SIGNIN_USER = 'SIGNIN_USER';

@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { MemoryRouter } from 'react-router-dom';
 import toJson from 'enzyme-to-json';
 import Signin from '../../containers/SigninForm';
 import Root from '../../root';
@@ -9,7 +10,9 @@ let wrapped;
 beforeEach(() => {
   wrapped = mount(
     <Root>
-      <Signin />
+      <MemoryRouter initialEntries={[{ key: 'testKey' }]}>
+        <Signin />
+      </MemoryRouter>
     </Root>,
   );
 });
@@ -51,5 +54,21 @@ describe('Signin UI', () => {
       expect(wrapped.find('input').first().prop('value')).toEqual('');
       expect(wrapped.find('input').at(1).prop('value')).toEqual('');
     });
+  });
+});
+
+describe('Signin client-side validation', () => {
+  beforeEach(() => {
+    wrapped.find('input').first().simulate('change', { target: { id: 'email', value: '' } });
+    wrapped.find('input').at(1).simulate('change', { target: { id: 'password', value: '' } });
+    wrapped.update();
+  });
+
+  it('shows error messages if both fields are empty', () => {
+    wrapped.find('form').simulate('submit');
+    wrapped.update();
+
+    expect(wrapped.find('.auth-input-wrapper').first().find('.error-field').text()).toEqual('email field must be filled');
+    expect(wrapped.find('.auth-input-wrapper').at(1).find('.error-field').text()).toEqual('password field must be filled');
   });
 });
