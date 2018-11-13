@@ -21,7 +21,53 @@ describe('components', () => {
       payload: profileData.setProfile,
     });
   });
-  describe('Loading component', () => {
+  describe('ProfileEdit container Error', () => {
+    const setup = () => {
+      const props = {
+        value: 'Ade',
+        fetchProfile: profileActions.fetchProfile,
+        editProfile: profileActions.editProfile,
+        profileStore: { profile: {}, profileError: 'An error occoured', profileView: 'Favorites' },
+        auth: { userId: 1 },
+        profileNavigation: jest.fn(),
+      };
+
+      const enzymeWrapper = shallow(<EditProfile {...props} />);
+
+      return {
+        props,
+        enzymeWrapper,
+      };
+    };
+    it('should render as expected', () => {
+      const { enzymeWrapper } = setup();
+      expect(enzymeWrapper).toMatchSnapshot();
+    });
+  });
+  describe('ProfileEdit container Loading', () => {
+    const setup = () => {
+      const props = {
+        value: 'Ade',
+        fetchProfile: profileActions.fetchProfile,
+        editProfile: profileActions.editProfile,
+        profileStore: { profile: {}, profileView: 'Favorites' },
+        auth: { userId: 1 },
+        profileNavigation: jest.fn(),
+      };
+
+      const enzymeWrapper = shallow(<EditProfile {...props} />);
+
+      return {
+        props,
+        enzymeWrapper,
+      };
+    };
+    it('should render as expected', () => {
+      const { enzymeWrapper } = setup();
+      expect(enzymeWrapper).toMatchSnapshot();
+    });
+  });
+  describe('ProfileEdit container', () => {
     const setup = () => {
       const props = {
         value: 'Ade',

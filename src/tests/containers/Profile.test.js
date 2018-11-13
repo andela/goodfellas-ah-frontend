@@ -13,7 +13,7 @@ import API from '../mock/API';
 const middlewares = [thunk.withExtraArgument(API)];
 const mockStore = configureMockStore(middlewares);
 let profile;
-describe('components', () => {
+describe('containers', () => {
   beforeEach(() => {
     mockStore({ profile: initialState.profile });
     profile = profileReducer([], {
@@ -21,16 +21,141 @@ describe('components', () => {
       payload: profileData.setProfile,
     });
   });
-  describe('Loading component', () => {
+  describe('Profile container Following', () => {
     const setup = () => {
       const props = {
         value: 'Ade',
         fetchProfile: profileActions.fetchProfile,
-        profileStore: profile,
+        profileStore: { ...profile, profileView: 'Following' },
         user: { userId: 1 },
         profileNavigation: jest.fn(),
         match: {
           params: { userId: 1 },
+        },
+      };
+
+      const enzymeWrapper = shallow(<Profile {...props} />);
+
+      return {
+        props,
+        enzymeWrapper,
+      };
+    };
+    it('should render as expected', () => {
+      const { enzymeWrapper } = setup();
+      expect(enzymeWrapper).toMatchSnapshot();
+    });
+  });
+  describe('Profile container Followers', () => {
+    const setup = () => {
+      const props = {
+        value: 'Ade',
+        fetchProfile: profileActions.fetchProfile,
+        profileStore: { ...profile, profileView: 'Followers' },
+        user: { userId: 1 },
+        profileNavigation: jest.fn(),
+        match: {
+          params: { userId: 2 },
+        },
+      };
+
+      const enzymeWrapper = shallow(<Profile {...props} />);
+
+      return {
+        props,
+        enzymeWrapper,
+      };
+    };
+    it('should render as expected', () => {
+      const { enzymeWrapper } = setup();
+      expect(enzymeWrapper).toMatchSnapshot();
+    });
+  });
+  describe('Profile container Followers', () => {
+    const setup = () => {
+      const props = {
+        value: 'Ade',
+        fetchProfile: profileActions.fetchProfile,
+        profileStore: { ...profile, profile: { image: null }, profileView: 'Articles' },
+        user: { userId: 1 },
+        profileNavigation: jest.fn(),
+        match: {
+          params: { userId: 2 },
+        },
+      };
+
+      const enzymeWrapper = shallow(<Profile {...props} />);
+
+      return {
+        props,
+        enzymeWrapper,
+      };
+    };
+    it('should render as expected', () => {
+      const { enzymeWrapper } = setup();
+      expect(enzymeWrapper).toMatchSnapshot();
+    });
+  });
+  describe('Profile container Followers', () => {
+    const setup = () => {
+      const props = {
+        value: 'Ade',
+        fetchProfile: profileActions.fetchProfile,
+        profileStore: { ...profile, profile: { image: null }, profileView: 'Favorites' },
+        user: { userId: 1 },
+        profileNavigation: jest.fn(),
+        match: {
+          params: { userId: 2 },
+        },
+      };
+
+      const enzymeWrapper = shallow(<Profile {...props} />);
+
+      return {
+        props,
+        enzymeWrapper,
+      };
+    };
+    it('should render as expected', () => {
+      const { enzymeWrapper } = setup();
+      expect(enzymeWrapper).toMatchSnapshot();
+    });
+  });
+  describe('Profile container Followers', () => {
+    const setup = () => {
+      const props = {
+        value: 'Ade',
+        fetchProfile: profileActions.fetchProfile,
+        profileStore: { ...profile, loading: true, profileView: 'Favorites' },
+        user: { userId: 1 },
+        profileNavigation: jest.fn(),
+        match: {
+          params: { userId: 2 },
+        },
+      };
+
+      const enzymeWrapper = shallow(<Profile {...props} />);
+
+      return {
+        props,
+        enzymeWrapper,
+      };
+    };
+    it('should render as expected', () => {
+      const { enzymeWrapper } = setup();
+      expect(enzymeWrapper).toMatchSnapshot();
+    });
+  });
+  describe('Profile container Followers', () => {
+    const setup = () => {
+      const props = {
+        value: 'Ade',
+        fetchProfile: profileActions.fetchProfile,
+        profileStore: { ...profile, profileError: 'An error occoured', profileView: 'Favorites' },
+        user: { userId: 1 },
+        profileNavigation: jest.fn(),
+        match: {
+          params: { userId: 2 },
         },
       };
 
