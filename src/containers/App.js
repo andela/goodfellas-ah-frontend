@@ -15,6 +15,7 @@ import GetAllArticles from '../views/AllArticles';
 
 const User = () => (
   <div>
+    <Header />
     <Route path="/user/profile" component={Profile} />
   </div>
 );
