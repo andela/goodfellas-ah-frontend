@@ -4,15 +4,25 @@ import axios from 'axios';
 import * as types from './actionTypes';
 
 const apiUrl = process.env.REACT_APP_API_URL;
+const persistAuth = async (dispatch, API, token, userId) => {
+  API.updateToken(token);
+  localStorage.setItem('token', token);
+  localStorage.setItem('userId', userId);
+  const userProfile = await API.api.get(`/user/profile/${userId}`);
+  const { user, ...profile } = userProfile.data.data;
+  dispatch({ type: types.SET_OWN_PROFILE, payload: profile });
+  dispatch({ type: types.SET_USER, payload: user });
+};
 
-export const signup = (formValues, callback) => async (dispatch, getState, { openRoutes }) => {
+export const signup = (formValues, callback) => async (dispatch, getState, API) => {
   try {
-    const res = await openRoutes.post('/auth/signup', formValues);
+    const res = await API.openRoutes.post('/auth/signup', formValues);
+    const { userId, token } = res.data;
+    await persistAuth(dispatch, API, token, userId);
     dispatch({
       type: types.SIGNIN_USER,
       payload: res.data,
     });
-    localStorage.setItem('token', res.data.token);
     callback();
   } catch (error) {
     dispatch({
@@ -25,17 +35,10 @@ export const signup = (formValues, callback) => async (dispatch, getState, { ope
 // eslint-disable-next-line max-len
 export const signin = (formValues, callback) => async (dispatch, getState, API) => {
   try {
-    const { api, openRoutes } = API;
-    const response = await openRoutes.post('/auth/signin', formValues);
-    const { userId } = response.data;
-    const userProfile = await api.get(`/user/profile/${userId}`);
-    const { user, ...profile } = userProfile.data.data;
+    const response = await API.openRoutes.post('/auth/signin', formValues);
+    const { userId, token } = response.data;
+    await persistAuth(dispatch, API, token, userId);
     dispatch({ type: types.SIGNIN_USER, payload: response.data });
-    dispatch({ type: types.SET_OWN_PROFILE, payload: profile });
-    dispatch({ type: types.SET_USER, payload: user });
-    API.updateToken(response.data.token);
-    localStorage.setItem('token', response.data.token);
-    localStorage.setItem('userId', userId);
 
     callback();
   } catch (error) {
