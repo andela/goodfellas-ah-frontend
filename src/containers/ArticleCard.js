@@ -35,14 +35,11 @@ export class Card extends Component {
 
   handleClick = () => {
     const { articleLimit } = this.state;
-    if (articleLimit === 6) {
-      this.setState({ articleLimit: 9 });
+    if (articleLimit !== 24) {
+      this.setState({ articleLimit: articleLimit + 6 });
       this.displayCards(this.displayArticles);
-      this.refs.moreArticles.innerText = 'Less Articles';
     } else {
-      this.setState({ articleLimit: 6 });
-      this.displayCards(this.displayArticles);
-      this.refs.moreArticles.innerText = 'More Articles';
+      window.location.assign('/articles');
     }
   };
 
@@ -63,7 +60,7 @@ export class Card extends Component {
     const { articleLimit } = this.state;
     return displayArticles(articleLimit).map((card) => {
       const displayedBody = card.article.body.slice(0, 120);
-      const displayedTitle = card.article.title.slice(0, 30);
+      const displayedTitle = card.article.title.slice(0, 24);
       return (
         <div
           onClick={this.getArticle}

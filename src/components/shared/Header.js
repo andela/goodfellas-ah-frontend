@@ -2,8 +2,20 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { signout } from '../../actions/authActions';
+import Button from './Button';
 
 export class Header extends Component {
+  displaySearchbar = () => {
+    console.log(this.refs.searchParameters);
+    this.refs.searchParameters.classList.toggle('search-parameters-display');
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { searchbar, searchSelection, searchKeyword } = this.refs;
+    console.log(searchbar.value, searchSelection.value, searchKeyword.value);
+  }
+
   dropdown = () => {
     this.refs.myDropdown.classList.toggle('show');
   };
@@ -47,35 +59,34 @@ export class Header extends Component {
           {auth
             ? (
               <div className="header-user">
-                <div className="header-user-search">
-                  <input placeholder="Search for articles" className="searchbar" ref="searchbar" type="search" />
-                  <span>
-                    <img
-                      className="search-dropdown"
-                      src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541772567/Authors%20Haven/arrow_grey.png"
+                <form onSubmit={this.handleSubmit}>
+                  <div className="header-user-search">
+                    <input placeholder="Search for articles" className="searchbar" ref="searchbar" type="search" />
+                    <span onClick={this.displaySearchbar}>
+                      <img
+                        className="search-dropdown"
+                        src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541772567/Authors%20Haven/arrow_grey.png"
+                        alt=""
+                      />
+                    </span>
+                    <span />
+                    <span onClick={this.openSearchbar}><img
+                      src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png"
                       alt=""
                     />
-                  </span>
-                  <span />
-                  <span onClick={this.openSearchbar}><img
-                    src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png"
-                    alt=""
-                  />
-                  </span>
-                  {/* <div>
-                    <form>
-                      Filter by
-                      <select>
+                    </span>
+                    <div ref="searchParameters" className="search-parameters">
+                        Filter by
+                      <select ref="searchSelection">
                         <option>Title</option>
                         <option>Author</option>
                         <option>Tag</option>
-                        <option>Title & Tag</option>
-                        <option>Title & Author</option>
-                        <option>Title, Tag </option>
                       </select>
-                    </form>
-                  </div> */}
-                </div>
+                      <input ref="searchKeyword" id="" type="text" placeholder="Enter keyword" />
+                      <Button className="btn hero-section-greenbutton" title="Search" type="Submit" />
+                    </div>
+                  </div>
+                </form>
                 <div className="header-user-images">
                   <div className="dropdown">
                     {parentComponent === 'landingpage' ? (
@@ -91,7 +102,8 @@ export class Header extends Component {
                         data-toggle="dropdown"
                         src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541606672/Authors%20Haven/black_bell_icon.png"
                         alt=""
-                      />)}
+                      />
+                    )}
                   </div>
                   <span className="notification-count">4</span>
                   <div onClick={this.dropdown} className="dropdown dropdown-click">
@@ -116,50 +128,69 @@ export class Header extends Component {
             )
             : (
               <div className="navbar-main-wrapper">
-                <button
-                  onClick={this.navbarToggle}
-                  className="navbar-toggler"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#navbarNav"
-                >
-                  <span className="">
-                    <img
-                      className="menuIcon"
-                      src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426069/Authors%20Haven/icons8-menu.svg"
-                      alt=""
-                    />
-                  </span>
-                </button>
                 {parentComponent === 'landingpage'
                   ? (
-                    <div className="navbar-wrapper" ref="navbarToggler">
-                      <ul className="navbar-element">
-                        <Link className="nav-link" to="/">Explore</Link>
-                        <Link className="nav-link" to="/">About Us</Link>
-                        <Link className="nav-link" to="/">Contact</Link>
-                      </ul>
+                    <div>
+                      <button
+                        onClick={this.navbarToggle}
+                        className="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarNav"
+                      >
+                        <span className="">
+                          <img
+                            className="menuIcon"
+                            src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426069/Authors%20Haven/icons8-menu.svg"
+                            alt=""
+                          />
+                        </span>
+                      </button>
+                      <div className="navbar-wrapper" ref="navbarToggler">
+                        <ul className="navbar-element">
+                          <Link className="nav-link" to="/">Explore</Link>
+                          <Link className="nav-link" to="/">About Us</Link>
+                          <Link className="nav-link" to="/">Contact</Link>
+                        </ul>
 
-                      <ul className="navbar-element">
-                        <Link className="nav-item nav-link" to="/auth/signin">Sign In</Link>
-                        <p className="link-border">|</p>
-                        <Link className=" nav-item nav-link" to="/auth/signup">Sign Up</Link>
-                      </ul>
+                        <ul className="navbar-element">
+                          <Link className="nav-item nav-link" to="/auth/signin">Sign In</Link>
+                          <p className="link-border">|</p>
+                          <Link className=" nav-item nav-link" to="/auth/signup">Sign Up</Link>
+                        </ul>
+                      </div>
                     </div>
                   )
                   : (
-                    <div className="navbar-wrapper" ref="navbarToggler">
-                      <ul className="navbar-element">
-                        <Link className="nav-link header-dark" to="/">Explore</Link>
-                        <Link className="nav-link header-dark" to="/">About Us</Link>
-                        <Link className="nav-link header-dark" to="/">Contact</Link>
-                      </ul>
+                    <div>
+                      <button
+                        onClick={this.navbarToggle}
+                        className="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarNav"
+                      >
+                        <span className="">
+                          <img
+                            className="menuIcon"
+                            src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1542096064/Authors%20Haven/icons8-menu-black.svg"
+                            alt=""
+                          />
+                        </span>
+                      </button>
+                      <div className="navbar-wrapper" ref="navbarToggler">
+                        <ul className="navbar-element">
+                          <Link className="nav-link header-dark" to="/">Explore</Link>
+                          <Link className="nav-link header-dark" to="/">About Us</Link>
+                          <Link className="nav-link header-dark" to="/">Contact</Link>
+                        </ul>
 
-                      <ul className="navbar-element">
-                        <Link className="nav-item nav-link header-dark" to="/auth/signin">Sign In</Link>
-                        <p className="link-border header-dark">|</p>
-                        <Link className=" nav-item nav-link header-dark" to="/auth/signup">Sign Up</Link>
-                      </ul>
+                        <ul className="navbar-element">
+                          <Link className="nav-item nav-link header-dark" to="/auth/signin">Sign In</Link>
+                          <p className="link-border header-dark">|</p>
+                          <Link className=" nav-item nav-link header-dark" to="/auth/signup">Sign Up</Link>
+                        </ul>
+                      </div>
                     </div>
                   )
                 }
