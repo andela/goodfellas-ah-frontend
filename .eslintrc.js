@@ -11,6 +11,11 @@ module.exports = {
     node: true,
     jest: true,
   },
+  globals: {
+    moxios: true,
+    mockStore: true,
+    shallow: true
+  },
   parser: 'babel-eslint',
   parserOptions: {
     ecmaFeatures: {

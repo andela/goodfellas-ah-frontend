@@ -30,7 +30,7 @@ const Auth = () => (
 const Articles = () => (
   <div>
     <Header />
-    <Route path="/articles" component={CreateArticle} />
+    <Route path="/articles" component={authenticate(CreateArticle)} />
     <Route path="/articles/home" component={GetAllArticles} />
   </div>
 );

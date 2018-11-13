@@ -9,7 +9,7 @@ import publishArticle from '../actions/publishArticle';
 import '../styles/views/createArticles.scss';
 import { Loader } from '../components/shared/Loading';
 
-class CreateArticles extends Component {
+export class CreateArticles extends Component {
   state = {
     title: '',
     body: '',
@@ -30,16 +30,16 @@ class CreateArticles extends Component {
     this.setState((prevState) => ({ body: prevState.body + imageHtml, imageLoad: false }));
   }
 
-  handleSubmit = async (event) => {
+  handleSubmit = (event) => {
     event.preventDefault();
     const { body } = this.state;
     const articlePayload = {
       ...this.state,
       description: body.split(' ').slice(0, 3).join(' '),
     };
-    const publishStatus = await this.props.publishArticle(articlePayload);
+    const publishStatus = this.props.publishArticle(articlePayload);
     if (publishStatus) {
-      swal('Good job!', 'Article Published Successfully!', 'success');
+      swal('Good job!', 'Articl.e Published Successfully!', 'success');
     } else if (this.props.status.error) {
       swal('Error!', 'Something Went Wrong!', 'error');
     }
@@ -68,7 +68,14 @@ class CreateArticles extends Component {
               data-placeholder="Title"
               text={this.state.title}
               onChange={(e) => handleEditorChange(e, 'title')}
-              options={{ toolbar: true }}
+              options={{
+                toolbar: {
+                  static: true,
+                  sticky: false,
+                  buttons: ['bold', 'italic', 'underline', 'strikethrough', 'quote', 'anchor', 'h2', 'h3', 'orderedlist'],
+                  updateOnEmptySelection: true,
+                },
+              }}
             />
             {imageUploadStatus.loading ? <Loader /> : (
               <Editor
@@ -77,7 +84,16 @@ class CreateArticles extends Component {
                 data-placeholder="What would you like to talk about?"
                 text={this.state.body}
                 onChange={(e) => handleEditorChange(e, 'body')}
-                options={{ toolbar: true }}
+                options={{
+                  toolbar: {
+                    activeButtonClass: 'medium-editor-button-active',
+                    allowMultiParagraphSelection: true,
+                    static: true,
+                    sticky: false,
+                    buttons: ['bold', 'italic', 'underline', 'strikethrough', 'quote', 'anchor', 'h2', 'h3', 'orderedlist'],
+                    updateOnEmptySelection: true,
+                  },
+                }}
               />
             )}
           </form>

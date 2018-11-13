@@ -1,12 +1,7 @@
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
-import moxios from 'moxios';
 import articleReducer from '../../reducers/articleReducer';
 import * as types from '../../actions/actionTypes';
 import * as actions from '../../actions/articleActions';
 
-const middlewares = [thunk];
-const mockStore = configureMockStore(middlewares);
 
 const articles = {
   articles: {
