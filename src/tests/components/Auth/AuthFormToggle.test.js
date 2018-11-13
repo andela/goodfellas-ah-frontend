@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import AuthFormToggle from '../../../components/auth/AuthFormToggle';
+import AuthFormToggle from '../../../components/Auth/AuthFormToggle';
 
 const setup = () => {
   const props = {
