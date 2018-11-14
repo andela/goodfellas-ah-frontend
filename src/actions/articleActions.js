@@ -13,7 +13,27 @@ export const getArticles = () => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: types.GET_ARTICLES_ERROR,
-      payload: error,
+      payload: error.response,
+    });
+  }
+};
+
+export const search = (searchValues, callback) => async (dispatch) => {
+  try {
+    const { Title, Author, Tag } = searchValues;
+
+    const response = await axios.get(`${apiUrl}/api/articles/search?article=${Title}&author=${Author}&tag=${Tag}`);
+    dispatch({
+      type: types.SEARCH,
+      payload: response.data,
+    });
+    if (response) {
+      callback();
+    }
+  } catch (error) {
+    dispatch({
+      type: types.SEARCH_ERROR,
+      payload: error.response,
     });
   }
 };

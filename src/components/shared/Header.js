@@ -2,18 +2,38 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { signout } from '../../actions/authActions';
+import { search } from '../../actions/articleActions';
 import Button from './Button';
 
 export class Header extends Component {
+  state = {
+    Title: false,
+    Author: false,
+    Tag: false,
+  }
+
   displaySearchbar = () => {
-    console.log(this.refs.searchParameters);
     this.refs.searchParameters.classList.toggle('search-parameters-display');
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault();
-    const { searchbar, searchSelection, searchKeyword } = this.refs;
-    console.log(searchbar.value, searchSelection.value, searchKeyword.value);
+    e.target.value = '';
+    const { search: searchArticles, history } = this.props;
+    searchArticles(this.state, history.push('/articles/search'));
+  }
+
+  handleChange = (e) => {
+    if (e.target.id === 'Title') {
+      this.setState({
+        [e.target.id]: e.target.value,
+      });
+    } else if (e.target.id === 'searchKeyword') {
+      const { searchSelection } = this.refs;
+      this.setState({
+        [searchSelection.value]: e.target.value,
+      });
+    }
   }
 
   dropdown = () => {
@@ -61,7 +81,7 @@ export class Header extends Component {
               <div className="header-user">
                 <form onSubmit={this.handleSubmit}>
                   <div className="header-user-search">
-                    <input placeholder="Search for articles" className="searchbar" ref="searchbar" type="search" />
+                    <input onChange={this.handleChange} id="Title" placeholder="Search for articles" className="searchbar" ref="searchbar" type="search" />
                     <span onClick={this.displaySearchbar}>
                       <img
                         className="search-dropdown"
@@ -82,7 +102,7 @@ export class Header extends Component {
                         <option>Author</option>
                         <option>Tag</option>
                       </select>
-                      <input ref="searchKeyword" id="" type="text" placeholder="Enter keyword" />
+                      <input onChange={this.handleChange} ref="searchKeyword" id="searchKeyword" type="text" placeholder="Enter keyword" />
                       <Button className="btn hero-section-greenbutton" title="Search" type="Submit" />
                     </div>
                   </div>
@@ -204,7 +224,11 @@ export class Header extends Component {
 }
 
 function mapStatetoProps(state) {
-  return { auth: state.auth.authenticated };
+  return {
+    auth: state.auth.authenticated,
+    searchResults: state.articles.searchResults,
+    searchError: state.articles.error,
+  };
 }
 
-export default connect(mapStatetoProps, { signout })(Header);
+export default connect(mapStatetoProps, { signout, search })(Header);

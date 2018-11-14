@@ -5,6 +5,8 @@ const initialState = {
   user: {},
   articles: [],
   error: [],
+  searchResults: [],
+  searchError: [],
 };
 
 export default initialState;

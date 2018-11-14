@@ -9,6 +9,7 @@ import SocialAuthPage from '../views/SocialAuthPage';
 import ForgotPasswordPage from '../views/ForgotPasswordPage';
 import ResetPasswordPage from '../views/ResetPasswordPage';
 import CreateArticle from '../views/CreateArticles';
+import SearchArticles from '../views/SearchArticles';
 import Header from '../components/shared/Header';
 import authenticate from './hoc/authenticate';
 import GetAllArticles from '../views/AllArticles';
@@ -28,9 +29,10 @@ const Auth = () => (
   </div>
 );
 
-const Articles = () => (
+const Articles = (props) => (
   <div>
-    <Header />
+    <Header {...props} />
+    <Route path="/articles/search" component={SearchArticles} />
     <Route path="/articles/create" component={CreateArticle} />
     <Route path="/articles/home" component={GetAllArticles} />
   </div>
