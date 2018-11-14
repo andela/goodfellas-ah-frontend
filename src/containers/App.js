@@ -44,6 +44,7 @@ const App = () => (
       <Route path="/user" component={authenticate(User)} />
       <Route path="/forgotpassword" component={ForgotPasswordPage} />
       <Route path="/resetpassword" component={ResetPasswordPage} />
+      <Route path="/header" component={Header} />
     </div>
   </BrowserRouter>
 );
