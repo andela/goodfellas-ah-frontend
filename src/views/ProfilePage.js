@@ -1,11 +1,10 @@
 import React from 'react';
+import Profile from '../containers/Profile';
 import Notification from '../components/Notification';
 
-const Profile = () => (
+export default(props) => (
   <div>
-    This is the Profile view
+    <Profile {...props} />
     <Notification />
   </div>
 );
-
-export default Profile;

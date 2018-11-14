@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Profile UI render features view should render as expected 1`] = `
+exports[`ProfilePage UI render features view should render as expected 1`] = `
 <div>
-  This is the Profile view
+  <Connect(Profile) />
+  <Notification />
 </div>
 `;

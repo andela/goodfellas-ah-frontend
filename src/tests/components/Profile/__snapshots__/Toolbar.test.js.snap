@@ -1,0 +1,506 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components ProfileToolbar component should render 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <_default
+    handleClick={[MockFunction]}
+    nav={
+      Object {
+        "Articles": 1,
+        "Favorites": 12,
+        "Followers": 3,
+        "Following": 0,
+      }
+    }
+    profileView="Articles"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="toolbar-menu active"
+          onClick={[Function]}
+        >
+          <p>
+            Articles
+          </p>
+          <b>
+            1
+          </b>
+        </div>,
+        <div
+          className="toolbar-menu "
+          onClick={[Function]}
+        >
+          <p>
+            Followers
+          </p>
+          <b>
+            3
+          </b>
+        </div>,
+        <div
+          className="toolbar-menu "
+          onClick={[Function]}
+        >
+          <p>
+            Following
+          </p>
+          <b>
+            0
+          </b>
+        </div>,
+        <div
+          className="toolbar-menu "
+          onClick={[Function]}
+        >
+          <p>
+            Favorites
+          </p>
+          <b>
+            12
+          </b>
+        </div>,
+      ],
+      "className": "profile-toolbar",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "Articles",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <p>
+              Articles
+            </p>,
+            <b>
+              1
+            </b>,
+          ],
+          "className": "toolbar-menu active",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Articles",
+            },
+            "ref": null,
+            "rendered": "Articles",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": 1,
+            },
+            "ref": null,
+            "rendered": 1,
+            "type": "b",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": "Followers",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <p>
+              Followers
+            </p>,
+            <b>
+              3
+            </b>,
+          ],
+          "className": "toolbar-menu ",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Followers",
+            },
+            "ref": null,
+            "rendered": "Followers",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": 3,
+            },
+            "ref": null,
+            "rendered": 3,
+            "type": "b",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": "Following",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <p>
+              Following
+            </p>,
+            <b>
+              0
+            </b>,
+          ],
+          "className": "toolbar-menu ",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Following",
+            },
+            "ref": null,
+            "rendered": "Following",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": 0,
+            },
+            "ref": null,
+            "rendered": 0,
+            "type": "b",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": "Favorites",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <p>
+              Favorites
+            </p>,
+            <b>
+              12
+            </b>,
+          ],
+          "className": "toolbar-menu ",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Favorites",
+            },
+            "ref": null,
+            "rendered": "Favorites",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": 12,
+            },
+            "ref": null,
+            "rendered": 12,
+            "type": "b",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="toolbar-menu active"
+            onClick={[Function]}
+          >
+            <p>
+              Articles
+            </p>
+            <b>
+              1
+            </b>
+          </div>,
+          <div
+            className="toolbar-menu "
+            onClick={[Function]}
+          >
+            <p>
+              Followers
+            </p>
+            <b>
+              3
+            </b>
+          </div>,
+          <div
+            className="toolbar-menu "
+            onClick={[Function]}
+          >
+            <p>
+              Following
+            </p>
+            <b>
+              0
+            </b>
+          </div>,
+          <div
+            className="toolbar-menu "
+            onClick={[Function]}
+          >
+            <p>
+              Favorites
+            </p>
+            <b>
+              12
+            </b>
+          </div>,
+        ],
+        "className": "profile-toolbar",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "Articles",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <p>
+                Articles
+              </p>,
+              <b>
+                1
+              </b>,
+            ],
+            "className": "toolbar-menu active",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Articles",
+              },
+              "ref": null,
+              "rendered": "Articles",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": 1,
+              },
+              "ref": null,
+              "rendered": 1,
+              "type": "b",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "Followers",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <p>
+                Followers
+              </p>,
+              <b>
+                3
+              </b>,
+            ],
+            "className": "toolbar-menu ",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Followers",
+              },
+              "ref": null,
+              "rendered": "Followers",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": 3,
+              },
+              "ref": null,
+              "rendered": 3,
+              "type": "b",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "Following",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <p>
+                Following
+              </p>,
+              <b>
+                0
+              </b>,
+            ],
+            "className": "toolbar-menu ",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Following",
+              },
+              "ref": null,
+              "rendered": "Following",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": 0,
+              },
+              "ref": null,
+              "rendered": 0,
+              "type": "b",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "Favorites",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <p>
+                Favorites
+              </p>,
+              <b>
+                12
+              </b>,
+            ],
+            "className": "toolbar-menu ",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Favorites",
+              },
+              "ref": null,
+              "rendered": "Favorites",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": 12,
+              },
+              "ref": null,
+              "rendered": 12,
+              "type": "b",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

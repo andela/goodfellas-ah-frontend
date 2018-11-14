@@ -1,0 +1,68 @@
+.profile-article {
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  margin: 33px 0;
+  display: grid;
+  grid-template-areas: "user-img title title"
+                       "username date read-time"
+                       "article-img article-img article-img"
+                       "description description description"
+                       "footer footer footer";
+  grid-template-columns: 10rem 2fr auto;
+  grid-gap: .4rem .5rem;
+  font-size: 11px;
+  padding: 20px 15px 5px;
+  align-items: center;
+  cursor: pointer;
+  @media screen and (min-width: 500px) {
+    padding: 20px 90px 5px;    
+  }
+  &_username {
+    grid-area: username;
+  }
+  h3 {
+    grid-area: title;
+    font-weight: bold;
+    font-size: 18px;
+    justify-self: right;
+    text-align: right;
+  }
+  &_user-img {
+    grid-area: user-img;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+  }
+  &_img {
+    grid-area: article-img;
+  }
+  &_description {
+    grid-area: description;
+    margin: 10px 0;
+  }
+  &_date {
+    grid-area: date;
+    justify-self: right;
+  }
+  &_read-time {
+    grid-area: read-time;
+    justify-self: right;
+  }
+  &_footer {
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    & > *:not(:first-child) {
+      margin-left: 10px;
+    }
+    .icon {
+      width: 10px;
+      height: 10px;
+    }
+    .comments {
+      margin-left: auto;
+    }
+    .edit {
+      cursor: pointer;
+    }
+  }
+}
