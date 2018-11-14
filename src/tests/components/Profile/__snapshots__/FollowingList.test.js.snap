@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components ProfileToolbar component should render as expected 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <FollowingList
+    following={
+      Array [
+        Object {
+          "createdAt": "2018-11-11T23:42:00.689Z",
+          "follower": Object {
+            "email": "damafeez@gmail.com",
+            "firstname": "Afeez",
+            "lastname": "Awoyemi",
+            "profile": Object {
+              "bio": null,
+              "createdAt": "2018-11-10T14:06:28.897Z",
+              "following": false,
+              "id": 3,
+              "image": null,
+              "updatedAt": "2018-11-10T14:06:28.897Z",
+              "userId": 3,
+              "username": null,
+            },
+            "role": "User",
+          },
+          "followerId": 3,
+          "id": 1,
+          "updatedAt": "2018-11-11T23:42:00.689Z",
+        },
+      ]
+    }
+    history={
+      Object {
+        "push": [MockFunction],
+      }
+    }
+    userFullName="Afeez Awoyemi"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <_default
+          handleClick={[Function]}
+          type="following"
+        />,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "1",
+        "nodeType": "function",
+        "props": Object {
+          "handleClick": [Function],
+          "type": "following",
+          "user": undefined,
+          "userId": undefined,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <_default
+            handleClick={[Function]}
+            type="following"
+          />,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "1",
+          "nodeType": "function",
+          "props": Object {
+            "handleClick": [Function],
+            "type": "following",
+            "user": undefined,
+            "userId": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": Symbol(react.fragment),
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

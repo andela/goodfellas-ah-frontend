@@ -1,0 +1,37 @@
+.follow-card {
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  margin: 33px 0;
+  display: grid;
+  grid-template-areas: "image about"
+                       "type about";
+  grid-template-columns: minmax(7rem, 3fr) 7fr;
+  grid-gap: .5rem .7rem;
+  font-size: 13px;
+  padding: 5px 25px;
+  cursor: pointer;
+  @media screen and (min-width: 500px) {
+    grid-template-areas: "image about"
+                         "type about";
+  }
+  &_profile-image {
+    grid-area: image;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+  }
+  &_type {
+    grid-area: type;
+    p {
+      font-size: 12px;
+      text-transform: capitalize;
+      padding-bottom: 25px;
+    }
+  }
+  &_about {
+    grid-area: about;
+    align-self: center;
+    &.no-bio {
+      color: var(--light-gray);
+    }
+  }
+}

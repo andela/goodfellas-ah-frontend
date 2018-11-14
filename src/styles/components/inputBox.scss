@@ -1,0 +1,14 @@
+.input-box {
+  height: 34px;
+  width: 253px;
+  padding: 1rem;
+  outline: 1px solid transparent;
+  border: none;
+  transition: outline-color .3s ease-in;
+  &:focus {
+    outline-color: #A6A2A2;
+  }
+  &::placeholder {
+    color: #A6A2A2;
+  }
+}

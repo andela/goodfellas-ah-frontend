@@ -36,6 +36,7 @@ beforeEach(() => {
     <Header
       parentComponent="landingpage"
       auth={auth.auth.authenticated}
+      profile={{ image: 'testImageUrl' }}
     />,
   );
 
@@ -51,6 +52,7 @@ beforeEach(() => {
       <Header
         parentComponent="notlandingpage"
         auth={auth.auth.authenticated}
+        profile={{ image: 'testImageUrl' }}
       />
     </MemoryRouter>,
   );
@@ -60,6 +62,7 @@ beforeEach(() => {
       <Header
         parentComponent="notlandingpage"
         auth={authTest.auth.authenticated}
+        profile={{ image: 'testImageUrl' }}
       />
     </MemoryRouter>,
   );
