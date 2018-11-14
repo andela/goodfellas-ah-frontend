@@ -59,6 +59,7 @@ exports[`Signin UI render features container should render as expected 1`] = `
             signin={[Function]}
           >
             <form
+              className="auth-signin"
               onSubmit={[Function]}
             >
               <div
@@ -81,7 +82,7 @@ exports[`Signin UI render features container should render as expected 1`] = `
                     email
                   </label>
                   <input
-                    className="auth-field"
+                    className="auth-field "
                     id="email"
                     onChange={[Function]}
                     placeholder="Email"
@@ -111,7 +112,7 @@ exports[`Signin UI render features container should render as expected 1`] = `
                     password
                   </label>
                   <input
-                    className="auth-field"
+                    className="auth-field "
                     id="password"
                     onChange={[Function]}
                     placeholder="Password"

@@ -83,7 +83,7 @@ class SignupForm extends Component {
     const { message } = this.props;
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="auth-signup" onSubmit={this.handleSubmit}>
         <p className="error-field">{message}</p>
         <AuthInput
           error={validationError}
@@ -106,7 +106,6 @@ class SignupForm extends Component {
           value={email}
           handleChange={this.handleChange}
           name="email"
-          type="email"
           placeholder="E-mail"
         />
 

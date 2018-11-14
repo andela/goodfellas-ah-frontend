@@ -12,13 +12,17 @@
 .auth-form .auth-field{
     background-color: #f8f8f8;
     border:0px;
-    border-bottom: 3px solid #000;
+    border-bottom: 2px solid #000;
     width: 84%;
     height: 45px;
     font-size: 16px;
     font-style: bold;
     margin-bottom: 15px;
     outline: none;
+    &.has-error {
+        border-bottom-color: #ff0000;
+        margin-bottom: 10px;
+    }
 }
 
 .auth-form .auth-button{
@@ -91,7 +95,6 @@
  .auth-form .error-field{
     color: red;
     font-size: 15px;
-    font-weight: bold;
     margin-top: 0px;
 }
 
@@ -161,8 +164,6 @@
     margin-left: 20px;  
 }
 
-
-
 @media screen and (max-width:1024px){  
     .auth-form{
         padding-top: 30px;
@@ -189,6 +190,14 @@
         padding-left: 10%;
         padding-top: 50px;
         padding-bottom: 70px;
+    }
+
+    .auth-form .auth-field {
+        margin-bottom: 50px;
+    }
+
+    .auth-signup .auth-field[id="confirmPassword"], .auth-signin .auth-field[id="password"] {
+        margin-bottom: 10px;
     }
 
     .auth-form .or{

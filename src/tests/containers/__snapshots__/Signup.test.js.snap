@@ -18,6 +18,7 @@ exports[`Signup UI render features container should render as expected 1`] = `
         signup={[Function]}
       >
         <form
+          className="auth-signup"
           onSubmit={[Function]}
         >
           <p
@@ -40,7 +41,7 @@ exports[`Signup UI render features container should render as expected 1`] = `
                 firstname
               </label>
               <input
-                className="auth-field"
+                className="auth-field "
                 id="firstname"
                 onChange={[Function]}
                 placeholder="Firstname"
@@ -69,7 +70,7 @@ exports[`Signup UI render features container should render as expected 1`] = `
                 lastname
               </label>
               <input
-                className="auth-field"
+                className="auth-field "
                 id="lastname"
                 onChange={[Function]}
                 placeholder="Lastname"
@@ -86,7 +87,6 @@ exports[`Signup UI render features container should render as expected 1`] = `
             handleChange={[Function]}
             name="email"
             placeholder="E-mail"
-            type="email"
             value=""
           >
             <div
@@ -99,11 +99,11 @@ exports[`Signup UI render features container should render as expected 1`] = `
                 email
               </label>
               <input
-                className="auth-field"
+                className="auth-field "
                 id="email"
                 onChange={[Function]}
                 placeholder="E-mail"
-                type="email"
+                type="text"
                 value=""
               />
               <div
@@ -129,7 +129,7 @@ exports[`Signup UI render features container should render as expected 1`] = `
                 password
               </label>
               <input
-                className="auth-field"
+                className="auth-field "
                 id="password"
                 onChange={[Function]}
                 placeholder="Password"
@@ -159,7 +159,7 @@ exports[`Signup UI render features container should render as expected 1`] = `
                 confirmPassword
               </label>
               <input
-                className="auth-field"
+                className="auth-field "
                 id="confirmPassword"
                 onChange={[Function]}
                 placeholder="Confirm Password"

@@ -36,7 +36,7 @@ class Signin extends Component {
     const { email, password, validationError } = this.state;
     const { errorMessage } = this.props;
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="auth-signin" onSubmit={this.handleSubmit}>
         <div className="error-field">{errorMessage}</div>
         <AuthInput
           error={validationError}
