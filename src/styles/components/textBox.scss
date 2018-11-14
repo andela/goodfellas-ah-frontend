@@ -1,0 +1,15 @@
+.text-box {
+  height: 179px;
+  width: 100%;
+  max-width: 511px;
+  padding: 1rem;
+  outline: none;
+  border: none;
+  transition: .5s border ease-in;
+  &:focus {
+    outline: 1.2px solid #A6A2A2;
+  }
+  &::placeholder {
+    color: #A6A2A2;
+  }
+}

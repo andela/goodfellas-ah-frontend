@@ -1,0 +1,28 @@
+.edit-profile {
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    input, textarea {
+      text-align: center;
+      color: #656262;
+    }
+  }
+  &_spinner {
+    height: 20px;
+  }
+  .profile-image-uploader {
+    margin-top: 4rem;
+  }
+  #user-name {
+    margin: 2.5rem auto;
+  }
+  .text-box {
+    margin: 2.5rem auto;
+    resize: none;
+  }
+  #save-button {
+    margin-right: 27px;
+    border-color: #63ce96;
+  }
+}

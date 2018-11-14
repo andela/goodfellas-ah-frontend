@@ -1,0 +1,725 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components ProfileToolbar component should render as expected 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <_default
+    article={
+      Object {
+        "authorId": 1,
+        "averageRating": null,
+        "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+        "comments": Array [],
+        "createdAt": "2018-11-09T15:08:00.560Z",
+        "description": " this is the fine long body  this is the fine long body ",
+        "favorited": null,
+        "favoritesCount": null,
+        "id": 2,
+        "image": null,
+        "reactions": Array [],
+        "read_time": "1 minute",
+        "slug": "this-is-a-fine-title-which-i-would-really-love-to-have",
+        "tagList": null,
+        "title": "This is a fine title which I would really love to have",
+        "updatedAt": "2018-11-09T15:08:00.560Z",
+      }
+    }
+    userFullName="Afeez Awoyemi"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <img
+          alt="user"
+          className="profile-article_user-img"
+          src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541506955/user-placeholder.png"
+        />,
+        <img
+          alt="article-img"
+          className="profile-article_img"
+          src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541513674/Authors%20Haven/article-placeholder.jpg"
+        />,
+        <h3>
+          This is a fine title which I would really love to have
+        </h3>,
+        <p
+          className="profile-article_username"
+        />,
+        <p
+          className="profile-article_date"
+        >
+          Nov 9, 2018
+        </p>,
+        <p
+          className="profile-article_read-time"
+        >
+          1 minute read
+        </p>,
+        <p
+          className="profile-article_description"
+        >
+           this is the fine long body  this is the fine long body 
+        </p>,
+        <div
+          className="profile-article_footer"
+        >
+          <p
+            className="profile-article_likes"
+          >
+            3 
+            <svg
+              className="icon"
+            >
+              <use
+                xlinkHref="icons.svg#like"
+              />
+            </svg>
+          </p>
+          <p
+            className="profile-article_dislikes"
+          >
+            0 
+            <svg
+              className="icon"
+            >
+              <use
+                xlinkHref="icons.svg#dislike"
+              />
+            </svg>
+          </p>
+          <p
+            className="comments"
+          >
+            0 comments
+          </p>
+          <p
+            className="edit"
+          >
+            Edit Article
+          </p>
+        </div>,
+      ],
+      "className": "profile-article hoverable",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "alt": "user",
+          "className": "profile-article_user-img",
+          "src": "https://res.cloudinary.com/drmmqcxkc/image/upload/v1541506955/user-placeholder.png",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "img",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "alt": "article-img",
+          "className": "profile-article_img",
+          "src": "https://res.cloudinary.com/drmmqcxkc/image/upload/v1541513674/Authors%20Haven/article-placeholder.jpg",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "img",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "This is a fine title which I would really love to have",
+        },
+        "ref": null,
+        "rendered": "This is a fine title which I would really love to have",
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": undefined,
+          "className": "profile-article_username",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Nov 9, 2018",
+          "className": "profile-article_date",
+        },
+        "ref": null,
+        "rendered": "Nov 9, 2018",
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "1 minute read",
+          "className": "profile-article_read-time",
+        },
+        "ref": null,
+        "rendered": "1 minute read",
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": " this is the fine long body  this is the fine long body ",
+          "className": "profile-article_description",
+        },
+        "ref": null,
+        "rendered": " this is the fine long body  this is the fine long body ",
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <p
+              className="profile-article_likes"
+            >
+              3 
+              <svg
+                className="icon"
+              >
+                <use
+                  xlinkHref="icons.svg#like"
+                />
+              </svg>
+            </p>,
+            <p
+              className="profile-article_dislikes"
+            >
+              0 
+              <svg
+                className="icon"
+              >
+                <use
+                  xlinkHref="icons.svg#dislike"
+                />
+              </svg>
+            </p>,
+            <p
+              className="comments"
+            >
+              0 comments
+            </p>,
+            <p
+              className="edit"
+            >
+              Edit Article
+            </p>,
+          ],
+          "className": "profile-article_footer",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "3 ",
+                <svg
+                  className="icon"
+                >
+                  <use
+                    xlinkHref="icons.svg#like"
+                  />
+                </svg>,
+              ],
+              "className": "profile-article_likes",
+            },
+            "ref": null,
+            "rendered": Array [
+              "3 ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <use
+                    xlinkHref="icons.svg#like"
+                  />,
+                  "className": "icon",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "xlinkHref": "icons.svg#like",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "use",
+                },
+                "type": "svg",
+              },
+            ],
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "0 ",
+                <svg
+                  className="icon"
+                >
+                  <use
+                    xlinkHref="icons.svg#dislike"
+                  />
+                </svg>,
+              ],
+              "className": "profile-article_dislikes",
+            },
+            "ref": null,
+            "rendered": Array [
+              "0 ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <use
+                    xlinkHref="icons.svg#dislike"
+                  />,
+                  "className": "icon",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "xlinkHref": "icons.svg#dislike",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "use",
+                },
+                "type": "svg",
+              },
+            ],
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "0 comments",
+              "className": "comments",
+            },
+            "ref": null,
+            "rendered": "0 comments",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Edit Article",
+              "className": "edit",
+            },
+            "ref": null,
+            "rendered": "Edit Article",
+            "type": "p",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <img
+            alt="user"
+            className="profile-article_user-img"
+            src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541506955/user-placeholder.png"
+          />,
+          <img
+            alt="article-img"
+            className="profile-article_img"
+            src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541513674/Authors%20Haven/article-placeholder.jpg"
+          />,
+          <h3>
+            This is a fine title which I would really love to have
+          </h3>,
+          <p
+            className="profile-article_username"
+          />,
+          <p
+            className="profile-article_date"
+          >
+            Nov 9, 2018
+          </p>,
+          <p
+            className="profile-article_read-time"
+          >
+            1 minute read
+          </p>,
+          <p
+            className="profile-article_description"
+          >
+             this is the fine long body  this is the fine long body 
+          </p>,
+          <div
+            className="profile-article_footer"
+          >
+            <p
+              className="profile-article_likes"
+            >
+              3 
+              <svg
+                className="icon"
+              >
+                <use
+                  xlinkHref="icons.svg#like"
+                />
+              </svg>
+            </p>
+            <p
+              className="profile-article_dislikes"
+            >
+              0 
+              <svg
+                className="icon"
+              >
+                <use
+                  xlinkHref="icons.svg#dislike"
+                />
+              </svg>
+            </p>
+            <p
+              className="comments"
+            >
+              0 comments
+            </p>
+            <p
+              className="edit"
+            >
+              Edit Article
+            </p>
+          </div>,
+        ],
+        "className": "profile-article hoverable",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "user",
+            "className": "profile-article_user-img",
+            "src": "https://res.cloudinary.com/drmmqcxkc/image/upload/v1541506955/user-placeholder.png",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "article-img",
+            "className": "profile-article_img",
+            "src": "https://res.cloudinary.com/drmmqcxkc/image/upload/v1541513674/Authors%20Haven/article-placeholder.jpg",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "This is a fine title which I would really love to have",
+          },
+          "ref": null,
+          "rendered": "This is a fine title which I would really love to have",
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": undefined,
+            "className": "profile-article_username",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Nov 9, 2018",
+            "className": "profile-article_date",
+          },
+          "ref": null,
+          "rendered": "Nov 9, 2018",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "1 minute read",
+            "className": "profile-article_read-time",
+          },
+          "ref": null,
+          "rendered": "1 minute read",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": " this is the fine long body  this is the fine long body ",
+            "className": "profile-article_description",
+          },
+          "ref": null,
+          "rendered": " this is the fine long body  this is the fine long body ",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <p
+                className="profile-article_likes"
+              >
+                3 
+                <svg
+                  className="icon"
+                >
+                  <use
+                    xlinkHref="icons.svg#like"
+                  />
+                </svg>
+              </p>,
+              <p
+                className="profile-article_dislikes"
+              >
+                0 
+                <svg
+                  className="icon"
+                >
+                  <use
+                    xlinkHref="icons.svg#dislike"
+                  />
+                </svg>
+              </p>,
+              <p
+                className="comments"
+              >
+                0 comments
+              </p>,
+              <p
+                className="edit"
+              >
+                Edit Article
+              </p>,
+            ],
+            "className": "profile-article_footer",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "3 ",
+                  <svg
+                    className="icon"
+                  >
+                    <use
+                      xlinkHref="icons.svg#like"
+                    />
+                  </svg>,
+                ],
+                "className": "profile-article_likes",
+              },
+              "ref": null,
+              "rendered": Array [
+                "3 ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <use
+                      xlinkHref="icons.svg#like"
+                    />,
+                    "className": "icon",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "xlinkHref": "icons.svg#like",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "use",
+                  },
+                  "type": "svg",
+                },
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "0 ",
+                  <svg
+                    className="icon"
+                  >
+                    <use
+                      xlinkHref="icons.svg#dislike"
+                    />
+                  </svg>,
+                ],
+                "className": "profile-article_dislikes",
+              },
+              "ref": null,
+              "rendered": Array [
+                "0 ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <use
+                      xlinkHref="icons.svg#dislike"
+                    />,
+                    "className": "icon",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "xlinkHref": "icons.svg#dislike",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "use",
+                  },
+                  "type": "svg",
+                },
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "0 comments",
+                "className": "comments",
+              },
+              "ref": null,
+              "rendered": "0 comments",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Edit Article",
+                "className": "edit",
+              },
+              "ref": null,
+              "rendered": "Edit Article",
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

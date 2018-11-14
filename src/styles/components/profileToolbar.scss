@@ -1,0 +1,25 @@
+.profile-toolbar {
+  display: flex;
+  justify-content: space-around;
+  @media screen and (min-width: 500px){
+    padding: 0 2.5rem;
+  }
+  .toolbar-menu {
+    text-align: center;
+    font-size: 18px;
+    padding: .7rem 0;
+    border-bottom: 3px solid transparent;
+    transition: .3s border-bottom-color ease-in;
+    cursor: pointer;
+    p {
+      font-weight: lighter;
+      margin-bottom: 5px;
+    }
+    &:hover {
+      border-bottom-color: var(--light-gray);
+    }
+    &.active {
+      border-bottom-color: black;
+    }
+  }
+}
