@@ -75,6 +75,8 @@ exports[`Landing Page UI render features container should render as expected 1`]
                           <Header
                             auth={null}
                             parentComponent="landingpage"
+                            profile={null}
+                            profileNavigation={[Function]}
                             signout={[Function]}
                           >
                             <header>

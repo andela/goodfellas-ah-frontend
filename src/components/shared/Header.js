@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { profileNavigation } from '../../actions/profileActions';
 import { signout } from '../../actions/authActions';
 import { search } from '../../actions/articleActions';
 import Button from './Button';
+import { userPlaceholderImage } from '../../mixin';
 
 export class Header extends Component {
   state = {
@@ -60,7 +62,7 @@ export class Header extends Component {
   render() {
     const { auth } = this.props;
     const { parentComponent } = this.props;
-    const { signout: signoutUser } = this.props;
+    const { signout: signoutUser, profileNavigation: switchView, profile, } = this.props;
     return (
       <header>
         <nav className="navbar" ref="navbarTitle">
@@ -129,17 +131,17 @@ export class Header extends Component {
                   <div onClick={this.dropdown} className="dropdown dropdown-click">
                     <img
                       className="dropdown-toggle author-image"
-                      src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426069/Authors%20Haven/john.jpg"
+                      src={profile.image || userPlaceholderImage}
                       alt=""
                     />
                     <ul ref="myDropdown" className="dropdown-menu">
                       <Link to="/createArticle">New article</Link>
                       <Link to="/drafts">Drafts</Link>
-                      <Link to="/myArticles">Your stories</Link>
+                      <Link onClick={() => switchView('Articles')} to="/user/profile">Your stories</Link>
                       <Link to="/stats">Stats</Link>
                       <Link to="/bookmark">Bookmarks</Link>
-                      <Link to="/favourites">Favourites</Link>
-                      <Link to="/user/profile">Profile</Link>
+                      <Link onClick={() => switchView('Favorites')} to="/user/profile">Favourites</Link>
+                      <Link onClick={() => switchView('Following')} to="/user/profile">Profile</Link>
                       <Link className="dropdown-menu-clicked" onClick={signoutUser} to="/">Sign out</Link>
                     </ul>
                   </div>
@@ -223,12 +225,13 @@ export class Header extends Component {
   }
 }
 
-function mapStatetoProps(state) {
+function mapStatesToProps(state) {
   return {
     auth: state.auth.authenticated,
     searchResults: state.articles.searchResults,
     searchError: state.articles.error,
+    profile: state.auth.ownProfile,
   };
 }
 
-export default connect(mapStatetoProps, { signout, search })(Header);
+export default connect(mapStatesToProps, { signout, search, profileNavigation })(Header);

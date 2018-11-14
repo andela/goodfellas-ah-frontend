@@ -1,3 +1,10 @@
+export const PROFILE_NAVIGATION = 'PROFILE_NAVIGATION';
+export const SET_PROFILE = 'SET_PROFILE';
+export const SET_OWN_PROFILE = 'SET_OWN_PROFILE';
+export const SET_USER = 'SET_USER';
+export const UPDATE_PROFILE = 'UPDATE_PROFILE';
+export const SET_PROFILE_ERROR = 'SET_PROFILE_ERROR';
+export const PROFILE_LOADING = 'PROFILE_LOADING';
 
 export const RESET_ERROR = 'RESET_ERROR';
 export const SUCCESS_MSG = 'SUCCESS_MSG ';
