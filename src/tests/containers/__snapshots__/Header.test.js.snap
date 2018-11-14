@@ -57,6 +57,8 @@ exports[`Loading render container should render as expected 1`] = `
         <Connect(Header)>
           <Header
             auth={null}
+            profile={null}
+            profileNavigation={[Function]}
             signout={[Function]}
           >
             <header>

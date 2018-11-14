@@ -1,9 +1,8 @@
 import React from 'react';
+import Profile from '../containers/Profile';
 
-const Profile = () => (
+export default(props) => (
   <div>
-    This is the Profile view
+    <Profile {...props} />
   </div>
 );
-
-export default Profile;
