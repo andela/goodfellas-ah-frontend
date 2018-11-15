@@ -6,6 +6,7 @@ import * as types from './actionTypes';
 const apiUrl = process.env.REACT_APP_API_URL;
 const persistAuth = async (dispatch, API, token, userId) => {
   API.updateToken(token);
+  console.log(token);
   localStorage.setItem('token', token);
   localStorage.setItem('userId', userId);
   const userProfile = await API.api.get(`/user/profile/${userId}`);

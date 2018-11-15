@@ -1,16 +1,20 @@
 import React from 'react';
 import moment from 'moment';
 import icons from '../../assets/icons.svg';
-import { userPlaceholderImage, articlePlaceholderImage } from '../../mixin';
+import { userPlaceholderImage, articlePlaceholderImage, filterReactions } from '../../mixin';
 
 export default (props) => {
-  const { article, author, authorImage } = props;
-  // const reactions = article.reaction
-  //   .reduce();
+  const {
+    article,
+    author,
+    authorImage,
+    ownProfile,
+  } = props;
+
   return (
     <div className="profile-article hoverable">
       <img src={authorImage || userPlaceholderImage} alt="user" className="profile-article_user-img" />
-      <img src={article.image || articlePlaceholderImage} alt="article-img" className="profile-article_img" />
+      <div className="profile-article_img" style={{ backgroundImage: `url(${article.image || articlePlaceholderImage})` }} />
       <h3>{ article.title }</h3>
       <p className="profile-article_username">{author}</p>
       <p className="profile-article_date">{moment(article.createdAt).format('ll')}</p>
@@ -18,19 +22,19 @@ export default (props) => {
       <p className="profile-article_description">{article.description}</p>
       <div className="profile-article_footer">
         <p className="profile-article_likes">
-          3&nbsp;
+          {filterReactions(article.reactions).likes}&nbsp;
           <svg className="icon">
             <use xlinkHref={`${icons}#like`} />
           </svg>
         </p>
         <p className="profile-article_dislikes">
-          0&nbsp;
+          {filterReactions(article.reactions).dislikes}&nbsp;
           <svg className="icon">
             <use xlinkHref={`${icons}#dislike`} />
           </svg>
         </p>
         <p className="comments">{`${article.comments.length || 0} comments`}</p>
-        <p className="edit">Edit Article</p>
+        {ownProfile && <p className="edit">Edit Article</p>}
       </div>
     </div>
   );

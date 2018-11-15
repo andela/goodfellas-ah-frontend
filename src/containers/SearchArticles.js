@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import LargeLoader from '../components/shared/LargeLoader';
 import Article from '../components/article/Profile';
 
-class SearchArticlesContainer extends Component {
+export class SearchArticlesContainer extends Component {
   state = {
     articleResults: [],
     errorResults: [],

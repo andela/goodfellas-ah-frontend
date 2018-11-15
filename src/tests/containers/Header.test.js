@@ -90,7 +90,7 @@ test('Header functionality', () => {
   expect(inst).not.toBeNull();
 });
 
-it('should click more articles button', () => {
+it('should dropdown search bar filter section', () => {
   mountHeader.find('.dropdown-click').simulate('click');
   mountHeader.find('.search-click').simulate('click');
   mountHeader.find('.search-click').simulate('click');
@@ -102,6 +102,17 @@ it('should toggle navbar', () => {
 });
 
 it('should toggle searchbar', () => {
+  mountHeader.find('.searchbar-toggle-mobile').simulate('click');
+  mountHeader.find('.searchbar-toggle-mobile').simulate('click');
+});
+
+it('should click search', () => {
   mountHeader.find('.searchbar-toggle').simulate('click');
+  mountHeader.find('.search-click').simulate('click');
   mountHeader.find('.searchbar-toggle').simulate('click');
+});
+
+it('should spy on change search', () => {
+  mountHeader.find('.searchbar').simulate('change');
+  mountHeader.find('#searchKeyword').simulate('change');
 });

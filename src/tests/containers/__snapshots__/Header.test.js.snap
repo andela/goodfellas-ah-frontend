@@ -64,172 +64,174 @@ exports[`Loading render container should render as expected 1`] = `
             searchResults={Array []}
             signout={[Function]}
           >
-            <header>
-              <nav
-                className="navbar"
-              >
-                <Link
-                  className="navbar-title navbar-brand"
-                  replace={false}
-                  to="/"
+            <div>
+              <header>
+                <nav
+                  className="navbar"
                 >
-                  <a
+                  <Link
                     className="navbar-title navbar-brand"
-                    href="/"
-                    onClick={[Function]}
+                    replace={false}
+                    to="/"
                   >
-                    <h3
-                      className="header-dark"
+                    <a
+                      className="navbar-title navbar-brand"
+                      href="/"
+                      onClick={[Function]}
                     >
-                      Authors Haven
-                    </h3>
-                  </a>
-                </Link>
-                <div
-                  className="navbar-unauthorized"
-                >
-                  <div
-                    className="navbar-main-wrapper"
-                  >
-                    <div>
-                      <form
-                        onSubmit={[Function]}
+                      <h3
+                        className="header-dark"
                       >
-                        <div
-                          className="header-user-search-unauth"
+                        Authors Haven
+                      </h3>
+                    </a>
+                  </Link>
+                  <div
+                    className="navbar-unauthorized"
+                  >
+                    <div
+                      className="navbar-main-wrapper"
+                    >
+                      <div>
+                        <form
+                          onSubmit={[Function]}
                         >
-                          <input
-                            className="searchbar"
-                            id="Title"
-                            onChange={[Function]}
-                            placeholder="Search for articles"
-                            type="search"
-                          />
-                          <span
-                            className="search-click"
-                            onClick={[Function]}
-                          >
-                            <img
-                              alt=""
-                              className="search-dropdown"
-                              src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541772567/Authors%20Haven/arrow_grey.png"
-                            />
-                          </span>
-                          <span
-                            className="search-divider"
-                          />
-                          <span
-                            className="searchbar-toggle"
-                            onClick={[Function]}
-                          >
-                            <img
-                              alt=""
-                              src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png"
-                            />
-                          </span>
-                          <span
-                            className="searchbar-toggle-mobile"
-                            onClick={[Function]}
-                          >
-                            <img
-                              alt=""
-                              src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png"
-                            />
-                          </span>
                           <div
-                            className="search-parameters"
+                            className="header-user-search-unauth"
                           >
-                            Filter by
-                            <select>
-                              <option>
-                                Author
-                              </option>
-                              <option>
-                                Tag
-                              </option>
-                            </select>
                             <input
-                              id="searchKeyword"
+                              className="searchbar"
+                              id="Title"
                               onChange={[Function]}
-                              placeholder="Enter keyword"
-                              type="text"
+                              placeholder="Search for articles"
+                              type="search"
                             />
-                            <Button
-                              className="btn hero-section-greenbutton"
-                              title="Search"
-                              type="Submit"
+                            <span
+                              className="search-click"
+                              onClick={[Function]}
                             >
-                              <button
+                              <img
+                                alt=""
+                                className="search-dropdown"
+                                src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541772567/Authors%20Haven/arrow_grey.png"
+                              />
+                            </span>
+                            <span
+                              className="search-divider"
+                            />
+                            <span
+                              className="searchbar-toggle"
+                              onClick={[Function]}
+                            >
+                              <img
+                                alt=""
+                                src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png"
+                              />
+                            </span>
+                            <span
+                              className="searchbar-toggle-mobile"
+                              onClick={[Function]}
+                            >
+                              <img
+                                alt=""
+                                src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png"
+                              />
+                            </span>
+                            <div
+                              className="search-parameters"
+                            >
+                              Filter by
+                              <select>
+                                <option>
+                                  Author
+                                </option>
+                                <option>
+                                  Tag
+                                </option>
+                              </select>
+                              <input
+                                id="searchKeyword"
+                                onChange={[Function]}
+                                placeholder="Enter keyword"
+                                type="text"
+                              />
+                              <Button
                                 className="btn hero-section-greenbutton"
+                                title="Search"
                                 type="Submit"
                               >
-                                Search
-                              </button>
-                            </Button>
+                                <button
+                                  className="btn hero-section-greenbutton"
+                                  type="Submit"
+                                >
+                                  Search
+                                </button>
+                              </Button>
+                            </div>
                           </div>
-                        </div>
-                      </form>
-                    </div>
-                    <button
-                      className="navbar-toggler"
-                      data-target="#navbarNav"
-                      data-toggle="collapse"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <span
-                        className=""
+                        </form>
+                      </div>
+                      <button
+                        className="navbar-toggler"
+                        data-target="#navbarNav"
+                        data-toggle="collapse"
+                        onClick={[Function]}
+                        type="button"
                       >
-                        <img
-                          alt=""
-                          className="menuIcon"
-                          src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1542096064/Authors%20Haven/icons8-menu-black.svg"
-                        />
-                      </span>
-                    </button>
-                    <div
-                      className="navbar-wrapper"
-                    >
-                      <ul
-                        className="navbar-element"
-                      >
-                        <Link
-                          className="nav-item nav-link header-dark"
-                          replace={false}
-                          to="/auth/signin"
+                        <span
+                          className=""
                         >
-                          <a
+                          <img
+                            alt=""
+                            className="menuIcon"
+                            src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1542096064/Authors%20Haven/icons8-menu-black.svg"
+                          />
+                        </span>
+                      </button>
+                      <div
+                        className="navbar-wrapper"
+                      >
+                        <ul
+                          className="navbar-element"
+                        >
+                          <Link
                             className="nav-item nav-link header-dark"
-                            href="/auth/signin"
-                            onClick={[Function]}
+                            replace={false}
+                            to="/auth/signin"
                           >
-                            Sign In
-                          </a>
-                        </Link>
-                        <p
-                          className="link-border header-dark"
-                        >
-                          |
-                        </p>
-                        <Link
-                          className=" nav-item nav-link header-dark"
-                          replace={false}
-                          to="/auth/signup"
-                        >
-                          <a
+                            <a
+                              className="nav-item nav-link header-dark"
+                              href="/auth/signin"
+                              onClick={[Function]}
+                            >
+                              Sign In
+                            </a>
+                          </Link>
+                          <p
+                            className="link-border header-dark"
+                          >
+                            |
+                          </p>
+                          <Link
                             className=" nav-item nav-link header-dark"
-                            href="/auth/signup"
-                            onClick={[Function]}
+                            replace={false}
+                            to="/auth/signup"
                           >
-                            Sign Up
-                          </a>
-                        </Link>
-                      </ul>
+                            <a
+                              className=" nav-item nav-link header-dark"
+                              href="/auth/signup"
+                              onClick={[Function]}
+                            >
+                              Sign Up
+                            </a>
+                          </Link>
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </nav>
-            </header>
+                </nav>
+              </header>
+            </div>
           </Header>
         </Connect(Header)>
       </Router>

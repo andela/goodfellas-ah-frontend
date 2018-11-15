@@ -11,6 +11,11 @@
     .search-results-articles > div{
       text-align: left;
     }
+    .search-results-articles{
+      .profile-article_img {
+        height: 250px;
+      }
+    }
     @media only screen and (max-width: 500px) {
       width: 95vw;
     }
