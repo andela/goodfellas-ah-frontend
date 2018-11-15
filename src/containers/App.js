@@ -12,6 +12,7 @@ import CreateArticle from '../views/CreateArticles';
 import Header from '../components/shared/Header';
 import authenticate from './hoc/authenticate';
 import GetAllArticles from '../views/AllArticles';
+import UpdateArticle from '../views/UpdateArticle';
 
 const User = () => (
   <div>
@@ -30,8 +31,9 @@ const Auth = () => (
 const Articles = () => (
   <div>
     <Header />
-    <Route path="/articles" component={authenticate(CreateArticle)} />
+    <Route exact path="/articles/create" component={authenticate(CreateArticle)} />
     <Route path="/articles/home" component={GetAllArticles} />
+    <Route path="/articles/edit/:slug" component={UpdateArticle} />
   </div>
 );
 

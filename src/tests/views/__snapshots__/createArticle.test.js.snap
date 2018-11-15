@@ -48,6 +48,7 @@ ShallowWrapper {
             </button>
             <button
               className="btn article-whitebutton"
+              onClick={[Function]}
               type="submit"
             >
               Save for later
@@ -76,9 +77,6 @@ ShallowWrapper {
                       "h3",
                       "orderedlist",
                     ],
-                    "static": true,
-                    "sticky": false,
-                    "updateOnEmptySelection": true,
                   },
                 }
               }
@@ -93,8 +91,6 @@ ShallowWrapper {
               options={
                 Object {
                   "toolbar": Object {
-                    "activeButtonClass": "medium-editor-button-active",
-                    "allowMultiParagraphSelection": true,
                     "buttons": Array [
                       "bold",
                       "italic",
@@ -106,9 +102,6 @@ ShallowWrapper {
                       "h3",
                       "orderedlist",
                     ],
-                    "static": true,
-                    "sticky": false,
-                    "updateOnEmptySelection": true,
                   },
                 }
               }
@@ -122,6 +115,7 @@ ShallowWrapper {
         >
           <button
             className="btn article-fixed-whitebutton"
+            onClick={[Function]}
             type="submit"
           >
             Save for later
@@ -157,6 +151,7 @@ ShallowWrapper {
               </button>
               <button
                 className="btn article-whitebutton"
+                onClick={[Function]}
                 type="submit"
               >
                 Save for later
@@ -185,9 +180,6 @@ ShallowWrapper {
                         "h3",
                         "orderedlist",
                       ],
-                      "static": true,
-                      "sticky": false,
-                      "updateOnEmptySelection": true,
                     },
                   }
                 }
@@ -202,8 +194,6 @@ ShallowWrapper {
                 options={
                   Object {
                     "toolbar": Object {
-                      "activeButtonClass": "medium-editor-button-active",
-                      "allowMultiParagraphSelection": true,
                       "buttons": Array [
                         "bold",
                         "italic",
@@ -215,9 +205,6 @@ ShallowWrapper {
                         "h3",
                         "orderedlist",
                       ],
-                      "static": true,
-                      "sticky": false,
-                      "updateOnEmptySelection": true,
                     },
                   }
                 }
@@ -245,6 +232,7 @@ ShallowWrapper {
                 </button>,
                 <button
                   className="btn article-whitebutton"
+                  onClick={[Function]}
                   type="submit"
                 >
                   Save for later
@@ -275,6 +263,7 @@ ShallowWrapper {
                 "props": Object {
                   "children": "Save for later",
                   "className": "btn article-whitebutton",
+                  "onClick": [Function],
                   "type": "submit",
                 },
                 "ref": null,
@@ -320,9 +309,6 @@ ShallowWrapper {
                           "h3",
                           "orderedlist",
                         ],
-                        "static": true,
-                        "sticky": false,
-                        "updateOnEmptySelection": true,
                       },
                     }
                   }
@@ -337,8 +323,6 @@ ShallowWrapper {
                   options={
                     Object {
                       "toolbar": Object {
-                        "activeButtonClass": "medium-editor-button-active",
-                        "allowMultiParagraphSelection": true,
                         "buttons": Array [
                           "bold",
                           "italic",
@@ -350,9 +334,6 @@ ShallowWrapper {
                           "h3",
                           "orderedlist",
                         ],
-                        "static": true,
-                        "sticky": false,
-                        "updateOnEmptySelection": true,
                       },
                     }
                   }
@@ -385,9 +366,6 @@ ShallowWrapper {
                         "h3",
                         "orderedlist",
                       ],
-                      "static": true,
-                      "sticky": false,
-                      "updateOnEmptySelection": true,
                     },
                   },
                   "tag": "div",
@@ -408,8 +386,6 @@ ShallowWrapper {
                   "onChange": [Function],
                   "options": Object {
                     "toolbar": Object {
-                      "activeButtonClass": "medium-editor-button-active",
-                      "allowMultiParagraphSelection": true,
                       "buttons": Array [
                         "bold",
                         "italic",
@@ -421,9 +397,6 @@ ShallowWrapper {
                         "h3",
                         "orderedlist",
                       ],
-                      "static": true,
-                      "sticky": false,
-                      "updateOnEmptySelection": true,
                     },
                   },
                   "tag": "div",
@@ -447,6 +420,7 @@ ShallowWrapper {
           "children": Array [
             <button
               className="btn article-fixed-whitebutton"
+              onClick={[Function]}
               type="submit"
             >
               Save for later
@@ -470,6 +444,7 @@ ShallowWrapper {
             "props": Object {
               "children": "Save for later",
               "className": "btn article-fixed-whitebutton",
+              "onClick": [Function],
               "type": "submit",
             },
             "ref": null,
@@ -518,6 +493,7 @@ ShallowWrapper {
               </button>
               <button
                 className="btn article-whitebutton"
+                onClick={[Function]}
                 type="submit"
               >
                 Save for later
@@ -546,9 +522,6 @@ ShallowWrapper {
                         "h3",
                         "orderedlist",
                       ],
-                      "static": true,
-                      "sticky": false,
-                      "updateOnEmptySelection": true,
                     },
                   }
                 }
@@ -563,8 +536,6 @@ ShallowWrapper {
                 options={
                   Object {
                     "toolbar": Object {
-                      "activeButtonClass": "medium-editor-button-active",
-                      "allowMultiParagraphSelection": true,
                       "buttons": Array [
                         "bold",
                         "italic",
@@ -576,9 +547,6 @@ ShallowWrapper {
                         "h3",
                         "orderedlist",
                       ],
-                      "static": true,
-                      "sticky": false,
-                      "updateOnEmptySelection": true,
                     },
                   }
                 }
@@ -592,6 +560,7 @@ ShallowWrapper {
           >
             <button
               className="btn article-fixed-whitebutton"
+              onClick={[Function]}
               type="submit"
             >
               Save for later
@@ -627,6 +596,7 @@ ShallowWrapper {
                 </button>
                 <button
                   className="btn article-whitebutton"
+                  onClick={[Function]}
                   type="submit"
                 >
                   Save for later
@@ -655,9 +625,6 @@ ShallowWrapper {
                           "h3",
                           "orderedlist",
                         ],
-                        "static": true,
-                        "sticky": false,
-                        "updateOnEmptySelection": true,
                       },
                     }
                   }
@@ -672,8 +639,6 @@ ShallowWrapper {
                   options={
                     Object {
                       "toolbar": Object {
-                        "activeButtonClass": "medium-editor-button-active",
-                        "allowMultiParagraphSelection": true,
                         "buttons": Array [
                           "bold",
                           "italic",
@@ -685,9 +650,6 @@ ShallowWrapper {
                           "h3",
                           "orderedlist",
                         ],
-                        "static": true,
-                        "sticky": false,
-                        "updateOnEmptySelection": true,
                       },
                     }
                   }
@@ -715,6 +677,7 @@ ShallowWrapper {
                   </button>,
                   <button
                     className="btn article-whitebutton"
+                    onClick={[Function]}
                     type="submit"
                   >
                     Save for later
@@ -745,6 +708,7 @@ ShallowWrapper {
                   "props": Object {
                     "children": "Save for later",
                     "className": "btn article-whitebutton",
+                    "onClick": [Function],
                     "type": "submit",
                   },
                   "ref": null,
@@ -790,9 +754,6 @@ ShallowWrapper {
                             "h3",
                             "orderedlist",
                           ],
-                          "static": true,
-                          "sticky": false,
-                          "updateOnEmptySelection": true,
                         },
                       }
                     }
@@ -807,8 +768,6 @@ ShallowWrapper {
                     options={
                       Object {
                         "toolbar": Object {
-                          "activeButtonClass": "medium-editor-button-active",
-                          "allowMultiParagraphSelection": true,
                           "buttons": Array [
                             "bold",
                             "italic",
@@ -820,9 +779,6 @@ ShallowWrapper {
                             "h3",
                             "orderedlist",
                           ],
-                          "static": true,
-                          "sticky": false,
-                          "updateOnEmptySelection": true,
                         },
                       }
                     }
@@ -855,9 +811,6 @@ ShallowWrapper {
                           "h3",
                           "orderedlist",
                         ],
-                        "static": true,
-                        "sticky": false,
-                        "updateOnEmptySelection": true,
                       },
                     },
                     "tag": "div",
@@ -878,8 +831,6 @@ ShallowWrapper {
                     "onChange": [Function],
                     "options": Object {
                       "toolbar": Object {
-                        "activeButtonClass": "medium-editor-button-active",
-                        "allowMultiParagraphSelection": true,
                         "buttons": Array [
                           "bold",
                           "italic",
@@ -891,9 +842,6 @@ ShallowWrapper {
                           "h3",
                           "orderedlist",
                         ],
-                        "static": true,
-                        "sticky": false,
-                        "updateOnEmptySelection": true,
                       },
                     },
                     "tag": "div",
@@ -917,6 +865,7 @@ ShallowWrapper {
             "children": Array [
               <button
                 className="btn article-fixed-whitebutton"
+                onClick={[Function]}
                 type="submit"
               >
                 Save for later
@@ -940,6 +889,7 @@ ShallowWrapper {
               "props": Object {
                 "children": "Save for later",
                 "className": "btn article-fixed-whitebutton",
+                "onClick": [Function],
                 "type": "submit",
               },
               "ref": null,

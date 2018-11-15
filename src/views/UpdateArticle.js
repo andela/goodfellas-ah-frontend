@@ -5,11 +5,11 @@ import Editor from 'react-medium-editor';
 import 'medium-editor/dist/css/medium-editor.css';
 import 'medium-editor/dist/css/themes/default.css';
 import ImageUploader from '../components/articles/imageUpload';
-import publishArticle from '../actions/publishArticle';
+import updateArticle from '../actions/updateArticle';
 import '../styles/views/createArticles.scss';
 import { Loader } from '../components/shared/Loading';
 
-export class CreateArticles extends Component {
+export class UpdateArticles extends Component {
   state = {
     title: '',
     body: '',
@@ -19,12 +19,11 @@ export class CreateArticles extends Component {
   componentDidUpdate(prevProps) {
     const { status } = this.props;
     if (prevProps.status.success !== status.success && status.success) {
-      swal('Good job!', 'Article Saved Successfully!', 'success');
+      swal('Good job!', 'Article Updated Successfully!', 'success');
     } else if (prevProps.status.error !== status.error && status.error) {
       swal('Error!', 'Something Went Wrong!', 'error');
     }
   }
-
 
   handleChange = (event) => {
     const { name, value } = event.target;
@@ -33,21 +32,21 @@ export class CreateArticles extends Component {
 
   generateImageTag = (url) => `<img class="inline-image" src="${url}" />`
 
+
   imageUploaded = (url) => {
     const imageHtml = this.generateImageTag(url);
     this.setState((prevState) => ({ body: prevState.body + imageHtml, imageLoad: false }));
   }
 
-  handleSubmit = (event, publish = true) => {
+  handleSubmit = async (event) => {
     event.preventDefault();
     const { body } = this.state;
     const articlePayload = {
       ...this.state,
       description: body.split(' ').slice(0, 3).join(' '),
     };
-    if (!publish) articlePayload.published = false;
     // eslint-disable-next-line react/destructuring-assignment
-    this.props.publishArticle(articlePayload);
+    this.props.updateArticle(articlePayload);
   }
 
   render() {
@@ -59,10 +58,7 @@ export class CreateArticles extends Component {
         <div className="articles-card">
           <div className="article-buttons">
             <button className="btn article-whitebutton" type="submit" onClick={this.handleSubmit}>
-            Publish
-            </button>
-            <button className="btn article-whitebutton" type="submit" onClick={(e) => this.handleSubmit(e, false)}>
-            Save for later
+            Update
             </button>
           </div>
           <ImageUploader imageUploaded={this.imageUploaded} />
@@ -76,7 +72,10 @@ export class CreateArticles extends Component {
               onChange={(e) => handleEditorChange(e, 'title')}
               options={{
                 toolbar: {
+                  static: true,
+                  sticky: false,
                   buttons: ['bold', 'italic', 'underline', 'strikethrough', 'quote', 'anchor', 'h2', 'h3', 'orderedlist'],
+                  updateOnEmptySelection: true,
                 },
               }}
             />
@@ -89,7 +88,12 @@ export class CreateArticles extends Component {
                 onChange={(e) => handleEditorChange(e, 'body')}
                 options={{
                   toolbar: {
+                    activeButtonClass: 'medium-editor-button-active',
+                    allowMultiParagraphSelection: true,
+                    static: true,
+                    sticky: false,
                     buttons: ['bold', 'italic', 'underline', 'strikethrough', 'quote', 'anchor', 'h2', 'h3', 'orderedlist'],
+                    updateOnEmptySelection: true,
                   },
                 }}
               />
@@ -98,11 +102,8 @@ export class CreateArticles extends Component {
 
         </div>
         <div className="article-fixed-buttons">
-          <button className="btn article-fixed-whitebutton" type="submit" onClick={(e) => this.handleSubmit(e, false)}>
-            Save for later
-          </button>
           <button className="btn article-fixed-whitebutton" type="submit" onClick={this.handleSubmit}>
-            Publish
+            Update
           </button>
         </div>
       </div>
@@ -113,11 +114,11 @@ export class CreateArticles extends Component {
 
 const mapStateToProps = ({
   imageUploadReducer: { status: imageUploadStatus },
-  publishArticleReducer: { status, publishedArticle },
+  updateArticleReducer: { status, updatedArticle },
 }) => ({
   status,
-  publishedArticle,
+  updatedArticle,
   imageUploadStatus,
 });
 
-export default connect(mapStateToProps, { publishArticle })(CreateArticles);
+export default connect(mapStateToProps, { updateArticle })(UpdateArticles);

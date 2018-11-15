@@ -31,10 +31,8 @@ const publishArticle = (articlePayload) => async (dispatch) => {
     dispatch(publishArticleLoading());
     const request = await axiosInstance.post('/articles', articlePayload);
     dispatch(publishArticleSuccess(request.data));
-    return true;
   } catch (error) {
     dispatch(publishArticleError(error));
-    return false;
   }
 };
 

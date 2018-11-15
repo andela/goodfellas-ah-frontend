@@ -7,6 +7,7 @@ class ImageUploader extends Component {
   handleChange = async (e) => {
     const { imageUploaded } = this.props;
     const file = e.target.files;
+    // eslint-disable-next-line react/destructuring-assignment
     const url = await this.props.imageUpload(file);
     imageUploaded(url);
   }

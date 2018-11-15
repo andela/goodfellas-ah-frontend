@@ -7,7 +7,7 @@ describe('publishArticle actionCreator test-suite', () => {
   afterEach(() => moxios.uninstall());
   it(`dispatches PUBLISH_ARTICLE_LOADING, PUBLISH_ARTICLE_SUCCESS
   upon successful server response`, async () => {
-    moxios.stubRequest('http://127.0.0.1:5000/api/articles', {
+    moxios.stubRequest('http://127.0.0.1:4000/api/articles', {
       status: 201,
       responseText: publishArticleMockData,
     });
