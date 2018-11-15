@@ -37,21 +37,15 @@
 } 
 
 .single-page .side-button .like-count{
-    width: 17px;
-    height: 17px;
-    border-radius: 4px;
-    background-color: red;
-    color: #fff;
+    color: #00000080;
     font-size: 12px;
-    padding-left: 4px;
-    margin-top: 45px;
-    margin-left: 33px;
-    position: relative;
+    margin-top: 25px;
+    text-align: center;
 } 
 
 .single-page .side-button .love{
     margin-left: -5px;
-    margin-top: -14px;
+    margin-top: -15px;
     max-width: 70px;
     cursor: pointer;
 } 
@@ -142,6 +136,7 @@
     text-transform: uppercase;
     font-family: Roboto;
     font-size: 31px;
+    min-height: 90px;
     font-weight: bold;
     color: #564e58;
     padding-top: 0;
@@ -335,14 +330,11 @@
     } 
     
     .single-page .side-button .like-count{
-        width: 22px;
-        height: 22px;
+        margin-top: 25px;
         border-radius: 6px;
-        background-color: red;
-        color: #fff;
+        color: #00000080;
         font-size: 14px;
-        padding-left: 6px;
-        margin-left: 38px;
+        text-align: center;
     } 
     
     .single-page .side-button .love{
@@ -392,6 +384,7 @@
 
     .single-page .article-header .article-title{
         font-size: 25px;
+        min-height: 75px;
     }
 
     .single-page .author-image{
@@ -436,6 +429,7 @@
     .single-page .article-header .article-title{
         font-size: 16px;
         width: 120%;
+        min-height: 60px;
     }
 
     .single-page .author-image{
@@ -466,7 +460,7 @@
         width: 45px;
         height: 60px;
         padding-top: 0px;
-        margin-top: -300px;
+        margin-top: -350px;
         border-radius: 50px;
         margin-right: -15px;
     }

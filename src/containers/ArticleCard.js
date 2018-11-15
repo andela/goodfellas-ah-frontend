@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import getArticles from '../actions/articleActions';
+import { getArticles } from '../actions/articleActions';
 import Loading from '../components/shared/Loading';
 
 export class Card extends Component {

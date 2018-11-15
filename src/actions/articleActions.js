@@ -18,4 +18,18 @@ export const getArticles = () => async (dispatch) => {
   }
 };
 
-export default getArticles;
+
+export const getAnArticle = (slug) => async (dispatch) => {
+  try {
+    const response = await axios.get(`${apiUrl}/api/articles/${slug}`);
+    dispatch({
+      type: types.GET_AN_ARTICLE,
+      payload: response.data.article,
+    });
+  } catch (error) {
+    dispatch({
+      type: types.GET_AN_ARTICLE_ERROR,
+      payload: error.response.data.message || error.response.data.error,
+    });
+  }
+};
