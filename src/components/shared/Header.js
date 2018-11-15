@@ -30,7 +30,7 @@ export class Header extends Component {
   render() {
     const { auth } = this.props;
     const { parentComponent } = this.props;
-    const { signout: signoutUser, profileNavigation: switchView, profile, } = this.props;
+    const { signout: signoutUser, profileNavigation: switchView, profile } = this.props;
     return (
       <header>
         <nav className="navbar" ref="navbarTitle">
