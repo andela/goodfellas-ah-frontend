@@ -15,6 +15,8 @@ exports[`Signup UI render features container should render as expected 1`] = `
   >
     <Connect(SignupForm)>
       <SignupForm
+        clearSigninError={[Function]}
+        message=""
         signup={[Function]}
       >
         <form
@@ -25,10 +27,28 @@ exports[`Signup UI render features container should render as expected 1`] = `
             className="error-field"
           />
           <AuthInput
-            error={Object {}}
+            error={
+              Object {
+                "confirmPassword": "Please confirm your password.",
+                "email": "Please enter a valid email.",
+                "firstname": "Please enter your first name",
+                "lastname": "Please enter your last name",
+                "password": "Please enter a valid password.",
+                "status": true,
+              }
+            }
             handleChange={[Function]}
             name="firstname"
             placeholder="Firstname"
+            touched={
+              Object {
+                "confirmPassword": false,
+                "email": false,
+                "firstname": false,
+                "lastname": false,
+                "password": false,
+              }
+            }
             value=""
           >
             <div
@@ -54,10 +74,28 @@ exports[`Signup UI render features container should render as expected 1`] = `
             </div>
           </AuthInput>
           <AuthInput
-            error={Object {}}
+            error={
+              Object {
+                "confirmPassword": "Please confirm your password.",
+                "email": "Please enter a valid email.",
+                "firstname": "Please enter your first name",
+                "lastname": "Please enter your last name",
+                "password": "Please enter a valid password.",
+                "status": true,
+              }
+            }
             handleChange={[Function]}
             name="lastname"
             placeholder="Lastname"
+            touched={
+              Object {
+                "confirmPassword": false,
+                "email": false,
+                "firstname": false,
+                "lastname": false,
+                "password": false,
+              }
+            }
             value=""
           >
             <div
@@ -83,10 +121,28 @@ exports[`Signup UI render features container should render as expected 1`] = `
             </div>
           </AuthInput>
           <AuthInput
-            error={Object {}}
+            error={
+              Object {
+                "confirmPassword": "Please confirm your password.",
+                "email": "Please enter a valid email.",
+                "firstname": "Please enter your first name",
+                "lastname": "Please enter your last name",
+                "password": "Please enter a valid password.",
+                "status": true,
+              }
+            }
             handleChange={[Function]}
             name="email"
             placeholder="E-mail"
+            touched={
+              Object {
+                "confirmPassword": false,
+                "email": false,
+                "firstname": false,
+                "lastname": false,
+                "password": false,
+              }
+            }
             value=""
           >
             <div
@@ -112,10 +168,28 @@ exports[`Signup UI render features container should render as expected 1`] = `
             </div>
           </AuthInput>
           <AuthInput
-            error={Object {}}
+            error={
+              Object {
+                "confirmPassword": "Please confirm your password.",
+                "email": "Please enter a valid email.",
+                "firstname": "Please enter your first name",
+                "lastname": "Please enter your last name",
+                "password": "Please enter a valid password.",
+                "status": true,
+              }
+            }
             handleChange={[Function]}
             name="password"
             placeholder="Password"
+            touched={
+              Object {
+                "confirmPassword": false,
+                "email": false,
+                "firstname": false,
+                "lastname": false,
+                "password": false,
+              }
+            }
             type="password"
             value=""
           >
@@ -142,10 +216,28 @@ exports[`Signup UI render features container should render as expected 1`] = `
             </div>
           </AuthInput>
           <AuthInput
-            error={Object {}}
+            error={
+              Object {
+                "confirmPassword": "Please confirm your password.",
+                "email": "Please enter a valid email.",
+                "firstname": "Please enter your first name",
+                "lastname": "Please enter your last name",
+                "password": "Please enter a valid password.",
+                "status": true,
+              }
+            }
             handleChange={[Function]}
             name="confirmPassword"
             placeholder="Confirm Password"
+            touched={
+              Object {
+                "confirmPassword": false,
+                "email": false,
+                "firstname": false,
+                "lastname": false,
+                "password": false,
+              }
+            }
             type="password"
             value=""
           >

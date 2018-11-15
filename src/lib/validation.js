@@ -5,10 +5,10 @@ const validateAuth = (fields, fieldNames) => {
     if (!fields[field] || fields[field].trim() === '') {
       switch (field) {
         case 'firstname':
-          error[field] = 'What is your first name?';
+          error[field] = 'Please enter your first name';
           break;
         case 'lastname':
-          error[field] = 'What is your last name?';
+          error[field] = 'Please enter your last name';
           break;
         case 'confirmPassword':
           error[field] = 'Please confirm your password.';
@@ -33,7 +33,7 @@ const validateAuth = (fields, fieldNames) => {
   const alphaNumberic = /((^[0-9]+[a-z]+)|(^[a-z]+[0-9]+))+[0-9a-z]+$/i;
   if (fields.password) {
     if (fields.password.length < 5 && !alphaNumberic.test(fields.password.trim())) {
-      error.password = 'Your password must be an alphanumberic characters greater than 4.';
+      error.password = 'Your password must be more that 4 characters.';
       error.status = true;
     }
   }

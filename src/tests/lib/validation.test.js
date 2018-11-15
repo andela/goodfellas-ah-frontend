@@ -26,7 +26,7 @@ describe('auth validation', () => {
     };
     const fieldNames = ['password', 'email'];
     const result = validateAuth(fields, fieldNames);
-    expect(result).toEqual({ status: true, password: 'Your password must be an alphanumberic characters greater than 4.' });
+    expect(result).toEqual({ status: true, password: 'Your password must be more that 4 characters.' });
   });
   it('should error on non-alphanumeric password', () => {
     const fields = {
