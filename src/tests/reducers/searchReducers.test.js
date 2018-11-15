@@ -1,14 +1,6 @@
-import React from 'react';
-import { mount } from 'enzyme';
-import { MemoryRouter } from 'react-router-dom';
-import toJson from 'enzyme-to-json';
-import Search, { SearchArticlesContainer } from '../../containers/SearchArticles';
-import Root from '../../root';
-
-let wrapper;
-// let wrapped;
-let searchMount;
-// let mockGetArticles;
+import articleReducer from '../../reducers/articleReducer';
+import * as types from '../../actions/actionTypes';
+import initialState from '../../reducers/initialState';
 
 const articles = {
   articles: {
@@ -101,68 +93,25 @@ const articles = {
     },
   },
 };
-beforeEach(() => {
-  wrapper = mount(
-    <Root>
-      <MemoryRouter initialEntries={[{ key: 'testkey' }]}>
-        <Search />
-      </MemoryRouter>
-    </Root>,
-  );
 
-  searchMount = mount(
-    <SearchArticlesContainer
-      searchResults={articles.articles.articles}
-      searchError={articles.error}
-    />,
-  );
-});
-
-
-afterEach(() => wrapper.unmount());
-
-describe('Search UI', () => {
-  describe('render features', () => {
-    test('component should render as expected', () => {
-      const tree = toJson(wrapper);
-      expect(tree).toMatchSnapshot();
-    });
+describe('search reducer', () => {
+  it('should return the initial state', () => {
+    expect(articleReducer(undefined, {})).toEqual(initialState);
   });
-});
-
-
-describe('Search Functionality', () => {
-  it('should fail to find articles', () => {
-    searchMount.setState({
-      articleResults: [articles.articles.searchResults],
-      errorResults: [],
-    });
-    const inst = searchMount.instance();
-    expect(inst).toBeInstanceOf(SearchArticlesContainer);
-    expect(inst).not.toBeNull();
+  it('should handle SEARCH', () => {
+    expect(
+      articleReducer([], {
+        type: types.SEARCH,
+        payload: articles.articles.searchResults,
+      }),
+    ).toEqual({ searchResults: articles.articles.searchResults });
   });
-
-  it('should find articles', () => {
-    searchMount.setState({
-      articleResults: [articles.articles.searchResults],
-      errorResults: [articles.articles.searchError],
-    });
-    const inst = searchMount.instance();
-    expect(inst).toBeInstanceOf(SearchArticlesContainer);
-    expect(inst).not.toBeNull();
-  });
-
-  it('should trigger ComponentWillReceiveProps articles', () => {
-    searchMount.setProps({
-      searchResults: [articles.articles.searchResults],
-      searchError: [articles.articles.searchError],
-    });
-  });
-
-  it('should trigger ComponentWillReceiveProps articles', () => {
-    searchMount.setProps({
-      searchResults: [articles.articles.searchResults],
-      searchError: [undefined],
-    });
+  it('should handle SEARCH_ERROR', () => {
+    expect(
+      articleReducer([], {
+        type: types.SEARCH_ERROR,
+        payload: articles.articles.searchError,
+      }),
+    ).toEqual({ searchError: articles.articles.searchError });
   });
 });

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Search Card UI render features component should render as expected 1`] = `
+exports[`Search UI render features component should render as expected 1`] = `
 <_default>
   <Provider
     store={
