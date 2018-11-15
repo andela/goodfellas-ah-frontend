@@ -45,7 +45,6 @@ export default {
       return apiCall('put', route);
     },
     post(route) {
-      console.log('I got here', route);
       return apiCall('post', route);
     },
   },

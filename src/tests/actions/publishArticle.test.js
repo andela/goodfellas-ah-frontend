@@ -1,4 +1,4 @@
-import publishArticleMockData from '../__mocks__/publishArticleMockData.json';
+import { postArticle } from '../mock/articleData';
 import publishArticle from '../../actions/publishArticle';
 
 describe('publishArticle actionCreator test-suite', () => {
@@ -10,12 +10,12 @@ describe('publishArticle actionCreator test-suite', () => {
       },
       {
         type: 'PUBLISH_ARTICLE_SUCCESS',
-        payload: publishArticleMockData,
+        payload: postArticle.data,
       },
     ];
 
     const store = mockStore({});
-    await store.dispatch(publishArticle(publishArticleMockData.data));
+    await store.dispatch(publishArticle(postArticle.data));
     expect(store.getActions()).toEqual(expectedActions);
   });
 });

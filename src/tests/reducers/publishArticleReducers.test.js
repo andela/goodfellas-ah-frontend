@@ -1,15 +1,15 @@
 import publishArticleReducer from '../../reducers/publishArticleReducer';
 import { createArticleInitialState } from '../__mocks__/articleMockData.json';
-import publishArticleMockData from '../__mocks__/publishArticleMockData.json';
+import { postArticle } from '../mock/articleData';
 
 describe('publish article reducer', () => {
   it('sets status key success to true upon PUBLISH_ARTICLE_SUCCESS type', () => {
     const action = {
       type: 'PUBLISH_ARTICLE_SUCCESS',
-      payload: publishArticleMockData,
+      payload: postArticle.data,
     };
     expect(publishArticleReducer(createArticleInitialState, action)).toEqual({
-      publishedArticle: publishArticleMockData,
+      publishedArticle: postArticle.data,
       status: {
         success: true,
         error: false,
