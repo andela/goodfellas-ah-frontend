@@ -8,6 +8,7 @@ import ImageUploader from '../components/articles/imageUpload';
 import publishArticle from '../actions/publishArticle';
 import '../styles/views/createArticles.scss';
 import { Loader } from '../components/shared/Loading';
+import Body from '../components/layout/DefaultLayout';
 
 export class CreateArticles extends Component {
   state = {
@@ -55,57 +56,59 @@ export class CreateArticles extends Component {
     const { imageUploadStatus } = this.props;
     const { title, body } = this.state;
     return (
-      <div className="article-body">
-        <div className="articles-card">
-          <div className="article-buttons">
-            <button className="btn article-whitebutton" type="submit" onClick={this.handleSubmit}>
+      <Body>
+        <div className="article-body">
+          <div className="articles-card">
+            <div className="article-buttons">
+              <button className="btn article-whitebutton" type="submit" onClick={this.handleSubmit}>
             Publish
-            </button>
-            <button className="btn article-whitebutton" type="submit" onClick={(e) => this.handleSubmit(e, false)}>
+              </button>
+              <button className="btn article-whitebutton" type="submit" onClick={(e) => this.handleSubmit(e, false)}>
             Save for later
-            </button>
-          </div>
-          <ImageUploader imageUploaded={this.imageUploaded} />
+              </button>
+            </div>
+            <ImageUploader imageUploaded={this.imageUploaded} />
 
-          <form>
-            <Editor
-              name="title"
-              id="title"
-              data-placeholder="Title"
-              text={title}
-              onChange={(e) => handleEditorChange(e, 'title')}
-              options={{
-                toolbar: {
-                  buttons: ['bold', 'italic', 'underline', 'strikethrough', 'quote', 'anchor', 'h2', 'h3', 'orderedlist'],
-                },
-              }}
-            />
-            {imageUploadStatus.loading ? <Loader /> : (
+            <form>
               <Editor
-                name="body"
-                className="editable"
-                data-placeholder="What would you like to talk about?"
-                text={body}
-                onChange={(e) => handleEditorChange(e, 'body')}
+                name="title"
+                id="title"
+                data-placeholder="Title"
+                text={title}
+                onChange={(e) => handleEditorChange(e, 'title')}
                 options={{
                   toolbar: {
                     buttons: ['bold', 'italic', 'underline', 'strikethrough', 'quote', 'anchor', 'h2', 'h3', 'orderedlist'],
                   },
                 }}
               />
-            )}
-          </form>
+              {imageUploadStatus.loading ? <Loader /> : (
+                <Editor
+                  name="body"
+                  className="editable"
+                  data-placeholder="What would you like to talk about?"
+                  text={body}
+                  onChange={(e) => handleEditorChange(e, 'body')}
+                  options={{
+                    toolbar: {
+                      buttons: ['bold', 'italic', 'underline', 'strikethrough', 'quote', 'anchor', 'h2', 'h3', 'orderedlist'],
+                    },
+                  }}
+                />
+              )}
+            </form>
 
-        </div>
-        <div className="article-fixed-buttons">
-          <button className="btn article-fixed-whitebutton" type="submit" onClick={(e) => this.handleSubmit(e, false)}>
+          </div>
+          <div className="article-fixed-buttons">
+            <button className="btn article-fixed-whitebutton" type="submit" onClick={(e) => this.handleSubmit(e, false)}>
             Save for later
-          </button>
-          <button className="btn article-fixed-whitebutton" type="submit" onClick={this.handleSubmit}>
+            </button>
+            <button className="btn article-fixed-whitebutton" type="submit" onClick={this.handleSubmit}>
             Publish
-          </button>
+            </button>
+          </div>
         </div>
-      </div>
+      </Body>
     );
   }
 }

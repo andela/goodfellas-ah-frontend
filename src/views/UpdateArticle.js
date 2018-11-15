@@ -8,6 +8,7 @@ import ImageUploader from '../components/articles/imageUpload';
 import updateArticle from '../actions/updateArticle';
 import '../styles/views/createArticles.scss';
 import { Loader } from '../components/shared/Loading';
+import Body from '../components/layout/DefaultLayout';
 
 export class UpdateArticles extends Component {
   state = {
@@ -54,42 +55,25 @@ export class UpdateArticles extends Component {
     const { imageUploadStatus } = this.props;
     const { title, body } = this.state;
     return (
-      <div className="article-body">
-        <div className="articles-card">
-          <div className="article-buttons">
-            <button className="btn article-whitebutton" type="submit" onClick={this.handleSubmit}>
+      <Body>
+        <div className="article-body">
+          <div className="articles-card">
+            <div className="article-buttons">
+              <button className="btn article-whitebutton" type="submit" onClick={this.handleSubmit}>
             Update
-            </button>
-          </div>
-          <ImageUploader imageUploaded={this.imageUploaded} />
+              </button>
+            </div>
+            <ImageUploader imageUploaded={this.imageUploaded} />
 
-          <form>
-            <Editor
-              name="title"
-              id="title"
-              data-placeholder="Title"
-              text={title}
-              onChange={(e) => handleEditorChange(e, 'title')}
-              options={{
-                toolbar: {
-                  static: true,
-                  sticky: false,
-                  buttons: ['bold', 'italic', 'underline', 'strikethrough', 'quote', 'anchor', 'h2', 'h3', 'orderedlist'],
-                  updateOnEmptySelection: true,
-                },
-              }}
-            />
-            {imageUploadStatus.loading ? <Loader /> : (
+            <form>
               <Editor
-                name="body"
-                className="editable"
-                data-placeholder="What would you like to talk about?"
-                text={body}
-                onChange={(e) => handleEditorChange(e, 'body')}
+                name="title"
+                id="title"
+                data-placeholder="Title"
+                text={title}
+                onChange={(e) => handleEditorChange(e, 'title')}
                 options={{
                   toolbar: {
-                    activeButtonClass: 'medium-editor-button-active',
-                    allowMultiParagraphSelection: true,
                     static: true,
                     sticky: false,
                     buttons: ['bold', 'italic', 'underline', 'strikethrough', 'quote', 'anchor', 'h2', 'h3', 'orderedlist'],
@@ -97,16 +81,35 @@ export class UpdateArticles extends Component {
                   },
                 }}
               />
-            )}
-          </form>
+              {imageUploadStatus.loading ? <Loader /> : (
+                <Editor
+                  name="body"
+                  className="editable"
+                  data-placeholder="What would you like to talk about?"
+                  text={body}
+                  onChange={(e) => handleEditorChange(e, 'body')}
+                  options={{
+                    toolbar: {
+                      activeButtonClass: 'medium-editor-button-active',
+                      allowMultiParagraphSelection: true,
+                      static: true,
+                      sticky: false,
+                      buttons: ['bold', 'italic', 'underline', 'strikethrough', 'quote', 'anchor', 'h2', 'h3', 'orderedlist'],
+                      updateOnEmptySelection: true,
+                    },
+                  }}
+                />
+              )}
+            </form>
 
-        </div>
-        <div className="article-fixed-buttons">
-          <button className="btn article-fixed-whitebutton" type="submit" onClick={this.handleSubmit}>
+          </div>
+          <div className="article-fixed-buttons">
+            <button className="btn article-fixed-whitebutton" type="submit" onClick={this.handleSubmit}>
             Update
-          </button>
+            </button>
+          </div>
         </div>
-      </div>
+      </Body>
     );
   }
 }

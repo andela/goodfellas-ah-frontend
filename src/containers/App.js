@@ -5,13 +5,13 @@ import authenticate from './hoc/authenticate';
 import LandingPage from '../views/LandingPage';
 import Signin from '../views/SigninPage';
 import Signup from '../views/SignupPage';
+import SingleArticle from '../views/SingleArticlePage';
 import EditProfile from '../views/ProfileEditPage';
 import Profile from '../views/ProfilePage';
 import SocialAuthPage from '../views/SocialAuthPage';
 import ForgotPasswordPage from '../views/ForgotPasswordPage';
 import ResetPasswordPage from '../views/ResetPasswordPage';
 import CreateArticle from '../views/CreateArticles';
-import Header from '../components/shared/Header';
 import GetAllArticles from '../views/AllArticles';
 import UpdateArticle from '../views/UpdateArticle';
 
@@ -33,10 +33,10 @@ const Auth = () => (
 
 const Articles = () => (
   <div>
-    <Header />
     <Route exact path="/articles/create" component={authenticate(CreateArticle)} />
     <Route path="/articles/home" component={GetAllArticles} />
     <Route path="/articles/edit/:slug" component={UpdateArticle} />
+    <Route path="/articles/:slug" component={SingleArticle} />
   </div>
 );
 
