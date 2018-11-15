@@ -27,9 +27,7 @@ export const search = (searchValues, callback) => async (dispatch) => {
       type: types.SEARCH,
       payload: response.data,
     });
-    if (response) {
-      callback();
-    }
+    callback();
   } catch (error) {
     dispatch({
       type: types.SEARCH_ERROR,

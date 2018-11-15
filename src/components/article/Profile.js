@@ -29,7 +29,7 @@ export default (props) => {
             <use xlinkHref={`${icons}#dislike`} />
           </svg>
         </p>
-        <p className="comments">{`${article.comments.length} comments`}</p>
+        <p className="comments">{`${article.comments.length || 0} comments`}</p>
         <p className="edit">Edit Article</p>
       </div>
     </div>

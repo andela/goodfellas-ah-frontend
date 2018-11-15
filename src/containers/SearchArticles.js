@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import LargeLoader from '../components/shared/LargeLoader';
+import Article from '../components/article/Profile';
 
 class SearchArticlesContainer extends Component {
   state = {
@@ -9,44 +10,44 @@ class SearchArticlesContainer extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
+    const searchResultState = [];
     let searchErrorState = [];
     if (!nextProps.searchError) {
       searchErrorState = [];
     } else {
-      searchErrorState = nextProps.searchError;
+      searchErrorState.push(nextProps.searchError);
     }
 
+    searchResultState.push(nextProps.searchResults);
+
     this.setState({
-      articleResults: nextProps.searchResults,
+      articleResults: [...searchResultState],
       errorResults: searchErrorState,
     });
   }
 
-  searchResultMarkup = (error, articles) => {
-    console.log(articles, error);
+  displaySearchResults = () => {
+    const { articleResults, errorResults } = this.state;
+    const articlesReceived = articleResults[0].articles;
     return (
       <div className="search-results">
-        {error.length > 0
+        {errorResults.length === 0
           ? (
-            <h1>Error</h1>
+            <div>
+              <h1>Search results</h1>
+              <div className="search-results-articles">
+                {articlesReceived.map((article) => <Article key={article.id} article={article} author={`${article.user.firstname} ${article.user.lastname}`} authorImage={article.user.profile.image} />)}
+              </div>
+            </div>
           )
           : (
-            <h1>Result</h1>
+            <div>
+              <h1>No articles found</h1>
+            </div>
           )
         }
       </div>
     );
-  }
-
-  displaySearchResults = () => {
-    const { articleResults, errorResults } = this.state;
-    console.log(articleResults, errorResults);
-    this.searchResultMarkup(errorResults, articleResults);
-    this.setState({
-      articleResults: [],
-      errorResults: [],
-    });
   }
 
   render() {

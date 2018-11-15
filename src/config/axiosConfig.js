@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'http://127.0.0.1:4000/api';
+const baseURL = `${process.env.REACT_APP_API_URL}/api`;
 
 export default class API {
   constructor(token) {

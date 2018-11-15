@@ -92,11 +92,16 @@ test('Header functionality', () => {
 
 it('should click more articles button', () => {
   mountHeader.find('.dropdown-click').simulate('click');
-  mountHeader.find('.header-user-search > span').simulate('click');
-  mountHeader.find('.header-user-search > span').simulate('click');
+  mountHeader.find('.search-click').simulate('click');
+  mountHeader.find('.search-click').simulate('click');
 });
 
-it('should click more articles button', () => {
+it('should toggle navbar', () => {
   authFalseHeader.find('.navbar-toggler').simulate('click');
   authFalseHeader.find('.navbar-toggler').simulate('click');
+});
+
+it('should toggle searchbar', () => {
+  mountHeader.find('.searchbar-toggle').simulate('click');
+  mountHeader.find('.searchbar-toggle').simulate('click');
 });

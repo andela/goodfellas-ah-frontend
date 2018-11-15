@@ -34,6 +34,8 @@
   }
   &_img {
     grid-area: article-img;
+    max-height: 400px;
+    justify-self: center;
   }
   &_description {
     grid-area: description;

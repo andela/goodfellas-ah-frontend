@@ -20,9 +20,20 @@ export class Header extends Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    e.target.value = '';
+    this.refs.searchbar.value = '';
+    this.refs.searchKeyword.value = '';
     const { search: searchArticles, history } = this.props;
+
+    if (this.refs.searchParameters.classList.value === 'search-parameters search-parameters-display') {
+      this.displaySearchbar();
+    }
     searchArticles(this.state, history.push('/articles/search'));
+
+    this.setState({
+      Title: false,
+      Author: false,
+      Tag: false,
+    });
   }
 
   handleChange = (e) => {
@@ -52,17 +63,21 @@ export class Header extends Component {
   }
 
   openSearchbar = () => {
-    if (this.refs.searchbar.className === 'searchbar') {
+    if (this.refs.searchbar.className === 'searchbar' && this.refs.searchClick.className === 'search-click' && this.refs.searchDivider.className === 'search-divider') {
       this.refs.searchbar.className = 'searchbar-responsive';
+      this.refs.searchClick.className = 'search-click-responsive';
+      this.refs.searchDivider.className = 'search-divider-responsive';
     } else {
       this.refs.searchbar.className = 'searchbar';
+      this.refs.searchClick.className = 'search-click';
+      this.refs.searchDivider.className = 'search-divider';
     }
   }
 
   render() {
     const { auth } = this.props;
     const { parentComponent } = this.props;
-    const { signout: signoutUser, profileNavigation: switchView, profile, } = this.props;
+    const { signout: signoutUser, profileNavigation: switchView, profile } = this.props;
     return (
       <header>
         <nav className="navbar" ref="navbarTitle">
@@ -84,15 +99,20 @@ export class Header extends Component {
                 <form onSubmit={this.handleSubmit}>
                   <div className="header-user-search">
                     <input onChange={this.handleChange} id="Title" placeholder="Search for articles" className="searchbar" ref="searchbar" type="search" />
-                    <span onClick={this.displaySearchbar}>
+                    <span ref="searchClick" className="search-click" onClick={this.displaySearchbar}>
                       <img
                         className="search-dropdown"
                         src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541772567/Authors%20Haven/arrow_grey.png"
                         alt=""
                       />
                     </span>
-                    <span />
-                    <span onClick={this.openSearchbar}><img
+                    <span ref="searchDivider" className="search-divider" />
+                    <span className="searchbar-toggle" onClick={this.handleSubmit}><img
+                      src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png"
+                      alt=""
+                    />
+                    </span>
+                    <span className="searchbar-toggle-mobile" onClick={this.openSearchbar}><img
                       src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png"
                       alt=""
                     />
@@ -100,7 +120,6 @@ export class Header extends Component {
                     <div ref="searchParameters" className="search-parameters">
                         Filter by
                       <select ref="searchSelection">
-                        <option>Title</option>
                         <option>Author</option>
                         <option>Tag</option>
                       </select>
@@ -149,10 +168,44 @@ export class Header extends Component {
               </div>
             )
             : (
-              <div className="navbar-main-wrapper">
+              <div className="navbar-unauthorized">
                 {parentComponent === 'landingpage'
                   ? (
-                    <div>
+                    <div className="navbar-main-wrapper">
+                      <div>
+                        <form onSubmit={this.handleSubmit}>
+                          <div className="header-user-search-unauth">
+                            <input onChange={this.handleChange} id="Title" placeholder="Search for articles" className="searchbar" ref="searchbar" type="search" />
+                            <span ref="searchClick" className="search-click" onClick={this.displaySearchbar}>
+                              <img
+                                className="search-dropdown"
+                                src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541772567/Authors%20Haven/arrow_grey.png"
+                                alt=""
+                              />
+                            </span>
+                            <span ref="searchDivider" className="search-divider" />
+                            <span className="searchbar-toggle" onClick={this.handleSubmit}><img
+                              src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png"
+                              alt=""
+                            />
+                            </span>
+                            <span className="searchbar-toggle-mobile" onClick={this.openSearchbar}><img
+                              src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png"
+                              alt=""
+                            />
+                            </span>
+                            <div ref="searchParameters" className="search-parameters">
+                              Filter by
+                              <select ref="searchSelection">
+                                <option>Author</option>
+                                <option>Tag</option>
+                              </select>
+                              <input onChange={this.handleChange} ref="searchKeyword" id="searchKeyword" type="text" placeholder="Enter keyword" />
+                              <Button className="btn hero-section-greenbutton" title="Search" type="Submit" />
+                            </div>
+                          </div>
+                        </form>
+                      </div>
                       <button
                         onClick={this.navbarToggle}
                         className="navbar-toggler"
@@ -170,12 +223,6 @@ export class Header extends Component {
                       </button>
                       <div className="navbar-wrapper" ref="navbarToggler">
                         <ul className="navbar-element">
-                          <Link className="nav-link" to="/">Explore</Link>
-                          <Link className="nav-link" to="/">About Us</Link>
-                          <Link className="nav-link" to="/">Contact</Link>
-                        </ul>
-
-                        <ul className="navbar-element">
                           <Link className="nav-item nav-link" to="/auth/signin">Sign In</Link>
                           <p className="link-border">|</p>
                           <Link className=" nav-item nav-link" to="/auth/signup">Sign Up</Link>
@@ -184,7 +231,41 @@ export class Header extends Component {
                     </div>
                   )
                   : (
-                    <div>
+                    <div className="navbar-main-wrapper">
+                      <div>
+                        <form onSubmit={this.handleSubmit}>
+                          <div className="header-user-search-unauth">
+                            <input onChange={this.handleChange} id="Title" placeholder="Search for articles" className="searchbar" ref="searchbar" type="search" />
+                            <span ref="searchClick" className="search-click" onClick={this.displaySearchbar}>
+                              <img
+                                className="search-dropdown"
+                                src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541772567/Authors%20Haven/arrow_grey.png"
+                                alt=""
+                              />
+                            </span>
+                            <span ref="searchDivider" className="search-divider" />
+                            <span className="searchbar-toggle" onClick={this.handleSubmit}><img
+                              src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png"
+                              alt=""
+                            />
+                            </span>
+                            <span className="searchbar-toggle-mobile" onClick={this.openSearchbar}><img
+                              src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png"
+                              alt=""
+                            />
+                            </span>
+                            <div ref="searchParameters" className="search-parameters">
+                              Filter by
+                              <select ref="searchSelection">
+                                <option>Author</option>
+                                <option>Tag</option>
+                              </select>
+                              <input onChange={this.handleChange} ref="searchKeyword" id="searchKeyword" type="text" placeholder="Enter keyword" />
+                              <Button className="btn hero-section-greenbutton" title="Search" type="Submit" />
+                            </div>
+                          </div>
+                        </form>
+                      </div>
                       <button
                         onClick={this.navbarToggle}
                         className="navbar-toggler"
@@ -201,12 +282,6 @@ export class Header extends Component {
                         </span>
                       </button>
                       <div className="navbar-wrapper" ref="navbarToggler">
-                        <ul className="navbar-element">
-                          <Link className="nav-link header-dark" to="/">Explore</Link>
-                          <Link className="nav-link header-dark" to="/">About Us</Link>
-                          <Link className="nav-link header-dark" to="/">Contact</Link>
-                        </ul>
-
                         <ul className="navbar-element">
                           <Link className="nav-item nav-link header-dark" to="/auth/signin">Sign In</Link>
                           <p className="link-border header-dark">|</p>

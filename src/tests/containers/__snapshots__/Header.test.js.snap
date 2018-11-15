@@ -59,6 +59,9 @@ exports[`Loading render container should render as expected 1`] = `
             auth={null}
             profile={null}
             profileNavigation={[Function]}
+            search={[Function]}
+            searchError={Array []}
+            searchResults={Array []}
             signout={[Function]}
           >
             <header>
@@ -83,9 +86,90 @@ exports[`Loading render container should render as expected 1`] = `
                   </a>
                 </Link>
                 <div
-                  className="navbar-main-wrapper"
+                  className="navbar-unauthorized"
                 >
-                  <div>
+                  <div
+                    className="navbar-main-wrapper"
+                  >
+                    <div>
+                      <form
+                        onSubmit={[Function]}
+                      >
+                        <div
+                          className="header-user-search-unauth"
+                        >
+                          <input
+                            className="searchbar"
+                            id="Title"
+                            onChange={[Function]}
+                            placeholder="Search for articles"
+                            type="search"
+                          />
+                          <span
+                            className="search-click"
+                            onClick={[Function]}
+                          >
+                            <img
+                              alt=""
+                              className="search-dropdown"
+                              src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541772567/Authors%20Haven/arrow_grey.png"
+                            />
+                          </span>
+                          <span
+                            className="search-divider"
+                          />
+                          <span
+                            className="searchbar-toggle"
+                            onClick={[Function]}
+                          >
+                            <img
+                              alt=""
+                              src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png"
+                            />
+                          </span>
+                          <span
+                            className="searchbar-toggle-mobile"
+                            onClick={[Function]}
+                          >
+                            <img
+                              alt=""
+                              src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png"
+                            />
+                          </span>
+                          <div
+                            className="search-parameters"
+                          >
+                            Filter by
+                            <select>
+                              <option>
+                                Author
+                              </option>
+                              <option>
+                                Tag
+                              </option>
+                            </select>
+                            <input
+                              id="searchKeyword"
+                              onChange={[Function]}
+                              placeholder="Enter keyword"
+                              type="text"
+                            />
+                            <Button
+                              className="btn hero-section-greenbutton"
+                              title="Search"
+                              type="Submit"
+                            >
+                              <button
+                                className="btn hero-section-greenbutton"
+                                type="Submit"
+                              >
+                                Search
+                              </button>
+                            </Button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
                     <button
                       className="navbar-toggler"
                       data-target="#navbarNav"
@@ -106,49 +190,6 @@ exports[`Loading render container should render as expected 1`] = `
                     <div
                       className="navbar-wrapper"
                     >
-                      <ul
-                        className="navbar-element"
-                      >
-                        <Link
-                          className="nav-link header-dark"
-                          replace={false}
-                          to="/"
-                        >
-                          <a
-                            className="nav-link header-dark"
-                            href="/"
-                            onClick={[Function]}
-                          >
-                            Explore
-                          </a>
-                        </Link>
-                        <Link
-                          className="nav-link header-dark"
-                          replace={false}
-                          to="/"
-                        >
-                          <a
-                            className="nav-link header-dark"
-                            href="/"
-                            onClick={[Function]}
-                          >
-                            About Us
-                          </a>
-                        </Link>
-                        <Link
-                          className="nav-link header-dark"
-                          replace={false}
-                          to="/"
-                        >
-                          <a
-                            className="nav-link header-dark"
-                            href="/"
-                            onClick={[Function]}
-                          >
-                            Contact
-                          </a>
-                        </Link>
-                      </ul>
                       <ul
                         className="navbar-element"
                       >

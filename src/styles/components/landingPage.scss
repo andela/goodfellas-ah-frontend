@@ -60,16 +60,6 @@ $faintblue: #F4F9FC;
         }
       }
     }
-    .hero-section-greenbutton{
-      color: white;
-      background-color: $maingreen;
-      cursor: pointer;
-    }
-    .hero-section-whitebutton{
-      color: $maingreen;
-      background-color: white;
-      cursor: pointer;
-    }
   }
   .big-hero-card{
     @media only screen and (max-width: 900px) {

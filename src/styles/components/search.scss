@@ -3,6 +3,16 @@
   font-family: "Antic";
   .search-results{
     display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 60vw;
     justify-content: center;
+    margin: auto;
+    .search-results-articles > div{
+      text-align: left;
+    }
+    @media only screen and (max-width: 500px) {
+      width: 95vw;
+    }
   }
 }

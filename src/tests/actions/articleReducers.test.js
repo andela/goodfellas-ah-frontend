@@ -122,7 +122,7 @@ describe('getPosts actions', () => {
 
     const expectedActions = [
       {
-        payload: { response: { data: undefined, error: 'Internal Server Error' }, status: 500 },
+        payload: { data: undefined, error: 'Internal Server Error' },
         type: 'GET_ARTICLES_ERROR',
       },
     ];
@@ -148,6 +148,8 @@ describe('Article Reducer', () => {
         articles: [],
         authenticated: '',
         error: [],
+        searchResults: [],
+        searchError: [],
         errorMessage: '',
         ownProfile: {},
         profile: {
@@ -168,6 +170,8 @@ describe('Article Reducer', () => {
         articles: [{ articles: 'new Articles' }],
         authenticated: '',
         error: [],
+        searchResults: [],
+        searchError: [],
         errorMessage: '',
         ownProfile: {},
         profile: {
@@ -188,6 +192,8 @@ describe('Article Reducer', () => {
         articles: [],
         authenticated: '',
         error: 'Error getting articles',
+        searchResults: [],
+        searchError: [],
         errorMessage: '',
         ownProfile: {},
         profile: {
