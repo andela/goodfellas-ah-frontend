@@ -3,8 +3,9 @@ import thunk from 'redux-thunk';
 import  moxios from 'moxios';
 import configureMockStore from 'redux-mock-store';
 import Adapter from 'enzyme-adapter-react-16';
+import API from './tests/mock/API';
 
-const middlewares = [thunk];
+const middlewares = [thunk.withExtraArgument(API)];
 const mockStore = configureMockStore(middlewares);
 
 global.mockStore = mockStore;

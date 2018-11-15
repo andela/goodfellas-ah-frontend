@@ -186,7 +186,7 @@ header {
         cursor: pointer;
       }
       .author-image {
-        height: 34px;
+        height: auto;
         width: 34px;
         border-radius: 50%;
         cursor: pointer;
@@ -196,7 +196,7 @@ header {
         padding: 6px 0 6px 5px;
         a{
           display: block;
-          color: #c4c4c4;
+          color: var(--gray);
           font-weight: 100;
           padding: 6px;
           &:hover{

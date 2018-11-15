@@ -1,23 +1,26 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import '../styles/styles.scss';
+import authenticate from './hoc/authenticate';
 import LandingPage from '../views/LandingPage';
-import Profile from '../views/ProfilePage';
 import Signin from '../views/SigninPage';
 import Signup from '../views/SignupPage';
+import EditProfile from '../views/ProfileEditPage';
+import Profile from '../views/ProfilePage';
 import SocialAuthPage from '../views/SocialAuthPage';
 import ForgotPasswordPage from '../views/ForgotPasswordPage';
 import ResetPasswordPage from '../views/ResetPasswordPage';
 import CreateArticle from '../views/CreateArticles';
 import Header from '../components/shared/Header';
-import authenticate from './hoc/authenticate';
 import GetAllArticles from '../views/AllArticles';
 import UpdateArticle from '../views/UpdateArticle';
 
 const User = () => (
-  <div>
-    <Route path="/user/profile" component={Profile} />
-  </div>
+  <Switch>
+    <Route exact path="/user/profile" component={Profile} />
+    <Route exact path="/user/profile/edit" component={EditProfile} />
+    <Route exact path="/user/profile/:userId" component={Profile} />
+  </Switch>
 );
 
 const Auth = () => (

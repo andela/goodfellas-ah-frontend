@@ -1,5 +1,3 @@
-import axiosInstance from '../config/axiosConfig';
-
 import {
   PUBLISH_ARTICLE_LOADING,
   PUBLISH_ARTICLE_SUCCESS,
@@ -26,10 +24,10 @@ const publishArticleSuccess = (payload) => (
   }
 );
 
-const publishArticle = (articlePayload) => async (dispatch) => {
+const publishArticle = (articlePayload) => async (dispatch, getState, { api }) => {
   try {
     dispatch(publishArticleLoading());
-    const request = await axiosInstance.post('/articles', articlePayload);
+    const request = await api.post('/articles', articlePayload);
     dispatch(publishArticleSuccess(request.data));
   } catch (error) {
     dispatch(publishArticleError(error));

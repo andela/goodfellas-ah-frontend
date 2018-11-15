@@ -140,12 +140,17 @@ describe('Article Reducer', () => {
         payload: '',
       };
       const initialState = {
+        articles: [],
         authenticated: '',
+        error: [],
         errorMessage: '',
+        ownProfile: {},
+        profile: {
+          articles: [], favorites: [], followers: [], following: [], loading: true, profile: {}, profileError: '', profileView: 'Following', user: {},
+        },
         successMessage: '',
         user: {},
-        articles: [],
-        error: [],
+        userId: null,
       };
       expect(articleReducer(undefined, action)).toEqual(initialState);
     });
@@ -155,12 +160,17 @@ describe('Article Reducer', () => {
     test('returns the correct state', () => {
       const action = { type: types.GET_ARTICLES, payload: [{ articles: 'new Articles' }] };
       const expectedState = {
+        articles: [{ articles: 'new Articles' }],
         authenticated: '',
+        error: [],
         errorMessage: '',
+        ownProfile: {},
+        profile: {
+          articles: [], favorites: [], followers: [], following: [], loading: true, profile: {}, profileError: '', profileView: 'Following', user: {},
+        },
         successMessage: '',
         user: {},
-        articles: [{ articles: 'new Articles' }],
-        error: [],
+        userId: null,
       };
       expect(articleReducer(undefined, action)).toEqual(expectedState);
     });
@@ -170,12 +180,17 @@ describe('Article Reducer', () => {
     test('returns the correct state', () => {
       const action = { type: types.GET_ARTICLES_ERROR, payload: 'Error getting articles' };
       const expectedState = {
+        articles: [],
         authenticated: '',
+        error: 'Error getting articles',
         errorMessage: '',
+        ownProfile: {},
+        profile: {
+          articles: [], favorites: [], followers: [], following: [], loading: true, profile: {}, profileError: '', profileView: 'Following', user: {},
+        },
         successMessage: '',
         user: {},
-        articles: [],
-        error: 'Error getting articles',
+        userId: null,
       };
       expect(articleReducer(undefined, action)).toEqual(expectedState);
     });

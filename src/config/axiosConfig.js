@@ -1,8 +1,19 @@
 import axios from 'axios';
 
-const axiosInstance = axios.create({
-  baseURL: 'http://127.0.0.1:4000/api/',
-  headers: { Authorization: localStorage.getItem('token') },
-});
+const baseURL = 'http://127.0.0.1:4000/api';
 
-export default axiosInstance;
+export default class API {
+  constructor(token) {
+    this.updateToken(token);
+    this.openRoutes = axios.create({
+      baseURL,
+    });
+  }
+
+  updateToken(token) {
+    this.api = axios.create({
+      baseURL,
+      headers: { Authorization: token },
+    });
+  }
+}

@@ -1,4 +1,3 @@
-import axiosInstance from '../config/axiosConfig';
 
 import {
   UPDATE_ARTICLE_LOADING,
@@ -25,10 +24,10 @@ const updateArticleSuccess = (payload) => (
     payload,
   }
 );
-const updateArticle = (articlePayload) => async (dispatch) => {
+const updateArticle = (articlePayload) => async (dispatch, getState, { api }) => {
   try {
     dispatch(updateArticleLoading());
-    const request = await axiosInstance.put('/articles/lesspgreateryo-yolesspgreater', articlePayload);
+    const request = await api.put('/articles/lesspgreateryo-yolesspgreater', articlePayload);
     dispatch(updateArticleSuccess(request.data));
   } catch (error) {
     dispatch(updateArticleError(error));
