@@ -7,6 +7,8 @@ export default (state = initialState, action) => {
       return { ...state, singleArticle: action.payload };
     case types.GET_AN_ARTICLE_ERROR:
       return { ...state, articleError: action.payload };
+    case types.ARTICLE_LOADING:
+      return { ...state, articleLoading: action.payload };
     default:
       return state;
   }

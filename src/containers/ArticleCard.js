@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import parser from 'react-html-parser';
 import { getArticles } from '../actions/articleActions';
 import Loading from '../components/shared/Loading';
 
@@ -71,9 +72,9 @@ export class Card extends Component {
           key={card.article.id}
         >
           <div className="hero-card-details col-sm-7">
-            <h6>{displayedTitle}</h6>
+            <h6>{parser(displayedTitle)}</h6>
             <p>
-              {displayedBody}
+              {parser(displayedBody)}
               ...
             </p>
             <div className="hero-card-author">

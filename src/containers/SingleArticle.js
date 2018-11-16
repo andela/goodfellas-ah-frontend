@@ -9,7 +9,7 @@ class Article extends Component {
   componentWillMount = () => {
     const { match, getAnArticle: getArticle } = this.props;
     const { slug } = match.params;
-    console.log(slug);
+
 
     if (slug) {
       getArticle(slug);
@@ -34,9 +34,9 @@ class Article extends Component {
 }
 
 
-const mapStateToProps = (state) => ({ 
+const mapStateToProps = (state) => ({
   error: state.singleArticle.articleError,
   article: state.singleArticle.singleArticle,
- });
+});
 
 export default connect(mapStateToProps, { getAnArticle })(Article);

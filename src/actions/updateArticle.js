@@ -24,10 +24,10 @@ const updateArticleSuccess = (payload) => (
     payload,
   }
 );
-const updateArticle = (articlePayload) => async (dispatch, getState, { api }) => {
+const updateArticle = (articlePayload, slug) => async (dispatch, getState, { api }) => {
   try {
     dispatch(updateArticleLoading());
-    const request = await api.put('/articles/lesspgreateryo-yolesspgreater', articlePayload);
+    const request = await api.put(`/articles/${slug}`, articlePayload);
     dispatch(updateArticleSuccess(request.data));
   } catch (error) {
     dispatch(updateArticleError(error));

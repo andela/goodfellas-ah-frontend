@@ -33,10 +33,12 @@ const Auth = () => (
 
 const Articles = () => (
   <div>
-    <Route exact path="/articles/create" component={authenticate(CreateArticle)} />
-    <Route path="/articles/home" component={GetAllArticles} />
-    <Route path="/articles/edit/:slug" component={UpdateArticle} />
-    <Route path="/articles/:slug" component={SingleArticle} />
+    <Switch>
+      <Route path="/articles/create" component={authenticate(CreateArticle)} />
+      <Route path="/articles/home" component={GetAllArticles} />
+      <Route path="/articles/edit/:slug" component={UpdateArticle} />
+      <Route path="/articles/:slug" component={SingleArticle} />
+    </Switch>
   </div>
 );
 

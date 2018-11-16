@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/styles.scss';
+import parser from 'react-html-parser';
 import authorIcon from '../assets/author-icon.jpg';
-import articleImage from '../assets/article-image.jpg';
 import clock from '../assets/clock.png';
 import comment from '../assets/comment.png';
 import star from '../assets/star.png';
@@ -14,7 +14,7 @@ const SingleArticle = (props) => {
   const { article } = props;
   return (
     <div>
-        <div className="single-page">
+      <div className="single-page">
         <div className="article-header">
           <div className="author-icon">
             <img src={authorIcon} className="author-image" alt="" />
@@ -22,7 +22,7 @@ const SingleArticle = (props) => {
             <div className="minutes">minutes</div>
           </div>
           <div className="title-author">
-            <div className="article-title">{article.title}</div>
+            <div className="article-title">{parser(article.title)}</div>
             <div className="author-name">
               <div className="name">Afeez Awoyemi</div>
               <button type="button">Follow</button>
@@ -40,16 +40,16 @@ const SingleArticle = (props) => {
             <img className="love" src={love} alt="" />
           </div>
           <div className="article-content">
-            <p>{article.body}</p>
+            <p>{parser(article.body)}</p>
 
           </div>
 
         </div>
 
       </div>
-        <hr className="article-line" />
+      <hr className="article-line" />
 
-        <div className="comments">
+      <div className="comments">
         <div className="add-comment">
           <img src={authorIcon} alt="" />
           <input type="text" placeholder="write a comment....." />
@@ -99,7 +99,7 @@ const SingleArticle = (props) => {
 
         </div>
       </div>
-      </div>
+    </div>
 
   );
 };
