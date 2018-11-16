@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import swal from 'sweetalert';
-import Body from '../components/layout/DefaultLayout';
 import ProfileImageUploader from '../components/profile/ImageUploader';
 import InputBox from '../components/shared/InputBox';
 import { Loader as Loading } from '../components/shared/Loading';
@@ -117,18 +116,16 @@ export class EditProfile extends Component {
     }
     const fullName = `${profileStore.user.firstname} ${profileStore.user.lastname}`;
     return (
-      <Body className="edit-profile">
-        <form onSubmit={this.updateProfile} encType="multipart/form-data">
-          <ProfileImageUploader name="image" imageRead={this.imageRead} canReset={!!profileImage} resetImage={this.resetImage} profileImage={profileImage || profileStore.profile.image} />
-          <h3 id="user-name" className="username">{fullName}</h3>
-          <InputBox handleChange={this.handleChange} value={username} name="username" placeholder="Username" />
-          <TextBox handleChange={this.handleChange} value={bio} name="bio" placeholder="Enter a short bio" />
-          <div>
-            <button type="submit" disabled={updating} id="save-button" className={`button outline green ${updating ? 'disabled' : ''}`}>{ updating ? <img className=" edit-profile_spinner" alt="loader" src={spinner} /> : 'Save' }</button>
-            <button type="button" disabled={updating} onClick={this.resetProfile} className={`button outline ${updating ? 'disabled' : ''}`}>Cancel</button>
-          </div>
-        </form>
-      </Body>
+      <form className="edit-profile_form" onSubmit={this.updateProfile} encType="multipart/form-data">
+        <ProfileImageUploader name="image" imageRead={this.imageRead} canReset={!!profileImage} resetImage={this.resetImage} profileImage={profileImage || profileStore.profile.image} />
+        <h3 id="user-name" className="username">{fullName}</h3>
+        <InputBox handleChange={this.handleChange} value={username} name="username" placeholder="Username" />
+        <TextBox handleChange={this.handleChange} value={bio} name="bio" placeholder="Enter a short bio" />
+        <div>
+          <button type="submit" disabled={updating} id="save-button" className={`button outline green ${updating ? 'disabled' : ''}`}>{ updating ? <img className=" edit-profile_spinner" alt="loader" src={spinner} /> : 'Save' }</button>
+          <button type="button" disabled={updating} onClick={this.resetProfile} className={`button outline ${updating ? 'disabled' : ''}`}>Cancel</button>
+        </div>
+      </form>
     );
   }
 }

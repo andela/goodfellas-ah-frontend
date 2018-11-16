@@ -1,0 +1,23 @@
+.search{
+  padding-top: 50px;
+  font-family: "Antic";
+  .search-results{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 60vw;
+    justify-content: center;
+    margin: auto;
+    .search-results-articles > div{
+      text-align: left;
+    }
+    .search-results-articles{
+      .profile-article_img {
+        height: 250px;
+      }
+    }
+    @media only screen and (max-width: 500px) {
+      width: 95vw;
+    }
+  }
+}

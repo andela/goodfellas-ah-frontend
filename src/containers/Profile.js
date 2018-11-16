@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import swal from 'sweetalert';
-import Body from '../components/layout/DefaultLayout';
 import { Loader as Loading } from '../components/shared/Loading';
 import ProfileToolbar from './ProfileToolbar';
 import FollowerList from '../components/profile/FollowerList';
@@ -77,63 +76,61 @@ export class Profile extends Component {
     }
     const fullName = `${profileStore.user.firstname} ${profileStore.user.lastname}`;
     return (
-      <Body className="profile">
-        <div>
-          <header>
-            <img alt="profile" className="profile-image" src={profileStore.profile.image || userPlaceholderImage} />
-            <h3 id="user-name" className="username">{fullName}</h3>
-            <button type="button" className={`button outline ${profileStore.user.isFollowed ? 'green' : ''}`} onClick={this.handleClick}>{
-              (() => {
-                if (ownProfile) return 'Edit Profile';
-                if (profileStore.user.isFollowed) return 'Unfollow';
-                return 'Follow';
-              })()}
-            </button>
-          </header>
-          <ProfileToolbar profile={profileStore} />
-          {(() => {
-            switch (profileStore.profileView) {
-              case 'Followers':
-                return (
-                  <FollowerList
-                    history={history}
-                    userFullName={fullName}
-                    ownProfile={ownProfile}
-                    followers={profileStore.followers}
-                  />);
-              case 'Articles':
-                return (
-                  <ProfileArticleList
-                    author={fullName}
-                    authorImage={profileStore.profile.image}
-                    articles={profileStore.articles}
-                    userFullName={fullName}
-                    ownProfile={ownProfile}
-                  />
-                );
-              case 'Favorites':
-                return (
-                  <ProfileFavoriteList
-                    author={fullName}
-                    authorImage={profileStore.profile.image}
-                    articles={profileStore.favorites}
-                    userFullName={fullName}
-                    ownProfile={ownProfile}
-                  />);
-              case 'Following':
-              default:
-                return (
-                  <FollowingList
-                    history={history}
-                    userFullName={fullName}
-                    ownProfile={ownProfile}
-                    following={profileStore.following}
-                  />);
-            }
-          })()
+      <div>
+        <header>
+          <img alt="profile" className="profile-image" src={profileStore.profile.image || userPlaceholderImage} />
+          <h3 id="user-name" className="username">{fullName}</h3>
+          <button type="button" className={`button outline ${profileStore.user.isFollowed ? 'green' : ''}`} onClick={this.handleClick}>{
+            (() => {
+              if (ownProfile) return 'Edit Profile';
+              if (profileStore.user.isFollowed) return 'Unfollow';
+              return 'Follow';
+            })()}
+          </button>
+        </header>
+        <ProfileToolbar profile={profileStore} />
+        {(() => {
+          switch (profileStore.profileView) {
+            case 'Followers':
+              return (
+                <FollowerList
+                  history={history}
+                  userFullName={fullName}
+                  ownProfile={ownProfile}
+                  followers={profileStore.followers}
+                />);
+            case 'Articles':
+              return (
+                <ProfileArticleList
+                  author={fullName}
+                  authorImage={profileStore.profile.image}
+                  articles={profileStore.articles}
+                  userFullName={fullName}
+                  ownProfile={ownProfile}
+                />
+              );
+            case 'Favorites':
+              return (
+                <ProfileFavoriteList
+                  author={fullName}
+                  authorImage={profileStore.profile.image}
+                  articles={profileStore.favorites}
+                  userFullName={fullName}
+                  ownProfile={ownProfile}
+                />);
+            case 'Following':
+            default:
+              return (
+                <FollowingList
+                  history={history}
+                  userFullName={fullName}
+                  ownProfile={ownProfile}
+                  following={profileStore.following}
+                />);
           }
-        </div>
-      </Body>
+        })()
+        }
+      </div>
     );
   }
 }

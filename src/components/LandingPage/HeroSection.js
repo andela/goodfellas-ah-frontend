@@ -9,7 +9,7 @@ const Hero = (props) => {
   return (
     <section className="hero-section">
       <div className="hero-section-overlay">
-        <Header parentComponent="landingpage" />
+        <Header parentComponent="landingpage" {...props} />
         <h2>Write it out beautifully</h2>
         <div className="hero-section-description">
           <p>
