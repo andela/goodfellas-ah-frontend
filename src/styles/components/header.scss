@@ -240,7 +240,6 @@ header {
     padding-left: 22px;
     width: 414px;
     height: 40px;
-    border-radius: 36px;
     border: solid 0.5px rgba(166, 162, 162, 0.3);
     background-color: #ffffff;
     &:focus{
@@ -362,8 +361,7 @@ header {
   .search-parameters-display {
     display: flex !important;
     flex-direction: column;
-    width: 364px;
-    margin-left: 10px;
+    width: 384px;
     top: 50px;
     justify-content: space-between;
     height: 240px;
@@ -395,7 +393,6 @@ header {
     padding-left: 22px;
     width: 414px;
     height: 40px;
-    border-radius: 36px;
     border: solid 0.5px rgba(166, 162, 162, 0.3);
     background-color: #ffffff;
     margin: 10px auto;

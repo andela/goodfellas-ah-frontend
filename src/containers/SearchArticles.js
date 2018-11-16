@@ -5,8 +5,8 @@ import Article from '../components/article/Profile';
 
 export class SearchArticlesContainer extends Component {
   state = {
-    articleResults: [],
-    errorResults: [],
+    searchResults: [],
+    error: [],
   }
 
   componentWillReceiveProps(nextProps) {
@@ -21,22 +21,22 @@ export class SearchArticlesContainer extends Component {
     searchResultState.push(nextProps.searchResults);
 
     this.setState({
-      articleResults: [...searchResultState],
-      errorResults: searchErrorState,
+      searchResults: [...searchResultState],
+      error: searchErrorState,
     });
   }
 
   displaySearchResults = () => {
-    const { articleResults, errorResults } = this.state;
-    const articlesReceived = articleResults[0].articles;
+    const { searchResults, error } = this.state;
+    const { articles } = searchResults[0];
     return (
       <div className="search-results">
-        {errorResults.length === 0
+        {error.length === 0
           ? (
             <div>
               <h1>Search results</h1>
               <div className="search-results-articles">
-                {articlesReceived.map((article) => <Article key={article.id} article={article} author={`${article.user.firstname} ${article.user.lastname}`} authorImage={article.user.profile.image} />)}
+                {articles.map((article) => <Article key={article.id} article={article} author={`${article.user.firstname} ${article.user.lastname}`} authorImage={article.user.profile.image} />)}
               </div>
             </div>
           )
@@ -51,11 +51,11 @@ export class SearchArticlesContainer extends Component {
   }
 
   render() {
-    const { articleResults, errorResults } = this.state;
+    const { searchResults, error } = this.state;
     return (
       <section className="search">
         <div>
-          {errorResults.length < 1 && articleResults.length < 1
+          {error.length < 1 && searchResults.length < 1
             ? (
               <LargeLoader />
             )
