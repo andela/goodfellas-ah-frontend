@@ -52,3 +52,25 @@ export const editProfile = (id, data) => async (dispatch, getState, { api }) => 
     };
   }
 };
+
+export const follow = (id) => async (dispatch, getState, { api }) => {
+  try {
+    const response = await api.post(`/user/follow/${id}`);
+    if (response.status === 201) return true;
+  } catch (e) {
+    return {
+      error: e.response.data.message || e.response.data.error,
+    };
+  }
+};
+
+export const unFollow = (id) => async (dispatch, getState, { api }) => {
+  try {
+    const response = await api.delete(`/user/follow/${id}`);
+    if (response.status === 201) return true;
+  } catch (e) {
+    return {
+      error: e.response.data.message || e.response.data.error,
+    };
+  }
+};

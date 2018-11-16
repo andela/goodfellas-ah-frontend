@@ -69,6 +69,7 @@ export class EditProfile extends Component {
   // eslint-disable-next-line consistent-return
   updateProfile = async (e) => {
     e.preventDefault();
+    const { auth } = this.props;
     if (!e.target.username.value) return swal('Please enter a username', 'Pro Tip: Authors with usernames attract more followers', 'warning');
     if (!e.target.bio.value) return swal('Please fill in your bio', 'Pro Tip: With a clear descriptive bio your profile looks much more beautiful', 'warning');
     const { editProfile: updateProfile } = this.props;
@@ -76,7 +77,7 @@ export class EditProfile extends Component {
     const { profileImageFile } = this.state;
     const profileData = new FormData(e.target);
     if (profileImageFile) profileData.append('image', profileImageFile);
-    const response = await updateProfile(1, profileData);
+    const response = await updateProfile(auth.userId, profileData);
     this.setState({ updating: false });
     if (response.success) {
       this.resetImage();
@@ -123,7 +124,7 @@ export class EditProfile extends Component {
           <InputBox handleChange={this.handleChange} value={username} name="username" placeholder="Username" />
           <TextBox handleChange={this.handleChange} value={bio} name="bio" placeholder="Enter a short bio" />
           <div>
-            <button type="submit" disabled={updating} id="save-button" className={`button outline ${updating ? 'disabled' : ''}`}>{ updating ? <img className=" edit-profile_spinner" alt="loader" src={spinner} /> : 'Save' }</button>
+            <button type="submit" disabled={updating} id="save-button" className={`button outline green ${updating ? 'disabled' : ''}`}>{ updating ? <img className=" edit-profile_spinner" alt="loader" src={spinner} /> : 'Save' }</button>
             <button type="button" disabled={updating} onClick={this.resetProfile} className={`button outline ${updating ? 'disabled' : ''}`}>Cancel</button>
           </div>
         </form>

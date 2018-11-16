@@ -118,7 +118,7 @@ ShallowWrapper {
             Afeez1 Awoyemi
           </h3>
           <button
-            className="button outline"
+            className="button outline "
             onClick={[Function]}
             type="button"
           >
@@ -251,7 +251,7 @@ ShallowWrapper {
               Afeez1 Awoyemi
             </h3>
             <button
-              className="button outline"
+              className="button outline "
               onClick={[Function]}
               type="button"
             >
@@ -383,7 +383,7 @@ ShallowWrapper {
                 Afeez1 Awoyemi
               </h3>,
               <button
-                className="button outline"
+                className="button outline "
                 onClick={[Function]}
                 type="button"
               >
@@ -425,7 +425,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "Follow",
-                "className": "button outline",
+                "className": "button outline ",
                 "onClick": [Function],
                 "type": "button",
               },
@@ -577,7 +577,7 @@ ShallowWrapper {
               Afeez1 Awoyemi
             </h3>
             <button
-              className="button outline"
+              className="button outline "
               onClick={[Function]}
               type="button"
             >
@@ -710,7 +710,7 @@ ShallowWrapper {
                 Afeez1 Awoyemi
               </h3>
               <button
-                className="button outline"
+                className="button outline "
                 onClick={[Function]}
                 type="button"
               >
@@ -842,7 +842,7 @@ ShallowWrapper {
                   Afeez1 Awoyemi
                 </h3>,
                 <button
-                  className="button outline"
+                  className="button outline "
                   onClick={[Function]}
                   type="button"
                 >
@@ -884,7 +884,7 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": "Follow",
-                  "className": "button outline",
+                  "className": "button outline ",
                   "onClick": [Function],
                   "type": "button",
                 },
@@ -1148,7 +1148,7 @@ ShallowWrapper {
             Afeez1 Awoyemi
           </h3>
           <button
-            className="button outline"
+            className="button outline "
             onClick={[Function]}
             type="button"
           >
@@ -1272,7 +1272,7 @@ ShallowWrapper {
               Afeez1 Awoyemi
             </h3>
             <button
-              className="button outline"
+              className="button outline "
               onClick={[Function]}
               type="button"
             >
@@ -1395,7 +1395,7 @@ ShallowWrapper {
                 Afeez1 Awoyemi
               </h3>,
               <button
-                className="button outline"
+                className="button outline "
                 onClick={[Function]}
                 type="button"
               >
@@ -1437,7 +1437,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "Follow",
-                "className": "button outline",
+                "className": "button outline ",
                 "onClick": [Function],
                 "type": "button",
               },
@@ -1579,7 +1579,7 @@ ShallowWrapper {
               Afeez1 Awoyemi
             </h3>
             <button
-              className="button outline"
+              className="button outline "
               onClick={[Function]}
               type="button"
             >
@@ -1703,7 +1703,7 @@ ShallowWrapper {
                 Afeez1 Awoyemi
               </h3>
               <button
-                className="button outline"
+                className="button outline "
                 onClick={[Function]}
                 type="button"
               >
@@ -1826,7 +1826,7 @@ ShallowWrapper {
                   Afeez1 Awoyemi
                 </h3>,
                 <button
-                  className="button outline"
+                  className="button outline "
                   onClick={[Function]}
                   type="button"
                 >
@@ -1868,7 +1868,7 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": "Follow",
-                  "className": "button outline",
+                  "className": "button outline ",
                   "onClick": [Function],
                   "type": "button",
                 },
@@ -2122,7 +2122,7 @@ ShallowWrapper {
             Afeez1 Awoyemi
           </h3>
           <button
-            className="button outline"
+            className="button outline "
             onClick={[Function]}
             type="button"
           >
@@ -2225,7 +2225,7 @@ ShallowWrapper {
               Afeez1 Awoyemi
             </h3>
             <button
-              className="button outline"
+              className="button outline "
               onClick={[Function]}
               type="button"
             >
@@ -2327,7 +2327,7 @@ ShallowWrapper {
                 Afeez1 Awoyemi
               </h3>,
               <button
-                className="button outline"
+                className="button outline "
                 onClick={[Function]}
                 type="button"
               >
@@ -2369,7 +2369,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "Follow",
-                "className": "button outline",
+                "className": "button outline ",
                 "onClick": [Function],
                 "type": "button",
               },
@@ -2492,7 +2492,7 @@ ShallowWrapper {
               Afeez1 Awoyemi
             </h3>
             <button
-              className="button outline"
+              className="button outline "
               onClick={[Function]}
               type="button"
             >
@@ -2595,7 +2595,7 @@ ShallowWrapper {
                 Afeez1 Awoyemi
               </h3>
               <button
-                className="button outline"
+                className="button outline "
                 onClick={[Function]}
                 type="button"
               >
@@ -2697,7 +2697,7 @@ ShallowWrapper {
                   Afeez1 Awoyemi
                 </h3>,
                 <button
-                  className="button outline"
+                  className="button outline "
                   onClick={[Function]}
                   type="button"
                 >
@@ -2739,7 +2739,7 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": "Follow",
-                  "className": "button outline",
+                  "className": "button outline ",
                   "onClick": [Function],
                   "type": "button",
                 },
@@ -3409,7 +3409,7 @@ ShallowWrapper {
             Afeez1 Awoyemi
           </h3>
           <button
-            className="button outline"
+            className="button outline "
             onClick={[Function]}
             type="button"
           >
@@ -3517,7 +3517,7 @@ ShallowWrapper {
               Afeez1 Awoyemi
             </h3>
             <button
-              className="button outline"
+              className="button outline "
               onClick={[Function]}
               type="button"
             >
@@ -3624,7 +3624,7 @@ ShallowWrapper {
                 Afeez1 Awoyemi
               </h3>,
               <button
-                className="button outline"
+                className="button outline "
                 onClick={[Function]}
                 type="button"
               >
@@ -3666,7 +3666,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "Edit Profile",
-                "className": "button outline",
+                "className": "button outline ",
                 "onClick": [Function],
                 "type": "button",
               },
@@ -3795,7 +3795,7 @@ ShallowWrapper {
               Afeez1 Awoyemi
             </h3>
             <button
-              className="button outline"
+              className="button outline "
               onClick={[Function]}
               type="button"
             >
@@ -3903,7 +3903,7 @@ ShallowWrapper {
                 Afeez1 Awoyemi
               </h3>
               <button
-                className="button outline"
+                className="button outline "
                 onClick={[Function]}
                 type="button"
               >
@@ -4010,7 +4010,7 @@ ShallowWrapper {
                   Afeez1 Awoyemi
                 </h3>,
                 <button
-                  className="button outline"
+                  className="button outline "
                   onClick={[Function]}
                   type="button"
                 >
@@ -4052,7 +4052,7 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": "Edit Profile",
-                  "className": "button outline",
+                  "className": "button outline ",
                   "onClick": [Function],
                   "type": "button",
                 },
