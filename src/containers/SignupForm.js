@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { signup } from '../actions/authActions';
+import { signup, clearSigninError } from '../actions/authActions';
 import validateAuth from '../lib/validation';
 import AuthInput from '../components/shared/AuthInput';
 import Button from '../components/shared/Button';
@@ -13,40 +13,40 @@ const initialState = {
   email: '',
   password: '',
   confirmPassword: '',
-
-  validationError: {},
+  touched: {
+    firstname: false,
+    lastname: false,
+    email: false,
+    password: false,
+    confirmPassword: false,
+  },
 };
+
+const fieldNames = ['firstname', 'lastname', 'email', 'password', 'confirmPassword'];
+
 class SignupForm extends Component {
   state = initialState;
 
+  componentDidMount = () => {
+    const { clearSigninError: clearError } = this.props;
+    clearError();
+  }
 
   handleSubmit = (event) => {
     event.preventDefault();
-
+    const { signup: signupUser, history } = this.props;
     const {
       firstname, lastname, email, password, confirmPassword,
     } = this.state;
 
-    const fieldNames = [
-      'firstname',
-      'lastname',
-      'email',
-      'password',
-      'confirmPassword',
-    ];
-
     const fields = {
-      firstname,
-      lastname,
-      email,
-      password,
-      confirmPassword,
+      firstname, lastname, email, password, confirmPassword,
     };
 
     // run validation rules for each field
     const validationError = validateAuth(fields, fieldNames);
-
-    this.setState({ validationError });
+    const changedTouchState = this.changeTouchState(fieldNames, true);
+    this.setState({ touched: changedTouchState });
 
     const body = {
       firstname: firstname.trim(),
@@ -54,8 +54,6 @@ class SignupForm extends Component {
       email: email.trim(),
       password: password.trim(),
     };
-
-    const { signup: signupUser, history } = this.props;
 
     // processes user sign up when validation rules
     // pass for all fields
@@ -69,25 +67,38 @@ class SignupForm extends Component {
     this.setState({ [event.target.id]: event.target.value });
   }
 
+  handleBlur = (field) => () => {
+    const { touched } = this.state;
+    this.setState({
+      touched: { ...touched, [field]: true },
+    });
+  }
+
+  changeTouchState = (fields, state) => {
+    const touchState = {};
+    fields.forEach((field) => {
+      touchState[field] = state;
+    });
+    return touchState;
+  }
 
   render() {
     const {
-      firstname,
-      lastname,
-      email,
-      password,
-      confirmPassword,
-      validationError,
+      firstname, lastname, email, password, confirmPassword, touched,
     } = this.state;
 
     const { message } = this.props;
+    const validationError = validateAuth({
+      firstname, lastname, email, password, confirmPassword,
+    }, fieldNames);
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="auth-signup" onSubmit={this.handleSubmit}>
         <p className="error-field">{message}</p>
         <AuthInput
           error={validationError}
           value={firstname}
+          touched={touched}
           handleChange={this.handleChange}
           name="firstname"
           placeholder="Firstname"
@@ -96,6 +107,7 @@ class SignupForm extends Component {
         <AuthInput
           error={validationError}
           value={lastname}
+          touched={touched}
           handleChange={this.handleChange}
           name="lastname"
           placeholder="Lastname"
@@ -104,15 +116,16 @@ class SignupForm extends Component {
         <AuthInput
           error={validationError}
           value={email}
+          touched={touched}
           handleChange={this.handleChange}
           name="email"
-          type="email"
           placeholder="E-mail"
         />
 
         <AuthInput
           error={validationError}
           value={password}
+          touched={touched}
           handleChange={this.handleChange}
           name="password"
           type="password"
@@ -122,6 +135,7 @@ class SignupForm extends Component {
         <AuthInput
           error={validationError}
           value={confirmPassword}
+          touched={touched}
           handleChange={this.handleChange}
           name="confirmPassword"
           type="password"
@@ -137,4 +151,4 @@ class SignupForm extends Component {
 
 const mapStateToProps = (state) => ({ message: state.auth.errorMessage });
 
-export default connect(mapStateToProps, { signup })(SignupForm);
+export default connect(mapStateToProps, { signup, clearSigninError })(SignupForm);

@@ -4,9 +4,9 @@ import Hero from '../LandingPage/HeroSection';
 import Body from '../LandingPage/LandingPageBody';
 import Explore from '../LandingPage/ExploreSection';
 
-const LandingPageLayout = () => (
+const LandingPageLayout = (props) => (
   <div>
-    <Hero />
+    <Hero {...props} />
     <Body />
     <Explore />
     <Footer />

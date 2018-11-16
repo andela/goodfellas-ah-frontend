@@ -16,7 +16,7 @@ const ProfileArticleList = (props) => {
               <span>{ownProfile ? 'You have not posted any articles.' : `${userFullName} has not posted any articles.`}</span>
             </div>
           )
-          : articles.map((article) => <ProfileArticle key={article.id} author={props.author} authorImage={props.authorImage} type="article" article={article} />)
+          : articles.map((article) => <ProfileArticle ownProfile={ownProfile} key={article.id} author={props.author} authorImage={props.authorImage} type="article" article={article} />)
       }
     </Fragment>);
 };

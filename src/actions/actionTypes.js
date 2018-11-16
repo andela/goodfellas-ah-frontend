@@ -13,3 +13,6 @@ export const GET_ARTICLES_ERROR = 'GET_ARTICLES_ERROR';
 export const SIGNIN_USER = 'SIGNIN_USER';
 export const SIGNIN_USER_ERROR = 'SIGNIN_USER_ERROR';
 export const SIGNOUT_USER = 'SIGNOUT_USER';
+export const SEARCH = 'SEARCH';
+export const SEARCH_ERROR = 'SEARCH_ERROR';
+export const CLEAR_SIGNIN_ERROR = 'CLEAR_SIGNIN_ERROR';
