@@ -9,6 +9,7 @@ import { fetchProfile, editProfile } from '../actions/profileActions';
 import TextBox from '../components/shared/TextBox';
 import { spinner } from '../mixin';
 import icons from '../assets/icons.svg';
+import Notification from '../components/Notification';
 
 export class EditProfile extends Component {
   state = {
@@ -127,6 +128,7 @@ export class EditProfile extends Component {
             <button type="button" disabled={updating} onClick={this.resetProfile} className={`button outline ${updating ? 'disabled' : ''}`}>Cancel</button>
           </div>
         </form>
+        <Notification />
       </Body>
     );
   }

@@ -13,6 +13,7 @@ import ResetPasswordPage from '../views/ResetPasswordPage';
 import CreateArticle from '../views/CreateArticles';
 import Header from '../components/shared/Header';
 import GetAllArticles from '../views/AllArticles';
+import Notification from '../components/Notification';
 
 const User = () => (
   <Switch>
@@ -47,7 +48,7 @@ const App = () => (
       <Route path="/user" component={authenticate(User)} />
       <Route path="/forgotpassword" component={ForgotPasswordPage} />
       <Route path="/resetpassword" component={ResetPasswordPage} />
-      <Route path="/header" component={Header} />
+      <Route path="/notify" component={Notification} />
     </div>
   </BrowserRouter>
 );

@@ -203,16 +203,18 @@ header {
             text-decoration: none;
           }
         }
-        a:nth-child(4), a:nth-child(6){
+        a:nth-child(odd), a:nth-child(6){
           border-bottom: 1px solid #c4c4c4;
         }
         &.show{
           background-color: #f8f8f8;
-          width: 177px;
-          height: 310px;
+          width: 77px;
           border: solid 1px #c4c4c4;
           border-radius: 0;
         }
+      }
+      .notification-icon{
+        width: 140px;
       }
     }
   }

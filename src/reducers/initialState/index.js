@@ -18,6 +18,8 @@ const initialState = {
     articles: [],
     favorites: [],
   },
+  notification: [],
+  notifications: {},
 };
 
 export default initialState;

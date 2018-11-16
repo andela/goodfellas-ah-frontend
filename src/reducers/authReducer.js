@@ -32,6 +32,14 @@ export default (state = initialState, action) => {
         user: action.payload,
       };
     }
+    // case types.SET_NOTIFICATION:
+    //   return {
+    //     ...state,
+    //     user: {
+    //       ...state.user,
+    //       notificationSettings: [],
+    //     },
+    //   };
     default:
       return state;
   }

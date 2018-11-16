@@ -4,10 +4,20 @@ import { connect } from 'react-redux';
 import { profileNavigation } from '../../actions/profileActions';
 import { signout } from '../../actions/authActions';
 import { userPlaceholderImage } from '../../mixin';
+import { getNotification, seenNotification } from '../../actions/notificationActions';
 
 export class Header extends Component {
+  state = {
+    notifications: {},
+    unSeenNotification: 0,
+  };
+
   dropdown = () => {
     this.refs.myDropdown.classList.toggle('show');
+  };
+
+  notificationDropdown = () => {
+    this.refs.myDropdown2.classList.toggle('show');
   };
 
   navbarToggle = () => {
@@ -27,10 +37,36 @@ export class Header extends Component {
     }
   };
 
+  handleSeen = (id) => {
+    const { seenNotification: notificationSeen } = this.props;
+    notificationSeen(id);
+  };
+
+  componentWillMount() {
+    const { getNotification: latestNotification } = this.props;
+    latestNotification();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps) {
+      const { notifications } = nextProps;
+      this.setState({
+        notifications,
+      });
+      if (Object.keys(notifications).length !== 0) {
+        const countNotification = notifications.rows.filter((notification) => !notification.seen);
+        this.setState({
+          unSeenNotification: countNotification.length,
+        });
+      }
+    }
+  }
+
   render() {
     const { auth } = this.props;
     const { parentComponent } = this.props;
     const { signout: signoutUser, profileNavigation: switchView, profile } = this.props;
+    const { notifications, unSeenNotification } = this.state;
     return (
       <header>
         <nav className="navbar" ref="navbarTitle">
@@ -52,7 +88,7 @@ export class Header extends Component {
                 </span>
               </div>
               <div className="header-user-images">
-                <div className="dropdown">
+                <div className="dropdown" onClick={this.notificationDropdown}>
                   {parentComponent === 'landingpage' ? (
                     <img
                       className="dropdown-toggle notification-image"
@@ -68,8 +104,41 @@ export class Header extends Component {
                       alt=""
                     />
                   )}
+                  {
+                    <ul ref="myDropdown2" className="dropdown-menu">
+                      {Object.keys(notifications).length !== 0
+                        && notifications.rows.map((notification) => {
+                          if (!notification.seen) {
+                            switch (notification.type) {
+                              case 'followerArticle':
+                                return (
+                                  <Link
+                                    to="/article"
+                                    key={notification.id}
+                                    onClick={() => {
+                                      this.handleSeen(notification.id);
+                                    }}
+                                    className="notification-icon"
+                                  >
+                                    {notification.author.firstname} published a new article
+                                  </Link>
+                                );
+                              case 'favoriteArticleComment':
+                                return (
+                                  <Link to="/article" key={notification.id}>
+                                    {notification.author.firstname} commented on an article
+                                  </Link>
+                                );
+                              default:
+                                break;
+                            }
+                          }
+                        })}
+                    </ul>
+                  }
                 </div>
-                <span className="notification-count">4</span>
+                {unSeenNotification !== 0 && <span className="notification-count">{unSeenNotification}</span>}
+
                 <div onClick={this.dropdown} className="dropdown dropdown-click">
                   <img className="dropdown-toggle author-image" src={profile.image || userPlaceholderImage} alt="" />
                   <ul ref="myDropdown" className="dropdown-menu">
@@ -160,11 +229,14 @@ export class Header extends Component {
 function mapStatesToProps(state) {
   return {
     auth: state.auth.authenticated,
-    profile: state.auth.ownProfile
+    profile: state.auth.ownProfile,
+    notifications: state.notification.notifications,
   };
 }
 
 export default connect(
   mapStatesToProps,
-  { signout, profileNavigation }
+  {
+ signout, profileNavigation, getNotification, seenNotification 
+},
 )(Header);
