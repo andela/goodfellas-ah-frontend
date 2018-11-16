@@ -76,7 +76,7 @@ export const socialSignin = ({ token, userId }, callback) => async (dispatch) =>
 
 export const forgotPassword = (userData) => async (dispatch) => {
   try {
-    const response = await axios.post('api/forgotPassword', userData);
+    const response = await axios.post(`${apiUrl}/api/forgotPassword`, userData);
     dispatch({ type: types.SUCCESS_MSG, payload: response.data.message });
     dispatch({ type: types.RESET_ERROR, payload: '' });
     swal(response.data.message, 'Click the link in the email to reset your password', 'success');
@@ -87,7 +87,7 @@ export const forgotPassword = (userData) => async (dispatch) => {
 export const resetPassword = (userData, history) => async (dispatch) => {
   try {
     const { token } = queryString.parse(history.location.search);
-    const response = await axios.post(`api/resetPassword?token=${token.trim()}`, userData);
+    const response = await axios.post(`${apiUrl}/api/resetPassword?token=${token.trim()}`, userData);
     dispatch({ type: types.SUCCESS_MSG, payload: response.data.message });
     swal({
       title: response.data.message,

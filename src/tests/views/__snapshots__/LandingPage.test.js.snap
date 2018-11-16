@@ -70,141 +70,191 @@ exports[`Landing Page UI render features container should render as expected 1`]
                         className="hero-section-overlay"
                       >
                         <Connect(Header)
+                          auth={null}
+                          dispatch={[Function]}
                           parentComponent="landingpage"
                         >
                           <Header
                             auth={null}
+                            dispatch={[Function]}
                             parentComponent="landingpage"
                             profile={null}
                             profileNavigation={[Function]}
+                            search={[Function]}
+                            searchError={Array []}
+                            searchResults={Array []}
                             signout={[Function]}
                           >
-                            <header>
-                              <nav
-                                className="navbar"
+                            <div>
+                              <header
+                                className="landing-page-header"
                               >
-                                <Link
-                                  className="navbar-title navbar-brand"
-                                  replace={false}
-                                  to="/"
+                                <nav
+                                  className="navbar"
                                 >
-                                  <a
+                                  <Link
                                     className="navbar-title navbar-brand"
-                                    href="/"
-                                    onClick={[Function]}
+                                    replace={false}
+                                    to="/"
                                   >
-                                    <h3
-                                      className="header-white"
+                                    <a
+                                      className="navbar-title navbar-brand"
+                                      href="/"
+                                      onClick={[Function]}
                                     >
-                                      Authors Haven
-                                    </h3>
-                                  </a>
-                                </Link>
-                                <div
-                                  className="navbar-main-wrapper"
-                                >
-                                  <button
-                                    className="navbar-toggler"
-                                    data-target="#navbarNav"
-                                    data-toggle="collapse"
-                                    onClick={[Function]}
-                                    type="button"
-                                  >
-                                    <span
-                                      className=""
-                                    >
-                                      <img
-                                        alt=""
-                                        className="menuIcon"
-                                        src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426069/Authors%20Haven/icons8-menu.svg"
-                                      />
-                                    </span>
-                                  </button>
+                                      <h3
+                                        className="header-white"
+                                      >
+                                        Authors Haven
+                                      </h3>
+                                    </a>
+                                  </Link>
                                   <div
-                                    className="navbar-wrapper"
+                                    className="navbar-unauthorized"
                                   >
-                                    <ul
-                                      className="navbar-element"
+                                    <div
+                                      className="navbar-main-wrapper"
                                     >
-                                      <Link
-                                        className="nav-link"
-                                        replace={false}
-                                        to="/"
-                                      >
-                                        <a
-                                          className="nav-link"
-                                          href="/"
-                                          onClick={[Function]}
+                                      <div>
+                                        <form
+                                          onSubmit={[Function]}
                                         >
-                                          Explore
-                                        </a>
-                                      </Link>
-                                      <Link
-                                        className="nav-link"
-                                        replace={false}
-                                        to="/"
+                                          <div
+                                            className="header-user-search-unauth"
+                                          >
+                                            <input
+                                              className="searchbar"
+                                              id="Title"
+                                              onChange={[Function]}
+                                              placeholder="Search for articles"
+                                              type="search"
+                                            />
+                                            <span
+                                              className="search-click"
+                                              onClick={[Function]}
+                                            >
+                                              <img
+                                                alt=""
+                                                className="search-dropdown"
+                                                src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541772567/Authors%20Haven/arrow_grey.png"
+                                              />
+                                            </span>
+                                            <span
+                                              className="search-divider"
+                                            />
+                                            <span
+                                              className="searchbar-toggle"
+                                              onClick={[Function]}
+                                            >
+                                              <img
+                                                alt=""
+                                                src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png"
+                                              />
+                                            </span>
+                                            <span
+                                              className="searchbar-toggle-mobile"
+                                              onClick={[Function]}
+                                            >
+                                              <img
+                                                alt=""
+                                                src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png"
+                                              />
+                                            </span>
+                                            <div
+                                              className="search-parameters"
+                                            >
+                                              Filter by
+                                              <select>
+                                                <option>
+                                                  Author
+                                                </option>
+                                                <option>
+                                                  Tag
+                                                </option>
+                                              </select>
+                                              <input
+                                                id="searchKeyword"
+                                                onChange={[Function]}
+                                                placeholder="Enter keyword"
+                                                type="text"
+                                              />
+                                              <Button
+                                                className="btn hero-section-greenbutton"
+                                                title="Search"
+                                                type="Submit"
+                                              >
+                                                <button
+                                                  className="btn hero-section-greenbutton"
+                                                  type="Submit"
+                                                >
+                                                  Search
+                                                </button>
+                                              </Button>
+                                            </div>
+                                          </div>
+                                        </form>
+                                      </div>
+                                      <button
+                                        className="navbar-toggler"
+                                        data-target="#navbarNav"
+                                        data-toggle="collapse"
+                                        onClick={[Function]}
+                                        type="button"
                                       >
-                                        <a
-                                          className="nav-link"
-                                          href="/"
-                                          onClick={[Function]}
+                                        <span
+                                          className=""
                                         >
-                                          About Us
-                                        </a>
-                                      </Link>
-                                      <Link
-                                        className="nav-link"
-                                        replace={false}
-                                        to="/"
+                                          <img
+                                            alt=""
+                                            className="menuIcon"
+                                            src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426069/Authors%20Haven/icons8-menu.svg"
+                                          />
+                                        </span>
+                                      </button>
+                                      <div
+                                        className="navbar-wrapper"
                                       >
-                                        <a
-                                          className="nav-link"
-                                          href="/"
-                                          onClick={[Function]}
+                                        <ul
+                                          className="navbar-element"
                                         >
-                                          Contact
-                                        </a>
-                                      </Link>
-                                    </ul>
-                                    <ul
-                                      className="navbar-element"
-                                    >
-                                      <Link
-                                        className="nav-item nav-link"
-                                        replace={false}
-                                        to="/auth/signin"
-                                      >
-                                        <a
-                                          className="nav-item nav-link"
-                                          href="/auth/signin"
-                                          onClick={[Function]}
-                                        >
-                                          Sign In
-                                        </a>
-                                      </Link>
-                                      <p
-                                        className="link-border"
-                                      >
-                                        |
-                                      </p>
-                                      <Link
-                                        className=" nav-item nav-link"
-                                        replace={false}
-                                        to="/auth/signup"
-                                      >
-                                        <a
-                                          className=" nav-item nav-link"
-                                          href="/auth/signup"
-                                          onClick={[Function]}
-                                        >
-                                          Sign Up
-                                        </a>
-                                      </Link>
-                                    </ul>
+                                          <Link
+                                            className="nav-item nav-link"
+                                            replace={false}
+                                            to="/auth/signin"
+                                          >
+                                            <a
+                                              className="nav-item nav-link"
+                                              href="/auth/signin"
+                                              onClick={[Function]}
+                                            >
+                                              Sign In
+                                            </a>
+                                          </Link>
+                                          <p
+                                            className="link-border"
+                                          >
+                                            |
+                                          </p>
+                                          <Link
+                                            className=" nav-item nav-link"
+                                            replace={false}
+                                            to="/auth/signup"
+                                          >
+                                            <a
+                                              className=" nav-item nav-link"
+                                              href="/auth/signup"
+                                              onClick={[Function]}
+                                            >
+                                              Sign Up
+                                            </a>
+                                          </Link>
+                                        </ul>
+                                      </div>
+                                    </div>
                                   </div>
-                                </div>
-                              </nav>
-                            </header>
+                                </nav>
+                              </header>
+                            </div>
                           </Header>
                         </Connect(Header)>
                         <h2>
