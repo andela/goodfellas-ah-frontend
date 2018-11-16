@@ -15,19 +15,40 @@ exports[`Signup UI render features container should render as expected 1`] = `
   >
     <Connect(SignupForm)>
       <SignupForm
+        clearSigninError={[Function]}
+        message=""
         signup={[Function]}
       >
         <form
+          className="auth-signup"
           onSubmit={[Function]}
         >
           <p
             className="error-field"
           />
           <AuthInput
-            error={Object {}}
+            error={
+              Object {
+                "confirmPassword": "Please confirm your password.",
+                "email": "Please enter a valid email.",
+                "firstname": "Please enter your first name",
+                "lastname": "Please enter your last name",
+                "password": "Please enter a valid password.",
+                "status": true,
+              }
+            }
             handleChange={[Function]}
             name="firstname"
             placeholder="Firstname"
+            touched={
+              Object {
+                "confirmPassword": false,
+                "email": false,
+                "firstname": false,
+                "lastname": false,
+                "password": false,
+              }
+            }
             value=""
           >
             <div
@@ -40,7 +61,7 @@ exports[`Signup UI render features container should render as expected 1`] = `
                 firstname
               </label>
               <input
-                className="auth-field"
+                className="auth-field "
                 id="firstname"
                 onChange={[Function]}
                 placeholder="Firstname"
@@ -53,10 +74,28 @@ exports[`Signup UI render features container should render as expected 1`] = `
             </div>
           </AuthInput>
           <AuthInput
-            error={Object {}}
+            error={
+              Object {
+                "confirmPassword": "Please confirm your password.",
+                "email": "Please enter a valid email.",
+                "firstname": "Please enter your first name",
+                "lastname": "Please enter your last name",
+                "password": "Please enter a valid password.",
+                "status": true,
+              }
+            }
             handleChange={[Function]}
             name="lastname"
             placeholder="Lastname"
+            touched={
+              Object {
+                "confirmPassword": false,
+                "email": false,
+                "firstname": false,
+                "lastname": false,
+                "password": false,
+              }
+            }
             value=""
           >
             <div
@@ -69,7 +108,7 @@ exports[`Signup UI render features container should render as expected 1`] = `
                 lastname
               </label>
               <input
-                className="auth-field"
+                className="auth-field "
                 id="lastname"
                 onChange={[Function]}
                 placeholder="Lastname"
@@ -82,11 +121,28 @@ exports[`Signup UI render features container should render as expected 1`] = `
             </div>
           </AuthInput>
           <AuthInput
-            error={Object {}}
+            error={
+              Object {
+                "confirmPassword": "Please confirm your password.",
+                "email": "Please enter a valid email.",
+                "firstname": "Please enter your first name",
+                "lastname": "Please enter your last name",
+                "password": "Please enter a valid password.",
+                "status": true,
+              }
+            }
             handleChange={[Function]}
             name="email"
             placeholder="E-mail"
-            type="email"
+            touched={
+              Object {
+                "confirmPassword": false,
+                "email": false,
+                "firstname": false,
+                "lastname": false,
+                "password": false,
+              }
+            }
             value=""
           >
             <div
@@ -99,11 +155,11 @@ exports[`Signup UI render features container should render as expected 1`] = `
                 email
               </label>
               <input
-                className="auth-field"
+                className="auth-field "
                 id="email"
                 onChange={[Function]}
                 placeholder="E-mail"
-                type="email"
+                type="text"
                 value=""
               />
               <div
@@ -112,10 +168,28 @@ exports[`Signup UI render features container should render as expected 1`] = `
             </div>
           </AuthInput>
           <AuthInput
-            error={Object {}}
+            error={
+              Object {
+                "confirmPassword": "Please confirm your password.",
+                "email": "Please enter a valid email.",
+                "firstname": "Please enter your first name",
+                "lastname": "Please enter your last name",
+                "password": "Please enter a valid password.",
+                "status": true,
+              }
+            }
             handleChange={[Function]}
             name="password"
             placeholder="Password"
+            touched={
+              Object {
+                "confirmPassword": false,
+                "email": false,
+                "firstname": false,
+                "lastname": false,
+                "password": false,
+              }
+            }
             type="password"
             value=""
           >
@@ -129,7 +203,7 @@ exports[`Signup UI render features container should render as expected 1`] = `
                 password
               </label>
               <input
-                className="auth-field"
+                className="auth-field "
                 id="password"
                 onChange={[Function]}
                 placeholder="Password"
@@ -142,10 +216,28 @@ exports[`Signup UI render features container should render as expected 1`] = `
             </div>
           </AuthInput>
           <AuthInput
-            error={Object {}}
+            error={
+              Object {
+                "confirmPassword": "Please confirm your password.",
+                "email": "Please enter a valid email.",
+                "firstname": "Please enter your first name",
+                "lastname": "Please enter your last name",
+                "password": "Please enter a valid password.",
+                "status": true,
+              }
+            }
             handleChange={[Function]}
             name="confirmPassword"
             placeholder="Confirm Password"
+            touched={
+              Object {
+                "confirmPassword": false,
+                "email": false,
+                "firstname": false,
+                "lastname": false,
+                "password": false,
+              }
+            }
             type="password"
             value=""
           >
@@ -159,7 +251,7 @@ exports[`Signup UI render features container should render as expected 1`] = `
                 confirmPassword
               </label>
               <input
-                className="auth-field"
+                className="auth-field "
                 id="confirmPassword"
                 onChange={[Function]}
                 placeholder="Confirm Password"
