@@ -26,7 +26,7 @@ exports[`SocialButtonList UI render features container should render as expected
             className="social-link"
           >
             <a
-              href="http://localhost:5000/api/auth/facebook"
+              href="http://localhost:4000/api/auth/facebook"
             >
               <div
                 className="facebook"
@@ -48,7 +48,7 @@ exports[`SocialButtonList UI render features container should render as expected
             className="social-link"
           >
             <a
-              href="http://localhost:5000/api/auth/google"
+              href="http://localhost:4000/api/auth/google"
             >
               <div
                 className="google"
@@ -70,7 +70,7 @@ exports[`SocialButtonList UI render features container should render as expected
             className="social-link"
           >
             <a
-              href="http://localhost:5000/api/auth/twitter"
+              href="http://localhost:4000/api/auth/twitter"
             >
               <div
                 className="twitter"
