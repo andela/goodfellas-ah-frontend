@@ -142,7 +142,10 @@ describe('Article Reducer', () => {
       const initialState = {
         articles: [],
         authenticated: '',
+        articleLoading: false,
         error: [],
+        singleArticle: null,
+        articleError: '',
         errorMessage: '',
         ownProfile: {},
         profile: {
@@ -162,7 +165,10 @@ describe('Article Reducer', () => {
       const expectedState = {
         articles: [{ articles: 'new Articles' }],
         authenticated: '',
+        articleLoading: false,
         error: [],
+        singleArticle: null,
+        articleError: '',
         errorMessage: '',
         ownProfile: {},
         profile: {
@@ -184,6 +190,9 @@ describe('Article Reducer', () => {
         authenticated: '',
         error: 'Error getting articles',
         errorMessage: '',
+        articleLoading: false,
+        singleArticle: null,
+        articleError: '',
         ownProfile: {},
         profile: {
           articles: [], favorites: [], followers: [], following: [], loading: true, profile: {}, profileError: '', profileView: 'Following', user: {},

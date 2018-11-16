@@ -1,5 +1,5 @@
 import React from 'react';
-import { CreateArticles } from '../../views/CreateArticles';
+import { CreateArticles } from '../../containers/CreateArticles';
 
 describe('create artcicle component test suite', () => {
   const props = {
