@@ -2,20 +2,21 @@ import React from 'react';
 
 const AuthInput = (props) => {
   const {
-    value, error, name, type, placeholder, handleChange,
+    value, error, name, id, type, placeholder, handleChange, handleBlur, touched,
   } = props;
   return (
     <div className="auth-input-wrapper">
       <label className="sr-only" htmlFor={name}>{name}</label>
       <input
         type={type || 'text'}
-        className="auth-field"
+        className={`auth-field ${(touched[name] && error[name]) ? 'has-error' : ''}`}
         placeholder={placeholder}
-        id={name}
+        id={id || name}
         value={value}
         onChange={handleChange}
+        onBlur={handleBlur}
       />
-      <div className="error-field">{error[name]}</div>
+      <div className="error-field">{touched[name] ? error[name] : ''}</div>
     </div>);
 };
 
