@@ -28,9 +28,9 @@ describe('SocialButtonList UI', () => {
 describe('SocialButtonList API', () => {
   describe('social authentication buttons', () => {
     test('navigate the user to the correct route', () => {
-      expect(wrapped.find('a').first().prop('href')).toEqual('http://localhost:3000/api/auth/facebook');
-      expect(wrapped.find('a').at(1).prop('href')).toEqual('http://localhost:3000/api/auth/google');
-      expect(wrapped.find('a').at(2).prop('href')).toEqual('http://localhost:3000/api/auth/twitter');
+      expect(wrapped.find('a').first().prop('href')).toEqual('http://localhost:5000/api/auth/facebook');
+      expect(wrapped.find('a').at(1).prop('href')).toEqual('http://localhost:5000/api/auth/google');
+      expect(wrapped.find('a').at(2).prop('href')).toEqual('http://localhost:5000/api/auth/twitter');
     });
   });
 });

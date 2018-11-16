@@ -56,19 +56,35 @@ exports[`Signin UI render features container should render as expected 1`] = `
       >
         <Connect(Signin)>
           <Signin
+            clearSigninError={[Function]}
+            errorMessage=""
             signin={[Function]}
           >
             <form
+              className="auth-signin"
               onSubmit={[Function]}
             >
               <div
                 className="error-field"
               />
               <AuthInput
-                error={Object {}}
+                error={
+                  Object {
+                    "email": "Please enter a valid email.",
+                    "password": "Please enter a valid password.",
+                    "status": true,
+                  }
+                }
+                handleBlur={[Function]}
                 handleChange={[Function]}
                 name="email"
                 placeholder="Email"
+                touched={
+                  Object {
+                    "email": false,
+                    "password": false,
+                  }
+                }
                 value=""
               >
                 <div
@@ -81,8 +97,9 @@ exports[`Signin UI render features container should render as expected 1`] = `
                     email
                   </label>
                   <input
-                    className="auth-field"
+                    className="auth-field "
                     id="email"
+                    onBlur={[Function]}
                     onChange={[Function]}
                     placeholder="Email"
                     type="text"
@@ -94,10 +111,23 @@ exports[`Signin UI render features container should render as expected 1`] = `
                 </div>
               </AuthInput>
               <AuthInput
-                error={Object {}}
+                error={
+                  Object {
+                    "email": "Please enter a valid email.",
+                    "password": "Please enter a valid password.",
+                    "status": true,
+                  }
+                }
+                handleBlur={[Function]}
                 handleChange={[Function]}
                 name="password"
                 placeholder="Password"
+                touched={
+                  Object {
+                    "email": false,
+                    "password": false,
+                  }
+                }
                 type="password"
                 value=""
               >
@@ -111,8 +141,9 @@ exports[`Signin UI render features container should render as expected 1`] = `
                     password
                   </label>
                   <input
-                    className="auth-field"
+                    className="auth-field "
                     id="password"
+                    onBlur={[Function]}
                     onChange={[Function]}
                     placeholder="Password"
                     type="password"

@@ -68,7 +68,7 @@ describe('Signin client-side validation', () => {
     wrapped.find('form').simulate('submit');
     wrapped.update();
 
-    expect(wrapped.find('.auth-input-wrapper').first().find('.error-field').text()).toEqual('email field must be filled');
-    expect(wrapped.find('.auth-input-wrapper').at(1).find('.error-field').text()).toEqual('password field must be filled');
+    expect(wrapped.find('.auth-input-wrapper').first().find('.error-field').text()).toEqual('Please enter a valid email.');
+    expect(wrapped.find('.auth-input-wrapper').at(1).find('.error-field').text()).toEqual('Please enter a valid password.');
   });
 });
