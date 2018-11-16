@@ -3,6 +3,5 @@
 exports[`ProfilePage UI render features view should render as expected 1`] = `
 <div>
   <Connect(Profile) />
-  <Notification />
 </div>
 `;
