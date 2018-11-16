@@ -10,6 +10,7 @@ export class Header extends Component {
   state = {
     notifications: {},
     unSeenNotification: 0,
+    inApp: true,
   };
 
   dropdown = () => {
@@ -49,7 +50,13 @@ export class Header extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps) {
-      const { notifications } = nextProps;
+      const { notifications, inAppStatus } = nextProps;
+      const status = inAppStatus.notification;
+      if (Object.values(status).indexOf('inApp') === -1) {
+        this.setState({
+          inApp: false,
+        });
+      }
       this.setState({
         notifications,
       });
@@ -66,7 +73,7 @@ export class Header extends Component {
     const { auth } = this.props;
     const { parentComponent } = this.props;
     const { signout: signoutUser, profileNavigation: switchView, profile } = this.props;
-    const { notifications, unSeenNotification } = this.state;
+    const { notifications, unSeenNotification, inApp } = this.state;
     return (
       <header>
         <nav className="navbar" ref="navbarTitle">
@@ -106,7 +113,7 @@ export class Header extends Component {
                   )}
                   {
                     <ul ref="myDropdown2" className="dropdown-menu">
-                      {Object.keys(notifications).length !== 0
+                      {inApp && Object.keys(notifications).length !== 0
                         && notifications.rows.map((notification) => {
                           if (!notification.seen) {
                             switch (notification.type) {
@@ -137,7 +144,7 @@ export class Header extends Component {
                     </ul>
                   }
                 </div>
-                {unSeenNotification !== 0 && <span className="notification-count">{unSeenNotification}</span>}
+                {unSeenNotification !== 0 && inApp ? <span className="notification-count">{unSeenNotification}</span> : null}
 
                 <div onClick={this.dropdown} className="dropdown dropdown-click">
                   <img className="dropdown-toggle author-image" src={profile.image || userPlaceholderImage} alt="" />
@@ -231,12 +238,13 @@ function mapStatesToProps(state) {
     auth: state.auth.authenticated,
     profile: state.auth.ownProfile,
     notifications: state.notification.notifications,
+    inAppStatus: state.notification,
   };
 }
 
 export default connect(
   mapStatesToProps,
   {
- signout, profileNavigation, getNotification, seenNotification 
-},
+    signout, profileNavigation, getNotification, seenNotification,
+  },
 )(Header);

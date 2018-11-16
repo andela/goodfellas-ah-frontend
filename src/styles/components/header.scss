@@ -203,7 +203,7 @@ header {
             text-decoration: none;
           }
         }
-        a:nth-child(odd), a:nth-child(6){
+        a:nth-child(odd), a:nth-child(even){
           border-bottom: 1px solid #c4c4c4;
         }
         &.show{

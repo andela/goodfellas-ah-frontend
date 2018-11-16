@@ -47,13 +47,13 @@ class Notification extends Component {
   render() {
     const { email, inApp } = this.state;
     return (
-      <div className="notification-panel mt-4">
+      <div className="notification-panel mt-3">
         <div className="container">
           <div className="row">
             <div className="col-md-6 m-auto">
               <div className="card">
                 <div className="card-body">
-                  <h5 className="card-title text-muted text-center">Notification settings</h5>
+                  <h6 className="card-title text-muted text-center">Notification settings</h6>
                   <div className="row">
                     <div className="col-md-7">
                       <p className="slider-title">Email Notification</p>
