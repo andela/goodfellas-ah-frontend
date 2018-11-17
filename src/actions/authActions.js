@@ -49,6 +49,8 @@ export const signin = (formValues, callback) => async (dispatch, getState, API) 
   }
 };
 
+export const clearSigninError = () => ({ type: types.CLEAR_SIGNIN_ERROR });
+
 export const signout = () => (dispatch, getState, API) => {
   localStorage.clear();
   API.updateToken(null);

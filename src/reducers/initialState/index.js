@@ -7,6 +7,8 @@ const initialState = {
   ownProfile: {},
   articles: [],
   error: [],
+  searchResults: [],
+  searchError: [],
   profile: {
     loading: true,
     profileView: 'Following',

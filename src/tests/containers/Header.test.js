@@ -11,6 +11,8 @@ let wrapper;
 let wrapperHeader;
 let mountHeader;
 let authFalseHeader;
+let mountHeaderNullProfile;
+let wrapperHeaderAuth;
 const auth = {
   auth: {
     authenticated: true,
@@ -44,6 +46,23 @@ beforeEach(() => {
     <Header
       parentComponent="notlandingpage"
       auth={authTest.auth.authenticated}
+      profile={{ image: null }}
+    />,
+  );
+
+  wrapperHeaderAuth = shallow(
+    <Header
+      parentComponent="landingpage"
+      auth={authTest.auth.authenticated}
+      profile={{ image: null }}
+    />,
+  );
+
+  mountHeaderNullProfile = shallow(
+    <Header
+      parentComponent="notlandingpage"
+      auth={auth.auth.authenticated}
+      profile={{ image: null }}
     />,
   );
 
@@ -90,13 +109,41 @@ test('Header functionality', () => {
   expect(inst).not.toBeNull();
 });
 
-it('should click more articles button', () => {
-  mountHeader.find('.dropdown-click').simulate('click');
-  mountHeader.find('.header-user-search > span').simulate('click');
-  mountHeader.find('.header-user-search > span').simulate('click');
+test('Header functionality for profile without image', () => {
+  const inst = mountHeaderNullProfile.instance();
+  expect(inst).toBeInstanceOf(Header);
+  expect(inst).not.toBeNull();
 });
 
-it('should click more articles button', () => {
+test('Header functionality for profile without image', () => {
+  const inst = wrapperHeaderAuth.instance();
+  expect(inst).toBeInstanceOf(Header);
+  expect(inst).not.toBeNull();
+});
+
+it('should dropdown search bar filter section', () => {
+  mountHeader.find('.dropdown-click').simulate('click');
+  mountHeader.find('.search-click').simulate('click');
+  mountHeader.find('.search-click').simulate('click');
+});
+
+it('should toggle navbar', () => {
   authFalseHeader.find('.navbar-toggler').simulate('click');
   authFalseHeader.find('.navbar-toggler').simulate('click');
+});
+
+it('should toggle searchbar', () => {
+  mountHeader.find('.searchbar-toggle-mobile').simulate('click');
+  mountHeader.find('.searchbar-toggle-mobile').simulate('click');
+});
+
+it('should click search', () => {
+  mountHeader.find('.searchbar-toggle').simulate('click');
+  mountHeader.find('.search-click').simulate('click');
+  mountHeader.find('.searchbar-toggle').simulate('click');
+});
+
+it('should spy on change search', () => {
+  mountHeader.find('.searchbar').simulate('change');
+  mountHeader.find('#searchKeyword').simulate('change');
 });

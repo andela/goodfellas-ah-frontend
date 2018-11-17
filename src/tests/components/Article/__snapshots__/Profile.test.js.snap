@@ -45,10 +45,13 @@ ShallowWrapper {
           className="profile-article_user-img"
           src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541506955/user-placeholder.png"
         />,
-        <img
-          alt="article-img"
+        <div
           className="profile-article_img"
-          src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541513674/Authors%20Haven/article-placeholder.jpg"
+          style={
+            Object {
+              "backgroundImage": "url(https://res.cloudinary.com/drmmqcxkc/image/upload/v1541513674/Authors%20Haven/article-placeholder.jpg)",
+            }
+          }
         />,
         <h3>
           This is a fine title which I would really love to have
@@ -77,7 +80,8 @@ ShallowWrapper {
           <p
             className="profile-article_likes"
           >
-            3 
+            0
+             
             <svg
               className="icon"
             >
@@ -89,7 +93,8 @@ ShallowWrapper {
           <p
             className="profile-article_dislikes"
           >
-            0 
+            0
+             
             <svg
               className="icon"
             >
@@ -102,11 +107,6 @@ ShallowWrapper {
             className="comments"
           >
             0 comments
-          </p>
-          <p
-            className="edit"
-          >
-            Edit Article
           </p>
         </div>,
       ],
@@ -132,13 +132,14 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "alt": "article-img",
           "className": "profile-article_img",
-          "src": "https://res.cloudinary.com/drmmqcxkc/image/upload/v1541513674/Authors%20Haven/article-placeholder.jpg",
+          "style": Object {
+            "backgroundImage": "url(https://res.cloudinary.com/drmmqcxkc/image/upload/v1541513674/Authors%20Haven/article-placeholder.jpg)",
+          },
         },
         "ref": null,
         "rendered": null,
-        "type": "img",
+        "type": "div",
       },
       Object {
         "instance": null,
@@ -208,7 +209,8 @@ ShallowWrapper {
             <p
               className="profile-article_likes"
             >
-              3 
+              0
+               
               <svg
                 className="icon"
               >
@@ -220,7 +222,8 @@ ShallowWrapper {
             <p
               className="profile-article_dislikes"
             >
-              0 
+              0
+               
               <svg
                 className="icon"
               >
@@ -234,11 +237,7 @@ ShallowWrapper {
             >
               0 comments
             </p>,
-            <p
-              className="edit"
-            >
-              Edit Article
-            </p>,
+            undefined,
           ],
           "className": "profile-article_footer",
         },
@@ -250,7 +249,8 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                "3 ",
+                0,
+                " ",
                 <svg
                   className="icon"
                 >
@@ -263,7 +263,8 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": Array [
-              "3 ",
+              0,
+              " ",
               Object {
                 "instance": null,
                 "key": undefined,
@@ -297,7 +298,8 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                "0 ",
+                0,
+                " ",
                 <svg
                   className="icon"
                 >
@@ -310,7 +312,8 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": Array [
-              "0 ",
+              0,
+              " ",
               Object {
                 "instance": null,
                 "key": undefined,
@@ -350,18 +353,7 @@ ShallowWrapper {
             "rendered": "0 comments",
             "type": "p",
           },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Edit Article",
-              "className": "edit",
-            },
-            "ref": null,
-            "rendered": "Edit Article",
-            "type": "p",
-          },
+          undefined,
         ],
         "type": "div",
       },
@@ -380,10 +372,13 @@ ShallowWrapper {
             className="profile-article_user-img"
             src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541506955/user-placeholder.png"
           />,
-          <img
-            alt="article-img"
+          <div
             className="profile-article_img"
-            src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541513674/Authors%20Haven/article-placeholder.jpg"
+            style={
+              Object {
+                "backgroundImage": "url(https://res.cloudinary.com/drmmqcxkc/image/upload/v1541513674/Authors%20Haven/article-placeholder.jpg)",
+              }
+            }
           />,
           <h3>
             This is a fine title which I would really love to have
@@ -412,7 +407,8 @@ ShallowWrapper {
             <p
               className="profile-article_likes"
             >
-              3 
+              0
+               
               <svg
                 className="icon"
               >
@@ -424,7 +420,8 @@ ShallowWrapper {
             <p
               className="profile-article_dislikes"
             >
-              0 
+              0
+               
               <svg
                 className="icon"
               >
@@ -437,11 +434,6 @@ ShallowWrapper {
               className="comments"
             >
               0 comments
-            </p>
-            <p
-              className="edit"
-            >
-              Edit Article
             </p>
           </div>,
         ],
@@ -467,13 +459,14 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "alt": "article-img",
             "className": "profile-article_img",
-            "src": "https://res.cloudinary.com/drmmqcxkc/image/upload/v1541513674/Authors%20Haven/article-placeholder.jpg",
+            "style": Object {
+              "backgroundImage": "url(https://res.cloudinary.com/drmmqcxkc/image/upload/v1541513674/Authors%20Haven/article-placeholder.jpg)",
+            },
           },
           "ref": null,
           "rendered": null,
-          "type": "img",
+          "type": "div",
         },
         Object {
           "instance": null,
@@ -543,7 +536,8 @@ ShallowWrapper {
               <p
                 className="profile-article_likes"
               >
-                3 
+                0
+                 
                 <svg
                   className="icon"
                 >
@@ -555,7 +549,8 @@ ShallowWrapper {
               <p
                 className="profile-article_dislikes"
               >
-                0 
+                0
+                 
                 <svg
                   className="icon"
                 >
@@ -569,11 +564,7 @@ ShallowWrapper {
               >
                 0 comments
               </p>,
-              <p
-                className="edit"
-              >
-                Edit Article
-              </p>,
+              undefined,
             ],
             "className": "profile-article_footer",
           },
@@ -585,7 +576,8 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  "3 ",
+                  0,
+                  " ",
                   <svg
                     className="icon"
                   >
@@ -598,7 +590,8 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": Array [
-                "3 ",
+                0,
+                " ",
                 Object {
                   "instance": null,
                   "key": undefined,
@@ -632,7 +625,8 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  "0 ",
+                  0,
+                  " ",
                   <svg
                     className="icon"
                   >
@@ -645,7 +639,8 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": Array [
-                "0 ",
+                0,
+                " ",
                 Object {
                   "instance": null,
                   "key": undefined,
@@ -685,18 +680,7 @@ ShallowWrapper {
               "rendered": "0 comments",
               "type": "p",
             },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Edit Article",
-                "className": "edit",
-              },
-              "ref": null,
-              "rendered": "Edit Article",
-              "type": "p",
-            },
+            undefined,
           ],
           "type": "div",
         },

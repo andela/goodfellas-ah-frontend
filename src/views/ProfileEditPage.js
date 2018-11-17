@@ -1,8 +1,9 @@
 import React from 'react';
 import ProfileEdit from '../containers/ProfileEdit';
+import Body from '../components/layout/DefaultLayout';
 
-export default() => (
-  <div>
+export default(props) => (
+  <Body {...props} className="edit-profile">
     <ProfileEdit />
-  </div>
+  </Body>
 );

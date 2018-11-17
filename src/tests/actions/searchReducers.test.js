@@ -1,8 +1,6 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import moxios from 'moxios';
-import articleReducer from '../../reducers/articleReducer';
-import * as types from '../../actions/actionTypes';
 import * as actions from '../../actions/articleActions';
 
 const middlewares = [thunk];
@@ -78,7 +76,7 @@ const articles = {
 const error = { error: 'Internal Server Error' };
 
 // const error = [];
-describe('getPosts actions', () => {
+describe('search actions', () => {
   beforeEach(() => {
     moxios.install();
   });
@@ -87,7 +85,7 @@ describe('getPosts actions', () => {
     moxios.uninstall();
   });
 
-  it('creates GET_ARTICLES after successfuly fetching articles', () => {
+  it('successfully SEARCHES for articles', () => {
     moxios.wait(() => {
       const request = moxios.requests.mostRecent();
       request.respondWith({
@@ -99,19 +97,25 @@ describe('getPosts actions', () => {
     const expectedActions = [
       {
         payload: articles,
-        type: 'GET_ARTICLES',
+        type: 'SEARCH',
       },
     ];
 
     const store = mockStore({ articles: {} });
 
-    return store.dispatch(actions.getArticles()).then(() => {
+    const searchValues = { Title: 'team', Author: false, Tag: false };
+    const callback = () => {
+      const age = 1;
+      return age;
+    };
+
+    return store.dispatch(actions.search(searchValues, callback)).then(() => {
       // return of async actions
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
 
-  it('creates GET_ARTICLES after successfuly fetching articles', () => {
+  it('fails to SEARCH for articles', () => {
     moxios.wait(() => {
       const request = moxios.requests.mostRecent();
       request.reject({
@@ -123,93 +127,17 @@ describe('getPosts actions', () => {
     const expectedActions = [
       {
         payload: { data: undefined, error: 'Internal Server Error' },
-        type: 'GET_ARTICLES_ERROR',
+        type: 'SEARCH_ERROR',
       },
     ];
 
     const store = mockStore({ articles: {} });
 
-    return store.dispatch(actions.getArticles()).then(() => {
+    const searchValues = { Title: 'lorem', Author: false, Tag: false };
+
+    return store.dispatch(actions.search(searchValues)).then(() => {
       // return of async actions
       expect(store.getActions()).toEqual(expectedActions);
-    });
-  });
-});
-
-
-describe('Article Reducer', () => {
-  describe('INITIAL_STATE', () => {
-    test('is correct', () => {
-      const action = {
-        type: 'wrong_action',
-        payload: '',
-      };
-      const initialState = {
-        articles: [],
-        authenticated: '',
-        error: [],
-        searchResults: [],
-        searchError: [],
-        errorMessage: '',
-        ownProfile: {},
-        profile: {
-          articles: [], favorites: [], followers: [], following: [], loading: true, profile: {}, profileError: '', profileView: 'Following', user: {},
-        },
-        successMessage: '',
-        user: {},
-        userId: null,
-        notification: [],
-        notifications: {},
-      };
-      expect(articleReducer(undefined, action)).toEqual(initialState);
-    });
-  });
-
-  describe('GET_ARTICLES', () => {
-    test('returns the correct state', () => {
-      const action = { type: types.GET_ARTICLES, payload: [{ articles: 'new Articles' }] };
-      const expectedState = {
-        articles: [{ articles: 'new Articles' }],
-        authenticated: '',
-        error: [],
-        searchResults: [],
-        searchError: [],
-        errorMessage: '',
-        ownProfile: {},
-        profile: {
-          articles: [], favorites: [], followers: [], following: [], loading: true, profile: {}, profileError: '', profileView: 'Following', user: {},
-        },
-        successMessage: '',
-        user: {},
-        userId: null,
-        notification: [],
-        notifications: {},
-      };
-      expect(articleReducer(undefined, action)).toEqual(expectedState);
-    });
-  });
-
-  describe('GET_ARTICLES_ERROR', () => {
-    test('returns the correct state', () => {
-      const action = { type: types.GET_ARTICLES_ERROR, payload: 'Error getting articles' };
-      const expectedState = {
-        articles: [],
-        authenticated: '',
-        error: 'Error getting articles',
-        searchResults: [],
-        searchError: [],
-        errorMessage: '',
-        ownProfile: {},
-        profile: {
-          articles: [], favorites: [], followers: [], following: [], loading: true, profile: {}, profileError: '', profileView: 'Following', user: {},
-        },
-        successMessage: '',
-        user: {},
-        userId: null,
-        notification: [],
-        notifications: {},
-      };
-      expect(articleReducer(undefined, action)).toEqual(expectedState);
     });
   });
 });

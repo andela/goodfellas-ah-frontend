@@ -1,16 +1,18 @@
 .profile {
   &>div {
-    max-width: 617px;
-    margin: 2rem auto 0;
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.5rem 0;
-      border-bottom: 1.2px solid var(--lighter-gray);
-    }
     p {
       margin: 0;
+    }
+    &:nth-child(2) {
+      max-width: 617px;
+      margin: 2rem auto 0;
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5rem 0;
+        border-bottom: 1.2px solid var(--lighter-gray);
+      }
     }
   }
 }

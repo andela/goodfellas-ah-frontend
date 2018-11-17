@@ -12,6 +12,8 @@ export default (state = initialState, action) => {
       };
     case types.SIGNIN_USER_ERROR:
       return { ...state, errorMessage: action.payload };
+    case types.CLEAR_SIGNIN_ERROR:
+      return { ...state, errorMessage: '' };
     case types.SUCCESS_MSG:
       return { ...state, successMessage: action.payload };
     case types.RESET_ERROR:

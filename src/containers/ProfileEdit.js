@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import swal from 'sweetalert';
-import Body from '../components/layout/DefaultLayout';
 import ProfileImageUploader from '../components/profile/ImageUploader';
 import InputBox from '../components/shared/InputBox';
 import { Loader as Loading } from '../components/shared/Loading';
@@ -70,6 +69,7 @@ export class EditProfile extends Component {
   // eslint-disable-next-line consistent-return
   updateProfile = async (e) => {
     e.preventDefault();
+    const { auth } = this.props;
     if (!e.target.username.value) return swal('Please enter a username', 'Pro Tip: Authors with usernames attract more followers', 'warning');
     if (!e.target.bio.value) return swal('Please fill in your bio', 'Pro Tip: With a clear descriptive bio your profile looks much more beautiful', 'warning');
     const { editProfile: updateProfile } = this.props;
@@ -77,7 +77,7 @@ export class EditProfile extends Component {
     const { profileImageFile } = this.state;
     const profileData = new FormData(e.target);
     if (profileImageFile) profileData.append('image', profileImageFile);
-    const response = await updateProfile(1, profileData);
+    const response = await updateProfile(auth.userId, profileData);
     this.setState({ updating: false });
     if (response.success) {
       this.resetImage();
@@ -117,8 +117,8 @@ export class EditProfile extends Component {
     }
     const fullName = `${profileStore.user.firstname} ${profileStore.user.lastname}`;
     return (
-      <Body className="edit-profile">
-        <form onSubmit={this.updateProfile} encType="multipart/form-data">
+      <div>
+        <form onSubmit={this.updateProfile} className="edit-profile_form" encType="multipart/form-data">
           <ProfileImageUploader name="image" imageRead={this.imageRead} canReset={!!profileImage} resetImage={this.resetImage} profileImage={profileImage || profileStore.profile.image} />
           <h3 id="user-name" className="username">{fullName}</h3>
           <InputBox handleChange={this.handleChange} value={username} name="username" placeholder="Username" />
@@ -129,7 +129,7 @@ export class EditProfile extends Component {
           </div>
         </form>
         <Notification />
-      </Body>
+      </div>
     );
   }
 }
