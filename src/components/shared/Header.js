@@ -6,7 +6,7 @@ import { signout } from '../../actions/authActions';
 import { search } from '../../actions/articleActions';
 import Button from './Button';
 import { userPlaceholderImage } from '../../mixin';
-import { getNotification, seenNotification } from '../../actions/notificationActions';
+import { getNotification, seenNotification, setNotification } from '../../actions/notificationActions';
 
 export class Header extends Component {
   state = {
@@ -67,7 +67,8 @@ export class Header extends Component {
   };
 
   componentDidMount() {
-    const { getNotification: latestNotification } = this.props;
+    const { getNotification: latestNotification, setNotification: notificationSettings } = this.props;
+    notificationSettings();
     latestNotification();
   }
 
@@ -434,6 +435,6 @@ function mapStatesToProps(state) {
 export default connect(
   mapStatesToProps,
   {
-    signout, search, profileNavigation, getNotification, seenNotification,
+    signout, search, profileNavigation, getNotification, seenNotification, setNotification,
   },
 )(Header);
