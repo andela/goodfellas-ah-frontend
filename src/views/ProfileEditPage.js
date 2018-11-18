@@ -4,6 +4,6 @@ import Body from '../components/layout/DefaultLayout';
 
 export default(props) => (
   <Body {...props} className="edit-profile">
-    <ProfileEdit />
+    <ProfileEdit {...props} />
   </Body>
 );

@@ -410,15 +410,15 @@ ShallowWrapper {
         />,
         <div>
           <button
-            className="button outline "
-            disabled={false}
+            className="button green outline"
+            disabled={true}
             id="save-button"
             type="submit"
           >
             Save
           </button>
           <button
-            className="button outline "
+            className="button green outline"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -496,15 +496,15 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <button
-              className="button outline "
-              disabled={false}
+              className="button green outline"
+              disabled={true}
               id="save-button"
               type="submit"
             >
               Save
             </button>,
             <button
-              className="button outline "
+              className="button green outline"
               disabled={false}
               onClick={[Function]}
               type="button"
@@ -521,8 +521,8 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "Save",
-              "className": "button outline ",
-              "disabled": false,
+              "className": "button green outline",
+              "disabled": true,
               "id": "save-button",
               "type": "submit",
             },
@@ -536,7 +536,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "Cancel",
-              "className": "button outline ",
+              "className": "button green outline",
               "disabled": false,
               "onClick": [Function],
               "type": "button",
@@ -585,15 +585,15 @@ ShallowWrapper {
           />,
           <div>
             <button
-              className="button outline "
-              disabled={false}
+              className="button green outline"
+              disabled={true}
               id="save-button"
               type="submit"
             >
               Save
             </button>
             <button
-              className="button outline "
+              className="button green outline"
               disabled={false}
               onClick={[Function]}
               type="button"
@@ -671,15 +671,15 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <button
-                className="button outline "
-                disabled={false}
+                className="button green outline"
+                disabled={true}
                 id="save-button"
                 type="submit"
               >
                 Save
               </button>,
               <button
-                className="button outline "
+                className="button green outline"
                 disabled={false}
                 onClick={[Function]}
                 type="button"
@@ -696,8 +696,8 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "Save",
-                "className": "button outline ",
-                "disabled": false,
+                "className": "button green outline",
+                "disabled": true,
                 "id": "save-button",
                 "type": "submit",
               },
@@ -711,7 +711,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "Cancel",
-                "className": "button outline ",
+                "className": "button green outline",
                 "disabled": false,
                 "onClick": [Function],
                 "type": "button",
