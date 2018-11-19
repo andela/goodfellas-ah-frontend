@@ -43,7 +43,7 @@ const App = () => (
     <div>
       <Route exact path="/" component={LandingPage} />
       <Route path="/auth" component={Auth} />
-      <Route path="/articles" component={Articles} />
+      <Route path="/articles" component={authenticate(Articles)} />
       <Route path="/user" component={authenticate(User)} />
       <Route path="/forgotpassword" component={ForgotPasswordPage} />
       <Route path="/resetpassword" component={ResetPasswordPage} />

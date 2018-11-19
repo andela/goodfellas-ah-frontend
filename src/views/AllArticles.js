@@ -1,9 +1,11 @@
 import React from 'react';
+import AllArticles from '../containers/AllArticles';
+import Body from '../components/layout/DefaultLayout';
 
-const GetAllArticles = () => (
-  <div>
-    This is the All Articles view
-  </div>
+const GetAllArticles = (props) => (
+  <Body>
+    <AllArticles {...props} />
+  </Body>
 );
 
 export default GetAllArticles;
