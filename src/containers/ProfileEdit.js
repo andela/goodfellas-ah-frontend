@@ -13,8 +13,6 @@ export class EditProfile extends Component {
   state = {
     profileImage: '',
     profileImageFile: '',
-    initialUsername: '',
-    initialBio: '',
     username: '',
     bio: '',
     updating: false,
@@ -27,9 +25,7 @@ export class EditProfile extends Component {
     if (auth.userId === profileStore.profile.userId) {
       this.setState({
         bio: profileStore.profile.bio,
-        initialBio: profileStore.profile.bio,
         username: profileStore.profile.username,
-        initialUsername: profileStore.profile.username,
       });
     }
   }
@@ -37,13 +33,10 @@ export class EditProfile extends Component {
   componentDidUpdate = (prevProps) => {
     const { profileStore } = this.props;
     if (prevProps.profileStore.profile.username !== profileStore.profile.username) {
-      this.setState({
-        username: profileStore.profile.username,
-        initialUsername: profileStore.profile.username,
-      });
+      this.setState({ username: profileStore.profile.username });
     }
     if (prevProps.profileStore.profile.bio !== profileStore.profile.bio) {
-      this.setState({ bio: profileStore.profile.bio, initialBio: profileStore.profile.bio });
+      this.setState({ bio: profileStore.profile.bio });
     }
   }
 
@@ -100,8 +93,6 @@ export class EditProfile extends Component {
       username,
       bio,
       updating,
-      initialBio,
-      initialUsername,
     } = this.state;
 
     if (!Object.keys(profileStore.profile).length) {
@@ -126,7 +117,7 @@ export class EditProfile extends Component {
         <InputBox handleChange={this.handleChange} value={username} name="username" placeholder="Username" />
         <TextBox handleChange={this.handleChange} value={bio} name="bio" placeholder="Enter a short bio" />
         <div>
-          <button type="submit" disabled={updating || (!profileImage && initialBio === bio && initialUsername === username)} id="save-button" className="button green outline">{ updating ? <img className=" edit-profile_spinner" alt="loader" src={spinner} /> : 'Save' }</button>
+          <button type="submit" disabled={updating || (!profileImage && profileStore.profile.bio === bio && profileStore.profile.username === username)} id="save-button" className="button green outline">{ updating ? <img className=" edit-profile_spinner" alt="loader" src={spinner} /> : 'Save' }</button>
           <button type="button" disabled={updating} onClick={this.resetProfile} className="button green outline">Cancel</button>
         </div>
       </form>
