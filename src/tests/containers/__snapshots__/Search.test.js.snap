@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search UI render features component should render as expected 1`] = `
+<_default>
+  <Provider
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+  >
+    <MemoryRouter
+      initialEntries={
+        Array [
+          Object {
+            "key": "testkey",
+          },
+        ]
+      }
+    >
+      <Router
+        history={
+          Object {
+            "action": "POP",
+            "block": [Function],
+            "canGo": [Function],
+            "createHref": [Function],
+            "entries": Array [
+              Object {
+                "hash": "",
+                "key": "testkey",
+                "pathname": "/",
+                "search": "",
+              },
+            ],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "index": 0,
+            "length": 1,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "key": "testkey",
+              "pathname": "/",
+              "search": "",
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+        }
+      >
+        <Connect(SearchArticlesContainer)>
+          <SearchArticlesContainer
+            dispatch={[Function]}
+            searchError={Array []}
+            searchResults={Array []}
+          >
+            <section
+              className="search"
+            >
+              <div>
+                <LargeLoader>
+                  <div
+                    className="large-spinner-wrapper"
+                  >
+                    <img
+                      alt=""
+                      className="large-spinner"
+                      src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541701878/large-spinner.gif"
+                    />
+                  </div>
+                </LargeLoader>
+              </div>
+            </section>
+          </SearchArticlesContainer>
+        </Connect(SearchArticlesContainer)>
+      </Router>
+    </MemoryRouter>
+  </Provider>
+</_default>
+`;

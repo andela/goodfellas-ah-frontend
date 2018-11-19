@@ -5,7 +5,7 @@ export default (props) => {
   const { className, children } = props;
   return (
     <div className={`body ${className || ''}`}>
-      <Header />
+      <Header {...props} />
       { children }
     </div>
   );

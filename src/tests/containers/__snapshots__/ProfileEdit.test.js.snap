@@ -380,37 +380,34 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "function",
+    "nodeType": "host",
     "props": Object {
-      "children": <form
-        encType="multipart/form-data"
-        onSubmit={[Function]}
-      >
+      "children": Array [
         <ProfileImageUploader
           canReset={false}
           imageRead={[Function]}
           name="image"
           profileImage="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541770998/siue0ec27gazjujncvch.jpg"
           resetImage={[Function]}
-        />
+        />,
         <h3
           className="username"
           id="user-name"
         >
           Afeez1 Awoyemi
-        </h3>
+        </h3>,
         <_default
           handleChange={[Function]}
           name="username"
           placeholder="Username"
           value="akangbe"
-        />
+        />,
         <_default
           handleChange={[Function]}
           name="bio"
           placeholder="Enter a short bio"
           value="here's my bio which I love"
-        />
+        />,
         <div>
           <button
             className="button outline "
@@ -428,12 +425,134 @@ ShallowWrapper {
           >
             Cancel
           </button>
-        </div>
-      </form>,
-      "className": "edit-profile",
+        </div>,
+      ],
+      "className": "edit-profile_form",
+      "encType": "multipart/form-data",
+      "onSubmit": [Function],
     },
     "ref": null,
-    "rendered": Object {
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "canReset": false,
+          "imageRead": [Function],
+          "name": "image",
+          "profileImage": "https://res.cloudinary.com/drmmqcxkc/image/upload/v1541770998/siue0ec27gazjujncvch.jpg",
+          "resetImage": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Afeez1 Awoyemi",
+          "className": "username",
+          "id": "user-name",
+        },
+        "ref": null,
+        "rendered": "Afeez1 Awoyemi",
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "handleChange": [Function],
+          "name": "username",
+          "placeholder": "Username",
+          "value": "akangbe",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "handleChange": [Function],
+          "name": "bio",
+          "placeholder": "Enter a short bio",
+          "value": "here's my bio which I love",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <button
+              className="button outline "
+              disabled={false}
+              id="save-button"
+              type="submit"
+            >
+              Save
+            </button>,
+            <button
+              className="button outline "
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Cancel
+            </button>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Save",
+              "className": "button outline ",
+              "disabled": false,
+              "id": "save-button",
+              "type": "submit",
+            },
+            "ref": null,
+            "rendered": "Save",
+            "type": "button",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Cancel",
+              "className": "button outline ",
+              "disabled": false,
+              "onClick": [Function],
+              "type": "button",
+            },
+            "ref": null,
+            "rendered": "Cancel",
+            "type": "button",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "form",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
       "instance": null,
       "key": undefined,
       "nodeType": "host",
@@ -483,6 +602,7 @@ ShallowWrapper {
             </button>
           </div>,
         ],
+        "className": "edit-profile_form",
         "encType": "multipart/form-data",
         "onSubmit": [Function],
       },
@@ -605,240 +725,6 @@ ShallowWrapper {
         },
       ],
       "type": "form",
-    },
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "children": <form
-          encType="multipart/form-data"
-          onSubmit={[Function]}
-        >
-          <ProfileImageUploader
-            canReset={false}
-            imageRead={[Function]}
-            name="image"
-            profileImage="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541770998/siue0ec27gazjujncvch.jpg"
-            resetImage={[Function]}
-          />
-          <h3
-            className="username"
-            id="user-name"
-          >
-            Afeez1 Awoyemi
-          </h3>
-          <_default
-            handleChange={[Function]}
-            name="username"
-            placeholder="Username"
-            value="akangbe"
-          />
-          <_default
-            handleChange={[Function]}
-            name="bio"
-            placeholder="Enter a short bio"
-            value="here's my bio which I love"
-          />
-          <div>
-            <button
-              className="button outline "
-              disabled={false}
-              id="save-button"
-              type="submit"
-            >
-              Save
-            </button>
-            <button
-              className="button outline "
-              disabled={false}
-              onClick={[Function]}
-              type="button"
-            >
-              Cancel
-            </button>
-          </div>
-        </form>,
-        "className": "edit-profile",
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <ProfileImageUploader
-              canReset={false}
-              imageRead={[Function]}
-              name="image"
-              profileImage="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541770998/siue0ec27gazjujncvch.jpg"
-              resetImage={[Function]}
-            />,
-            <h3
-              className="username"
-              id="user-name"
-            >
-              Afeez1 Awoyemi
-            </h3>,
-            <_default
-              handleChange={[Function]}
-              name="username"
-              placeholder="Username"
-              value="akangbe"
-            />,
-            <_default
-              handleChange={[Function]}
-              name="bio"
-              placeholder="Enter a short bio"
-              value="here's my bio which I love"
-            />,
-            <div>
-              <button
-                className="button outline "
-                disabled={false}
-                id="save-button"
-                type="submit"
-              >
-                Save
-              </button>
-              <button
-                className="button outline "
-                disabled={false}
-                onClick={[Function]}
-                type="button"
-              >
-                Cancel
-              </button>
-            </div>,
-          ],
-          "encType": "multipart/form-data",
-          "onSubmit": [Function],
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "canReset": false,
-              "imageRead": [Function],
-              "name": "image",
-              "profileImage": "https://res.cloudinary.com/drmmqcxkc/image/upload/v1541770998/siue0ec27gazjujncvch.jpg",
-              "resetImage": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Afeez1 Awoyemi",
-              "className": "username",
-              "id": "user-name",
-            },
-            "ref": null,
-            "rendered": "Afeez1 Awoyemi",
-            "type": "h3",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "handleChange": [Function],
-              "name": "username",
-              "placeholder": "Username",
-              "value": "akangbe",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "handleChange": [Function],
-              "name": "bio",
-              "placeholder": "Enter a short bio",
-              "value": "here's my bio which I love",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <button
-                  className="button outline "
-                  disabled={false}
-                  id="save-button"
-                  type="submit"
-                >
-                  Save
-                </button>,
-                <button
-                  className="button outline "
-                  disabled={false}
-                  onClick={[Function]}
-                  type="button"
-                >
-                  Cancel
-                </button>,
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Save",
-                  "className": "button outline ",
-                  "disabled": false,
-                  "id": "save-button",
-                  "type": "submit",
-                },
-                "ref": null,
-                "rendered": "Save",
-                "type": "button",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Cancel",
-                  "className": "button outline ",
-                  "disabled": false,
-                  "onClick": [Function],
-                  "type": "button",
-                },
-                "ref": null,
-                "rendered": "Cancel",
-                "type": "button",
-              },
-            ],
-            "type": "div",
-          },
-        ],
-        "type": "form",
-      },
-      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {
