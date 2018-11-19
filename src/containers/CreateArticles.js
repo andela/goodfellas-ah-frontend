@@ -21,7 +21,7 @@ export class CreateArticles extends Component {
     const { status, history, publishedArticle } = this.props;
     if (prevProps.status.success !== status.success && status.success) {
       swal('Good job!', 'Article Saved Successfully!', 'success');
-      setTimeout(() => history.push(`/articles/${publishedArticle.slug}`), 3000);
+      setTimeout(() => history.push(`/articles/${publishedArticle.article.slug}`), 3000);
     } else if (prevProps.status.error !== status.error && status.error) {
       swal('Error!', 'Something Went Wrong!', 'error');
     }
