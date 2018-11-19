@@ -255,6 +255,12 @@ header {
       display: none;
     }
   }
+  .searchbar-pages{
+    border-bottom: solid 1px #626d86;
+    &::placeholder{
+      color: #626d86;
+    }
+  }
   .searchbar-responsive{
     width: 86vw;
     height: 40px;
@@ -394,18 +400,29 @@ header {
     }
   }
   .searchbar{
+    color: white;
     padding: 10px;
     padding-left: 22px;
     width: 414px;
     height: 40px;
-    border: solid 0.5px rgba(166, 162, 162, 0.3);
+    border: none;
+    border-radius: 0px;
+    border-bottom: solid 1px rgb(255, 255, 255);
     background-color: transparent;
-    margin: 10px auto;
+    &::placeholder{
+      color: white;
+    }
     &:focus{
       outline: none;
     }
     @media only screen and (max-width: 900px) {
       display: none;
+    }
+  }
+  .searchbar-pages{
+    border-bottom: solid 1px #626d86;
+    &::placeholder{
+      color: #626d86;
     }
   }
   .searchbar-responsive{
@@ -425,7 +442,6 @@ header {
   }
   span:nth-child(3){
     position: relative;
-    border-right: 1px solid #626d86;
     left: -69px;
     top: 10px;
     font-size: 23px;
@@ -471,7 +487,6 @@ header {
     display: flex;
     span:nth-child(3){
       position: relative;
-      border-right: 1px solid #626d86;
       left: -69px;
       top: 10px;
       font-size: 23px;
@@ -480,7 +495,7 @@ header {
     }
     img{
       position: relative;
-      top: 15px;
+      top: 8px;
       width: 16px;
       height: 16px;
       font-size: 16px;
