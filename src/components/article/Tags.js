@@ -7,13 +7,37 @@ class Tags extends Component {
     tags: [],
   }
 
+  handleSubmit = (e) => {
+    // First prevent default form submission behaviour
+    e.preventDefault();
+
+    // Process accordingly
+    const newTag = this.refs.getTags.value;
+    const { tagsCount, tags } = this.state;
+
+    this.refs.getTags.value = '';
+
+    this.setState({ tagsCount: tagsCount + 1, tags: [newTag, ...tags] });
+  }
+
+  componentDidUpdate = () => {
+    const { tagsCount } = this.state;
+
+    // Check if the limit for tags has been reached
+    if (tagsCount === 5) {
+      this.refs.getTags.disabled = true;
+      this.refs.getTags.placeholder = 'You\'ve reached your limit';
+    }
+    console.log(this.state);
+  }
+
   render() {
     return (
       <div className="tags">
         <div className="tags-main">
           <h2>Add tags to your article</h2>
           <div className="tags-main-details">
-            <p>Help your target audience find this article, add tags</p>
+            <p>Help your target audience find this article, add up to 5 tags</p>
             <form onSubmit={this.handleSubmit}>
               <input ref="getTags" type="text" placeholder="Add a tag..." />
             </form>
