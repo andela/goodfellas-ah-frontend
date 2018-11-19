@@ -1,17 +1,17 @@
 import React from 'react';
-import authorIcon from '../../assets/author-icon.jpg';
 import clock from '../../assets/clock.png';
 import comment from '../../assets/comment.png';
+import { userPlaceholderImage } from '../../mixin';
 
 const Comment = () => (
   <div className="comments">
     <div className="add-comment">
-      <img src={authorIcon} alt="" />
+      <img src={userPlaceholderImage} alt="" />
       <input type="text" placeholder="write a comment....." />
     </div>
     <div className="each-comment">
       <div className="comment-heading">
-        <img src={authorIcon} alt="" />
+        <img src={userPlaceholderImage} alt="" />
         <div className="comment-name">Afeez Awoyemi</div>
         <div className="time-chat">
           <div>
@@ -32,7 +32,7 @@ Africa before the queen asked you to stop and not do it.
 
       <div className="each-reply">
         <div className="reply-heading">
-          <img src={authorIcon} alt="" />
+          <img src={userPlaceholderImage} alt="" />
           <div className="reply-name">Afeez Awoyemi</div>
           <div className="time-chat">
             <div>

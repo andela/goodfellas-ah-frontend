@@ -4,8 +4,11 @@
     background-color: #fff;
     margin-top: -150px;
     border-radius: 50px;
-    margin-left: 2%;
     float: right;
+    float: right;
+    position: fixed;
+    right: 120px;
+    top: 50%;
 }
 
 
@@ -69,8 +72,8 @@
 
 .single-page .article-header .number{
     font-family: Roboto;
+    font-weight: 100;
     font-size: 37px;
-    font-weight: normal;
     width: 45px;
     padding-top: 13px;
     margin-left: 12px;
@@ -79,8 +82,8 @@
 .single-page .article-header .minutes{
     margin-top: -7px;
     font-family: Roboto;
+    font-weight: 100;
     font-size: 16px;
-    font-weight: normal;
     text-align: center;  
 }
 
