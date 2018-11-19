@@ -21,14 +21,22 @@ class Tags extends Component {
   }
 
   componentDidUpdate = () => {
-    const { tagsCount } = this.state;
+    const { tagsCount, tags } = this.state;
 
     // Check if the limit for tags has been reached
     if (tagsCount === 5) {
       this.refs.getTags.disabled = true;
       this.refs.getTags.placeholder = 'You\'ve reached your limit';
     }
-    console.log(this.state);
+
+    const tagDiv = document.createElement('div');
+    const cancelDiv = document.createElement('span');
+    tagDiv.append(tags[0]);
+    cancelDiv.append(' x');
+    tagDiv.append(cancelDiv);
+    tagDiv.className = 'new-tag';
+
+    this.refs.displayTags.append(tagDiv);
   }
 
   render() {
@@ -37,11 +45,11 @@ class Tags extends Component {
         <div className="tags-main">
           <h2>Add tags to your article</h2>
           <div className="tags-main-details">
-            <p>Help your target audience find this article, add up to 5 tags</p>
+            <p>Help your target audience find this article by adding up to 5 tags</p>
             <form onSubmit={this.handleSubmit}>
               <input ref="getTags" type="text" placeholder="Add a tag..." />
             </form>
-            <div ref="displayTags" />
+            <div className="tags-wrapper" ref="displayTags" />
             <Button className="btn hero-section-greenbutton" type="button" title="Publish" />
           </div>
         </div>

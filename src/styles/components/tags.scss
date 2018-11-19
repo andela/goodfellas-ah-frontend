@@ -23,6 +23,18 @@
     width: 70%;
     height: 30vh;
     justify-content: space-evenly;
+    .tags-wrapper{
+      display: flex;
+      width: 100%;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      .new-tag{
+        margin: 10px;
+        border-radius: 5px;
+        padding: 9px;
+        background-color: $faintblue;
+      }
+    }
     form{
       width: 100%;
       input{
