@@ -28,6 +28,12 @@ export default {
     put(route) {
       return apiCall('put', route);
     },
+    post(route) {
+      return apiCall('post', route);
+    },
+    delete(route) {
+      return apiCall('delete', route);
+    },
   },
   openRoutes: {
   },

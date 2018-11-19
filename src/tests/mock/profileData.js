@@ -75,6 +75,21 @@ export const updateProfile = {
   },
 };
 
+export const followUser = {
+  status: 201,
+  data: {
+    error: false,
+    message: 'You\'re now following Afeez Awoymemi',
+  },
+};
+export const unFollowUser = {
+  status: 201,
+  data: {
+    error: false,
+    message: 'You unfollowed Afeez Awoymemi',
+  },
+};
+
 export const routes = {
   get: {
     '/user/profile/1': profile,
@@ -85,6 +100,12 @@ export const routes = {
   },
   put: {
     '/user/profile/1': updateProfile,
+  },
+  post: {
+    '/user/follow/1': followUser,
+  },
+  delete: {
+    '/user/follow/1': followUser,
   },
 };
 

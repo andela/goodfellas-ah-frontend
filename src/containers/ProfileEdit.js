@@ -111,7 +111,7 @@ export class EditProfile extends Component {
     }
     const fullName = `${profileStore.user.firstname} ${profileStore.user.lastname}`;
     return (
-      <form onSubmit={this.updateProfile} className="edit-profile_form" encType="multipart/form-data">
+      <form className="edit-profile_form" onSubmit={this.updateProfile} encType="multipart/form-data">
         <ProfileImageUploader name="image" imageRead={this.imageRead} canReset={!!profileImage} resetImage={this.resetImage} profileImage={profileImage || profileStore.profile.image} />
         <h3 id="user-name" className="username">{fullName}</h3>
         <InputBox handleChange={this.handleChange} value={username} name="username" placeholder="Username" />
