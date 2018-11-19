@@ -87,6 +87,7 @@ describe('components', () => {
     };
     it('should render as expected', () => {
       const { enzymeWrapper } = setup();
+      enzymeWrapper.find('[type="submit"]').simulate('click');
       expect(enzymeWrapper).toMatchSnapshot();
     });
   });
