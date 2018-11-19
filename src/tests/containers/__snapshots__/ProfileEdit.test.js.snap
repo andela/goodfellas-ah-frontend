@@ -432,7 +432,7 @@ ShallowWrapper {
             </button>
           </div>
         </form>,
-        <Connect(Notification) />,
+        <Connect(NotificationSettings) />,
       ],
     },
     "ref": null,
@@ -679,7 +679,7 @@ ShallowWrapper {
               </button>
             </div>
           </form>,
-          <Connect(Notification) />,
+          <Connect(NotificationSettings) />,
         ],
       },
       "ref": null,

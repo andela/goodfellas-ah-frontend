@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setNotification, updateNotification } from '../actions/notificationActions';
+import { updateNotification } from '../actions/notificationActions';
 
-class Notification extends Component {
+class NotificationSettings extends Component {
   state = {
     email: false,
     inApp: false,
@@ -21,26 +21,19 @@ class Notification extends Component {
   };
 
   componentDidMount() {
-    const { setNotification: initialNotification } = this.props;
-    initialNotification();
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps) {
-      const { notification } = nextProps;
-      const currentNotification = notification.notification;
-      const checkEmail = currentNotification.findIndex((setting) => setting === 'email');
-      const checkinApp = currentNotification.findIndex((setting) => setting === 'inApp');
-      if (checkEmail !== -1) {
-        this.setState({
-          email: true,
-        });
-      }
-      if (checkinApp !== -1) {
-        this.setState({
-          inApp: true,
-        });
-      }
+    const { notification } = this.props;
+    const currentNotification = notification.notification;
+    const checkEmail = currentNotification.findIndex((setting) => setting === 'email');
+    const checkinApp = currentNotification.findIndex((setting) => setting === 'inApp');
+    if (checkEmail !== -1) {
+      this.setState({
+        email: true,
+      });
+    }
+    if (checkinApp !== -1) {
+      this.setState({
+        inApp: true,
+      });
     }
   }
 
@@ -85,5 +78,5 @@ const mapStateToProps = (state) => ({
 
 export default connect(
   mapStateToProps,
-  { setNotification, updateNotification },
-)(Notification);
+  { updateNotification },
+)(NotificationSettings);

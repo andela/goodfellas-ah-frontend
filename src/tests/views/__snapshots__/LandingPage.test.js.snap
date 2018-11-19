@@ -77,12 +77,43 @@ exports[`Landing Page UI render features container should render as expected 1`]
                           <Header
                             auth={null}
                             dispatch={[Function]}
+                            getNotification={[Function]}
+                            inAppStatus={
+                              Object {
+                                "articles": Array [],
+                                "authenticated": "",
+                                "error": Array [],
+                                "errorMessage": "",
+                                "notification": Array [],
+                                "notifications": Object {},
+                                "ownProfile": Object {},
+                                "profile": Object {
+                                  "articles": Array [],
+                                  "favorites": Array [],
+                                  "followers": Array [],
+                                  "following": Array [],
+                                  "loading": true,
+                                  "profile": Object {},
+                                  "profileError": "",
+                                  "profileView": "Following",
+                                  "user": Object {},
+                                },
+                                "searchError": Array [],
+                                "searchResults": Array [],
+                                "successMessage": "",
+                                "user": Object {},
+                                "userId": null,
+                              }
+                            }
+                            notifications={Object {}}
                             parentComponent="landingpage"
                             profile={null}
                             profileNavigation={[Function]}
                             search={[Function]}
                             searchError={Array []}
                             searchResults={Array []}
+                            seenNotification={[Function]}
+                            setNotification={[Function]}
                             signout={[Function]}
                           >
                             <div>

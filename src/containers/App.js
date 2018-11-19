@@ -14,13 +14,14 @@ import CreateArticle from '../views/CreateArticles';
 import SearchArticles from '../views/SearchArticles';
 import Header from '../components/shared/Header';
 import GetAllArticles from '../views/AllArticles';
-import Notification from '../components/Notification';
+import NotificationPage from '../views/NotificationPage';
 
 const User = () => (
   <Switch>
     <Route exact path="/user/profile" component={Profile} />
     <Route exact path="/user/profile/edit" component={EditProfile} />
     <Route exact path="/user/profile/:userId" component={Profile} />
+    <Route path="/user/notifications" component={NotificationPage} />
   </Switch>
 );
 
@@ -50,7 +51,7 @@ const App = () => (
       <Route path="/user" component={authenticate(User)} />
       <Route path="/forgotpassword" component={ForgotPasswordPage} />
       <Route path="/resetpassword" component={ResetPasswordPage} />
-      <Route path="/notify" component={Notification} />
+      {/* <Route path="/notify" component={NotificationPage} /> */}
     </div>
   </BrowserRouter>
 );

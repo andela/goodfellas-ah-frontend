@@ -76,6 +76,11 @@ export class Header extends Component {
     if (nextProps) {
       const { notifications, inAppStatus } = nextProps;
       const status = inAppStatus.notification;
+      if (Object.values(status).indexOf('inApp') !== -1) {
+        this.setState({
+          inApp: true,
+        });
+      }
       this.setState({
         notifications,
       });
@@ -83,11 +88,6 @@ export class Header extends Component {
         const countNotification = notifications.rows.filter((notification) => !notification.seen);
         this.setState({
           unSeenNotification: countNotification.length,
-        });
-      }
-      if (Object.values(status).indexOf('inApp') === 1) {
-        this.setState({
-          inApp: true,
         });
       }
     }
@@ -119,6 +119,7 @@ export class Header extends Component {
     const { parentComponent } = this.props;
     const { signout: signoutUser, profileNavigation: switchView, profile } = this.props;
     const { notifications, unSeenNotification, inApp } = this.state;
+    let totalNotifications = 0;
     return (
       <div>
         {parentComponent === 'landingpage' ? (
@@ -162,10 +163,11 @@ export class Header extends Component {
                         alt=""
                       />
                       {
-                        <ul ref="myDropdown2" className="dropdown-menu">
-                          { inApp && Object.keys(notifications).length !== 0
+                        <ul ref="myDropdown2" className="dropdown-menu header-notification">
+                          {inApp && Object.keys(notifications).length !== 0
                             ? notifications.rows.map((notification) => {
-                              if (!notification.seen) {
+                              if (!notification.seen && totalNotifications < 5) {
+                                totalNotifications += 1;
                                 switch (notification.type) {
                                   case 'followerArticle':
                                     return (
@@ -183,18 +185,20 @@ export class Header extends Component {
                                   case 'favoriteArticleComment':
                                     return (
                                       <Link to="/article" key={notification.id}>
-                                        {notification.author.firstname} commented on an article
+                                        {notification.author.firstname} commented on an your favorite article
                                       </Link>
                                     );
                                   default:
                                     break;
                                 }
                               }
-                            }) : null}
+                            })
+                            : null}
+                          {inApp && unSeenNotification > 5 ? <Link to="/user/notifications" className="text-center all-notification">See More</Link> : null }
                         </ul>
                       }
                     </div>
-                    {inApp && unSeenNotification !== 0 ? <span className="notification-count">{unSeenNotification}</span> : null }
+                    {inApp && unSeenNotification !== 0 ? <span className="notification-count">{unSeenNotification}</span> : null}
                     <div onClick={this.dropdown} className="dropdown dropdown-click">
                       <img className="dropdown-toggle author-image" src={profile.image || userPlaceholderImage} alt="" />
                       <ul ref="myDropdown" className="dropdown-menu">
@@ -309,10 +313,11 @@ export class Header extends Component {
                         alt=""
                       />
                       {
-                        <ul ref="myDropdown2" className="dropdown-menu">
-                          { inApp && Object.keys(notifications).length !== 0
+                        <ul ref="myDropdown2" className="dropdown-menu header-notification">
+                          {inApp && Object.keys(notifications).length !== 0
                             ? notifications.rows.map((notification) => {
-                              if (!notification.seen) {
+                              if (!notification.seen && totalNotifications < 5) {
+                                totalNotifications += 1;
                                 switch (notification.type) {
                                   case 'followerArticle':
                                     return (
@@ -337,11 +342,13 @@ export class Header extends Component {
                                     break;
                                 }
                               }
-                            }) : null}
+                            })
+                            : null}
+                          {inApp && unSeenNotification > 5 ? <Link to="/user/notifications" className="text-center all-notification">See More</Link> : null }
                         </ul>
                       }
                     </div>
-                    {inApp && unSeenNotification !== 0 ? <span className="notification-count">{unSeenNotification}</span> : null }
+                    {inApp && unSeenNotification !== 0 ? <span className="notification-count">{unSeenNotification}</span> : null}
                     <div onClick={this.dropdown} className="dropdown dropdown-click">
                       <img className="dropdown-toggle author-image" src={profile.image || userPlaceholderImage} alt="" />
                       <ul ref="myDropdown" className="dropdown-menu">
@@ -421,20 +428,23 @@ export class Header extends Component {
   }
 }
 
-function mapStatesToProps(state) {
-  return {
-    auth: state.auth.authenticated,
-    searchResults: state.articles.searchResults,
-    searchError: state.articles.error,
-    profile: state.auth.ownProfile,
-    notifications: state.notification.notifications,
-    inAppStatus: state.notification,
-  };
-}
+const mapStateToProps = (state) => ({
+  auth: state.auth.authenticated,
+  searchResults: state.articles.searchResults,
+  searchError: state.articles.error,
+  profile: state.auth.ownProfile,
+  notifications: state.notification.notifications,
+  inAppStatus: state.notification,
+});
 
 export default connect(
-  mapStatesToProps,
+  mapStateToProps,
   {
-    signout, search, profileNavigation, getNotification, seenNotification, setNotification,
+    signout,
+    search,
+    profileNavigation,
+    getNotification,
+    seenNotification,
+    setNotification,
   },
 )(Header);
