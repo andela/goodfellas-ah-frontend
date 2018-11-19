@@ -96,18 +96,18 @@ export class Header extends Component {
                           <span ref="searchClick" className="search-click" onClick={this.displaySearchbar}>
                             <img
                               className="search-dropdown"
-                              src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541772567/Authors%20Haven/arrow_grey.png"
+                              src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1542628198/Authors%20Haven/dropdown-arrow-white.png"
                               alt=""
                             />
                           </span>
-                          <span ref="searchDivider" className="search-divider" />
+                          <span />
                           <span className="searchbar-toggle" onClick={this.handleSubmit}><img
-                            src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png"
+                            src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1542628197/Authors%20Haven/search-icon-white.svg"
                             alt=""
                           />
                           </span>
                           <span className="searchbar-toggle-mobile" onClick={this.openSearchbar}><img
-                            src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png"
+                            src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1542628197/Authors%20Haven/search-icon-white.svg"
                             alt=""
                           />
                           </span>
