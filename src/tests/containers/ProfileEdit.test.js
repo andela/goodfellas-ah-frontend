@@ -76,6 +76,7 @@ describe('components', () => {
         profileStore: profile,
         auth: { userId: 1 },
         profileNavigation: jest.fn(),
+        history: { push: jest.fn() },
       };
 
       const enzymeWrapper = shallow(<EditProfile {...props} />);
@@ -89,6 +90,12 @@ describe('components', () => {
       const { enzymeWrapper } = setup();
       enzymeWrapper.find('[type="submit"]').simulate('click');
       expect(enzymeWrapper).toMatchSnapshot();
+    });
+    it('should navigate to profilePage when resetButton gets clicked', () => {
+      const { enzymeWrapper, props } = setup();
+      enzymeWrapper.find('[type="button"]').simulate('click', { preventDefault: jest.fn() });
+
+      expect(props.history.push).toBeCalledWith('/user/profile');
     });
   });
 });

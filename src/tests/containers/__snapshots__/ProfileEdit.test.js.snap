@@ -296,6 +296,11 @@ ShallowWrapper {
     }
     editProfile={[Function]}
     fetchProfile={[Function]}
+    history={
+      Object {
+        "push": [MockFunction],
+      }
+    }
     profileNavigation={[MockFunction]}
     profileStore={
       Object {
