@@ -410,7 +410,7 @@ ShallowWrapper {
         />,
         <div>
           <button
-            className="button outline "
+            className="button outline green "
             disabled={false}
             id="save-button"
             type="submit"
@@ -496,7 +496,7 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <button
-              className="button outline "
+              className="button outline green "
               disabled={false}
               id="save-button"
               type="submit"
@@ -521,7 +521,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "Save",
-              "className": "button outline ",
+              "className": "button outline green ",
               "disabled": false,
               "id": "save-button",
               "type": "submit",
@@ -585,7 +585,7 @@ ShallowWrapper {
           />,
           <div>
             <button
-              className="button outline "
+              className="button outline green "
               disabled={false}
               id="save-button"
               type="submit"
@@ -671,7 +671,7 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <button
-                className="button outline "
+                className="button outline green "
                 disabled={false}
                 id="save-button"
                 type="submit"
@@ -696,7 +696,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "Save",
-                "className": "button outline ",
+                "className": "button outline green ",
                 "disabled": false,
                 "id": "save-button",
                 "type": "submit",

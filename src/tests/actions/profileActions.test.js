@@ -61,3 +61,37 @@ describe('editProfile actions', () => {
     });
   });
 });
+
+describe('follow actions', () => {
+  it('creates SET_PROFILE after successfuly following user', () => {
+    const store = mockStore({ profile: initialState.profile });
+
+    return store.dispatch(profileActions.follow(1)).then(() => {
+      expect(store.getActions()).toEqual([]);
+    });
+  });
+  it('it returns error message on action error', () => {
+    const store = mockStore({ profile: initialState.profile });
+
+    return store.dispatch(profileActions.follow(5)).then((response) => {
+      expect(response).toEqual({ error: 'Invalid request, Route does not exist' });
+    });
+  });
+});
+
+describe('follow actions', () => {
+  it('creates SET_PROFILE after successfuly following user', () => {
+    const store = mockStore({ profile: initialState.profile });
+
+    return store.dispatch(profileActions.unFollow(1)).then(() => {
+      expect(store.getActions()).toEqual([]);
+    });
+  });
+  it('it returns error message on action error', () => {
+    const store = mockStore({ profile: initialState.profile });
+
+    return store.dispatch(profileActions.unFollow(5)).then((response) => {
+      expect(response).toEqual({ error: 'Invalid request, Route does not exist' });
+    });
+  });
+});

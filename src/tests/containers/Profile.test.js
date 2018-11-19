@@ -21,6 +21,32 @@ describe('containers', () => {
       payload: profileData.setProfile,
     });
   });
+  describe('Profile container button-click', () => {
+    const setup = () => {
+      const props = {
+        value: 'Ade',
+        fetchProfile: profileActions.fetchProfile,
+        profileStore: { ...profile, profileView: 'Following' },
+        user: { userId: 1 },
+        profileNavigation: jest.fn(),
+        match: {
+          params: { userId: 2 },
+        },
+      };
+
+      const enzymeWrapper = shallow(<Profile {...props} />);
+      enzymeWrapper.find('button').simulate('click');
+
+      return {
+        props,
+        enzymeWrapper,
+      };
+    };
+    it('should render as expected', () => {
+      const { enzymeWrapper } = setup();
+      expect(enzymeWrapper).toMatchSnapshot();
+    });
+  });
   describe('Profile container Following', () => {
     const setup = () => {
       const props = {
@@ -35,6 +61,7 @@ describe('containers', () => {
       };
 
       const enzymeWrapper = shallow(<Profile {...props} />);
+      enzymeWrapper.find('button').simulate('click');
 
       return {
         props,
