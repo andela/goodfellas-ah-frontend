@@ -14,6 +14,7 @@ import CreateArticle from '../views/CreateArticles';
 import SearchArticles from '../views/SearchArticles';
 import Header from '../components/shared/Header';
 import GetAllArticles from '../views/AllArticles';
+import Tags from '../components/article/Tags';
 
 const User = () => (
   <Switch>
@@ -45,6 +46,7 @@ const App = () => (
     <div>
       <Route exact path="/" component={LandingPage} />
       <Route path="/auth" component={Auth} />
+      <Route path="/tags" component={Tags} />
       <Route path="/articles" component={Articles} />
       <Route path="/user" component={authenticate(User)} />
       <Route path="/forgotpassword" component={ForgotPasswordPage} />
