@@ -17,11 +17,23 @@ const auth = {
   auth: {
     authenticated: true,
   },
+  notification: {
+    notifications: true,
+    setNotification() {
+      return true;
+    },
+    getNotification() {
+      return true;
+    },
+  },
 };
 
 const authTest = {
   auth: {
     authenticated: false,
+  },
+  notification: {
+    notifications: false,
   },
 };
 
@@ -38,6 +50,8 @@ beforeEach(() => {
     <Header
       parentComponent="landingpage"
       auth={auth.auth.authenticated}
+      setNotification={auth.notification.setNotification}
+      getNotification={auth.notification.getNotification}
       profile={{ image: 'testImageUrl' }}
     />,
   );
@@ -46,6 +60,8 @@ beforeEach(() => {
     <Header
       parentComponent="notlandingpage"
       auth={authTest.auth.authenticated}
+      setNotification={auth.notification.setNotification}
+      getNotification={auth.notification.getNotification}
       profile={{ image: null }}
     />,
   );
@@ -54,6 +70,8 @@ beforeEach(() => {
     <Header
       parentComponent="landingpage"
       auth={authTest.auth.authenticated}
+      setNotification={auth.notification.setNotification}
+      getNotification={auth.notification.getNotification}
       profile={{ image: null }}
     />,
   );
@@ -61,6 +79,8 @@ beforeEach(() => {
   mountHeaderNullProfile = shallow(
     <Header
       parentComponent="notlandingpage"
+      setNotification={auth.notification.setNotification}
+      getNotification={auth.notification.getNotification}
       auth={auth.auth.authenticated}
       profile={{ image: null }}
     />,
@@ -71,6 +91,8 @@ beforeEach(() => {
       <Header
         parentComponent="notlandingpage"
         auth={auth.auth.authenticated}
+        setNotification={auth.notification.setNotification}
+        getNotification={auth.notification.getNotification}
         profile={{ image: 'testImageUrl' }}
       />
     </MemoryRouter>,
@@ -80,6 +102,8 @@ beforeEach(() => {
     <MemoryRouter>
       <Header
         parentComponent="notlandingpage"
+        setNotification={auth.notification.setNotification}
+        getNotification={auth.notification.getNotification}
         auth={authTest.auth.authenticated}
         profile={{ image: 'testImageUrl' }}
       />

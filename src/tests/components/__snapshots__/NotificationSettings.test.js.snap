@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Notification UI render features component should render as expected 1`] = `
+<_default>
+  <Provider
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+  >
+    <MemoryRouter
+      initialEntries={
+        Array [
+          Object {
+            "key": "testKey",
+          },
+        ]
+      }
+    >
+      <Router
+        history={
+          Object {
+            "action": "POP",
+            "block": [Function],
+            "canGo": [Function],
+            "createHref": [Function],
+            "entries": Array [
+              Object {
+                "hash": "",
+                "key": "testKey",
+                "pathname": "/",
+                "search": "",
+              },
+            ],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "index": 0,
+            "length": 1,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "key": "testKey",
+              "pathname": "/",
+              "search": "",
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+        }
+      >
+        <Connect(NotificationSettings)>
+          <NotificationSettings
+            notification={
+              Object {
+                "articles": Array [],
+                "authenticated": "",
+                "error": Array [],
+                "errorMessage": "",
+                "notification": Array [],
+                "notifications": Object {},
+                "ownProfile": Object {},
+                "profile": Object {
+                  "articles": Array [],
+                  "favorites": Array [],
+                  "followers": Array [],
+                  "following": Array [],
+                  "loading": true,
+                  "profile": Object {},
+                  "profileError": "",
+                  "profileView": "Following",
+                  "user": Object {},
+                },
+                "searchError": Array [],
+                "searchResults": Array [],
+                "successMessage": "",
+                "user": Object {},
+                "userId": null,
+              }
+            }
+            updateNotification={[Function]}
+          >
+            <div
+              className="notification-panel mt-3"
+            >
+              <div
+                className="container"
+              >
+                <div
+                  className="row"
+                >
+                  <div
+                    className="col-md-6 m-auto"
+                  >
+                    <div
+                      className="card"
+                    >
+                      <div
+                        className="card-body"
+                      >
+                        <h6
+                          className="card-title text-muted text-center"
+                        >
+                          Notification settings
+                        </h6>
+                        <div
+                          className="row"
+                        >
+                          <div
+                            className="col-md-7"
+                          >
+                            <p
+                              className="slider-title"
+                            >
+                              Email Notification
+                            </p>
+                            <label
+                              className="notification-switch"
+                            >
+                              <input
+                                checked={false}
+                                name="email"
+                                onChange={[Function]}
+                                type="checkbox"
+                              />
+                              <span
+                                className="slider round"
+                              />
+                            </label>
+                          </div>
+                          <div
+                            className="col-md-5"
+                          >
+                            <p
+                              className="slider-title"
+                            >
+                              In-App Notification
+                            </p>
+                            <label
+                              className="notification-switch"
+                            >
+                              <input
+                                checked={false}
+                                name="inApp"
+                                onChange={[Function]}
+                                type="checkbox"
+                              />
+                              <span
+                                className="slider round"
+                              />
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </NotificationSettings>
+        </Connect(NotificationSettings)>
+      </Router>
+    </MemoryRouter>
+  </Provider>
+</_default>
+`;

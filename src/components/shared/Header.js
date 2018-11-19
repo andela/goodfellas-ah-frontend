@@ -155,7 +155,7 @@ export class Header extends Component {
                     </div>
                   </form>
                   <div className="header-user-images">
-                    <div className="dropdown dropdown-click" onClick={this.notificationDropdown}>
+                    <div className="dropdown dropdown-click-notification" onClick={this.notificationDropdown}>
                       <img
                         className="dropdown-toggle notification-image"
                         data-toggle="dropdown"
@@ -305,7 +305,7 @@ export class Header extends Component {
                     </div>
                   </form>
                   <div className="header-user-images">
-                    <div className="dropdown dropdown-click" onClick={this.notificationDropdown}>
+                    <div className="dropdown dropdown-click-notification" onClick={this.notificationDropdown}>
                       <img
                         className="dropdown-toggle notification-image"
                         data-toggle="dropdown"
