@@ -1,6 +1,5 @@
 const initialState = {
   authenticated: '',
-  userId: null,
   errorMessage: '',
   successMessage: '',
   user: {},

@@ -19,10 +19,10 @@ export class EditProfile extends Component {
   }
 
   componentDidMount = () => {
-    const { fetchProfile: profileFetch, auth } = this.props;
-    profileFetch(auth.userId);
+    const { fetchProfile: profileFetch, user } = this.props;
+    profileFetch(user.userId);
     const { profileStore } = this.props;
-    if (auth.userId === profileStore.profile.userId) {
+    if (user.userId === profileStore.profile.userId) {
       this.setState({
         bio: profileStore.profile.bio,
         username: profileStore.profile.username,
@@ -63,7 +63,7 @@ export class EditProfile extends Component {
   // eslint-disable-next-line consistent-return
   updateProfile = async (e) => {
     e.preventDefault();
-    const { auth } = this.props;
+    const { user } = this.props;
     if (!e.target.username.value) return swal('Please enter a username', 'Pro Tip: Authors with usernames attract more followers', 'warning');
     if (!e.target.bio.value) return swal('Please fill in your bio', 'Pro Tip: With a clear descriptive bio your profile looks much more beautiful', 'warning');
     const { editProfile: updateProfile } = this.props;
@@ -71,7 +71,7 @@ export class EditProfile extends Component {
     const { profileImageFile } = this.state;
     const profileData = new FormData(e.target);
     if (profileImageFile) profileData.append('image', profileImageFile);
-    const response = await updateProfile(auth.userId, profileData);
+    const response = await updateProfile(user.userId, profileData);
     this.setState({ updating: false });
     if (response.success) {
       this.resetImage();
@@ -127,7 +127,7 @@ export class EditProfile extends Component {
 
 const mapStateToProps = (state) => ({
   profileStore: state.profile,
-  auth: state.auth,
+  user: state.auth.ownProfile,
 });
 
 export default connect(

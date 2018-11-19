@@ -28,7 +28,7 @@ describe('components', () => {
         fetchProfile: profileActions.fetchProfile,
         editProfile: profileActions.editProfile,
         profileStore: { profile: {}, profileError: 'An error occoured', profileView: 'Favorites' },
-        auth: { userId: 1 },
+        user: { userId: 1 },
         profileNavigation: jest.fn(),
       };
 
@@ -51,7 +51,7 @@ describe('components', () => {
         fetchProfile: profileActions.fetchProfile,
         editProfile: profileActions.editProfile,
         profileStore: { profile: {}, profileView: 'Favorites' },
-        auth: { userId: 1 },
+        user: { userId: 1 },
         profileNavigation: jest.fn(),
       };
 
@@ -74,7 +74,7 @@ describe('components', () => {
         fetchProfile: profileActions.fetchProfile,
         editProfile: profileActions.editProfile,
         profileStore: profile,
-        auth: { userId: 1 },
+        user: { userId: 1 },
         profileNavigation: jest.fn(),
         history: { push: jest.fn() },
       };
