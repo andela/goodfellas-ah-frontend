@@ -63,14 +63,12 @@ export class Header extends Component {
   }
 
   openSearchbar = () => {
-    if (this.refs.searchbar.className === 'searchbar' && this.refs.searchClick.className === 'search-click' && this.refs.searchDivider.className === 'search-divider') {
+    if (this.refs.searchbar.className === 'searchbar' && this.refs.searchClick.className === 'search-click') {
       this.refs.searchbar.className = 'searchbar-responsive';
       this.refs.searchClick.className = 'search-click-responsive';
-      this.refs.searchDivider.className = 'search-divider-responsive';
     } else {
       this.refs.searchbar.className = 'searchbar';
       this.refs.searchClick.className = 'search-click';
-      this.refs.searchDivider.className = 'search-divider';
     }
   }
 
