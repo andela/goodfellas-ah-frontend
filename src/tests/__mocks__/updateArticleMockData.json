@@ -1,0 +1,9 @@
+{
+  "updateArticleInitialState": {
+    "updatedArticle": {},
+    "status": {
+      "error": false,
+      "success": true
+    }
+  }
+}

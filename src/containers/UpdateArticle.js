@@ -24,9 +24,12 @@ export class UpdateArticles extends Component {
   }
 
   componentDidUpdate = (prevProps) => {
-    const { status, article } = this.props;
+    const {
+      status, article, history, match,
+    } = this.props;
     if (prevProps.status.success !== status.success && status.success) {
       swal('Good job!', 'Article Updated Successfully!', 'success');
+      setTimeout(() => history.push(`/articles/${match.params.slug}`), 3000);
     } else if (prevProps.status.error !== status.error && status.error) {
       swal('Error!', 'Something Went Wrong!', 'error');
     }

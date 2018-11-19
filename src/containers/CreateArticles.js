@@ -18,9 +18,10 @@ export class CreateArticles extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { status } = this.props;
+    const { status, history, publishedArticle } = this.props;
     if (prevProps.status.success !== status.success && status.success) {
       swal('Good job!', 'Article Saved Successfully!', 'success');
+      setTimeout(() => history.push(`/articles/${publishedArticle.slug}`), 3000);
     } else if (prevProps.status.error !== status.error && status.error) {
       swal('Error!', 'Something Went Wrong!', 'error');
     }
@@ -44,7 +45,7 @@ export class CreateArticles extends Component {
     const { body } = this.state;
     const articlePayload = {
       ...this.state,
-      description: body.split(' ').slice(0, 3).join(' '),
+      description: body.split(' ').slice(0, 10).join(' '),
     };
     if (!publish) articlePayload.published = false;
     // eslint-disable-next-line react/destructuring-assignment

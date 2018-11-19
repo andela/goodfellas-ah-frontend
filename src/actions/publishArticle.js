@@ -28,7 +28,7 @@ const publishArticle = (articlePayload) => async (dispatch, getState, { api }) =
   try {
     dispatch(publishArticleLoading());
     const request = await api.post('/articles', articlePayload);
-    dispatch(publishArticleSuccess(request.data));
+    dispatch(publishArticleSuccess(request.data.article));
   } catch (error) {
     dispatch(publishArticleError(error));
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { CreateArticles } from '../../containers/CreateArticles';
 
-describe('create artcicle component test suite', () => {
+describe('create artcicle container test suite', () => {
   const props = {
     status: {
       error: false,

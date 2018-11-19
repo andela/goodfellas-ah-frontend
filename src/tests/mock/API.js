@@ -1,29 +1,14 @@
 import * as profileData from './profileData';
 import * as articleData from './articleData';
 
-export const routes = {
-  get: {
-    '/user/profile/1': profileData.profile,
-    '/user/followers/1': profileData.followers,
-    '/user/followed/1': profileData.followedUsers,
-    '/articles/author/1': profileData.articles,
-    '/articles/user/1/favorite': profileData.favoritedArticles,
-  },
-  put: {
-    '/user/profile/1': profileData.updateProfile,
-  },
-  post: {
-    '/articles': articleData.postArticle,
-  },
-};
-class CustomAPIError extends Error {
-  constructor(message, ...params) {
+export class CustomAPIError extends Error {
+  constructor(message, status = 404, ...params) {
     super(message, ...params);
     if (Error.captureStackTrace) {
       Error.captureStackTrace(this, CustomAPIError);
     }
     this.response = {
-      status: 404,
+      status,
       data: {
         error: message,
         message,
@@ -31,8 +16,30 @@ class CustomAPIError extends Error {
     };
   }
 }
-const apiCall = (type, route) => new Promise((resolve, reject) => {
-  if (routes[type][route]) resolve(routes[type][route]);
+export const routes = {
+  get: {
+    '/user/profile/1': () => profileData.profile,
+    '/user/followers/1': () => profileData.followers,
+    '/user/followed/1': () => profileData.followedUsers,
+    '/articles/author/1': () => profileData.articles,
+    '/articles/user/1/favorite': () => profileData.favoritedArticles,
+  },
+  put: {
+    '/user/profile/1': () => profileData.updateProfile,
+    '/articles/we-are-here': (payload) => {
+      if (payload.title && payload.body) return articleData.updateArticleDetail;
+      throw new CustomAPIError('All fields are required', 400);
+    },
+  },
+  post: {
+    '/articles': (payload) => {
+      if (payload.title && payload.body) return articleData.postArticle;
+      throw new CustomAPIError('All fields are required', 400);
+    },
+  },
+};
+const apiCall = (type, route, payload) => new Promise((resolve, reject) => {
+  if (routes[type][route]) resolve(routes[type][route](payload));
   reject(new CustomAPIError('Invalid request, Route does not exist'));
 });
 
@@ -41,11 +48,11 @@ export default {
     get(route) {
       return apiCall('get', route);
     },
-    put(route) {
-      return apiCall('put', route);
+    put(route, payload) {
+      return apiCall('put', route, payload);
     },
-    post(route) {
-      return apiCall('post', route);
+    post(route, payload) {
+      return apiCall('post', route, payload);
     },
   },
   openRoutes: {

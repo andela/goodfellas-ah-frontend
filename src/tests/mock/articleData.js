@@ -8,4 +8,12 @@ export const postArticle = {
   status: 201,
 };
 
-export const test = 'test';
+export const updateArticleDetail = {
+  data: {
+    data: {
+      title: 'A new Article',
+      body: 'content of the new article',
+    },
+  },
+  status: 200,
+};
