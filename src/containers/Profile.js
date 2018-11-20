@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Body from '../components/layout/DefaultLayout';
+import swal from 'sweetalert';
 import { Loader as Loading } from '../components/shared/Loading';
 import ProfileToolbar from './ProfileToolbar';
 import FollowerList from '../components/profile/FollowerList';
 import FollowingList from '../components/profile/FollowingList';
 import ProfileArticleList from '../components/article/ArticlesByAuthor';
 import ProfileFavoriteList from '../components/article/AuthorFavorites';
-import { fetchProfile } from '../actions/profileActions';
+import { fetchProfile, follow as followAction, unFollow as unFollowAction } from '../actions/profileActions';
 import { userPlaceholderImage } from '../mixin';
 import icons from '../assets/icons.svg';
 
@@ -39,10 +39,24 @@ export class Profile extends Component {
     if (prevProps.match.params.userId !== match.params.userId) this.updateUserId();
   }
 
-  handleClick = () => {
-    const { ownProfile } = this.state;
-    const { history } = this.props;
-    if (ownProfile) history.push('/user/profile/edit');
+  handleClick = async () => {
+    const { ownProfile, userId } = this.state;
+    const { fetchProfile: profileFetch } = this.props;
+    const {
+      history,
+      profileStore,
+      follow,
+      unFollow,
+    } = this.props;
+    let response;
+    if (ownProfile) return history.push('/user/profile/edit');
+    if (profileStore.user.isFollowed) {
+      response = await unFollow(userId);
+    } else {
+      response = await follow(userId);
+    }
+    if (response && response.error) return swal('Error', response.error, 'error');
+    profileFetch(userId);
   }
 
   render() {
@@ -62,57 +76,61 @@ export class Profile extends Component {
     }
     const fullName = `${profileStore.user.firstname} ${profileStore.user.lastname}`;
     return (
-      <Body className="profile">
-        <div>
-          <header>
-            <img alt="profile" className="profile-image" src={profileStore.profile.image || userPlaceholderImage} />
-            <h3 id="user-name" className="username">{fullName}</h3>
-            <button type="button" className="button outline" onClick={this.handleClick}>{ ownProfile ? 'Edit Profile' : 'Follow'}</button>
-          </header>
-          <ProfileToolbar profile={profileStore} />
-          {(() => {
-            switch (profileStore.profileView) {
-              case 'Followers':
-                return (
-                  <FollowerList
-                    history={history}
-                    userFullName={fullName}
-                    ownProfile={ownProfile}
-                    followers={profileStore.followers}
-                  />);
-              case 'Articles':
-                return (
-                  <ProfileArticleList
-                    author={fullName}
-                    authorImage={profileStore.profile.image}
-                    articles={profileStore.articles}
-                    userFullName={fullName}
-                    ownProfile={ownProfile}
-                  />
-                );
-              case 'Favorites':
-                return (
-                  <ProfileFavoriteList
-                    author={fullName}
-                    authorImage={profileStore.profile.image}
-                    articles={profileStore.favorites}
-                    userFullName={fullName}
-                    ownProfile={ownProfile}
-                  />);
-              case 'Following':
-              default:
-                return (
-                  <FollowingList
-                    history={history}
-                    userFullName={fullName}
-                    ownProfile={ownProfile}
-                    following={profileStore.following}
-                  />);
-            }
-          })()
+      <div>
+        <header>
+          <img alt="profile" className="profile-image" src={profileStore.profile.image || userPlaceholderImage} />
+          <h3 id="user-name" className="username">{fullName}</h3>
+          <button type="button" className={`button outline ${profileStore.user.isFollowed ? 'green' : ''}`} onClick={this.handleClick}>{
+            (() => {
+              if (ownProfile) return 'Edit Profile';
+              if (profileStore.user.isFollowed) return 'Unfollow';
+              return 'Follow';
+            })()}
+          </button>
+        </header>
+        <ProfileToolbar profile={profileStore} />
+        {(() => {
+          switch (profileStore.profileView) {
+            case 'Followers':
+              return (
+                <FollowerList
+                  history={history}
+                  userFullName={fullName}
+                  ownProfile={ownProfile}
+                  followers={profileStore.followers}
+                />);
+            case 'Articles':
+              return (
+                <ProfileArticleList
+                  author={fullName}
+                  authorImage={profileStore.profile.image}
+                  articles={profileStore.articles}
+                  userFullName={fullName}
+                  ownProfile={ownProfile}
+                />
+              );
+            case 'Favorites':
+              return (
+                <ProfileFavoriteList
+                  author={fullName}
+                  authorImage={profileStore.profile.image}
+                  articles={profileStore.favorites}
+                  userFullName={fullName}
+                  ownProfile={ownProfile}
+                />);
+            case 'Following':
+            default:
+              return (
+                <FollowingList
+                  history={history}
+                  userFullName={fullName}
+                  ownProfile={ownProfile}
+                  following={profileStore.following}
+                />);
           }
-        </div>
-      </Body>
+        })()
+        }
+      </div>
     );
   }
 }
@@ -123,5 +141,5 @@ const mapStateToProps = (state) => ({
 
 export default connect(
   mapStateToProps,
-  { fetchProfile },
+  { fetchProfile, follow: followAction, unFollow: unFollowAction },
 )(Profile);

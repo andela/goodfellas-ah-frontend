@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import parser from 'react-html-parser';
 import { getArticles } from '../actions/articleActions';
 import Loading from '../components/shared/Loading';
+import { filterReactions } from '../mixin';
 
 export class Card extends Component {
   componentDidMount() {
@@ -17,7 +18,7 @@ export class Card extends Component {
   sortArticlesByLikes = (articles) => {
     const sortedArticles = articles
       .map((eachArticle) => {
-        const filteredArticles = this.filterLikes(eachArticle.reactions);
+        const filteredArticles = filterReactions(eachArticle.reactions).likes;
         return { article: eachArticle, track: filteredArticles };
       })
       .sort((a, b) => {
@@ -36,21 +37,14 @@ export class Card extends Component {
 
   handleClick = () => {
     const { articleLimit } = this.state;
-    if (articleLimit === 6) {
-      this.setState({ articleLimit: 9 });
+    if (articleLimit !== 24) {
+      this.setState({ articleLimit: articleLimit + 6 });
       this.displayCards(this.displayArticles);
-      this.refs.moreArticles.innerText = 'Less Articles';
     } else {
-      this.setState({ articleLimit: 6 });
-      this.displayCards(this.displayArticles);
-      this.refs.moreArticles.innerText = 'More Articles';
+      window.location.assign('/articles');
     }
   };
 
-  filterLikes = (likes) => {
-    const result = likes.filter((eachLike) => eachLike.reaction === 1);
-    return result.length;
-  };
 
   changeBackground = (image) => {
     const changeBackground = {
@@ -63,8 +57,8 @@ export class Card extends Component {
   displayCards = (displayArticles) => {
     const { articleLimit } = this.state;
     return displayArticles(articleLimit).map((card) => {
-      const displayedBody = card.article.body.slice(0, 120);
-      const displayedTitle = card.article.title.slice(0, 30);
+      const displayedDescription = card.article.description.slice(0, 120);
+      const displayedTitle = card.article.title.slice(0, 24);
       return (
         <div
           onClick={this.getArticle}
@@ -74,7 +68,7 @@ export class Card extends Component {
           <div className="hero-card-details col-sm-7">
             <h6>{parser(displayedTitle)}</h6>
             <p>
-              {parser(displayedBody)}
+              {displayedDescription}
               ...
             </p>
             <div className="hero-card-author">
@@ -100,7 +94,7 @@ export class Card extends Component {
                 src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426068/Authors%20Haven/icons8-heart-outline-48-grey.png"
                 alt=""
               />
-              <p>{this.filterLikes(card.article.reactions)}</p>
+              <p>{filterReactions(card.article.reactions).likes}</p>
             </div>
           ) : (
             <div
@@ -111,7 +105,7 @@ export class Card extends Component {
                 src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426068/Authors%20Haven/icons8-heart-outline-48-grey.png"
                 alt=""
               />
-              <p>{this.filterLikes(card.article.reactions)}</p>
+              <p>{filterReactions(card.article.reactions).likes}</p>
             </div>
           )}
         </div>

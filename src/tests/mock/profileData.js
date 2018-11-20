@@ -75,4 +75,19 @@ export const updateProfile = {
   },
 };
 
+export const followUser = {
+  status: 201,
+  data: {
+    error: false,
+    message: 'You\'re now following Afeez Awoymemi',
+  },
+};
+export const unFollowUser = {
+  status: 201,
+  data: {
+    error: false,
+    message: 'You unfollowed Afeez Awoymemi',
+  },
+};
+
 export const setProfile = [profile, followers, followedUsers, articles, favoritedArticles];

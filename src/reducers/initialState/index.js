@@ -10,6 +10,8 @@ const initialState = {
   error: [],
   singleArticle: null,
   articleError: '',
+  searchResults: [],
+  searchError: [],
   profile: {
     loading: true,
     profileView: 'Following',

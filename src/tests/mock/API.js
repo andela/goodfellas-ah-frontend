@@ -32,12 +32,17 @@ export const routes = {
     },
   },
   post: {
+    '/user/follow/1': () => profileData.followUser,
     '/articles': (payload) => {
       if (payload.title && payload.body) return articleData.postArticle;
       throw new CustomAPIError('All fields are required', 400);
     },
   },
+  delete: {
+    '/user/follow/1': () => profileData.followUser,
+  },
 };
+
 const apiCall = (type, route, payload) => new Promise((resolve, reject) => {
   if (routes[type][route]) resolve(routes[type][route](payload));
   reject(new CustomAPIError('Invalid request, Route does not exist'));
@@ -53,6 +58,9 @@ export default {
     },
     post(route, payload) {
       return apiCall('post', route, payload);
+    },
+    delete(route) {
+      return apiCall('delete', route);
     },
   },
   openRoutes: {

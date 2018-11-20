@@ -10,6 +10,7 @@ const persistAuth = async (dispatch, API, token, userId) => {
   localStorage.setItem('userId', userId);
   const userProfile = await API.api.get(`/user/profile/${userId}`);
   const { user, ...profile } = userProfile.data.data;
+  dispatch({ type: types.SIGNIN_USER, payload: { token, userId } });
   dispatch({ type: types.SET_OWN_PROFILE, payload: profile });
   dispatch({ type: types.SET_USER, payload: user });
 };
@@ -19,10 +20,6 @@ export const signup = (formValues, callback) => async (dispatch, getState, API) 
     const res = await API.openRoutes.post('/auth/signup', formValues);
     const { userId, token } = res.data;
     await persistAuth(dispatch, API, token, userId);
-    dispatch({
-      type: types.SIGNIN_USER,
-      payload: res.data,
-    });
     callback();
   } catch (error) {
     dispatch({
@@ -38,7 +35,6 @@ export const signin = (formValues, callback) => async (dispatch, getState, API) 
     const response = await API.openRoutes.post('/auth/signin', formValues);
     const { userId, token } = response.data;
     await persistAuth(dispatch, API, token, userId);
-    dispatch({ type: types.SIGNIN_USER, payload: response.data });
 
     callback();
   } catch (error) {
@@ -49,19 +45,20 @@ export const signin = (formValues, callback) => async (dispatch, getState, API) 
   }
 };
 
+export const clearSigninError = () => ({ type: types.CLEAR_SIGNIN_ERROR });
+
 export const signout = () => (dispatch, getState, API) => {
   localStorage.clear();
   API.updateToken(null);
   return dispatch({ type: types.SIGNOUT_USER });
 };
 
-export const socialSignin = ({ token, userId }, callback) => async (dispatch) => {
+export const socialSignin = ({ token, userId }, callback) => async (dispatch, getState, API) => {
   try {
     await axios.get(`${apiUrl}/api/user/profile/${userId}`, {
       headers: { Authorization: token },
     });
-    dispatch({ type: types.SIGNIN_USER, payload: token });
-    localStorage.setItem('token', token);
+    await persistAuth(dispatch, API, token, userId);
     callback(true);
   } catch (error) {
     dispatch({
@@ -74,7 +71,7 @@ export const socialSignin = ({ token, userId }, callback) => async (dispatch) =>
 
 export const forgotPassword = (userData) => async (dispatch) => {
   try {
-    const response = await axios.post('api/forgotPassword', userData);
+    const response = await axios.post(`${apiUrl}/api/forgotPassword`, userData);
     dispatch({ type: types.SUCCESS_MSG, payload: response.data.message });
     dispatch({ type: types.RESET_ERROR, payload: '' });
     swal(response.data.message, 'Click the link in the email to reset your password', 'success');
@@ -85,7 +82,7 @@ export const forgotPassword = (userData) => async (dispatch) => {
 export const resetPassword = (userData, history) => async (dispatch) => {
   try {
     const { token } = queryString.parse(history.location.search);
-    const response = await axios.post(`api/resetPassword?token=${token.trim()}`, userData);
+    const response = await axios.post(`${apiUrl}/api/resetPassword?token=${token.trim()}`, userData);
     dispatch({ type: types.SUCCESS_MSG, payload: response.data.message });
     swal({
       title: response.data.message,
