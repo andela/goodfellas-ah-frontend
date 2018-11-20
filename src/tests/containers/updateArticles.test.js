@@ -26,5 +26,6 @@ describe('update artcicle container test suite', () => {
     const updateButton = wrapper.find('.article-whitebutton').at(0);
     updateButton.simulate('click', { preventDefault: jest.fn() });
     expect(props.updateArticle).toBeCalled();
+    props.updateArticle.mockRestore();
   });
 });

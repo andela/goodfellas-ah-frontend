@@ -42,7 +42,9 @@ export class CreateArticles extends Component {
 
   handleSubmit = (event, publish = true) => {
     event.preventDefault();
-    const { body } = this.state;
+    const { title, body } = this.state;
+    if (!title) return swal('Please add a title', 'Your article needs to have a title', 'warning');
+    if (!body) { return swal('The body of your article cannot be empty!', 'warning'); }
     const articlePayload = {
       ...this.state,
       description: body.split(' ').slice(0, 10).join(' '),
