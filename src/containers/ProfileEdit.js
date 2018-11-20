@@ -17,7 +17,7 @@ export class EditProfile extends Component {
     username: '',
     bio: '',
     updating: false,
-  }
+  };
 
   componentDidMount = () => {
     const { fetchProfile: profileFetch, auth } = this.props;
@@ -29,7 +29,7 @@ export class EditProfile extends Component {
         username: profileStore.profile.username,
       });
     }
-  }
+  };
 
   componentDidUpdate = (prevProps) => {
     const { profileStore } = this.props;
@@ -39,21 +39,21 @@ export class EditProfile extends Component {
     if (prevProps.profileStore.profile.bio !== profileStore.profile.bio) {
       this.setState({ bio: profileStore.profile.bio });
     }
-  }
+  };
 
   imageRead = (file, image) => {
     this.setState({
       profileImage: image,
       profileImageFile: file,
     });
-  }
+  };
 
   resetImage = () => {
     this.setState({
       profileImage: '',
       profileImageFile: '',
     });
-  }
+  };
 
   resetProfile = (e) => {
     const { profileStore } = this.props;
@@ -64,7 +64,7 @@ export class EditProfile extends Component {
       bio: profileStore.profile.bio,
       username: profileStore.profile.username,
     });
-  }
+  };
 
   // eslint-disable-next-line consistent-return
   updateProfile = async (e) => {
@@ -84,21 +84,18 @@ export class EditProfile extends Component {
       swal('Success', response.success, 'success');
     }
     if (response.error) swal('Error', response.error, 'error');
-  }
+  };
 
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
     });
-  }
+  };
 
   render() {
     const { profileStore } = this.props;
     const {
-      profileImage,
-      username,
-      bio,
-      updating,
+      profileImage, username, bio, updating,
     } = this.state;
 
     if (!Object.keys(profileStore.profile).length) {
@@ -108,10 +105,12 @@ export class EditProfile extends Component {
             <div>
               <svg className="icon">
                 <use xlinkHref={`${icons}#sad`} />
-              </svg>&nbsp;&nbsp;
+              </svg>
+              &nbsp;&nbsp;
               <span>{profileStore.profileError}</span>
             </div>
-          </div>);
+          </div>
+        );
       }
       return <Loading />;
     }
@@ -119,13 +118,25 @@ export class EditProfile extends Component {
     return (
       <div>
         <form onSubmit={this.updateProfile} className="edit-profile_form" encType="multipart/form-data">
-          <ProfileImageUploader name="image" imageRead={this.imageRead} canReset={!!profileImage} resetImage={this.resetImage} profileImage={profileImage || profileStore.profile.image} />
-          <h3 id="user-name" className="username">{fullName}</h3>
+          <ProfileImageUploader
+            name="image"
+            imageRead={this.imageRead}
+            canReset={!!profileImage}
+            resetImage={this.resetImage}
+            profileImage={profileImage || profileStore.profile.image}
+          />
+          <h3 id="user-name" className="username">
+            {fullName}
+          </h3>
           <InputBox handleChange={this.handleChange} value={username} name="username" placeholder="Username" />
           <TextBox handleChange={this.handleChange} value={bio} name="bio" placeholder="Enter a short bio" />
           <div>
-            <button type="submit" disabled={updating} id="save-button" className={`button outline ${updating ? 'disabled' : ''}`}>{ updating ? <img className=" edit-profile_spinner" alt="loader" src={spinner} /> : 'Save' }</button>
-            <button type="button" disabled={updating} onClick={this.resetProfile} className={`button outline ${updating ? 'disabled' : ''}`}>Cancel</button>
+            <button type="submit" disabled={updating} id="save-button" className={`button outline ${updating ? 'disabled' : ''}`}>
+              {updating ? <img className=" edit-profile_spinner" alt="loader" src={spinner} /> : 'Save'}
+            </button>
+            <button type="button" disabled={updating} onClick={this.resetProfile} className={`button outline ${updating ? 'disabled' : ''}`}>
+              Cancel
+            </button>
           </div>
         </form>
         <NotificationSettings />
