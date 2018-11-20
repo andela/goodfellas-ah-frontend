@@ -2,7 +2,6 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import * as types from '../../actions/actionTypes';
 import initialState from '../../reducers/initialState';
-// import * as profileData from '../mock/profileData';
 import * as notificationActions from '../../actions/notificationActions';
 import API from '../mock/API';
 
@@ -24,6 +23,7 @@ describe('Notifications', () => {
       },
     },
   ];
+
   it('gets initial notifications', () => {
     const store = mockStore({ profile: initialState.profile });
 
@@ -36,6 +36,20 @@ describe('Notifications', () => {
 
     return store.dispatch(notificationActions.getNotification()).then(() => {
       expect(store.getActions()).toEqual(actionSuccess2);
+    });
+  });
+  it('update notification settings', () => {
+    const store = mockStore({ profile: initialState.profile });
+
+    return store.dispatch(notificationActions.updateNotification()).then(() => {
+      expect(store.getActions()).toEqual([]);
+    });
+  });
+  it('update notification settings', () => {
+    const store = mockStore({ profile: initialState.profile });
+
+    return store.dispatch(notificationActions.seenNotification()).then(() => {
+      expect(store.getActions()).toEqual([]);
     });
   });
 });
