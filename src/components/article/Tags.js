@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Button from '../shared/Button';
-// import Tag from '../shared/tag';
 
 class Tags extends Component {
   state = {
@@ -12,30 +11,19 @@ class Tags extends Component {
     // First prevent default form submission behaviour
     e.preventDefault();
 
-    // Process accordingly
+    //  Check for empty spaces and process accordingly
     const newTag = this.refs.getTags.value;
     const { tagsCount, tags } = this.state;
 
-    this.refs.getTags.value = '';
-
-    this.setState({
-      tags: [...tags, { tag: newTag, tagsCount: tagsCount + 1 }],
-      tagsCount: tagsCount + 1,
-    });
-  };
-
-  componentDidUpdate = () => {
-    console.log(this.state);
-    const { tags } = this.state;
-
-    // Check if the limit for tags has been reached
-    if (tags.length === 5) {
-      this.refs.getTags.disabled = true;
-      this.refs.getTags.placeholder = 'You\'ve reached your limit';
-    } else {
-      this.refs.getTags.disabled = false;
-      this.refs.getTags.placeholder = 'Add a tag...';
+    if (newTag.trim() !== '') {
+      this.setState({
+        tags: [...tags, { tag: newTag.trim(), tagsCount: tagsCount + 1 }],
+        tagsCount: tagsCount + 1,
+      });
     }
+
+    // Reset input field
+    e.target.reset();
   };
 
   handleClick = (e) => {
@@ -60,6 +48,19 @@ class Tags extends Component {
     });
   };
 
+  componentDidUpdate = () => {
+    const { tags } = this.state;
+
+    // Check if the limit for tags has been reached
+    if (tags.length === 5) {
+      this.refs.getTags.disabled = true;
+      this.refs.getTags.placeholder = 'You\'ve reached your limit';
+    } else {
+      this.refs.getTags.disabled = false;
+      this.refs.getTags.placeholder = 'Add a tag...';
+    }
+  };
+
   render() {
     const { tags } = this.state;
     return (
@@ -74,10 +75,11 @@ class Tags extends Component {
               <input ref="getTags" type="text" placeholder="Add a tag..." />
             </form>
             <div className="tags-wrapper">
-              {tags.map((tag) => {
+              {tags.map((eachTag) => {
+                const { tagsCount, tag } = eachTag;
                 return (
-                  <div key={tag.tagsCount} className="new-tag">
-                    <p>{tag.tag} </p>
+                  <div key={tagsCount} className="new-tag">
+                    <p>{tag} </p>
                     <span onClick={this.handleClick} className="new-tag-cancel">
                       x
                     </span>
