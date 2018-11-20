@@ -51,11 +51,13 @@ export class UpdateArticles extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
-    const { body } = this.state;
+    const { title, body } = this.state;
+    if (!title || title === '<p><br></p>') return swal('Please add a title', 'Your article needs to have a title', 'warning');
+    if (!body || body === '<p><br></p>') { return swal('Please add a body', 'The body of your article cannot be empty!', 'warning'); }
     const { match } = this.props;
     const articlePayload = {
       ...this.state,
-      description: body.split(' ').slice(0, 3).join(' '),
+      description: body.split(' ').slice(0, 10).join(' '),
     };
     // eslint-disable-next-line react/destructuring-assignment
     this.props.updateArticle(articlePayload, match.params.slug);

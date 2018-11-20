@@ -1,5 +1,93 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`update artcicle container test suite render container should render as expected 1`] = `
+<div
+  className="article-body"
+>
+  <div
+    className="articles-card"
+  >
+    <div
+      className="article-buttons"
+    >
+      <button
+        className="btn article-whitebutton"
+        onClick={[Function]}
+        type="submit"
+      >
+        Update
+      </button>
+    </div>
+    <Connect(ImageUploader)
+      imageUploaded={[Function]}
+    />
+    <form>
+      <ReactMediumEditor
+        id="title"
+        name="title"
+        onChange={[Function]}
+        options={
+          Object {
+            "placeholder": false,
+            "toolbar": Object {
+              "buttons": Array [
+                "bold",
+                "italic",
+                "underline",
+                "strikethrough",
+                "quote",
+                "anchor",
+                "h2",
+                "h3",
+                "orderedlist",
+              ],
+            },
+          }
+        }
+        tag="div"
+        text="some title"
+      />
+      <ReactMediumEditor
+        className="editable"
+        name="body"
+        onChange={[Function]}
+        options={
+          Object {
+            "placeholder": false,
+            "toolbar": Object {
+              "buttons": Array [
+                "bold",
+                "italic",
+                "underline",
+                "strikethrough",
+                "quote",
+                "anchor",
+                "h2",
+                "h3",
+                "orderedlist",
+              ],
+            },
+          }
+        }
+        tag="div"
+        text="somebody"
+      />
+    </form>
+  </div>
+  <div
+    className="article-fixed-buttons"
+  >
+    <button
+      className="btn article-fixed-whitebutton"
+      onClick={[Function]}
+      type="submit"
+    >
+      Update
+    </button>
+  </div>
+</div>
+`;
+
 exports[`update artcicle container test suite renders properly when mounted 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
