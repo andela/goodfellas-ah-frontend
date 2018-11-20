@@ -21,7 +21,7 @@ describe('components', () => {
       payload: profileData.setProfile,
     });
   });
-  describe('ProfileEdit container Error', () => {
+  describe('ProfileEdit containe Error', () => {
     const setup = () => {
       const props = {
         value: 'Ade',
