@@ -10,6 +10,7 @@ const persistAuth = async (dispatch, API, token, userId) => {
   localStorage.setItem('userId', userId);
   const userProfile = await API.api.get(`/user/profile/${userId}`);
   const { user, ...profile } = userProfile.data.data;
+  dispatch({ type: types.SIGNIN_USER, payload: { token, userId } });
   dispatch({ type: types.SET_OWN_PROFILE, payload: profile });
   dispatch({ type: types.SET_USER, payload: user });
 };
@@ -19,10 +20,6 @@ export const signup = (formValues, callback) => async (dispatch, getState, API) 
     const res = await API.openRoutes.post('/auth/signup', formValues);
     const { userId, token } = res.data;
     await persistAuth(dispatch, API, token, userId);
-    dispatch({
-      type: types.SIGNIN_USER,
-      payload: res.data,
-    });
     callback();
   } catch (error) {
     dispatch({
@@ -38,7 +35,6 @@ export const signin = (formValues, callback) => async (dispatch, getState, API) 
     const response = await API.openRoutes.post('/auth/signin', formValues);
     const { userId, token } = response.data;
     await persistAuth(dispatch, API, token, userId);
-    dispatch({ type: types.SIGNIN_USER, payload: response.data });
 
     callback();
   } catch (error) {
@@ -57,13 +53,12 @@ export const signout = () => (dispatch, getState, API) => {
   return dispatch({ type: types.SIGNOUT_USER });
 };
 
-export const socialSignin = ({ token, userId }, callback) => async (dispatch) => {
+export const socialSignin = ({ token, userId }, callback) => async (dispatch, getState, API) => {
   try {
     await axios.get(`${apiUrl}/api/user/profile/${userId}`, {
       headers: { Authorization: token },
     });
-    dispatch({ type: types.SIGNIN_USER, payload: token });
-    localStorage.setItem('token', token);
+    await persistAuth(dispatch, API, token, userId);
     callback(true);
   } catch (error) {
     dispatch({
