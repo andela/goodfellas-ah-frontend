@@ -10,10 +10,8 @@ import Profile from '../views/ProfilePage';
 import SocialAuthPage from '../views/SocialAuthPage';
 import ForgotPasswordPage from '../views/ForgotPasswordPage';
 import ResetPasswordPage from '../views/ResetPasswordPage';
-import CreateArticle from '../views/CreateArticles';
 import SearchArticles from '../views/SearchArticles';
 import Header from '../components/shared/Header';
-import GetAllArticles from '../views/AllArticles';
 import NotificationPage from '../views/NotificationPage';
 
 const User = () => (
@@ -37,8 +35,6 @@ const Articles = (props) => (
   <div>
     <Header {...props} />
     <Route path="/articles/search" component={SearchArticles} />
-    <Route path="/articles/create" component={CreateArticle} />
-    <Route path="/articles/home" component={GetAllArticles} />
   </div>
 );
 
