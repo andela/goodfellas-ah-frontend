@@ -1,7 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Landing Page UI render features container should render as expected 1`] = `
-<_default>
+<_default
+  initialState={
+    Object {
+      "auth": Object {
+        "authenticated": null,
+        "ownProfile": Object {
+          "userId": 1,
+        },
+        "user": null,
+        "userId": null,
+      },
+    }
+  }
+>
   <Provider
     store={
       Object {
@@ -107,7 +120,11 @@ exports[`Landing Page UI render features container should render as expected 1`]
                             }
                             notifications={Object {}}
                             parentComponent="landingpage"
-                            profile={null}
+                            profile={
+                              Object {
+                                "userId": 1,
+                              }
+                            }
                             profileNavigation={[Function]}
                             search={[Function]}
                             searchError={Array []}

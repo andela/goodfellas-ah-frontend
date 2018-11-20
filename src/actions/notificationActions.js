@@ -1,9 +1,8 @@
 import * as types from './actionTypes';
 
 
-export const setNotification = () => async (dispatch, getState, { api }) => {
+export const setNotification = (userId) => async (dispatch, getState, { api }) => {
   try {
-    const { userId } = localStorage;
     const profile = await api.get(`/user/profile/${userId}`);
     const { notificationSettings } = profile.data.data.user;
     dispatch({
@@ -22,8 +21,7 @@ export const updateNotification = (type, toggle) => async (dispatch, getState, {
 
 export const getNotification = () => async (dispatch, getState, { api }) => {
   try {
-    const notification = await api.get('/user/notification/');
-    // console.log(notification.data.data);
+    const notification = await api.get('/user/notification');
     dispatch({
       type: types.LATEST_NOTIFICATION,
       payload: notification.data.data,
@@ -33,8 +31,7 @@ export const getNotification = () => async (dispatch, getState, { api }) => {
 };
 export const seenNotification = (id) => async (dispatch, getState, { api }) => {
   try {
-    const response = await api.put(`/user/notification/seen/${id}`);
-    console.log(response);
+    await api.put(`/user/notification/seen/${id}`);
   } catch (error) {
   }
 };

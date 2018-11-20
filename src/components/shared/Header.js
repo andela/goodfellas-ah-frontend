@@ -58,6 +58,7 @@ export class Header extends Component {
   };
 
   notificationDropdown = () => {
+    // this.refs.myDropdown.classList.toggle('show');
     this.refs.myDropdown2.classList.toggle('show');
   };
 
@@ -67,8 +68,8 @@ export class Header extends Component {
   };
 
   componentDidMount() {
-    const { getNotification: latestNotification, setNotification: notificationSettings } = this.props;
-    notificationSettings();
+    const { getNotification: latestNotification, setNotification: notificationSettings, profile } = this.props;
+    notificationSettings(profile.userId);
     latestNotification();
   }
 
@@ -177,9 +178,9 @@ export class Header extends Component {
                                         onClick={() => {
                                           this.handleSeen(notification.id);
                                         }}
-                                        className="notification-icon"
+                                        className="notification-icon notification-icon-click"
                                       >
-                                        {notification.author.firstname} published a new article
+                                        {`${notification.author.firstname}published a new article`}
                                       </Link>
                                     );
                                   case 'favoriteArticleComment':

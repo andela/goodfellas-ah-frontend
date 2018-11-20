@@ -74,6 +74,19 @@ export const updateProfile = {
     },
   },
 };
+export const notifications = {
+  data: {
+    error: false,
+    data: {
+      count: 15,
+      rows: {
+        0: {}, 1: {},
+      },
+    },
+    message: 'Profile retrieved successfully',
+  },
+  status: 200,
+};
 
 export const routes = {
   get: {
@@ -82,6 +95,7 @@ export const routes = {
     '/user/followed/1': followedUsers,
     '/articles/author/1': articles,
     '/articles/user/1/favorite': favoritedArticles,
+    '/user/notification': notifications,
   },
   put: {
     '/user/profile/1': updateProfile,
