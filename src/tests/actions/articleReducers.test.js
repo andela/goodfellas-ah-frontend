@@ -1,12 +1,7 @@
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
-import moxios from 'moxios';
 import articleReducer from '../../reducers/articleReducer';
 import * as types from '../../actions/actionTypes';
 import * as actions from '../../actions/articleActions';
 
-const middlewares = [thunk];
-const mockStore = configureMockStore(middlewares);
 
 const articles = {
   articles: {
@@ -145,21 +140,22 @@ describe('Article Reducer', () => {
         payload: '',
       };
       const initialState = {
-        article: null,
         articleError: '',
         articles: [],
         authenticated: '',
+        articleLoading: false,
         error: [],
+        singleArticle: null,
+        articleError: '',
+        searchResults: [],
+        searchError: [],
         errorMessage: '',
         ownProfile: {},
         profile: {
           articles: [], favorites: [], followers: [], following: [], loading: true, profile: {}, profileError: '', profileView: 'Following', user: {},
         },
-        searchError: [],
-        searchResults: [],
         successMessage: '',
         user: {},
-        userId: null,
       };
       expect(articleReducer(undefined, action)).toEqual(initialState);
     });
@@ -169,21 +165,21 @@ describe('Article Reducer', () => {
     test('returns the correct state', () => {
       const action = { type: types.GET_ARTICLES, payload: [{ articles: 'new Articles' }] };
       const expectedState = {
-        article: null,
-        articleError: '',
         articles: [{ articles: 'new Articles' }],
         authenticated: '',
+        articleLoading: false,
         error: [],
+        singleArticle: null,
+        articleError: '',
+        searchResults: [],
+        searchError: [],
         errorMessage: '',
         ownProfile: {},
         profile: {
           articles: [], favorites: [], followers: [], following: [], loading: true, profile: {}, profileError: '', profileView: 'Following', user: {},
         },
-        searchError: [],
-        searchResults: [],
         successMessage: '',
         user: {},
-        userId: null,
       };
       expect(articleReducer(undefined, action)).toEqual(expectedState);
     });
@@ -193,12 +189,13 @@ describe('Article Reducer', () => {
     test('returns the correct state', () => {
       const action = { type: types.GET_ARTICLES_ERROR, payload: 'Error getting articles' };
       const expectedState = {
-        article: null,
-        articleError: '',
         articles: [],
         authenticated: '',
         error: 'Error getting articles',
         errorMessage: '',
+        articleLoading: false,
+        singleArticle: null,
+        articleError: '',
         ownProfile: {},
         profile: {
           articles: [], favorites: [], followers: [], following: [], loading: true, profile: {}, profileError: '', profileView: 'Following', user: {},
@@ -207,7 +204,6 @@ describe('Article Reducer', () => {
         searchResults: [],
         successMessage: '',
         user: {},
-        userId: null,
       };
       expect(articleReducer(undefined, action)).toEqual(expectedState);
     });

@@ -1,9 +1,11 @@
 import React from 'react';
+import CreateArticles from '../containers/CreateArticles';
+import Body from '../components/layout/DefaultLayout';
 
-const CreateArticle = () => (
+export default(props) => (
   <div>
-    This is the Create Article view
+    <Body>
+      <CreateArticles {...props} />
+    </Body>
   </div>
 );
-
-export default CreateArticle;
