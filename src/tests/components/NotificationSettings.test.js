@@ -23,7 +23,6 @@ describe('Notification UI', () => {
     });
     it('should dropdown search bar filter section', () => {
       wrapped.find('.toggle-click').simulate('click');
-      
     });
   });
 });

@@ -75,7 +75,6 @@ export class Header extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps) {
-      console.log(nextProps);
       const { notifications, inAppStatus } = nextProps;
       const status = inAppStatus.notification;
       if (Object.values(status).indexOf('inApp') !== -1) {
