@@ -10,7 +10,6 @@ const enhancers = composeWithDevTools({});
 const state = {
   auth: {
     authenticated: localStorage.getItem('token'),
-    userId: Number(localStorage.getItem('userId')),
     user: JSON.parse(localStorage.getItem('user')),
     ownProfile: JSON.parse(localStorage.getItem('ownProfile')),
   },

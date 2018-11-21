@@ -6,13 +6,14 @@ import * as types from './actionTypes';
 const apiUrl = process.env.REACT_APP_API_URL;
 const persistAuth = async (dispatch, API, token, userId) => {
   API.updateToken(token);
-  localStorage.setItem('token', token);
-  localStorage.setItem('userId', userId);
   const userProfile = await API.api.get(`/user/profile/${userId}`);
   const { user, ...profile } = userProfile.data.data;
-  dispatch({ type: types.SIGNIN_USER, payload: { token, userId } });
+  dispatch({ type: types.SIGNIN_USER, payload: token });
   dispatch({ type: types.SET_OWN_PROFILE, payload: profile });
   dispatch({ type: types.SET_USER, payload: user });
+  localStorage.setItem('token', token);
+  localStorage.setItem('ownProfile', JSON.stringify(profile));
+  localStorage.setItem('user', JSON.stringify(user));
 };
 
 export const signup = (formValues, callback) => async (dispatch, getState, API) => {

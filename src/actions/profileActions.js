@@ -44,6 +44,7 @@ export const editProfile = (id, data) => async (dispatch, getState, { api }) => 
         type: types.SET_OWN_PROFILE,
         payload: response.data.profile,
       });
+      localStorage.setItem('ownProfile', JSON.stringify(response.data.profile));
       return { success: response.data.message };
     }
   } catch (e) {
