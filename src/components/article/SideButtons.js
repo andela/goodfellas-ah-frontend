@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import icons from '../assets/icons.svg';
+import icons from '../../assets/icons.svg';
 
 class SideButtons extends Component {
   state = {
@@ -28,7 +28,7 @@ class SideButtons extends Component {
         <svg id="bookmark" title="Report this article"><use xlinkHref={`${icons}#bookmark`} /></svg>
         <svg id="share" title="Report this article"><use xlinkHref={`${icons}#share`} /></svg>
         <svg id="more" onClick={this.showExtraButtons} title="Show more buttons"><use xlinkHref={`${icons}#more`} /></svg>
-        {this.AddExtraButtons(extraButtons ? 'active active-small' : '')}
+        {this.AddExtraButtons(extraButtons ? 'active' : '')}
         <div id="like-count"><p>4</p></div>
         <svg id="love" title="Report this article"><use xlinkHref={`${icons}#gratipay`} /></svg>
       </div>

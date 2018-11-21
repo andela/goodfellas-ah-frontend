@@ -140,7 +140,6 @@ describe('Article Reducer', () => {
         payload: '',
       };
       const initialState = {
-        articleError: '',
         articles: [],
         authenticated: '',
         articleLoading: false,

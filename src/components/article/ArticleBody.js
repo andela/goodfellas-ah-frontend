@@ -1,6 +1,6 @@
 import React from 'react';
 import parser from 'react-html-parser';
-import SideButtons from '../../containers/SideButtons';
+import SideButtons from './SideButtons';
 
 
 const ArticleBody = (props) => {
