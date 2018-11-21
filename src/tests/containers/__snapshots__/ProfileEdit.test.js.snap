@@ -4,11 +4,6 @@ exports[`components ProfileEdit containe Error should render as expected 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditProfile
-    auth={
-      Object {
-        "userId": 1,
-      }
-    }
     editProfile={[Function]}
     fetchProfile={[Function]}
     profileNavigation={[MockFunction]}
@@ -17,6 +12,11 @@ ShallowWrapper {
         "profile": Object {},
         "profileError": "An error occoured",
         "profileView": "Favorites",
+      }
+    }
+    user={
+      Object {
+        "userId": 1,
       }
     }
     value="Ade"
@@ -221,11 +221,6 @@ exports[`components ProfileEdit container Loading should render as expected 1`] 
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditProfile
-    auth={
-      Object {
-        "userId": 1,
-      }
-    }
     editProfile={[Function]}
     fetchProfile={[Function]}
     profileNavigation={[MockFunction]}
@@ -233,6 +228,11 @@ ShallowWrapper {
       Object {
         "profile": Object {},
         "profileView": "Favorites",
+      }
+    }
+    user={
+      Object {
+        "userId": 1,
       }
     }
     value="Ade"
@@ -289,13 +289,13 @@ exports[`components ProfileEdit container should render as expected 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditProfile
-    auth={
-      Object {
-        "userId": 1,
-      }
-    }
     editProfile={[Function]}
     fetchProfile={[Function]}
+    history={
+      Object {
+        "push": [MockFunction],
+      }
+    }
     profileNavigation={[MockFunction]}
     profileStore={
       Object {
@@ -367,6 +367,11 @@ ShallowWrapper {
         },
       }
     }
+    user={
+      Object {
+        "userId": 1,
+      }
+    }
     value="Ade"
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -415,15 +420,15 @@ ShallowWrapper {
           />
           <div>
             <button
-              className="button outline "
-              disabled={false}
+              className="button green outline"
+              disabled={true}
               id="save-button"
               type="submit"
             >
               Save
             </button>
             <button
-              className="button outline "
+              className="button green outline"
               disabled={false}
               onClick={[Function]}
               type="button"
@@ -470,15 +475,15 @@ ShallowWrapper {
             />,
             <div>
               <button
-                className="button outline "
-                disabled={false}
+                className="button green outline"
+                disabled={true}
                 id="save-button"
                 type="submit"
               >
                 Save
               </button>
               <button
-                className="button outline "
+                className="button green outline"
                 disabled={false}
                 onClick={[Function]}
                 type="button"
@@ -556,15 +561,15 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <button
-                  className="button outline "
-                  disabled={false}
+                  className="button green outline"
+                  disabled={true}
                   id="save-button"
                   type="submit"
                 >
                   Save
                 </button>,
                 <button
-                  className="button outline "
+                  className="button green outline"
                   disabled={false}
                   onClick={[Function]}
                   type="button"
@@ -581,8 +586,8 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": "Save",
-                  "className": "button outline ",
-                  "disabled": false,
+                  "className": "button green outline",
+                  "disabled": true,
                   "id": "save-button",
                   "type": "submit",
                 },
@@ -596,7 +601,7 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": "Cancel",
-                  "className": "button outline ",
+                  "className": "button green outline",
                   "disabled": false,
                   "onClick": [Function],
                   "type": "button",
@@ -662,15 +667,15 @@ ShallowWrapper {
             />
             <div>
               <button
-                className="button outline "
-                disabled={false}
+                className="button green outline"
+                disabled={true}
                 id="save-button"
                 type="submit"
               >
                 Save
               </button>
               <button
-                className="button outline "
+                className="button green outline"
                 disabled={false}
                 onClick={[Function]}
                 type="button"
@@ -717,15 +722,15 @@ ShallowWrapper {
               />,
               <div>
                 <button
-                  className="button outline "
-                  disabled={false}
+                  className="button green outline"
+                  disabled={true}
                   id="save-button"
                   type="submit"
                 >
                   Save
                 </button>
                 <button
-                  className="button outline "
+                  className="button green outline"
                   disabled={false}
                   onClick={[Function]}
                   type="button"
@@ -803,15 +808,15 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   <button
-                    className="button outline "
-                    disabled={false}
+                    className="button green outline"
+                    disabled={true}
                     id="save-button"
                     type="submit"
                   >
                     Save
                   </button>,
                   <button
-                    className="button outline "
+                    className="button green outline"
                     disabled={false}
                     onClick={[Function]}
                     type="button"
@@ -828,8 +833,8 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "children": "Save",
-                    "className": "button outline ",
-                    "disabled": false,
+                    "className": "button green outline",
+                    "disabled": true,
                     "id": "save-button",
                     "type": "submit",
                   },
@@ -843,7 +848,7 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "children": "Cancel",
-                    "className": "button outline ",
+                    "className": "button green outline",
                     "disabled": false,
                     "onClick": [Function],
                     "type": "button",

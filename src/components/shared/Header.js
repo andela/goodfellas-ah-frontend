@@ -54,11 +54,16 @@ export class Header extends Component {
   };
 
   dropdown = () => {
+    if (this.refs.myDropdown2.classList.value === 'dropdown-menu header-notification show') {
+      this.refs.myDropdown2.classList.toggle('show');
+    }
     this.refs.myDropdown.classList.toggle('show');
   };
 
   notificationDropdown = () => {
-    // this.refs.myDropdown.classList.toggle('show');
+    if (this.refs.myDropdown.classList.value === 'dropdown-menu show') {
+      this.refs.myDropdown.classList.toggle('show');
+    }
     this.refs.myDropdown2.classList.toggle('show');
   };
 
@@ -180,7 +185,7 @@ export class Header extends Component {
                                           this.handleSeen(notification.id);
                                         }}
                                       >
-                                        {`${notification.author.firstname}published a new article`}
+                                        <p className="notificationMessage">{`${notification.author.firstname.charAt(0).toUpperCase()}${notification.author.firstname.slice(1)} published a new article`}</p>
                                       </Link>
                                     );
                                   case 'favoriteArticleComment':

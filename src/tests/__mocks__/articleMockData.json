@@ -1,0 +1,9 @@
+{
+  "createArticleInitialState": {
+    "publishedArticle": {},
+    "status": {
+      "error": false,
+      "success": true
+    }
+  }
+}

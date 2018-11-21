@@ -6,50 +6,7 @@ import NotificationsContainer, { Notifications } from '../../containers/Notifica
 import Root from '../../root';
 
 let wrapped;
-let notificationsMounted;
 let notificationsMountedShallow;
-
-const notifications = [
-  {
-    count: 15,
-    rows: [
-      {
-        id: 4,
-        authorId: 1,
-        articleSlug: 'article-title-3',
-        commentId: null,
-        type: 'followerArticle',
-        seen: false,
-        createdAt: '2018-11-15T11:59:37.329Z',
-        updatedAt: '2018-11-15T19:27:43.885Z',
-        author: {
-          firstname: 'tony',
-          lastname: 'ugwu',
-        },
-        article: {
-          favorited: false,
-          favoritesCount: 0,
-          id: 4,
-          slug: 'article-title-3',
-          title: 'article title',
-          description: 'article descr',
-          body: 'article bodyarticle bodyarticle bodyarticle bodyarticle bodyarticle bodyarticle bodyarticle body',
-          image: null,
-          tagList: null,
-          read_time: '1 minute',
-          averageRating: null,
-          authorId: 1,
-          published: true,
-          archived: false,
-          createdAt: '2018-11-15T11:59:37.299Z',
-          updatedAt: '2018-11-15T11:59:37.299Z',
-          favorite: [],
-        },
-        comment: null,
-      },
-    ],
-  },
-];
 
 const notification = [
   {
@@ -191,16 +148,6 @@ beforeEach(() => {
       getNotification={notificationSettings.notification.getNotification}
       seenNotification={notificationSettings.notification.setNotification}
     />,
-  );
-
-  notificationsMounted = mount(
-    <MemoryRouter>
-      <Notifications
-        notifications
-        getNotification={notificationSettings.notification.getNotification}
-        seenNotification={notificationSettings.notification.setNotification}
-      />
-    </MemoryRouter>,
   );
 });
 

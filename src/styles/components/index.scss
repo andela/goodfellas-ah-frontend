@@ -1,6 +1,10 @@
 // Colours
 $maingreen: #57B182;
 $faintblue: #F4F9FC;
+:root {
+  --light-gray: #a6a2a2;
+  --lighter-gray: rgba(36, 32, 56, 0.17);
+}
 
 :root {
   --light-gray: #a6a2a2;
@@ -8,7 +12,37 @@ $faintblue: #F4F9FC;
   --light-green: #63ce96;
 }
 body {
-  font-family: 'Roboto', sans-serif;
+font-family: 'Roboto', sans-serif;
+}
+.fab {
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: gray;
+    background: #F8F8F8; 
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 5px 15px #0000005e;
+    cursor: pointer;
+}
+
+.centralizer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.no-record {
+    min-height: 300px;
+    font-size: 25px;
+    font-weight: 100;
+    text-align: center;
+    color: var(--lighter-gray);
+    .icon {
+      flex: 0 0 25px;
+    }
+ font-family: 'Roboto', sans-serif;
 }
 
 .button {
@@ -42,9 +76,9 @@ h3.username {
   border: 1.2px solid var(--light-gray);
   border-radius: 0;
   background-color: transparent;
-  &.disabled {
-    border: 1.2px solid var(--light-gray) !important;
-    color: var(--light-gray) !important;
+  &:disabled {
+    border: 1.2px solid var(--lighter-gray) !important;
+    color: var(--lighter-gray) !important;
     &:hover {
       cursor: default;
       background: transparent;
@@ -69,21 +103,6 @@ a.outline:hover {
   stroke-width: 0;
   stroke: currentColor;
   fill: currentColor;
-}
-.centralizer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.no-record {
-  min-height: 300px;
-  font-size: 25px;
-  font-weight: 100;
-  text-align: center;
-  color: var(--lighter-gray);
-  .icon {
-    flex: 0 0 25px;
-  }
 }
 .profile-image {
   border: 1px solid var(--lighter-gray);

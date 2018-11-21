@@ -136,7 +136,7 @@ export class Profile extends Component {
 }
 const mapStateToProps = (state) => ({
   profileStore: state.profile,
-  user: state.auth,
+  user: state.auth.ownProfile,
 });
 
 export default connect(

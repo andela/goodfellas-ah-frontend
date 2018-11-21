@@ -218,6 +218,8 @@ test('Header functionality for profile without image', () => {
 it('should dropdown search bar filter section', () => {
   mountHeader.find('.dropdown-click').simulate('click');
   mountHeader.find('.search-click').simulate('click');
+  mountHeader.find('.dropdown-click').simulate('click');
+  mountHeader.find('.search-click').simulate('click');
   mountHeader.find('.search-click').simulate('click');
 });
 

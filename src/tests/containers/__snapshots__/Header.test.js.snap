@@ -73,6 +73,8 @@ exports[`Loading render container should render as expected 1`] = `
             getNotification={[Function]}
             inAppStatus={
               Object {
+                "articleError": "",
+                "articleLoading": false,
                 "articles": Array [],
                 "authenticated": "",
                 "error": Array [],
@@ -93,9 +95,9 @@ exports[`Loading render container should render as expected 1`] = `
                 },
                 "searchError": Array [],
                 "searchResults": Array [],
+                "singleArticle": null,
                 "successMessage": "",
                 "user": Object {},
-                "userId": null,
               }
             }
             notifications={Object {}}

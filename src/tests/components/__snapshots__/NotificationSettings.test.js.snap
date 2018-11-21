@@ -17,6 +17,8 @@ exports[`Notification UI render features component should render as expected 1`]
       <NotificationSettings
         notification={
           Object {
+            "articleError": "",
+            "articleLoading": false,
             "articles": Array [],
             "authenticated": "",
             "error": Array [],
@@ -37,9 +39,9 @@ exports[`Notification UI render features component should render as expected 1`]
             },
             "searchError": Array [],
             "searchResults": Array [],
+            "singleArticle": null,
             "successMessage": "",
             "user": Object {},
-            "userId": null,
           }
         }
         updateNotification={[Function]}

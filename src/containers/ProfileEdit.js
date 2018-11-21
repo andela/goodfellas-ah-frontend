@@ -20,10 +20,10 @@ export class EditProfile extends Component {
   };
 
   componentDidMount = () => {
-    const { fetchProfile: profileFetch, auth } = this.props;
-    profileFetch(auth.userId);
+    const { fetchProfile: profileFetch, user } = this.props;
+    profileFetch(user.userId);
     const { profileStore } = this.props;
-    if (auth.userId === profileStore.profile.userId) {
+    if (user.userId === profileStore.profile.userId) {
       this.setState({
         bio: profileStore.profile.bio,
         username: profileStore.profile.username,
@@ -56,20 +56,15 @@ export class EditProfile extends Component {
   };
 
   resetProfile = (e) => {
-    const { profileStore } = this.props;
+    const { history } = this.props;
     e.preventDefault();
-    this.setState({
-      profileImage: '',
-      profileImageFile: '',
-      bio: profileStore.profile.bio,
-      username: profileStore.profile.username,
-    });
-  };
+    history.push('/user/profile');
+  }
 
   // eslint-disable-next-line consistent-return
   updateProfile = async (e) => {
     e.preventDefault();
-    const { auth } = this.props;
+    const { user } = this.props;
     if (!e.target.username.value) return swal('Please enter a username', 'Pro Tip: Authors with usernames attract more followers', 'warning');
     if (!e.target.bio.value) return swal('Please fill in your bio', 'Pro Tip: With a clear descriptive bio your profile looks much more beautiful', 'warning');
     const { editProfile: updateProfile } = this.props;
@@ -77,7 +72,7 @@ export class EditProfile extends Component {
     const { profileImageFile } = this.state;
     const profileData = new FormData(e.target);
     if (profileImageFile) profileData.append('image', profileImageFile);
-    const response = await updateProfile(auth.userId, profileData);
+    const response = await updateProfile(user.userId, profileData);
     this.setState({ updating: false });
     if (response.success) {
       this.resetImage();
@@ -117,26 +112,14 @@ export class EditProfile extends Component {
     const fullName = `${profileStore.user.firstname} ${profileStore.user.lastname}`;
     return (
       <div>
-        <form onSubmit={this.updateProfile} className="edit-profile_form" encType="multipart/form-data">
-          <ProfileImageUploader
-            name="image"
-            imageRead={this.imageRead}
-            canReset={!!profileImage}
-            resetImage={this.resetImage}
-            profileImage={profileImage || profileStore.profile.image}
-          />
-          <h3 id="user-name" className="username">
-            {fullName}
-          </h3>
+        <form className="edit-profile_form" onSubmit={this.updateProfile} encType="multipart/form-data">
+          <ProfileImageUploader name="image" imageRead={this.imageRead} canReset={!!profileImage} resetImage={this.resetImage} profileImage={profileImage || profileStore.profile.image} />
+          <h3 id="user-name" className="username">{fullName}</h3>
           <InputBox handleChange={this.handleChange} value={username} name="username" placeholder="Username" />
           <TextBox handleChange={this.handleChange} value={bio} name="bio" placeholder="Enter a short bio" />
           <div>
-            <button type="submit" disabled={updating} id="save-button" className={`button outline ${updating ? 'disabled' : ''}`}>
-              {updating ? <img className=" edit-profile_spinner" alt="loader" src={spinner} /> : 'Save'}
-            </button>
-            <button type="button" disabled={updating} onClick={this.resetProfile} className={`button outline ${updating ? 'disabled' : ''}`}>
-              Cancel
-            </button>
+            <button type="submit" disabled={updating || (!profileImage && profileStore.profile.bio === bio && profileStore.profile.username === username)} id="save-button" className="button green outline">{ updating ? <img className=" edit-profile_spinner" alt="loader" src={spinner} /> : 'Save' }</button>
+            <button type="button" disabled={updating} onClick={this.resetProfile} className="button green outline">Cancel</button>
           </div>
         </form>
         <NotificationSettings />
@@ -147,7 +130,7 @@ export class EditProfile extends Component {
 
 const mapStateToProps = (state) => ({
   profileStore: state.profile,
-  auth: state.auth,
+  user: state.auth.ownProfile,
 });
 
 export default connect(

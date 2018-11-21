@@ -103,24 +103,4 @@ export const unFollowUser = {
   },
 };
 
-export const routes = {
-  get: {
-    '/user/profile/1': profile,
-    '/user/followers/1': followers,
-    '/user/followed/1': followedUsers,
-    '/articles/author/1': articles,
-    '/articles/user/1/favorite': favoritedArticles,
-    '/user/notification': notifications,
-  },
-  put: {
-    '/user/profile/1': updateProfile,
-  },
-  post: {
-    '/user/follow/1': followUser,
-  },
-  delete: {
-    '/user/follow/1': followUser,
-  },
-};
-
 export const setProfile = [profile, followers, followedUsers, articles, favoritedArticles];

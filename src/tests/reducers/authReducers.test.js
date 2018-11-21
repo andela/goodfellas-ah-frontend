@@ -3,11 +3,7 @@ import * as types from '../../actions/actionTypes';
 import initialState from '../../reducers/initialState';
 import * as profileData from '../mock/profileData';
 
-const mockData = {
-  authenticated: undefined,
-  userId: 1,
-};
-describe('fetchProfile reducer', () => {
+describe('authReducer reducer', () => {
   it('should return the initial state', () => {
     expect(authReducer(undefined, {})).toEqual(initialState);
   });
@@ -15,19 +11,16 @@ describe('fetchProfile reducer', () => {
     expect(
       authReducer([], {
         type: types.SIGNIN_USER,
-        payload: mockData,
+        payload: 'randomtoken',
       }),
-    ).toEqual({ authenticated: undefined, errorMessage: '', userId: 1 });
+    ).toEqual({ authenticated: 'randomtoken', errorMessage: '' });
   });
   it('should handle SIGNOUT_USER', () => {
     expect(
       authReducer([], {
         type: types.SIGNOUT_USER,
       }),
-    ).toEqual({
-      authenticated: '',
-      userId: null,
-    });
+    ).toEqual({ authenticated: '', ownProfile: {}, user: {} });
   });
   it('should handle SET_OWN_PROFILE', () => {
     expect(

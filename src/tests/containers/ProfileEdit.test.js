@@ -28,7 +28,7 @@ describe('components', () => {
         fetchProfile: profileActions.fetchProfile,
         editProfile: profileActions.editProfile,
         profileStore: { profile: {}, profileError: 'An error occoured', profileView: 'Favorites' },
-        auth: { userId: 1 },
+        user: { userId: 1 },
         profileNavigation: jest.fn(),
       };
 
@@ -51,7 +51,7 @@ describe('components', () => {
         fetchProfile: profileActions.fetchProfile,
         editProfile: profileActions.editProfile,
         profileStore: { profile: {}, profileView: 'Favorites' },
-        auth: { userId: 1 },
+        user: { userId: 1 },
         profileNavigation: jest.fn(),
       };
 
@@ -74,8 +74,9 @@ describe('components', () => {
         fetchProfile: profileActions.fetchProfile,
         editProfile: profileActions.editProfile,
         profileStore: profile,
-        auth: { userId: 1 },
+        user: { userId: 1 },
         profileNavigation: jest.fn(),
+        history: { push: jest.fn() },
       };
 
       const enzymeWrapper = shallow(<EditProfile {...props} />);
@@ -87,7 +88,14 @@ describe('components', () => {
     };
     it('should render as expected', () => {
       const { enzymeWrapper } = setup();
+      enzymeWrapper.find('[type="submit"]').simulate('click');
       expect(enzymeWrapper).toMatchSnapshot();
+    });
+    it('should navigate to profilePage when resetButton gets clicked', () => {
+      const { enzymeWrapper, props } = setup();
+      enzymeWrapper.find('[type="button"]').simulate('click', { preventDefault: jest.fn() });
+
+      expect(props.history.push).toBeCalledWith('/user/profile');
     });
   });
 });
