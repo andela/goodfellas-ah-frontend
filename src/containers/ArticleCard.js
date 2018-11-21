@@ -68,8 +68,7 @@ export class Card extends Component {
           <div className="hero-card-details col-sm-7">
             <h6>{parser(displayedTitle)}</h6>
             <p>
-              {displayedDescription}
-              ...
+              {parser(displayedDescription)}
             </p>
             <div className="hero-card-author">
               {card.article.user.profile.image === null ? (

@@ -41,6 +41,7 @@ export class CreateArticles extends Component {
   }
 
   handleSubmit = (event) => {
+    const { history } = this.props;
     event.preventDefault();
     const { title, body } = this.state;
     if (!title || title === '<p><br></p>') return swal('Please add a title', 'Your article needs to have a title', 'warning');
@@ -49,8 +50,10 @@ export class CreateArticles extends Component {
       ...this.state,
       description: body.split(' ').slice(0, 10).join(' '),
     };
-    // eslint-disable-next-line react/destructuring-assignment
-    this.props.publishArticle(articlePayload);
+    history.push({
+      pathname: '/tags',
+      state: { articlePayload },
+    });
   }
 
   render() {

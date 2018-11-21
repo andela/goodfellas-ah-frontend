@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import swal from 'sweetalert';
 import Button from '../shared/Button';
 import { addTags } from '../../actions/articleActions';
+import publishArticle from '../../actions/publishArticle';
 
 class Tags extends Component {
   state = {
     tagsCount: 0,
     tags: [],
+    articleStatus: false,
   };
 
   handleSubmit = (e) => {
@@ -51,7 +54,8 @@ class Tags extends Component {
   };
 
   componentDidUpdate = () => {
-    const { tags } = this.state;
+    const { tags, articleStatus } = this.state;
+    const { publishedArticle, history } = this.props;
 
     // Check if the limit for tags has been reached
     if (tags.length === 5) {
@@ -61,18 +65,38 @@ class Tags extends Component {
       this.refs.getTags.disabled = false;
       this.refs.getTags.placeholder = 'Add a tag...';
     }
+
+    // Check if article has been published then publish Tags
+    if (publishedArticle) {
+      this.publishTags();
+    }
+
+    if (articleStatus) {
+      swal('Good job!', 'Article Saved Successfully!', 'success');
+      setTimeout(() => history.push(`/articles/${publishedArticle.slug}`), 3000);
+    }
   };
 
-  publishTags = () => {
+  publishArticle = async () => {
+    const { location, publishArticle: publishNewArticle } = this.props;
+
+    await publishNewArticle(location.state.articlePayload);
+
+    this.setState({ articleStatus: true });
+  };
+
+  publishTags = async () => {
     const { tags } = this.state;
-    const { addTags: addNewTags, history } = this.props;
+    const {
+      addTags: addNewTags,
+      publishedArticle,
+    } = this.props;
     const tagsList = tags.map((eachTag) => {
       const { tag } = eachTag;
       return tag;
     });
 
-
-    addNewTags(tagsList, 'somiso', history.push('/user/profile'));
+    await addNewTags(tagsList, publishedArticle.slug);
   };
 
   render() {
@@ -101,7 +125,7 @@ class Tags extends Component {
                 );
               })}
             </div>
-            <div onClick={this.publishTags}>
+            <div onClick={this.publishArticle}>
               <Button
                 className="btn hero-section-greenbutton"
                 type="submit"
@@ -120,7 +144,8 @@ function mapStatetoProps(state) {
   return {
     tags: state.articles.tags,
     tagsError: state.articles.tagsError,
+    publishedArticle: state.publishArticleReducer.publishedArticle.article,
   };
 }
 
-export default connect(mapStatetoProps, { addTags })(Tags);
+export default connect(mapStatetoProps, { addTags, publishArticle })(Tags);
