@@ -80,11 +80,12 @@ h3.username {
     border: 1.2px solid var(--lighter-gray) !important;
     color: var(--lighter-gray) !important;
     &:hover {
-      cursor: default;
       background: transparent;
     }
-
   }
+}
+*:disabled:hover {
+  cursor: default;
 }
 a.outline:hover {
   text-decoration: none;

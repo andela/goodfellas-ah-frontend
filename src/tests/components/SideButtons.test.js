@@ -1,18 +1,26 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import SideButtons from '../../components/article/SideButtons';
+import { SideButtons } from '../../containers/SingleArticleSideButtons';
+import { articleResponse } from '../mock/articleData';
 
 let wrapped;
 
+const setup = () => {
+  const props = {
+    article: articleResponse.data.data,
+  };
+  const enzymeWrapper = shallow(<SideButtons {...props} />);
+  return { props, enzymeWrapper };
+};
 beforeEach(() => {
-  wrapped = shallow(<SideButtons />);
+  wrapped = setup().enzymeWrapper;
 });
 
 
 describe('SideButtons UI', () => {
   it('view should render as expected', () => {
-    const tree = toJson(wrapped);
-    expect(tree).toMatchSnapshot();
+    wrapped.find('#more').simulate('click');
+    expect(wrapped).toMatchSnapshot();
   });
 });

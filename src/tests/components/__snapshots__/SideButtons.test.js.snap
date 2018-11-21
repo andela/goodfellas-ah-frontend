@@ -1,93 +1,903 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SideButtons UI view should render as expected 1`] = `
-<div
-  className="side-button"
->
-  <svg
-    id="star"
-    title="Like this article"
-  >
-    <use
-      xlinkHref="icons.svg#star"
-    />
-  </svg>
-  <svg
-    id="bookmark"
-    title="Report this article"
-  >
-    <use
-      xlinkHref="icons.svg#bookmark"
-    />
-  </svg>
-  <svg
-    id="share"
-    title="Report this article"
-  >
-    <use
-      xlinkHref="icons.svg#share"
-    />
-  </svg>
-  <svg
-    id="more"
-    onClick={[Function]}
-    title="Show more buttons"
-  >
-    <use
-      xlinkHref="icons.svg#more"
-    />
-  </svg>
-  <div
-    className="extra-buttons "
-  >
-    <svg
-      className="icon"
-      id="delete"
-      title="Delete this article"
-    >
-      <use
-        xlinkHref="icons.svg#delete-icon"
-      />
-    </svg>
-    <svg
-      id="edit"
-      title="Edit this article"
-    >
-      <use
-        xlinkHref="icons.svg#edit"
-      />
-    </svg>
-    <svg
-      id="flag"
-      title="Report this article"
-    >
-      <use
-        xlinkHref="icons.svg#flag"
-      />
-    </svg>
-    <svg
-      id="dislike"
-      title="Dislike this article"
-    >
-      <use
-        xlinkHref="icons.svg#dislike"
-      />
-    </svg>
-  </div>
-  <div
-    id="like-count"
-  >
-    <p>
-      4
-    </p>
-  </div>
-  <svg
-    id="love"
-    title="Report this article"
-  >
-    <use
-      xlinkHref="icons.svg#gratipay"
-    />
-  </svg>
-</div>
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <SideButtons
+    article={
+      Object {
+        "body": "content of the new article",
+        "myReactions": Array [
+          Object {
+            "reaction": 1,
+          },
+        ],
+        "reactionCount": Object {
+          "dislikes": 0,
+          "likes": 0,
+        },
+        "title": "A new Article",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <svg
+          id="star"
+          title="Like this article"
+        >
+          <use
+            xlinkHref="icons.svg#star"
+          />
+        </svg>,
+        <svg
+          id="bookmark"
+          title="Report this article"
+        >
+          <use
+            xlinkHref="icons.svg#bookmark"
+          />
+        </svg>,
+        <svg
+          id="share"
+          title="Report this article"
+        >
+          <use
+            xlinkHref="icons.svg#share"
+          />
+        </svg>,
+        <svg
+          id="more"
+          onClick={[Function]}
+          title="Show more buttons"
+        >
+          <use
+            xlinkHref="icons.svg#more"
+          />
+        </svg>,
+        <div
+          className="extra-buttons active"
+        >
+          <svg
+            className="icon"
+            id="delete"
+            title="Delete this article"
+          >
+            <use
+              xlinkHref="icons.svg#delete-icon"
+            />
+          </svg>
+          <svg
+            id="edit"
+            title="Edit this article"
+          >
+            <use
+              xlinkHref="icons.svg#edit"
+            />
+          </svg>
+          <svg
+            id="flag"
+            title="Report this article"
+          >
+            <use
+              xlinkHref="icons.svg#flag"
+            />
+          </svg>
+          <svg
+            className=""
+            id="dislike"
+            onClick={[Function]}
+            title="Dislike this article"
+          >
+            <use
+              xlinkHref="icons.svg#dislike"
+            />
+          </svg>
+        </div>,
+        <div
+          id="like-count"
+        >
+          <p>
+            0
+          </p>
+        </div>,
+        <span
+          className="centralizer liked"
+          id="love"
+          onClick={[Function]}
+        >
+          <svg
+            className="icon"
+          >
+            <use
+              xlinkHref="icons.svg#heart"
+            />
+          </svg>
+        </span>,
+      ],
+      "className": "side-button",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <use
+            xlinkHref="icons.svg#star"
+          />,
+          "id": "star",
+          "title": "Like this article",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "xlinkHref": "icons.svg#star",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "use",
+        },
+        "type": "svg",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <use
+            xlinkHref="icons.svg#bookmark"
+          />,
+          "id": "bookmark",
+          "title": "Report this article",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "xlinkHref": "icons.svg#bookmark",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "use",
+        },
+        "type": "svg",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <use
+            xlinkHref="icons.svg#share"
+          />,
+          "id": "share",
+          "title": "Report this article",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "xlinkHref": "icons.svg#share",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "use",
+        },
+        "type": "svg",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <use
+            xlinkHref="icons.svg#more"
+          />,
+          "id": "more",
+          "onClick": [Function],
+          "title": "Show more buttons",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "xlinkHref": "icons.svg#more",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "use",
+        },
+        "type": "svg",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <svg
+              className="icon"
+              id="delete"
+              title="Delete this article"
+            >
+              <use
+                xlinkHref="icons.svg#delete-icon"
+              />
+            </svg>,
+            <svg
+              id="edit"
+              title="Edit this article"
+            >
+              <use
+                xlinkHref="icons.svg#edit"
+              />
+            </svg>,
+            <svg
+              id="flag"
+              title="Report this article"
+            >
+              <use
+                xlinkHref="icons.svg#flag"
+              />
+            </svg>,
+            <svg
+              className=""
+              id="dislike"
+              onClick={[Function]}
+              title="Dislike this article"
+            >
+              <use
+                xlinkHref="icons.svg#dislike"
+              />
+            </svg>,
+          ],
+          "className": "extra-buttons active",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <use
+                xlinkHref="icons.svg#delete-icon"
+              />,
+              "className": "icon",
+              "id": "delete",
+              "title": "Delete this article",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "xlinkHref": "icons.svg#delete-icon",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "use",
+            },
+            "type": "svg",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <use
+                xlinkHref="icons.svg#edit"
+              />,
+              "id": "edit",
+              "title": "Edit this article",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "xlinkHref": "icons.svg#edit",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "use",
+            },
+            "type": "svg",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <use
+                xlinkHref="icons.svg#flag"
+              />,
+              "id": "flag",
+              "title": "Report this article",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "xlinkHref": "icons.svg#flag",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "use",
+            },
+            "type": "svg",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <use
+                xlinkHref="icons.svg#dislike"
+              />,
+              "className": "",
+              "id": "dislike",
+              "onClick": [Function],
+              "title": "Dislike this article",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "xlinkHref": "icons.svg#dislike",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "use",
+            },
+            "type": "svg",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <p>
+            0
+          </p>,
+          "id": "like-count",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": 0,
+          },
+          "ref": null,
+          "rendered": 0,
+          "type": "p",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <svg
+            className="icon"
+          >
+            <use
+              xlinkHref="icons.svg#heart"
+            />
+          </svg>,
+          "className": "centralizer liked",
+          "id": "love",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <use
+              xlinkHref="icons.svg#heart"
+            />,
+            "className": "icon",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "xlinkHref": "icons.svg#heart",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "use",
+          },
+          "type": "svg",
+        },
+        "type": "span",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <svg
+            id="star"
+            title="Like this article"
+          >
+            <use
+              xlinkHref="icons.svg#star"
+            />
+          </svg>,
+          <svg
+            id="bookmark"
+            title="Report this article"
+          >
+            <use
+              xlinkHref="icons.svg#bookmark"
+            />
+          </svg>,
+          <svg
+            id="share"
+            title="Report this article"
+          >
+            <use
+              xlinkHref="icons.svg#share"
+            />
+          </svg>,
+          <svg
+            id="more"
+            onClick={[Function]}
+            title="Show more buttons"
+          >
+            <use
+              xlinkHref="icons.svg#more"
+            />
+          </svg>,
+          <div
+            className="extra-buttons active"
+          >
+            <svg
+              className="icon"
+              id="delete"
+              title="Delete this article"
+            >
+              <use
+                xlinkHref="icons.svg#delete-icon"
+              />
+            </svg>
+            <svg
+              id="edit"
+              title="Edit this article"
+            >
+              <use
+                xlinkHref="icons.svg#edit"
+              />
+            </svg>
+            <svg
+              id="flag"
+              title="Report this article"
+            >
+              <use
+                xlinkHref="icons.svg#flag"
+              />
+            </svg>
+            <svg
+              className=""
+              id="dislike"
+              onClick={[Function]}
+              title="Dislike this article"
+            >
+              <use
+                xlinkHref="icons.svg#dislike"
+              />
+            </svg>
+          </div>,
+          <div
+            id="like-count"
+          >
+            <p>
+              0
+            </p>
+          </div>,
+          <span
+            className="centralizer liked"
+            id="love"
+            onClick={[Function]}
+          >
+            <svg
+              className="icon"
+            >
+              <use
+                xlinkHref="icons.svg#heart"
+              />
+            </svg>
+          </span>,
+        ],
+        "className": "side-button",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <use
+              xlinkHref="icons.svg#star"
+            />,
+            "id": "star",
+            "title": "Like this article",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "xlinkHref": "icons.svg#star",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "use",
+          },
+          "type": "svg",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <use
+              xlinkHref="icons.svg#bookmark"
+            />,
+            "id": "bookmark",
+            "title": "Report this article",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "xlinkHref": "icons.svg#bookmark",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "use",
+          },
+          "type": "svg",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <use
+              xlinkHref="icons.svg#share"
+            />,
+            "id": "share",
+            "title": "Report this article",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "xlinkHref": "icons.svg#share",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "use",
+          },
+          "type": "svg",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <use
+              xlinkHref="icons.svg#more"
+            />,
+            "id": "more",
+            "onClick": [Function],
+            "title": "Show more buttons",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "xlinkHref": "icons.svg#more",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "use",
+          },
+          "type": "svg",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <svg
+                className="icon"
+                id="delete"
+                title="Delete this article"
+              >
+                <use
+                  xlinkHref="icons.svg#delete-icon"
+                />
+              </svg>,
+              <svg
+                id="edit"
+                title="Edit this article"
+              >
+                <use
+                  xlinkHref="icons.svg#edit"
+                />
+              </svg>,
+              <svg
+                id="flag"
+                title="Report this article"
+              >
+                <use
+                  xlinkHref="icons.svg#flag"
+                />
+              </svg>,
+              <svg
+                className=""
+                id="dislike"
+                onClick={[Function]}
+                title="Dislike this article"
+              >
+                <use
+                  xlinkHref="icons.svg#dislike"
+                />
+              </svg>,
+            ],
+            "className": "extra-buttons active",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <use
+                  xlinkHref="icons.svg#delete-icon"
+                />,
+                "className": "icon",
+                "id": "delete",
+                "title": "Delete this article",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "xlinkHref": "icons.svg#delete-icon",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "use",
+              },
+              "type": "svg",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <use
+                  xlinkHref="icons.svg#edit"
+                />,
+                "id": "edit",
+                "title": "Edit this article",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "xlinkHref": "icons.svg#edit",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "use",
+              },
+              "type": "svg",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <use
+                  xlinkHref="icons.svg#flag"
+                />,
+                "id": "flag",
+                "title": "Report this article",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "xlinkHref": "icons.svg#flag",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "use",
+              },
+              "type": "svg",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <use
+                  xlinkHref="icons.svg#dislike"
+                />,
+                "className": "",
+                "id": "dislike",
+                "onClick": [Function],
+                "title": "Dislike this article",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "xlinkHref": "icons.svg#dislike",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "use",
+              },
+              "type": "svg",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <p>
+              0
+            </p>,
+            "id": "like-count",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": 0,
+            },
+            "ref": null,
+            "rendered": 0,
+            "type": "p",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <svg
+              className="icon"
+            >
+              <use
+                xlinkHref="icons.svg#heart"
+              />
+            </svg>,
+            "className": "centralizer liked",
+            "id": "love",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <use
+                xlinkHref="icons.svg#heart"
+              />,
+              "className": "icon",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "xlinkHref": "icons.svg#heart",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "use",
+            },
+            "type": "svg",
+          },
+          "type": "span",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
 `;

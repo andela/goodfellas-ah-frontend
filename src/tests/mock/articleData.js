@@ -17,3 +17,18 @@ export const updateArticleDetail = {
   },
   status: 200,
 };
+
+export const articleResponse = {
+  data: {
+    data: {
+      title: 'A new Article',
+      body: 'content of the new article',
+      myReactions: [{ reaction: 1 }],
+      reactionCount: {
+        likes: 0,
+        dislikes: 0,
+      },
+    },
+  },
+  status: 200,
+};

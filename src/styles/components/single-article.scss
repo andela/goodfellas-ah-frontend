@@ -14,7 +14,6 @@
 .single-page .side-button #bookmark:hover,
 .single-page .side-button #share:hover,
 .single-page .side-button #more:hover,
-.single-page .side-button #love:hover,
 .single-page .side-button #delete:hover,
 .single-page .side-button #edit:hover,
 .single-page .side-button #dislike:hover{
@@ -108,16 +107,31 @@
     display: block;
     cursor: pointer;
     color: #c4c4c4;
+    &.active {
+        color: var(--light-green);
+    }
 } 
 
 .single-page .side-button #love{
-    margin-left: 4px;
-    margin-top: 5px;
-    width: 50px;
-    height: 45px;
-    display: block;
+    margin: auto;
+    width: 42px;
+    height: 42px;
     cursor: pointer;
-    color: #21d291;
+    background: #c4c4c4;
+    border-radius: 50%;
+    transition: all .5s ease-in-out;
+    font-size: 20px;
+    color: white;
+    &:hover {
+      background: #a9dec2;
+    }
+    &.liked {
+      background: var(--light-green);
+      box-shadow: 1px 5px 17px 0 rgba(0, 0, 0, 0.18);
+    }
+    &:disabled, &:disabled:hover {
+        background: var(--ligher-gray);
+    }
 } 
 
 .single-page .side-button #like-count{
