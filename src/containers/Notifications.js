@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { getNotification, seenNotification } from '../actions/notificationActions';
 import LargeLoader from '../components/shared/LargeLoader';
 
-class Notifications extends Component {
+export class Notifications extends Component {
   state = {
     notifications: {},
   };

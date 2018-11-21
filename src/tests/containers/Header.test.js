@@ -77,6 +77,7 @@ const mockState = {
     ownProfile: { userId: 1 },
   },
 };
+
 const authTest = {
   auth: {
     authenticated: false,
@@ -258,15 +259,22 @@ it('should spy on change search', () => {
     notifications,
   });
 
+  mountHeaderNullProfile.setProps({
+    inAppStatus: {
+      notification: ['email', 'inApp'],
+    },
+    notifications,
+    seenNotification: jest.fn(),
+  });
+
   const inst = mountHeaderNullProfile.instance();
   expect(inst).toBeInstanceOf(Header);
   expect(inst).not.toBeNull();
+
+  inst.handleSeen(1);
 });
 
 it('should spy on change search', () => {
-  console.log(mountNotificationsLanding);
-  mountNotificationsLanding.setProps({
-    inAppStatus: true,
-    notifications,
-  });
+  const dropdownButton = mountNotificationsLanding.find('.dropdown-menu-notification');
+  dropdownButton.simulate('click');
 });

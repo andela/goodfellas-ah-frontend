@@ -51,14 +51,14 @@ class NotificationSettings extends Component {
                     <div className="col-md-7">
                       <p className="slider-title">Email Notification</p>
                       <label className="notification-switch">
-                        <input type="checkbox" onChange={this.handleToggleChange} name="email" checked={email} />
+                        <input type="checkbox" onChange={this.handleToggleChange} name="email" checked={email} className="toggle-click" />
                         <span className="slider round" />
                       </label>
                     </div>
                     <div className="col-md-5">
                       <p className="slider-title">In-App Notification</p>
                       <label className="notification-switch">
-                        <input type="checkbox" onChange={this.handleToggleChange} name="inApp" checked={inApp} />
+                        <input type="checkbox" onChange={this.handleToggleChange} name="inApp" className="toggle-clickpu" checked={inApp} />
                         <span className="slider round" />
                       </label>
                     </div>

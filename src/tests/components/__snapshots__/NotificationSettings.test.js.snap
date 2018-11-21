@@ -83,6 +83,7 @@ exports[`Notification UI render features component should render as expected 1`]
                         >
                           <input
                             checked={false}
+                            className="toggle-click"
                             name="email"
                             onChange={[Function]}
                             type="checkbox"
@@ -105,6 +106,7 @@ exports[`Notification UI render features component should render as expected 1`]
                         >
                           <input
                             checked={false}
+                            className="toggle-clickpu"
                             name="inApp"
                             onChange={[Function]}
                             type="checkbox"

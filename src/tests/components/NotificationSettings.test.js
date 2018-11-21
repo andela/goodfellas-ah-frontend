@@ -21,5 +21,9 @@ describe('Notification UI', () => {
       const tree = toJson(wrapped);
       expect(tree).toMatchSnapshot();
     });
+    it('should dropdown search bar filter section', () => {
+      wrapped.find('.toggle-click').simulate('click');
+      
+    });
   });
 });

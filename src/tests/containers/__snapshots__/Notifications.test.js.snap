@@ -13,73 +13,30 @@ exports[`Notification UI render features view should render as expected 1`] = `
       }
     }
   >
-    <MemoryRouter
-      initialEntries={
-        Array [
-          Object {
-            "key": "testKey",
-          },
-        ]
-      }
-    >
-      <Router
-        history={
-          Object {
-            "action": "POP",
-            "block": [Function],
-            "canGo": [Function],
-            "createHref": [Function],
-            "entries": Array [
-              Object {
-                "hash": "",
-                "key": "testKey",
-                "pathname": "/",
-                "search": "",
-              },
-            ],
-            "go": [Function],
-            "goBack": [Function],
-            "goForward": [Function],
-            "index": 0,
-            "length": 1,
-            "listen": [Function],
-            "location": Object {
-              "hash": "",
-              "key": "testKey",
-              "pathname": "/",
-              "search": "",
-            },
-            "push": [Function],
-            "replace": [Function],
-          }
-        }
+    <Connect(Notifications)>
+      <Notifications
+        getNotification={[Function]}
+        seenNotification={[Function]}
       >
-        <Connect(Notifications)>
-          <Notifications
-            getNotification={[Function]}
-            seenNotification={[Function]}
+        <div>
+          <section
+            className="notifications"
           >
-            <div>
-              <section
-                className="notifications"
+            <LargeLoader>
+              <div
+                className="large-spinner-wrapper"
               >
-                <LargeLoader>
-                  <div
-                    className="large-spinner-wrapper"
-                  >
-                    <img
-                      alt=""
-                      className="large-spinner"
-                      src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541701878/large-spinner.gif"
-                    />
-                  </div>
-                </LargeLoader>
-              </section>
-            </div>
-          </Notifications>
-        </Connect(Notifications)>
-      </Router>
-    </MemoryRouter>
+                <img
+                  alt=""
+                  className="large-spinner"
+                  src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541701878/large-spinner.gif"
+                />
+              </div>
+            </LargeLoader>
+          </section>
+        </div>
+      </Notifications>
+    </Connect(Notifications)>
   </Provider>
 </_default>
 `;

@@ -75,6 +75,7 @@ export class Header extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps) {
+      console.log(nextProps);
       const { notifications, inAppStatus } = nextProps;
       const status = inAppStatus.notification;
       if (Object.values(status).indexOf('inApp') !== -1) {
@@ -164,7 +165,7 @@ export class Header extends Component {
                         alt=""
                       />
                       {
-                        <ul ref="myDropdown2" className="dropdown-menu header-notification">
+                        <ul ref="myDropdown2" className="dropdown-menu dropdown-menu-notification header-notification">
                           {inApp && Object.keys(notifications).length !== 0
                             ? notifications.rows.map((notification) => {
                               if (!notification.seen && totalNotifications < 5) {
@@ -174,11 +175,11 @@ export class Header extends Component {
                                     return (
                                       <Link
                                         to="/article"
+                                        className="notification-icon notification-icon-click"
                                         key={notification.id}
                                         onClick={() => {
                                           this.handleSeen(notification.id);
                                         }}
-                                        className="notification-icon notification-icon-click"
                                       >
                                         {`${notification.author.firstname}published a new article`}
                                       </Link>
