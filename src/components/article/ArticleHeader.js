@@ -1,4 +1,5 @@
 import React from 'react';
+import parser from 'react-html-parser';
 import { userPlaceholderImage } from '../../mixin';
 
 const ArticleHeader = (props) => {
@@ -14,7 +15,7 @@ const ArticleHeader = (props) => {
         <div className="minutes">{minute}</div>
       </div>
       <div className="title-author">
-        <div className="article-title">{title}</div>
+        <div className="article-title">{parser(title)}</div>
         <div className="author-name">
           <div className="name">{`${user.firstname} ${user.lastname}`}</div>
           <button type="button">Follow</button>

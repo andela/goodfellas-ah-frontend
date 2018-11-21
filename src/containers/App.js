@@ -38,7 +38,7 @@ const Articles = (props) => (
     <Route path="/articles/search" component={SearchArticles} />
     <Route path="/articles/create" component={CreateArticle} />
     <Route exact path="/articles" component={GetAllArticles} />
-    <Route path="/articles/:slug" component={SingleArticle} />
+    <Route exact path="/articles/:slug" component={SingleArticle} />
   </div>
 );
 
@@ -47,7 +47,7 @@ const App = () => (
     <div>
       <Route exact path="/" component={LandingPage} />
       <Route path="/auth" component={Auth} />
-      <Route path="/articles" component={authenticate(Articles)} />
+      <Route path="/articles" component={Articles} />
       <Route path="/user" component={authenticate(User)} />
       <Route path="/forgotpassword" component={ForgotPasswordPage} />
       <Route path="/resetpassword" component={ResetPasswordPage} />

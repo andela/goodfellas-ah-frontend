@@ -99,24 +99,3 @@ a.outline:hover {
   font-family: 'Roboto', sans-serif;
 }
 
-.extra-buttons {
-  max-height: 0;
-  height: 100%;
-  overflow-y: hidden;
-  opacity: .1;
-  margin-bottom: -20px;
-  transition: all .3s ease-in-out;
-  &.active {
-    margin-top: 5px;
-    max-height: 400px;
-    opacity: 1;
-    padding-top: 10px;
-  }
-}
-
-.extra-buttons img{
-  width: 40px;
-  height: auto;
-  margin-left: 10px;
-  margin-bottom: 17px;
-}

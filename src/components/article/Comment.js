@@ -1,6 +1,5 @@
 import React from 'react';
-import clock from '../../assets/clock.png';
-import comment from '../../assets/comment.png';
+import icons from '../../assets/icons.svg';
 import { userPlaceholderImage } from '../../mixin';
 
 const Comment = () => (
@@ -15,11 +14,11 @@ const Comment = () => (
         <div className="comment-name">Afeez Awoyemi</div>
         <div className="time-chat">
           <div>
-            <img className="comment-number" src={comment} alt="" />
+            <svg className="comment-number"><use xlinkHref={`${icons}#comment`} /></svg>
             <p>2</p>
           </div>
           <div>
-            <img className="read-time" src={clock} alt="" />
+            <svg className="read-time"><use xlinkHref={`${icons}#clock`} /></svg>
             <p>5</p>
           </div>
         </div>
@@ -36,11 +35,11 @@ Africa before the queen asked you to stop and not do it.
           <div className="reply-name">Afeez Awoyemi</div>
           <div className="time-chat">
             <div>
-              <img className="comment-number" src={comment} alt="" />
+              <svg className="comment-number"><use xlinkHref={`${icons}#comment`} /></svg>
               <p>2</p>
             </div>
             <div>
-              <img className="read-time" src={clock} alt="" />
+              <svg className="read-time"><use xlinkHref={`${icons}#clock`} /></svg>
               <p>5</p>
             </div>
           </div>

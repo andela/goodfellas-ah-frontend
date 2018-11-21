@@ -5,7 +5,7 @@ import ArticleHeader from '../components/article/ArticleHeader';
 import ArticleBody from '../components/article/ArticleBody';
 import Comment from '../components/article/Comment';
 
-class Article extends Component {
+export class Article extends Component {
   componentWillMount = () => {
     const { match, getAnArticle: getArticle } = this.props;
     const { slug } = match.params;
@@ -49,8 +49,8 @@ class Article extends Component {
 
 
 const mapStateToProps = (state) => ({
-  error: state.singleArticle.articleError,
-  article: state.singleArticle.singleArticle,
+  error: state.articles.articleError,
+  article: state.articles.article,
 });
 
 export default connect(mapStateToProps, { getAnArticle })(Article);

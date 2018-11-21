@@ -7,7 +7,7 @@ const initialState = {
   ownProfile: {},
   articles: [],
   error: [],
-  singleArticle: null,
+  article: null,
   articleError: '',
   searchResults: [],
   searchError: [],

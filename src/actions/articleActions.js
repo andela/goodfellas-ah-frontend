@@ -36,7 +36,6 @@ export const search = (searchValues, callback) => async (dispatch) => {
   }
 };
 
-
 export const getAnArticle = (slug) => async (dispatch) => {
   try {
     const response = await axios.get(`${apiUrl}/api/articles/${slug}`);

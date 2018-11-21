@@ -1,8 +1,7 @@
 import React from 'react';
-import AllArticles from '../containers/AllArticles';
 
-const GetAllArticles = (props) => (
-  <AllArticles {...props} />
+const GetAllArticles = () => (
+  <div>This is all articles page</div>
 );
 
 export default GetAllArticles;
