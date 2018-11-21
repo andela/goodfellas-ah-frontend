@@ -54,7 +54,7 @@ export class Header extends Component {
   };
 
   dropdown = () => {
-    if (this.refs.myDropdown2.classList.value === 'dropdown-menu header-notification show') {
+    if (this.refs.myDropdown2.classList.value === 'dropdown-menu dropdown-menu-notification header-notification show') {
       this.refs.myDropdown2.classList.toggle('show');
     }
     this.refs.myDropdown.classList.toggle('show');
@@ -161,7 +161,7 @@ export class Header extends Component {
                     </div>
                   </form>
                   <div className="header-user-images">
-                    <div className="dropdown dropdown-click-notification" onClick={this.notificationDropdown}>
+                    <div className="dropdownn dropdown-click-notification" onClick={this.notificationDropdown}>
                       <img
                         className="dropdown-toggle notification-image"
                         data-toggle="dropdown"
@@ -185,13 +185,13 @@ export class Header extends Component {
                                           this.handleSeen(notification.id);
                                         }}
                                       >
-                                        <p className="notificationMessage">{`${notification.author.firstname.charAt(0).toUpperCase()}${notification.author.firstname.slice(1)} published a new article`}</p>
+                                        <p className="notificationMessage"><span className="notifierName">{`${notification.author.firstname.charAt(0).toUpperCase()}${notification.author.firstname.slice(1)}`}</span> published a new article</p>
                                       </Link>
                                     );
                                   case 'favoriteArticleComment':
                                     return (
                                       <Link to="/article" key={notification.id}>
-                                        {notification.author.firstname} commented on an your favorite article
+                                        <p className="notificationMessage"><span className="notifierName">{`${notification.author.firstname.charAt(0).toUpperCase()}${notification.author.firstname.slice(1)}`}</span> commented on your favorite article</p>
                                       </Link>
                                     );
                                   default:
@@ -311,7 +311,7 @@ export class Header extends Component {
                     </div>
                   </form>
                   <div className="header-user-images">
-                    <div className="dropdown dropdown-click-notification" onClick={this.notificationDropdown}>
+                    <div className="dropdownn dropdown-click-notification" onClick={this.notificationDropdown}>
                       <img
                         className="dropdown-toggle notification-image"
                         data-toggle="dropdown"
@@ -319,7 +319,7 @@ export class Header extends Component {
                         alt=""
                       />
                       {
-                        <ul ref="myDropdown2" className="dropdown-menu header-notification">
+                        <ul ref="myDropdown2" className="dropdown-menu dropdown-menu-notification header-notification">
                           {inApp && Object.keys(notifications).length !== 0
                             ? notifications.rows.map((notification) => {
                               if (!notification.seen && totalNotifications < 5) {
@@ -329,19 +329,19 @@ export class Header extends Component {
                                     return (
                                       <Link
                                         to="/article"
+                                        className="notification-icon notification-icon-click"
                                         key={notification.id}
                                         onClick={() => {
                                           this.handleSeen(notification.id);
                                         }}
-                                        className="notification-icon"
                                       >
-                                        {notification.author.firstname} published a new article
+                                        <p className="notificationMessage"><span className="notifierName">{`${notification.author.firstname.charAt(0).toUpperCase()}${notification.author.firstname.slice(1)}`}</span> published a new article</p>
                                       </Link>
                                     );
                                   case 'favoriteArticleComment':
                                     return (
                                       <Link to="/article" key={notification.id}>
-                                        {notification.author.firstname} commented on an article
+                                        <p className="notificationMessage">New comment on your favorite article {notification.article.title}</p>
                                       </Link>
                                     );
                                   default:

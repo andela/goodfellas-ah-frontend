@@ -43,20 +43,20 @@ export class Notifications extends Component {
                       <div className="row notification-result" key={notification.id}>
                         <Link
                           to="/article/"
-                          className="col-md-8 card m-auto"
+                          className="col-md-6 card m-auto"
                           key={notification.id}
                           onClick={() => {
                             this.handleSeen(notification.id);
                           }}
                         >
-                          {notification.author.firstname} {notification.author.lastname}  published a new article titled {notification.article.title}
+                          <span>{`${notification.author.firstname.charAt(0).toUpperCase()}${notification.author.firstname.slice(1)} ${notification.author.lastname.charAt(0).toUpperCase()}${notification.author.lastname.slice(1)} published a new article`}</span>
                         </Link>
                       </div>
                     );
                   case 'favoriteArticleComment':
                     return (
                       <div className="row notification-result" key={notification.id}>
-                        <Link to="/article" className="col-md-8 card m-auto">
+                        <Link to="/article" className="col-md-6 card m-auto">
                          New comment on one of  your favorite article {notification.article.title}
                         </Link>
                       </div>

@@ -76,3 +76,11 @@
     margin: 30px auto;
   }
 }
+.notificationMessage{
+  color: var(--gray) !important;
+  text-align: left
+}
+.notifierName{
+  font-weight: bold;
+  font-size: 110%;
+}
