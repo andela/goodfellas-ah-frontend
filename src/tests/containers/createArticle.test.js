@@ -40,4 +40,108 @@ describe('create artcicle container test suite', () => {
       expect(tree).toMatchSnapshot();
     });
   });
+  it('should handle upload', () => {
+    const instance = wrapper.instance();
+    instance.imageUploaded('http://dummy-url');
+    instance.forceUpdate();
+    wrapper.update();
+  });
+  it('should handle submission errors', () => {
+    const preventDefault = jest.fn();
+    const btn = wrapper.find('.article-fixed-buttons > button');
+    btn.simulate('click', {
+      preventDefault,
+    });
+    expect(preventDefault).toBeCalled();
+    const instance = wrapper.instance();
+    instance.setState({
+      title: 'valid title',
+      body: null,
+    });
+    instance.forceUpdate();
+    btn.simulate('click', {
+      preventDefault: jest.fn(),
+    });
+    expect(preventDefault).toBeCalled();
+  });
+  it('should handle change', () => {
+    const instance = wrapper.instance();
+    instance.handleChange({
+      target: {
+        name: 'body',
+        value: 'test',
+      },
+    });
+    instance.forceUpdate();
+    expect(instance.state.body).toEqual('test');
+  });
+  it('should call componentDidUpdate', () => {
+    const props1 = {
+      status: {
+        error: false,
+        success: false,
+      },
+      publishedArticle: {},
+      imageUploadStatus: {
+        error: false,
+        success: false,
+      },
+      publishArticle: jest.fn(),
+    };
+    const wrapper1 = shallow(<CreateArticles {...props1} />);
+    const newProps = {
+      history: {
+        push: jest.fn(),
+      },
+      publishedArticle: {
+        article: {
+          slug: 'dummy-slug',
+        },
+      },
+      status: {
+        success: false,
+        error: true,
+      },
+    };
+    wrapper1.setProps(newProps);
+    wrapper1.update();
+    expect(newProps.history.push).not.toBeCalled();
+  });
+  it('should call componentDidUpdate', () => {
+    jest.useFakeTimers();
+    const props1 = {
+      status: {
+        error: false,
+        success: false,
+      },
+      publishedArticle: {},
+      imageUploadStatus: {
+        error: false,
+        success: false,
+      },
+      publishArticle: jest.fn(),
+    };
+    const wrapper1 = shallow(<CreateArticles {...props1} />);
+    const newProps = {
+      history: {
+        push: jest.fn(),
+      },
+      publishedArticle: {
+        article: {
+          slug: 'dummy-slug',
+        },
+      },
+      status: {
+        success: true,
+        error: false,
+      },
+    };
+    wrapper1.setProps(newProps);
+    wrapper1.update();
+
+    jest.runAllTimers();
+    const value = `/articles/${newProps.publishedArticle.article.slug}`;
+    expect(newProps.history.push).toBeCalled();
+    expect(newProps.history.push).toBeCalledWith(value);
+  });
 });

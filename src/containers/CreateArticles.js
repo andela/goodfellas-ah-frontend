@@ -40,7 +40,7 @@ export class CreateArticles extends Component {
     this.setState((prevState) => ({ body: prevState.body + imageHtml, imageLoad: false }));
   }
 
-  handleSubmit = (event, publish = true) => {
+  handleSubmit = (event) => {
     event.preventDefault();
     const { title, body } = this.state;
     if (!title || title === '<p><br></p>') return swal('Please add a title', 'Your article needs to have a title', 'warning');
@@ -49,7 +49,6 @@ export class CreateArticles extends Component {
       ...this.state,
       description: body.split(' ').slice(0, 10).join(' '),
     };
-    if (!publish) articlePayload.published = false;
     // eslint-disable-next-line react/destructuring-assignment
     this.props.publishArticle(articlePayload);
   }
@@ -64,9 +63,6 @@ export class CreateArticles extends Component {
           <div className="article-buttons">
             <button className="btn article-whitebutton" type="submit" onClick={this.handleSubmit}>
             Publish
-            </button>
-            <button className="btn article-whitebutton" type="submit" onClick={(e) => this.handleSubmit(e, false)}>
-            Save for later
             </button>
           </div>
           <ImageUploader imageUploaded={this.imageUploaded} />
@@ -102,9 +98,6 @@ export class CreateArticles extends Component {
 
         </div>
         <div className="article-fixed-buttons">
-          <button className="btn article-fixed-whitebutton" type="submit" onClick={(e) => this.handleSubmit(e, false)}>
-            Save for later
-          </button>
           <button className="btn article-fixed-whitebutton" type="submit" onClick={this.handleSubmit}>
             Publish
           </button>
