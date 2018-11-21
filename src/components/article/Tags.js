@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Button from '../shared/Button';
+import { addTags } from '../../actions/articleActions';
 
 class Tags extends Component {
   state = {
@@ -17,7 +19,7 @@ class Tags extends Component {
 
     if (newTag.trim() !== '') {
       this.setState({
-        tags: [...tags, { tag: newTag.trim(), tagsCount: tagsCount + 1 }],
+        tags: [...tags, { tag: newTag.toLowerCase().trim(), tagsCount: tagsCount + 1 }],
         tagsCount: tagsCount + 1,
       });
     }
@@ -61,6 +63,18 @@ class Tags extends Component {
     }
   };
 
+  publishTags = () => {
+    const { tags } = this.state;
+    const { addTags: addNewTags, history } = this.props;
+    const tagsList = tags.map((eachTag) => {
+      const { tag } = eachTag;
+      return tag;
+    });
+
+
+    addNewTags(tagsList, 'somiso', history.push('/user/profile'));
+  };
+
   render() {
     const { tags } = this.state;
     return (
@@ -87,11 +101,13 @@ class Tags extends Component {
                 );
               })}
             </div>
-            <Button
-              className="btn hero-section-greenbutton"
-              type="button"
-              title="Publish"
-            />
+            <div onClick={this.publishTags}>
+              <Button
+                className="btn hero-section-greenbutton"
+                type="submit"
+                title="Publish"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -99,4 +115,12 @@ class Tags extends Component {
   }
 }
 
-export default Tags;
+
+function mapStatetoProps(state) {
+  return {
+    tags: state.articles.tags,
+    tagsError: state.articles.tagsError,
+  };
+}
+
+export default connect(mapStatetoProps, { addTags })(Tags);

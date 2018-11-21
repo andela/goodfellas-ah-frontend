@@ -36,4 +36,20 @@ export const search = (searchValues, callback) => async (dispatch) => {
   }
 };
 
-export default getArticles;
+export const addTags = (newTags, slug, callback) => async (dispatch, getState, { api }) => {
+  try {
+    const response = await api.post(`${apiUrl}/api/articles/${slug}/tags`, {
+      tags: newTags,
+    });
+    dispatch({
+      type: types.ADD_TAGS,
+      payload: response.data,
+    });
+    callback();
+  } catch (error) {
+    dispatch({
+      type: types.ADD_TAGS_ERROR,
+      payload: error.response,
+    });
+  }
+};

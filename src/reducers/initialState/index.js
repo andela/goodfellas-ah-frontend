@@ -9,6 +9,8 @@ const initialState = {
   error: [],
   searchResults: [],
   searchError: [],
+  tags: [],
+  tagsError: [],
   profile: {
     loading: true,
     profileView: 'Following',

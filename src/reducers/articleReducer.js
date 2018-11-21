@@ -11,6 +11,10 @@ export default (state = initialState, action) => {
       return { ...state, searchResults: action.payload };
     case types.SEARCH_ERROR:
       return { ...state, searchError: action.payload };
+    case types.ADD_TAGS:
+      return { ...state, tags: action.payload };
+    case types.ADD_TAGS_ERROR:
+      return { ...state, tagsError: action.payload };
     default:
       return state;
   }

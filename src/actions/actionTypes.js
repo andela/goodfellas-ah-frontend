@@ -5,7 +5,6 @@ export const SET_USER = 'SET_USER';
 export const UPDATE_PROFILE = 'UPDATE_PROFILE';
 export const SET_PROFILE_ERROR = 'SET_PROFILE_ERROR';
 export const PROFILE_LOADING = 'PROFILE_LOADING';
-
 export const RESET_ERROR = 'RESET_ERROR';
 export const SUCCESS_MSG = 'SUCCESS_MSG ';
 export const GET_ARTICLES = 'GET_ARTICLES';
@@ -16,3 +15,5 @@ export const SIGNOUT_USER = 'SIGNOUT_USER';
 export const SEARCH = 'SEARCH';
 export const SEARCH_ERROR = 'SEARCH_ERROR';
 export const CLEAR_SIGNIN_ERROR = 'CLEAR_SIGNIN_ERROR';
+export const ADD_TAGS = 'ADD_TAGS';
+export const ADD_TAGS_ERROR = 'ADD_TAGS_ERROR';
