@@ -1,12 +1,7 @@
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
-import moxios from 'moxios';
 import articleReducer from '../../reducers/articleReducer';
 import * as types from '../../actions/actionTypes';
 import * as actions from '../../actions/articleActions';
 
-const middlewares = [thunk];
-const mockStore = configureMockStore(middlewares);
 
 const articles = {
   articles: {
@@ -147,7 +142,10 @@ describe('Article Reducer', () => {
       const initialState = {
         articles: [],
         authenticated: '',
+        articleLoading: false,
         error: [],
+        singleArticle: null,
+        articleError: '',
         searchResults: [],
         searchError: [],
         errorMessage: '',
@@ -168,7 +166,10 @@ describe('Article Reducer', () => {
       const expectedState = {
         articles: [{ articles: 'new Articles' }],
         authenticated: '',
+        articleLoading: false,
         error: [],
+        singleArticle: null,
+        articleError: '',
         searchResults: [],
         searchError: [],
         errorMessage: '',
@@ -193,6 +194,9 @@ describe('Article Reducer', () => {
         searchResults: [],
         searchError: [],
         errorMessage: '',
+        articleLoading: false,
+        singleArticle: null,
+        articleError: '',
         ownProfile: {},
         profile: {
           articles: [], favorites: [], followers: [], following: [], loading: true, profile: {}, profileError: '', profileView: 'Following', user: {},

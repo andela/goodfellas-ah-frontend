@@ -5,7 +5,10 @@ const initialState = {
   user: {},
   ownProfile: {},
   articles: [],
+  articleLoading: false,
   error: [],
+  singleArticle: null,
+  articleError: '',
   searchResults: [],
   searchError: [],
   profile: {

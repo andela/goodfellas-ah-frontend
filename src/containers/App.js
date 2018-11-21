@@ -5,6 +5,7 @@ import authenticate from './hoc/authenticate';
 import LandingPage from '../views/LandingPage';
 import Signin from '../views/SigninPage';
 import Signup from '../views/SignupPage';
+import SingleArticle from '../views/SingleArticlePage';
 import EditProfile from '../views/ProfileEditPage';
 import Profile from '../views/ProfilePage';
 import SocialAuthPage from '../views/SocialAuthPage';
@@ -12,8 +13,8 @@ import ForgotPasswordPage from '../views/ForgotPasswordPage';
 import ResetPasswordPage from '../views/ResetPasswordPage';
 import CreateArticle from '../views/CreateArticles';
 import SearchArticles from '../views/SearchArticles';
-import Header from '../components/shared/Header';
 import GetAllArticles from '../views/AllArticles';
+import UpdateArticle from '../views/UpdateArticle';
 
 const User = () => (
   <Switch>
@@ -31,12 +32,15 @@ const Auth = () => (
   </div>
 );
 
-const Articles = (props) => (
+const Articles = () => (
   <div>
-    <Header {...props} />
-    <Route path="/articles/search" component={SearchArticles} />
-    <Route path="/articles/create" component={CreateArticle} />
-    <Route path="/articles/home" component={GetAllArticles} />
+    <Switch>
+      <Route path="/articles/search" component={SearchArticles} />
+      <Route path="/articles/create" component={authenticate(CreateArticle)} />
+      <Route path="/articles/home" component={GetAllArticles} />
+      <Route path="/articles/edit/:slug" component={UpdateArticle} />
+      <Route path="/articles/:slug" component={SingleArticle} />
+    </Switch>
   </div>
 );
 
