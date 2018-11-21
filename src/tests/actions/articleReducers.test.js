@@ -157,7 +157,6 @@ describe('Article Reducer', () => {
         },
         successMessage: '',
         user: {},
-        userId: null,
       };
       expect(articleReducer(undefined, action)).toEqual(initialState);
     });
@@ -179,7 +178,6 @@ describe('Article Reducer', () => {
         },
         successMessage: '',
         user: {},
-        userId: null,
       };
       expect(articleReducer(undefined, action)).toEqual(expectedState);
     });
@@ -201,7 +199,6 @@ describe('Article Reducer', () => {
         },
         successMessage: '',
         user: {},
-        userId: null,
       };
       expect(articleReducer(undefined, action)).toEqual(expectedState);
     });

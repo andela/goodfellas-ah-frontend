@@ -42,9 +42,9 @@ h3.username {
   border: 1.2px solid var(--light-gray);
   border-radius: 0;
   background-color: transparent;
-  &.disabled {
-    border: 1.2px solid var(--light-gray) !important;
-    color: var(--light-gray) !important;
+  &:disabled {
+    border: 1.2px solid var(--lighter-gray) !important;
+    color: var(--lighter-gray) !important;
     &:hover {
       cursor: default;
       background: transparent;
