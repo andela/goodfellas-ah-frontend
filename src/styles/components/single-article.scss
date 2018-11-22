@@ -1,55 +1,133 @@
 .single-page .side-button{
-    padding-top: 25px;
-    width: 60px;
+    padding-top: 20px;
+    padding-bottom: 10px;
     background-color: #fff;
     margin-top: -150px;
     border-radius: 50px;
-    margin-left: 2%;
     float: right;
+    position: fixed;
+    right: 120px;
+    top: 50%;
+}
+
+.single-page .side-button #star:hover,
+.single-page .side-button #bookmark:hover,
+.single-page .side-button #share:hover,
+.single-page .side-button #more:hover,
+.single-page .side-button #love:hover,
+.single-page .side-button #delete:hover,
+.single-page .side-button #edit:hover,
+.single-page .side-button #dislike:hover{
+    color: #000;
 }
 
 
-.single-page .side-button .star{
-    width: 35px;
-    margin-left: 11px;
+.single-page .side-button #star{
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 30px;
+    width: 25px;
+    height: 25px;
+    display: block;
     cursor: pointer;
+    color: #c4c4c4;
 } 
 
-.single-page .side-button .bookmark{
-    margin-top: 20px;
-    width: 35px;
-    margin-left: 12px;
+.single-page .side-button #bookmark{
+    margin-left:18px;
+    width: 17px;
+    height: 20px;
+    display: block;
     cursor: pointer;
+    margin-bottom: 30px;
+    color: #c4c4c4;
 } 
 
-.single-page .side-button .share{
-    margin-top: 20px;
-    width: 35px;
-    margin-left: 12px;
+.single-page .side-button #share{
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 30px;
+    width: 27px;
+    height: 20px;
+    display: block;
     cursor: pointer;
+    color: #c4c4c4;
 } 
 
-.single-page .side-button .dot-dot{
-    margin-top: 15px;
-    width: 35px;
-    margin-left: 12px;
+.single-page .side-button #more{
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 27px;
+    height: 20px;
+    margin-bottom: 25px;
+    display: block;
     cursor: pointer;
+    color: #c4c4c4;
 } 
 
-.single-page .side-button .like-count{
+.single-page .side-button #delete{
+    margin-top: -10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 27px;
+    height: 20px;
+    margin-bottom: 30px;
+    display: block;
+    cursor: pointer;
+    color: #c4c4c4;
+} 
 
+.single-page .side-button #edit{
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 27px;
+    height: 20px;
+    margin-bottom: 30px;
+    display: block;
+    cursor: pointer;
+    color: #c4c4c4;
+} 
+
+.single-page .side-button #flag{
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 27px;
+    height: 20px;
+    margin-bottom: 30px;
+    display: block;
+    cursor: pointer;
+    color: #c4c4c4;
+} 
+
+.single-page .side-button #dislike{
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 27px;
+    height: 20px;
+    margin-bottom: 45px;
+    display: block;
+    cursor: pointer;
+    color: #c4c4c4;
+} 
+
+.single-page .side-button #love{
+    margin-left: 4px;
+    margin-top: 5px;
+    width: 50px;
+    height: 45px;
+    display: block;
+    cursor: pointer;
+    color: #21d291;
+} 
+
+.single-page .side-button #like-count{
     color: #00000080;
     font-size: 12px;
-    margin-top: 25px;
     text-align: center;
+    margin-bottom: -13px;
+    margin-top: 10px;
 } 
 
-.single-page .side-button .love{
-    margin-left: -5px;
-    margin-top: -15px;
-    max-width: 70px;
-    cursor: pointer;
-} 
 
 .single-page{
     width: 80%;
@@ -70,8 +148,8 @@
 
 .single-page .article-header .number{
     font-family: Roboto;
+    font-weight: 100;
     font-size: 37px;
-    font-weight: normal;
     width: 45px;
     padding-top: 13px;
     margin-left: 12px;
@@ -80,8 +158,8 @@
 .single-page .article-header .minutes{
     margin-top: -7px;
     font-family: Roboto;
+    font-weight: 100;
     font-size: 16px;
-    font-weight: normal;
     text-align: center;  
 }
 
@@ -137,6 +215,7 @@
     text-transform: uppercase;
     font-family: Roboto;
     font-size: 31px;
+    min-height: 90px;
     font-weight: bold;
     color: #564e58;
     padding-top: 0;
@@ -156,7 +235,7 @@
     width: 80%;
     font-family: Roboto;
     font-size: 21px;
-    color: #a6a2a2;
+    color: #0000008a;
 }
 
 .article-line{
@@ -247,7 +326,7 @@
 .time-chat{
     display: flex;
     width: 20%;
-    margin-left: 40%;
+    margin-left: 37%;
 }
 
 .time-chat div{
@@ -256,13 +335,15 @@
 }
 
 .time-chat div .comment-number{
-    max-width: 30px;
+    max-width: 25px;
     max-height: 25px;
+    color: #a6a2a2;
 }
 
 .time-chat div .read-time{
-    max-width: 30px;
+    max-width: 25px;
     max-height: 25px;
+    color: #a6a2a2;
 }
 
 .time-chat div p{
@@ -278,6 +359,23 @@
     height: 500px;
     border-radius: 50px;
 }
+
+.extra-buttons {
+    max-height: 0;
+    height: 100%;
+    overflow-y: hidden;
+    opacity: .1;
+    margin-bottom: -20px;
+    transition: all .3s ease-in-out;
+    &.active {
+      margin-top: 5px;
+      max-height: 400px;
+      opacity: 1;
+      padding-top: 10px;
+    }
+  }
+
+
 
 
 
@@ -300,48 +398,10 @@
 
     .single-page .side-button{
         padding-top: 25px;
-        width: 80px;
-        margin-top: -80px;
-        background-color: #fff;
-        border-radius: 50px;
-        margin-right: -30px;
+        width: 55px;
+        right: 40px;
+        top: 25%;
     }
-
-
-
-    .single-page .side-button .star{
-        width: 52px;
-    } 
-    
-    .single-page .side-button .bookmark{
-        margin-top: 40px;
-        width: 52px;
-    } 
-    
-    .single-page .side-button .share{
-        margin-top: 40px;
-        width: 52px;
-    } 
-    
-    .single-page .side-button .dot-dot{
-        margin-top: 40px;
-        width: 52px;
-        margin-left: 12px;
-    } 
-    
-    .single-page .side-button .like-count{
-        margin-top: 25px;
-        border-radius: 6px;
-        color: #00000080;
-        font-size: 14px;
-        text-align: center;
-    } 
-    
-    .single-page .side-button .love{
-        margin-left: -7px;
-        margin-top: -18px;
-        max-width: 92px;
-    } 
     
     .single-page{
         width: 80%;
@@ -384,6 +444,7 @@
 
     .single-page .article-header .article-title{
         font-size: 25px;
+        min-height: 75px;
     }
 
     .single-page .author-image{
@@ -401,10 +462,8 @@
     }
 
     .single-page .side-button{
-        padding-top: 25px;
-        margin-top: -100px;
-        border-radius: 50px;
-        margin-right: -35px;
+        right: 30px;
+        top: 25%;
     }
     
 
@@ -428,6 +487,7 @@
     .single-page .article-header .article-title{
         font-size: 16px;
         width: 120%;
+        min-height: 60px;
     }
 
     .single-page .author-image{
@@ -455,59 +515,27 @@
     }
 
     .single-page .side-button{
-        width: 45px;
-        height: 60px;
-        padding-top: 0px;
-        margin-top: -300px;
-        border-radius: 50px;
-        margin-right: -15px;
+        top: 55%;
+        height: 50px;
+        right: 15px;
     }
 
+    .single-page .side-button #more{
+        margin-top: -165px;
+        
+    }
+    
+    .single-page .side-button #star,
+    .single-page .side-button #bookmark,
+    .single-page .side-button #share,
+    .single-page .side-button #like-count,
+    .single-page .side-button #love{
+        visibility: hidden;
+    }
+    
     .single-page .side-button:hover{
         background-color: #b3c7bd;
     }
-
-    .single-page .article-container .article-image{
-        min-width: 110%;
-        margin-bottom: 40px;
-    }
-
-    .single-page .side-button .star{
-        margin-top: 0;
-        width: 0;
-        height: 0;
-    } 
-    
-    .single-page .side-button .bookmark{
-        margin-top: 0;
-        width: 0;
-        height: 0;
-    } 
-    
-    .single-page .side-button .share{
-        margin-top: 0;
-        width: 0;
-        height: 0;
-    } 
-    
-    .single-page .side-button .dot-dot{
-        margin-top: -20px;
-        width: 32px;
-        margin-left: 6px;
-    } 
-
-    .single-page .side-button .like-count{
-        font-size: 0px;
-        margin-top: 0;
-        width: 0;
-        height: 0;
-    } 
-
-    .single-page .side-button .love{
-        width: 0;
-        height: 0;
-    } 
-
 
     .single-page .article-content{
         width: 110%;
@@ -521,7 +549,23 @@
         display: flex;
         margin-left: 0%;
     }
+   
     
-    
+    .extra-buttons {
+        max-height: 0;
+        height: 100%;
+        overflow-y: hidden;
+        opacity: .1;
+        margin-bottom: -20px;
+        transition: all .3s ease-in-out;
+        &.active {
+          margin-top: 5px;
+          max-height: 400px;
+          opacity: 1;
+          padding-top: 10px;
+        }
+
+      }
+
 
 }

@@ -1,9 +1,7 @@
 import React from 'react';
 
 const GetAllArticles = () => (
-  <div>
-    This is the All Articles view
-  </div>
+  <div>This is all articles page</div>
 );
 
 export default GetAllArticles;

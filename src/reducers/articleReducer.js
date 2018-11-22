@@ -9,6 +9,10 @@ export default (state = initialState, action) => {
       return { ...state, error: action.payload };
     case types.GET_BOOKMARKED_ARTICLES:
       return { ...state, bookmarkedArticles: action.payload };
+    case types.GET_AN_ARTICLE:
+      return { ...state, article: action.payload };
+    case types.GET_AN_ARTICLE_ERROR:
+      return { ...state, articleError: action.payload };
     case types.SEARCH:
       return { ...state, searchResults: action.payload };
     case types.SEARCH_ERROR:
