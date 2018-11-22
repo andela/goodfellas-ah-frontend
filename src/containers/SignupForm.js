@@ -100,8 +100,9 @@ class SignupForm extends Component {
           value={firstname}
           touched={touched}
           handleChange={this.handleChange}
+          handleBlur={this.handleBlur('firstname')}
           name="firstname"
-          placeholder="Firstname"
+          placeholder="First name"
         />
 
         <AuthInput
@@ -109,8 +110,9 @@ class SignupForm extends Component {
           value={lastname}
           touched={touched}
           handleChange={this.handleChange}
+          handleBlur={this.handleBlur('lastname')}
           name="lastname"
-          placeholder="Lastname"
+          placeholder="Last name"
         />
 
         <AuthInput
@@ -118,8 +120,9 @@ class SignupForm extends Component {
           value={email}
           touched={touched}
           handleChange={this.handleChange}
+          handleBlur={this.handleBlur('email')}
           name="email"
-          placeholder="E-mail"
+          placeholder="Email"
         />
 
         <AuthInput
@@ -127,6 +130,7 @@ class SignupForm extends Component {
           value={password}
           touched={touched}
           handleChange={this.handleChange}
+          handleBlur={this.handleBlur('password')}
           name="password"
           type="password"
           placeholder="Password"
@@ -137,6 +141,7 @@ class SignupForm extends Component {
           value={confirmPassword}
           touched={touched}
           handleChange={this.handleChange}
+          handleBlur={this.handleBlur('confirmPassword')}
           name="confirmPassword"
           type="password"
           placeholder="Confirm Password"
