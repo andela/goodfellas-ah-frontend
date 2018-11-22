@@ -70,7 +70,7 @@ export class UpdateArticles extends Component {
     if (articleLoading) return <Loader />;
     return (
 
-      <div className="article-body">
+      <div className="container article-body">
         <div className="articles-card">
           <div className="article-buttons">
             <button className="btn article-whitebutton" type="submit" onClick={this.handleSubmit}>
@@ -80,18 +80,7 @@ export class UpdateArticles extends Component {
           <ImageUploader imageUploaded={this.imageUploaded} />
 
           <form>
-            <Editor
-              name="title"
-              id="title"
-              text={title}
-              onChange={(e) => handleEditorChange(e, 'title')}
-              options={{
-                placeholder: false,
-                toolbar: {
-                  buttons: ['bold', 'italic', 'underline', 'strikethrough', 'quote', 'anchor', 'h2', 'h3', 'orderedlist'],
-                },
-              }}
-            />
+            <textarea id="title" value={title} onChange={(e) => handleEditorChange(e.target.value, 'title')} />
             {imageUploadStatus.loading ? <Loader /> : (
               <Editor
                 name="body"

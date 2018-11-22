@@ -58,7 +58,7 @@ export class CreateArticles extends Component {
     const { imageUploadStatus } = this.props;
     const { title, body } = this.state;
     return (
-      <div className="article-body">
+      <div className="container article-body">
         <div className="articles-card">
           <div className="article-buttons">
             <button className="btn article-whitebutton" type="submit" onClick={this.handleSubmit}>
@@ -68,18 +68,7 @@ export class CreateArticles extends Component {
           <ImageUploader imageUploaded={this.imageUploaded} />
 
           <form>
-            <Editor
-              name="title"
-              id="title"
-              data-placeholder="Title"
-              text={title}
-              onChange={(e) => handleEditorChange(e, 'title')}
-              options={{
-                toolbar: {
-                  buttons: ['bold', 'italic', 'underline', 'strikethrough', 'quote', 'anchor', 'h2', 'h3', 'orderedlist'],
-                },
-              }}
-            />
+            <textarea id="title" value={title} placeholder="Title" onChange={(e) => handleEditorChange(e.target.value, 'title')} />
             {imageUploadStatus.loading ? <Loader /> : (
               <Editor
                 name="body"
