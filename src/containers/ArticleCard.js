@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import parser from 'react-html-parser';
 import { getArticles } from '../actions/articleActions';
 import Loading from '../components/shared/Loading';
@@ -61,54 +62,56 @@ export class Card extends Component {
       const displayedDescription = card.article.description.slice(0, 120);
       const displayedTitle = card.article.title.slice(0, 24);
       return (
-        <div
-          onClick={this.getArticle}
-          className="hero-card"
-          key={card.article.id}
-        >
-          <div className="hero-card-details col-sm-7">
-            <h6>{parser(displayedTitle)}</h6>
-            <p>
-              {parser(displayedDescription)}
-            </p>
-            <div className="hero-card-author">
-              {card.article.user.profile.image === null ? (
-                <img
-                  src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541581893/Authors%20Haven/user-placeholder.png"
-                  alt="Author Profile"
-                />
-              ) : (
-                <img
-                  src={card.article.user.profile.image}
-                  alt="Author Profile"
-                />
-              )}
+        <Link to={`/articles/${card.article.slug}`}>
+          <div
+            onClick={this.getArticle}
+            className="hero-card"
+            key={card.article.id}
+          >
+            <div className="hero-card-details col-sm-7">
+              <h6>{parser(displayedTitle)}</h6>
               <p>
-                {card.article.user.firstname} {card.article.user.lastname}
+                {parser(displayedDescription)}
               </p>
+              <div className="hero-card-author">
+                {card.article.user.profile.image === null ? (
+                  <img
+                    src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541581893/Authors%20Haven/user-placeholder.png"
+                    alt="Author Profile"
+                  />
+                ) : (
+                  <img
+                    src={card.article.user.profile.image}
+                    alt="Author Profile"
+                  />
+                )}
+                <p>
+                  {card.article.user.firstname} {card.article.user.lastname}
+                </p>
+              </div>
             </div>
+            {card.article.image === null ? (
+              <div className="hero-card-image col-sm-5">
+                <img
+                  src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426068/Authors%20Haven/icons8-heart-outline-48-grey.png"
+                  alt=""
+                />
+                <p>{filterReactions(card.article.reactions).likes}</p>
+              </div>
+            ) : (
+              <div
+                style={this.changeBackground(card.article.image)}
+                className="hero-card-image col-sm-5"
+              >
+                <img
+                  src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426068/Authors%20Haven/icons8-heart-outline-48-grey.png"
+                  alt=""
+                />
+                <p>{filterReactions(card.article.reactions).likes}</p>
+              </div>
+            )}
           </div>
-          {card.article.image === null ? (
-            <div className="hero-card-image col-sm-5">
-              <img
-                src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426068/Authors%20Haven/icons8-heart-outline-48-grey.png"
-                alt=""
-              />
-              <p>{filterReactions(card.article.reactions).likes}</p>
-            </div>
-          ) : (
-            <div
-              style={this.changeBackground(card.article.image)}
-              className="hero-card-image col-sm-5"
-            >
-              <img
-                src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426068/Authors%20Haven/icons8-heart-outline-48-grey.png"
-                alt=""
-              />
-              <p>{filterReactions(card.article.reactions).likes}</p>
-            </div>
-          )}
-        </div>
+        </Link>
       );
     });
   };

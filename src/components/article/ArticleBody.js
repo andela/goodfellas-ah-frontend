@@ -10,7 +10,7 @@ const ArticleBody = (props) => {
     <div className="article-container">
       <img className="article-image" src={image} alt="" />
       <SideButtons article={article} />
-      <div className="article-content">g
+      <div className="article-content">
         <p>{parser(body)}</p>
       </div>
     </div>

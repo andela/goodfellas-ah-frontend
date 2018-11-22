@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from '../../containers/ArticleCard';
 
-const ExploreSection = () => (
+const ExploreSection = (props) => (
   <section className="hero-lowerbody">
     <div className="hero-lowerbody-details">
       <div className="hero-lowerbody-title">
@@ -19,7 +19,7 @@ const ExploreSection = () => (
       </p>
     </div>
     <div className="hero-lowerbody-articles">
-      <Card />
+      <Card {...props} />
     </div>
   </section>
 );

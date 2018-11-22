@@ -5,6 +5,15 @@
   flex-wrap: wrap;
   @media only screen and (max-width: 900px) {
   }
+  a{
+    display: flex;
+    flex-basis: 27vw;
+    padding: 0px;
+    margin: 20px 20px;
+    &:hover{
+      text-decoration: none;
+    }
+  }
 }
 
 .hero-card{
@@ -54,6 +63,7 @@
       img{
         margin-top: 15px;
         height: 30px;
+        width: 30px;
         border-radius: 50%;
       }
       p{

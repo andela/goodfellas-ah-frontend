@@ -488,62 +488,6 @@ exports[`Landing Page UI render features container should render as expected 1`]
                 <Footer>
                   <footer>
                     <div
-                      className="footer-wrapper"
-                    >
-                      <Link
-                        replace={false}
-                        to="/"
-                      >
-                        <a
-                          href="/"
-                          onClick={[Function]}
-                        >
-                          <p>
-                            About
-                          </p>
-                        </a>
-                      </Link>
-                      <Link
-                        replace={false}
-                        to="/"
-                      >
-                        <a
-                          href="/"
-                          onClick={[Function]}
-                        >
-                          <p>
-                            Contact
-                          </p>
-                        </a>
-                      </Link>
-                      <Link
-                        replace={false}
-                        to="/"
-                      >
-                        <a
-                          href="/"
-                          onClick={[Function]}
-                        >
-                          <p>
-                            Terms
-                          </p>
-                        </a>
-                      </Link>
-                      <Link
-                        replace={false}
-                        to="/"
-                      >
-                        <a
-                          href="/"
-                          onClick={[Function]}
-                        >
-                          <p>
-                            Privacy
-                          </p>
-                        </a>
-                      </Link>
-                    </div>
-                    <div
                       className="copyright"
                     >
                       <p>

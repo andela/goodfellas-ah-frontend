@@ -15,6 +15,7 @@ export class CreateArticles extends Component {
     title: '',
     body: '',
     imageLoad: false,
+    image: '',
   }
 
   componentDidUpdate(prevProps) {
@@ -37,7 +38,14 @@ export class CreateArticles extends Component {
 
   imageUploaded = (url) => {
     const imageHtml = this.generateImageTag(url);
+    const { image } = this.state;
     this.setState((prevState) => ({ body: prevState.body + imageHtml, imageLoad: false }));
+
+    if (image.length < 1) {
+      this.setState({
+        image: url,
+      });
+    }
   }
 
   handleSubmit = (event) => {
