@@ -37,6 +37,10 @@ export const routes = {
       if (payload.title && payload.body) return articleData.postArticle;
       throw new CustomAPIError('All fields are required', 400);
     },
+    '/articles/somiso/tags': (payload) => {
+      if (payload.tags) return articleData.addTagsDetail;
+      throw new CustomAPIError('All fields are required', 400);
+    },
   },
   delete: {
     '/user/follow/1': () => profileData.followUser,

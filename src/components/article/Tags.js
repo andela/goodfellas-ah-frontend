@@ -5,11 +5,10 @@ import Button from '../shared/Button';
 import { addTags } from '../../actions/articleActions';
 import publishArticle from '../../actions/publishArticle';
 
-class Tags extends Component {
+export class Tags extends Component {
   state = {
     tagsCount: 0,
     tags: [],
-    articleStatus: false,
   };
 
   handleSubmit = (e) => {
@@ -32,6 +31,8 @@ class Tags extends Component {
   };
 
   handleClick = (e) => {
+    e.preventDefault();
+
     const { tags } = this.state;
     const currentTag = e.target.previousSibling.textContent;
     const newState = [];
@@ -54,8 +55,8 @@ class Tags extends Component {
   };
 
   componentDidUpdate = () => {
-    const { tags, articleStatus } = this.state;
-    const { publishedArticle, history } = this.props;
+    const { tags } = this.state;
+    const { publishedArticle, history, publishedArticleError } = this.props;
 
     // Check if the limit for tags has been reached
     if (tags.length === 5) {
@@ -71,9 +72,14 @@ class Tags extends Component {
       this.publishTags();
     }
 
-    if (articleStatus) {
+    if (
+      publishedArticleError.status.error === false
+      && publishedArticleError.status.success === true) {
       swal('Good job!', 'Article Saved Successfully!', 'success');
       setTimeout(() => history.push(`/articles/${publishedArticle.slug}`), 3000);
+    }
+    if (publishedArticleError.status.error === true) {
+      swal('Error', 'Article failed to publish', 'error');
     }
   };
 
@@ -81,8 +87,6 @@ class Tags extends Component {
     const { location, publishArticle: publishNewArticle } = this.props;
 
     await publishNewArticle(location.state.articlePayload);
-
-    this.setState({ articleStatus: true });
   };
 
   publishTags = async () => {
@@ -125,7 +129,7 @@ class Tags extends Component {
                 );
               })}
             </div>
-            <div onClick={this.publishArticle}>
+            <div className="publish-article-button" onClick={this.publishArticle}>
               <Button
                 className="btn hero-section-greenbutton"
                 type="submit"
@@ -145,6 +149,7 @@ function mapStatetoProps(state) {
     tags: state.articles.tags,
     tagsError: state.articles.tagsError,
     publishedArticle: state.publishArticleReducer.publishedArticle.article,
+    publishedArticleError: state.publishArticleReducer,
   };
 }
 

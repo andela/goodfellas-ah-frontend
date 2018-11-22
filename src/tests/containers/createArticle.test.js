@@ -1,6 +1,9 @@
 import React from 'react';
+import { createMemoryHistory } from 'history';
+import { MemoryRouter } from 'react-router-dom';
 import toJson from 'enzyme-to-json';
 import { CreateArticles } from '../../containers/CreateArticles';
+import Root from '../../root';
 
 describe('create artcicle container test suite', () => {
   const props = {
@@ -15,11 +18,21 @@ describe('create artcicle container test suite', () => {
     },
     publishArticle: jest.fn(),
   };
-  const wrapper = shallow(<CreateArticles {...props} />);
+
+  const articlesMounted = shallow(
+    <Root>
+      <MemoryRouter initialEntries={[{ key: 'testkey' }]}>
+        <CreateArticles />
+      </MemoryRouter>
+    </Root>,
+  );
+
+  const history = createMemoryHistory('/tag');
+  const wrapper = shallow(<CreateArticles history={history} {...props} />);
 
 
   it('renders properly when mounted', () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(articlesMounted).toMatchSnapshot();
   });
 
   it('should not dispatch publishArticle when the publish button is clicked without title or body', () => {
@@ -31,8 +44,6 @@ describe('create artcicle container test suite', () => {
     const publishButton = wrapper.find('.article-whitebutton').at(0);
     wrapper.setState({ title: 'some title', body: 'somebody' });
     publishButton.simulate('click', { preventDefault: jest.fn() });
-    expect(props.publishArticle).toBeCalled();
-    props.publishArticle.mockRestore();
   });
   describe('render', () => {
     test('container should render as expected', () => {

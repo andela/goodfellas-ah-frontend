@@ -43,7 +43,7 @@ export const search = (searchValues, callback) => async (dispatch) => {
 
 export const addTags = (newTags, slug, callback) => async (dispatch, getState, { api }) => {
   try {
-    const response = await api.post(`${apiUrl}/api/articles/${slug}/tags`, {
+    const response = await api.post(`/articles/${slug}/tags`, {
       tags: newTags,
     });
     dispatch({
