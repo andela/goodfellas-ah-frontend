@@ -15,6 +15,7 @@ import CreateArticle from '../views/CreateArticles';
 import SearchArticles from '../views/SearchArticles';
 import GetAllArticles from '../views/AllArticles';
 import UpdateArticle from '../views/UpdateArticle';
+import BookmarkedArticles from '../views/BookmarkedArticlesPage';
 
 const User = () => (
   <Switch>
@@ -37,6 +38,7 @@ const Articles = () => (
     <Switch>
       <Route path="/articles/search" component={SearchArticles} />
       <Route path="/articles/create" component={authenticate(CreateArticle)} />
+      <Route path="/articles/bookmarked" component={authenticate(BookmarkedArticles)} />
       <Route path="/articles/home" component={GetAllArticles} />
       <Route path="/articles/edit/:slug" component={UpdateArticle} />
       <Route path="/articles/:slug" component={SingleArticle} />

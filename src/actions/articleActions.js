@@ -59,3 +59,18 @@ export const getAnArticle = (slug) => async (dispatch) => {
     });
   }
 };
+
+export const getBookmarkedArticles = () => async (dispatch, getState, { api }) => {
+  try {
+    const response = await api.get('/articles/all/bookmark');
+    dispatch({
+      type: types.GET_BOOKMARKED_ARTICLES,
+      payload: response.data.data.articles,
+    });
+  } catch (error) {
+    dispatch({
+      type: types.GET_ARTICLES_ERROR,
+      payload: error.response,
+    });
+  }
+};
