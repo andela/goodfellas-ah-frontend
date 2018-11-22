@@ -42,7 +42,7 @@ export class Notifications extends Component {
                     return (
                       <div className="row notification-result" key={notification.id}>
                         <Link
-                          to="/article/"
+                          to={`/${notification.articleSlug}`}
                           className="col-md-6 card m-auto"
                           key={notification.id}
                           onClick={() => {
@@ -62,7 +62,7 @@ export class Notifications extends Component {
                           this.handleSeen(notification.id);
                         }}
                       >
-                        <Link to="/article" className="col-md-6 card m-auto">
+                        <Link to={`/${notification.articleSlug}`} className="col-md-6 card m-auto">
                          New comment on one of  your favorite article {notification.article.title}
                         </Link>
                       </div>

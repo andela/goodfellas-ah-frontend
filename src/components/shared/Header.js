@@ -184,7 +184,7 @@ export class Header extends Component {
                                   case 'followerArticle':
                                     return (
                                       <Link
-                                        to="/article"
+                                        to={`/${notification.articleSlug}`}
                                         className="notification-icon notification-icon-click"
                                         key={notification.id}
                                         onClick={() => {
@@ -357,7 +357,7 @@ export class Header extends Component {
                                   case 'followerArticle':
                                     return (
                                       <Link
-                                        to="/article"
+                                        to={`/${notification.articleSlug}`}
                                         className="notification-icon notification-icon-click"
                                         key={notification.id}
                                         onClick={() => {
