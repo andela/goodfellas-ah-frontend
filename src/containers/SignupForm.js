@@ -4,6 +4,7 @@ import { signup, clearSigninError } from '../actions/authActions';
 import validateAuth from '../lib/validation';
 import AuthInput from '../components/shared/AuthInput';
 import Button from '../components/shared/Button';
+import Loading from '../components/shared/Loading';
 import '../styles/styles.scss';
 
 const initialState = {
@@ -13,6 +14,7 @@ const initialState = {
   email: '',
   password: '',
   confirmPassword: '',
+  loading: false,
   touched: {
     firstname: false,
     lastname: false,
@@ -58,6 +60,7 @@ class SignupForm extends Component {
     // processes user sign up when validation rules
     // pass for all fields
     if (!validationError.status) {
+      this.setState({ loading: true });
       signupUser(body, () => history.push('/user/profile'));
       this.setState(initialState);
     }
@@ -84,7 +87,7 @@ class SignupForm extends Component {
 
   render() {
     const {
-      firstname, lastname, email, password, confirmPassword, touched,
+      firstname, lastname, email, password, confirmPassword, touched, loading,
     } = this.state;
 
     const { message } = this.props;
@@ -146,7 +149,7 @@ class SignupForm extends Component {
           type="password"
           placeholder="Confirm Password"
         />
-        <Button title="SIGN UP" className="auth-button" type="submit" />
+        {loading ? <button disabled="disabled" type="submit" className="auth-button loading"><Loading /></button> : <Button title="SIGN UP" className="auth-button" type="submit" />}
       </form>
 
     );
