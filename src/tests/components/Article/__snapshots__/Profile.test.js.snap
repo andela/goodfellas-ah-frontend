@@ -3,7 +3,7 @@
 exports[`components ProfileToolbar component should render as expected 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <_default
+  Symbol(enzyme.__unrendered__): <Profile
     article={
       Object {
         "authorId": 1,
@@ -24,7 +24,25 @@ ShallowWrapper {
         "updatedAt": "2018-11-09T15:08:00.560Z",
       }
     }
-    userFullName="Afeez Awoyemi"
+    author="Afeez Awoyemi"
+    history={
+      Object {
+        "push": [MockFunction] {
+          "calls": Array [
+            Array [
+              "/articles/this-is-a-fine-title-which-i-would-really-love-to-have",
+            ],
+          ],
+          "results": Array [
+            Object {
+              "isThrow": false,
+              "value": undefined,
+            },
+          ],
+        },
+      }
+    }
+    userId={1}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -42,6 +60,7 @@ ShallowWrapper {
       "children": Array [
         <Link
           className="profile-article_user-img"
+          onClick={[Function]}
           replace={false}
           to="/user/profile/1"
         >
@@ -63,9 +82,12 @@ ShallowWrapper {
         </h3>,
         <Link
           className="profile-article_username p"
+          onClick={[Function]}
           replace={false}
           to="/user/profile/1"
-        />,
+        >
+          Afeez Awoyemi
+        </Link>,
         <p
           className="profile-article_date"
         >
@@ -115,9 +137,18 @@ ShallowWrapper {
           >
             0 comments
           </p>
+          <Link
+            className="edit p hoverable"
+            onClick={[Function]}
+            replace={false}
+            to="/articles/edit/this-is-a-fine-title-which-i-would-really-love-to-have"
+          >
+            Edit Article
+          </Link>
         </div>,
       ],
       "className": "profile-article hoverable",
+      "onClick": [Function],
     },
     "ref": null,
     "rendered": Array [
@@ -131,6 +162,7 @@ ShallowWrapper {
             src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541506955/user-placeholder.png"
           />,
           "className": "profile-article_user-img",
+          "onClick": [Function],
           "replace": false,
           "to": "/user/profile/1",
         },
@@ -179,13 +211,14 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": undefined,
+          "children": "Afeez Awoyemi",
           "className": "profile-article_username p",
+          "onClick": [Function],
           "replace": false,
           "to": "/user/profile/1",
         },
         "ref": null,
-        "rendered": null,
+        "rendered": "Afeez Awoyemi",
         "type": [Function],
       },
       Object {
@@ -261,7 +294,14 @@ ShallowWrapper {
             >
               0 comments
             </p>,
-            false,
+            <Link
+              className="edit p hoverable"
+              onClick={[Function]}
+              replace={false}
+              to="/articles/edit/this-is-a-fine-title-which-i-would-really-love-to-have"
+            >
+              Edit Article
+            </Link>,
           ],
           "className": "profile-article_footer",
         },
@@ -377,7 +417,21 @@ ShallowWrapper {
             "rendered": "0 comments",
             "type": "p",
           },
-          false,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "Edit Article",
+              "className": "edit p hoverable",
+              "onClick": [Function],
+              "replace": false,
+              "to": "/articles/edit/this-is-a-fine-title-which-i-would-really-love-to-have",
+            },
+            "ref": null,
+            "rendered": "Edit Article",
+            "type": [Function],
+          },
         ],
         "type": "div",
       },
@@ -393,6 +447,7 @@ ShallowWrapper {
         "children": Array [
           <Link
             className="profile-article_user-img"
+            onClick={[Function]}
             replace={false}
             to="/user/profile/1"
           >
@@ -414,9 +469,12 @@ ShallowWrapper {
           </h3>,
           <Link
             className="profile-article_username p"
+            onClick={[Function]}
             replace={false}
             to="/user/profile/1"
-          />,
+          >
+            Afeez Awoyemi
+          </Link>,
           <p
             className="profile-article_date"
           >
@@ -466,9 +524,18 @@ ShallowWrapper {
             >
               0 comments
             </p>
+            <Link
+              className="edit p hoverable"
+              onClick={[Function]}
+              replace={false}
+              to="/articles/edit/this-is-a-fine-title-which-i-would-really-love-to-have"
+            >
+              Edit Article
+            </Link>
           </div>,
         ],
         "className": "profile-article hoverable",
+        "onClick": [Function],
       },
       "ref": null,
       "rendered": Array [
@@ -482,6 +549,7 @@ ShallowWrapper {
               src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541506955/user-placeholder.png"
             />,
             "className": "profile-article_user-img",
+            "onClick": [Function],
             "replace": false,
             "to": "/user/profile/1",
           },
@@ -530,13 +598,14 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": undefined,
+            "children": "Afeez Awoyemi",
             "className": "profile-article_username p",
+            "onClick": [Function],
             "replace": false,
             "to": "/user/profile/1",
           },
           "ref": null,
-          "rendered": null,
+          "rendered": "Afeez Awoyemi",
           "type": [Function],
         },
         Object {
@@ -612,7 +681,14 @@ ShallowWrapper {
               >
                 0 comments
               </p>,
-              false,
+              <Link
+                className="edit p hoverable"
+                onClick={[Function]}
+                replace={false}
+                to="/articles/edit/this-is-a-fine-title-which-i-would-really-love-to-have"
+              >
+                Edit Article
+              </Link>,
             ],
             "className": "profile-article_footer",
           },
@@ -728,7 +804,21 @@ ShallowWrapper {
               "rendered": "0 comments",
               "type": "p",
             },
-            false,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Edit Article",
+                "className": "edit p hoverable",
+                "onClick": [Function],
+                "replace": false,
+                "to": "/articles/edit/this-is-a-fine-title-which-i-would-really-love-to-have",
+              },
+              "ref": null,
+              "rendered": "Edit Article",
+              "type": [Function],
+            },
           ],
           "type": "div",
         },

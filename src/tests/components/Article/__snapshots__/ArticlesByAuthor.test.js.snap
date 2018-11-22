@@ -26,7 +26,9 @@ ShallowWrapper {
         },
       ]
     }
+    ownProfile={true}
     userFullName="Afeez Awoyemi"
+    userId={1}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -42,7 +44,7 @@ ShallowWrapper {
     "nodeType": "function",
     "props": Object {
       "children": Array [
-        <_default
+        <withRouter(Profile)
           article={
             Object {
               "authorId": 1,
@@ -64,6 +66,7 @@ ShallowWrapper {
             }
           }
           type="article"
+          userId={1}
         />,
       ],
     },
@@ -95,7 +98,7 @@ ShallowWrapper {
           "author": undefined,
           "authorImage": undefined,
           "type": "article",
-          "userId": undefined,
+          "userId": 1,
         },
         "ref": null,
         "rendered": null,
@@ -111,7 +114,7 @@ ShallowWrapper {
       "nodeType": "function",
       "props": Object {
         "children": Array [
-          <_default
+          <withRouter(Profile)
             article={
               Object {
                 "authorId": 1,
@@ -133,6 +136,7 @@ ShallowWrapper {
               }
             }
             type="article"
+            userId={1}
           />,
         ],
       },
@@ -164,7 +168,7 @@ ShallowWrapper {
             "author": undefined,
             "authorImage": undefined,
             "type": "article",
-            "userId": undefined,
+            "userId": 1,
           },
           "ref": null,
           "rendered": null,
