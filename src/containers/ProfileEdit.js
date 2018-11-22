@@ -54,9 +54,8 @@ export class EditProfile extends Component {
     });
   }
 
-  resetProfile = (e) => {
+  viewProfile = () => {
     const { history } = this.props;
-    e.preventDefault();
     history.push('/user/profile');
   }
 
@@ -75,7 +74,8 @@ export class EditProfile extends Component {
     this.setState({ updating: false });
     if (response.success) {
       this.resetImage();
-      swal('Success', response.success, 'success');
+      const ok = await swal('Success', response.success, 'success');
+      if (ok) this.viewProfile();
     }
     if (response.error) swal('Error', response.error, 'error');
   }
@@ -118,7 +118,7 @@ export class EditProfile extends Component {
         <TextBox handleChange={this.handleChange} value={bio} name="bio" placeholder="Enter a short bio" />
         <div>
           <button type="submit" disabled={updating || (!profileImage && profileStore.profile.bio === bio && profileStore.profile.username === username)} id="save-button" className="button green outline">{ updating ? <img className=" edit-profile_spinner" alt="loader" src={spinner} /> : 'Save' }</button>
-          <button type="button" disabled={updating} onClick={this.resetProfile} className="button green outline">Cancel</button>
+          <button type="button" disabled={updating} onClick={this.viewProfile} className="button green outline">Cancel</button>
         </div>
       </form>
     );

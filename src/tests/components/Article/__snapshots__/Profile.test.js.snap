@@ -40,11 +40,16 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <img
-          alt="user"
+        <Link
           className="profile-article_user-img"
-          src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541506955/user-placeholder.png"
-        />,
+          replace={false}
+          to="/user/profile/1"
+        >
+          <img
+            alt="user"
+            src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541506955/user-placeholder.png"
+          />
+        </Link>,
         <div
           className="profile-article_img"
           style={
@@ -56,8 +61,10 @@ ShallowWrapper {
         <h3>
           This is a fine title which I would really love to have
         </h3>,
-        <p
-          className="profile-article_username"
+        <Link
+          className="profile-article_username p"
+          replace={false}
+          to="/user/profile/1"
         />,
         <p
           className="profile-article_date"
@@ -117,15 +124,30 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "class",
         "props": Object {
-          "alt": "user",
+          "children": <img
+            alt="user"
+            src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541506955/user-placeholder.png"
+          />,
           "className": "profile-article_user-img",
-          "src": "https://res.cloudinary.com/drmmqcxkc/image/upload/v1541506955/user-placeholder.png",
+          "replace": false,
+          "to": "/user/profile/1",
         },
         "ref": null,
-        "rendered": null,
-        "type": "img",
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "user",
+            "src": "https://res.cloudinary.com/drmmqcxkc/image/upload/v1541506955/user-placeholder.png",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        "type": [Function],
       },
       Object {
         "instance": null,
@@ -155,14 +177,16 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "class",
         "props": Object {
           "children": undefined,
-          "className": "profile-article_username",
+          "className": "profile-article_username p",
+          "replace": false,
+          "to": "/user/profile/1",
         },
         "ref": null,
         "rendered": null,
-        "type": "p",
+        "type": [Function],
       },
       Object {
         "instance": null,
@@ -237,7 +261,7 @@ ShallowWrapper {
             >
               0 comments
             </p>,
-            undefined,
+            false,
           ],
           "className": "profile-article_footer",
         },
@@ -353,7 +377,7 @@ ShallowWrapper {
             "rendered": "0 comments",
             "type": "p",
           },
-          undefined,
+          false,
         ],
         "type": "div",
       },
@@ -367,11 +391,16 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <img
-            alt="user"
+          <Link
             className="profile-article_user-img"
-            src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541506955/user-placeholder.png"
-          />,
+            replace={false}
+            to="/user/profile/1"
+          >
+            <img
+              alt="user"
+              src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541506955/user-placeholder.png"
+            />
+          </Link>,
           <div
             className="profile-article_img"
             style={
@@ -383,8 +412,10 @@ ShallowWrapper {
           <h3>
             This is a fine title which I would really love to have
           </h3>,
-          <p
-            className="profile-article_username"
+          <Link
+            className="profile-article_username p"
+            replace={false}
+            to="/user/profile/1"
           />,
           <p
             className="profile-article_date"
@@ -444,15 +475,30 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "class",
           "props": Object {
-            "alt": "user",
+            "children": <img
+              alt="user"
+              src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541506955/user-placeholder.png"
+            />,
             "className": "profile-article_user-img",
-            "src": "https://res.cloudinary.com/drmmqcxkc/image/upload/v1541506955/user-placeholder.png",
+            "replace": false,
+            "to": "/user/profile/1",
           },
           "ref": null,
-          "rendered": null,
-          "type": "img",
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "user",
+              "src": "https://res.cloudinary.com/drmmqcxkc/image/upload/v1541506955/user-placeholder.png",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          "type": [Function],
         },
         Object {
           "instance": null,
@@ -482,14 +528,16 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "class",
           "props": Object {
             "children": undefined,
-            "className": "profile-article_username",
+            "className": "profile-article_username p",
+            "replace": false,
+            "to": "/user/profile/1",
           },
           "ref": null,
           "rendered": null,
-          "type": "p",
+          "type": [Function],
         },
         Object {
           "instance": null,
@@ -564,7 +612,7 @@ ShallowWrapper {
               >
                 0 comments
               </p>,
-              undefined,
+              false,
             ],
             "className": "profile-article_footer",
           },
@@ -680,7 +728,7 @@ ShallowWrapper {
               "rendered": "0 comments",
               "type": "p",
             },
-            undefined,
+            false,
           ],
           "type": "div",
         },

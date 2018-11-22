@@ -18,8 +18,8 @@ import UpdateArticle from '../views/UpdateArticle';
 
 const User = () => (
   <Switch>
-    <Route exact path="/user/profile" component={Profile} />
-    <Route exact path="/user/profile/edit" component={EditProfile} />
+    <Route exact path="/user/profile" component={authenticate(Profile)} />
+    <Route exact path="/user/profile/edit" component={authenticate(EditProfile)} />
     <Route exact path="/user/profile/:userId" component={Profile} />
   </Switch>
 );
@@ -50,7 +50,7 @@ const App = () => (
       <Route exact path="/" component={LandingPage} />
       <Route path="/auth" component={Auth} />
       <Route path="/articles" component={Articles} />
-      <Route path="/user" component={authenticate(User)} />
+      <Route path="/user" component={User} />
       <Route path="/forgotpassword" component={ForgotPasswordPage} />
       <Route path="/resetpassword" component={ResetPasswordPage} />
     </div>

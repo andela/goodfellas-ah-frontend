@@ -7,22 +7,40 @@ ShallowWrapper {
     articles={
       Array [
         Object {
-          "authorId": 1,
-          "averageRating": null,
-          "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
-          "comments": Array [],
-          "createdAt": "2018-11-09T15:08:00.560Z",
-          "description": " this is the fine long body  this is the fine long body ",
-          "favorited": null,
-          "favoritesCount": null,
-          "id": 2,
-          "image": null,
-          "reactions": Array [],
-          "read_time": "1 minute",
-          "slug": "this-is-a-fine-title-which-i-would-really-love-to-have",
-          "tagList": null,
-          "title": "This is a fine title which I would really love to have",
-          "updatedAt": "2018-11-09T15:08:00.560Z",
+          "article": Object {
+            "archived": false,
+            "authorId": 13,
+            "averageRating": null,
+            "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+            "comments": Array [],
+            "createdAt": "2018-11-22T12:57:56.989Z",
+            "description": " this is the fine long body  this is the fine long body ",
+            "favorited": null,
+            "favoritesCount": null,
+            "id": 2,
+            "image": null,
+            "published": true,
+            "reactions": Array [],
+            "read_time": "1 minute",
+            "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+            "tagList": null,
+            "title": "This is a fine title which I would really love to have",
+            "updatedAt": "2018-11-22T12:57:56.989Z",
+            "user": Object {
+              "firstname": "Anthony",
+              "isFollowed": null,
+              "isFollowing": null,
+              "lastname": "Ugwu",
+              "profile": Object {
+                "image": null,
+              },
+            },
+          },
+          "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+          "createdAt": "2018-11-22T12:59:16.439Z",
+          "id": 1,
+          "updatedAt": "2018-11-22T12:59:16.439Z",
+          "user_id": 1,
         },
       ]
     }
@@ -43,6 +61,39 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <_default
+          article={
+            Object {
+              "archived": false,
+              "authorId": 13,
+              "averageRating": null,
+              "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+              "comments": Array [],
+              "createdAt": "2018-11-22T12:57:56.989Z",
+              "description": " this is the fine long body  this is the fine long body ",
+              "favorited": null,
+              "favoritesCount": null,
+              "id": 2,
+              "image": null,
+              "published": true,
+              "reactions": Array [],
+              "read_time": "1 minute",
+              "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+              "tagList": null,
+              "title": "This is a fine title which I would really love to have",
+              "updatedAt": "2018-11-22T12:57:56.989Z",
+              "user": Object {
+                "firstname": "Anthony",
+                "isFollowed": null,
+                "isFollowing": null,
+                "lastname": "Ugwu",
+                "profile": Object {
+                  "image": null,
+                },
+              },
+            }
+          }
+          author="Anthony Ugwu"
+          authorImage={null}
           type="favoriteArticle"
         />,
       ],
@@ -51,13 +102,42 @@ ShallowWrapper {
     "rendered": Array [
       Object {
         "instance": null,
-        "key": "2",
+        "key": "1",
         "nodeType": "function",
         "props": Object {
-          "article": undefined,
-          "author": undefined,
-          "authorImage": undefined,
+          "article": Object {
+            "archived": false,
+            "authorId": 13,
+            "averageRating": null,
+            "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+            "comments": Array [],
+            "createdAt": "2018-11-22T12:57:56.989Z",
+            "description": " this is the fine long body  this is the fine long body ",
+            "favorited": null,
+            "favoritesCount": null,
+            "id": 2,
+            "image": null,
+            "published": true,
+            "reactions": Array [],
+            "read_time": "1 minute",
+            "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+            "tagList": null,
+            "title": "This is a fine title which I would really love to have",
+            "updatedAt": "2018-11-22T12:57:56.989Z",
+            "user": Object {
+              "firstname": "Anthony",
+              "isFollowed": null,
+              "isFollowing": null,
+              "lastname": "Ugwu",
+              "profile": Object {
+                "image": null,
+              },
+            },
+          },
+          "author": "Anthony Ugwu",
+          "authorImage": null,
           "type": "favoriteArticle",
+          "userId": undefined,
         },
         "ref": null,
         "rendered": null,
@@ -74,6 +154,39 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <_default
+            article={
+              Object {
+                "archived": false,
+                "authorId": 13,
+                "averageRating": null,
+                "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+                "comments": Array [],
+                "createdAt": "2018-11-22T12:57:56.989Z",
+                "description": " this is the fine long body  this is the fine long body ",
+                "favorited": null,
+                "favoritesCount": null,
+                "id": 2,
+                "image": null,
+                "published": true,
+                "reactions": Array [],
+                "read_time": "1 minute",
+                "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                "tagList": null,
+                "title": "This is a fine title which I would really love to have",
+                "updatedAt": "2018-11-22T12:57:56.989Z",
+                "user": Object {
+                  "firstname": "Anthony",
+                  "isFollowed": null,
+                  "isFollowing": null,
+                  "lastname": "Ugwu",
+                  "profile": Object {
+                    "image": null,
+                  },
+                },
+              }
+            }
+            author="Anthony Ugwu"
+            authorImage={null}
             type="favoriteArticle"
           />,
         ],
@@ -82,13 +195,42 @@ ShallowWrapper {
       "rendered": Array [
         Object {
           "instance": null,
-          "key": "2",
+          "key": "1",
           "nodeType": "function",
           "props": Object {
-            "article": undefined,
-            "author": undefined,
-            "authorImage": undefined,
+            "article": Object {
+              "archived": false,
+              "authorId": 13,
+              "averageRating": null,
+              "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+              "comments": Array [],
+              "createdAt": "2018-11-22T12:57:56.989Z",
+              "description": " this is the fine long body  this is the fine long body ",
+              "favorited": null,
+              "favoritesCount": null,
+              "id": 2,
+              "image": null,
+              "published": true,
+              "reactions": Array [],
+              "read_time": "1 minute",
+              "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+              "tagList": null,
+              "title": "This is a fine title which I would really love to have",
+              "updatedAt": "2018-11-22T12:57:56.989Z",
+              "user": Object {
+                "firstname": "Anthony",
+                "isFollowed": null,
+                "isFollowing": null,
+                "lastname": "Ugwu",
+                "profile": Object {
+                  "image": null,
+                },
+              },
+            },
+            "author": "Anthony Ugwu",
+            "authorImage": null,
             "type": "favoriteArticle",
+            "userId": undefined,
           },
           "ref": null,
           "rendered": null,

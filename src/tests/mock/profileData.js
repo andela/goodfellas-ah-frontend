@@ -60,7 +60,39 @@ export const articles = {
 };
 
 export const favoritedArticles = {
-  data: { message: 'Articles gotten successfully!', articles: [] },
+  data: {
+    message: 'Articles gotten successfully!',
+    articles: [{
+      id: 1,
+      user_id: 1,
+      article_slug: 'this-is-a-fine-title-which-i-would-really-love-to-have-1',
+      createdAt: '2018-11-22T12:59:16.439Z',
+      updatedAt: '2018-11-22T12:59:16.439Z',
+      article: {
+        favorited: null,
+        favoritesCount: null,
+        id: 2,
+        slug: 'this-is-a-fine-title-which-i-would-really-love-to-have-1',
+        title: 'This is a fine title which I would really love to have',
+        description: ' this is the fine long body  this is the fine long body ',
+        body: 'This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ',
+        image: null,
+        tagList: null,
+        read_time: '1 minute',
+        averageRating: null,
+        authorId: 13,
+        published: true,
+        archived: false,
+        createdAt: '2018-11-22T12:57:56.989Z',
+        updatedAt: '2018-11-22T12:57:56.989Z',
+        comments: [],
+        reactions: [],
+        user: {
+          isFollowed: null, isFollowing: null, firstname: 'Anthony', lastname: 'Ugwu', profile: { image: null },
+        },
+      },
+    }],
+  },
   status: 200,
 };
 
