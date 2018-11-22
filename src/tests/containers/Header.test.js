@@ -255,6 +255,50 @@ it('should spy on change search', () => {
   expect(inst).not.toBeNull();
 });
 
+it('should click notifications drop down', () => {
+  const dropdownButton = wrapper.find('.dropdown-click');
+
+  const instance = wrapper.instance();
+  instance.refs = {
+    myDropdown2: {
+      classList: {
+        value: 'dropdown-menu dropdown-menu-notification header-notification show',
+        toggle: jest.fn(),
+      },
+    },
+    myDropdown: {
+      classList: {
+        value: 'dropdown-menu dropdown-menu-notification header-notification show',
+        toggle: jest.fn(),
+      },
+    },
+  };
+
+  dropdownButton.simulate('click');
+});
+
+it('should click menu drop down', () => {
+  const dropdownButton = mountHeaderNullProfile.find('.dropdown-click-notification');
+
+  const instance = mountHeaderNullProfile.instance();
+  instance.refs = {
+    myDropdown2: {
+      classList: {
+        value: 'dropdown-menu dropdown-menu-notification header-notification show',
+        toggle: jest.fn(),
+      },
+    },
+    myDropdown: {
+      classList: {
+        value: 'dropdown-menu show',
+        toggle: jest.fn(),
+      },
+    },
+  };
+
+  dropdownButton.simulate('click');
+});
+
 it('should spy on change search', () => {
   mountHeaderNullProfile.setState({
     inApp: true,
