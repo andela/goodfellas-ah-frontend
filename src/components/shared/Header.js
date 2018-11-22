@@ -184,7 +184,7 @@ export class Header extends Component {
                                   case 'followerArticle':
                                     return (
                                       <Link
-                                        to={`/${notification.articleSlug}`}
+                                        to={`/articles/${notification.articleSlug}`}
                                         className="notification-icon notification-icon-click"
                                         key={notification.id}
                                         onClick={() => {
@@ -196,7 +196,7 @@ export class Header extends Component {
                                     );
                                   case 'favoriteArticleComment':
                                     return (
-                                      <Link to="/article" key={notification.id}>
+                                      <Link to={`/articles/${notification.articleSlug}`} key={notification.id}>
                                         <p className="notificationMessage"><span className="notifierName">{`${notification.author.firstname.charAt(0).toUpperCase()}${notification.author.firstname.slice(1)}`}</span> commented on your favorite article</p>
                                       </Link>
                                     );
@@ -357,7 +357,7 @@ export class Header extends Component {
                                   case 'followerArticle':
                                     return (
                                       <Link
-                                        to={`/${notification.articleSlug}`}
+                                        to={`/articles/${notification.articleSlug}`}
                                         className="notification-icon notification-icon-click"
                                         key={notification.id}
                                         onClick={() => {
@@ -369,7 +369,7 @@ export class Header extends Component {
                                     );
                                   case 'favoriteArticleComment':
                                     return (
-                                      <Link to="/article" key={notification.id}>
+                                      <Link to={`/articles/${notification.articleSlug}`} key={notification.id}>
                                         <p className="notificationMessage">New comment on your favorite article {notification.article.title}</p>
                                       </Link>
                                     );
