@@ -12,6 +12,17 @@ export default (props) => {
     ownProfile,
   } = props;
 
+  const filterArticle = () => {
+    const imgTagPosition = article.description.search('<img');
+    let filteredDescription = '';
+    if (imgTagPosition !== -1) {
+      filteredDescription = article.description.slice(0, imgTagPosition);
+    } else {
+      filteredDescription = article.description;
+    }
+    return filteredDescription;
+  };
+
   return (
     <div className="profile-article hoverable">
       <img src={authorImage || userPlaceholderImage} alt="user" className="profile-article_user-img" />
@@ -20,7 +31,7 @@ export default (props) => {
       <p className="profile-article_username">{author}</p>
       <p className="profile-article_date">{moment(article.createdAt).format('ll')}</p>
       <p className="profile-article_read-time">{`${article.read_time} read`}</p>
-      <p className="profile-article_description">{parser(article.description)}</p>
+      <p className="profile-article_description">{parser(filterArticle())}</p>
       <div className="profile-article_footer">
         <p className="profile-article_likes">
           {filterReactions(article.reactions).likes}&nbsp;

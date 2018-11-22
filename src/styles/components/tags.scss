@@ -35,7 +35,7 @@
     align-items: center;
     width: 70%;
     justify-content: space-evenly;
-    .tags-wrapper{
+    .tags-wrapper,{
       display: flex;
       width: 100%;
       justify-content: flex-start;
@@ -72,4 +72,19 @@
   }
 }
 
-
+.tags-display{
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  .new-tag{
+    margin: 10px;
+    border-radius: 20px;
+    border: 1px solid #a6a2a2;
+    padding: 9px;
+    color: #a6a2a2;
+    // background-color: $faintblue;
+    display: flex;
+    height: 5vh;
+  }
+}

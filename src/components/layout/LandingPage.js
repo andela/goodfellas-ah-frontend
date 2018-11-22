@@ -8,7 +8,7 @@ const LandingPageLayout = (props) => (
   <div>
     <Hero {...props} />
     <Body />
-    <Explore {...props}/>
+    <Explore {...props} />
     <Footer />
   </div>
 );

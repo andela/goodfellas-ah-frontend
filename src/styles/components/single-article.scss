@@ -174,6 +174,10 @@
     margin-bottom: 80px;
 }
 
+.single-page .article-container .article-tag{
+    display: flex;
+}
+
 .single-page .article-header .title-author{
     display: flex;
     flex-direction: column;
@@ -183,11 +187,14 @@
 .single-page .article-header .title-author .author-name{
     display: flex;
     margin-top: 20px;
+    justify-content: space-between;
+    max-width: 70vw;
 }
 
 .single-page .article-header .title-author .name{
     font-family: Roboto;
     font-size: 22px;
+    width: 100%;
     color: #a6a2a2;
     margin-right: 5%;
     text-transform: capitalize;
@@ -236,6 +243,14 @@
     font-family: Roboto;
     font-size: 21px;
     color: #0000008a;
+    p{
+        display: flex;
+        flex-direction: column;
+        img{
+            width: 80%;
+            margin: 20px auto;
+        }
+    }
 }
 
 .article-line{

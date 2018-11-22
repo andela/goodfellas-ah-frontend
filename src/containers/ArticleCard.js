@@ -7,14 +7,14 @@ import Loading from '../components/shared/Loading';
 import { filterReactions } from '../mixin';
 
 export class Card extends Component {
+  state = {
+    articleLimit: 6,
+  };
+
   componentDidMount() {
     const { getArticles: getAllArticles } = this.props;
     getAllArticles();
   }
-
-  state = {
-    articleLimit: 6,
-  };
 
   sortArticlesByLikes = (articles) => {
     const sortedArticles = articles
@@ -62,17 +62,14 @@ export class Card extends Component {
       const displayedDescription = card.article.description.slice(0, 120);
       const displayedTitle = card.article.title.slice(0, 24);
       return (
-        <Link to={`/articles/${card.article.slug}`}>
+        <Link key={card.article.id} to={`/articles/${card.article.slug}`}>
           <div
             onClick={this.getArticle}
             className="hero-card"
-            key={card.article.id}
           >
             <div className="hero-card-details col-sm-7">
               <h6>{parser(displayedTitle)}</h6>
-              <p>
-                {parser(displayedDescription)}
-              </p>
+              {parser(displayedDescription)}
               <div className="hero-card-author">
                 {card.article.user.profile.image === null ? (
                   <img
@@ -123,17 +120,23 @@ export class Card extends Component {
         {articles ? (
           <div className="card-wrapper">
             {this.displayCards(this.displayArticles)}
+            <div>
+              {articles.length <= 6 ? (
+                null
+              ) : (
+                <div onClick={this.handleClick} className="hero-moreArticles row">
+                  <p ref="moreArticles">More Articles</p>
+                  <img
+                    src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426068/Authors%20Haven/icons8-expand-arrow-24.png"
+                    alt=""
+                  />
+                </div>
+              )}
+            </div>
           </div>
         ) : (
           <Loading />
         )}
-        <div onClick={this.handleClick} className="hero-moreArticles row">
-          <p ref="moreArticles">More Articles</p>
-          <img
-            src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426068/Authors%20Haven/icons8-expand-arrow-24.png"
-            alt=""
-          />
-        </div>
       </div>
     );
   }

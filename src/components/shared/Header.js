@@ -275,10 +275,10 @@ export class Header extends Component {
                           />
                           <ul ref="myDropdown" className="dropdown-menu">
                             <Link to="/articles/create">New article</Link>
-                            <Link to="/drafts">Drafts</Link>
+                            {/* <Link to="/drafts">Drafts</Link> */}
                             <Link onClick={() => switchView('Articles')} to="/user/profile">Your stories</Link>
-                            <Link to="/stats">Stats</Link>
-                            <Link to="/bookmark">Bookmarks</Link>
+                            {/* <Link to="/stats">Stats</Link> */}
+                            {/* <Link to="/bookmark">Bookmarks</Link> */}
                             <Link onClick={() => switchView('Favorites')} to="/user/profile">Favourites</Link>
                             <Link onClick={() => switchView('Following')} to="/user/profile">Profile</Link>
                             <Link className="dropdown-menu-clicked" onClick={signoutUser} to="/">Sign out</Link>
