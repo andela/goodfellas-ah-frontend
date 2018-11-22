@@ -262,14 +262,14 @@ header {
     display: none;
     position: absolute;
     z-index: -44;
-    top: 43px;
+    top: 55px;
     background-color: white;
     color: #626d86;
     width: 414px;
     border: none;
     padding: 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     text-align: center;
     @media only screen and (max-width: 900px) {
       top: 82px;
@@ -282,17 +282,28 @@ header {
     display: block;
   }
   .searchbar{
-    padding: 10px;
-    padding-left: 22px;
+    color: white;
+    padding: 10px 0;
     width: 414px;
     height: 40px;
-    border: solid 0.5px rgba(166, 162, 162, 0.3);
-    background-color: #ffffff;
+    border: none;
+    border-radius: 0px;
+    border-bottom: solid 1px rgb(255, 255, 255);
+    background-color: transparent;
+    &::placeholder{
+      color: white;
+    }
     &:focus{
       outline: none;
     }
     @media only screen and (max-width: 900px) {
       display: none;
+    }
+  }
+  .searchbar-pages{
+    border-bottom: solid 1px #626d86;
+    &::placeholder{
+      color: #626d86;
     }
   }
   .searchbar-responsive{
@@ -307,12 +318,8 @@ header {
     border: solid 0.5px rgba(166, 162, 162, 0.3);
     background-color: #ffffff;
   }
-  .search-dropdown{
-    left: -70px;
-  }
   span:nth-child(3){
     position: relative;
-    border-right: 1px solid #626d86;
     left: -69px;
     top: 10px;
     font-size: 23px;
@@ -321,7 +328,7 @@ header {
   }
   img{
     position: relative;
-    left: -60px;
+    left: -48px;
     top: 15px;
     width: 16px;
     height: 16px;
@@ -435,18 +442,28 @@ header {
     }
   }
   .searchbar{
-    padding: 10px;
-    padding-left: 22px;
+    color: white;
+    padding: 10px 0;
     width: 414px;
     height: 40px;
-    border: solid 0.5px rgba(166, 162, 162, 0.3);
-    background-color: #ffffff;
-    margin: 10px auto;
+    border: none;
+    border-radius: 0px;
+    border-bottom: solid 1px rgb(255, 255, 255);
+    background-color: transparent;
+    &::placeholder{
+      color: white;
+    }
     &:focus{
       outline: none;
     }
     @media only screen and (max-width: 900px) {
       display: none;
+    }
+  }
+  .searchbar-pages{
+    border-bottom: solid 1px #626d86;
+    &::placeholder{
+      color: #626d86;
     }
   }
   .searchbar-responsive{
@@ -461,12 +478,8 @@ header {
     border: solid 0.5px rgba(166, 162, 162, 0.3);
     background-color: #ffffff;
   }
-  .search-dropdown{
-    left: -70px;
-  }
   span:nth-child(3){
     position: relative;
-    border-right: 1px solid #626d86;
     left: -69px;
     top: 10px;
     font-size: 23px;
@@ -475,7 +488,7 @@ header {
   }
   img{
     position: relative;
-    left: -60px;
+    left: -48px;
     top: 15px;
     width: 16px;
     height: 16px;
@@ -512,7 +525,6 @@ header {
     display: flex;
     span:nth-child(3){
       position: relative;
-      border-right: 1px solid #626d86;
       left: -69px;
       top: 10px;
       font-size: 23px;
@@ -521,7 +533,7 @@ header {
     }
     img{
       position: relative;
-      top: 15px;
+      top: 8px;
       width: 16px;
       height: 16px;
       font-size: 16px;

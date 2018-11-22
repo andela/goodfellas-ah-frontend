@@ -41,7 +41,6 @@ export const search = (searchValues, callback) => async (dispatch) => {
   }
 };
 
-
 export const getAnArticle = (slug) => async (dispatch) => {
   dispatch(articleLoading());
   try {

@@ -109,14 +109,12 @@ export class Header extends Component {
   };
 
   openSearchbar = () => {
-    if (this.refs.searchbar.className === 'searchbar' && this.refs.searchClick.className === 'search-click' && this.refs.searchDivider.className === 'search-divider') {
+    if (this.refs.searchbar.className === 'searchbar' && this.refs.searchClick.className === 'search-click') {
       this.refs.searchbar.className = 'searchbar-responsive';
       this.refs.searchClick.className = 'search-click-responsive';
-      this.refs.searchDivider.className = 'search-divider-responsive';
     } else {
       this.refs.searchbar.className = 'searchbar';
       this.refs.searchClick.className = 'search-click';
-      this.refs.searchDivider.className = 'search-divider';
     }
   };
 
@@ -140,14 +138,22 @@ export class Header extends Component {
                     <div className="header-user-search">
                       <input onChange={this.handleChange} id="Title" placeholder="Search for articles" className="searchbar" ref="searchbar" type="search" />
                       <span ref="searchClick" className="search-click" onClick={this.displaySearchbar}>
-                        <img className="search-dropdown" src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541772567/Authors%20Haven/arrow_grey.png" alt="" />
+                        <img
+                          className="search-dropdown"
+                          src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1542628198/Authors%20Haven/dropdown-arrow-white.png"
+                          alt=""
+                        />
                       </span>
-                      <span ref="searchDivider" className="search-divider" />
-                      <span className="searchbar-toggle" onClick={this.handleSubmit}>
-                        <img src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png" alt="" />
+                      <span />
+                      <span className="searchbar-toggle" onClick={this.handleSubmit}><img
+                        src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1542628197/Authors%20Haven/search-icon-white.svg"
+                        alt=""
+                      />
                       </span>
-                      <span className="searchbar-toggle-mobile" onClick={this.openSearchbar}>
-                        <img src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png" alt="" />
+                      <span className="searchbar-toggle-mobile" onClick={this.openSearchbar}><img
+                        src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1542628197/Authors%20Haven/search-icon-white.svg"
+                        alt=""
+                      />
                       </span>
                       <div ref="searchParameters" className="search-parameters">
                         Filter by
@@ -228,54 +234,69 @@ export class Header extends Component {
                     </div>
                   </div>
                 </div>
-              ) : (
-                <div className="navbar-unauthorized">
-                  <div className="navbar-main-wrapper">
-                    <div>
-                      <form onSubmit={this.handleSubmit}>
-                        <div className="header-user-search-unauth">
-                          <input onChange={this.handleChange} id="Title" placeholder="Search for articles" className="searchbar" ref="searchbar" type="search" />
-                          <span ref="searchClick" className="search-click" onClick={this.displaySearchbar}>
-                            <img className="search-dropdown" src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541772567/Authors%20Haven/arrow_grey.png" alt="" />
-                          </span>
-                          <span ref="searchDivider" className="search-divider" />
-                          <span className="searchbar-toggle" onClick={this.handleSubmit}>
-                            <img src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png" alt="" />
-                          </span>
-                          <span className="searchbar-toggle-mobile" onClick={this.openSearchbar}>
-                            <img src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png" alt="" />
-                          </span>
-                          <div ref="searchParameters" className="search-parameters">
-                            Filter by
-                            <select ref="searchSelection">
-                              <option>Author</option>
-                              <option>Tag</option>
-                            </select>
-                            <input onChange={this.handleChange} ref="searchKeyword" id="searchKeyword" type="text" placeholder="Enter keyword" />
-                            <Button className="btn hero-section-greenbutton" title="Search" type="Submit" />
+              )
+                : (
+                  <div className="navbar-unauthorized">
+                    <div className="navbar-main-wrapper">
+                      <div>
+                        <form onSubmit={this.handleSubmit}>
+                          <div className="header-user-search-unauth">
+                            <input onChange={this.handleChange} id="Title" placeholder="Search for articles" className="searchbar" ref="searchbar" type="search" />
+                            <span ref="searchClick" className="search-click" onClick={this.displaySearchbar}>
+                              <img
+                                className="search-dropdown"
+                                src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1542628198/Authors%20Haven/dropdown-arrow-white.png"
+                                alt=""
+                              />
+                            </span>
+                            <span />
+                            <span className="searchbar-toggle" onClick={this.handleSubmit}><img
+                              src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1542628197/Authors%20Haven/search-icon-white.svg"
+                              alt=""
+                            />
+                            </span>
+                            <span className="searchbar-toggle-mobile" onClick={this.openSearchbar}><img
+                              src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1542628197/Authors%20Haven/search-icon-white.svg"
+                              alt=""
+                            />
+                            </span>
+                            <div ref="searchParameters" className="search-parameters">
+                              Filter by
+                              <select ref="searchSelection">
+                                <option>Author</option>
+                                <option>Tag</option>
+                              </select>
+                              <input onChange={this.handleChange} ref="searchKeyword" id="searchKeyword" type="text" placeholder="Enter keyword" />
+                              <Button className="btn hero-section-greenbutton" title="Search" type="Submit" />
+                            </div>
                           </div>
-                        </div>
-                      </form>
-                    </div>
-                    <button onClick={this.navbarToggle} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-                      <span className="">
-                        <img className="menuIcon" src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426069/Authors%20Haven/icons8-menu.svg" alt="" />
-                      </span>
-                    </button>
-                    <div className="navbar-wrapper" ref="navbarToggler">
-                      <ul className="navbar-element">
-                        <Link className="nav-item nav-link" to="/auth/signin">
-                          Sign In
-                        </Link>
-                        <p className="link-border">|</p>
-                        <Link className=" nav-item nav-link" to="/auth/signup">
-                          Sign Up
-                        </Link>
-                      </ul>
+                        </form>
+                      </div>
+                      <button
+                        onClick={this.navbarToggle}
+                        className="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarNav"
+                      >
+                        <span className="">
+                          <img
+                            className="menuIcon"
+                            src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426069/Authors%20Haven/icons8-menu.svg"
+                            alt=""
+                          />
+                        </span>
+                      </button>
+                      <div className="navbar-wrapper" ref="navbarToggler">
+                        <ul className="navbar-element">
+                          <Link className="nav-item nav-link" to="/auth/signin">Sign In</Link>
+                          <p className="link-border">|</p>
+                          <Link className=" nav-item nav-link" to="/auth/signup">Sign Up</Link>
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                </div>
-              )}
+                )}
             </nav>
           </header>
         ) : (
@@ -288,16 +309,24 @@ export class Header extends Component {
                 <div className="header-user">
                   <form onSubmit={this.handleSubmit}>
                     <div className="header-user-search">
-                      <input onChange={this.handleChange} id="Title" placeholder="Search for articles" className="searchbar" ref="searchbar" type="search" />
+                      <input onChange={this.handleChange} id="Title" placeholder="Search for articles" className="searchbar searchbar-pages" ref="searchbar" type="search" />
                       <span ref="searchClick" className="search-click" onClick={this.displaySearchbar}>
-                        <img className="search-dropdown" src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541772567/Authors%20Haven/arrow_grey.png" alt="" />
+                        <img
+                          className="search-dropdown"
+                          src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541772567/Authors%20Haven/arrow_grey.png"
+                          alt=""
+                        />
                       </span>
                       <span ref="searchDivider" className="search-divider" />
-                      <span className="searchbar-toggle" onClick={this.handleSubmit}>
-                        <img src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png" alt="" />
+                      <span className="searchbar-toggle" onClick={this.handleSubmit}><img
+                        src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png"
+                        alt=""
+                      />
                       </span>
-                      <span className="searchbar-toggle-mobile" onClick={this.openSearchbar}>
-                        <img src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png" alt="" />
+                      <span className="searchbar-toggle-mobile" onClick={this.openSearchbar}><img
+                        src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png"
+                        alt=""
+                      />
                       </span>
                       <div ref="searchParameters" className="search-parameters">
                         Filter by
@@ -378,54 +407,69 @@ export class Header extends Component {
                     </div>
                   </div>
                 </div>
-              ) : (
-                <div className="navbar-unauthorized">
-                  <div className="navbar-main-wrapper">
-                    <div>
-                      <form onSubmit={this.handleSubmit}>
-                        <div className="header-user-search-unauth">
-                          <input onChange={this.handleChange} id="Title" placeholder="Search for articles" className="searchbar" ref="searchbar" type="search" />
-                          <span ref="searchClick" className="search-click" onClick={this.displaySearchbar}>
-                            <img className="search-dropdown" src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541772567/Authors%20Haven/arrow_grey.png" alt="" />
-                          </span>
-                          <span ref="searchDivider" className="search-divider" />
-                          <span className="searchbar-toggle" onClick={this.handleSubmit}>
-                            <img src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png" alt="" />
-                          </span>
-                          <span className="searchbar-toggle-mobile" onClick={this.openSearchbar}>
-                            <img src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png" alt="" />
-                          </span>
-                          <div ref="searchParameters" className="search-parameters">
-                            Filter by
-                            <select ref="searchSelection">
-                              <option>Author</option>
-                              <option>Tag</option>
-                            </select>
-                            <input onChange={this.handleChange} ref="searchKeyword" id="searchKeyword" type="text" placeholder="Enter keyword" />
-                            <Button className="btn hero-section-greenbutton" title="Search" type="Submit" />
+              )
+                : (
+                  <div className="navbar-unauthorized">
+                    <div className="navbar-main-wrapper">
+                      <div>
+                        <form onSubmit={this.handleSubmit}>
+                          <div className="header-user-search-unauth">
+                            <input onChange={this.handleChange} id="Title" placeholder="Search for articles" className="searchbar searchbar-pages" ref="searchbar" type="search" />
+                            <span ref="searchClick" className="search-click" onClick={this.displaySearchbar}>
+                              <img
+                                className="search-dropdown"
+                                src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541772567/Authors%20Haven/arrow_grey.png"
+                                alt=""
+                              />
+                            </span>
+                            <span ref="searchDivider" className="search-divider" />
+                            <span className="searchbar-toggle" onClick={this.handleSubmit}><img
+                              src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png"
+                              alt=""
+                            />
+                            </span>
+                            <span className="searchbar-toggle-mobile" onClick={this.openSearchbar}><img
+                              src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541433375/Authors%20Haven/search-icon.png"
+                              alt=""
+                            />
+                            </span>
+                            <div ref="searchParameters" className="search-parameters">
+                              Filter by
+                              <select ref="searchSelection">
+                                <option>Author</option>
+                                <option>Tag</option>
+                              </select>
+                              <input onChange={this.handleChange} ref="searchKeyword" id="searchKeyword" type="text" placeholder="Enter keyword" />
+                              <Button className="btn hero-section-greenbutton" title="Search" type="Submit" />
+                            </div>
                           </div>
-                        </div>
-                      </form>
-                    </div>
-                    <button onClick={this.navbarToggle} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-                      <span className="">
-                        <img className="menuIcon" src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1542096064/Authors%20Haven/icons8-menu-black.svg" alt="" />
-                      </span>
-                    </button>
-                    <div className="navbar-wrapper" ref="navbarToggler">
-                      <ul className="navbar-element">
-                        <Link className="nav-item nav-link header-dark" to="/auth/signin">
-                          Sign In
-                        </Link>
-                        <p className="link-border header-dark">|</p>
-                        <Link className=" nav-item nav-link header-dark" to="/auth/signup">
-                          Sign Up
-                        </Link>
-                      </ul>
+                        </form>
+                      </div>
+                      <button
+                        onClick={this.navbarToggle}
+                        className="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarNav"
+                      >
+                        <span className="">
+                          <img
+                            className="menuIcon"
+                            src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1542096064/Authors%20Haven/icons8-menu-black.svg"
+                            alt=""
+                          />
+                        </span>
+                      </button>
+                      <div className="navbar-wrapper" ref="navbarToggler">
+                        <ul className="navbar-element">
+                          <Link className="nav-item nav-link header-dark" to="/auth/signin">Sign In</Link>
+                          <p className="link-border header-dark">|</p>
+                          <Link className=" nav-item nav-link header-dark" to="/auth/signup">Sign Up</Link>
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                </div>
-              )}
+                )}
             </nav>
           </header>
         )}

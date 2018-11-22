@@ -195,8 +195,6 @@ describe('Article Reducer', () => {
         articles: [],
         authenticated: '',
         error: 'Error getting articles',
-        searchResults: [],
-        searchError: [],
         errorMessage: '',
         articleLoading: false,
         singleArticle: null,
@@ -205,6 +203,8 @@ describe('Article Reducer', () => {
         profile: {
           articles: [], favorites: [], followers: [], following: [], loading: true, profile: {}, profileError: '', profileView: 'Following', user: {},
         },
+        searchError: [],
+        searchResults: [],
         successMessage: '',
         user: {},
         notification: [],
