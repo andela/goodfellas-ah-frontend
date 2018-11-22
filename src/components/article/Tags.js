@@ -100,6 +100,7 @@ export class Tags extends Component {
       return tag;
     });
 
+    console.log(publishedArticle);
     await addNewTags(tagsList, publishedArticle.slug);
   };
 
