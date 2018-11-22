@@ -35,13 +35,14 @@ export class Card extends Component {
     return displayedArticles;
   };
 
-  handleClick = () => {
+  handleClick = (e) => {
     const { articleLimit } = this.state;
+    if (articleLimit === 18) {
+      e.currentTarget.innerHTML = '';
+    }
     if (articleLimit !== 24) {
       this.setState({ articleLimit: articleLimit + 6 });
       this.displayCards(this.displayArticles);
-    } else {
-      window.location.assign('/articles');
     }
   };
 
