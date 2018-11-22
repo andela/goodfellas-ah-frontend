@@ -3,7 +3,6 @@ import React from 'react';
 export const DisplayTags = (props) => {
   const { articles } = props;
   let keyTrack = 0;
-  console.log(articles);
   return (
     <div className="tags-display">
       {articles.tagList.map((tag) => {

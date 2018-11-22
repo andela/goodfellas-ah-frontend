@@ -60,6 +60,10 @@
       position: absolute;
       bottom: 0;
       display: flex;
+      a{
+        bottom: 0;
+        margin: 0;
+      }
       img{
         margin-top: 15px;
         height: 30px;
