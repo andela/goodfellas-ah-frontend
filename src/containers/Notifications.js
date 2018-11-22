@@ -55,7 +55,13 @@ export class Notifications extends Component {
                     );
                   case 'favoriteArticleComment':
                     return (
-                      <div className="row notification-result" key={notification.id}>
+                      <div
+                        className="row notification-result"
+                        key={notification.id}
+                        onClick={() => {
+                          this.handleSeen(notification.id);
+                        }}
+                      >
                         <Link to="/article" className="col-md-6 card m-auto">
                          New comment on one of  your favorite article {notification.article.title}
                         </Link>
