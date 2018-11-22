@@ -37,9 +37,10 @@ exports[`Signup UI render features container should render as expected 1`] = `
                 "status": true,
               }
             }
+            handleBlur={[Function]}
             handleChange={[Function]}
             name="firstname"
-            placeholder="Firstname"
+            placeholder="First name"
             touched={
               Object {
                 "confirmPassword": false,
@@ -63,8 +64,9 @@ exports[`Signup UI render features container should render as expected 1`] = `
               <input
                 className="auth-field "
                 id="firstname"
+                onBlur={[Function]}
                 onChange={[Function]}
-                placeholder="Firstname"
+                placeholder="First name"
                 type="text"
                 value=""
               />
@@ -84,9 +86,10 @@ exports[`Signup UI render features container should render as expected 1`] = `
                 "status": true,
               }
             }
+            handleBlur={[Function]}
             handleChange={[Function]}
             name="lastname"
-            placeholder="Lastname"
+            placeholder="Last name"
             touched={
               Object {
                 "confirmPassword": false,
@@ -110,8 +113,9 @@ exports[`Signup UI render features container should render as expected 1`] = `
               <input
                 className="auth-field "
                 id="lastname"
+                onBlur={[Function]}
                 onChange={[Function]}
-                placeholder="Lastname"
+                placeholder="Last name"
                 type="text"
                 value=""
               />
@@ -131,9 +135,10 @@ exports[`Signup UI render features container should render as expected 1`] = `
                 "status": true,
               }
             }
+            handleBlur={[Function]}
             handleChange={[Function]}
             name="email"
-            placeholder="E-mail"
+            placeholder="Email"
             touched={
               Object {
                 "confirmPassword": false,
@@ -157,8 +162,9 @@ exports[`Signup UI render features container should render as expected 1`] = `
               <input
                 className="auth-field "
                 id="email"
+                onBlur={[Function]}
                 onChange={[Function]}
-                placeholder="E-mail"
+                placeholder="Email"
                 type="text"
                 value=""
               />
@@ -178,6 +184,7 @@ exports[`Signup UI render features container should render as expected 1`] = `
                 "status": true,
               }
             }
+            handleBlur={[Function]}
             handleChange={[Function]}
             name="password"
             placeholder="Password"
@@ -205,6 +212,7 @@ exports[`Signup UI render features container should render as expected 1`] = `
               <input
                 className="auth-field "
                 id="password"
+                onBlur={[Function]}
                 onChange={[Function]}
                 placeholder="Password"
                 type="password"
@@ -226,6 +234,7 @@ exports[`Signup UI render features container should render as expected 1`] = `
                 "status": true,
               }
             }
+            handleBlur={[Function]}
             handleChange={[Function]}
             name="confirmPassword"
             placeholder="Confirm Password"
@@ -253,6 +262,7 @@ exports[`Signup UI render features container should render as expected 1`] = `
               <input
                 className="auth-field "
                 id="confirmPassword"
+                onBlur={[Function]}
                 onChange={[Function]}
                 placeholder="Confirm Password"
                 type="password"

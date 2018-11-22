@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { signin, clearSigninError } from '../actions/authActions';
+import { signin } from '../actions/authActions';
 import validateAuth from '../lib/validation';
 import AuthInput from '../components/shared/AuthInput';
 import Button from '../components/shared/Button';
@@ -21,11 +21,6 @@ const fieldNames = ['email', 'password'];
 
 class Signin extends Component {
   state = initialState;
-
-  componentDidMount = () => {
-    const { clearSigninError: clearError } = this.props;
-    clearError();
-  }
 
   handleSubmit = async (event) => {
     event.preventDefault();
@@ -106,4 +101,4 @@ function mapStateToProps(state) {
   return { errorMessage: state.auth.errorMessage };
 }
 
-export default connect(mapStateToProps, { signin, clearSigninError })(Signin);
+export default connect(mapStateToProps, { signin })(Signin);

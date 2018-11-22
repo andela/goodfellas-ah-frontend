@@ -36,6 +36,7 @@ exports[`SocialAuth UI render features container should render as expected 1`] =
             },
           }
         }
+        showSignError={[Function]}
         socialSignin={[Function]}
       >
         <div>
