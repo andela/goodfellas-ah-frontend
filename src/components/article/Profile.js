@@ -1,15 +1,17 @@
 import React from 'react';
 import moment from 'moment';
+import { Link, withRouter } from 'react-router-dom';
 import parser from 'react-html-parser';
 import icons from '../../assets/icons.svg';
 import { userPlaceholderImage, articlePlaceholderImage, filterReactions } from '../../mixin';
 
-export default (props) => {
+export const Profile = (props) => {
   const {
     article,
     author,
     authorImage,
-    ownProfile,
+    userId,
+    history,
   } = props;
 
   const filterArticle = () => {
@@ -24,11 +26,11 @@ export default (props) => {
   };
 
   return (
-    <div className="profile-article hoverable">
-      <img src={authorImage || userPlaceholderImage} alt="user" className="profile-article_user-img" />
+    <div onClick={() => history.push(`/articles/${article.slug}`)} className="profile-article hoverable">
+      <Link onClick={(e) => e.stopPropagation()} className="profile-article_user-img" to={`/user/profile/${article.authorId}`}><img src={authorImage || userPlaceholderImage} alt="user" /></Link>
       <div className="profile-article_img" style={{ backgroundImage: `url(${article.image || articlePlaceholderImage})` }} />
-      <h3>{ parser(article.title) }</h3>
-      <p className="profile-article_username">{author}</p>
+      <h3>{ article.title }</h3>
+      <Link onClick={(e) => e.stopPropagation()} to={`/user/profile/${article.authorId}`} className="profile-article_username p">{author}</Link>
       <p className="profile-article_date">{moment(article.createdAt).format('ll')}</p>
       <p className="profile-article_read-time">{`${article.read_time} read`}</p>
       <p className="profile-article_description">{parser(filterArticle())}</p>
@@ -46,8 +48,10 @@ export default (props) => {
           </svg>
         </p>
         <p className="comments">{`${article.comments.length || 0} comments`}</p>
-        {ownProfile && <p className="edit">Edit Article</p>}
+        {userId === article.authorId && <Link onClick={(e) => e.stopPropagation()} to={`/articles/edit/${article.slug}`} className="edit p hoverable">Edit Article</Link>}
       </div>
     </div>
   );
 };
+
+export default withRouter(Profile);

@@ -3,7 +3,9 @@ import ProfileArticle from './Profile';
 import icons from '../../assets/icons.svg';
 
 const ProfileArticleList = (props) => {
-  const { articles, userFullName, ownProfile } = props;
+  const {
+    articles, userFullName, ownProfile, userId,
+  } = props;
   return (
     <Fragment>
       {
@@ -16,7 +18,7 @@ const ProfileArticleList = (props) => {
               <span>{ownProfile ? 'You have not posted any articles.' : `${userFullName} has not posted any articles.`}</span>
             </div>
           )
-          : articles.map((article) => <ProfileArticle ownProfile={ownProfile} key={article.id} author={props.author} authorImage={props.authorImage} type="article" article={article} />)
+          : articles.map((article) => <ProfileArticle userId={userId} key={article.id} author={props.author} authorImage={props.authorImage} type="article" article={article} />)
       }
     </Fragment>);
 };

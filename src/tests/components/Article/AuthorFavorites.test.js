@@ -5,7 +5,7 @@ import * as profileData from '../../mock/profileData';
 
 const setup = () => {
   const props = {
-    articles: profileData.articles.data.articles,
+    articles: profileData.favoritedArticles.data.articles,
     userFullName: 'Afeez Awoyemi',
   };
 

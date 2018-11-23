@@ -6,9 +6,8 @@ const ProfileArticleList = (props) => {
   const {
     articles,
     userFullName,
-    author,
-    authorImage,
     ownProfile,
+    userId,
   } = props;
   return (
     <Fragment>
@@ -22,7 +21,7 @@ const ProfileArticleList = (props) => {
               <span>{ownProfile ? 'You have not favorited any articles.' : `${userFullName} has not favorited any articles.`}</span>
             </div>
           )
-          : articles.map((article) => <ProfileArticle key={article.id} author={author} authorImage={authorImage} type="favoriteArticle" article={article.article} />)
+          : articles.map((article) => <ProfileArticle userId={userId} key={article.id} author={`${article.article.user.firstname} ${article.article.user.lastname}`} authorImage={article.article.user.profile.image} type="favoriteArticle" article={article.article} />)
       }
     </Fragment>);
 };

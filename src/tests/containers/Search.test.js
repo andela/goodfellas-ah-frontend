@@ -108,20 +108,13 @@ beforeEach(() => {
     </Root>,
   );
 
-  searchMount = mount(
+  searchMount = shallow(
     <SearchArticlesContainer
       searchResults={articles.articles.searchResults}
       searchError={articles.articles.searchError}
     />,
   );
 });
-
-const wrapped = shallow(
-  <SearchArticlesContainer
-    searchResults={articles.articles.searchResults}
-    searchError={articles.articles.searchError}
-  />,
-);
 
 afterEach(() => wrapper.unmount());
 
