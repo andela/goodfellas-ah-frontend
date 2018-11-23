@@ -137,7 +137,7 @@ export class Header extends Component {
                             alt=""
                           />
                           <ul ref="myDropdown" className="dropdown-menu">
-                            <Link to="/createArticle">New article</Link>
+                            <Link to="/articles/create">New article</Link>
                             <Link to="/drafts">Drafts</Link>
                             <Link id="articles-link-header-auth" onClick={() => switchView('Articles')} to="/user/profile">Your stories</Link>
                             <Link to="/stats">Stats</Link>
@@ -274,7 +274,7 @@ export class Header extends Component {
                             alt=""
                           />
                           <ul ref="myDropdown" className="dropdown-menu">
-                            <Link to="/createArticle">New article</Link>
+                            <Link to="/articles/create">New article</Link>
                             <Link to="/drafts">Drafts</Link>
                             <Link onClick={() => switchView('Articles')} to="/user/profile">Your stories</Link>
                             <Link to="/stats">Stats</Link>

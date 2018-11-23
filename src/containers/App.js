@@ -38,7 +38,7 @@ const Articles = () => (
       <Route path="/articles/search" component={SearchArticles} />
       <Route path="/articles/create" component={authenticate(CreateArticle)} />
       <Route path="/articles/home" component={GetAllArticles} />
-      <Route path="/articles/edit/:slug" component={UpdateArticle} />
+      <Route path="/articles/edit/:slug" component={authenticate(UpdateArticle)} />
       <Route path="/articles/:slug" component={SingleArticle} />
     </Switch>
   </div>

@@ -1,3 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Create Articles UI render features view should render as expected 1`] = `<imageUploader />`;
+exports[`Create Articles UI render features view should render as expected 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <MemoryRouter>
+    <Connect(ImageUploader)
+      imageUpload={[MockFunction]}
+      status={
+        Object {
+          "error": false,
+          "success": true,
+        }
+      }
+      store={
+        Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        }
+      }
+      uploadedImage="url"
+    />
+  </MemoryRouter>
+</Provider>
+`;
