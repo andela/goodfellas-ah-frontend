@@ -14,7 +14,6 @@ export class SocialAuth extends Component {
       history,
     } = this.props;
     const { token, userId, error } = queryString.parse(history.location.search);
-    // console.log(history.location.search);
     if (error === 'true') {
       showSocialSigninError(socialAuthError, () => history.push('/auth/signin'));
     } else {
