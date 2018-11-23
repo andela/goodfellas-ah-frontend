@@ -14,6 +14,7 @@ import ResetPasswordPage from '../views/ResetPasswordPage';
 import SearchArticles from '../views/SearchArticles';
 import NotificationPage from '../views/NotificationPage';
 import GetAllArticles from '../views/AllArticles';
+import Tags from '../components/article/Tags';
 import CreateArticle from '../views/CreateArticles';
 import UpdateArticle from '../views/UpdateArticle';
 
@@ -37,6 +38,7 @@ const Auth = () => (
 const Articles = () => (
   <div>
     <Switch>
+      <Route path="/articles/tags/create" component={Tags} />
       <Route path="/articles/search" component={SearchArticles} />
       <Route path="/articles/create" component={authenticate(CreateArticle)} />
       <Route path="/articles/home" component={GetAllArticles} />

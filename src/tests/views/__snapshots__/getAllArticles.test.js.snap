@@ -2,6 +2,6 @@
 
 exports[`ForgotPasswordPageUI render features view should render as expected 1`] = `
 <div>
-  This is the All Articles view
+  This is all articles page
 </div>
 `;

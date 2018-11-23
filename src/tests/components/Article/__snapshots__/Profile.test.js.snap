@@ -146,10 +146,14 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "This is a fine title which I would really love to have",
+          "children": Array [
+            "This is a fine title which I would really love to have",
+          ],
         },
         "ref": null,
-        "rendered": "This is a fine title which I would really love to have",
+        "rendered": Array [
+          "This is a fine title which I would really love to have",
+        ],
         "type": "h3",
       },
       Object {
@@ -193,11 +197,15 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": " this is the fine long body  this is the fine long body ",
+          "children": Array [
+            " this is the fine long body  this is the fine long body ",
+          ],
           "className": "profile-article_description",
         },
         "ref": null,
-        "rendered": " this is the fine long body  this is the fine long body ",
+        "rendered": Array [
+          " this is the fine long body  this is the fine long body ",
+        ],
         "type": "p",
       },
       Object {
@@ -473,10 +481,14 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "This is a fine title which I would really love to have",
+            "children": Array [
+              "This is a fine title which I would really love to have",
+            ],
           },
           "ref": null,
-          "rendered": "This is a fine title which I would really love to have",
+          "rendered": Array [
+            "This is a fine title which I would really love to have",
+          ],
           "type": "h3",
         },
         Object {
@@ -520,11 +532,15 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": " this is the fine long body  this is the fine long body ",
+            "children": Array [
+              " this is the fine long body  this is the fine long body ",
+            ],
             "className": "profile-article_description",
           },
           "ref": null,
-          "rendered": " this is the fine long body  this is the fine long body ",
+          "rendered": Array [
+            " this is the fine long body  this is the fine long body ",
+          ],
           "type": "p",
         },
         Object {

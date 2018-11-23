@@ -41,6 +41,8 @@ exports[`Notification UI render features component should render as expected 1`]
             "searchResults": Array [],
             "singleArticle": null,
             "successMessage": "",
+            "tags": Array [],
+            "tagsError": Array [],
             "user": Object {},
           }
         }

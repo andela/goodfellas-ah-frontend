@@ -11,6 +11,8 @@ const initialState = {
   articleError: '',
   searchResults: [],
   searchError: [],
+  tags: [],
+  tagsError: [],
   profile: {
     loading: true,
     profileView: 'Following',
