@@ -42,6 +42,19 @@ ShallowWrapper {
         >
           somerandombody
         </div>,
+        <div
+          className="article-tags"
+        >
+          <DisplayTags
+            articles={
+              Object {
+                "authorId": 1,
+                "body": "somerandombody",
+                "image": "thhisimage",
+              }
+            }
+          />
+        </div>,
       ],
       "className": "article-container",
     },
@@ -79,6 +92,40 @@ ShallowWrapper {
         ],
         "type": "div",
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <DisplayTags
+            articles={
+              Object {
+                "authorId": 1,
+                "body": "somerandombody",
+                "image": "thhisimage",
+              }
+            }
+          />,
+          "className": "article-tags",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "articles": Object {
+              "authorId": 1,
+              "body": "somerandombody",
+              "image": "thhisimage",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": "div",
+      },
     ],
     "type": "div",
   },
@@ -103,6 +150,19 @@ ShallowWrapper {
             className="article-content"
           >
             somerandombody
+          </div>,
+          <div
+            className="article-tags"
+          >
+            <DisplayTags
+              articles={
+                Object {
+                  "authorId": 1,
+                  "body": "somerandombody",
+                  "image": "thhisimage",
+                }
+              }
+            />
           </div>,
         ],
         "className": "article-container",
@@ -139,6 +199,40 @@ ShallowWrapper {
           "rendered": Array [
             "somerandombody",
           ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <DisplayTags
+              articles={
+                Object {
+                  "authorId": 1,
+                  "body": "somerandombody",
+                  "image": "thhisimage",
+                }
+              }
+            />,
+            "className": "article-tags",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "articles": Object {
+                "authorId": 1,
+                "body": "somerandombody",
+                "image": "thhisimage",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
           "type": "div",
         },
       ],

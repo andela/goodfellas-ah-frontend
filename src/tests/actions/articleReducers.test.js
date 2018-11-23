@@ -201,13 +201,8 @@ describe('Article Reducer', () => {
         searchError: [],
         errorMessage: '',
         articleLoading: false,
-<<<<<<< HEAD
-=======
-        singleArticle: null,
         notification: [],
         notifications: {},
-        articleError: '',
->>>>>>> staging
         ownProfile: {},
         profile: {
           articles: [], favorites: [], followers: [], following: [], loading: true, profile: {}, profileError: '', profileView: 'Following', user: {},
@@ -227,10 +222,8 @@ describe('Article Reducer', () => {
         authenticated: '',
         articleLoading: false,
         error: [],
-        singleArticle: null,
         notification: [],
         notifications: {},
-        articleError: '',
         searchResults: [],
         tags: [],
         tagsError: [],
@@ -262,8 +255,6 @@ describe('Article Reducer', () => {
         notifications: {},
         errorMessage: '',
         articleLoading: false,
-        singleArticle: null,
-        articleError: '',
         ownProfile: {},
         profile: {
           articles: [], favorites: [], followers: [], following: [], loading: true, profile: {}, profileError: '', profileView: 'Following', user: {},
