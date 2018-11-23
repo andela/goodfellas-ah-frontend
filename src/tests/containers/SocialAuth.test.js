@@ -1,28 +1,27 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import Root from '../../root';
-import SocialAuth from '../../containers/SocialAuth';
+import { SocialAuth } from '../../containers/SocialAuth';
 
 let wrapped;
+let wrappedError;
+
 const history = {
   location: {
     search: {
       token: 'token',
-      userId: 'userId',
+      userId: 'userId'
     },
   },
+  push: jest.fn(),
 };
+const socialSignin = (user, callback) => callback(true);
+const socialSigninError = (user, callback) => callback(false);
 
 beforeEach(() => {
-  wrapped = mount(
-    <Root>
-      <SocialAuth history={history} />
-    </Root>,
-  );
+  wrapped = shallow(<SocialAuth socialSignin={socialSignin} history={history} />);
+  wrappedError = shallow(<SocialAuth socialSignin={socialSigninError} history={history} />);
 });
-
-afterEach(() => wrapped.unmount());
 
 describe('SocialAuth UI', () => {
   describe('render features', () => {
@@ -30,9 +29,14 @@ describe('SocialAuth UI', () => {
       const tree = toJson(wrapped);
       expect(tree).toMatchSnapshot();
     });
+  });
 
-    test('should contain a loader', () => {
-      expect(wrapped.exists('.large-spinner')).toEqual(true);
+  describe('SocialAuth Athentication Flow', () => {
+    it('redirects the user into the application when a token is returned', () => {
+      expect(history.push).toBeCalledWith('/user/profile');
+    });
+    it('redirects the user into the application when an error is true', () => {
+      expect(history.push).toBeCalledWith('/auth/signin');
     });
   });
 });

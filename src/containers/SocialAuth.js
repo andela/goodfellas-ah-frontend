@@ -6,7 +6,7 @@ import LargeLoader from '../components/shared/LargeLoader';
 
 const socialAuthError = 'You can\'t login through this platform';
 
-class SocialAuth extends Component {
+export class SocialAuth extends Component {
   componentWillMount() {
     const {
       socialSignin: socialSigninUser,
@@ -14,6 +14,7 @@ class SocialAuth extends Component {
       history,
     } = this.props;
     const { token, userId, error } = queryString.parse(history.location.search);
+    // console.log(history.location.search);
     if (error === 'true') {
       showSocialSigninError(socialAuthError, () => history.push('/auth/signin'));
     } else {
