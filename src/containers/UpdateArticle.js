@@ -9,6 +9,7 @@ import updateArticle from '../actions/updateArticle';
 import { getAnArticle } from '../actions/articleActions';
 import '../styles/views/createArticles.scss';
 import { Loader } from '../components/shared/Loading';
+import icons from '../assets/icons.svg';
 
 
 export class UpdateArticles extends Component {
@@ -65,12 +66,22 @@ export class UpdateArticles extends Component {
 
   render() {
     const handleEditorChange = (text, key) => this.setState({ [key]: text });
-    const { imageUploadStatus, articleLoading } = this.props;
+    const { imageUploadStatus, articleLoading, articleError } = this.props;
     const { title, body } = this.state;
     if (articleLoading) return <Loader />;
+    if (articleError) {
+      return (
+        <div className="no-record centralizer">
+          <svg className="icon">
+            <use xlinkHref={`${icons}#sad`} />
+          </svg>&nbsp;&nbsp;
+          <span>{articleError}</span>
+        </div>
+      );
+    }
     return (
 
-      <div className="article-body">
+      <div className="container article-body">
         <div className="articles-card">
           <div className="article-buttons">
             <button className="btn article-whitebutton" type="submit" onClick={this.handleSubmit}>
@@ -80,18 +91,7 @@ export class UpdateArticles extends Component {
           <ImageUploader imageUploaded={this.imageUploaded} />
 
           <form>
-            <Editor
-              name="title"
-              id="title"
-              text={title}
-              onChange={(e) => handleEditorChange(e, 'title')}
-              options={{
-                placeholder: false,
-                toolbar: {
-                  buttons: ['bold', 'italic', 'underline', 'strikethrough', 'quote', 'anchor', 'h2', 'h3', 'orderedlist'],
-                },
-              }}
-            />
+            <textarea id="title" value={title} onChange={(e) => handleEditorChange(e.target.value, 'title')} />
             {imageUploadStatus.loading ? <Loader /> : (
               <Editor
                 name="body"
@@ -123,13 +123,14 @@ export class UpdateArticles extends Component {
 const mapStateToProps = ({
   imageUploadReducer: { status: imageUploadStatus },
   updateArticleReducer: { status, updatedArticle },
-  articles: { article, articleLoading },
+  articles: { article, articleLoading, articleError },
 }) => ({
   status,
   updatedArticle,
   imageUploadStatus,
   article,
   articleLoading,
+  articleError,
 });
 
 export default connect(mapStateToProps, { updateArticle, getAnArticle })(UpdateArticles);

@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import parser from 'react-html-parser';
 import { getArticles } from '../actions/articleActions';
 import Loading from '../components/shared/Loading';
 import { filterReactions } from '../mixin';
 
 export class Card extends Component {
+  state = {
+    articleLimit: 6,
+  };
+
   componentDidMount() {
     const { getArticles: getAllArticles } = this.props;
     getAllArticles();
   }
-
-  state = {
-    articleLimit: 6,
-  };
 
   sortArticlesByLikes = (articles) => {
     const sortedArticles = articles
@@ -61,55 +62,55 @@ export class Card extends Component {
       const displayedDescription = card.article.description.slice(0, 120);
       const displayedTitle = card.article.title.slice(0, 24);
       return (
-        <div
-          onClick={this.getArticle}
-          className="hero-card"
-          key={card.article.id}
-        >
-          <div className="hero-card-details col-sm-7">
-            <h6>{parser(displayedTitle)}</h6>
-            <p>
-              {displayedDescription}
-              ...
-            </p>
-            <div className="hero-card-author">
-              {card.article.user.profile.image === null ? (
-                <img
-                  src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541581893/Authors%20Haven/user-placeholder.png"
-                  alt="Author Profile"
-                />
-              ) : (
-                <img
-                  src={card.article.user.profile.image}
-                  alt="Author Profile"
-                />
-              )}
-              <p>
-                {card.article.user.firstname} {card.article.user.lastname}
-              </p>
+        <Link key={card.article.id} to={`/articles/${card.article.slug}`}>
+          <div
+            onClick={this.getArticle}
+            className="hero-card"
+          >
+            <div className="hero-card-details col-sm-7">
+              <h6>{parser(displayedTitle)}</h6>
+              {parser(displayedDescription)}
+              <div className="hero-card-author">
+                <Link to={`/user/profile/${card.article.authorId}`}>
+                  {card.article.user.profile.image === null ? (
+                    <img
+                      src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541581893/Authors%20Haven/user-placeholder.png"
+                      alt="Author Profile"
+                    />
+                  ) : (
+                    <img
+                      src={card.article.user.profile.image}
+                      alt="Author Profile"
+                    />
+                  )}
+                  <p>
+                    {card.article.user.firstname} {card.article.user.lastname}
+                  </p>
+                </Link>
+              </div>
             </div>
+            {card.article.image === null ? (
+              <div className="hero-card-image col-sm-5">
+                <img
+                  src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426068/Authors%20Haven/icons8-heart-outline-48-grey.png"
+                  alt=""
+                />
+                <p>{filterReactions(card.article.reactions).likes}</p>
+              </div>
+            ) : (
+              <div
+                style={this.changeBackground(card.article.image)}
+                className="hero-card-image col-sm-5"
+              >
+                <img
+                  src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426068/Authors%20Haven/icons8-heart-outline-48-grey.png"
+                  alt=""
+                />
+                <p>{filterReactions(card.article.reactions).likes}</p>
+              </div>
+            )}
           </div>
-          {card.article.image === null ? (
-            <div className="hero-card-image col-sm-5">
-              <img
-                src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426068/Authors%20Haven/icons8-heart-outline-48-grey.png"
-                alt=""
-              />
-              <p>{filterReactions(card.article.reactions).likes}</p>
-            </div>
-          ) : (
-            <div
-              style={this.changeBackground(card.article.image)}
-              className="hero-card-image col-sm-5"
-            >
-              <img
-                src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426068/Authors%20Haven/icons8-heart-outline-48-grey.png"
-                alt=""
-              />
-              <p>{filterReactions(card.article.reactions).likes}</p>
-            </div>
-          )}
-        </div>
+        </Link>
       );
     });
   };
@@ -121,17 +122,23 @@ export class Card extends Component {
         {articles ? (
           <div className="card-wrapper">
             {this.displayCards(this.displayArticles)}
+            <div>
+              {articles.length <= 6 ? (
+                null
+              ) : (
+                <div onClick={this.handleClick} className="hero-moreArticles row">
+                  <p ref="moreArticles">More Articles</p>
+                  <img
+                    src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426068/Authors%20Haven/icons8-expand-arrow-24.png"
+                    alt=""
+                  />
+                </div>
+              )}
+            </div>
           </div>
         ) : (
           <Loading />
         )}
-        <div onClick={this.handleClick} className="hero-moreArticles row">
-          <p ref="moreArticles">More Articles</p>
-          <img
-            src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426068/Authors%20Haven/icons8-expand-arrow-24.png"
-            alt=""
-          />
-        </div>
       </div>
     );
   }

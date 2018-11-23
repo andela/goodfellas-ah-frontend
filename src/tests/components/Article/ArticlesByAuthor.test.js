@@ -7,6 +7,8 @@ const setup = () => {
   const props = {
     articles: profileData.articles.data.articles,
     userFullName: 'Afeez Awoyemi',
+    userId: 1,
+    ownProfile: true,
   };
 
   const enzymeWrapper = shallow(<ArticlesByAuthor {...props} />);

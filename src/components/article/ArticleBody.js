@@ -1,6 +1,7 @@
 import React from 'react';
 import parser from 'react-html-parser';
 import SideButtons from './SideButtons';
+import DisplayTags from './DisplayTags';
 
 
 const ArticleBody = (props) => {
@@ -11,6 +12,9 @@ const ArticleBody = (props) => {
       <SideButtons article={article} userId={userId} />
       <div className="article-content">
         {parser(body)}
+      </div>
+      <div className="article-tags">
+        <DisplayTags articles={article} />
       </div>
     </div>
   );

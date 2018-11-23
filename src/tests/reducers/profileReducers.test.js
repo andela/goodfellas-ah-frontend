@@ -22,6 +22,7 @@ describe('fetchProfile reducer', () => {
       following: profileData.setProfile[2].data.data.followedUsers,
       articles: profileData.setProfile[3].data.articles,
       favorites: profileData.setProfile[4].data.articles,
+      profileError: '',
     });
   });
   it('should handle PROFILE_NAVIGATION', () => {

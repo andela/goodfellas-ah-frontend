@@ -4,6 +4,7 @@ import publishArticleReducer from './publishArticleReducer';
 import imageUploadReducer from './imageUploadReducer';
 import profileReducer from './profileReducer';
 import articleReducer from './articleReducer';
+import notificationReducer from './notificationReducer';
 import updateArticleReducer from './updateArticleReducer';
 
 export default combineReducers({
@@ -13,4 +14,5 @@ export default combineReducers({
   articles: articleReducer,
   updateArticleReducer,
   profile: profileReducer,
+  notification: notificationReducer,
 });

@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Update Article UI render features view should render as expected 1`] = `
-<div>
-  <_default>
-    <Connect(UpdateArticles) />
-  </_default>
-</div>
-`;

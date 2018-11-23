@@ -70,6 +70,146 @@ const articles = {
         favorite: [],
         star_ratings: [],
       },
+      {
+        favorited: false,
+        favoritesCount: 0,
+        id: 4,
+        slug: 'team-pacey-3',
+        title: 'Team Pacey',
+        description: 'Stressss',
+        body:
+          'Pacey and Dawson snd started out as friends. But here we are. Joey was on her own o. Well not on her own sha but l;et\'s end',
+        image: null,
+        tagList: null,
+        read_time: '1 minute',
+        averageRating: null,
+        authorId: 1,
+        createdAt: '2018-11-07T16:51:35.336Z',
+        updatedAt: '2018-11-07T16:51:35.336Z',
+        bookmarked: [],
+        user: {
+          firstname: 'Jake',
+          lastname: 'Peralta',
+          profile: {
+            image: null,
+          },
+        },
+        reactions: [],
+        favorite: [],
+        star_ratings: [],
+      },
+      {
+        favorited: false,
+        favoritesCount: 0,
+        id: 4,
+        slug: 'team-pacey-3',
+        title: 'Team Pacey',
+        description: 'Stressss',
+        body:
+          'Pacey and Dawson snd started out as friends. But here we are. Joey was on her own o. Well not on her own sha but l;et\'s end',
+        image: null,
+        tagList: null,
+        read_time: '1 minute',
+        averageRating: null,
+        authorId: 1,
+        createdAt: '2018-11-07T16:51:35.336Z',
+        updatedAt: '2018-11-07T16:51:35.336Z',
+        bookmarked: [],
+        user: {
+          firstname: 'Jake',
+          lastname: 'Peralta',
+          profile: {
+            image: null,
+          },
+        },
+        reactions: [],
+        favorite: [],
+        star_ratings: [],
+      },
+      {
+        favorited: false,
+        favoritesCount: 0,
+        id: 4,
+        slug: 'team-pacey-3',
+        title: 'Team Pacey',
+        description: 'Stressss',
+        body:
+          'Pacey and Dawson snd started out as friends. But here we are. Joey was on her own o. Well not on her own sha but l;et\'s end',
+        image: null,
+        tagList: null,
+        read_time: '1 minute',
+        averageRating: null,
+        authorId: 1,
+        createdAt: '2018-11-07T16:51:35.336Z',
+        updatedAt: '2018-11-07T16:51:35.336Z',
+        bookmarked: [],
+        user: {
+          firstname: 'Jake',
+          lastname: 'Peralta',
+          profile: {
+            image: null,
+          },
+        },
+        reactions: [],
+        favorite: [],
+        star_ratings: [],
+      },
+      {
+        favorited: false,
+        favoritesCount: 0,
+        id: 4,
+        slug: 'team-pacey-3',
+        title: 'Team Pacey',
+        description: 'Stressss',
+        body:
+          'Pacey and Dawson snd started out as friends. But here we are. Joey was on her own o. Well not on her own sha but l;et\'s end',
+        image: null,
+        tagList: null,
+        read_time: '1 minute',
+        averageRating: null,
+        authorId: 1,
+        createdAt: '2018-11-07T16:51:35.336Z',
+        updatedAt: '2018-11-07T16:51:35.336Z',
+        bookmarked: [],
+        user: {
+          firstname: 'Jake',
+          lastname: 'Peralta',
+          profile: {
+            image: null,
+          },
+        },
+        reactions: [],
+        favorite: [],
+        star_ratings: [],
+      },
+      {
+        favorited: false,
+        favoritesCount: 0,
+        id: 4,
+        slug: 'team-pacey-3',
+        title: 'Team Pacey',
+        description: 'Stressss',
+        body:
+          'Pacey and Dawson snd started out as friends. But here we are. Joey was on her own o. Well not on her own sha but l;et\'s end',
+        image: null,
+        tagList: null,
+        read_time: '1 minute',
+        averageRating: null,
+        authorId: 1,
+        createdAt: '2018-11-07T16:51:35.336Z',
+        updatedAt: '2018-11-07T16:51:35.336Z',
+        bookmarked: [],
+        user: {
+          firstname: 'Jake',
+          lastname: 'Peralta',
+          profile: {
+            image: null,
+          },
+        },
+        reactions: [],
+        favorite: [],
+        star_ratings: [],
+      },
     ],
     pages: 2,
   },
@@ -78,7 +218,6 @@ const articles = {
 
 let wrapper;
 let wrapped;
-let wrapperCard;
 let mockGetArticles;
 beforeEach(() => {
   wrapper = mount(
@@ -91,14 +230,6 @@ beforeEach(() => {
 
   mockGetArticles = jest.fn();
   wrapped = shallow(
-    <Card
-      getArticles={mockGetArticles}
-      articles={articles.articles.articles}
-      error={articles.error}
-    />,
-  );
-
-  wrapperCard = mount(
     <Card
       getArticles={mockGetArticles}
       articles={articles.articles.articles}
@@ -127,9 +258,10 @@ describe('Article Card Functionality', () => {
   });
 
   it('should click more articles button', () => {
-    wrapperCard.find('.hero-moreArticles').simulate('click');
+    const moreArticlesButton = wrapped.find('.hero-moreArticles');
+    moreArticlesButton.simulate('click');
     expect(mockGetArticles).toBeCalled();
-    wrapperCard.find('.hero-moreArticles').simulate('click');
+    wrapped.find('.hero-moreArticles').simulate('click');
     expect(mockGetArticles).toBeCalled();
   });
 });

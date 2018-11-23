@@ -8,13 +8,14 @@ import ImageUploader from '../components/articles/imageUpload';
 import publishArticle from '../actions/publishArticle';
 import '../styles/views/createArticles.scss';
 import { Loader } from '../components/shared/Loading';
-
+import icons from '../assets/icons.svg';
 
 export class CreateArticles extends Component {
   state = {
     title: '',
     body: '',
     imageLoad: false,
+    image: '',
   }
 
   componentDidUpdate(prevProps) {
@@ -27,20 +28,22 @@ export class CreateArticles extends Component {
     }
   }
 
-
-  handleChange = (event) => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
-  }
-
   generateImageTag = (url) => `<img class="inline-image" src="${url}" />`
 
   imageUploaded = (url) => {
     const imageHtml = this.generateImageTag(url);
+    const { image } = this.state;
     this.setState((prevState) => ({ body: prevState.body + imageHtml, imageLoad: false }));
+
+    if (image.length < 1) {
+      this.setState({
+        image: url,
+      });
+    }
   }
 
   handleSubmit = (event) => {
+    const { history } = this.props;
     event.preventDefault();
     const { title, body } = this.state;
     if (!title || title === '<p><br></p>') return swal('Please add a title', 'Your article needs to have a title', 'warning');
@@ -49,16 +52,28 @@ export class CreateArticles extends Component {
       ...this.state,
       description: body.split(' ').slice(0, 10).join(' '),
     };
-    // eslint-disable-next-line react/destructuring-assignment
-    this.props.publishArticle(articlePayload);
+    return history.push({
+      pathname: '/articles/tags/create',
+      state: { articlePayload },
+    });
   }
 
   render() {
     const handleEditorChange = (text, key) => this.setState({ [key]: text });
-    const { imageUploadStatus } = this.props;
+    const { imageUploadStatus, error } = this.props;
     const { title, body } = this.state;
+    if (error) {
+      return (
+        <div className="no-record centralizer">
+          <svg className="icon">
+            <use xlinkHref={`${icons}#sad`} />
+          </svg>&nbsp;&nbsp;
+          <span>{error}</span>
+        </div>
+      );
+    }
     return (
-      <div className="article-body">
+      <div className="container article-body">
         <div className="articles-card">
           <div className="article-buttons">
             <button className="btn article-whitebutton" type="submit" onClick={this.handleSubmit}>
@@ -68,18 +83,7 @@ export class CreateArticles extends Component {
           <ImageUploader imageUploaded={this.imageUploaded} />
 
           <form>
-            <Editor
-              name="title"
-              id="title"
-              data-placeholder="Title"
-              text={title}
-              onChange={(e) => handleEditorChange(e, 'title')}
-              options={{
-                toolbar: {
-                  buttons: ['bold', 'italic', 'underline', 'strikethrough', 'quote', 'anchor', 'h2', 'h3', 'orderedlist'],
-                },
-              }}
-            />
+            <textarea id="title" value={title} placeholder="Title" onChange={(e) => handleEditorChange(e.target.value, 'title')} />
             {imageUploadStatus.loading ? <Loader /> : (
               <Editor
                 name="body"
@@ -110,11 +114,12 @@ export class CreateArticles extends Component {
 
 const mapStateToProps = ({
   imageUploadReducer: { status: imageUploadStatus },
-  publishArticleReducer: { status, publishedArticle },
+  publishArticleReducer: { status, publishedArticle, error },
 }) => ({
   status,
   publishedArticle,
   imageUploadStatus,
+  error,
 });
 
 export default connect(mapStateToProps, { publishArticle })(CreateArticles);

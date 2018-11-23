@@ -4,7 +4,21 @@ exports[`components ProfileToolbar component should render as expected 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <_default
-    handleClick={[MockFunction]}
+    handleClick={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            undefined,
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
     type="follower"
     user={
       Object {

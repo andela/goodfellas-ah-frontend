@@ -6,9 +6,7 @@ import Search, { SearchArticlesContainer } from '../../containers/SearchArticles
 import Root from '../../root';
 
 let wrapper;
-// let wrapped;
 let searchMount;
-// let mockGetArticles;
 
 const articles = {
   articles: {
@@ -110,14 +108,13 @@ beforeEach(() => {
     </Root>,
   );
 
-  searchMount = mount(
+  searchMount = shallow(
     <SearchArticlesContainer
-      searchResults={articles.articles.articles}
-      searchError={articles.error}
+      searchResults={articles.articles.searchResults}
+      searchError={articles.articles.searchError}
     />,
   );
 });
-
 
 afterEach(() => wrapper.unmount());
 
@@ -161,8 +158,8 @@ describe('Search Functionality', () => {
 
   it('should trigger ComponentWillReceiveProps articles', () => {
     searchMount.setProps({
-      searchResults: [articles.articles.searchResults],
-      searchError: [undefined],
+      searchResults: articles.articles.searchResults,
+      searchError: false,
     });
   });
 });

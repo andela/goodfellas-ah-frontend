@@ -3,7 +3,19 @@
   padding: 10px;
   justify-content: center;
   flex-wrap: wrap;
-  @media only screen and (max-width: 900px) {
+  a{
+    display: flex;
+    flex-basis: 27vw;
+    padding: 0px;
+    margin: 20px 20px;
+    &:hover{
+      text-decoration: none;
+    }
+    @media only screen and (max-width: 900px) {
+    width: 100%;
+    flex-basis: 100vw;
+    margin: 20px 0;
+  }
   }
 }
 
@@ -51,9 +63,14 @@
       position: absolute;
       bottom: 0;
       display: flex;
+      a{
+        bottom: 0;
+        margin: 0;
+      }
       img{
         margin-top: 15px;
         height: 30px;
+        width: 30px;
         border-radius: 50%;
       }
       p{
