@@ -4,14 +4,13 @@ import SideButtons from './SideButtons';
 
 
 const ArticleBody = (props) => {
-  const { article } = props;
-  const { image, body } = article;
+  const { article, userId } = props;
+  const { body } = article;
   return (
     <div className="article-container">
-      <img className="article-image" src={image} alt="" />
-      <SideButtons article={article} />
-      <div className="article-content">g
-        <p>{parser(body)}</p>
+      <SideButtons article={article} userId={userId} />
+      <div className="article-content">
+        {parser(body)}
       </div>
     </div>
   );
