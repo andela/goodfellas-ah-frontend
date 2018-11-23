@@ -29,6 +29,8 @@ describe('create artcicle container test suite', () => {
 
   const history = createMemoryHistory('/tag');
   const wrapper = shallow(<CreateArticles history={history} {...props} />);
+  const error = true;
+  const wrapped = shallow(<CreateArticles {...props} error={error} />);
 
 
   it('renders properly when mounted', () => {
@@ -76,15 +78,36 @@ describe('create artcicle container test suite', () => {
     expect(preventDefault).toBeCalled();
   });
   it('should handle change', () => {
-    const instance = wrapper.instance();
-    instance.handleChange({
+    const instance = wrapped.instance();
+    instance.props = {
+      error: true,
+      ...props,
+    };
+
+    const textArea = wrapper.find('textarea');
+
+    textArea.simulate('change', {
       target: {
-        name: 'body',
+        name: 'title',
         value: 'test',
       },
     });
-    instance.forceUpdate();
-    expect(instance.state.body).toEqual('test');
+  });
+  it('should handle change', () => {
+    const instance = wrapped.instance();
+    instance.props = {
+      error: true,
+      ...props,
+    };
+
+    const textArea = wrapper.find('.editable');
+
+    textArea.simulate('change', {
+      target: {
+        name: 'title',
+        value: 'test',
+      },
+    });
   });
   it('should call componentDidUpdate', () => {
     const props1 = {

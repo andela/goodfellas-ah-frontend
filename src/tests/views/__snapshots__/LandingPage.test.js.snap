@@ -1,7 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Landing Page UI render features container should render as expected 1`] = `
-<_default>
+<_default
+  initialState={
+    Object {
+      "auth": Object {
+        "authenticated": null,
+        "ownProfile": Object {
+          "userId": 1,
+        },
+        "user": null,
+        "userId": null,
+      },
+    }
+  }
+>
   <Provider
     store={
       Object {
@@ -77,12 +90,51 @@ exports[`Landing Page UI render features container should render as expected 1`]
                           <Header
                             auth={null}
                             dispatch={[Function]}
+                            getNotification={[Function]}
+                            inAppStatus={
+                              Object {
+                                "articleError": "",
+                                "articleLoading": false,
+                                "articles": Array [],
+                                "authenticated": "",
+                                "error": Array [],
+                                "errorMessage": "",
+                                "notification": Array [],
+                                "notifications": Object {},
+                                "ownProfile": Object {},
+                                "profile": Object {
+                                  "articles": Array [],
+                                  "favorites": Array [],
+                                  "followers": Array [],
+                                  "following": Array [],
+                                  "loading": true,
+                                  "profile": Object {},
+                                  "profileError": "",
+                                  "profileView": "Following",
+                                  "user": Object {},
+                                },
+                                "searchError": Array [],
+                                "searchResults": Array [],
+                                "singleArticle": null,
+                                "successMessage": "",
+                                "tags": Array [],
+                                "tagsError": Array [],
+                                "user": Object {},
+                              }
+                            }
+                            notifications={Object {}}
                             parentComponent="landingpage"
-                            profile={null}
+                            profile={
+                              Object {
+                                "userId": 1,
+                              }
+                            }
                             profileNavigation={[Function]}
                             search={[Function]}
                             searchError={Array []}
                             searchResults={Array []}
+                            seenNotification={[Function]}
+                            setNotification={[Function]}
                             signout={[Function]}
                           >
                             <div>

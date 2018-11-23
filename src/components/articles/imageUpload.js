@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import imageUpload from '../../actions/imageUpload';
 import cameraIccon from '../../assets/cameraIccon.png';
 
-class ImageUploader extends Component {
+export class ImageUploader extends Component {
   handleChange = async (e) => {
     const { imageUploaded } = this.props;
     const file = e.target.files;

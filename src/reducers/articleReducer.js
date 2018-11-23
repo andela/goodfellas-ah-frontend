@@ -19,6 +19,8 @@ export default (state = initialState, action) => {
       return { ...state, tags: action.payload };
     case types.ADD_TAGS_ERROR:
       return { ...state, tagsError: action.payload };
+    case types.ARTICLE_LOADING:
+      return { ...state, articleLoading: action.payload };
     default:
       return state;
   }

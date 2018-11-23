@@ -157,6 +157,8 @@ describe('Article Reducer', () => {
         },
         successMessage: '',
         user: {},
+        notification: [],
+        notifications: {},
       };
       expect(articleReducer(undefined, action)).toEqual(initialState);
     });
@@ -183,6 +185,8 @@ describe('Article Reducer', () => {
         },
         successMessage: '',
         user: {},
+        notification: [],
+        notifications: {},
       };
       expect(articleReducer(undefined, action)).toEqual(expectedState);
     });
@@ -202,6 +206,8 @@ describe('Article Reducer', () => {
         errorMessage: '',
         articleLoading: false,
         singleArticle: null,
+        notification: [],
+        notifications: {},
         articleError: '',
         ownProfile: {},
         profile: {
@@ -223,6 +229,8 @@ describe('Article Reducer', () => {
         articleLoading: false,
         error: [],
         singleArticle: null,
+        notification: [],
+        notifications: {},
         articleError: '',
         searchResults: [],
         tags: [],
@@ -251,6 +259,8 @@ describe('Article Reducer', () => {
         tags: [],
         tagsError: [],
         searchError: [],
+        notification: [],
+        notifications: {},
         errorMessage: '',
         articleLoading: false,
         singleArticle: null,
