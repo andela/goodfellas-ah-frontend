@@ -2,7 +2,7 @@
 
 exports[`create artcicle container test suite render container should render as expected 1`] = `
 <div
-  className="article-body"
+  className="container article-body"
 >
   <div
     className="articles-card"
@@ -22,30 +22,11 @@ exports[`create artcicle container test suite render container should render as 
       imageUploaded={[Function]}
     />
     <form>
-      <ReactMediumEditor
-        data-placeholder="Title"
+      <textarea
         id="title"
-        name="title"
         onChange={[Function]}
-        options={
-          Object {
-            "toolbar": Object {
-              "buttons": Array [
-                "bold",
-                "italic",
-                "underline",
-                "strikethrough",
-                "quote",
-                "anchor",
-                "h2",
-                "h3",
-                "orderedlist",
-              ],
-            },
-          }
-        }
-        tag="div"
-        text="some title"
+        placeholder="Title"
+        value="some title"
       />
       <ReactMediumEditor
         className="editable"
@@ -139,30 +120,11 @@ ShallowWrapper {
             imageUploaded={[Function]}
           />
           <form>
-            <ReactMediumEditor
-              data-placeholder="Title"
+            <textarea
               id="title"
-              name="title"
               onChange={[Function]}
-              options={
-                Object {
-                  "toolbar": Object {
-                    "buttons": Array [
-                      "bold",
-                      "italic",
-                      "underline",
-                      "strikethrough",
-                      "quote",
-                      "anchor",
-                      "h2",
-                      "h3",
-                      "orderedlist",
-                    ],
-                  },
-                }
-              }
-              tag="div"
-              text=""
+              placeholder="Title"
+              value=""
             />
             <ReactMediumEditor
               className="editable"
@@ -203,7 +165,7 @@ ShallowWrapper {
           </button>
         </div>,
       ],
-      "className": "article-body",
+      "className": "container article-body",
     },
     "ref": null,
     "rendered": Array [
@@ -228,30 +190,11 @@ ShallowWrapper {
               imageUploaded={[Function]}
             />,
             <form>
-              <ReactMediumEditor
-                data-placeholder="Title"
+              <textarea
                 id="title"
-                name="title"
                 onChange={[Function]}
-                options={
-                  Object {
-                    "toolbar": Object {
-                      "buttons": Array [
-                        "bold",
-                        "italic",
-                        "underline",
-                        "strikethrough",
-                        "quote",
-                        "anchor",
-                        "h2",
-                        "h3",
-                        "orderedlist",
-                      ],
-                    },
-                  }
-                }
-                tag="div"
-                text=""
+                placeholder="Title"
+                value=""
               />
               <ReactMediumEditor
                 className="editable"
@@ -332,30 +275,11 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                <ReactMediumEditor
-                  data-placeholder="Title"
+                <textarea
                   id="title"
-                  name="title"
                   onChange={[Function]}
-                  options={
-                    Object {
-                      "toolbar": Object {
-                        "buttons": Array [
-                          "bold",
-                          "italic",
-                          "underline",
-                          "strikethrough",
-                          "quote",
-                          "anchor",
-                          "h2",
-                          "h3",
-                          "orderedlist",
-                        ],
-                      },
-                    }
-                  }
-                  tag="div"
-                  text=""
+                  placeholder="Title"
+                  value=""
                 />,
                 <ReactMediumEditor
                   className="editable"
@@ -389,33 +313,16 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "class",
+                "nodeType": "host",
                 "props": Object {
-                  "data-placeholder": "Title",
                   "id": "title",
-                  "name": "title",
                   "onChange": [Function],
-                  "options": Object {
-                    "toolbar": Object {
-                      "buttons": Array [
-                        "bold",
-                        "italic",
-                        "underline",
-                        "strikethrough",
-                        "quote",
-                        "anchor",
-                        "h2",
-                        "h3",
-                        "orderedlist",
-                      ],
-                    },
-                  },
-                  "tag": "div",
-                  "text": "",
+                  "placeholder": "Title",
+                  "value": "",
                 },
                 "ref": null,
                 "rendered": null,
-                "type": [Function],
+                "type": "textarea",
               },
               Object {
                 "instance": null,
@@ -513,30 +420,11 @@ ShallowWrapper {
               imageUploaded={[Function]}
             />
             <form>
-              <ReactMediumEditor
-                data-placeholder="Title"
+              <textarea
                 id="title"
-                name="title"
                 onChange={[Function]}
-                options={
-                  Object {
-                    "toolbar": Object {
-                      "buttons": Array [
-                        "bold",
-                        "italic",
-                        "underline",
-                        "strikethrough",
-                        "quote",
-                        "anchor",
-                        "h2",
-                        "h3",
-                        "orderedlist",
-                      ],
-                    },
-                  }
-                }
-                tag="div"
-                text=""
+                placeholder="Title"
+                value=""
               />
               <ReactMediumEditor
                 className="editable"
@@ -577,7 +465,7 @@ ShallowWrapper {
             </button>
           </div>,
         ],
-        "className": "article-body",
+        "className": "container article-body",
       },
       "ref": null,
       "rendered": Array [
@@ -602,30 +490,11 @@ ShallowWrapper {
                 imageUploaded={[Function]}
               />,
               <form>
-                <ReactMediumEditor
-                  data-placeholder="Title"
+                <textarea
                   id="title"
-                  name="title"
                   onChange={[Function]}
-                  options={
-                    Object {
-                      "toolbar": Object {
-                        "buttons": Array [
-                          "bold",
-                          "italic",
-                          "underline",
-                          "strikethrough",
-                          "quote",
-                          "anchor",
-                          "h2",
-                          "h3",
-                          "orderedlist",
-                        ],
-                      },
-                    }
-                  }
-                  tag="div"
-                  text=""
+                  placeholder="Title"
+                  value=""
                 />
                 <ReactMediumEditor
                   className="editable"
@@ -706,30 +575,11 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <ReactMediumEditor
-                    data-placeholder="Title"
+                  <textarea
                     id="title"
-                    name="title"
                     onChange={[Function]}
-                    options={
-                      Object {
-                        "toolbar": Object {
-                          "buttons": Array [
-                            "bold",
-                            "italic",
-                            "underline",
-                            "strikethrough",
-                            "quote",
-                            "anchor",
-                            "h2",
-                            "h3",
-                            "orderedlist",
-                          ],
-                        },
-                      }
-                    }
-                    tag="div"
-                    text=""
+                    placeholder="Title"
+                    value=""
                   />,
                   <ReactMediumEditor
                     className="editable"
@@ -763,33 +613,16 @@ ShallowWrapper {
                 Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "class",
+                  "nodeType": "host",
                   "props": Object {
-                    "data-placeholder": "Title",
                     "id": "title",
-                    "name": "title",
                     "onChange": [Function],
-                    "options": Object {
-                      "toolbar": Object {
-                        "buttons": Array [
-                          "bold",
-                          "italic",
-                          "underline",
-                          "strikethrough",
-                          "quote",
-                          "anchor",
-                          "h2",
-                          "h3",
-                          "orderedlist",
-                        ],
-                      },
-                    },
-                    "tag": "div",
-                    "text": "",
+                    "placeholder": "Title",
+                    "value": "",
                   },
                   "ref": null,
                   "rendered": null,
-                  "type": [Function],
+                  "type": "textarea",
                 },
                 Object {
                   "instance": null,

@@ -8,6 +8,7 @@ import { fetchProfile, editProfile } from '../actions/profileActions';
 import TextBox from '../components/shared/TextBox';
 import { spinner } from '../mixin';
 import icons from '../assets/icons.svg';
+import NotificationSettings from '../components/NotificationSettings';
 
 export class EditProfile extends Component {
   state = {
@@ -16,7 +17,7 @@ export class EditProfile extends Component {
     username: '',
     bio: '',
     updating: false,
-  }
+  };
 
   componentDidMount = () => {
     const { fetchProfile: profileFetch, user } = this.props;
@@ -28,7 +29,7 @@ export class EditProfile extends Component {
         username: profileStore.profile.username,
       });
     }
-  }
+  };
 
   componentDidUpdate = (prevProps) => {
     const { profileStore } = this.props;
@@ -38,21 +39,21 @@ export class EditProfile extends Component {
     if (prevProps.profileStore.profile.bio !== profileStore.profile.bio) {
       this.setState({ bio: profileStore.profile.bio });
     }
-  }
+  };
 
   imageRead = (file, image) => {
     this.setState({
       profileImage: image,
       profileImageFile: file,
     });
-  }
+  };
 
   resetImage = () => {
     this.setState({
       profileImage: '',
       profileImageFile: '',
     });
-  }
+  };
 
   resetProfile = (e) => {
     const { history } = this.props;
@@ -78,21 +79,18 @@ export class EditProfile extends Component {
       swal('Success', response.success, 'success');
     }
     if (response.error) swal('Error', response.error, 'error');
-  }
+  };
 
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
     });
-  }
+  };
 
   render() {
     const { profileStore } = this.props;
     const {
-      profileImage,
-      username,
-      bio,
-      updating,
+      profileImage, username, bio, updating,
     } = this.state;
 
     if (!Object.keys(profileStore.profile).length) {
@@ -102,25 +100,30 @@ export class EditProfile extends Component {
             <div>
               <svg className="icon">
                 <use xlinkHref={`${icons}#sad`} />
-              </svg>&nbsp;&nbsp;
+              </svg>
+              &nbsp;&nbsp;
               <span>{profileStore.profileError}</span>
             </div>
-          </div>);
+          </div>
+        );
       }
       return <Loading />;
     }
     const fullName = `${profileStore.user.firstname} ${profileStore.user.lastname}`;
     return (
-      <form className="edit-profile_form" onSubmit={this.updateProfile} encType="multipart/form-data">
-        <ProfileImageUploader name="image" imageRead={this.imageRead} canReset={!!profileImage} resetImage={this.resetImage} profileImage={profileImage || profileStore.profile.image} />
-        <h3 id="user-name" className="username">{fullName}</h3>
-        <InputBox handleChange={this.handleChange} value={username} name="username" placeholder="Username" />
-        <TextBox handleChange={this.handleChange} value={bio} name="bio" placeholder="Enter a short bio" />
-        <div>
-          <button type="submit" disabled={updating || (!profileImage && profileStore.profile.bio === bio && profileStore.profile.username === username)} id="save-button" className="button green outline">{ updating ? <img className=" edit-profile_spinner" alt="loader" src={spinner} /> : 'Save' }</button>
-          <button type="button" disabled={updating} onClick={this.resetProfile} className="button green outline">Cancel</button>
-        </div>
-      </form>
+      <div>
+        <form className="edit-profile_form" onSubmit={this.updateProfile} encType="multipart/form-data">
+          <ProfileImageUploader name="image" imageRead={this.imageRead} canReset={!!profileImage} resetImage={this.resetImage} profileImage={profileImage || profileStore.profile.image} />
+          <h3 id="user-name" className="username">{fullName}</h3>
+          <InputBox handleChange={this.handleChange} value={username} name="username" placeholder="Username" />
+          <TextBox handleChange={this.handleChange} value={bio} name="bio" placeholder="Enter a short bio" />
+          <div>
+            <button type="submit" disabled={updating || (!profileImage && profileStore.profile.bio === bio && profileStore.profile.username === username)} id="save-button" className="button green outline">{ updating ? <img className=" edit-profile_spinner" alt="loader" src={spinner} /> : 'Save' }</button>
+            <button type="button" disabled={updating} onClick={this.resetProfile} className="button green outline">Cancel</button>
+          </div>
+        </form>
+        <NotificationSettings />
+      </div>
     );
   }
 }
