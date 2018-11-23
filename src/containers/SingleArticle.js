@@ -31,6 +31,7 @@ export class Article extends Component {
 
   renderArticle() {
     const { article, error } = this.props;
+    console.log(this.props.globalState);
     if (article) {
       return this.singleArticle();
     }
@@ -51,6 +52,7 @@ export class Article extends Component {
 const mapStateToProps = (state) => ({
   error: state.articles.articleError,
   article: state.articles.article,
+  globalState: state,
 });
 
 export default connect(mapStateToProps, { getAnArticle })(Article);

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import icons from '../../assets/icons.svg';
 
 class SideButtons extends Component {
@@ -22,10 +23,11 @@ class SideButtons extends Component {
 
   render() {
     const { extraButtons } = this.state;
+    console.log(this.props.article.slug);
     return (
       <div className="side-button">
         <svg id="star" title="Like this article"><use xlinkHref={`${icons}#star`} /></svg>
-        <svg id="bookmark" title="Report this article"><use xlinkHref={`${icons}#bookmark`} /></svg>
+        <svg id="bookmark" onClick={() => console.log('I clicked here')} title="Report this article"><use xlinkHref={`${icons}#bookmark`} /></svg>
         <svg id="share" title="Report this article"><use xlinkHref={`${icons}#share`} /></svg>
         <svg id="more" onClick={this.showExtraButtons} title="Show more buttons"><use xlinkHref={`${icons}#more`} /></svg>
         {this.AddExtraButtons(extraButtons ? 'active' : '')}
@@ -36,4 +38,9 @@ class SideButtons extends Component {
   }
 }
 
-export default SideButtons;
+// const mapStateToProps = (state) => ({
+//   error: state.articles.articleError,
+//   bookmarked: state.articles.article,
+// });
+
+export default connect(null)(SideButtons);
