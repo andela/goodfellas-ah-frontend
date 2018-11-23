@@ -11,9 +11,10 @@ import Profile from '../views/ProfilePage';
 import SocialAuthPage from '../views/SocialAuthPage';
 import ForgotPasswordPage from '../views/ForgotPasswordPage';
 import ResetPasswordPage from '../views/ResetPasswordPage';
-import CreateArticle from '../views/CreateArticles';
 import SearchArticles from '../views/SearchArticles';
+import NotificationPage from '../views/NotificationPage';
 import GetAllArticles from '../views/AllArticles';
+import CreateArticle from '../views/CreateArticles';
 import UpdateArticle from '../views/UpdateArticle';
 
 const User = () => (
@@ -21,6 +22,7 @@ const User = () => (
     <Route exact path="/user/profile" component={Profile} />
     <Route exact path="/user/profile/edit" component={EditProfile} />
     <Route exact path="/user/profile/:userId" component={Profile} />
+    <Route path="/user/notifications" component={NotificationPage} />
   </Switch>
 );
 

@@ -2,6 +2,7 @@
 
 exports[`SearchPage UI render features view should render as expected 1`] = `
 <div>
+  <Connect(Header) />
   <Connect(SearchArticlesContainer) />
 </div>
 `;
