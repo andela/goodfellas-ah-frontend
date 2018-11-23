@@ -59,7 +59,7 @@ export class CreateArticles extends Component {
       description: body.split(' ').slice(0, 10).join(' '),
     };
     return history.push({
-      pathname: '/tags',
+      pathname: '/articles/tags/create',
       state: { articlePayload },
     });
   }

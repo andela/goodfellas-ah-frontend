@@ -14,10 +14,6 @@ exports[`App UI render features container should render as expected 1`] = `
     />
     <Route
       component={[Function]}
-      path="/tags"
-    />
-    <Route
-      component={[Function]}
       path="/articles"
     />
     <Route

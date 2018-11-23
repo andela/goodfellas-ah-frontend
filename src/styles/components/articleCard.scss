@@ -3,8 +3,6 @@
   padding: 10px;
   justify-content: center;
   flex-wrap: wrap;
-  @media only screen and (max-width: 900px) {
-  }
   a{
     display: flex;
     flex-basis: 27vw;
@@ -13,6 +11,11 @@
     &:hover{
       text-decoration: none;
     }
+    @media only screen and (max-width: 900px) {
+    width: 100%;
+    flex-basis: 100vw;
+    margin: 20px 0;
+  }
   }
 }
 

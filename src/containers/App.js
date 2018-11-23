@@ -36,6 +36,7 @@ const Auth = () => (
 const Articles = () => (
   <div>
     <Switch>
+      <Route path="/articles/tags/create" component={Tags} />
       <Route path="/articles/search" component={SearchArticles} />
       <Route path="/articles/create" component={authenticate(CreateArticle)} />
       <Route path="/articles/home" component={GetAllArticles} />
@@ -50,7 +51,6 @@ const App = () => (
     <div>
       <Route exact path="/" component={LandingPage} />
       <Route path="/auth" component={Auth} />
-      <Route path="/tags" component={Tags} />
       <Route path="/articles" component={Articles} />
       <Route path="/user" component={authenticate(User)} />
       <Route path="/forgotpassword" component={ForgotPasswordPage} />
