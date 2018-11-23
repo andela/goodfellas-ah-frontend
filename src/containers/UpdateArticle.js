@@ -123,12 +123,12 @@ export class UpdateArticles extends Component {
 const mapStateToProps = ({
   imageUploadReducer: { status: imageUploadStatus },
   updateArticleReducer: { status, updatedArticle },
-  singleArticle: { singleArticle, articleLoading },
+  articles: { article, articleLoading },
 }) => ({
   status,
   updatedArticle,
   imageUploadStatus,
-  article: singleArticle,
+  article,
   articleLoading,
 });
 

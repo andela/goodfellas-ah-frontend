@@ -5,10 +5,8 @@ import imageUploadReducer from './imageUploadReducer';
 import profileReducer from './profileReducer';
 import articleReducer from './articleReducer';
 import updateArticleReducer from './updateArticleReducer';
-import singleArticleReducer from './singleArticleReducer';
 
 export default combineReducers({
-  singleArticle: singleArticleReducer,
   auth: authReducer,
   publishArticleReducer,
   imageUploadReducer,
