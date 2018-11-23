@@ -1,6 +1,6 @@
 import React from 'react';
-import SearchArticlesContainer from '../containers/SearchArticles';
 import Header from '../components/shared/Header';
+import SearchArticlesContainer from '../containers/SearchArticles';
 
 const SearchArticles = (props) => (
   <div>

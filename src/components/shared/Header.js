@@ -73,7 +73,11 @@ export class Header extends Component {
   };
 
   componentDidMount() {
-    const { getNotification: latestNotification, setNotification: notificationSettings, profile } = this.props;
+    const {
+      getNotification: latestNotification,
+      setNotification: notificationSettings,
+      profile,
+    } = this.props;
     notificationSettings(profile.userId);
     latestNotification();
   }
@@ -214,13 +218,13 @@ export class Header extends Component {
                     <div onClick={this.dropdown} className="dropdown dropdown-click">
                       <img className="dropdown-toggle author-image" src={profile.image || userPlaceholderImage} alt="" />
                       <ul ref="myDropdown" className="dropdown-menu">
-                        <Link to="/createArticle">New article</Link>
-                        <Link to="/drafts">Drafts</Link>
+                        <Link to="/articles/create">New article</Link>
+                        {/* <Link to="/drafts">Drafts</Link> */}
                         <Link id="articles-link-header-auth" onClick={() => switchView('Articles')} to="/user/profile">
                           Your stories
                         </Link>
-                        <Link to="/stats">Stats</Link>
-                        <Link to="/bookmark">Bookmarks</Link>
+                        {/* <Link to="/stats">Stats</Link> */}
+                        {/* <Link to="/bookmark">Bookmarks</Link> */}
                         <Link className="favourites-link-header-auth" onClick={() => switchView('Favorites')} to="/user/profile">
                           Favourites
                         </Link>
@@ -387,13 +391,13 @@ export class Header extends Component {
                     <div onClick={this.dropdown} className="dropdown dropdown-click">
                       <img className="dropdown-toggle author-image" src={profile.image || userPlaceholderImage} alt="" />
                       <ul ref="myDropdown" className="dropdown-menu">
-                        <Link to="/createArticle">New article</Link>
-                        <Link to="/drafts">Drafts</Link>
+                        <Link to="/articles/create">New article</Link>
+                        {/* <Link to="/drafts">Drafts</Link> */}
                         <Link onClick={() => switchView('Articles')} to="/user/profile">
                           Your stories
                         </Link>
-                        <Link to="/stats">Stats</Link>
-                        <Link to="/bookmark">Bookmarks</Link>
+                        {/* <Link to="/stats">Stats</Link> */}
+                        {/* <Link to="/bookmark">Bookmarks</Link> */}
                         <Link onClick={() => switchView('Favorites')} to="/user/profile">
                           Favourites
                         </Link>

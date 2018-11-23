@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Article Card UI render features component should render as expected 1`] = `
+exports[`Display Tags UI render features component should render as expected 1`] = `
 <_default>
   <Provider
     store={
@@ -54,24 +54,33 @@ exports[`Article Card UI render features component should render as expected 1`]
           }
         }
       >
-        <Connect(Card)>
-          <Card
-            getArticles={[Function]}
+        <DisplayTags
+          articles={
+            Object {
+              "tagList": Array [
+                "tag",
+                "tags",
+              ],
+            }
+          }
+        >
+          <div
+            className="tags-display"
           >
-            <div>
-              <Loading>
-                <div
-                  className="loading-icon"
-                >
-                  <img
-                    alt=""
-                    src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426069/Authors%20Haven/Spinner-1s.gif"
-                  />
-                </div>
-              </Loading>
-            </div>
-          </Card>
-        </Connect(Card)>
+            <p
+              className="new-tag"
+              key="1"
+            >
+              tag
+            </p>
+            <p
+              className="new-tag"
+              key="2"
+            >
+              tags
+            </p>
+          </div>
+        </DisplayTags>
       </Router>
     </MemoryRouter>
   </Provider>

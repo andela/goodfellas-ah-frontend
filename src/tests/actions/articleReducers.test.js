@@ -148,6 +148,8 @@ describe('Article Reducer', () => {
         articleError: '',
         searchResults: [],
         searchError: [],
+        tags: [],
+        tagsError: [],
         errorMessage: '',
         ownProfile: {},
         profile: {
@@ -173,6 +175,8 @@ describe('Article Reducer', () => {
         singleArticle: null,
         articleError: '',
         searchResults: [],
+        tags: [],
+        tagsError: [],
         searchError: [],
         errorMessage: '',
         ownProfile: {},
@@ -195,6 +199,68 @@ describe('Article Reducer', () => {
         articles: [],
         authenticated: '',
         error: 'Error getting articles',
+        searchResults: [],
+        tags: [],
+        tagsError: [],
+        searchError: [],
+        errorMessage: '',
+        articleLoading: false,
+        singleArticle: null,
+        notification: [],
+        notifications: {},
+        articleError: '',
+        ownProfile: {},
+        profile: {
+          articles: [], favorites: [], followers: [], following: [], loading: true, profile: {}, profileError: '', profileView: 'Following', user: {},
+        },
+        successMessage: '',
+        user: {},
+      };
+      expect(articleReducer(undefined, action)).toEqual(expectedState);
+    });
+  });
+
+  describe('GET_ARTICLES', () => {
+    test('returns the correct state', () => {
+      const action = { type: types.GET_ARTICLES, payload: [{ articles: 'new Articles' }] };
+      const expectedState = {
+        articles: [{ articles: 'new Articles' }],
+        authenticated: '',
+        articleLoading: false,
+        error: [],
+        singleArticle: null,
+        notification: [],
+        notifications: {},
+        articleError: '',
+        searchResults: [],
+        tags: [],
+        tagsError: [],
+        searchError: [],
+        errorMessage: '',
+        ownProfile: {},
+        profile: {
+          articles: [], favorites: [], followers: [], following: [], loading: true, profile: {}, profileError: '', profileView: 'Following', user: {},
+        },
+        successMessage: '',
+        user: {},
+      };
+      expect(articleReducer(undefined, action)).toEqual(expectedState);
+    });
+  });
+
+  describe('GET_ARTICLES_ERROR', () => {
+    test('returns the correct state', () => {
+      const action = { type: types.GET_ARTICLES_ERROR, payload: 'Error getting articles' };
+      const expectedState = {
+        articles: [],
+        authenticated: '',
+        error: 'Error getting articles',
+        searchResults: [],
+        tags: [],
+        tagsError: [],
+        searchError: [],
+        notification: [],
+        notifications: {},
         errorMessage: '',
         articleLoading: false,
         singleArticle: null,
@@ -203,12 +269,8 @@ describe('Article Reducer', () => {
         profile: {
           articles: [], favorites: [], followers: [], following: [], loading: true, profile: {}, profileError: '', profileView: 'Following', user: {},
         },
-        searchError: [],
-        searchResults: [],
         successMessage: '',
         user: {},
-        notification: [],
-        notifications: {},
       };
       expect(articleReducer(undefined, action)).toEqual(expectedState);
     });

@@ -250,11 +250,15 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": " this is the fine long body  this is the fine long body ",
+          "children": Array [
+            " this is the fine long body  this is the fine long body ",
+          ],
           "className": "profile-article_description",
         },
         "ref": null,
-        "rendered": " this is the fine long body  this is the fine long body ",
+        "rendered": Array [
+          " this is the fine long body  this is the fine long body ",
+        ],
         "type": "p",
       },
       Object {
@@ -637,11 +641,15 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": " this is the fine long body  this is the fine long body ",
+            "children": Array [
+              " this is the fine long body  this is the fine long body ",
+            ],
             "className": "profile-article_description",
           },
           "ref": null,
-          "rendered": " this is the fine long body  this is the fine long body ",
+          "rendered": Array [
+            " this is the fine long body  this is the fine long body ",
+          ],
           "type": "p",
         },
         Object {

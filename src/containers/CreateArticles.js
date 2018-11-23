@@ -15,6 +15,7 @@ export class CreateArticles extends Component {
     title: '',
     body: '',
     imageLoad: false,
+    image: '',
   }
 
   componentDidUpdate(prevProps) {
@@ -31,10 +32,18 @@ export class CreateArticles extends Component {
 
   imageUploaded = (url) => {
     const imageHtml = this.generateImageTag(url);
+    const { image } = this.state;
     this.setState((prevState) => ({ body: prevState.body + imageHtml, imageLoad: false }));
+
+    if (image.length < 1) {
+      this.setState({
+        image: url,
+      });
+    }
   }
 
   handleSubmit = (event) => {
+    const { history } = this.props;
     event.preventDefault();
     const { title, body } = this.state;
     if (!title || title === '<p><br></p>') return swal('Please add a title', 'Your article needs to have a title', 'warning');
@@ -43,8 +52,10 @@ export class CreateArticles extends Component {
       ...this.state,
       description: body.split(' ').slice(0, 10).join(' '),
     };
-    // eslint-disable-next-line react/destructuring-assignment
-    this.props.publishArticle(articlePayload);
+    return history.push({
+      pathname: '/articles/tags/create',
+      state: { articlePayload },
+    });
   }
 
   render() {
