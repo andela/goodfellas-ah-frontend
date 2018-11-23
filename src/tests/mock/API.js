@@ -23,6 +23,7 @@ export const routes = {
     '/user/followed/1': () => profileData.followedUsers,
     '/articles/author/1': () => profileData.articles,
     '/articles/user/1/favorite': () => profileData.favoritedArticles,
+    '/user/notification': () => profileData.notifications,
   },
   put: {
     '/user/profile/1': () => profileData.updateProfile,

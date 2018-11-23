@@ -21,7 +21,9 @@ const setup = () => {
 describe('components', () => {
   describe('ProfileToolbar component', () => {
     it('should render as expected', () => {
-      const { enzymeWrapper } = setup();
+      const { enzymeWrapper, props } = setup();
+      enzymeWrapper.find('.follow-card').simulate('click');
+      expect(props.handleClick).toBeCalled();
       expect(enzymeWrapper).toMatchSnapshot();
     });
   });

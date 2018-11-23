@@ -106,6 +106,19 @@ export const updateProfile = {
     },
   },
 };
+export const notifications = {
+  data: {
+    error: false,
+    data: {
+      count: 15,
+      rows: {
+        0: {}, 1: {},
+      },
+    },
+    message: 'Profile retrieved successfully',
+  },
+  status: 200,
+};
 
 export const followUser = {
   status: 201,
