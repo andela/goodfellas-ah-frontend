@@ -13,8 +13,8 @@ ShallowWrapper {
           },
         ],
         "reactionCount": Object {
-          "dislikes": 0,
-          "likes": 0,
+          "dislikes": 5,
+          "likes": 5,
         },
         "slug": "a-new-article",
         "title": "A new Article",
@@ -112,7 +112,7 @@ ShallowWrapper {
           id="like-count"
         >
           <p>
-            0
+            5
           </p>
         </div>,
         <span
@@ -392,7 +392,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <p>
-            0
+            5
           </p>,
           "id": "like-count",
         },
@@ -402,10 +402,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": 0,
+            "children": 5,
           },
           "ref": null,
-          "rendered": 0,
+          "rendered": 5,
           "type": "p",
         },
         "type": "div",
@@ -539,7 +539,7 @@ ShallowWrapper {
             id="like-count"
           >
             <p>
-              0
+              5
             </p>
           </div>,
           <span
@@ -819,7 +819,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <p>
-              0
+              5
             </p>,
             "id": "like-count",
           },
@@ -829,10 +829,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": 0,
+              "children": 5,
             },
             "ref": null,
-            "rendered": 0,
+            "rendered": 5,
             "type": "p",
           },
           "type": "div",

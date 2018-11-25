@@ -26,9 +26,17 @@ export const articleResponse = {
       slug: 'a-new-article',
       myReactions: [{ reaction: 1 }],
       reactionCount: {
-        likes: 0,
-        dislikes: 0,
+        likes: 5,
+        dislikes: 5,
       },
+    },
+  },
+  status: 200,
+};
+export const addReaction = {
+  data: {
+    data: {
+      message: 'Reaction added succesfully',
     },
   },
   status: 200,

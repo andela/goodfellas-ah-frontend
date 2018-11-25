@@ -42,6 +42,10 @@ export const routes = {
       if (payload.tags) return articleData.addTagsDetail;
       throw new CustomAPIError('All fields are required', 400);
     },
+    '/articles/a-new-article/react': (payload) => {
+      if (payload && (payload.reaction === 1 || payload.reaction === -1)) return articleData.reactionAdded;
+      throw new CustomAPIError('Invalid reaction value provided', 400);
+    },
   },
   delete: {
     '/user/follow/1': () => profileData.followUser,
