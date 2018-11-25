@@ -23,6 +23,7 @@ export const articleResponse = {
     data: {
       title: 'A new Article',
       body: 'content of the new article',
+      slug: 'a-new-article',
       myReactions: [{ reaction: 1 }],
       reactionCount: {
         likes: 0,

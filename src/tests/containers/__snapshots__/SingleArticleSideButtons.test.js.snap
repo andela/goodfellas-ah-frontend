@@ -16,9 +16,11 @@ ShallowWrapper {
           "dislikes": 0,
           "likes": 0,
         },
+        "slug": "a-new-article",
         "title": "A new Article",
       }
     }
+    react={[MockFunction]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
