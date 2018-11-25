@@ -33,3 +33,11 @@ export const articleResponse = {
   },
   status: 200,
 };
+export const addTagsDetail = {
+  data: {
+    data: {
+      message: 'Successfully added tags',
+    },
+  },
+  status: 200,
+};

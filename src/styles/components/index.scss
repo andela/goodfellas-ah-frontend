@@ -36,7 +36,6 @@ font-family: 'Roboto', sans-serif;
 .no-record {
     min-height: 300px;
     font-size: 25px;
-    font-weight: 100;
     text-align: center;
     color: var(--lighter-gray);
     .icon {
@@ -86,6 +85,10 @@ h3.username {
 }
 *:disabled:hover {
   cursor: default;
+}
+a.p {
+  text-decoration: none;
+  color: inherit;
 }
 a.outline:hover {
   text-decoration: none;

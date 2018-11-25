@@ -1,7 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Landing Page UI render features container should render as expected 1`] = `
-<_default>
+<_default
+  initialState={
+    Object {
+      "auth": Object {
+        "authenticated": null,
+        "ownProfile": Object {
+          "userId": 1,
+        },
+        "user": null,
+        "userId": null,
+      },
+    }
+  }
+>
   <Provider
     store={
       Object {
@@ -77,12 +90,51 @@ exports[`Landing Page UI render features container should render as expected 1`]
                           <Header
                             auth={null}
                             dispatch={[Function]}
+                            getNotification={[Function]}
+                            inAppStatus={
+                              Object {
+                                "articleError": "",
+                                "articleLoading": false,
+                                "articles": Array [],
+                                "authenticated": "",
+                                "error": Array [],
+                                "errorMessage": "",
+                                "notification": Array [],
+                                "notifications": Object {},
+                                "ownProfile": Object {},
+                                "profile": Object {
+                                  "articles": Array [],
+                                  "favorites": Array [],
+                                  "followers": Array [],
+                                  "following": Array [],
+                                  "loading": true,
+                                  "profile": Object {},
+                                  "profileError": "",
+                                  "profileView": "Following",
+                                  "user": Object {},
+                                },
+                                "searchError": Array [],
+                                "searchResults": Array [],
+                                "singleArticle": null,
+                                "successMessage": "",
+                                "tags": Array [],
+                                "tagsError": Array [],
+                                "user": Object {},
+                              }
+                            }
+                            notifications={Object {}}
                             parentComponent="landingpage"
-                            profile={null}
+                            profile={
+                              Object {
+                                "userId": 1,
+                              }
+                            }
                             profileNavigation={[Function]}
                             search={[Function]}
                             searchError={Array []}
                             searchResults={Array []}
+                            seenNotification={[Function]}
+                            setNotification={[Function]}
                             signout={[Function]}
                           >
                             <div>
@@ -398,7 +450,7 @@ exports[`Landing Page UI render features container should render as expected 1`]
                           </div>
                         </div>
                         <p>
-                          Lorem ipsum anothere olor sit amet consectetur, adipisicing elit. Cupiditate just tosint fugiat nesciunt doloribus veniam, dolor ratione sunt marecusandae, molestiae fugit reicivero labore quibusdam longLorem ipsum dolor sit amet cons pisici elit. Cupiditatesint is the fugiat nesciunt doloribus veniam, dolor ratione sunt reclorem usandae, molestiae fugit reiciendis vero labe quibusdam world odit sequi aperiam sit ipsum ipsa! odit sequi ap sit ipsum ipsa!
+                          Authors Haven taps into a community of like-minded authors to foster inspiration in you. Enabling the world’s most insightful writers, thinkers, and storytellers to bring you the smartest takes on topics that matter. So whatever your interest, you can always find fresh thinking and unique perspectives here.
                         </p>
                         <hr />
                         <Link
@@ -467,18 +519,6 @@ exports[`Landing Page UI render features container should render as expected 1`]
                                 />
                               </div>
                             </Loading>
-                            <div
-                              className="hero-moreArticles row"
-                              onClick={[Function]}
-                            >
-                              <p>
-                                More Articles
-                              </p>
-                              <img
-                                alt=""
-                                src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426068/Authors%20Haven/icons8-expand-arrow-24.png"
-                              />
-                            </div>
                           </div>
                         </Card>
                       </Connect(Card)>
@@ -487,62 +527,6 @@ exports[`Landing Page UI render features container should render as expected 1`]
                 </ExploreSection>
                 <Footer>
                   <footer>
-                    <div
-                      className="footer-wrapper"
-                    >
-                      <Link
-                        replace={false}
-                        to="/"
-                      >
-                        <a
-                          href="/"
-                          onClick={[Function]}
-                        >
-                          <p>
-                            About
-                          </p>
-                        </a>
-                      </Link>
-                      <Link
-                        replace={false}
-                        to="/"
-                      >
-                        <a
-                          href="/"
-                          onClick={[Function]}
-                        >
-                          <p>
-                            Contact
-                          </p>
-                        </a>
-                      </Link>
-                      <Link
-                        replace={false}
-                        to="/"
-                      >
-                        <a
-                          href="/"
-                          onClick={[Function]}
-                        >
-                          <p>
-                            Terms
-                          </p>
-                        </a>
-                      </Link>
-                      <Link
-                        replace={false}
-                        to="/"
-                      >
-                        <a
-                          href="/"
-                          onClick={[Function]}
-                        >
-                          <p>
-                            Privacy
-                          </p>
-                        </a>
-                      </Link>
-                    </div>
                     <div
                       className="copyright"
                     >

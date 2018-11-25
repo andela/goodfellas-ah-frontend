@@ -11,6 +11,8 @@ const initialState = {
   articleError: '',
   searchResults: [],
   searchError: [],
+  tags: [],
+  tagsError: [],
   profile: {
     loading: true,
     profileView: 'Following',
@@ -22,6 +24,8 @@ const initialState = {
     articles: [],
     favorites: [],
   },
+  notification: [],
+  notifications: {},
 };
 
 export default initialState;

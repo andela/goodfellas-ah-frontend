@@ -28,9 +28,11 @@
   }
   &_user-img {
     grid-area: user-img;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
+    img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+    }
   }
   &_img {
     grid-area: article-img;
@@ -65,6 +67,10 @@
     }
     .edit {
       cursor: pointer;
+      &:hover {
+        box-shadow: none;
+        color: var(--light-green);
+      }
     }
   }
 }

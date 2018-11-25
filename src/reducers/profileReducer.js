@@ -18,6 +18,7 @@ export default (state = initialState.profile, action) => {
         following: action.payload[2].data.data.followedUsers,
         articles: action.payload[3].data.articles,
         favorites: action.payload[4].data.articles,
+        profileError: '',
       };
     }
     case types.UPDATE_PROFILE:

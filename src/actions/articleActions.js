@@ -41,6 +41,24 @@ export const search = (searchValues, callback) => async (dispatch) => {
   }
 };
 
+export const addTags = (newTags, slug, callback) => async (dispatch, getState, { api }) => {
+  try {
+    const response = await api.post(`/articles/${slug}/tags`, {
+      tags: newTags,
+    });
+    dispatch({
+      type: types.ADD_TAGS,
+      payload: response.data,
+    });
+    callback();
+  } catch (error) {
+    dispatch({
+      type: types.ADD_TAGS_ERROR,
+      payload: error.response,
+    });
+  }
+};
+
 export const getAnArticle = (slug) => async (dispatch, getState, { api }) => {
   dispatch(articleLoading());
   try {
