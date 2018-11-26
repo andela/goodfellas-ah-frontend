@@ -1,12 +1,11 @@
 import React from 'react';
 import SingleArticle from '../containers/SingleArticle';
-import Header from '../components/shared/Header';
+import Body from '../components/layout/DefaultLayout';
 
 const Article = (props) => (
-  <div>
-    <Header {...props} />
+  <Body {...props}>
     <SingleArticle {...props} />
-  </div>
+  </Body>
 );
 
 export default Article;
