@@ -169,6 +169,10 @@ describe('Notification Functionality', () => {
       });
 
       const inst = notificationsMountedShallow.instance();
+      const cancelButton = notificationsMountedShallow.find('.notification-close-button');
+      const singleNotification = notificationsMountedShallow.find('.noitification-single');
+      singleNotification.simulate('click');
+      cancelButton.simulate('click');
       inst.displayNotifications();
       inst.handleSeen();
       expect(inst).not.toBeNull();
@@ -180,6 +184,10 @@ describe('Notification Functionality', () => {
       });
 
       const inst = notificationsMountedShallow.instance();
+      const cancelButton = notificationsMountedShallow.find('.notification-close-button');
+      const singleNotification = notificationsMountedShallow.find('.noitification-single');
+      singleNotification.simulate('click');
+      cancelButton.simulate('click');
       inst.displayNotifications();
       inst.handleSeen();
       expect(inst).not.toBeNull();

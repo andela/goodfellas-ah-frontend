@@ -64,6 +64,7 @@ export class Notifications extends Component {
                             </span>
                           </Link>
                           <span
+                            className="notification-close-button"
                             onClick={() => {
                               this.handleClose(notification.id);
                             }}
@@ -86,6 +87,7 @@ export class Notifications extends Component {
                             <span> New comment on your favorite Article</span>
                           </Link>
                           <span
+                            className="notification-close-button"
                             onClick={() => {
                               this.handleClose(notification.id);
                             }}
