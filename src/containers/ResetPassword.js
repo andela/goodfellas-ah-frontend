@@ -7,13 +7,20 @@ import Button from '../components/shared/Button';
 import validateAuth from '../lib/validation';
 import Loading from '../components/shared/Loading';
 
+const fieldNames = ['password', 'confirmPassword'];
+
+const initialState = {
+  password: '',
+  confirmPassword: '',
+  loading: false,
+  touched: {
+    password: false,
+    confirmPassword: false,
+  },
+};
+
 export class ResetPassword extends Component {
-  state= {
-    password: '',
-    confirmPassword: '',
-    validationError: {},
-    loading: false,
-  }
+  state = initialState;
 
   handleResetPassword = async (e) => {
     e.preventDefault();
@@ -23,14 +30,14 @@ export class ResetPassword extends Component {
       password,
       confirm_password: confirmPassword,
     };
-    const fieldNames = ['password', 'confirmPassword'];
     const validationError = validateAuth({ password, confirmPassword }, fieldNames);
-    this.setState({ validationError });
+    const changedTouchState = this.changeTouchState(fieldNames, true);
+    this.setState({ touched: changedTouchState });
+
     if (!validationError.status) {
       this.setState({ loading: true });
       await newPassword(userData, history);
-      this.setState({ loading: false });
-      this.setState({ password: '', confirmPassword: '' });
+      this.setState(initialState);
     }
   };
 
@@ -38,11 +45,27 @@ export class ResetPassword extends Component {
     this.setState({ [event.target.id]: event.target.value });
   }
 
+  handleBlur = (field) => () => {
+    const { touched } = this.state;
+    this.setState({
+      touched: { ...touched, [field]: true },
+    });
+  }
+
+  changeTouchState = (fields, state) => {
+    const touchState = {};
+    fields.forEach((field) => {
+      touchState[field] = state;
+    });
+    return touchState;
+  }
+
   render() {
     const { errorMessage } = this.props;
     const {
-      validationError, password, confirmPassword, loading,
+      password, confirmPassword, loading, touched,
     } = this.state;
+    const validationError = validateAuth({ password, confirmPassword }, fieldNames);
     return (
       <form onSubmit={this.handleResetPassword} className="reset-form">
         <h3 className="reset-title text-center">Reset Password</h3>
@@ -52,7 +75,9 @@ export class ResetPassword extends Component {
           placeholder="New password"
           type="password"
           value={password}
+          touched={touched}
           handleChange={this.handleChange}
+          handleBlur={this.handleBlur('password')}
           error={validationError}
         />
         <AuthInput
@@ -60,7 +85,9 @@ export class ResetPassword extends Component {
           placeholder="Confirm new password"
           type="password"
           value={confirmPassword}
+          touched={touched}
           handleChange={this.handleChange}
+          handleBlur={this.handleBlur('confirmPassword')}
           error={validationError}
         />
         <div className="error-field">{errorMessage}</div>

@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { signin, clearSigninError } from '../actions/authActions';
+import { signin } from '../actions/authActions';
 import validateAuth from '../lib/validation';
 import AuthInput from '../components/shared/AuthInput';
 import Button from '../components/shared/Button';
+import Loading from '../components/shared/Loading';
 
 const initialState = {
   email: '',
   password: '',
+  loading: false,
   touched: {
     email: false,
     password: false,
@@ -20,11 +22,6 @@ const fieldNames = ['email', 'password'];
 class Signin extends Component {
   state = initialState;
 
-  componentDidMount = () => {
-    const { clearSigninError: clearError } = this.props;
-    clearError();
-  }
-
   handleSubmit = async (event) => {
     event.preventDefault();
     const { signin: signinUser, history } = this.props;
@@ -35,6 +32,7 @@ class Signin extends Component {
     this.setState({ touched: changedTouchState });
 
     if (!validationError.status) {
+      this.setState({ loading: true });
       signinUser({ email, password }, () => history.push('/user/profile'));
       this.setState(initialState);
     }
@@ -63,6 +61,7 @@ class Signin extends Component {
     const {
       email,
       password,
+      loading,
       touched,
     } = this.state;
     const { errorMessage } = this.props;
@@ -92,7 +91,7 @@ class Signin extends Component {
         <div>
           <Link to="/forgotpassword"><div className="forgot-password">Forgot Password?</div></Link>
         </div>
-        <Button title="SIGN IN" className="auth-button" type="submit" />
+        {loading ? <button disabled="disabled" type="submit" className="auth-button loading"><Loading /></button> : <Button title="SIGN IN" className="auth-button" type="submit" />}
       </form>
     );
   }
@@ -102,4 +101,4 @@ function mapStateToProps(state) {
   return { errorMessage: state.auth.errorMessage };
 }
 
-export default connect(mapStateToProps, { signin, clearSigninError })(Signin);
+export default connect(mapStateToProps, { signin })(Signin);

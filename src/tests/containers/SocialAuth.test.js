@@ -1,28 +1,34 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import Root from '../../root';
-import SocialAuth from '../../containers/SocialAuth';
+import { SocialAuth } from '../../containers/SocialAuth';
 
 let wrapped;
+const url = '?token=eyJhbGciOiJIUzI1NiIsInR5cCeyJpZCI6MiwNTQyOTg4NzU3LCJleHAiOjE1NDMwNzUxNTd9.I&userId=2';
+const urlError = '?error=true';
 const history = {
   location: {
-    search: {
-      token: 'token',
-      userId: 'userId',
-    },
+    search: url,
   },
+  push: jest.fn(),
 };
 
-beforeEach(() => {
-  wrapped = mount(
-    <Root>
-      <SocialAuth history={history} />
-    </Root>,
-  );
-});
+const historyError = {
+  location: {
+    search: urlError,
+  },
+  push: jest.fn(),
+};
 
-afterEach(() => wrapped.unmount());
+const socialSignin = (user, callback) => callback(true);
+const socialSigninError = (user, callback) => callback(false);
+const showSocialSigninError = (error, callback) => callback();
+
+beforeEach(() => {
+  wrapped = shallow(<SocialAuth socialSignin={socialSignin} history={history} />);
+  shallow(<SocialAuth socialSignin={socialSigninError} history={history} />);
+  shallow(<SocialAuth showSignError={showSocialSigninError} history={historyError} />);
+});
 
 describe('SocialAuth UI', () => {
   describe('render features', () => {
@@ -30,9 +36,18 @@ describe('SocialAuth UI', () => {
       const tree = toJson(wrapped);
       expect(tree).toMatchSnapshot();
     });
+  });
 
-    test('should contain a loader', () => {
-      expect(wrapped.exists('.large-spinner')).toEqual(true);
+  describe('SocialAuth Athentication Flow', () => {
+    it('redirects the user into the application when a token is returned', () => {
+      expect(history.push).toBeCalledWith('/user/profile');
+    });
+    it('redirects the user to the signin page when invalid details are passed', () => {
+      expect(history.push).toBeCalledWith('/auth/signin');
+    });
+
+    it('redirects the user to the signin page when error is true', () => {
+      expect(history.push).toBeCalledWith('/auth/signin');
     });
   });
 });
