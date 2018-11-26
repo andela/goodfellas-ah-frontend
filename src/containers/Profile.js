@@ -7,7 +7,12 @@ import FollowerList from '../components/profile/FollowerList';
 import FollowingList from '../components/profile/FollowingList';
 import ProfileArticleList from '../components/article/ArticlesByAuthor';
 import ProfileFavoriteList from '../components/article/AuthorFavorites';
-import { fetchProfile, follow as followAction, unFollow as unFollowAction } from '../actions/profileActions';
+import {
+  fetchProfile,
+  follow as followAction,
+  unFollow as unFollowAction,
+  profileNavigation as profileNavigationAction,
+} from '../actions/profileActions';
 import { userPlaceholderImage } from '../mixin';
 import icons from '../assets/icons.svg';
 
@@ -33,9 +38,12 @@ export class Profile extends Component {
   }
 
   componentDidUpdate = (prevProps, prevState) => {
-    const { fetchProfile: profileFetch, match } = this.props;
+    const { fetchProfile: profileFetch, match, profileNavigation } = this.props;
     const { userId } = this.state;
-    if (prevState.userId !== userId) profileFetch(userId);
+    if (prevState.userId !== userId) {
+      profileFetch(userId);
+      profileNavigation('Following');
+    }
     if (prevProps.match.params.userId !== match.params.userId) this.updateUserId();
   }
 
@@ -60,7 +68,7 @@ export class Profile extends Component {
   }
 
   render() {
-    const { profileStore, history } = this.props;
+    const { profileStore, history, user } = this.props;
     const { ownProfile } = this.state;
     if (profileStore.loading) return <Loading />;
     if (profileStore.profileError) {
@@ -80,13 +88,17 @@ export class Profile extends Component {
         <header>
           <img alt="profile" className="profile-image" src={profileStore.profile.image || userPlaceholderImage} />
           <h3 id="user-name" className="username">{fullName}</h3>
-          <button type="button" className={`button outline ${profileStore.user.isFollowed ? 'green' : ''}`} onClick={this.handleClick}>{
-            (() => {
-              if (ownProfile) return 'Edit Profile';
-              if (profileStore.user.isFollowed) return 'Unfollow';
-              return 'Follow';
-            })()}
-          </button>
+          { user.userId && (
+            <button type="button" className={`button outline ${profileStore.user.isFollowed ? 'green' : ''}`} onClick={this.handleClick}>
+              {
+                (() => {
+                  if (ownProfile) return 'Edit Profile';
+                  if (profileStore.user.isFollowed) return 'Unfollow';
+                  return 'Follow';
+                })()
+              }
+            </button>
+          )}
         </header>
         <ProfileToolbar profile={profileStore} />
         {(() => {
@@ -106,6 +118,7 @@ export class Profile extends Component {
                   authorImage={profileStore.profile.image}
                   articles={profileStore.articles}
                   userFullName={fullName}
+                  userId={user.userId}
                   ownProfile={ownProfile}
                 />
               );
@@ -116,6 +129,7 @@ export class Profile extends Component {
                   authorImage={profileStore.profile.image}
                   articles={profileStore.favorites}
                   userFullName={fullName}
+                  userId={user.userId}
                   ownProfile={ownProfile}
                 />);
             case 'Following':
@@ -136,10 +150,15 @@ export class Profile extends Component {
 }
 const mapStateToProps = (state) => ({
   profileStore: state.profile,
-  user: state.auth.ownProfile,
+  user: state.auth.ownProfile || {},
 });
 
 export default connect(
   mapStateToProps,
-  { fetchProfile, follow: followAction, unFollow: unFollowAction },
+  {
+    fetchProfile,
+    follow: followAction,
+    unFollow: unFollowAction,
+    profileNavigation: profileNavigationAction,
+  },
 )(Profile);

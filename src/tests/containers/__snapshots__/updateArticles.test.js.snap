@@ -2,7 +2,7 @@
 
 exports[`update artcicle container test suite render container should render as expected 1`] = `
 <div
-  className="article-body"
+  className="container article-body"
 >
   <div
     className="articles-card"
@@ -22,30 +22,10 @@ exports[`update artcicle container test suite render container should render as 
       imageUploaded={[Function]}
     />
     <form>
-      <ReactMediumEditor
+      <textarea
         id="title"
-        name="title"
         onChange={[Function]}
-        options={
-          Object {
-            "placeholder": false,
-            "toolbar": Object {
-              "buttons": Array [
-                "bold",
-                "italic",
-                "underline",
-                "strikethrough",
-                "quote",
-                "anchor",
-                "h2",
-                "h3",
-                "orderedlist",
-              ],
-            },
-          }
-        }
-        tag="div"
-        text="some title"
+        value="some title"
       />
       <ReactMediumEditor
         className="editable"
@@ -161,30 +141,10 @@ ShallowWrapper {
             imageUploaded={[Function]}
           />
           <form>
-            <ReactMediumEditor
+            <textarea
               id="title"
-              name="title"
               onChange={[Function]}
-              options={
-                Object {
-                  "placeholder": false,
-                  "toolbar": Object {
-                    "buttons": Array [
-                      "bold",
-                      "italic",
-                      "underline",
-                      "strikethrough",
-                      "quote",
-                      "anchor",
-                      "h2",
-                      "h3",
-                      "orderedlist",
-                    ],
-                  },
-                }
-              }
-              tag="div"
-              text=""
+              value=""
             />
             <ReactMediumEditor
               className="editable"
@@ -225,7 +185,7 @@ ShallowWrapper {
           </button>
         </div>,
       ],
-      "className": "article-body",
+      "className": "container article-body",
     },
     "ref": null,
     "rendered": Array [
@@ -250,30 +210,10 @@ ShallowWrapper {
               imageUploaded={[Function]}
             />,
             <form>
-              <ReactMediumEditor
+              <textarea
                 id="title"
-                name="title"
                 onChange={[Function]}
-                options={
-                  Object {
-                    "placeholder": false,
-                    "toolbar": Object {
-                      "buttons": Array [
-                        "bold",
-                        "italic",
-                        "underline",
-                        "strikethrough",
-                        "quote",
-                        "anchor",
-                        "h2",
-                        "h3",
-                        "orderedlist",
-                      ],
-                    },
-                  }
-                }
-                tag="div"
-                text=""
+                value=""
               />
               <ReactMediumEditor
                 className="editable"
@@ -354,30 +294,10 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                <ReactMediumEditor
+                <textarea
                   id="title"
-                  name="title"
                   onChange={[Function]}
-                  options={
-                    Object {
-                      "placeholder": false,
-                      "toolbar": Object {
-                        "buttons": Array [
-                          "bold",
-                          "italic",
-                          "underline",
-                          "strikethrough",
-                          "quote",
-                          "anchor",
-                          "h2",
-                          "h3",
-                          "orderedlist",
-                        ],
-                      },
-                    }
-                  }
-                  tag="div"
-                  text=""
+                  value=""
                 />,
                 <ReactMediumEditor
                   className="editable"
@@ -411,33 +331,15 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "class",
+                "nodeType": "host",
                 "props": Object {
                   "id": "title",
-                  "name": "title",
                   "onChange": [Function],
-                  "options": Object {
-                    "placeholder": false,
-                    "toolbar": Object {
-                      "buttons": Array [
-                        "bold",
-                        "italic",
-                        "underline",
-                        "strikethrough",
-                        "quote",
-                        "anchor",
-                        "h2",
-                        "h3",
-                        "orderedlist",
-                      ],
-                    },
-                  },
-                  "tag": "div",
-                  "text": "",
+                  "value": "",
                 },
                 "ref": null,
                 "rendered": null,
-                "type": [Function],
+                "type": "textarea",
               },
               Object {
                 "instance": null,
@@ -535,30 +437,10 @@ ShallowWrapper {
               imageUploaded={[Function]}
             />
             <form>
-              <ReactMediumEditor
+              <textarea
                 id="title"
-                name="title"
                 onChange={[Function]}
-                options={
-                  Object {
-                    "placeholder": false,
-                    "toolbar": Object {
-                      "buttons": Array [
-                        "bold",
-                        "italic",
-                        "underline",
-                        "strikethrough",
-                        "quote",
-                        "anchor",
-                        "h2",
-                        "h3",
-                        "orderedlist",
-                      ],
-                    },
-                  }
-                }
-                tag="div"
-                text=""
+                value=""
               />
               <ReactMediumEditor
                 className="editable"
@@ -599,7 +481,7 @@ ShallowWrapper {
             </button>
           </div>,
         ],
-        "className": "article-body",
+        "className": "container article-body",
       },
       "ref": null,
       "rendered": Array [
@@ -624,30 +506,10 @@ ShallowWrapper {
                 imageUploaded={[Function]}
               />,
               <form>
-                <ReactMediumEditor
+                <textarea
                   id="title"
-                  name="title"
                   onChange={[Function]}
-                  options={
-                    Object {
-                      "placeholder": false,
-                      "toolbar": Object {
-                        "buttons": Array [
-                          "bold",
-                          "italic",
-                          "underline",
-                          "strikethrough",
-                          "quote",
-                          "anchor",
-                          "h2",
-                          "h3",
-                          "orderedlist",
-                        ],
-                      },
-                    }
-                  }
-                  tag="div"
-                  text=""
+                  value=""
                 />
                 <ReactMediumEditor
                   className="editable"
@@ -728,30 +590,10 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <ReactMediumEditor
+                  <textarea
                     id="title"
-                    name="title"
                     onChange={[Function]}
-                    options={
-                      Object {
-                        "placeholder": false,
-                        "toolbar": Object {
-                          "buttons": Array [
-                            "bold",
-                            "italic",
-                            "underline",
-                            "strikethrough",
-                            "quote",
-                            "anchor",
-                            "h2",
-                            "h3",
-                            "orderedlist",
-                          ],
-                        },
-                      }
-                    }
-                    tag="div"
-                    text=""
+                    value=""
                   />,
                   <ReactMediumEditor
                     className="editable"
@@ -785,33 +627,15 @@ ShallowWrapper {
                 Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "class",
+                  "nodeType": "host",
                   "props": Object {
                     "id": "title",
-                    "name": "title",
                     "onChange": [Function],
-                    "options": Object {
-                      "placeholder": false,
-                      "toolbar": Object {
-                        "buttons": Array [
-                          "bold",
-                          "italic",
-                          "underline",
-                          "strikethrough",
-                          "quote",
-                          "anchor",
-                          "h2",
-                          "h3",
-                          "orderedlist",
-                        ],
-                      },
-                    },
-                    "tag": "div",
-                    "text": "",
+                    "value": "",
                   },
                   "ref": null,
                   "rendered": null,
-                  "type": [Function],
+                  "type": "textarea",
                 },
                 Object {
                   "instance": null,

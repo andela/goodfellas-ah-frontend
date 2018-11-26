@@ -69,18 +69,6 @@ exports[`Article Card UI render features component should render as expected 1`]
                   />
                 </div>
               </Loading>
-              <div
-                className="hero-moreArticles row"
-                onClick={[Function]}
-              >
-                <p>
-                  More Articles
-                </p>
-                <img
-                  alt=""
-                  src="https://res.cloudinary.com/drmmqcxkc/image/upload/v1541426068/Authors%20Haven/icons8-expand-arrow-24.png"
-                />
-              </div>
             </div>
           </Card>
         </Connect(Card)>

@@ -12,7 +12,21 @@ ShallowWrapper {
         },
       }
     }
-    profileNavigation={[MockFunction]}
+    profileNavigation={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            "Following",
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
     profileStore={
       Object {
         "articles": Array [
@@ -35,7 +49,44 @@ ShallowWrapper {
             "updatedAt": "2018-11-09T15:08:00.560Z",
           },
         ],
-        "favorites": Array [],
+        "favorites": Array [
+          Object {
+            "article": Object {
+              "archived": false,
+              "authorId": 13,
+              "averageRating": null,
+              "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+              "comments": Array [],
+              "createdAt": "2018-11-22T12:57:56.989Z",
+              "description": " this is the fine long body  this is the fine long body ",
+              "favorited": null,
+              "favoritesCount": null,
+              "id": 2,
+              "image": null,
+              "published": true,
+              "reactions": Array [],
+              "read_time": "1 minute",
+              "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+              "tagList": null,
+              "title": "This is a fine title which I would really love to have",
+              "updatedAt": "2018-11-22T12:57:56.989Z",
+              "user": Object {
+                "firstname": "Anthony",
+                "isFollowed": null,
+                "isFollowing": null,
+                "lastname": "Ugwu",
+                "profile": Object {
+                  "image": null,
+                },
+              },
+            },
+            "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+            "createdAt": "2018-11-22T12:59:16.439Z",
+            "id": 1,
+            "updatedAt": "2018-11-22T12:59:16.439Z",
+            "user_id": 1,
+          },
+        ],
         "followers": Array [
           Object {
             "createdAt": "2018-11-11T23:42:00.689Z",
@@ -71,6 +122,7 @@ ShallowWrapper {
           "userId": 1,
           "username": "akangbe",
         },
+        "profileError": "",
         "profileView": "Followers",
         "user": Object {
           "email": "damafeez11@gmail.com",
@@ -148,7 +200,44 @@ ShallowWrapper {
                   "updatedAt": "2018-11-09T15:08:00.560Z",
                 },
               ],
-              "favorites": Array [],
+              "favorites": Array [
+                Object {
+                  "article": Object {
+                    "archived": false,
+                    "authorId": 13,
+                    "averageRating": null,
+                    "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+                    "comments": Array [],
+                    "createdAt": "2018-11-22T12:57:56.989Z",
+                    "description": " this is the fine long body  this is the fine long body ",
+                    "favorited": null,
+                    "favoritesCount": null,
+                    "id": 2,
+                    "image": null,
+                    "published": true,
+                    "reactions": Array [],
+                    "read_time": "1 minute",
+                    "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                    "tagList": null,
+                    "title": "This is a fine title which I would really love to have",
+                    "updatedAt": "2018-11-22T12:57:56.989Z",
+                    "user": Object {
+                      "firstname": "Anthony",
+                      "isFollowed": null,
+                      "isFollowing": null,
+                      "lastname": "Ugwu",
+                      "profile": Object {
+                        "image": null,
+                      },
+                    },
+                  },
+                  "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                  "createdAt": "2018-11-22T12:59:16.439Z",
+                  "id": 1,
+                  "updatedAt": "2018-11-22T12:59:16.439Z",
+                  "user_id": 1,
+                },
+              ],
               "followers": Array [
                 Object {
                   "createdAt": "2018-11-11T23:42:00.689Z",
@@ -184,6 +273,7 @@ ShallowWrapper {
                 "userId": 1,
                 "username": "akangbe",
               },
+              "profileError": "",
               "profileView": "Followers",
               "user": Object {
                 "email": "damafeez11@gmail.com",
@@ -329,7 +419,44 @@ ShallowWrapper {
                 "updatedAt": "2018-11-09T15:08:00.560Z",
               },
             ],
-            "favorites": Array [],
+            "favorites": Array [
+              Object {
+                "article": Object {
+                  "archived": false,
+                  "authorId": 13,
+                  "averageRating": null,
+                  "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+                  "comments": Array [],
+                  "createdAt": "2018-11-22T12:57:56.989Z",
+                  "description": " this is the fine long body  this is the fine long body ",
+                  "favorited": null,
+                  "favoritesCount": null,
+                  "id": 2,
+                  "image": null,
+                  "published": true,
+                  "reactions": Array [],
+                  "read_time": "1 minute",
+                  "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                  "tagList": null,
+                  "title": "This is a fine title which I would really love to have",
+                  "updatedAt": "2018-11-22T12:57:56.989Z",
+                  "user": Object {
+                    "firstname": "Anthony",
+                    "isFollowed": null,
+                    "isFollowing": null,
+                    "lastname": "Ugwu",
+                    "profile": Object {
+                      "image": null,
+                    },
+                  },
+                },
+                "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                "createdAt": "2018-11-22T12:59:16.439Z",
+                "id": 1,
+                "updatedAt": "2018-11-22T12:59:16.439Z",
+                "user_id": 1,
+              },
+            ],
             "followers": Array [
               Object {
                 "createdAt": "2018-11-11T23:42:00.689Z",
@@ -365,6 +492,7 @@ ShallowWrapper {
               "userId": 1,
               "username": "akangbe",
             },
+            "profileError": "",
             "profileView": "Followers",
             "user": Object {
               "email": "damafeez11@gmail.com",
@@ -472,7 +600,44 @@ ShallowWrapper {
                     "updatedAt": "2018-11-09T15:08:00.560Z",
                   },
                 ],
-                "favorites": Array [],
+                "favorites": Array [
+                  Object {
+                    "article": Object {
+                      "archived": false,
+                      "authorId": 13,
+                      "averageRating": null,
+                      "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+                      "comments": Array [],
+                      "createdAt": "2018-11-22T12:57:56.989Z",
+                      "description": " this is the fine long body  this is the fine long body ",
+                      "favorited": null,
+                      "favoritesCount": null,
+                      "id": 2,
+                      "image": null,
+                      "published": true,
+                      "reactions": Array [],
+                      "read_time": "1 minute",
+                      "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                      "tagList": null,
+                      "title": "This is a fine title which I would really love to have",
+                      "updatedAt": "2018-11-22T12:57:56.989Z",
+                      "user": Object {
+                        "firstname": "Anthony",
+                        "isFollowed": null,
+                        "isFollowing": null,
+                        "lastname": "Ugwu",
+                        "profile": Object {
+                          "image": null,
+                        },
+                      },
+                    },
+                    "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                    "createdAt": "2018-11-22T12:59:16.439Z",
+                    "id": 1,
+                    "updatedAt": "2018-11-22T12:59:16.439Z",
+                    "user_id": 1,
+                  },
+                ],
                 "followers": Array [
                   Object {
                     "createdAt": "2018-11-11T23:42:00.689Z",
@@ -508,6 +673,7 @@ ShallowWrapper {
                   "userId": 1,
                   "username": "akangbe",
                 },
+                "profileError": "",
                 "profileView": "Followers",
                 "user": Object {
                   "email": "damafeez11@gmail.com",
@@ -653,7 +819,44 @@ ShallowWrapper {
                   "updatedAt": "2018-11-09T15:08:00.560Z",
                 },
               ],
-              "favorites": Array [],
+              "favorites": Array [
+                Object {
+                  "article": Object {
+                    "archived": false,
+                    "authorId": 13,
+                    "averageRating": null,
+                    "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+                    "comments": Array [],
+                    "createdAt": "2018-11-22T12:57:56.989Z",
+                    "description": " this is the fine long body  this is the fine long body ",
+                    "favorited": null,
+                    "favoritesCount": null,
+                    "id": 2,
+                    "image": null,
+                    "published": true,
+                    "reactions": Array [],
+                    "read_time": "1 minute",
+                    "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                    "tagList": null,
+                    "title": "This is a fine title which I would really love to have",
+                    "updatedAt": "2018-11-22T12:57:56.989Z",
+                    "user": Object {
+                      "firstname": "Anthony",
+                      "isFollowed": null,
+                      "isFollowing": null,
+                      "lastname": "Ugwu",
+                      "profile": Object {
+                        "image": null,
+                      },
+                    },
+                  },
+                  "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                  "createdAt": "2018-11-22T12:59:16.439Z",
+                  "id": 1,
+                  "updatedAt": "2018-11-22T12:59:16.439Z",
+                  "user_id": 1,
+                },
+              ],
               "followers": Array [
                 Object {
                   "createdAt": "2018-11-11T23:42:00.689Z",
@@ -689,6 +892,7 @@ ShallowWrapper {
                 "userId": 1,
                 "username": "akangbe",
               },
+              "profileError": "",
               "profileView": "Followers",
               "user": Object {
                 "email": "damafeez11@gmail.com",
@@ -779,7 +983,21 @@ ShallowWrapper {
         },
       }
     }
-    profileNavigation={[MockFunction]}
+    profileNavigation={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            "Following",
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
     profileStore={
       Object {
         "articles": Array [
@@ -802,7 +1020,44 @@ ShallowWrapper {
             "updatedAt": "2018-11-09T15:08:00.560Z",
           },
         ],
-        "favorites": Array [],
+        "favorites": Array [
+          Object {
+            "article": Object {
+              "archived": false,
+              "authorId": 13,
+              "averageRating": null,
+              "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+              "comments": Array [],
+              "createdAt": "2018-11-22T12:57:56.989Z",
+              "description": " this is the fine long body  this is the fine long body ",
+              "favorited": null,
+              "favoritesCount": null,
+              "id": 2,
+              "image": null,
+              "published": true,
+              "reactions": Array [],
+              "read_time": "1 minute",
+              "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+              "tagList": null,
+              "title": "This is a fine title which I would really love to have",
+              "updatedAt": "2018-11-22T12:57:56.989Z",
+              "user": Object {
+                "firstname": "Anthony",
+                "isFollowed": null,
+                "isFollowing": null,
+                "lastname": "Ugwu",
+                "profile": Object {
+                  "image": null,
+                },
+              },
+            },
+            "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+            "createdAt": "2018-11-22T12:59:16.439Z",
+            "id": 1,
+            "updatedAt": "2018-11-22T12:59:16.439Z",
+            "user_id": 1,
+          },
+        ],
         "followers": Array [
           Object {
             "createdAt": "2018-11-11T23:42:00.689Z",
@@ -831,6 +1086,7 @@ ShallowWrapper {
         "profile": Object {
           "image": null,
         },
+        "profileError": "",
         "profileView": "Articles",
         "user": Object {
           "email": "damafeez11@gmail.com",
@@ -908,7 +1164,44 @@ ShallowWrapper {
                   "updatedAt": "2018-11-09T15:08:00.560Z",
                 },
               ],
-              "favorites": Array [],
+              "favorites": Array [
+                Object {
+                  "article": Object {
+                    "archived": false,
+                    "authorId": 13,
+                    "averageRating": null,
+                    "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+                    "comments": Array [],
+                    "createdAt": "2018-11-22T12:57:56.989Z",
+                    "description": " this is the fine long body  this is the fine long body ",
+                    "favorited": null,
+                    "favoritesCount": null,
+                    "id": 2,
+                    "image": null,
+                    "published": true,
+                    "reactions": Array [],
+                    "read_time": "1 minute",
+                    "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                    "tagList": null,
+                    "title": "This is a fine title which I would really love to have",
+                    "updatedAt": "2018-11-22T12:57:56.989Z",
+                    "user": Object {
+                      "firstname": "Anthony",
+                      "isFollowed": null,
+                      "isFollowing": null,
+                      "lastname": "Ugwu",
+                      "profile": Object {
+                        "image": null,
+                      },
+                    },
+                  },
+                  "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                  "createdAt": "2018-11-22T12:59:16.439Z",
+                  "id": 1,
+                  "updatedAt": "2018-11-22T12:59:16.439Z",
+                  "user_id": 1,
+                },
+              ],
               "followers": Array [
                 Object {
                   "createdAt": "2018-11-11T23:42:00.689Z",
@@ -937,6 +1230,7 @@ ShallowWrapper {
               "profile": Object {
                 "image": null,
               },
+              "profileError": "",
               "profileView": "Articles",
               "user": Object {
                 "email": "damafeez11@gmail.com",
@@ -978,6 +1272,7 @@ ShallowWrapper {
           authorImage={null}
           ownProfile={false}
           userFullName="Afeez1 Awoyemi"
+          userId={1}
         />,
       ],
     },
@@ -1080,7 +1375,44 @@ ShallowWrapper {
                 "updatedAt": "2018-11-09T15:08:00.560Z",
               },
             ],
-            "favorites": Array [],
+            "favorites": Array [
+              Object {
+                "article": Object {
+                  "archived": false,
+                  "authorId": 13,
+                  "averageRating": null,
+                  "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+                  "comments": Array [],
+                  "createdAt": "2018-11-22T12:57:56.989Z",
+                  "description": " this is the fine long body  this is the fine long body ",
+                  "favorited": null,
+                  "favoritesCount": null,
+                  "id": 2,
+                  "image": null,
+                  "published": true,
+                  "reactions": Array [],
+                  "read_time": "1 minute",
+                  "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                  "tagList": null,
+                  "title": "This is a fine title which I would really love to have",
+                  "updatedAt": "2018-11-22T12:57:56.989Z",
+                  "user": Object {
+                    "firstname": "Anthony",
+                    "isFollowed": null,
+                    "isFollowing": null,
+                    "lastname": "Ugwu",
+                    "profile": Object {
+                      "image": null,
+                    },
+                  },
+                },
+                "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                "createdAt": "2018-11-22T12:59:16.439Z",
+                "id": 1,
+                "updatedAt": "2018-11-22T12:59:16.439Z",
+                "user_id": 1,
+              },
+            ],
             "followers": Array [
               Object {
                 "createdAt": "2018-11-11T23:42:00.689Z",
@@ -1109,6 +1441,7 @@ ShallowWrapper {
             "profile": Object {
               "image": null,
             },
+            "profileError": "",
             "profileView": "Articles",
             "user": Object {
               "email": "damafeez11@gmail.com",
@@ -1155,6 +1488,7 @@ ShallowWrapper {
           "authorImage": null,
           "ownProfile": false,
           "userFullName": "Afeez1 Awoyemi",
+          "userId": 1,
         },
         "ref": null,
         "rendered": null,
@@ -1213,7 +1547,44 @@ ShallowWrapper {
                     "updatedAt": "2018-11-09T15:08:00.560Z",
                   },
                 ],
-                "favorites": Array [],
+                "favorites": Array [
+                  Object {
+                    "article": Object {
+                      "archived": false,
+                      "authorId": 13,
+                      "averageRating": null,
+                      "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+                      "comments": Array [],
+                      "createdAt": "2018-11-22T12:57:56.989Z",
+                      "description": " this is the fine long body  this is the fine long body ",
+                      "favorited": null,
+                      "favoritesCount": null,
+                      "id": 2,
+                      "image": null,
+                      "published": true,
+                      "reactions": Array [],
+                      "read_time": "1 minute",
+                      "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                      "tagList": null,
+                      "title": "This is a fine title which I would really love to have",
+                      "updatedAt": "2018-11-22T12:57:56.989Z",
+                      "user": Object {
+                        "firstname": "Anthony",
+                        "isFollowed": null,
+                        "isFollowing": null,
+                        "lastname": "Ugwu",
+                        "profile": Object {
+                          "image": null,
+                        },
+                      },
+                    },
+                    "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                    "createdAt": "2018-11-22T12:59:16.439Z",
+                    "id": 1,
+                    "updatedAt": "2018-11-22T12:59:16.439Z",
+                    "user_id": 1,
+                  },
+                ],
                 "followers": Array [
                   Object {
                     "createdAt": "2018-11-11T23:42:00.689Z",
@@ -1242,6 +1613,7 @@ ShallowWrapper {
                 "profile": Object {
                   "image": null,
                 },
+                "profileError": "",
                 "profileView": "Articles",
                 "user": Object {
                   "email": "damafeez11@gmail.com",
@@ -1283,6 +1655,7 @@ ShallowWrapper {
             authorImage={null}
             ownProfile={false}
             userFullName="Afeez1 Awoyemi"
+            userId={1}
           />,
         ],
       },
@@ -1385,7 +1758,44 @@ ShallowWrapper {
                   "updatedAt": "2018-11-09T15:08:00.560Z",
                 },
               ],
-              "favorites": Array [],
+              "favorites": Array [
+                Object {
+                  "article": Object {
+                    "archived": false,
+                    "authorId": 13,
+                    "averageRating": null,
+                    "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+                    "comments": Array [],
+                    "createdAt": "2018-11-22T12:57:56.989Z",
+                    "description": " this is the fine long body  this is the fine long body ",
+                    "favorited": null,
+                    "favoritesCount": null,
+                    "id": 2,
+                    "image": null,
+                    "published": true,
+                    "reactions": Array [],
+                    "read_time": "1 minute",
+                    "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                    "tagList": null,
+                    "title": "This is a fine title which I would really love to have",
+                    "updatedAt": "2018-11-22T12:57:56.989Z",
+                    "user": Object {
+                      "firstname": "Anthony",
+                      "isFollowed": null,
+                      "isFollowing": null,
+                      "lastname": "Ugwu",
+                      "profile": Object {
+                        "image": null,
+                      },
+                    },
+                  },
+                  "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                  "createdAt": "2018-11-22T12:59:16.439Z",
+                  "id": 1,
+                  "updatedAt": "2018-11-22T12:59:16.439Z",
+                  "user_id": 1,
+                },
+              ],
               "followers": Array [
                 Object {
                   "createdAt": "2018-11-11T23:42:00.689Z",
@@ -1414,6 +1824,7 @@ ShallowWrapper {
               "profile": Object {
                 "image": null,
               },
+              "profileError": "",
               "profileView": "Articles",
               "user": Object {
                 "email": "damafeez11@gmail.com",
@@ -1460,6 +1871,7 @@ ShallowWrapper {
             "authorImage": null,
             "ownProfile": false,
             "userFullName": "Afeez1 Awoyemi",
+            "userId": 1,
           },
           "ref": null,
           "rendered": null,
@@ -1501,7 +1913,21 @@ ShallowWrapper {
         },
       }
     }
-    profileNavigation={[MockFunction]}
+    profileNavigation={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            "Following",
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
     profileStore={
       Object {
         "articles": Array [
@@ -1524,7 +1950,44 @@ ShallowWrapper {
             "updatedAt": "2018-11-09T15:08:00.560Z",
           },
         ],
-        "favorites": Array [],
+        "favorites": Array [
+          Object {
+            "article": Object {
+              "archived": false,
+              "authorId": 13,
+              "averageRating": null,
+              "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+              "comments": Array [],
+              "createdAt": "2018-11-22T12:57:56.989Z",
+              "description": " this is the fine long body  this is the fine long body ",
+              "favorited": null,
+              "favoritesCount": null,
+              "id": 2,
+              "image": null,
+              "published": true,
+              "reactions": Array [],
+              "read_time": "1 minute",
+              "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+              "tagList": null,
+              "title": "This is a fine title which I would really love to have",
+              "updatedAt": "2018-11-22T12:57:56.989Z",
+              "user": Object {
+                "firstname": "Anthony",
+                "isFollowed": null,
+                "isFollowing": null,
+                "lastname": "Ugwu",
+                "profile": Object {
+                  "image": null,
+                },
+              },
+            },
+            "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+            "createdAt": "2018-11-22T12:59:16.439Z",
+            "id": 1,
+            "updatedAt": "2018-11-22T12:59:16.439Z",
+            "user_id": 1,
+          },
+        ],
         "followers": Array [
           Object {
             "createdAt": "2018-11-11T23:42:00.689Z",
@@ -1553,6 +2016,7 @@ ShallowWrapper {
         "profile": Object {
           "image": null,
         },
+        "profileError": "",
         "profileView": "Favorites",
         "user": Object {
           "email": "damafeez11@gmail.com",
@@ -1630,7 +2094,44 @@ ShallowWrapper {
                   "updatedAt": "2018-11-09T15:08:00.560Z",
                 },
               ],
-              "favorites": Array [],
+              "favorites": Array [
+                Object {
+                  "article": Object {
+                    "archived": false,
+                    "authorId": 13,
+                    "averageRating": null,
+                    "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+                    "comments": Array [],
+                    "createdAt": "2018-11-22T12:57:56.989Z",
+                    "description": " this is the fine long body  this is the fine long body ",
+                    "favorited": null,
+                    "favoritesCount": null,
+                    "id": 2,
+                    "image": null,
+                    "published": true,
+                    "reactions": Array [],
+                    "read_time": "1 minute",
+                    "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                    "tagList": null,
+                    "title": "This is a fine title which I would really love to have",
+                    "updatedAt": "2018-11-22T12:57:56.989Z",
+                    "user": Object {
+                      "firstname": "Anthony",
+                      "isFollowed": null,
+                      "isFollowing": null,
+                      "lastname": "Ugwu",
+                      "profile": Object {
+                        "image": null,
+                      },
+                    },
+                  },
+                  "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                  "createdAt": "2018-11-22T12:59:16.439Z",
+                  "id": 1,
+                  "updatedAt": "2018-11-22T12:59:16.439Z",
+                  "user_id": 1,
+                },
+              ],
               "followers": Array [
                 Object {
                   "createdAt": "2018-11-11T23:42:00.689Z",
@@ -1659,6 +2160,7 @@ ShallowWrapper {
               "profile": Object {
                 "image": null,
               },
+              "profileError": "",
               "profileView": "Favorites",
               "user": Object {
                 "email": "damafeez11@gmail.com",
@@ -1674,11 +2176,51 @@ ShallowWrapper {
           }
         />,
         <ProfileArticleList
-          articles={Array []}
+          articles={
+            Array [
+              Object {
+                "article": Object {
+                  "archived": false,
+                  "authorId": 13,
+                  "averageRating": null,
+                  "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+                  "comments": Array [],
+                  "createdAt": "2018-11-22T12:57:56.989Z",
+                  "description": " this is the fine long body  this is the fine long body ",
+                  "favorited": null,
+                  "favoritesCount": null,
+                  "id": 2,
+                  "image": null,
+                  "published": true,
+                  "reactions": Array [],
+                  "read_time": "1 minute",
+                  "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                  "tagList": null,
+                  "title": "This is a fine title which I would really love to have",
+                  "updatedAt": "2018-11-22T12:57:56.989Z",
+                  "user": Object {
+                    "firstname": "Anthony",
+                    "isFollowed": null,
+                    "isFollowing": null,
+                    "lastname": "Ugwu",
+                    "profile": Object {
+                      "image": null,
+                    },
+                  },
+                },
+                "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                "createdAt": "2018-11-22T12:59:16.439Z",
+                "id": 1,
+                "updatedAt": "2018-11-22T12:59:16.439Z",
+                "user_id": 1,
+              },
+            ]
+          }
           author="Afeez1 Awoyemi"
           authorImage={null}
           ownProfile={false}
           userFullName="Afeez1 Awoyemi"
+          userId={1}
         />,
       ],
     },
@@ -1781,7 +2323,44 @@ ShallowWrapper {
                 "updatedAt": "2018-11-09T15:08:00.560Z",
               },
             ],
-            "favorites": Array [],
+            "favorites": Array [
+              Object {
+                "article": Object {
+                  "archived": false,
+                  "authorId": 13,
+                  "averageRating": null,
+                  "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+                  "comments": Array [],
+                  "createdAt": "2018-11-22T12:57:56.989Z",
+                  "description": " this is the fine long body  this is the fine long body ",
+                  "favorited": null,
+                  "favoritesCount": null,
+                  "id": 2,
+                  "image": null,
+                  "published": true,
+                  "reactions": Array [],
+                  "read_time": "1 minute",
+                  "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                  "tagList": null,
+                  "title": "This is a fine title which I would really love to have",
+                  "updatedAt": "2018-11-22T12:57:56.989Z",
+                  "user": Object {
+                    "firstname": "Anthony",
+                    "isFollowed": null,
+                    "isFollowing": null,
+                    "lastname": "Ugwu",
+                    "profile": Object {
+                      "image": null,
+                    },
+                  },
+                },
+                "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                "createdAt": "2018-11-22T12:59:16.439Z",
+                "id": 1,
+                "updatedAt": "2018-11-22T12:59:16.439Z",
+                "user_id": 1,
+              },
+            ],
             "followers": Array [
               Object {
                 "createdAt": "2018-11-11T23:42:00.689Z",
@@ -1810,6 +2389,7 @@ ShallowWrapper {
             "profile": Object {
               "image": null,
             },
+            "profileError": "",
             "profileView": "Favorites",
             "user": Object {
               "email": "damafeez11@gmail.com",
@@ -1832,11 +2412,49 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "articles": Array [],
+          "articles": Array [
+            Object {
+              "article": Object {
+                "archived": false,
+                "authorId": 13,
+                "averageRating": null,
+                "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+                "comments": Array [],
+                "createdAt": "2018-11-22T12:57:56.989Z",
+                "description": " this is the fine long body  this is the fine long body ",
+                "favorited": null,
+                "favoritesCount": null,
+                "id": 2,
+                "image": null,
+                "published": true,
+                "reactions": Array [],
+                "read_time": "1 minute",
+                "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                "tagList": null,
+                "title": "This is a fine title which I would really love to have",
+                "updatedAt": "2018-11-22T12:57:56.989Z",
+                "user": Object {
+                  "firstname": "Anthony",
+                  "isFollowed": null,
+                  "isFollowing": null,
+                  "lastname": "Ugwu",
+                  "profile": Object {
+                    "image": null,
+                  },
+                },
+              },
+              "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+              "createdAt": "2018-11-22T12:59:16.439Z",
+              "id": 1,
+              "updatedAt": "2018-11-22T12:59:16.439Z",
+              "user_id": 1,
+            },
+          ],
           "author": "Afeez1 Awoyemi",
           "authorImage": null,
           "ownProfile": false,
           "userFullName": "Afeez1 Awoyemi",
+          "userId": 1,
         },
         "ref": null,
         "rendered": null,
@@ -1895,7 +2513,44 @@ ShallowWrapper {
                     "updatedAt": "2018-11-09T15:08:00.560Z",
                   },
                 ],
-                "favorites": Array [],
+                "favorites": Array [
+                  Object {
+                    "article": Object {
+                      "archived": false,
+                      "authorId": 13,
+                      "averageRating": null,
+                      "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+                      "comments": Array [],
+                      "createdAt": "2018-11-22T12:57:56.989Z",
+                      "description": " this is the fine long body  this is the fine long body ",
+                      "favorited": null,
+                      "favoritesCount": null,
+                      "id": 2,
+                      "image": null,
+                      "published": true,
+                      "reactions": Array [],
+                      "read_time": "1 minute",
+                      "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                      "tagList": null,
+                      "title": "This is a fine title which I would really love to have",
+                      "updatedAt": "2018-11-22T12:57:56.989Z",
+                      "user": Object {
+                        "firstname": "Anthony",
+                        "isFollowed": null,
+                        "isFollowing": null,
+                        "lastname": "Ugwu",
+                        "profile": Object {
+                          "image": null,
+                        },
+                      },
+                    },
+                    "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                    "createdAt": "2018-11-22T12:59:16.439Z",
+                    "id": 1,
+                    "updatedAt": "2018-11-22T12:59:16.439Z",
+                    "user_id": 1,
+                  },
+                ],
                 "followers": Array [
                   Object {
                     "createdAt": "2018-11-11T23:42:00.689Z",
@@ -1924,6 +2579,7 @@ ShallowWrapper {
                 "profile": Object {
                   "image": null,
                 },
+                "profileError": "",
                 "profileView": "Favorites",
                 "user": Object {
                   "email": "damafeez11@gmail.com",
@@ -1939,11 +2595,51 @@ ShallowWrapper {
             }
           />,
           <ProfileArticleList
-            articles={Array []}
+            articles={
+              Array [
+                Object {
+                  "article": Object {
+                    "archived": false,
+                    "authorId": 13,
+                    "averageRating": null,
+                    "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+                    "comments": Array [],
+                    "createdAt": "2018-11-22T12:57:56.989Z",
+                    "description": " this is the fine long body  this is the fine long body ",
+                    "favorited": null,
+                    "favoritesCount": null,
+                    "id": 2,
+                    "image": null,
+                    "published": true,
+                    "reactions": Array [],
+                    "read_time": "1 minute",
+                    "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                    "tagList": null,
+                    "title": "This is a fine title which I would really love to have",
+                    "updatedAt": "2018-11-22T12:57:56.989Z",
+                    "user": Object {
+                      "firstname": "Anthony",
+                      "isFollowed": null,
+                      "isFollowing": null,
+                      "lastname": "Ugwu",
+                      "profile": Object {
+                        "image": null,
+                      },
+                    },
+                  },
+                  "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                  "createdAt": "2018-11-22T12:59:16.439Z",
+                  "id": 1,
+                  "updatedAt": "2018-11-22T12:59:16.439Z",
+                  "user_id": 1,
+                },
+              ]
+            }
             author="Afeez1 Awoyemi"
             authorImage={null}
             ownProfile={false}
             userFullName="Afeez1 Awoyemi"
+            userId={1}
           />,
         ],
       },
@@ -2046,7 +2742,44 @@ ShallowWrapper {
                   "updatedAt": "2018-11-09T15:08:00.560Z",
                 },
               ],
-              "favorites": Array [],
+              "favorites": Array [
+                Object {
+                  "article": Object {
+                    "archived": false,
+                    "authorId": 13,
+                    "averageRating": null,
+                    "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+                    "comments": Array [],
+                    "createdAt": "2018-11-22T12:57:56.989Z",
+                    "description": " this is the fine long body  this is the fine long body ",
+                    "favorited": null,
+                    "favoritesCount": null,
+                    "id": 2,
+                    "image": null,
+                    "published": true,
+                    "reactions": Array [],
+                    "read_time": "1 minute",
+                    "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                    "tagList": null,
+                    "title": "This is a fine title which I would really love to have",
+                    "updatedAt": "2018-11-22T12:57:56.989Z",
+                    "user": Object {
+                      "firstname": "Anthony",
+                      "isFollowed": null,
+                      "isFollowing": null,
+                      "lastname": "Ugwu",
+                      "profile": Object {
+                        "image": null,
+                      },
+                    },
+                  },
+                  "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                  "createdAt": "2018-11-22T12:59:16.439Z",
+                  "id": 1,
+                  "updatedAt": "2018-11-22T12:59:16.439Z",
+                  "user_id": 1,
+                },
+              ],
               "followers": Array [
                 Object {
                   "createdAt": "2018-11-11T23:42:00.689Z",
@@ -2075,6 +2808,7 @@ ShallowWrapper {
               "profile": Object {
                 "image": null,
               },
+              "profileError": "",
               "profileView": "Favorites",
               "user": Object {
                 "email": "damafeez11@gmail.com",
@@ -2097,11 +2831,49 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "articles": Array [],
+            "articles": Array [
+              Object {
+                "article": Object {
+                  "archived": false,
+                  "authorId": 13,
+                  "averageRating": null,
+                  "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+                  "comments": Array [],
+                  "createdAt": "2018-11-22T12:57:56.989Z",
+                  "description": " this is the fine long body  this is the fine long body ",
+                  "favorited": null,
+                  "favoritesCount": null,
+                  "id": 2,
+                  "image": null,
+                  "published": true,
+                  "reactions": Array [],
+                  "read_time": "1 minute",
+                  "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                  "tagList": null,
+                  "title": "This is a fine title which I would really love to have",
+                  "updatedAt": "2018-11-22T12:57:56.989Z",
+                  "user": Object {
+                    "firstname": "Anthony",
+                    "isFollowed": null,
+                    "isFollowing": null,
+                    "lastname": "Ugwu",
+                    "profile": Object {
+                      "image": null,
+                    },
+                  },
+                },
+                "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                "createdAt": "2018-11-22T12:59:16.439Z",
+                "id": 1,
+                "updatedAt": "2018-11-22T12:59:16.439Z",
+                "user_id": 1,
+              },
+            ],
             "author": "Afeez1 Awoyemi",
             "authorImage": null,
             "ownProfile": false,
             "userFullName": "Afeez1 Awoyemi",
+            "userId": 1,
           },
           "ref": null,
           "rendered": null,
@@ -2143,7 +2915,21 @@ ShallowWrapper {
         },
       }
     }
-    profileNavigation={[MockFunction]}
+    profileNavigation={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            "Following",
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
     profileStore={
       Object {
         "articles": Array [
@@ -2166,7 +2952,44 @@ ShallowWrapper {
             "updatedAt": "2018-11-09T15:08:00.560Z",
           },
         ],
-        "favorites": Array [],
+        "favorites": Array [
+          Object {
+            "article": Object {
+              "archived": false,
+              "authorId": 13,
+              "averageRating": null,
+              "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+              "comments": Array [],
+              "createdAt": "2018-11-22T12:57:56.989Z",
+              "description": " this is the fine long body  this is the fine long body ",
+              "favorited": null,
+              "favoritesCount": null,
+              "id": 2,
+              "image": null,
+              "published": true,
+              "reactions": Array [],
+              "read_time": "1 minute",
+              "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+              "tagList": null,
+              "title": "This is a fine title which I would really love to have",
+              "updatedAt": "2018-11-22T12:57:56.989Z",
+              "user": Object {
+                "firstname": "Anthony",
+                "isFollowed": null,
+                "isFollowing": null,
+                "lastname": "Ugwu",
+                "profile": Object {
+                  "image": null,
+                },
+              },
+            },
+            "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+            "createdAt": "2018-11-22T12:59:16.439Z",
+            "id": 1,
+            "updatedAt": "2018-11-22T12:59:16.439Z",
+            "user_id": 1,
+          },
+        ],
         "followers": Array [
           Object {
             "createdAt": "2018-11-11T23:42:00.689Z",
@@ -2203,6 +3026,7 @@ ShallowWrapper {
           "userId": 1,
           "username": "akangbe",
         },
+        "profileError": "",
         "profileView": "Favorites",
         "user": Object {
           "email": "damafeez11@gmail.com",
@@ -2283,7 +3107,21 @@ ShallowWrapper {
         },
       }
     }
-    profileNavigation={[MockFunction]}
+    profileNavigation={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            "Following",
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
     profileStore={
       Object {
         "articles": Array [
@@ -2306,7 +3144,44 @@ ShallowWrapper {
             "updatedAt": "2018-11-09T15:08:00.560Z",
           },
         ],
-        "favorites": Array [],
+        "favorites": Array [
+          Object {
+            "article": Object {
+              "archived": false,
+              "authorId": 13,
+              "averageRating": null,
+              "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+              "comments": Array [],
+              "createdAt": "2018-11-22T12:57:56.989Z",
+              "description": " this is the fine long body  this is the fine long body ",
+              "favorited": null,
+              "favoritesCount": null,
+              "id": 2,
+              "image": null,
+              "published": true,
+              "reactions": Array [],
+              "read_time": "1 minute",
+              "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+              "tagList": null,
+              "title": "This is a fine title which I would really love to have",
+              "updatedAt": "2018-11-22T12:57:56.989Z",
+              "user": Object {
+                "firstname": "Anthony",
+                "isFollowed": null,
+                "isFollowing": null,
+                "lastname": "Ugwu",
+                "profile": Object {
+                  "image": null,
+                },
+              },
+            },
+            "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+            "createdAt": "2018-11-22T12:59:16.439Z",
+            "id": 1,
+            "updatedAt": "2018-11-22T12:59:16.439Z",
+            "user_id": 1,
+          },
+        ],
         "followers": Array [
           Object {
             "createdAt": "2018-11-11T23:42:00.689Z",
@@ -2571,7 +3446,21 @@ ShallowWrapper {
         },
       }
     }
-    profileNavigation={[MockFunction]}
+    profileNavigation={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            "Following",
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
     profileStore={
       Object {
         "articles": Array [
@@ -2594,7 +3483,44 @@ ShallowWrapper {
             "updatedAt": "2018-11-09T15:08:00.560Z",
           },
         ],
-        "favorites": Array [],
+        "favorites": Array [
+          Object {
+            "article": Object {
+              "archived": false,
+              "authorId": 13,
+              "averageRating": null,
+              "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+              "comments": Array [],
+              "createdAt": "2018-11-22T12:57:56.989Z",
+              "description": " this is the fine long body  this is the fine long body ",
+              "favorited": null,
+              "favoritesCount": null,
+              "id": 2,
+              "image": null,
+              "published": true,
+              "reactions": Array [],
+              "read_time": "1 minute",
+              "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+              "tagList": null,
+              "title": "This is a fine title which I would really love to have",
+              "updatedAt": "2018-11-22T12:57:56.989Z",
+              "user": Object {
+                "firstname": "Anthony",
+                "isFollowed": null,
+                "isFollowing": null,
+                "lastname": "Ugwu",
+                "profile": Object {
+                  "image": null,
+                },
+              },
+            },
+            "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+            "createdAt": "2018-11-22T12:59:16.439Z",
+            "id": 1,
+            "updatedAt": "2018-11-22T12:59:16.439Z",
+            "user_id": 1,
+          },
+        ],
         "followers": Array [
           Object {
             "createdAt": "2018-11-11T23:42:00.689Z",
@@ -2630,6 +3556,7 @@ ShallowWrapper {
           "userId": 1,
           "username": "akangbe",
         },
+        "profileError": "",
         "profileView": "Following",
         "user": Object {
           "email": "damafeez11@gmail.com",
@@ -2707,7 +3634,44 @@ ShallowWrapper {
                   "updatedAt": "2018-11-09T15:08:00.560Z",
                 },
               ],
-              "favorites": Array [],
+              "favorites": Array [
+                Object {
+                  "article": Object {
+                    "archived": false,
+                    "authorId": 13,
+                    "averageRating": null,
+                    "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+                    "comments": Array [],
+                    "createdAt": "2018-11-22T12:57:56.989Z",
+                    "description": " this is the fine long body  this is the fine long body ",
+                    "favorited": null,
+                    "favoritesCount": null,
+                    "id": 2,
+                    "image": null,
+                    "published": true,
+                    "reactions": Array [],
+                    "read_time": "1 minute",
+                    "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                    "tagList": null,
+                    "title": "This is a fine title which I would really love to have",
+                    "updatedAt": "2018-11-22T12:57:56.989Z",
+                    "user": Object {
+                      "firstname": "Anthony",
+                      "isFollowed": null,
+                      "isFollowing": null,
+                      "lastname": "Ugwu",
+                      "profile": Object {
+                        "image": null,
+                      },
+                    },
+                  },
+                  "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                  "createdAt": "2018-11-22T12:59:16.439Z",
+                  "id": 1,
+                  "updatedAt": "2018-11-22T12:59:16.439Z",
+                  "user_id": 1,
+                },
+              ],
               "followers": Array [
                 Object {
                   "createdAt": "2018-11-11T23:42:00.689Z",
@@ -2743,6 +3707,7 @@ ShallowWrapper {
                 "userId": 1,
                 "username": "akangbe",
               },
+              "profileError": "",
               "profileView": "Following",
               "user": Object {
                 "email": "damafeez11@gmail.com",
@@ -2863,7 +3828,44 @@ ShallowWrapper {
                 "updatedAt": "2018-11-09T15:08:00.560Z",
               },
             ],
-            "favorites": Array [],
+            "favorites": Array [
+              Object {
+                "article": Object {
+                  "archived": false,
+                  "authorId": 13,
+                  "averageRating": null,
+                  "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+                  "comments": Array [],
+                  "createdAt": "2018-11-22T12:57:56.989Z",
+                  "description": " this is the fine long body  this is the fine long body ",
+                  "favorited": null,
+                  "favoritesCount": null,
+                  "id": 2,
+                  "image": null,
+                  "published": true,
+                  "reactions": Array [],
+                  "read_time": "1 minute",
+                  "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                  "tagList": null,
+                  "title": "This is a fine title which I would really love to have",
+                  "updatedAt": "2018-11-22T12:57:56.989Z",
+                  "user": Object {
+                    "firstname": "Anthony",
+                    "isFollowed": null,
+                    "isFollowing": null,
+                    "lastname": "Ugwu",
+                    "profile": Object {
+                      "image": null,
+                    },
+                  },
+                },
+                "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                "createdAt": "2018-11-22T12:59:16.439Z",
+                "id": 1,
+                "updatedAt": "2018-11-22T12:59:16.439Z",
+                "user_id": 1,
+              },
+            ],
             "followers": Array [
               Object {
                 "createdAt": "2018-11-11T23:42:00.689Z",
@@ -2899,6 +3901,7 @@ ShallowWrapper {
               "userId": 1,
               "username": "akangbe",
             },
+            "profileError": "",
             "profileView": "Following",
             "user": Object {
               "email": "damafeez11@gmail.com",
@@ -2983,7 +3986,44 @@ ShallowWrapper {
                     "updatedAt": "2018-11-09T15:08:00.560Z",
                   },
                 ],
-                "favorites": Array [],
+                "favorites": Array [
+                  Object {
+                    "article": Object {
+                      "archived": false,
+                      "authorId": 13,
+                      "averageRating": null,
+                      "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+                      "comments": Array [],
+                      "createdAt": "2018-11-22T12:57:56.989Z",
+                      "description": " this is the fine long body  this is the fine long body ",
+                      "favorited": null,
+                      "favoritesCount": null,
+                      "id": 2,
+                      "image": null,
+                      "published": true,
+                      "reactions": Array [],
+                      "read_time": "1 minute",
+                      "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                      "tagList": null,
+                      "title": "This is a fine title which I would really love to have",
+                      "updatedAt": "2018-11-22T12:57:56.989Z",
+                      "user": Object {
+                        "firstname": "Anthony",
+                        "isFollowed": null,
+                        "isFollowing": null,
+                        "lastname": "Ugwu",
+                        "profile": Object {
+                          "image": null,
+                        },
+                      },
+                    },
+                    "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                    "createdAt": "2018-11-22T12:59:16.439Z",
+                    "id": 1,
+                    "updatedAt": "2018-11-22T12:59:16.439Z",
+                    "user_id": 1,
+                  },
+                ],
                 "followers": Array [
                   Object {
                     "createdAt": "2018-11-11T23:42:00.689Z",
@@ -3019,6 +4059,7 @@ ShallowWrapper {
                   "userId": 1,
                   "username": "akangbe",
                 },
+                "profileError": "",
                 "profileView": "Following",
                 "user": Object {
                   "email": "damafeez11@gmail.com",
@@ -3139,7 +4180,44 @@ ShallowWrapper {
                   "updatedAt": "2018-11-09T15:08:00.560Z",
                 },
               ],
-              "favorites": Array [],
+              "favorites": Array [
+                Object {
+                  "article": Object {
+                    "archived": false,
+                    "authorId": 13,
+                    "averageRating": null,
+                    "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+                    "comments": Array [],
+                    "createdAt": "2018-11-22T12:57:56.989Z",
+                    "description": " this is the fine long body  this is the fine long body ",
+                    "favorited": null,
+                    "favoritesCount": null,
+                    "id": 2,
+                    "image": null,
+                    "published": true,
+                    "reactions": Array [],
+                    "read_time": "1 minute",
+                    "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                    "tagList": null,
+                    "title": "This is a fine title which I would really love to have",
+                    "updatedAt": "2018-11-22T12:57:56.989Z",
+                    "user": Object {
+                      "firstname": "Anthony",
+                      "isFollowed": null,
+                      "isFollowing": null,
+                      "lastname": "Ugwu",
+                      "profile": Object {
+                        "image": null,
+                      },
+                    },
+                  },
+                  "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                  "createdAt": "2018-11-22T12:59:16.439Z",
+                  "id": 1,
+                  "updatedAt": "2018-11-22T12:59:16.439Z",
+                  "user_id": 1,
+                },
+              ],
               "followers": Array [
                 Object {
                   "createdAt": "2018-11-11T23:42:00.689Z",
@@ -3175,6 +4253,7 @@ ShallowWrapper {
                 "userId": 1,
                 "username": "akangbe",
               },
+              "profileError": "",
               "profileView": "Following",
               "user": Object {
                 "email": "damafeez11@gmail.com",
@@ -3242,7 +4321,21 @@ ShallowWrapper {
         },
       }
     }
-    profileNavigation={[MockFunction]}
+    profileNavigation={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            "Following",
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
     profileStore={
       Object {
         "articles": Array [
@@ -3265,7 +4358,44 @@ ShallowWrapper {
             "updatedAt": "2018-11-09T15:08:00.560Z",
           },
         ],
-        "favorites": Array [],
+        "favorites": Array [
+          Object {
+            "article": Object {
+              "archived": false,
+              "authorId": 13,
+              "averageRating": null,
+              "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+              "comments": Array [],
+              "createdAt": "2018-11-22T12:57:56.989Z",
+              "description": " this is the fine long body  this is the fine long body ",
+              "favorited": null,
+              "favoritesCount": null,
+              "id": 2,
+              "image": null,
+              "published": true,
+              "reactions": Array [],
+              "read_time": "1 minute",
+              "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+              "tagList": null,
+              "title": "This is a fine title which I would really love to have",
+              "updatedAt": "2018-11-22T12:57:56.989Z",
+              "user": Object {
+                "firstname": "Anthony",
+                "isFollowed": null,
+                "isFollowing": null,
+                "lastname": "Ugwu",
+                "profile": Object {
+                  "image": null,
+                },
+              },
+            },
+            "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+            "createdAt": "2018-11-22T12:59:16.439Z",
+            "id": 1,
+            "updatedAt": "2018-11-22T12:59:16.439Z",
+            "user_id": 1,
+          },
+        ],
         "followers": Array [
           Object {
             "createdAt": "2018-11-11T23:42:00.689Z",
@@ -3301,6 +4431,7 @@ ShallowWrapper {
           "userId": 1,
           "username": "akangbe",
         },
+        "profileError": "",
         "profileView": "Following",
         "user": Object {
           "email": "damafeez11@gmail.com",
@@ -3378,7 +4509,44 @@ ShallowWrapper {
                   "updatedAt": "2018-11-09T15:08:00.560Z",
                 },
               ],
-              "favorites": Array [],
+              "favorites": Array [
+                Object {
+                  "article": Object {
+                    "archived": false,
+                    "authorId": 13,
+                    "averageRating": null,
+                    "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+                    "comments": Array [],
+                    "createdAt": "2018-11-22T12:57:56.989Z",
+                    "description": " this is the fine long body  this is the fine long body ",
+                    "favorited": null,
+                    "favoritesCount": null,
+                    "id": 2,
+                    "image": null,
+                    "published": true,
+                    "reactions": Array [],
+                    "read_time": "1 minute",
+                    "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                    "tagList": null,
+                    "title": "This is a fine title which I would really love to have",
+                    "updatedAt": "2018-11-22T12:57:56.989Z",
+                    "user": Object {
+                      "firstname": "Anthony",
+                      "isFollowed": null,
+                      "isFollowing": null,
+                      "lastname": "Ugwu",
+                      "profile": Object {
+                        "image": null,
+                      },
+                    },
+                  },
+                  "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                  "createdAt": "2018-11-22T12:59:16.439Z",
+                  "id": 1,
+                  "updatedAt": "2018-11-22T12:59:16.439Z",
+                  "user_id": 1,
+                },
+              ],
               "followers": Array [
                 Object {
                   "createdAt": "2018-11-11T23:42:00.689Z",
@@ -3414,6 +4582,7 @@ ShallowWrapper {
                 "userId": 1,
                 "username": "akangbe",
               },
+              "profileError": "",
               "profileView": "Following",
               "user": Object {
                 "email": "damafeez11@gmail.com",
@@ -3534,7 +4703,44 @@ ShallowWrapper {
                 "updatedAt": "2018-11-09T15:08:00.560Z",
               },
             ],
-            "favorites": Array [],
+            "favorites": Array [
+              Object {
+                "article": Object {
+                  "archived": false,
+                  "authorId": 13,
+                  "averageRating": null,
+                  "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+                  "comments": Array [],
+                  "createdAt": "2018-11-22T12:57:56.989Z",
+                  "description": " this is the fine long body  this is the fine long body ",
+                  "favorited": null,
+                  "favoritesCount": null,
+                  "id": 2,
+                  "image": null,
+                  "published": true,
+                  "reactions": Array [],
+                  "read_time": "1 minute",
+                  "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                  "tagList": null,
+                  "title": "This is a fine title which I would really love to have",
+                  "updatedAt": "2018-11-22T12:57:56.989Z",
+                  "user": Object {
+                    "firstname": "Anthony",
+                    "isFollowed": null,
+                    "isFollowing": null,
+                    "lastname": "Ugwu",
+                    "profile": Object {
+                      "image": null,
+                    },
+                  },
+                },
+                "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                "createdAt": "2018-11-22T12:59:16.439Z",
+                "id": 1,
+                "updatedAt": "2018-11-22T12:59:16.439Z",
+                "user_id": 1,
+              },
+            ],
             "followers": Array [
               Object {
                 "createdAt": "2018-11-11T23:42:00.689Z",
@@ -3570,6 +4776,7 @@ ShallowWrapper {
               "userId": 1,
               "username": "akangbe",
             },
+            "profileError": "",
             "profileView": "Following",
             "user": Object {
               "email": "damafeez11@gmail.com",
@@ -3654,7 +4861,44 @@ ShallowWrapper {
                     "updatedAt": "2018-11-09T15:08:00.560Z",
                   },
                 ],
-                "favorites": Array [],
+                "favorites": Array [
+                  Object {
+                    "article": Object {
+                      "archived": false,
+                      "authorId": 13,
+                      "averageRating": null,
+                      "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+                      "comments": Array [],
+                      "createdAt": "2018-11-22T12:57:56.989Z",
+                      "description": " this is the fine long body  this is the fine long body ",
+                      "favorited": null,
+                      "favoritesCount": null,
+                      "id": 2,
+                      "image": null,
+                      "published": true,
+                      "reactions": Array [],
+                      "read_time": "1 minute",
+                      "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                      "tagList": null,
+                      "title": "This is a fine title which I would really love to have",
+                      "updatedAt": "2018-11-22T12:57:56.989Z",
+                      "user": Object {
+                        "firstname": "Anthony",
+                        "isFollowed": null,
+                        "isFollowing": null,
+                        "lastname": "Ugwu",
+                        "profile": Object {
+                          "image": null,
+                        },
+                      },
+                    },
+                    "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                    "createdAt": "2018-11-22T12:59:16.439Z",
+                    "id": 1,
+                    "updatedAt": "2018-11-22T12:59:16.439Z",
+                    "user_id": 1,
+                  },
+                ],
                 "followers": Array [
                   Object {
                     "createdAt": "2018-11-11T23:42:00.689Z",
@@ -3690,6 +4934,7 @@ ShallowWrapper {
                   "userId": 1,
                   "username": "akangbe",
                 },
+                "profileError": "",
                 "profileView": "Following",
                 "user": Object {
                   "email": "damafeez11@gmail.com",
@@ -3810,7 +5055,44 @@ ShallowWrapper {
                   "updatedAt": "2018-11-09T15:08:00.560Z",
                 },
               ],
-              "favorites": Array [],
+              "favorites": Array [
+                Object {
+                  "article": Object {
+                    "archived": false,
+                    "authorId": 13,
+                    "averageRating": null,
+                    "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+                    "comments": Array [],
+                    "createdAt": "2018-11-22T12:57:56.989Z",
+                    "description": " this is the fine long body  this is the fine long body ",
+                    "favorited": null,
+                    "favoritesCount": null,
+                    "id": 2,
+                    "image": null,
+                    "published": true,
+                    "reactions": Array [],
+                    "read_time": "1 minute",
+                    "slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                    "tagList": null,
+                    "title": "This is a fine title which I would really love to have",
+                    "updatedAt": "2018-11-22T12:57:56.989Z",
+                    "user": Object {
+                      "firstname": "Anthony",
+                      "isFollowed": null,
+                      "isFollowing": null,
+                      "lastname": "Ugwu",
+                      "profile": Object {
+                        "image": null,
+                      },
+                    },
+                  },
+                  "article_slug": "this-is-a-fine-title-which-i-would-really-love-to-have-1",
+                  "createdAt": "2018-11-22T12:59:16.439Z",
+                  "id": 1,
+                  "updatedAt": "2018-11-22T12:59:16.439Z",
+                  "user_id": 1,
+                },
+              ],
               "followers": Array [
                 Object {
                   "createdAt": "2018-11-11T23:42:00.689Z",
@@ -3846,6 +5128,7 @@ ShallowWrapper {
                 "userId": 1,
                 "username": "akangbe",
               },
+              "profileError": "",
               "profileView": "Following",
               "user": Object {
                 "email": "damafeez11@gmail.com",

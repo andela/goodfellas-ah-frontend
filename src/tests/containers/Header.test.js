@@ -13,9 +13,68 @@ let mountHeader;
 let authFalseHeader;
 let mountHeaderNullProfile;
 let wrapperHeaderAuth;
+let mountNotificationsLanding;
 const auth = {
   auth: {
     authenticated: true,
+  },
+  ownProfile: { userId: 1 },
+  notification: {
+    notifications: true,
+    setNotification() {
+      return true;
+    },
+    getNotification() {
+      return true;
+    },
+  },
+};
+
+const notifications = {
+  count: 15,
+  rows: [
+    {
+      id: 4,
+      authorId: 1,
+      articleSlug: 'article-title-3',
+      commentId: null,
+      type: 'followerArticle',
+      seen: false,
+      createdAt: '2018-11-15T11:59:37.329Z',
+      updatedAt: '2018-11-15T19:27:43.885Z',
+      author: {
+        firstname: 'tony',
+        lastname: 'ugwu',
+      },
+      article: {
+        favorited: false,
+        favoritesCount: 0,
+        id: 4,
+        slug: 'article-title-3',
+        title: 'article title',
+        description: 'article descr',
+        body: 'article bodyarticle bodyarticle bodyarticle bodyarticle bodyarticle bodyarticle bodyarticle body',
+        image: null,
+        tagList: null,
+        read_time: '1 minute',
+        averageRating: null,
+        authorId: 1,
+        published: true,
+        archived: false,
+        createdAt: '2018-11-15T11:59:37.299Z',
+        updatedAt: '2018-11-15T11:59:37.299Z',
+        favorite: [],
+      },
+      comment: null,
+    },
+  ],
+};
+const mockState = {
+  auth: {
+    authenticated: null,
+    userId: null,
+    user: null,
+    ownProfile: { userId: 1 },
   },
 };
 
@@ -23,11 +82,14 @@ const authTest = {
   auth: {
     authenticated: false,
   },
+  notification: {
+    notifications: false,
+  },
 };
 
 beforeEach(() => {
   wrapped = mount(
-    <Root>
+    <Root initialState={mockState}>
       <MemoryRouter initialEntries={[{ key: 'testkey' }]}>
         <ArticleHeader />
       </MemoryRouter>
@@ -38,7 +100,10 @@ beforeEach(() => {
     <Header
       parentComponent="landingpage"
       auth={auth.auth.authenticated}
+      setNotification={auth.notification.setNotification}
+      getNotification={auth.notification.getNotification}
       profile={{ image: 'testImageUrl' }}
+      userId={auth.ownProfile.userId}
     />,
   );
 
@@ -46,7 +111,10 @@ beforeEach(() => {
     <Header
       parentComponent="notlandingpage"
       auth={authTest.auth.authenticated}
+      setNotification={auth.notification.setNotification}
+      getNotification={auth.notification.getNotification}
       profile={{ image: null }}
+      userId={auth.ownProfile.userId}
     />,
   );
 
@@ -54,15 +122,21 @@ beforeEach(() => {
     <Header
       parentComponent="landingpage"
       auth={authTest.auth.authenticated}
+      setNotification={auth.notification.setNotification}
+      getNotification={auth.notification.getNotification}
       profile={{ image: null }}
+      userId={auth.ownProfile.userId}
     />,
   );
 
   mountHeaderNullProfile = shallow(
     <Header
       parentComponent="notlandingpage"
+      setNotification={auth.notification.setNotification}
+      getNotification={auth.notification.getNotification}
       auth={auth.auth.authenticated}
       profile={{ image: null }}
+      userId={auth.ownProfile.userId}
     />,
   );
 
@@ -71,7 +145,24 @@ beforeEach(() => {
       <Header
         parentComponent="notlandingpage"
         auth={auth.auth.authenticated}
+        setNotification={auth.notification.setNotification}
+        getNotification={auth.notification.getNotification}
         profile={{ image: 'testImageUrl' }}
+        userId={auth.ownProfile.userId}
+      />
+    </MemoryRouter>,
+  );
+
+  mountNotificationsLanding = mount(
+    <MemoryRouter>
+      <Header
+        parentComponent="landingpage"
+        auth={auth.auth.authenticated}
+        setNotification={auth.notification.setNotification}
+        getNotification={auth.notification.getNotification}
+        inAppStatus={false}
+        profile={{ image: 'testImageUrl' }}
+        userId={auth.ownProfile.userId}
       />
     </MemoryRouter>,
   );
@@ -80,8 +171,11 @@ beforeEach(() => {
     <MemoryRouter>
       <Header
         parentComponent="notlandingpage"
+        setNotification={auth.notification.setNotification}
+        getNotification={auth.notification.getNotification}
         auth={authTest.auth.authenticated}
         profile={{ image: 'testImageUrl' }}
+        userId={auth.ownProfile.userId}
       />
     </MemoryRouter>,
   );
@@ -124,6 +218,8 @@ test('Header functionality for profile without image', () => {
 it('should dropdown search bar filter section', () => {
   mountHeader.find('.dropdown-click').simulate('click');
   mountHeader.find('.search-click').simulate('click');
+  mountHeader.find('.dropdown-click').simulate('click');
+  mountHeader.find('.search-click').simulate('click');
   mountHeader.find('.search-click').simulate('click');
 });
 
@@ -146,4 +242,85 @@ it('should click search', () => {
 it('should spy on change search', () => {
   mountHeader.find('.searchbar').simulate('change');
   mountHeader.find('#searchKeyword').simulate('change');
+});
+
+it('should spy on change search', () => {
+  wrapper.setState({
+    inApp: true,
+    notifications,
+  });
+
+  const inst = wrapper.instance();
+  expect(inst).toBeInstanceOf(Header);
+  expect(inst).not.toBeNull();
+});
+
+it('should click notifications drop down', () => {
+  const dropdownButton = wrapper.find('.dropdown-click');
+
+  const instance = wrapper.instance();
+  instance.refs = {
+    myDropdown2: {
+      classList: {
+        value: 'dropdown-menu dropdown-menu-notification header-notification show',
+        toggle: jest.fn(),
+      },
+    },
+    myDropdown: {
+      classList: {
+        value: 'dropdown-menu dropdown-menu-notification header-notification show',
+        toggle: jest.fn(),
+      },
+    },
+  };
+
+  dropdownButton.simulate('click');
+});
+
+it('should click menu drop down', () => {
+  const dropdownButton = mountHeaderNullProfile.find('.dropdown-click-notification');
+
+  const instance = mountHeaderNullProfile.instance();
+  instance.refs = {
+    myDropdown2: {
+      classList: {
+        value: 'dropdown-menu dropdown-menu-notification header-notification show',
+        toggle: jest.fn(),
+      },
+    },
+    myDropdown: {
+      classList: {
+        value: 'dropdown-menu show',
+        toggle: jest.fn(),
+      },
+    },
+  };
+
+  dropdownButton.simulate('click');
+});
+
+it('should spy on change search', () => {
+  mountHeaderNullProfile.setState({
+    inApp: true,
+    notifications,
+  });
+
+  mountHeaderNullProfile.setProps({
+    inAppStatus: {
+      notification: ['email', 'inApp'],
+    },
+    notifications,
+    seenNotification: jest.fn(),
+  });
+
+  const inst = mountHeaderNullProfile.instance();
+  expect(inst).toBeInstanceOf(Header);
+  expect(inst).not.toBeNull();
+
+  inst.handleSeen(1);
+});
+
+it('should spy on change search', () => {
+  const dropdownButton = mountNotificationsLanding.find('.dropdown-menu-notification');
+  dropdownButton.simulate('click');
 });

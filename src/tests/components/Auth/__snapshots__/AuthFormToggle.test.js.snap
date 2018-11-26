@@ -29,22 +29,24 @@ ShallowWrapper {
           replace={false}
           to="/auth/signup"
         >
-          <input
+          <button
             className="buttons sign-up active"
             type="button"
-            value="SIGN UP"
-          />
+          >
+            SIGN UP
+          </button>
         </Link>,
         <Link
           className="both-links"
           replace={false}
           to="/auth/signin"
         >
-          <input
+          <button
             className="buttons sign-in null"
             type="button"
-            value="SIGN IN"
-          />
+          >
+            SIGN IN
+          </button>
         </Link>,
       ],
       "className": "auth-buttons",
@@ -56,11 +58,12 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": <input
+          "children": <button
             className="buttons sign-up active"
             type="button"
-            value="SIGN UP"
-          />,
+          >
+            SIGN UP
+          </button>,
           "className": "both-links",
           "replace": false,
           "to": "/auth/signup",
@@ -71,13 +74,13 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "children": "SIGN UP",
             "className": "buttons sign-up active",
             "type": "button",
-            "value": "SIGN UP",
           },
           "ref": null,
-          "rendered": null,
-          "type": "input",
+          "rendered": "SIGN UP",
+          "type": "button",
         },
         "type": [Function],
       },
@@ -86,11 +89,12 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": <input
+          "children": <button
             className="buttons sign-in null"
             type="button"
-            value="SIGN IN"
-          />,
+          >
+            SIGN IN
+          </button>,
           "className": "both-links",
           "replace": false,
           "to": "/auth/signin",
@@ -101,13 +105,13 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "children": "SIGN IN",
             "className": "buttons sign-in null",
             "type": "button",
-            "value": "SIGN IN",
           },
           "ref": null,
-          "rendered": null,
-          "type": "input",
+          "rendered": "SIGN IN",
+          "type": "button",
         },
         "type": [Function],
       },
@@ -126,22 +130,24 @@ ShallowWrapper {
             replace={false}
             to="/auth/signup"
           >
-            <input
+            <button
               className="buttons sign-up active"
               type="button"
-              value="SIGN UP"
-            />
+            >
+              SIGN UP
+            </button>
           </Link>,
           <Link
             className="both-links"
             replace={false}
             to="/auth/signin"
           >
-            <input
+            <button
               className="buttons sign-in null"
               type="button"
-              value="SIGN IN"
-            />
+            >
+              SIGN IN
+            </button>
           </Link>,
         ],
         "className": "auth-buttons",
@@ -153,11 +159,12 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": <input
+            "children": <button
               className="buttons sign-up active"
               type="button"
-              value="SIGN UP"
-            />,
+            >
+              SIGN UP
+            </button>,
             "className": "both-links",
             "replace": false,
             "to": "/auth/signup",
@@ -168,13 +175,13 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
+              "children": "SIGN UP",
               "className": "buttons sign-up active",
               "type": "button",
-              "value": "SIGN UP",
             },
             "ref": null,
-            "rendered": null,
-            "type": "input",
+            "rendered": "SIGN UP",
+            "type": "button",
           },
           "type": [Function],
         },
@@ -183,11 +190,12 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": <input
+            "children": <button
               className="buttons sign-in null"
               type="button"
-              value="SIGN IN"
-            />,
+            >
+              SIGN IN
+            </button>,
             "className": "both-links",
             "replace": false,
             "to": "/auth/signin",
@@ -198,13 +206,13 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
+              "children": "SIGN IN",
               "className": "buttons sign-in null",
               "type": "button",
-              "value": "SIGN IN",
             },
             "ref": null,
-            "rendered": null,
-            "type": "input",
+            "rendered": "SIGN IN",
+            "type": "button",
           },
           "type": [Function],
         },

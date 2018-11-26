@@ -6,7 +6,7 @@ import SideButtons from '../../components/article/SideButtons';
 let wrapped;
 
 beforeEach(() => {
-  wrapped = shallow(<SideButtons />);
+  wrapped = shallow(<SideButtons userId={1} article={{ authorId: 1, slug: 'some-sug' }} />);
 });
 
 

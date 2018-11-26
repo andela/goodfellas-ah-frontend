@@ -23,6 +23,7 @@ export const routes = {
     '/user/followed/1': () => profileData.followedUsers,
     '/articles/author/1': () => profileData.articles,
     '/articles/user/1/favorite': () => profileData.favoritedArticles,
+    '/user/notification': () => profileData.notifications,
   },
   put: {
     '/user/profile/1': () => profileData.updateProfile,
@@ -35,6 +36,10 @@ export const routes = {
     '/user/follow/1': () => profileData.followUser,
     '/articles': (payload) => {
       if (payload.title && payload.body) return articleData.postArticle;
+      throw new CustomAPIError('All fields are required', 400);
+    },
+    '/articles/somiso/tags': (payload) => {
+      if (payload.tags) return articleData.addTagsDetail;
       throw new CustomAPIError('All fields are required', 400);
     },
   },

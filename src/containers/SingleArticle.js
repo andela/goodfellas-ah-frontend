@@ -16,12 +16,12 @@ export class Article extends Component {
   }
 
   singleArticle() {
-    const { article } = this.props;
+    const { article, userId } = this.props;
     return (
       <div>
         <div className="single-page">
-          <ArticleHeader article={article} />
-          <ArticleBody article={article} />
+          <ArticleHeader article={article} userId={userId} />
+          <ArticleBody article={article} userId={userId} />
           <Comment />
         </div>
       </div>
@@ -31,7 +31,6 @@ export class Article extends Component {
 
   renderArticle() {
     const { article, error } = this.props;
-    console.log(this.props.globalState);
     if (article) {
       return this.singleArticle();
     }
@@ -52,7 +51,7 @@ export class Article extends Component {
 const mapStateToProps = (state) => ({
   error: state.articles.articleError,
   article: state.articles.article,
-  globalState: state,
+  userId: state.auth.ownProfile.userId,
 });
 
 export default connect(mapStateToProps, { getAnArticle })(Article);

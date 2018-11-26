@@ -56,8 +56,6 @@ exports[`Signin UI render features container should render as expected 1`] = `
       >
         <Connect(Signin)>
           <Signin
-            clearSigninError={[Function]}
-            errorMessage=""
             signin={[Function]}
           >
             <form
