@@ -8,7 +8,7 @@ import BookmarkedArticleList from '../components/article/BookmarkedArticleList';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Profile extends Component {
-  componentDidMount = () => {
+  componentWillMount = () => {
     const {
       user: { userId },
       fetchProfile: fetchUserProfile,

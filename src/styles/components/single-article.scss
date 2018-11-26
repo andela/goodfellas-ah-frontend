@@ -35,7 +35,7 @@
 
 
 .single-page .side-button #star:hover,
-.single-page .side-button #bookmark:hover,
+// .single-page .side-button #bookmark:hover,
 .single-page .side-button #share:hover,
 .single-page .side-button #more:hover,
 .single-page .side-button #love:hover,
@@ -72,9 +72,24 @@
     height: 20px;
     display: block;
     cursor: pointer;
-    margin-bottom: 30px;
-    color: #c4c4c4;
+    margin-bottom: 30px;  
 } 
+
+.single-page .side-button .not-bookmarked {
+    color: #c4c4c4;
+}
+
+.single-page .side-button .not-bookmarked:hover {
+    color: #000;
+}
+
+.single-page .side-button .bookmarked {
+    color: #ff0000;
+}
+
+.single-page .side-button .bookmarked:hover {
+    color: #c12d2d;
+}
 
 .single-page .side-button #share{
     margin-left: 15px;
