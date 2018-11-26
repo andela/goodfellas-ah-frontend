@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import icons from '../assets/icons.svg';
 import { bookmarkArticles, removeBookmark } from '../actions/articleActions';
 
-class SideButtons extends Component {
+export class SideButtons extends Component {
   state = {
     extraButtons: false,
     showSideButton: true,
