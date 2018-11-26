@@ -40,32 +40,24 @@ class NotificationSettings extends Component {
   render() {
     const { email, inApp } = this.state;
     return (
-      <div className="notification-panel mt-3">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-6 m-auto">
-              <div className="card">
-                <div className="card-body">
-                  <h6 className="card-title text-muted text-center">Notification settings</h6>
-                  <div className="row">
-                    <div className="col-md-7">
-                      <p className="slider-title">Email Notification</p>
-                      <label className="notification-switch">
-                        <input type="checkbox" onChange={this.handleToggleChange} name="email" checked={email} className="toggle-click" />
-                        <span className="slider round" />
-                      </label>
-                    </div>
-                    <div className="col-md-5">
-                      <p className="slider-title">In-App Notification</p>
-                      <label className="notification-switch">
-                        <input type="checkbox" onChange={this.handleToggleChange} name="inApp" className="toggle-clickpu" checked={inApp} />
-                        <span className="slider round" />
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <div className="notification-settings-wrapper notification-panel">
+        <div className="notification-settings-header">
+          <h2>Notification Settings</h2>
+        </div>
+        <div className="notification-settings">
+          <div className="notification-settings-email">
+            <p>Email Notification</p>
+            <label className="notification-switch">
+              <input type="checkbox" onChange={this.handleToggleChange} name="email" checked={email} className="toggle-click" />
+              <span className="slider round" />
+            </label>
+          </div>
+          <div className="notification-settings-inApp">
+            <p>In App Notification</p>
+            <label className="notification-switch">
+              <input type="checkbox" onChange={this.handleToggleChange} name="inApp" className="toggle-clickpu" checked={inApp} />
+              <span className="slider round" />
+            </label>
           </div>
         </div>
       </div>

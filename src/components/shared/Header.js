@@ -482,7 +482,7 @@ const mapStateToProps = (state) => ({
   auth: state.auth.authenticated,
   searchResults: state.articles.searchResults,
   searchError: state.articles.error,
-  profile: state.auth.ownProfile,
+  profile: state.auth.ownProfile || {},
   notifications: state.notification.notifications,
   inAppStatus: state.notification,
 });

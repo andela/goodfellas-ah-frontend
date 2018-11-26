@@ -4,7 +4,7 @@
     display: inline-block;
     width: 50px;
     height: 25px;
-    margin: auto;
+    margin: 12px 10px;
   }
   .notification-switch input {
     opacity: 0;
@@ -60,15 +60,33 @@
   }
 }
 .notifications {
-  .notification-result {
-    margin: 20px auto;
-    a {
-      display: block;
-      color: var(--gray);
-      font-weight: 200;
-      padding: 15px;
-      &:hover {
-        text-decoration: none;
+  .notification-wrapper {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    .notification-result {
+      display: flex;
+      border: 1px solid var(--gray);
+      margin: 20px auto;
+      width: 50%;
+      justify-content: space-between;
+      border-radius: 5px;
+      a {
+        color: var(--gray);
+        font-weight: 200;
+        padding: 15px;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+      span:nth-child(2){
+        color: red;
+        margin: 5px 10px 0 0;
+        padding-top: 10px;
+        cursor: pointer;
       }
     }
   }
@@ -83,4 +101,33 @@
 .notifierName{
   font-weight: bold;
   font-size: 110%;
+}
+
+.notification-settings-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 60px 0;
+  .notification-settings-header{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+  .notification-settings{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    width: 40vw;
+    padding: 20px;
+    .notification-settings-email, .notification-settings-inApp {
+      display: flex;
+      justify-content: space-between;
+      width: 95%;
+      p {
+        margin: 12px;
+      }
+    }
+  }
 }
