@@ -69,6 +69,87 @@ const notifications = {
     },
   ],
 };
+
+const notificationsFavoriteComment = {
+  count: 15,
+  rows: [
+    {
+      id: 4,
+      authorId: 1,
+      articleSlug: 'article-title-3',
+      commentId: null,
+      type: 'favoriteArticleComment',
+      seen: false,
+      createdAt: '2018-11-15T11:59:37.329Z',
+      updatedAt: '2018-11-15T19:27:43.885Z',
+      author: {
+        firstname: 'tony',
+        lastname: 'ugwu',
+      },
+      article: {
+        favorited: false,
+        favoritesCount: 0,
+        id: 4,
+        slug: 'article-title-3',
+        title: 'article title',
+        description: 'article descr',
+        body: 'article bodyarticle bodyarticle bodyarticle bodyarticle bodyarticle bodyarticle bodyarticle body',
+        image: null,
+        tagList: null,
+        read_time: '1 minute',
+        averageRating: null,
+        authorId: 1,
+        published: true,
+        archived: false,
+        createdAt: '2018-11-15T11:59:37.299Z',
+        updatedAt: '2018-11-15T11:59:37.299Z',
+        favorite: [],
+      },
+      comment: null,
+    },
+  ],
+};
+
+const notificationsDefault = {
+  count: 15,
+  rows: [
+    {
+      id: 4,
+      authorId: 1,
+      articleSlug: 'article-title-3',
+      commentId: null,
+      type: 'default',
+      seen: false,
+      createdAt: '2018-11-15T11:59:37.329Z',
+      updatedAt: '2018-11-15T19:27:43.885Z',
+      author: {
+        firstname: 'tony',
+        lastname: 'ugwu',
+      },
+      article: {
+        favorited: false,
+        favoritesCount: 0,
+        id: 4,
+        slug: 'article-title-3',
+        title: 'article title',
+        description: 'article descr',
+        body: 'article bodyarticle bodyarticle bodyarticle bodyarticle bodyarticle bodyarticle bodyarticle body',
+        image: null,
+        tagList: null,
+        read_time: '1 minute',
+        averageRating: null,
+        authorId: 1,
+        published: true,
+        archived: false,
+        createdAt: '2018-11-15T11:59:37.299Z',
+        updatedAt: '2018-11-15T11:59:37.299Z',
+        favorite: [],
+      },
+      comment: null,
+    },
+  ],
+};
+
 const mockState = {
   auth: {
     authenticated: null,
@@ -323,4 +404,21 @@ it('should spy on change search', () => {
 it('should spy on change search', () => {
   const dropdownButton = mountNotificationsLanding.find('.dropdown-menu-notification');
   dropdownButton.simulate('click');
+});
+
+it('should handle seen event', () => {
+  wrapper.setState({
+    inApp: true,
+    notifications: notificationsFavoriteComment,
+  });
+
+  const inst = wrapper.instance();
+  console.log(inst);
+});
+
+it('should handle seen event', () => {
+  wrapper.setState({
+    inApp: true,
+    notifications: notificationsDefault,
+  });
 });
