@@ -13,7 +13,17 @@ exports[`Notification UI render features component should render as expected 1`]
       }
     }
   >
-    <Connect(NotificationSettings)>
+    <Connect(NotificationSettings)
+      notification={
+        Object {
+          "notification": Array [
+            "email",
+            "inApp",
+          ],
+        }
+      }
+      updateNotification={[MockFunction]}
+    >
       <NotificationSettings
         notification={
           Object {
@@ -91,7 +101,7 @@ exports[`Notification UI render features component should render as expected 1`]
               >
                 <input
                   checked={false}
-                  className="toggle-clickpu"
+                  className="toggle-click-inApp"
                   name="inApp"
                   onChange={[Function]}
                   type="checkbox"

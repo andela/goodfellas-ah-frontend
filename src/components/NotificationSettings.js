@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateNotification } from '../actions/notificationActions';
 
-class NotificationSettings extends Component {
+export class NotificationSettings extends Component {
   state = {
     email: false,
     inApp: false,
@@ -55,7 +55,7 @@ class NotificationSettings extends Component {
           <div className="notification-settings-inApp">
             <p>In App Notification</p>
             <label className="notification-switch">
-              <input type="checkbox" onChange={this.handleToggleChange} name="inApp" className="toggle-clickpu" checked={inApp} />
+              <input type="checkbox" onChange={this.handleToggleChange} name="inApp" className="toggle-click-inApp" checked={inApp} />
               <span className="slider round" />
             </label>
           </div>
