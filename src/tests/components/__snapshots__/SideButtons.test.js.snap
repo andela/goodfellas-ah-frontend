@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SideButtons UI view should render as expected 1`] = `
+<Fragment>
+  <span
+    className="small-button"
+    onClick={[Function]}
+  >
+    click
+  </span>
+  <div
+    className="side-button active"
+  >
+    <svg
+      id="star"
+      title="Like this article"
+    >
+      <use
+        xlinkHref="icons.svg#star"
+      />
+    </svg>
+    <svg
+      id="bookmark"
+      title="Report this article"
+    >
+      <use
+        xlinkHref="icons.svg#bookmark"
+      />
+    </svg>
+    <svg
+      id="share"
+      title="Share this article"
+    >
+      <use
+        xlinkHref="icons.svg#share"
+      />
+    </svg>
+    <svg
+      id="more"
+      onClick={[Function]}
+      title="Show more buttons"
+    >
+      <use
+        xlinkHref="icons.svg#more"
+      />
+    </svg>
+    <div
+      className="extra-buttons "
+    >
+      <div>
+        <svg
+          className="icon"
+          id="delete"
+          title="Delete this article"
+        >
+          <use
+            xlinkHref="icons.svg#delete-icon"
+          />
+        </svg>
+        <svg
+          id="edit"
+          title="Edit this article"
+        >
+          <Link
+            className="link"
+            replace={false}
+            to="/articles/edit/some-sug"
+          >
+            <use
+              xlinkHref="icons.svg#edit"
+            />
+          </Link>
+        </svg>
+      </div>
+      <svg
+        id="flag"
+        title="Report this article"
+      >
+        <use
+          xlinkHref="icons.svg#flag"
+        />
+      </svg>
+      <svg
+        id="dislike"
+        title="Dislike this article"
+      >
+        <use
+          xlinkHref="icons.svg#dislike"
+        />
+      </svg>
+    </div>
+    <div
+      id="like-count"
+    >
+      <p>
+        4
+      </p>
+    </div>
+    <svg
+      id="love"
+      title="Report this article"
+    >
+      <use
+        xlinkHref="icons.svg#gratipay"
+      />
+    </svg>
+  </div>
+</Fragment>
+`;

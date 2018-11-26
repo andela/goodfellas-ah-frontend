@@ -79,22 +79,22 @@ export const getAnArticle = (slug) => async (dispatch, getState, { api }) => {
 
 export const react = (slug, reaction = 1) => async (dispatch, getState, { api }) => {
   const article = Object.assign(getState().articles.article);
-  const iPreviouslyReacted = article.myReactions[0] && article.myReactions[0].reaction;
+  const previousReaction = article.myReactions[0] && article.myReactions[0].reaction;
   let addLike = 0;
   let addDislike = 0;
-  if (iPreviouslyReacted === 1) {
+  if (previousReaction === 1) {
     addLike = -1;
     if (reaction === -1) addDislike = 1;
   }
-  if (iPreviouslyReacted === -1) {
+  if (previousReaction === -1) {
     addDislike = -1;
     if (reaction === 1) addLike = 1;
   }
-  if (!iPreviouslyReacted) {
+  if (!previousReaction) {
     if (reaction === 1) addLike = 1;
     if (reaction === -1) addDislike = 1;
   }
-  const myReactions = iPreviouslyReacted === reaction ? [] : [{ reaction }];
+  const myReactions = previousReaction === reaction ? [] : [{ reaction }];
   const reactionCount = {
     likes: article.reactionCount.likes + addLike,
     dislikes: article.reactionCount.dislikes + addDislike,

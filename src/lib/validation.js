@@ -33,7 +33,7 @@ const validateAuth = (fields, fieldNames) => {
   const alphaNumberic = /((^[0-9]+[a-z]+)|(^[a-z]+[0-9]+))+[0-9a-z]+$/i;
   if (fields.password) {
     if (fields.password.length < 5 && !alphaNumberic.test(fields.password.trim())) {
-      error.password = 'Your password must be more that 4 characters.';
+      error.password = 'Your password must be more than 4 characters.';
       error.status = true;
     }
   }

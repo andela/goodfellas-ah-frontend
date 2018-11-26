@@ -5,13 +5,13 @@ import DisplayTags from './DisplayTags';
 
 
 const ArticleBody = (props) => {
-  const { article } = props;
+  const { article, userId } = props;
   const { body } = article;
   return (
     <div className="article-container">
-      <SideButtons article={article} />
+      <SideButtons article={article} userId={userId} />
       <div className="article-content">
-        <p>{parser(body)}</p>
+        {parser(body)}
       </div>
       <div className="article-tags">
         <DisplayTags articles={article} />

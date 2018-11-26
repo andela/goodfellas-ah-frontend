@@ -1,10 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import icons from '../assets/icons.svg';
-import { react as reactAction } from '../actions/articleActions';
+import icons from '../../assets/icons.svg';
 
-export class SideButtons extends Component {
+class SideButtons extends Component {
   state = {
     extraButtons: false,
     showSideButton: true,
@@ -30,25 +28,17 @@ export class SideButtons extends Component {
     this.setState((prevState) => ({ showSideButton: !prevState.showSideButton }));
   }
 
-  AddExtraButtons = (className) => {
-    const { article } = this.props;
-    return (
-      <div className={`extra-buttons ${className}`}>
-        {this.authorizedButtons()}
-        <svg id="flag" title="Report this article"><use xlinkHref={`${icons}#flag`} /></svg>
-        <svg id="dislike" className={article.myReactions[0] && article.myReactions[0].reaction === -1 ? 'active' : ''} onClick={() => this.addReaction(-1)} title="Dislike this article"><use xlinkHref={`${icons}#dislike`} /></svg>
-      </div>
-    );
-  };
+  AddExtraButtons = (className) => (
+    <div className={`extra-buttons ${className}`}>
+      {this.authorizedButtons()}
+      <svg id="flag" title="Report this article"><use xlinkHref={`${icons}#flag`} /></svg>
+      <svg id="dislike" title="Dislike this article"><use xlinkHref={`${icons}#dislike`} /></svg>
+    </div>
+  )
 
-  addReaction = async (reaction) => {
-    const { react, article } = this.props;
-    await react(article.slug, reaction);
-  }
 
   render() {
     const { extraButtons, showSideButton } = this.state;
-    const { article } = this.props;
     return (
       <Fragment>
         <span className="small-button" onClick={this.toggleSideButton}>click</span>
@@ -58,22 +48,12 @@ export class SideButtons extends Component {
           <svg id="share" title="Share this article"><use xlinkHref={`${icons}#share`} /></svg>
           <svg id="more" onClick={this.showExtraButtons} title="Show more buttons"><use xlinkHref={`${icons}#more`} /></svg>
           {this.AddExtraButtons(extraButtons ? 'active' : '')}
-          <div id="like-count"><p>{article.reactionCount.likes}</p></div>
-          <span id="love" onClick={() => this.addReaction()} className={`centralizer ${article.myReactions[0] && article.myReactions[0].reaction === 1 ? 'liked' : ''}`}>
-            <svg className="icon"><use xlinkHref={`${icons}#heart`} /></svg>
-          </span>
+          <div id="like-count"><p>4</p></div>
+          <svg id="love" title="Report this article"><use xlinkHref={`${icons}#gratipay`} /></svg>
         </div>
       </Fragment>
     );
   }
 }
 
-
-const mapStateToProps = (state) => ({
-  article: state.articles.article,
-});
-
-export default connect(
-  mapStateToProps,
-  { react: reactAction },
-)(SideButtons);
+export default SideButtons;

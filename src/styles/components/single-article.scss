@@ -1,25 +1,58 @@
 .single-page .side-button{
-    padding-top: 20px;
-    padding-bottom: 10px;
-    background-color: #fff;
-    margin-top: -150px;
-    border-radius: 50px;
-    float: right;
     position: fixed;
-    right: 120px;
-    top: 50%;
+    max-height: 0;
+    height: 100%;
+    overflow-y: hidden;
+    opacity: .1;
+    transition: all .3s ease-in-out;
+        &.active {
+        max-height: 600px;
+        opacity: 1;
+        padding-top: 10px;
+    }
+
+
+
+    @media screen and (min-width: 800px) {
+        padding-top: 20px;
+        padding-bottom: 10px;
+        background-color: #fff;
+        border-radius: 50px;
+        right: 100px;
+        top: 50%; 
+        transform: translateY(-50%);   
+        max-height: initial;
+        height: initial;
+        overflow: initial;
+        opacity: 1;
+    }
 }
+
+.small-button{
+    visibility: hidden;
+}
+
+
 
 .single-page .side-button #star:hover,
 .single-page .side-button #bookmark:hover,
 .single-page .side-button #share:hover,
 .single-page .side-button #more:hover,
 .single-page .side-button #delete:hover,
+.single-page .side-button #flag:hover,
 .single-page .side-button #edit:hover,
 .single-page .side-button #dislike:hover{
     color: #000;
 }
 
+
+.single-page .side-button .link{
+    color: #c4c4c4;
+} 
+
+.single-page .side-button .link:hover{
+    color: #000;
+} 
 
 .single-page .side-button #star{
     margin-left: 15px;
@@ -144,23 +177,58 @@
 
 
 .single-page{
-    width: 80%;
+    width: 85%;
 }
 
 .single-page .article-header{
     display: flex;
+    flex-direction: column;
     margin-top: 100px;
     width: 80%;
     margin-left: 10%;
-    margin-bottom: 90px;
+    margin-bottom: 20px;
 }
 
 .single-page .article-header .author-icon{
     display: flex;
+}
+
+.single-page .article-header .author-icon .article-title{
+    text-transform: uppercase;
+    margin-left: 5%;
+    font-family: Roboto;
+    font-size: 31px;
+    min-height: 90px;
+    padding-top: 10px;
+    width: 747px;
+    height: 79px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.27;
+    letter-spacing: normal;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.single-page .article-header .author-name{
+    display: flex;
+    margin-top: -35px;
+}
+
+.single-page .article-header .author-name .read-time{
+    display: flex;
     flex-direction: column;
 }
 
-.single-page .article-header .number{
+.single-page .article-header .author-name .read-time .minutes{
+    margin-top: -7px;
+    font-family: Roboto;
+    font-weight: 100;
+    font-size: 16px;
+    text-align: center;  
+}
+
+.single-page .article-header .author-name .read-time .number{
     font-family: Roboto;
     font-weight: 100;
     font-size: 37px;
@@ -169,23 +237,27 @@
     margin-left: 12px;
 }
 
-.single-page .article-header .minutes{
-    margin-top: -7px;
+.single-page .article-header .author-name .name{
+    margin-top: 55px;
     font-family: Roboto;
-    font-weight: 100;
-    font-size: 16px;
-    text-align: center;  
+    font-size: 22px;
+    color: #a6a2a2;
+    margin-left: 4%;
+    margin-right: 5%;
+    text-transform: capitalize;
 }
 
-.single-page .article-container{
-    width: 93%;
-    margin-left: 21%;
+.single-page .article-content{
+    margin-left: 18%;
     margin-bottom: 80px;
-}
-
-.single-page .article-container .article-image{
     width: 80%;
-    margin-bottom: 80px;
+    font-family: Roboto;
+    font-size: 21px;
+    color: #0000008a;
+    img {
+        width: 100%;
+        margin: 10px auto;
+    }
 }
 
 .single-page .article-container .article-tag{
@@ -198,23 +270,7 @@
     margin-left: 7%;
 }
 
-.single-page .article-header .title-author .author-name{
-    display: flex;
-    margin-top: 20px;
-    justify-content: space-between;
-    max-width: 70vw;
-}
-
-.single-page .article-header .title-author .name{
-    font-family: Roboto;
-    font-size: 22px;
-    width: 100%;
-    color: #a6a2a2;
-    margin-right: 5%;
-    text-transform: capitalize;
-}
-
-.single-page .article-header .title-author .author-name button{
+.single-page .article-header .author-name button{
     width: 77px;
     height: 25px;
     font-size: 13px;
@@ -223,23 +279,13 @@
     border: 1px solid #b3c7bd;
     background-color: #f8f8f8;
     outline: none;
-    margin-top: 5px;
+    margin-top: 60px;
     cursor: pointer;
 }
 
-.single-page .article-header .title-author .author-name button:hover{
+.single-page .article-header .author-name button:hover{
     color: #fff;
     background-color: #b3c7bd;
-}
-
-.single-page .article-header .article-title{
-    text-transform: uppercase;
-    font-family: Roboto;
-    font-size: 31px;
-    min-height: 90px;
-    font-weight: bold;
-    color: #564e58;
-    padding-top: 0;
 }
 
 .single-page .author-image{
@@ -252,22 +298,7 @@
     cursor: pointer;
 }
 
-.single-page .article-content{
-    width: 80%;
-    font-family: Roboto;
-    font-size: 21px;
-    color: #0000008a;
-    p{
-        display: flex;
-        flex-direction: column;
-        img{
-            width: 80%;
-            margin: 20px auto;
-        }
-    }
-}
-
-.article-line{
+.single-page .article-line{
     width: 92%;
     margin-left: 4%;
 }
@@ -280,11 +311,11 @@
     margin-bottom: 60px;
 }
 
-.add-comment{
+.single-page .add-comment{
     margin-bottom: 70px;
 }
 
-.comments .add-comment img{
+.single-page .comments .add-comment img{
     width: 35px;
     height: 35px;
     border-radius: 50%;
@@ -292,7 +323,7 @@
     cursor: pointer;
 }
 
-.comments .add-comment input{
+.single-page .comments .add-comment input{
     width: 75%;
     height: 40px;
     border-radius: 50px;
@@ -305,38 +336,38 @@
     outline: none;
 }
 
-.comment-heading, .reply-heading{
+.single-page .comment-heading, .reply-heading{
     display: flex;
 }
 
-.comments .each-comment .comment-heading img{
+.single-page .comments .each-comment .comment-heading img{
     width: 45px;
     height: 45px;
     border-radius: 50px;
     cursor: pointer;
 }
 
-.each-reply{
+.single-page .each-reply{
     width: 70%;
     margin-left: 10%;
     margin-top: 50px;
 }
 
-.comments .each-reply .reply-heading img{
+.single-page .comments .each-reply .reply-heading img{
     width: 45px;
     height: 45px;
     border-radius: 50px;
     cursor: pointer;
 }
 
-.comment-name, .reply-name{    
+.single-page .comment-name, .reply-name{    
     font-family: Roboto;
     font-size: 18px;
     margin-left: 4%;
     text-transform: capitalize;
 }
 
-.comment-body{
+.single-page .comment-body{
     margin-left: 8.5%;
     width: 78%;
     font-family: Roboto;
@@ -344,7 +375,7 @@
     color: #a6a2a2;
 }
 
-.reply-body{
+.single-page .reply-body{
     margin-left: 10%;
     width: 90%;
     font-family: Roboto;
@@ -352,30 +383,30 @@
     color: #a6a2a2;
 }
 
-.time-chat{
+.single-page .time-chat{
     display: flex;
     width: 20%;
     margin-left: 37%;
 }
 
-.time-chat div{
+.single-page .time-chat div{
     display: flex;
     margin-left: 27%;
 }
 
-.time-chat div .comment-number{
+.single-page .time-chat div .comment-number{
     max-width: 25px;
     max-height: 25px;
     color: #a6a2a2;
 }
 
-.time-chat div .read-time{
+.single-page .time-chat div .read-time{
     max-width: 25px;
     max-height: 25px;
     color: #a6a2a2;
 }
 
-.time-chat div p{
+.single-page .time-chat div p{
     font-family: Roboto;
     font-size: 18px;
     color: #a6a2a2;
@@ -419,11 +450,23 @@
         margin-left: 5%;
     }
 
-    .single-page .article-container .article-image{
-        width: 98%;
-        margin-left: -11%;
+    .single-page .article-content{
+        width: 93%;
+        margin-left: 17%;
         margin-bottom: 80px;
+        font-family: Roboto;
+        font-size: 21px;
+        color: #0000008a;
+        p{
+            display: flex;
+            flex-direction: column;
+            img{
+                width: 80%;
+                margin: 30px auto;
+            }
+        }
     }
+
 
     .single-page .side-button{
         padding-top: 25px;
@@ -435,30 +478,23 @@
     .single-page{
         width: 80%;
     }
-    
-    .single-page .article-content{
-        width: 100%;
-        margin-left: -12%;
-        font-family: Roboto;
-        font-size: 21px;
-        color: #a6a2a2;
-    }
 
-    .comments{
+
+    .single-page .comments{
         width: 90%;
         margin-left: 8%;
     }
 
-    .time-chat{
+    .single-page .time-chat{
         width: 20%;
         margin-left: 25%;
     }
     
-    .comment-body{
+    .single-page .comment-body{
         margin-left: 9.5%;
     }
     
-    .reply-body{
+    .single-page .reply-body{
         margin-left: 12%;
     }
     
@@ -543,27 +579,8 @@
         margin-left: 5%;
     }
 
-    .single-page .side-button{
-        top: 55%;
-        height: 50px;
-        right: 15px;
-    }
-
-    .single-page .side-button #more{
-        margin-top: -165px;
-        
-    }
-    
-    .single-page .side-button #star,
-    .single-page .side-button #bookmark,
-    .single-page .side-button #share,
-    .single-page .side-button #like-count,
-    .single-page .side-button #love{
-        visibility: hidden;
-    }
-    
-    .single-page .side-button:hover{
-        background-color: #b3c7bd;
+    .small-button{
+        visibility: visible;
     }
 
     .single-page .article-content{
@@ -574,13 +591,13 @@
         color: #a6a2a2;
     }
 
-    .time-chat{
+    .single-page .time-chat{
         display: flex;
         margin-left: 0%;
     }
    
     
-    .extra-buttons {
+    .single-page .extra-buttons {
         max-height: 0;
         height: 100%;
         overflow-y: hidden;
@@ -595,6 +612,5 @@
         }
 
       }
-
 
 }

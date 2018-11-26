@@ -70,6 +70,14 @@ export const socialSignin = ({ token, userId }, callback) => async (dispatch, ge
   }
 };
 
+export const showSignError = (socialAuthError, callback) => (dispatch) => {
+  dispatch({
+    type: types.SIGNIN_USER_ERROR,
+    payload: socialAuthError,
+  });
+  callback();
+};
+
 export const forgotPassword = (userData) => async (dispatch, getState, { openRoutes }) => {
   try {
     const response = await openRoutes.post('/forgotPassword', userData);
