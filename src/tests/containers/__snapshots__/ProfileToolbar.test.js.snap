@@ -24,6 +24,16 @@ ShallowWrapper {
             "tagList": null,
             "title": "This is a fine title which I would really love to have",
             "updatedAt": "2018-11-09T15:08:00.560Z",
+            "user": Object {
+              "email": "damafeez11@gmail.com",
+              "firstname": "Afeez1",
+              "lastname": "Awoyemi",
+              "notificationSettings": Array [
+                "email",
+                "inApp",
+              ],
+              "role": "User",
+            },
           },
         ],
         "favorites": Array [

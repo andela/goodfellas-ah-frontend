@@ -7,7 +7,7 @@ import { getBookmarkedArticles } from '../actions/articleActions';
 import BookmarkedArticleList from '../components/article/BookmarkedArticleList';
 
 // eslint-disable-next-line react/prefer-stateless-function
-class Profile extends Component {
+class BookmarkedArticles extends Component {
   componentWillMount = () => {
     const {
       user: { userId },
@@ -41,4 +41,4 @@ const mapStateToProps = (state) => ({
   bookmarked: state.articles.bookmarkedArticles,
 });
 
-export default connect(mapStateToProps, { fetchProfile, getBookmarkedArticles })(Profile);
+export default connect(mapStateToProps, { fetchProfile, getBookmarkedArticles })(BookmarkedArticles);
