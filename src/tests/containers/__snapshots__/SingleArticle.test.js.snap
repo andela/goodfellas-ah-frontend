@@ -21,6 +21,21 @@ ShallowWrapper {
         ],
       }
     }
+    getComments={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            "some-slug",
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
     match={
       Object {
         "params": Object {
@@ -127,6 +142,21 @@ ShallowWrapper {
         ],
       }
     }
+    getComments={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            "some-slug",
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
     match={
       Object {
         "params": Object {
@@ -161,7 +191,11 @@ ShallowWrapper {
             article={Object {}}
             userId=""
           />
-          <Comment />
+          <Comment
+            article={Object {}}
+            handleChange={[Function]}
+            handleKeyPress={[Function]}
+          />
         </div>
       </div>,
     },
@@ -182,7 +216,11 @@ ShallowWrapper {
             article={Object {}}
             userId=""
           />
-          <Comment />
+          <Comment
+            article={Object {}}
+            handleChange={[Function]}
+            handleKeyPress={[Function]}
+          />
         </div>,
       },
       "ref": null,
@@ -200,7 +238,11 @@ ShallowWrapper {
               article={Object {}}
               userId=""
             />,
-            <Comment />,
+            <Comment
+              article={Object {}}
+              handleChange={[Function]}
+              handleKeyPress={[Function]}
+            />,
           ],
           "className": "single-page",
         },
@@ -234,7 +276,12 @@ ShallowWrapper {
             "instance": null,
             "key": undefined,
             "nodeType": "function",
-            "props": Object {},
+            "props": Object {
+              "article": Object {},
+              "comments": undefined,
+              "handleChange": [Function],
+              "handleKeyPress": [Function],
+            },
             "ref": null,
             "rendered": null,
             "type": [Function],
@@ -264,7 +311,11 @@ ShallowWrapper {
               article={Object {}}
               userId=""
             />
-            <Comment />
+            <Comment
+              article={Object {}}
+              handleChange={[Function]}
+              handleKeyPress={[Function]}
+            />
           </div>
         </div>,
       },
@@ -285,7 +336,11 @@ ShallowWrapper {
               article={Object {}}
               userId=""
             />
-            <Comment />
+            <Comment
+              article={Object {}}
+              handleChange={[Function]}
+              handleKeyPress={[Function]}
+            />
           </div>,
         },
         "ref": null,
@@ -303,7 +358,11 @@ ShallowWrapper {
                 article={Object {}}
                 userId=""
               />,
-              <Comment />,
+              <Comment
+                article={Object {}}
+                handleChange={[Function]}
+                handleKeyPress={[Function]}
+              />,
             ],
             "className": "single-page",
           },
@@ -337,7 +396,12 @@ ShallowWrapper {
               "instance": null,
               "key": undefined,
               "nodeType": "function",
-              "props": Object {},
+              "props": Object {
+                "article": Object {},
+                "comments": undefined,
+                "handleChange": [Function],
+                "handleKeyPress": [Function],
+              },
               "ref": null,
               "rendered": null,
               "type": [Function],
