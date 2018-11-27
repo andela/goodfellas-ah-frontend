@@ -6,13 +6,11 @@ import profileReducer from './profileReducer';
 import articleReducer from './articleReducer';
 import notificationReducer from './notificationReducer';
 import updateArticleReducer from './updateArticleReducer';
-import singleArticleReducer from './singleArticleReducer';
 import postCommentsReducers from './postCommentsReducers';
 import getCommentsReducers from './getCommentsReducers';
 import replyCommentsReducer from './replyCommentsReducers';
 
 export default combineReducers({
-  singleArticle: singleArticleReducer,
   auth: authReducer,
   publishArticleReducer,
   imageUploadReducer,

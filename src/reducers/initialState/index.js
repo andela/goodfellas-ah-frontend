@@ -7,8 +7,6 @@ const initialState = {
   articles: [],
   articleLoading: false,
   error: [],
-  singleArticle: null,
-  articleError: '',
   searchResults: [],
   searchError: [],
   tags: [],

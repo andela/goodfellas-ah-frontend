@@ -28,6 +28,7 @@ ShallowWrapper {
         },
       }
     }
+    userId={null}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -133,6 +134,7 @@ ShallowWrapper {
         },
       }
     }
+    userId=""
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -153,9 +155,11 @@ ShallowWrapper {
         >
           <ArticleHeader
             article={Object {}}
+            userId=""
           />
           <ArticleBody
             article={Object {}}
+            userId=""
           />
           <Comment />
         </div>
@@ -172,9 +176,11 @@ ShallowWrapper {
         >
           <ArticleHeader
             article={Object {}}
+            userId=""
           />
           <ArticleBody
             article={Object {}}
+            userId=""
           />
           <Comment />
         </div>,
@@ -188,9 +194,11 @@ ShallowWrapper {
           "children": Array [
             <ArticleHeader
               article={Object {}}
+              userId=""
             />,
             <ArticleBody
               article={Object {}}
+              userId=""
             />,
             <Comment />,
           ],
@@ -201,9 +209,10 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "function",
+            "nodeType": "class",
             "props": Object {
               "article": Object {},
+              "userId": "",
             },
             "ref": null,
             "rendered": null,
@@ -215,6 +224,7 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "article": Object {},
+              "userId": "",
             },
             "ref": null,
             "rendered": null,
@@ -248,9 +258,11 @@ ShallowWrapper {
           >
             <ArticleHeader
               article={Object {}}
+              userId=""
             />
             <ArticleBody
               article={Object {}}
+              userId=""
             />
             <Comment />
           </div>
@@ -267,9 +279,11 @@ ShallowWrapper {
           >
             <ArticleHeader
               article={Object {}}
+              userId=""
             />
             <ArticleBody
               article={Object {}}
+              userId=""
             />
             <Comment />
           </div>,
@@ -283,9 +297,11 @@ ShallowWrapper {
             "children": Array [
               <ArticleHeader
                 article={Object {}}
+                userId=""
               />,
               <ArticleBody
                 article={Object {}}
+                userId=""
               />,
               <Comment />,
             ],
@@ -296,9 +312,10 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "function",
+              "nodeType": "class",
               "props": Object {
                 "article": Object {},
+                "userId": "",
               },
               "ref": null,
               "rendered": null,
@@ -310,6 +327,7 @@ ShallowWrapper {
               "nodeType": "function",
               "props": Object {
                 "article": Object {},
+                "userId": "",
               },
               "ref": null,
               "rendered": null,

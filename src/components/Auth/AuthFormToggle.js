@@ -10,10 +10,10 @@ class AuthFormToggle extends Component {
     return (
       <div className="auth-buttons">
         <Link className="both-links" to="/auth/signup">
-          <input type="button" className={`buttons sign-up ${activeSignup}`} value="SIGN UP" />
+          <button type="button" className={`buttons sign-up ${activeSignup}`}>SIGN UP</button>
         </Link>
         <Link className="both-links" to="/auth/signin">
-          <input type="button" className={`buttons sign-in ${activeSignin}`} value="SIGN IN" />
+          <button type="button" className={`buttons sign-in ${activeSignin}`}>SIGN IN</button>
         </Link>
       </div>
     );

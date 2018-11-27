@@ -6,6 +6,7 @@ describe('containers', () => {
   describe('SingleArticle container', () => {
     const setup = () => {
       const props = {
+        userId: '',
         article: {},
         error: '',
         getAnArticle: jest.fn(),
@@ -29,6 +30,7 @@ describe('containers', () => {
   describe('SingleArticle container :Error', () => {
     const setup = () => {
       const props = {
+        userId: null,
         article: null,
         error: 'this is an error',
         getAnArticle: jest.fn(),

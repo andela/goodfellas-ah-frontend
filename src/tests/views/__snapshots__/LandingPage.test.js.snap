@@ -93,7 +93,6 @@ exports[`Landing Page UI render features container should render as expected 1`]
                             getNotification={[Function]}
                             inAppStatus={
                               Object {
-                                "articleError": "",
                                 "articleLoading": false,
                                 "articles": Array [],
                                 "authenticated": "",
@@ -115,7 +114,6 @@ exports[`Landing Page UI render features container should render as expected 1`]
                                 },
                                 "searchError": Array [],
                                 "searchResults": Array [],
-                                "singleArticle": null,
                                 "successMessage": "",
                                 "tags": Array [],
                                 "tagsError": Array [],

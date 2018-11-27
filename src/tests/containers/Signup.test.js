@@ -83,4 +83,26 @@ describe('Signup UI', () => {
       expect(wrapped.find('input').at(4).prop('value')).toEqual('');
     });
   });
+
+  describe('Signup client-side validation', () => {
+    beforeEach(() => {
+      wrapped.find('input').first().simulate('change', { target: { id: 'firstname', value: '' } });
+      wrapped.find('input').at(1).simulate('change', { target: { id: 'lastname', value: '' } });
+      wrapped.find('input').at(2).simulate('change', { target: { id: 'email', value: '' } });
+      wrapped.find('input').at(3).simulate('change', { target: { id: 'password', value: '' } });
+      wrapped.find('input').at(4).simulate('change', { target: { id: 'confirmPassword', value: '' } });
+      wrapped.update();
+    });
+
+    it('shows error messages if both fields are empty', () => {
+      wrapped.find('form').simulate('submit');
+      wrapped.update();
+
+      expect(wrapped.find('.auth-input-wrapper').first().find('.error-field').text()).toEqual('Please enter your first name');
+      expect(wrapped.find('.auth-input-wrapper').at(1).find('.error-field').text()).toEqual('Please enter your last name');
+      expect(wrapped.find('.auth-input-wrapper').at(2).find('.error-field').text()).toEqual('Please enter a valid email.');
+      expect(wrapped.find('.auth-input-wrapper').at(3).find('.error-field').text()).toEqual('Please enter a valid password.');
+      expect(wrapped.find('.auth-input-wrapper').at(4).find('.error-field').text()).toEqual('Please confirm your password.');
+    });
+  });
 });

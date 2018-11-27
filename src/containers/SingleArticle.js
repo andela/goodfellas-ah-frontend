@@ -65,12 +65,12 @@ export class Article extends Component {
   }
 
   singleArticle() {
-    const { article, comments } = this.props;
+    const { article, comments, userId } = this.props;
     return (
       <div>
         <div className="single-page">
-          <ArticleHeader article={article} />
-          <ArticleBody article={article} />
+          <ArticleHeader article={article} userId={userId} />
+          <ArticleBody article={article} userId={userId} />
           <Comment
             article={article}
             comments={comments}
@@ -108,6 +108,7 @@ const mapStateToProps = (state) => ({
   comment: state.postComments,
   replyComment: state.replyComments,
   comments: state.getComments.comments,
+  userId: state.auth.ownProfile.userId,
 });
 
 export default connect(mapStateToProps, {
