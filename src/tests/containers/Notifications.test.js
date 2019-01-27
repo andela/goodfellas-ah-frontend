@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { MemoryRouter } from 'react-router-dom';
 import toJson from 'enzyme-to-json';
 import NotificationsContainer, { Notifications } from '../../containers/Notifications';
 import Root from '../../root';
@@ -169,8 +168,11 @@ describe('Notification Functionality', () => {
       });
 
       const inst = notificationsMountedShallow.instance();
+      const cancelButton = notificationsMountedShallow.find('.notification-close-button');
+      const singleNotification = notificationsMountedShallow.find('.noitification-single');
+      singleNotification.simulate('click');
+      cancelButton.simulate('click');
       inst.displayNotifications();
-      inst.handleSeen();
       expect(inst).not.toBeNull();
     });
 
@@ -180,8 +182,11 @@ describe('Notification Functionality', () => {
       });
 
       const inst = notificationsMountedShallow.instance();
+      const cancelButton = notificationsMountedShallow.find('.notification-close-button');
+      const singleNotification = notificationsMountedShallow.find('.noitification-single');
+      singleNotification.simulate('click');
+      cancelButton.simulate('click');
       inst.displayNotifications();
-      inst.handleSeen();
       expect(inst).not.toBeNull();
     });
 

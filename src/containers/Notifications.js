@@ -6,7 +6,7 @@ import LargeLoader from '../components/shared/LargeLoader';
 
 export class Notifications extends Component {
   state = {
-    notifications: {},
+    notifications: [],
   };
 
   componentDidMount() {
@@ -28,6 +28,14 @@ export class Notifications extends Component {
     notificationSeen(id);
   };
 
+  handleClose = (id) => {
+    const { notifications } = this.state;
+    this.setState({
+      notifications: notifications.filter((el) => el.id !== id),
+    });
+    this.handleSeen(id);
+  };
+
   displayNotifications = () => {
     const { notifications } = this.state;
     return (
@@ -35,43 +43,65 @@ export class Notifications extends Component {
         {notifications.length > 0 ? (
           <div>
             <h1 className="text-center">Notifications</h1>
-            { notifications.map((notification) => {
-              if (!notification.seen) {
-                switch (notification.type) {
-                  case 'followerArticle':
-                    return (
-                      <div className="row notification-result" key={notification.id}>
-                        <Link
-                          to={`/articles/${notification.articleSlug}`}
-                          className="col-md-6 card m-auto"
-                          key={notification.id}
-                          onClick={() => {
-                            this.handleSeen(notification.id);
-                          }}
-                        >
-                          <span>{`${notification.author.firstname.charAt(0).toUpperCase()}${notification.author.firstname.slice(1)} ${notification.author.lastname.charAt(0).toUpperCase()}${notification.author.lastname.slice(1)} published a new article`}</span>
-                        </Link>
-                      </div>
-                    );
-                  case 'favoriteArticleComment':
-                    return (
-                      <div
-                        className="row notification-result"
-                        key={notification.id}
-                        onClick={() => {
-                          this.handleSeen(notification.id);
-                        }}
-                      >
-                        <Link to={`/articles/${notification.articleSlug}`} className="col-md-6 card m-auto">
-                         New comment on one of  your favorite article {notification.article.title}
-                        </Link>
-                      </div>
-                    );
-                  default:
-                    break;
+            <div className="notification-wrapper">
+              {notifications.map((notification) => {
+                if (!notification.seen) {
+                  switch (notification.type) {
+                    case 'followerArticle':
+                      return (
+                        <div className="notification-result" key={notification.id}>
+                          <Link
+                            to={`/articles/${notification.articleSlug}`}
+                            className="noitification-single"
+                            key={notification.id}
+                            onClick={() => {
+                              this.handleSeen(notification.id);
+                            }}
+                          >
+                            <span id={`close${notification.id}`}>{`${notification.author.firstname.charAt(0).toUpperCase()}${notification.author.firstname.slice(
+                              1,
+                            )} ${notification.author.lastname.charAt(0).toUpperCase()}${notification.author.lastname.slice(1)} published a new article`}
+                            </span>
+                          </Link>
+                          <span
+                            className="notification-close-button"
+                            onClick={() => {
+                              this.handleClose(notification.id);
+                            }}
+                          >
+                            X
+                          </span>
+                        </div>
+                      );
+                    case 'favoriteArticleComment':
+                      return (
+                        <div className="notification-result" key={notification.id}>
+                          <Link
+                            to={`/articles/${notification.articleSlug}`}
+                            className="noitification-single"
+                            key={notification.id}
+                            onClick={() => {
+                              this.handleSeen(notification.id);
+                            }}
+                          >
+                            <span> New comment on your favorite Article</span>
+                          </Link>
+                          <span
+                            className="notification-close-button"
+                            onClick={() => {
+                              this.handleClose(notification.id);
+                            }}
+                          >
+                            X
+                          </span>
+                        </div>
+                      );
+                    default:
+                      break;
+                  }
                 }
-              }
-            })}
+              })}
+            </div>
           </div>
         ) : (
           <div>

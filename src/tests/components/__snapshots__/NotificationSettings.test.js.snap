@@ -13,7 +13,17 @@ exports[`Notification UI render features component should render as expected 1`]
       }
     }
   >
-    <Connect(NotificationSettings)>
+    <Connect(NotificationSettings)
+      notification={
+        Object {
+          "notification": Array [
+            "email",
+            "inApp",
+          ],
+        }
+      }
+      updateNotification={[MockFunction]}
+    >
       <NotificationSettings
         notification={
           Object {
@@ -47,81 +57,59 @@ exports[`Notification UI render features component should render as expected 1`]
         updateNotification={[Function]}
       >
         <div
-          className="notification-panel mt-3"
+          className="notification-settings-wrapper notification-panel"
         >
           <div
-            className="container"
+            className="notification-settings-header"
+          >
+            <h2>
+              Notification Settings
+            </h2>
+          </div>
+          <div
+            className="notification-settings"
           >
             <div
-              className="row"
+              className="notification-settings-email"
             >
-              <div
-                className="col-md-6 m-auto"
+              <p>
+                Email Notification
+              </p>
+              <label
+                className="notification-switch"
               >
-                <div
-                  className="card"
-                >
-                  <div
-                    className="card-body"
-                  >
-                    <h6
-                      className="card-title text-muted text-center"
-                    >
-                      Notification settings
-                    </h6>
-                    <div
-                      className="row"
-                    >
-                      <div
-                        className="col-md-7"
-                      >
-                        <p
-                          className="slider-title"
-                        >
-                          Email Notification
-                        </p>
-                        <label
-                          className="notification-switch"
-                        >
-                          <input
-                            checked={false}
-                            className="toggle-click"
-                            name="email"
-                            onChange={[Function]}
-                            type="checkbox"
-                          />
-                          <span
-                            className="slider round"
-                          />
-                        </label>
-                      </div>
-                      <div
-                        className="col-md-5"
-                      >
-                        <p
-                          className="slider-title"
-                        >
-                          In-App Notification
-                        </p>
-                        <label
-                          className="notification-switch"
-                        >
-                          <input
-                            checked={false}
-                            className="toggle-clickpu"
-                            name="inApp"
-                            onChange={[Function]}
-                            type="checkbox"
-                          />
-                          <span
-                            className="slider round"
-                          />
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                <input
+                  checked={false}
+                  className="toggle-click"
+                  name="email"
+                  onChange={[Function]}
+                  type="checkbox"
+                />
+                <span
+                  className="slider round"
+                />
+              </label>
+            </div>
+            <div
+              className="notification-settings-inApp"
+            >
+              <p>
+                In App Notification
+              </p>
+              <label
+                className="notification-switch"
+              >
+                <input
+                  checked={false}
+                  className="toggle-click-inApp"
+                  name="inApp"
+                  onChange={[Function]}
+                  type="checkbox"
+                />
+                <span
+                  className="slider round"
+                />
+              </label>
             </div>
           </div>
         </div>
