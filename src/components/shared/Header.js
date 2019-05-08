@@ -78,8 +78,8 @@ export class Header extends Component {
       setNotification: notificationSettings,
       profile,
     } = this.props;
-    notificationSettings(profile.userId);
-    latestNotification();
+    //notificationSettings(profile.userId);
+    //latestNotification();
   }
 
   componentWillReceiveProps(nextProps) {
