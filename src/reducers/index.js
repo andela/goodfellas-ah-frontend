@@ -6,6 +6,9 @@ import profileReducer from './profileReducer';
 import articleReducer from './articleReducer';
 import notificationReducer from './notificationReducer';
 import updateArticleReducer from './updateArticleReducer';
+import postCommentsReducers from './postCommentsReducers';
+import getCommentsReducers from './getCommentsReducers';
+import replyCommentsReducer from './replyCommentsReducers';
 
 export default combineReducers({
   auth: authReducer,
@@ -15,4 +18,7 @@ export default combineReducers({
   updateArticleReducer,
   profile: profileReducer,
   notification: notificationReducer,
+  postComments: postCommentsReducers,
+  getComments: getCommentsReducers,
+  replyComments: replyCommentsReducer,
 });

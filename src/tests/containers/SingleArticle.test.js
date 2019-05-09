@@ -10,6 +10,7 @@ describe('containers', () => {
         article: {},
         error: '',
         getAnArticle: jest.fn(),
+        getComments: jest.fn(),
         match: {
           params: { slug: 'some-slug' },
         },
@@ -34,6 +35,7 @@ describe('containers', () => {
         article: null,
         error: 'this is an error',
         getAnArticle: jest.fn(),
+        getComments: jest.fn(),
         match: {
           params: { slug: 'some-slug' },
         },
