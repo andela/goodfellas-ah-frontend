@@ -20,7 +20,9 @@ exports[`SideButtons UI view should render as expected 1`] = `
       />
     </svg>
     <svg
+      className="not-bookmarked null"
       id="bookmark"
+      onClick={[Function]}
       title="Report this article"
     >
       <use

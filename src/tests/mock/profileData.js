@@ -53,7 +53,7 @@ export const articles = {
   data: {
     message: 'Articles gotten successfully!',
     articles: [{
-      favorited: null, favoritesCount: null, id: 2, slug: 'this-is-a-fine-title-which-i-would-really-love-to-have', title: 'This is a fine title which I would really love to have', description: ' this is the fine long body  this is the fine long body ', body: 'This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ', image: null, tagList: null, read_time: '1 minute', averageRating: null, authorId: 1, createdAt: '2018-11-09T15:08:00.560Z', updatedAt: '2018-11-09T15:08:00.560Z', comments: [], reactions: [],
+      user: { firstname: 'Afeez1', lastname: 'Awoyemi', email: 'damafeez11@gmail.com', role: 'User', notificationSettings: ['email', 'inApp'] }, favorited: null, favoritesCount: null, id: 2, slug: 'this-is-a-fine-title-which-i-would-really-love-to-have', title: 'This is a fine title which I would really love to have', description: ' this is the fine long body  this is the fine long body ', body: 'This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ', image: null, tagList: null, read_time: '1 minute', averageRating: null, authorId: 1, createdAt: '2018-11-09T15:08:00.560Z', updatedAt: '2018-11-09T15:08:00.560Z', comments: [], reactions: [],
     }],
   },
   status: 200,
@@ -134,5 +134,7 @@ export const unFollowUser = {
     message: 'You unfollowed Afeez Awoymemi',
   },
 };
+
+export const bookmarkedArticles = [{ article: { user: { profile: { image: 'image' }, firstname: 'Afeez1', lastname: 'Awoyemi', email: 'damafeez11@gmail.com', role: 'User', notificationSettings: ['email', 'inApp'] }, favorited: null, favoritesCount: null, id: 2, slug: 'this-is-a-fine-title-which-i-would-really-love-to-have', title: 'This is a fine title which I would really love to have', description: ' this is the fine long body  this is the fine long body ', body: 'This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ', image: null, tagList: null, read_time: '1 minute', averageRating: null, authorId: 1, createdAt: '2018-11-09T15:08:00.560Z', updatedAt: '2018-11-09T15:08:00.560Z', comments: [], reactions: [] } }];
 
 export const setProfile = [profile, followers, followedUsers, articles, favoritedArticles];

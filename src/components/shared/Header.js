@@ -224,7 +224,7 @@ export class Header extends Component {
                           Your stories
                         </Link>
                         {/* <Link to="/stats">Stats</Link> */}
-                        {/* <Link to="/bookmark">Bookmarks</Link> */}
+                        <Link to="/articles/bookmarked">Bookmarks</Link>
                         <Link className="favourites-link-header-auth" onClick={() => switchView('Favorites')} to="/user/profile">
                           Favourites
                         </Link>
@@ -397,7 +397,7 @@ export class Header extends Component {
                           Your stories
                         </Link>
                         {/* <Link to="/stats">Stats</Link> */}
-                        {/* <Link to="/bookmark">Bookmarks</Link> */}
+                        <Link to="/articles/bookmarked">Bookmarks</Link>
                         <Link onClick={() => switchView('Favorites')} to="/user/profile">
                           Favourites
                         </Link>

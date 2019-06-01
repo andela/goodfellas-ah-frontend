@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookmarkedArticleList UI view should render as expected 1`] = `
+<Fragment>
+  <div
+    className="no-record centralizer"
+  >
+    <svg
+      className="icon"
+    >
+      <use
+        xlinkHref="icons.svg#sad"
+      />
+    </svg>
+      
+    <span>
+      You have not bookmarked any articles
+    </span>
+  </div>
+</Fragment>
+`;
+
+exports[`BookmarkedArticleList UI view should render as expected 2`] = `
+<Fragment>
+  <withRouter(Profile)
+    article={
+      Object {
+        "authorId": 1,
+        "averageRating": null,
+        "body": "This is the fine long body this is the fine long body  this is the fine long body  this is the fine long body  this is the fine long body ",
+        "comments": Array [],
+        "createdAt": "2018-11-09T15:08:00.560Z",
+        "description": " this is the fine long body  this is the fine long body ",
+        "favorited": null,
+        "favoritesCount": null,
+        "id": 2,
+        "image": null,
+        "reactions": Array [],
+        "read_time": "1 minute",
+        "slug": "this-is-a-fine-title-which-i-would-really-love-to-have",
+        "tagList": null,
+        "title": "This is a fine title which I would really love to have",
+        "updatedAt": "2018-11-09T15:08:00.560Z",
+        "user": Object {
+          "email": "damafeez11@gmail.com",
+          "firstname": "Afeez1",
+          "lastname": "Awoyemi",
+          "notificationSettings": Array [
+            "email",
+            "inApp",
+          ],
+          "profile": Object {
+            "image": "image",
+          },
+          "role": "User",
+        },
+      }
+    }
+    author="Afeez1 Awoyemi"
+    authorImage="image"
+    type="favoriteArticle"
+  />
+</Fragment>
+`;

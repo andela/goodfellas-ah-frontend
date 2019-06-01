@@ -27,16 +27,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <SideButtons
-          article={
-            Object {
-              "authorId": 1,
-              "body": "somerandombody",
-              "image": "thhisimage",
-            }
-          }
-          userId={1}
-        />,
+        <Connect(SideButtons) />,
         <div
           className="article-content"
         >
@@ -64,14 +55,7 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
-        "props": Object {
-          "article": Object {
-            "authorId": 1,
-            "body": "somerandombody",
-            "image": "thhisimage",
-          },
-          "userId": 1,
-        },
+        "props": Object {},
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -136,16 +120,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <SideButtons
-            article={
-              Object {
-                "authorId": 1,
-                "body": "somerandombody",
-                "image": "thhisimage",
-              }
-            }
-            userId={1}
-          />,
+          <Connect(SideButtons) />,
           <div
             className="article-content"
           >
@@ -173,14 +148,7 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {
-            "article": Object {
-              "authorId": 1,
-              "body": "somerandombody",
-              "image": "thhisimage",
-            },
-            "userId": 1,
-          },
+          "props": Object {},
           "ref": null,
           "rendered": null,
           "type": [Function],

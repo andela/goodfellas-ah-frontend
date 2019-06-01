@@ -1,4 +1,5 @@
 import authReducer from '../../reducers/authReducer';
+import imageUploadReducer from '../../reducers/imageUploadReducer';
 import * as types from '../../actions/actionTypes';
 import initialState from '../../reducers/initialState';
 import * as profileData from '../mock/profileData';
@@ -45,5 +46,29 @@ describe('authReducer reducer', () => {
         payload: 'an error occoured',
       }),
     ).toEqual({ errorMessage: 'an error occoured' });
+  });
+  it('should handle SUCCESS_MSG', () => {
+    expect(
+      authReducer([], {
+        type: types.SUCCESS_MSG,
+        payload: 'successful operation',
+      }),
+    ).toEqual({ successMessage: 'successful operation' });
+  });
+  it('should handle RESET_ERROR', () => {
+    expect(
+      authReducer([], {
+        type: types.RESET_ERROR,
+        payload: 'unsuccessful operation',
+      }),
+    ).toEqual({ errorMessage: 'unsuccessful operation' });
+  });
+  it('should handle IMAGE_UPLOAD_LOADING', () => {
+    expect(
+      imageUploadReducer([], {
+        type: types.IMAGE_UPLOAD_LOADING,
+        payload: 'successful operation',
+      }),
+    ).toEqual({ status: { loading: true } });
   });
 });

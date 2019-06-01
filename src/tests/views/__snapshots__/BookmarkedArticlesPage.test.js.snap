@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Bookmarked Articles UI render features view should render as expected 1`] = `
+<_default
+  className="profile"
+>
+  <Connect(BookmarkedArticles) />
+</_default>
+`;
