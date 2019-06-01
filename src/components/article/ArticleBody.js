@@ -1,6 +1,6 @@
 import React from 'react';
 import parser from 'react-html-parser';
-import SideButtons from './SideButtons';
+import SideButtons from '../../containers/SingleArticleSideButtons';
 import DisplayTags from './DisplayTags';
 
 

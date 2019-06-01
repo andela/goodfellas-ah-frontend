@@ -1,13 +1,7 @@
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
 import * as types from '../../actions/actionTypes';
 import initialState from '../../reducers/initialState';
 import * as profileData from '../mock/profileData';
 import * as profileActions from '../../actions/profileActions';
-import API from '../mock/API';
-
-const middlewares = [thunk.withExtraArgument(API)];
-const mockStore = configureMockStore(middlewares);
 
 describe('fetchProfile actions', () => {
   const actionSuccess = [

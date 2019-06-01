@@ -59,10 +59,10 @@ export const addTags = (newTags, slug, callback) => async (dispatch, getState, {
   }
 };
 
-export const getAnArticle = (slug) => async (dispatch) => {
+export const getAnArticle = (slug) => async (dispatch, getState, { api }) => {
   dispatch(articleLoading());
   try {
-    const response = await axios.get(`${apiUrl}/api/articles/${slug}`);
+    const response = await api.get(`/articles/${slug}`);
     dispatch(articleLoading(false));
     dispatch({
       type: types.GET_AN_ARTICLE,
@@ -76,3 +76,51 @@ export const getAnArticle = (slug) => async (dispatch) => {
     });
   }
 };
+
+export const react = (slug, reaction = 1) => async (dispatch, getState, { api }) => {
+  const article = Object.assign(getState().articles.article);
+  const previousReaction = article.myReactions[0] && article.myReactions[0].reaction;
+  let addLike = 0;
+  let addDislike = 0;
+  switch (previousReaction) {
+    case 1:
+      addLike = -1;
+      if (reaction === -1) addDislike = 1;
+      break;
+    case -1:
+      addDislike = -1;
+      if (reaction === 1) addLike = 1;
+      break;
+    case undefined:
+      if (reaction === 1) addLike = 1;
+      if (reaction === -1) addDislike = 1;
+      break;
+    default:
+      break;
+  }
+  const myReactions = previousReaction === reaction ? [] : [{ reaction }];
+  const reactionCount = {
+    likes: article.reactionCount.likes + addLike,
+    dislikes: article.reactionCount.dislikes + addDislike,
+  };
+  dispatch({
+    type: types.UPDATE_REACTION,
+    payload: {
+      myReactions,
+      reactionCount,
+    },
+  });
+  try {
+    await api.post(`/articles/${slug}/react`, { reaction });
+  } catch (error) {
+    dispatch({
+      type: types.UPDATE_REACTION,
+      payload: {
+        myReactions: article.myReactions,
+        reactionCount: article.reactionCount,
+      },
+    });
+  }
+};
+
+export default getArticles;

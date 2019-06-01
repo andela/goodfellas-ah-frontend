@@ -27,7 +27,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <SideButtons
+        <Connect(SideButtons)
           article={
             Object {
               "authorId": 1,
@@ -136,7 +136,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <SideButtons
+          <Connect(SideButtons)
             article={
               Object {
                 "authorId": 1,
